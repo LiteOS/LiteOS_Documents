@@ -6,7 +6,7 @@
 
 ## 下载Node.js，版本要大于8.0
 
-`bash
+```bash
 # 检查node版本 版本大于8.0
 node -v
 
@@ -22,4 +22,4 @@ npm run build
 # 运行http服务器进行验证
 npm run start
 
-`
+```
