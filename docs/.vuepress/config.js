@@ -13,7 +13,7 @@ module.exports = {
     }
   },
   themeConfig: {
-    repo: 'liteos/LiteOS',
+    repo: 'LiteOS/LiteOS_Documents',
     repoLabel: 'Github',
     docsDir: 'doc',
     editLinks: true,
@@ -36,36 +36,39 @@ module.exports = {
         }, {
           text: 'SDK',
           link: '/liteos-sdk'
+        }, {
+          text: '教程',
+          link: '/tutorials/'
         }],
         sidebar: {
           '/guide/': [{
               title: '指南',
               collapsable: false,
               children: [
-                '/guide/'
+                './'
               ]
             },
             {
               title: '基础内核',
               collapsable: false,
               children: [
-                '/guide/task',
-                '/guide/memory',
-                '/guide/interrupt',
-                '/guide/queue',
-                '/guide/event',
-                '/guide/mutex',
-                '/guide/semaphore',
-                '/guide/time-management',
-                '/guide/software-timers',
-                '/guide/doubly-linked-list'
+                './task',
+                './memory',
+                './interrupt',
+                './queue',
+                './event',
+                './mutex',
+                './semaphore',
+                './time-management',
+                './software-timers',
+                './doubly-linked-list'
               ]
             },
             {
               title: '扩展内核',
               collapsable: false,
               children: [
-                '/guide/low-power'
+                './low-power'
               ]
             }
           ],
@@ -73,19 +76,29 @@ module.exports = {
             title: 'ARM 系列',
             collapsable: false,
             children: [
-              '/porting/arm-cortex-m3',
-              '/porting/arm-cortex-m4',
-              '/porting/arm-cortex-m7'
+              './arm-cortex-m3',
+              './arm-cortex-m4',
+              './arm-cortex-m7'
             ]
           }],
-          '/sdk/': [{
-            title: '嵌入式硬件',
-            collapsable: false,
-            children: [
-              '/'
-            ]
-          }],
-
+          '/tutorials/': [{
+              title: '内核开发系列',
+              collapsable: false,
+              children: [
+                './example01',
+                './example02',
+                './example03'
+              ]
+            },
+            {
+              title: '北向应用系列',
+              collapsable: false,
+              children: [
+                './example03',
+                './example04'
+              ]
+            }
+          ],
           '/': [
             ''
           ]
@@ -98,42 +111,48 @@ module.exports = {
         algolia: {},
         nav: [{
           text: 'Getting Started',
-          link: '/getting-started/'
+          link: '/en/getting-started'
         }, {
           text: 'Develop Guide',
-          link: '/guide/'
-        }, {
-          text: 'Porting Guide',
-          link: '/porting/'
-        }, {
-          text: 'SDK',
-          link: '/sdk/'
+          link: '/en/guide/'
         }],
-        sidebar: [{
-            title: 'Overview',
-            collapsable: false,
-            children: [
-              '/en/guide/',
-              '/en/guide/overview',
-            ]
-          },
-          {
-            title: 'Basic Kernel',
-            collapsable: false,
-            children: [
-              '/en/guide/task',
-              '/en/guide/memory',
-              '/en/guide/queue'
-            ]
-          },
-          {
-            title: 'External Kernel',
-            collapsable: false,
-            children: [
-
-            ]
-          }
-        ]
+        sidebar: {
+          '/en/guide/': [{
+              title: 'Guide',
+              collapsable: false,
+              children: [
+                './'
+              ]
+            },
+            {
+              title: 'Kernel',
+              collapsable: false,
+              children: [
+                './task',
+                './memory',
+                './interrupt',
+                './queue',
+                './event',
+                './mutex',
+                './semaphore',
+                './time-management',
+                './software-timers',
+                './doubly-linked-list'
+              ]
+            },
+            {
+              title: 'External',
+              collapsable: false,
+              children: [
+                './low-power'
+              ]
+            }
+          ],
+        
+          '/': [
+            ''
+          ]
+        }
       }
     }
   }

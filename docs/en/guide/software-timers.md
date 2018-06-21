@@ -1,4 +1,4 @@
-# Interrupt
+# Software Timers
 
 ## Overview
 

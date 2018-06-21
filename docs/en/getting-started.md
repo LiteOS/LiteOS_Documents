@@ -2,8 +2,6 @@
 sidebar: auto
 ---
 
-# 快速入门
+# Quick Start Guide
 
-## 第一个点灯工程
-
-## 高级应用场景
+## Simply Blinky Projects
