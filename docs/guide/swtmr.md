@@ -188,86 +188,86 @@ static UINT32 g_timercount1 = 0;
 static UINT32 g_timercount2 = 0;
 
 
-static void Timer1_Callback(UINT32 arg)//回调函数1
-{  
+static void Timer1_Callback(UINT32 arg) //回调函数1
+{
     unsigned long tick_last1;
 
     g_timercount1 ++;
-    tick_last1=(UINT32)LOS_TickCountGet();//获取当前Tick数
-    dprintf("g_timercount1=%d\n",g_timercount1);
-    dprintf("tick_last1=%lu\n",tick_last1);
+    tick_last1=(UINT32)LOS_TickCountGet(); //获取当前Tick数
+    printf("g_timercount1=%d.\r\n",g_timercount1);
+    printf("tick_last1=%lu.\r\n",tick_last1);
 }
 
-static void Timer2_Callback(UINT32 arg)//回调函数2
+static void Timer2_Callback(UINT32 arg) //回调函数2
 {
     UINT32 uwRet = LOS_OK;
     unsigned long tick_last2;
 
     tick_last2=(UINT32)LOS_TickCountGet();
     g_timercount2 ++;
-    dprintf("g_timercount2=%d\n",g_timercount2);
-    dprintf("tick_last2=%lu\n",tick_last2);
+    printf("g_timercount2=%d.\r\n",g_timercount2);
+    printf("tick_last2=%lu.\r\n",tick_last2);
     uwRet = LOS_InspectStatusSetByID(LOS_INSPECT_TIMER,LOS_INSPECT_STU_SUCCESS);
     if (LOS_OK != uwRet)
     {
-        dprintf("Set Inspect Status Err\n");
+        printf("Set Inspect Status Err.\r\n");
     }
 }
 
 UINT32 Example_swTimer(void)
 {
     UINT16 id1;
-    UINT16 id2;// timer id
+    UINT16 id2; // timer id
     UINT32 uwRet = LOS_OK;
 
-  /*创建单次软件定时器，Tick数为1000，启动到1000Tick数时执行回调函数1 */ 
+    /*创建单次软件定时器，Tick数为1000，启动到1000Tick数时执行回调函数1 */ 
     uwRet = LOS_SwtmrCreate(1000, LOS_SWTMR_MODE_ONCE,Timer1_Callback,&id1,1);
     if(LOS_OK != uwRet)
     {
-        dprintf("create Timer1 failed\n");
+        printf("create Timer1 failed.\r\n");
     }
     else
     {
-        dprintf("create Timer1 success\n");
+        printf("create Timer1 success.\r\n");
     }
     
     /*创建周期性软件定时器，每100Tick数执行回调函数2 */
     uwRet = LOS_SwtmrCreate(100,LOS_SWTMR_MODE_PERIOD,Timer2_Callback,&id2,1);
     if(LOS_OK != uwRet)
     {
-        dprintf("create Timer2 failed\n");
+        printf("create Timer2 failed.\r\n");
     }
     else
     {
-        dprintf("create Timer2 success\n");
+        printf("create Timer2 success.\r\n");
     }
     
-    uwRet = LOS_SwtmrStart(id1);//启动单次软件定时器
+    uwRet = LOS_SwtmrStart(id1); //启动单次软件定时器
     if(LOS_OK != uwRet)
     {
-        dprintf("start Timer1 failed\n");
+        printf("start Timer1 failed.\r\n");
     }
     else
     {
-        dprintf("start Timer1 sucess\n");
+        printf("start Timer1 sucess.\r\n");
     }
     
-    (void)LOS_TaskDelay(200);//延时200Tick数
+    (void)LOS_TaskDelay(200); //延时200Tick数
     
-    uwRet = LOS_SwtmrStop(id1);//停止软件定时器
+    uwRet = LOS_SwtmrStop(id1); //停止软件定时器
     if(LOS_OK != uwRet)
     {
-        dprintf("stop Timer1 failed\n");
+        printf("stop Timer1 failed.\r\n");
     }
     else
     {
-        dprintf("stop Timer1 sucess\n");
+        printf("stop Timer1 sucess.\r\n");
     }
     
     uwRet = LOS_SwtmrStart(id1);
     if(LOS_OK != uwRet)
     {
-        dprintf("start Timer1 failed\n");
+        printf("start Timer1 failed.\r\n");
     }
     
     (void)LOS_TaskDelay(1000);
@@ -275,21 +275,21 @@ UINT32 Example_swTimer(void)
     uwRet = LOS_SwtmrDelete(id1);//删除软件定时器
     if(LOS_OK != uwRet)
     {
-        dprintf("delete Timer1 failed\n");
+        printf("delete Timer1 failed.\r\n");
     }
     else
     {
-        dprintf("delete Timer1 sucess\n");
+        printf("delete Timer1 sucess.\r\n");
     }
     
     uwRet = LOS_SwtmrStart(id2);//启动周期性软件定时器
     if(LOS_OK != uwRet)
     {
-        dprintf("start Timer2 failed\n");
+        printf("start Timer2 failed.\r\n");
     }
     else
     {
-        dprintf("start Timer2 success\n");
+        printf("start Timer2 success.\r\n");
     }
     
     (void)LOS_TaskDelay(1000);
@@ -297,18 +297,18 @@ UINT32 Example_swTimer(void)
     uwRet = LOS_SwtmrStop(id2);
     if(LOS_OK != uwRet)
     {
-        dprintf("stop Timer2 failed\n");
+        printf("stop Timer2 failed.\r\n");
     }
     
     uwRet = LOS_SwtmrDelete(id2);
     if(LOS_OK != uwRet)
     {
-        dprintf("delete Timer2 failed\n");
+        printf("delete Timer2 failed.\r\n");
     }
     
     return LOS_OK;
 }  
-```  
+```
 
 ### 结果验证
 得到的结果为：  

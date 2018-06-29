@@ -155,7 +155,7 @@ ERRNO：error ID number
 ```c
 /*任务PID*/
 static UINT32 g_TestTaskID;
-//static LITE_OS_SEC_BSS  UINT32  g_uweventTaskID;
+
 /*事件控制结构体*/
 static EVENT_CB_S  example_event;
 
@@ -170,25 +170,25 @@ VOID Example_Event(VOID)
 
     /*超时 等待方式读事件,超时时间为100 Tick
     若100 Tick 后未读取到指定事件，读事件超时，任务直接唤醒*/
-    dprintf("Example_Event wait event 0x%x \n",event_wait);
+    printf("Example_Event wait event 0x%x \r\n",event_wait);
 
     uwEvent = LOS_EventRead(&example_event, event_wait, LOS_WAITMODE_AND, 100);
     if(uwEvent == event_wait)
     {
-        dprintf("Example_Event,read event :0x%x\n",uwEvent);
+        printf("Example_Event,read event :0x%x\r\n",uwEvent);
         uwRet = LOS_InspectStatusSetByID(LOS_INSPECT_EVENT,LOS_INSPECT_STU_SUCCESS);
         if (LOS_OK != uwRet)  
         {
-            dprintf("Set Inspect Status Err\n");
+            printf("Set Inspect Status Err\r\n");
         }
     }
     else
     {
-        dprintf("Example_Event,read event timeout\n");
+        printf("Example_Event,read event timeout\r\n");
         uwRet = LOS_InspectStatusSetByID(LOS_INSPECT_EVENT,LOS_INSPECT_STU_ERROR);
         if (LOS_OK != uwRet)  
         {
-            dprintf("Set Inspect Status Err\n");
+            printf("Set Inspect Status Err\r\n");
         }
     }
     return;
@@ -203,7 +203,7 @@ UINT32 Example_SndRcvEvent(VOID)
     uwRet = LOS_EventInit(&example_event);
     if(uwRet != LOS_OK)
     {
-        dprintf("init event failed .\n");
+        printf("init event failed .\r\n");
         return LOS_NOK;
     }
 
@@ -216,24 +216,24 @@ UINT32 Example_SndRcvEvent(VOID)
     uwRet = LOS_TaskCreate(&g_TestTaskID, &stTask1);
     if(uwRet != LOS_OK)
     {
-        dprintf("task create failed .\n");
+        printf("task create failed .\r\n");
         return LOS_NOK;
     }
 
     /*写用例任务等待的事件类型*/
-    dprintf("Example_TaskEntry_Event write event .\n");
+    printf("Example_TaskEntry_Event write event .\r\n");
 
     uwRet = LOS_EventWrite(&example_event, event_wait);
     if(uwRet != LOS_OK)
     {
-        dprintf("event write failed .\n");
+        printf("event write failed .\r\n");
         return LOS_NOK;
     }
 
     /*清标志位*/
-    dprintf("EventMask:%d\n",example_event.uwEventID);
+    printf("EventMask:%d\r\n",example_event.uwEventID);
     LOS_EventClear(&example_event, ~example_event.uwEventID);
-    dprintf("EventMask:%d\n",example_event.uwEventID);
+    printf("EventMask:%d\r\n",example_event.uwEventID);
 
     return LOS_OK;
 }  

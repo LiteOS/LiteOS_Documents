@@ -126,8 +126,7 @@ static void Example_Exti0_Init()
 
 static VOID User_IRQHandler(void)
 {
-    dprintf("\n User IRQ test\n");
-    //LOS_InspectStatusSetByID(LOS_INSPECT_INTERRUPT,LOS_INSPECT_STU_SUCCESS);
+    printf("\r\n User IRQ test\r\n");
     return;
 
 }
