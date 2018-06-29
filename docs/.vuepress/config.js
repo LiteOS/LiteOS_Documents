@@ -60,7 +60,7 @@ module.exports = {
                 './mutex',
                 './semaphore',
                 './time-magmt',
-                './timers',
+                './swtmr',
                 './doubly-linked-list'
               ]
             },
@@ -143,7 +143,7 @@ module.exports = {
                 './mutex',
                 './semaphore',
                 './time-magmt',
-                './timers',
+                './swtmr',
                 './doubly-linked-list'
               ]
             },

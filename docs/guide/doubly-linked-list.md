@@ -73,25 +73,25 @@ static UINT32 DLlist_sample(VOID)
     LOS_DL_LIST DLlistNode02 = {NULL,NULL};
     LOS_DL_LIST DLlistNode03 = {NULL,NULL};
 
-    PRINTK("Initial head\n");
+    printf("Initial head.\r\n");
     LOS_ListInit(&DLlist);
 
     LOS_ListAdd(&DLlist,&DLlistNode01);
     if (DLlistNode01.pstNext == &DLlist && DLlistNode01.pstPrev == &DLlist)
     {
-        PRINTK("Add DLlistNode01 success \n");
+        printf("Add DLlistNode01 success.\r\n");
     }
 
     LOS_ListTailInsert(&DLlist,&DLlistNode02);
     if (DLlistNode02.pstNext == &DLlist && DLlistNode02.pstPrev == &DLlistNode01)
     {
-        PRINTK("Tail insert DLlistNode02 success \n");
+        printf("Tail insert DLlistNode02 success.\r\n");
     }
 
     LOS_ListHeadInsert(&DLlistNode02,&DLlistNode03);
     if (DLlistNode03.pstNext == &DLlist && DLlistNode03.pstPrev == &DLlistNode02)
     {
-        PRINTK("Head insert DLlistNode03 success \n");
+        printf("Head insert DLlistNode03 success.\r\n");
     }
 
     LOS_ListDelInit(&DLlistNode03);
@@ -100,7 +100,7 @@ static UINT32 DLlist_sample(VOID)
 
     if (LOS_ListEmpty(&DLlist))
     {
-        PRINTK("Delete success \n");
+        printf("Delete success.\r\n");
     }
 
     return LOS_OK;
@@ -108,7 +108,7 @@ static UINT32 DLlist_sample(VOID)
 ```
 
 编译运行得到的结果为：   
-```  
+```
 Initial head 
 Add DLlistNode01 success 
 Tail insert DLlistNode02 success 
