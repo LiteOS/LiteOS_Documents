@@ -1,13 +1,11 @@
 # 如何编写和部署LiteOS技术资料
 
-利用vuepress工具可以让大家专注编写技术文档，能够快速生产一套静态技术资料网站。
+利用vuepress工具让大家专注编写技术文档，能够快速生产一套静态技术资料网站。
 
-操作步骤：
-
-## 下载Node.js，版本要大于8.0
+操作步骤如下：
 
 ```bash
-# 检查node版本 版本大于8.0
+# 安装对应平台的Node.js，版本大于8.0（Windows，Mac，Linux）
 node -v
 
 # 到LiteOS_Documents根目录

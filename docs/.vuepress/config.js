@@ -59,8 +59,8 @@ module.exports = {
                 './event',
                 './mutex',
                 './semaphore',
-                './time-management',
-                './software-timers',
+                './time-magmt',
+                './timers',
                 './doubly-linked-list'
               ]
             },
@@ -135,7 +135,7 @@ module.exports = {
                 './event',
                 './mutex',
                 './semaphore',
-                './time-management',
+                './time-magmt',
                 './software-timers',
                 './doubly-linked-list'
               ]
