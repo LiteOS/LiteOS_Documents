@@ -70,6 +70,13 @@ module.exports = {
               children: [
                 './low-power'
               ]
+            },
+            {
+              title: '调试指南',
+              collapsable: false,
+              children: [
+                './faq'
+              ]
             }
           ],
           '/porting/': [{
@@ -136,7 +143,7 @@ module.exports = {
                 './mutex',
                 './semaphore',
                 './time-magmt',
-                './software-timers',
+                './timers',
                 './doubly-linked-list'
               ]
             },
