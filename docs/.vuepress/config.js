@@ -26,30 +26,50 @@ module.exports = {
         algolia: {},
         nav: [{
           text: '入门',
-          link: '/getting-started'
+          link: '/quick-start/'
         }, {
-          text: '指南',
-          link: '/guide/'
+          text: '内核',
+          link: '/kernel/'
+        }, {
+          text: '组件',
+          link: '/components/'
         }, {
           text: '移植',
           link: '/porting/'
         }, {
-          text: 'SDK',
-          link: '/liteos-sdk'
-        }, {
           text: '教程',
           link: '/tutorials/'
+        }, {
+          text: '案例',
+          items: [{
+            text: '抄表类',
+            link: '/case-study/meter'
+          }, {
+            text: '家电类',
+            link: '/case-study/goods'
+          }, {
+            text: '出行类',
+            link: '/case-study/ofo'
+          }, {
+            text: '安防类',
+            link: '/case-study/smoke'
+          }, {
+            text: '跟踪类',
+            link: '/case-study/track'
+          }]
         }],
         sidebar: {
-          '/guide/': [{
-              title: '指南',
-              collapsable: false,
-              children: [
-                './'
-              ]
-            },
+          '/quick-start/': [
+            '',
+            './why-use-the-rtos',
+            './why-select-huawei-liteos',
+            './a-simple-blink-demo',
+            './a-comprehensive-smoke-demo'
+          ],
+          '/kernel/': [
+            '',
             {
-              title: '基础内核',
+              title: '内核基础',
               collapsable: false,
               children: [
                 './task',
@@ -61,11 +81,10 @@ module.exports = {
                 './semaphore',
                 './time-magmt',
                 './swtmr',
-                './doubly-linked-list'
+                './list'
               ]
-            },
-            {
-              title: '扩展内核',
+            }, {
+              title: '内核扩展',
               collapsable: false,
               children: [
                 './low-power'
@@ -79,16 +98,50 @@ module.exports = {
               ]
             }
           ],
-          '/porting/': [{
-            title: 'ARM 系列',
-            collapsable: false,
-            children: [
-              './arm-cortex-m3',
-              './arm-cortex-m4',
-              './arm-cortex-m7'
-            ]
-          }],
-          '/tutorials/': [{
+          '/components/': [
+            '', {
+              title: '端云互通',
+              collapsable: false,
+              children: [
+                './liteos-connect-cloud'
+              ]
+            }, {
+              title: 'AT适配框架',
+              collapsable: false,
+              children: [
+                './at-adaptor-framework'
+              ]
+            }
+          ],
+          '/porting/': [
+            '',
+            {
+              title: '准备工作',
+              collapsable: false,
+              children: [
+                './gcc',
+                './keil',
+                './iar'
+              ]
+            }, {
+              title: '华为 LiteOS 移植',
+              collapsable: false,
+              children: [
+                './stm32',
+                './gd32',
+                './faq'
+              ]
+            }, {
+              title: '移植后，验证',
+              collapsable: false,
+              children: [
+                './verify'
+              ]
+            }
+          ],
+          '/tutorials/': [
+            '', 
+            {
               title: '内核开发系列',
               collapsable: false,
               children: [
@@ -98,7 +151,15 @@ module.exports = {
               ]
             },
             {
-              title: '北向应用系列',
+              title: '端云互通系列',
+              collapsable: false,
+              children: [
+                './example03',
+                './example04'
+              ]
+            },
+            {
+              title: '第三方教程',
               collapsable: false,
               children: [
                 './example03',
@@ -121,10 +182,10 @@ module.exports = {
           link: '/en/getting-started'
         }, {
           text: 'Develop Guide',
-          link: '/en/guide/'
+          link: '/en/kernel/'
         }],
         sidebar: {
-          '/en/guide/': [{
+          '/en/kernel/': [{
               title: 'Guide',
               collapsable: false,
               children: [
@@ -155,7 +216,7 @@ module.exports = {
               ]
             }
           ],
-        
+
           '/': [
             ''
           ]
