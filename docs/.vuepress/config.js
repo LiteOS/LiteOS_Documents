@@ -140,30 +140,21 @@ module.exports = {
             }
           ],
           '/tutorials/': [
-            '', 
             {
-              title: '内核开发系列',
+              title: '手把手教程',
               collapsable: false,
               children: [
-                './example01',
-                './example02',
-                './example03'
-              ]
-            },
-            {
-              title: '端云互通系列',
-              collapsable: false,
-              children: [
-                './example03',
-                './example04'
-              ]
-            },
-            {
-              title: '第三方教程',
-              collapsable: false,
-              children: [
-                './example03',
-                './example04'
+                '',
+                './step-by-step/01-inspect-terabits-f103vc-board',
+                './step-by-step/02-build-raw-project-in-stm32cube',
+                './step-by-step/03-design-profile-and-codec-plugin',
+                './step-by-step/04-using-at-commands-connect-oceanconnect',
+                './step-by-step/05-fortify-embedded-app-working-on-device',
+                './step-by-step/06-install-nodejs-and-mongodb-server',
+                './step-by-step/07-build-a-restful-server-with-device-management',
+                './step-by-step/08-design-backend-services-api-for-frontend-app',
+                './step-by-step/09-implement-full-web-application-development',
+                './step-by-step/10-make-certification-subscribe-to-platform'
               ]
             }
           ],
