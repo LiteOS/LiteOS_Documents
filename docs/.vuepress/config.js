@@ -2,9 +2,8 @@ module.exports = {
   locales: {
     '/': {
       lang: 'zh-CN',
-      title: '华为 LiteOS | 中文网',
-      description: '轻量级物联网操作系统，物的智能化使能平台',
-      demo: '123'
+      title: 'Huawei LiteOS | 中文网',
+      description: '轻量级物联网操作系统，物的智能化使能平台'
     },
     '/en/': {
       lang: 'en-US',
@@ -41,36 +40,46 @@ module.exports = {
           link: '/tutorials/'
         }, {
           text: '案例',
+          link: '/case-study/'
+        }, {
+          text: '扩展',
           items: [{
-            text: '抄表类',
-            link: '/case-study/meter'
-          }, {
-            text: '家电类',
-            link: '/case-study/goods'
-          }, {
-            text: '出行类',
-            link: '/case-study/ofo'
-          }, {
-            text: '安防类',
-            link: '/case-study/smoke'
-          }, {
-            text: '跟踪类',
-            link: '/case-study/track'
-          }]
+              text: '手把手教程',
+              link: '/step-by-step/'
+            },
+            {
+              text: '第三方云平台',
+              link: '/connect-to-cloud/'
+            }
+          ]
         }],
         sidebar: {
-          '/quick-start/': [
-            '',
-            './why-use-the-rtos',
-            './why-select-huawei-liteos',
-            './a-simple-blink-demo',
-            './a-comprehensive-smoke-demo'
-          ],
-          '/kernel/': [
-            '',
-            {
-              title: '内核基础',
+          '/quick-start/': [{
+            title: '入门',
+            collapsable: false,
+            children: [
+              '',
+              './why-use-the-rtos',
+              './why-select-huawei-liteos'
+            ]
+          }, {
+            title: '快速上手',
+            collapsable: true,
+            children: [
+              './a-simple-blink-demo',
+              './a-comprehensive-smoke-demo'
+            ]
+          }],
+          '/kernel/': [{
+              title: '内核',
               collapsable: false,
+              children: [
+                ''
+              ]
+            },
+            {
+              title: '基础',
+              collapsable: true,
               children: [
                 './task',
                 './memory',
@@ -84,56 +93,55 @@ module.exports = {
                 './list'
               ]
             }, {
-              title: '内核扩展',
-              collapsable: false,
+              title: '扩展',
+              collapsable: true,
               children: [
                 './low-power'
               ]
             },
             {
               title: '调试指南',
-              collapsable: false,
+              collapsable: true,
               children: [
                 './faq'
               ]
             }
           ],
           '/components/': [
-            '', {
-              title: '端云互通',
+            {
+              title: '组件',
               collapsable: false,
               children: [
-                './liteos-connect-cloud'
-              ]
-            }, {
-              title: 'AT适配框架',
-              collapsable: false,
-              children: [
+                '',
+                './liteos-connect-cloud',
                 './at-adaptor-framework'
               ]
             }
           ],
           '/porting/': [
-            '',
+            {
+              title: '移植',
+              collapsable: false,
+              children: [
+                ''
+              ]
+            },
             {
               title: '准备工作',
-              collapsable: false,
+              collapsable: true,
               children: [
-                './gcc',
-                './keil',
-                './iar'
+                './keil'
               ]
             }, {
-              title: '华为 LiteOS 移植',
-              collapsable: false,
+              title: 'OS 移植',
+              collapsable: true,
               children: [
                 './stm32',
-                './gd32',
                 './faq'
               ]
             }, {
-              title: '移植后，验证',
-              collapsable: false,
+              title: '移植后的验证',
+              collapsable: true,
               children: [
                 './verify'
               ]
@@ -141,20 +149,106 @@ module.exports = {
           ],
           '/tutorials/': [
             {
-              title: '手把手教程',
+              title: '教程',
+              collapsable: false,
+              children: [
+                ''
+              ]
+            },
+            {
+              title: '内核',
+              collapsable: true,
+              children: [
+                './example01',
+                './example02'
+              ]
+            }, {
+              title: '传感器',
+              collapsable: true,
+              children: [
+                './example03',
+                './example04'
+              ]
+            }
+          ],
+          '/case-study/': [
+            {
+              title: '案例',
               collapsable: false,
               children: [
                 '',
-                './step-by-step/01-inspect-terabits-f103vc-board',
-                './step-by-step/02-build-raw-project-in-stm32cube',
-                './step-by-step/03-design-profile-and-codec-plugin',
-                './step-by-step/04-using-at-commands-connect-oceanconnect',
-                './step-by-step/05-fortify-embedded-app-working-on-device',
-                './step-by-step/06-install-nodejs-and-mongodb-server',
-                './step-by-step/07-build-a-restful-server-with-device-management',
-                './step-by-step/08-design-backend-services-api-for-frontend-app',
-                './step-by-step/09-implement-full-web-application-development',
-                './step-by-step/10-make-certification-subscribe-to-platform'
+                './meter',
+                './goods',
+                './ofo',
+                './smoke',
+                './track'
+              ]
+            }
+          ],
+          '/step-by-step/': [
+            {
+              title: '手把手教程',
+              collapsable: false,
+              children: [
+                ''
+              ]
+            },
+            {
+              title: 'Terabits NB-IoT 开发板',
+              collapsable: true,
+              children: [
+                './terabits-nbiot-overview',
+                './01-inspect-terabits-f103vc-board',
+                './02-build-f103vc-project-in-stm32cube',
+                './03-design-profile-and-codec-plugin',
+                './04-using-at-commands-connect-oceanconnect',
+                './05-fortify-embedded-app-working-on-device',
+                './06-install-nodejs-and-mongodb-server',
+                './07-build-a-restful-server-with-device-management',
+                './08-design-backend-services-api-for-frontend-app',
+                './09-implement-full-web-application-development',
+                './10-make-certification-subscribe-to-platform'
+              ]
+            },
+            {
+              title: 'YiQi NB-IoT 开发板',
+              collapsable: true,
+              children: [
+                './yiqi-nbiot-overview',
+                './01-inspect-yiqi-evb01-l152cb-board',
+                './02-build-l152cb-project-in-stm32cube',
+                './03-design-profile-and-codec-plugin',
+                './04-using-at-commands-connect-oceanconnect',
+                './05-fortify-embedded-app-working-on-device',
+                './06-install-nodejs-and-mongodb-server',
+                './07-build-a-restful-server-with-device-management',
+                './08-design-backend-services-api-for-frontend-app',
+                './09-implement-full-web-application-development',
+                './10-make-certification-subscribe-to-platform'
+              ]
+            },
+            {
+              title: 'IoTClub NB-IoT 开发板',
+              collapsable: true,
+              children: [
+                './iotclub-nbiot-overview'
+              ]
+            },
+            {
+              title: '朱老师 NB-IoT 开发板',
+              collapsable: true,
+              children: [
+                './nb476-nbiot-overview'
+              ]
+            }
+          ],
+          '/connect-to-cloud/': [
+            {
+              title: '第三方云平台',
+              collapsable: false,
+              children: [
+                '',
+                './china-mobile-onenet'
               ]
             }
           ],
