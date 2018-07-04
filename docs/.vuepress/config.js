@@ -197,7 +197,6 @@ module.exports = {
               title: 'Terabits NB-IoT 开发板',
               collapsable: true,
               children: [
-                './terabits-nbiot-overview',
                 './01-inspect-terabits-f103vc-board',
                 './02-build-f103vc-project-in-stm32cube',
                 './03-design-profile-and-codec-plugin',
@@ -214,7 +213,6 @@ module.exports = {
               title: 'YiQi NB-IoT 开发板',
               collapsable: true,
               children: [
-                './yiqi-nbiot-overview',
                 './01-inspect-yiqi-evb01-l152cb-board',
                 './02-build-l152cb-project-in-stm32cube',
                 './03-design-profile-and-codec-plugin',
@@ -290,7 +288,7 @@ module.exports = {
                 './semaphore',
                 './time-magmt',
                 './swtmr',
-                './doubly-linked-list'
+                './list'
               ]
             },
             {
