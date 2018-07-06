@@ -59,6 +59,7 @@ module.exports = {
             collapsable: false,
             children: [
               '',
+              './terminology',
               './why-use-the-rtos',
               './why-select-huawei-liteos'
             ]
@@ -114,7 +115,10 @@ module.exports = {
               children: [
                 '',
                 './liteos-connect-cloud',
-                './at-adaptor-framework'
+                './fota',
+                './at-adaptor-framework',
+                './js-engine',
+                './sensors-framework'
               ]
             }
           ],
