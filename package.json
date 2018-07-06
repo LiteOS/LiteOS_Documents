@@ -1,6 +1,6 @@
 {
-  "name": "liteos_documents",
-  "description": "",
+  "name": "LiteOS_Documents",
+  "description": "Huawei LiteOS 资料中心",
   "version": "1.0.0",
   "main": "index.js",
   "directories": {
@@ -16,10 +16,11 @@
     "build": "vuepress build docs"
   },
   "keywords": [
-    "LiteOS"
+    "LiteOS",
+    "RTOS"
   ],
   "author": "",
-  "license": "ISC",
+  "license": "BSD",
   "bugs": {
     "url": "https://github.com/softbaddog/LiteOS_Documents/issues"
   },

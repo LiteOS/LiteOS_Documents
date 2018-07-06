@@ -27,10 +27,10 @@ module.exports = {
           text: '入门',
           link: '/quick-start/'
         }, {
-          text: '内核',
+          text: '内核 (Kernel)',
           link: '/kernel/'
         }, {
-          text: '组件',
+          text: '组件 (SDK)',
           link: '/components/'
         }, {
           text: '移植',
