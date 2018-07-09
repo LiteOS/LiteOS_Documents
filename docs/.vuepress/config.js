@@ -27,10 +27,10 @@ module.exports = {
           text: '入门',
           link: '/quick-start/'
         }, {
-          text: '内核 (Kernel)',
+          text: '内核（Kernel）',
           link: '/kernel/'
         }, {
-          text: '组件 (SDK)',
+          text: '组件（SDK）',
           link: '/components/'
         }, {
           text: '移植',
@@ -42,7 +42,7 @@ module.exports = {
           text: '案例',
           link: '/case-study/'
         }, {
-          text: '扩展',
+          text: '资源',
           items: [{
               text: '手把手教程',
               link: '/step-by-step/'
