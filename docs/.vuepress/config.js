@@ -42,13 +42,21 @@ module.exports = {
           text: '案例',
           link: '/case-study/'
         }, {
-          text: '资源',
+          text: '精选',
           items: [{
-              text: '手把手教程',
+              text: '端到端教程',
               link: '/step-by-step/'
             },
             {
-              text: '第三方云平台',
+              text: '连接第三方云平台',
+              link: '/connect-to-cloud/'
+            },
+            {
+              text: 'LiteOS 源码剖析',
+              link: '/connect-to-cloud/'
+            },
+            {
+              text: '朱老师 NB476 开发板视频',
               link: '/connect-to-cloud/'
             }
           ]
