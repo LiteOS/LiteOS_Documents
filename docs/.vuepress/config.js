@@ -18,48 +18,64 @@ module.exports = {
     editLinks: true,
     locales: {
       '/': {
-        selectText: '选择语言',
+        selectText: '语言',
         label: '简体中文',
         editLinkText: '在 GitHub 上编辑此页',
         lastUpdated: '上次更新',
         algolia: {},
         nav: [{
-          text: '入门',
-          link: '/quick-start/'
-        }, {
-          text: '内核（Kernel）',
-          link: '/kernel/'
-        }, {
-          text: '组件（SDK）',
-          link: '/components/'
-        }, {
-          text: '移植',
-          link: '/porting/'
-        }, {
-          text: '教程',
-          link: '/tutorials/'
-        }, {
-          text: '案例',
-          link: '/case-study/'
-        }, {
-          text: '精选',
+          text: '学习',
           items: [{
-              text: '端到端教程',
+            text: '入门',
+            link: '/quick-start/'
+          }, {
+            text: '内核',
+            link: '/kernel/'
+          }, {
+            text: '组件',
+            link: '/components/'
+          }, {
+            text: '移植',
+            link: '/porting/'
+          }, {
+            text: '教程',
+            link: '/tutorials/'
+          }]
+        }, {
+          text: '生态',
+          items: [{
+              text: 'NB-IoT OneButton 端到端开发',
               link: '/step-by-step/'
             },
             {
-              text: '连接第三方云平台',
+              text: '连接到第三方 IoT 云平台',
               link: '/connect-to-cloud/'
             },
             {
-              text: 'LiteOS 源码剖析',
-              link: '/connect-to-cloud/'
-            },
-            {
-              text: '朱老师 NB476 开发板视频',
-              link: '/connect-to-cloud/'
+              text: '钛云物联 ALL-in-Java 开发',
+              link: '/all-in-java/'
             }
           ]
+        }, {
+          text: '视频',
+          items: [{
+              text: 'LiteOS 源码深度剖析',
+              link: '/video/source-code-analysis/'
+            },
+            {
+              text: '朱老师 NB476 开发板',
+              link: '/video/connect-to-cloud/'
+            }
+          ]
+        }, {
+          text: '活动',
+          items: [{
+            text: 'HDG-IoT 中国行',
+            link: '/'
+          }, {
+            text: '华为开发者大赛',
+            link: 'http://developer.huawei.com/ict/cn/hdc/'
+          }]
         }],
         sidebar: {
           '/quick-start/': [{
@@ -116,22 +132,19 @@ module.exports = {
               ]
             }
           ],
-          '/components/': [
-            {
-              title: '组件',
-              collapsable: false,
-              children: [
-                '',
-                './liteos-connect-cloud',
-                './fota',
-                './at-adaptor-framework',
-                './js-engine',
-                './sensors-framework'
-              ]
-            }
-          ],
-          '/porting/': [
-            {
+          '/components/': [{
+            title: '组件',
+            collapsable: false,
+            children: [
+              '',
+              './liteos-connect-cloud'
+              // './fota',
+              // './at-adaptor-framework',
+              // './js-engine',
+              // './sensors-framework'
+            ]
+          }],
+          '/porting/': [{
               title: '移植',
               collapsable: false,
               children: [
@@ -159,8 +172,7 @@ module.exports = {
               ]
             }
           ],
-          '/tutorials/': [
-            {
+          '/tutorials/': [{
               title: '教程',
               collapsable: false,
               children: [
@@ -172,33 +184,41 @@ module.exports = {
               collapsable: true,
               children: [
                 './example01',
-                './example02'
+                './example02',
+                './example03',
+                './example04',
+                './example05',
+                './example06',
+                './example07',
+                './example08',
+                './example09',
+                './example10'
               ]
             }, {
-              title: '传感器',
+              title: '场景综合',
               collapsable: true,
               children: [
-                './example03',
-                './example04'
-              ]
-            }
-          ],
-          '/case-study/': [
-            {
-              title: '案例',
-              collapsable: false,
-              children: [
-                '',
-                './meter',
-                './goods',
-                './ofo',
+                './temp-hum',
                 './smoke',
-                './track'
+                './gps',
+                './light',
+                './wifi'
               ]
             }
           ],
-          '/step-by-step/': [
-            {
+          '/case-study/': [{
+            title: '案例',
+            collapsable: false,
+            children: [
+              '',
+              './meter',
+              './goods',
+              './ofo',
+              './smoke',
+              './track'
+            ]
+          }],
+          '/step-by-step/': [{
               title: '手把手教程',
               collapsable: false,
               children: [
@@ -252,16 +272,14 @@ module.exports = {
               ]
             }
           ],
-          '/connect-to-cloud/': [
-            {
-              title: '第三方云平台',
-              collapsable: false,
-              children: [
-                '',
-                './china-mobile-onenet'
-              ]
-            }
-          ],
+          '/connect-to-cloud/': [{
+            title: '第三方云平台',
+            collapsable: false,
+            children: [
+              '',
+              './china-mobile-onenet'
+            ]
+          }],
           '/': [
             ''
           ]
