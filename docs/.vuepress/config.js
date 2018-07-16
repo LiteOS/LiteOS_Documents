@@ -137,10 +137,10 @@ module.exports = {
             collapsable: false,
             children: [
               '',
-              './liteos-connect-cloud'
+              './oceanconnect-agenttiny'
               // './fota',
               // './at-adaptor-framework',
-              // './js-engine',
+              // './maplejs',
               // './sensors-framework'
             ]
           }],
