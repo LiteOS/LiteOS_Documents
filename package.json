@@ -1,0 +1,32 @@
+{
+  "name": "LiteOS_Documents",
+  "description": "Huawei LiteOS 资料中心",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/softbaddog/LiteOS_Documents.git"
+  },
+  "scripts": {
+    "start": "http-server ./docs/.vuepress/dist -a 0.0.0.0 -p 9999",
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "keywords": [
+    "LiteOS",
+    "RTOS"
+  ],
+  "author": "",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/softbaddog/LiteOS_Documents/issues"
+  },
+  "homepage": "https://github.com/softbaddog/LiteOS_Documents#readme",
+  "devDependencies": {
+    "http-server": "^0.11.1",
+    "vuepress": "^0.10.2"
+  }
+}
