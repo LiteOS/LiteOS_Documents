@@ -50,7 +50,7 @@ module.exports = {
           {
             text: "生态",
             items: [{
-                text: "NB-IoT OneButton 端到端开发",
+                text: "NB-IoT 1-Click 应用开发",
                 link: "/step-by-step/"
               },
               {
@@ -58,7 +58,7 @@ module.exports = {
                 link: "/connect-to-cloud/"
               },
               {
-                text: "钛云物联 ALL-in-Java 开发",
+                text: "钛云物联 All-in-Java 开发",
                 link: "/all-in-java/"
               }
             ]
@@ -66,23 +66,20 @@ module.exports = {
           {
             text: "视频",
             items: [{
-                text: "LiteOS 源码深度剖析",
+                text: "Huawei LiteOS 源码深度剖析",
                 link: "/video/source-code-analysis/"
               },
               {
-                text: "朱老师 NB476 开发板",
+                text: "朱老师 NB476 开发板学习",
                 link: "/video/connect-to-cloud/"
               }
             ]
           },
           {
             text: "活动",
-            items: [{
-                text: "HDG-IoT 中国行",
-                link: "/"
-              },
+            items: [
               {
-                text: "华为开发者大赛",
+                text: "2018 华为开发者大赛",
                 link: "http://developer.huawei.com/ict/cn/hdc/"
               }
             ]
@@ -168,7 +165,7 @@ module.exports = {
               children: ["./verify", "./results"]
             },
             {
-              title: "附：IDE安装指导",
+              title: "附1：IDE安装指导",
               collapsable: false,
               children: ["./keil", "./iar", "./gcc-sw4stm32", "./gcc-makefile"]
             }
