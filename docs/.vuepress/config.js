@@ -165,9 +165,9 @@ module.exports = {
               children: ["./verify", "./results"]
             },
             {
-              title: "附1：IDE安装指导",
+              title: "附1：开发工具安装手册",
               collapsable: false,
-              children: ["./keil", "./iar", "./gcc-sw4stm32", "./gcc-makefile"]
+              children: ["./keil-mdk5", "./iar", "./gcc-sw4stm32", "./gcc-makefile"]
             }
           ],
           "/tutorials/": [{

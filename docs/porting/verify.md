@@ -19,7 +19,16 @@
 ### 修改 main.c
 
 ```c
+  /* USER CODE BEGIN 2 */
+  if (LOS_OK != LOS_KernelInit())
+  {
+      return LOS_NOK;
+  }
 
+  LOS_Inspect_Entry();
+
+  LOS_Start();
+  /* USER CODE END 2 */
 ```
 
 ## 引入 example 工程
