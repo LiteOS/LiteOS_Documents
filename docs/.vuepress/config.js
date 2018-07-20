@@ -152,22 +152,42 @@ module.exports = {
           "/porting/": [{
               title: "准备工作",
               collapsable: false,
-              children: ["", "./raw-project", "./os-config"]
+              children: [
+                "", 
+                "./evb-and-tools", 
+                "./raw-project-with-stm32cube",
+                "./raw-project-with-others",
+                "./liteos-source-code",
+              ]
             },
             {
               title: "OS 移植",
               collapsable: false,
-              children: ["./stm32", "./nxp", "./gd32", "./faq"]
+              children: [
+                "./stm32", 
+                //"./nxp", 
+                //"./gd32", 
+                "./faq"]
             },
             {
               title: "移植后验证",
               collapsable: false,
-              children: ["./verify", "./results"]
+              children: [
+                "./inspect-example", 
+                "./inspect-results"]
             },
             {
               title: "附1：开发工具安装手册",
               collapsable: false,
-              children: ["./keil-mdk5", "./iar", "./gcc-sw4stm32", "./gcc-makefile"]
+              children: [
+                "./keil", 
+                "./iar", 
+                "./gcc-sw4stm32"]
+            },
+            {
+              title: "附2：OS_CONFIG 系统配置详解",
+              collapsable: false,
+              children: ["./os-config"]
             }
           ],
           "/tutorials/": [{
