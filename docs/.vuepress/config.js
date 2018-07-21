@@ -50,16 +50,37 @@ module.exports = {
           {
             text: "生态",
             items: [{
-                text: "NB-IoT 1-Click 应用开发",
-                link: "/step-by-step/"
+                text: "手把手教程",
+                items: [{
+                  text: "NB-IoT@LiteOS 应用开发",
+                  link: "/step-by-step/nb-iot/"
+                },{
+                  text: "ESP8266@LiteOS 应用开发",
+                  link: "/step-by-step/esp8266/"
+                }]
               },
               {
-                text: "连接到第三方 IoT 云平台",
-                link: "/connect-to-cloud/"
+                text: "对接第三方 IoT 平台",
+                items: [{
+                  text: "中移动 OneNet 云平台",
+                  link: "/connect-to-cloud/onenet/"
+                },{
+                  text: "阿里云 IoT 平台",
+                  link: "/connect-to-cloud/aliyun/"
+                }]
               },
               {
-                text: "钛云物联 All-in-Java 开发",
-                link: "/all-in-java/"
+                text: "高级应用专题",
+                items: [{
+                  text: "NB-IoT OpenCPU 开发",
+                  link: "/opencpu/"
+                }, {
+                  text: "钛云物联 All-in-Java 开发",
+                  link: "/all-in-java/"
+                }, {
+                  text: "MapleJS 智能家开发",
+                  link: "/maplejs/"
+                }]
               }
             ]
           },
@@ -68,12 +89,10 @@ module.exports = {
             items: [{
                 text: "Huawei LiteOS 源码深度剖析",
                 link: "/video/source-code-analysis/"
-              },
-              {
+              }, {
                 text: "朱老师 NB476 开发板学习",
                 link: "/video/connect-to-cloud/"
-              }
-            ]
+              }]
           },
           {
             text: "活动",
@@ -165,8 +184,8 @@ module.exports = {
               collapsable: false,
               children: [
                 "./stm32", 
-                //"./nxp", 
-                //"./gd32", 
+                "./nxp", 
+                "./gd32", 
                 "./faq"]
             },
             {
@@ -235,7 +254,7 @@ module.exports = {
               children: [""]
             },
             {
-              title: "Terabits NB-IoT 开发板",
+              title: "钛比 NB-IoT 开发板",
               collapsable: true,
               children: [
                 "./01-inspect-terabits-f103vc-board",
@@ -251,7 +270,7 @@ module.exports = {
               ]
             },
             {
-              title: "YiQi NB-IoT 开发板",
+              title: "YiQi EVB 01/02 开发板",
               collapsable: true,
               children: [
                 "./01-inspect-yiqi-evb01-l152cb-board",
@@ -267,12 +286,12 @@ module.exports = {
               ]
             },
             {
-              title: "IoTClub NB-IoT 开发板",
+              title: "IoTClub M1 开发板",
               collapsable: true,
               children: ["./iotclub-nbiot-overview"]
             },
             {
-              title: "朱老师 NB-IoT 开发板",
+              title: "朱老师 NB476 开发板",
               collapsable: true,
               children: ["./nb476-nbiot-overview"]
             }
