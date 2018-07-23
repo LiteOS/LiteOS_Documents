@@ -6,29 +6,28 @@
 
 ## 安装 STM32Cube 并下载芯片对应的软件支持包
 
-STM32Cube 是 ST 提供的一套性能强大的免费开发工具和嵌入式软件模块，能够让开发人
-员在 STM32 平台上快速、轻松地开发应用。它包含两个关键部分：
+STM32Cube 是 ST 提供的一套性能强大的免费开发工具和嵌入式软件模块，能够让开发人员在 STM32 平台上快速、轻松地开发应用。它包含两个关键部分：
 
-- 图形配置工具（STM32CubeMX）—— 允许用户通过图形化向导来生成 C 语言工程。
-- 嵌入式软件包（STM32Cube 库）—— 包含完整的 HAL 库（STM32 硬件抽象层 API），配套的中间件（包括 RTOS，USB，TCP/IP 和图形），以及一系列完整的例程。
+- **图形配置工具**（STM32CubeMX）—— 允许用户通过图形化向导来生成 C 语言工程。
+- **嵌入式软件包**（STM32Cube 库）—— 包含完整的 HAL 库（STM32 硬件抽象层 API），配套的中间件（包括 RTOS，USB，TCP/IP 和图形），以及一系列完整的例程。
 
 ### 你应当知道的事
 
-ST 先后提供了两套固件库：**标准库** 和 **HAL 库**。STM32 芯片面市之初只提供了丰富全面的标准库，大大便利了用户程序开发，为广大开发板所推荐。目前网络学习资料和源码，绝大多数都是采用的标准库。
+ST 先后提供了两套固件库：**标准库** 和 **HAL 库**。STM32 芯片面市之初只提供了丰富全面的标准库，大大方便了用户程序开发，为广大开发板所推荐。目前网络学习资料和源码，绝大多数都是采用的标准库。
 
 大约到 2014 年左右，ST 在标准库的基础上又推出了 HAL 库。实际上，HAL 库和标准库本质上是一样的，都是提供底层硬件操作 API，而且在使用上也大同小异。最近两年新出的 STM32 芯片，ST 甚至只提供 HAL 库。我们即将使用的 STM32Cube 工具生成的项目也只包含 HAL 库。
 
-本教程读者应该有相当一部分都有过基于标准库的开发经验，对于学习 HAL 库可能会存在排斥。我希望大家不必纠结到底是学习 HAL 库还是标准库，无论使用哪种库，只要理解了 STM32 本质，任何库都是一种工具，使用起来都非常方便。
+本教程读者会有相当一部分都有过基于标准库的开发经验，对于使用 HAL 库可能会存在排斥。说老实话，大家不必纠结到底是学习 HAL 库还是标准库，无论使用哪种库，只要理解了 STM32 本质，任何库都是一种工具，使用起来都非常方便。
 
 ::: tip 提示
-我们不会花大量篇幅来介绍 STM32 和 HAL 库的使用，其相关知识的学习还需要大家去参考更专业的教材。对于 STM32Cube 工具的使用，我们也只是点到为止。
+我们不会花大量篇幅来介绍 STM32 和 HAL 库的使用，其相关知识的学习还需要大家去参考更专业的教程。对于 STM32Cube 工具的使用，我们也尽量做到点到为止。
 :::
 
 ### 下载并安装 STM32Cube
 
-1. 由于 STM32CubeMX 依赖 Java 运行环境，如果您的电脑上没有 Java 1.7 以上的运行环境，请到 [这里](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) 下载到最新版本 JRE。
+1. 由于 STM32CubeMX 依赖 Java 运行环境，如果您的电脑上没有 Java 1.7 以上的运行环境，请先到 [这里](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) 下载到最新版本 JRE。
 
-2. STM32Cube 则可以在 ST 官网 [https://www.st.com/stm32cube](https://www.st.com/en/development-tools/stm32cubemx.html) 下载最新的版本；
+2. STM32Cube 则可以在 ST 官网 [https://www.st.com/stm32cube](https://www.st.com/en/development-tools/stm32cubemx.html) 免费下载；
 
 ::: warning 警告
 由于 STM32CubeMX 软件版本更新非常频繁，其新版本创建的工程无法被旧版本软件打开，我们这里就不提供网盘下载，建议大家尽量下载最新版本。
@@ -91,12 +90,12 @@ ST 先后提供了两套固件库：**标准库** 和 **HAL 库**。STM32 芯片
 ![](./image/atk-warship-datasheet.png)
 
 ::: warning 警告
-如果大家正在操作的开发板并不是 **正点原子 战舰V3**，那么对应的 LED IO 很大可能不是 PB5 和 PE5。需要大家对照的开发板原理图，查找对应的 LED IO。
+如果大家正在操作的开发板并不是正点原子的战舰V3，那么对应的 LED IO 很大可能不是 PB5 和 PE5。这需要大家对照的开发板原理图，查找对应的 LED IO。
 
-通常开发板会预留 2 个以上 LED，为了我们后续实验顺利进行，建议启用 2 个 LED IO 即可。
+通常开发板会预留 2 个以上 LED，为了我们后续验证实验顺利进行，建议启用 2 个 LED IO。
 :::
 
-找到对应的 IO 后，则将其设置为 `GPIO_Output`，接着右键选择 `Enter user label` 为 `PB5` 命名为 `LED0`
+找到对应的 IO 后，则将其设置为 `GPIO_Output`，然后右键选择 `Enter user label` 为 `PB5` 命名为 `LED0`
 
 ![](./image/stm32cube-select-gpio-output.png)
 
@@ -122,13 +121,15 @@ ST 先后提供了两套固件库：**标准库** 和 **HAL 库**。STM32 芯片
 
 ### 配置工程属性，生成代码
 
-注意选取 **MDKV5** 作为我们的开发环境，同时把工程名和代码导出路径配置好。
+我们这里选取 **MDK-ARM V5** 作为开发环境，配置好工程名和代码导出路径。
 
 ![](./image/stm32cube-settings-toolchain-mdk.png)
 
+为便于外设相关代码维护，建议将下面的选项勾中。
+
 ![](./image/stm32cube-settings-code-generator.png)
 
-点击 `Project` -> `Generate Code` 或者下图齿轮按钮，STM32Cube 会自动导出裸机工程。
+最后选择菜单栏上 `Project` -> `Generate Code` 或点击下图齿轮按钮，STM32Cube 会自动导出裸机工程。
 
 ![](./image/stm32cube-generate-source-code.png)
 

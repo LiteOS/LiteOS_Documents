@@ -175,7 +175,7 @@ module.exports = {
                 "", 
                 "./evb-and-tools", 
                 "./raw-project-with-stm32cube",
-                "./raw-project-with-others",
+                //"./raw-project-with-others",
                 "./liteos-source-code",
               ]
             },
@@ -184,8 +184,8 @@ module.exports = {
               collapsable: false,
               children: [
                 "./stm32", 
-                "./nxp", 
-                "./gd32", 
+                //"./nxp", 
+                //"./gd32", 
                 "./faq"]
             },
             {
@@ -248,7 +248,7 @@ module.exports = {
               "./track"
             ]
           }],
-          "/step-by-step/": [{
+          "/step-by-step/nb-iot/": [{
               title: "手把手教程",
               collapsable: false,
               children: [""]
@@ -296,11 +296,6 @@ module.exports = {
               children: ["./nb476-nbiot-overview"]
             }
           ],
-          "/connect-to-cloud/": [{
-            title: "第三方云平台",
-            collapsable: false,
-            children: ["", "./china-mobile-onenet"]
-          }],
           "/": [""]
         }
       },
