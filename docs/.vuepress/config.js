@@ -107,20 +107,25 @@ module.exports = {
         sidebar: {
           "/quick-start/": [{
               title: "入门",
-              collapsable: false,
+              collapsable: true,
               children: [
                 "",
                 "./terminology",
                 "./why-use-the-rtos",
                 "./why-select-huawei-liteos"
               ]
-            },
-            {
+            },{
               title: "快速上手",
               collapsable: true,
               children: [
                 "./a-simple-blink-demo",
                 "./a-comprehensive-smoke-demo"
+              ]
+            },{
+              title: "参与贡献",
+              collapsable: true,
+              children: [
+                "./write-standard"
               ]
             }
           ],

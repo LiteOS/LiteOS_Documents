@@ -65,13 +65,13 @@ STM32 的程序下载有多种方法：USB、串口、JTAG、SWD 等，这几种
 
 目前在国内市面上常见的 ST-Link v2 有以下两种：
 
-![](./image/st-link-v2-full.png)
+![](./image/stlink-v2-full.png)
 
 左图是 ST 官方提供的 ST-Link v2 调试器，不仅支持 STM32，还支持 STM8。同时兼容 JTAG 和 SWD 两种调试接口。右图的 ST-Link Mini 版目前用得更加广泛。因为成本较低，开发板销售商通常都会配套提供。请注意：它只支持 SWD 接口调试方式，使用起来和官方版没有什么差别。
 
 如果您的开发板上有 20pin JTAG 插口（比如我们当前使用的 **战舰V3**），直接 PIN-to-PIN 连接即可。如果您的开发板上只提供了 SWD 插口，则需要开发者按照开发板上的丝印编号进行连接，如下图所示。
 
-![](./image/st-link-swd-connect.jpg)
+![](./image/stlink-swd-connect.jpg)
 
 ::: tip 提示
 一般情况只需要连接 **GND，SWDIO，SWCLK** 三根即可，3V3 一般可以不接。如果您手头上的开发板是 JTAG 插口，你也可以对照下图方式进行连接。连接好 SWDIO、SWCLK 和 GND 即可。
