@@ -238,7 +238,13 @@ module.exports = {
             {
               title: "综合例程",
               collapsable: true,
-              children: ["./temp-hum", "./smoke", "./gps", "./light", "./wifi"]
+              children: [
+                "./temp-hum", 
+                "./smoke", 
+                "./gps", 
+                "./light", 
+                "./wifi"
+              ]
             }
           ],
           "/case-study/": [{
@@ -262,7 +268,7 @@ module.exports = {
               title: "钛比 NB-IoT 开发板",
               collapsable: true,
               children: [
-                "./01-inspect-terabits-f103vc-board",
+                "./01-inspect-terabits-board",
                 "./02-build-f103vc-project-in-stm32cube",
                 "./03-design-profile-and-codec-plugin",
                 "./04-using-at-commands-connect-oceanconnect",
@@ -278,7 +284,7 @@ module.exports = {
               title: "YiQi EVB 01/02 开发板",
               collapsable: true,
               children: [
-                "./01-inspect-yiqi-evb01-l152cb-board",
+                "./01-inspect-yiqi-evb01-board",
                 "./02-build-l152cb-project-in-stm32cube",
                 "./03-design-profile-and-codec-plugin",
                 "./04-using-at-commands-connect-oceanconnect",
@@ -293,12 +299,34 @@ module.exports = {
             {
               title: "IoTClub M1 开发板",
               collapsable: true,
-              children: ["./iotclub-nbiot-overview"]
+              children: [
+                "./01-inspect-iotclub-m1v3-board",
+                "./02-build-l431rb-project-in-stm32cube",
+                "./03-design-profile-and-codec-plugin",
+                "./04-using-at-commands-connect-oceanconnect",
+                "./05-fortify-embedded-app-working-on-device",
+                "./06-install-nodejs-and-mongodb-server",
+                "./07-build-a-restful-server-with-device-management",
+                "./08-design-backend-services-api-for-frontend-app",
+                "./09-implement-full-web-application-development",
+                "./10-make-certification-subscribe-to-platform"
+              ]
             },
             {
               title: "朱老师 NB476 开发板",
               collapsable: true,
-              children: ["./nb476-nbiot-overview"]
+              children: [
+                "./01-inspect-zhulaoshi-nb476-board",
+                "./02-build-l476rg-project-in-stm32cube",
+                "./03-design-profile-and-codec-plugin",
+                "./04-using-at-commands-connect-oceanconnect",
+                "./05-fortify-embedded-app-working-on-device",
+                "./06-install-nodejs-and-mongodb-server",
+                "./07-build-a-restful-server-with-device-management",
+                "./08-design-backend-services-api-for-frontend-app",
+                "./09-implement-full-web-application-development",
+                "./10-make-certification-subscribe-to-platform"
+              ]
             }
           ],
           "/": [""]
