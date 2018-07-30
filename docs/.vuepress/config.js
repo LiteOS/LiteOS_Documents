@@ -116,7 +116,7 @@ module.exports = {
               ]
             },{
               title: "快速上手",
-              collapsable: true,
+              collapsable: false,
               children: [
                 "./a-simple-blink-demo",
                 "./a-comprehensive-smoke-demo"
@@ -125,7 +125,9 @@ module.exports = {
               title: "参与贡献",
               collapsable: true,
               children: [
-                "./write-standard"
+                "./write-standard",
+                "./code-standard",
+                "./contribute-guide"
               ]
             }
           ],
@@ -135,8 +137,8 @@ module.exports = {
               children: [""]
             },
             {
-              title: "基础",
-              collapsable: true,
+              title: "基础内核功能",
+              collapsable: false,
               children: [
                 "./task",
                 "./memory",
@@ -151,14 +153,16 @@ module.exports = {
               ]
             },
             {
-              title: "扩展",
-              collapsable: true,
-              children: ["./low-power"]
-            },
-            {
-              title: "调试指南",
-              collapsable: true,
-              children: ["./faq"]
+              title: '错误码参考',
+              collapsable: false,
+              children: [
+                './errorcode-task',
+                './errorcode-queue',
+                './errorcode-event',
+                './errorcode-mutex',
+                './errorcode-semaphore',
+                './errorcode-swtmr',
+              ]
             }
           ],
           "/components/": [{
@@ -354,7 +358,7 @@ module.exports = {
             },
             {
               title: "Kernel",
-              collapsable: false,
+              collapsable: true,
               children: [
                 "./task",
                 "./memory",

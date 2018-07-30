@@ -1,5 +1,7 @@
 # 内存  
 
+[[toc]]
+
 ## 概述
 
 ### 基本概念
@@ -34,6 +36,8 @@ LiteOS动态内存支持 DLINK 和 BEST LITTLE 两种标准算法。
 
 DLINK动态内存管理结构如下图所示：
 
+![](./pic/mem-dlink.png)
+
 **第一部分：** 堆内存（也称内存池）的起始地址及堆区域总大小。  
 
 **第二部分：** 本身是一个数组，每个元素是一个双向链表，所有free节点的控制头都会被分类挂在这个数组的双向链表中。  
@@ -50,6 +54,9 @@ UINT32 uwSizeAndFlag;
 }LOS_MEM_DYN_NODE;    
 ```
 
+![](./pic/mem-struct.png)
+
+
 #### 2. BEST LITTLE
 
 LiteOS 的动态内存分配支持最佳适配算法，即 BEST LITTLE，每次分配时选择内存池中最小最适合的内存块进行分配。LiteOS 动态内存管理在最佳适配算法的基础上加入了 SLAB 机制，用于分配固定大小的内存块，进而减小产生内存碎片的可能性。  
@@ -62,6 +69,9 @@ LiteOS 内存管理中的 SLAB 机制支持可配置的 SLAB CLASS 数目及每�
 
 释放内存时，先检查释放的内存块是否属于 SLAB CLASS，如果是 SLAB CLASS 的内存块，则还回对应的 SLAB CLASS 中，否则还回内存池中。  
 
+![](./pic/mem-slab.png)
+
+
 ### 静态内存运作机制
 
 静态内存实质上是一块静态数组，静态内存池内的块大小在初始化时设定，初始化后块大小不可变更。  
@@ -70,9 +80,13 @@ LiteOS 内存管理中的 SLAB 机制支持可配置的 SLAB CLASS 数目及每�
 
 静态内存示意图
 
-## 开发指导
+![](./pic/mem-mech.png)
 
-### 使用场景
+## 动态内存
+
+### 开发指导
+
+#### 使用场景
 
 内存管理的主要工作是动态的划分并管理用户分配好的内存区间。  
 
@@ -80,7 +94,7 @@ LiteOS 内存管理中的 SLAB 机制支持可配置的 SLAB CLASS 数目及每�
 
 当用户需要分配内存时，可以通过操作系统的动态内存申请函数索取指定大小内存块，一旦使用完毕，通过动态内存释放函数归还所占用内存，使之可以重复使用。  
 
-### 功能
+#### 功能
 
 Huawei LiteOS 系统中的动态内存管理模块为用户提供下面几种功能，具体的API详见接口手册。
 
@@ -94,7 +108,7 @@ Huawei LiteOS 系统中的动态内存管理模块为用户提供下面几种功
 | 分析内存池状态             | `LOS_MemStatisticsGet`     | 获取指定内存池的统计信息                                         |
 | 查看内存池中最大可用空闲块 | `LOS_MemGetMaxFreeBlkSize` | 获取指定内存池的最大可用空闲块                                   |
 
-### DLINK开发流程
+#### DLINK开发流程
 
 1.  配置：
 
@@ -110,11 +124,15 @@ Huawei LiteOS 系统中的动态内存管理模块为用户提供下面几种功
 
 EndNode 作为内存池末尾的节点，size 为 0。 
 
+![](./pic/mem-init.png)
+
 3.  申请任意大小的动态内存 `LOS_MemAlloc`。
 
 判断动态内存池中是否存在申请量大小的空间，若存在，则划出一块内存块，以指针形式返回，若不存在，返回 NULL。  
 
 调用三次 `LOS_MemAlloc` 函数可以创建三个节点,假设名称分别为 UsedA，UsedB，UsedC，大小分别为 sizeA，sizeB，sizeC。因为刚初始化内存池的时候只有一个大的 FreeNode，所以这些内存块是从这个 FreeNode 中切割出来的。 
+
+![](./pic/mem-alloc.png)
 
 当内存池中存在多个 FreeNode 的时候进行 `malloc`，将会适配最合适大小的 FreeNode 用来新建内存块，减少内存碎片。若新建的内存块不等于被使用的FreeNode 的大小，则在新建内存块后，多余的内存又会被标记为一个新的 FreeNode。 
 
@@ -124,7 +142,9 @@ EndNode 作为内存池末尾的节点，size 为 0。
 
 假设调用 `LOS_MemFree` 释放内存块UsedB，则会回收内存块 UsedB，并且将其标记为 FreeNode。 
 
-### BEST LITTLE开发流程
+![](./pic/mem-free.png)
+
+#### BEST LITTLE开发流程
 
 1. 配置：
 
@@ -154,7 +174,7 @@ EndNode 作为内存池末尾的节点，size 为 0。
 
 调用 `LOS_MemFree` 函数向指定的动态内存池释放指定的内存块，释放时会先判断该内存块是否属于 SLAB CLASS，若属于，则将该内存块还回 SLAB CLASS。否则，向堆内存空间释放内存块。在向堆内存空间释放时，会存在内存块的合并。  
 
-## 注意事项
+### 注意事项
 
 - 由于系统中动态内存管理需要消耗管理控制块结构的内存，故实际用户可使用空间总量小于在配置文件 `los_config.h` 中配置项 `OS_SYS_MEM_SIZE` 的大小。  
 
@@ -164,7 +184,7 @@ EndNode 作为内存池末尾的节点，size 为 0。
 
 - 系统中多次调用 `LOS_MemFree` 时，第一次会返回成功，但对同一块内存进行多次重复释放会导致非法指针操作，导致结果不可预知。  
 
-## 编程实例
+### 编程实例
 
 Huawei LiteOS运行期间，用户需要频繁的使用内存资源，而内存资源有限，必须确保将有限的内存资源分配给急需的程序，同时释放不用的内存。  
 
@@ -233,5 +253,143 @@ UINT32 Example_Dyn_Mem(VOID)
 }  
 ```
 
-### 结果验证  
+#### 结果验证  
 结果显示  
+
+![](./pic/mem-dynamic-output.png)
+
+
+## 静态内存
+
+### 开发指导
+
+#### 使用场景
+
+当用户需要使用固定长度的内存时，可以使用静态内存分配的方式获取内存，一旦使用完毕，通过静态内存释放函数归还所占用内存，使之可以重复使用。  
+
+#### 功能  
+
+Huawei LiteOS的静态内存管理主要为用户提供以下功能。  
+
+| 功能分类            | 接口名                   | 描述                                                     |
+|--------------------|--------------------------|----------------------------------------------------------|
+| 初始化静态内存      | LOS\_MemboxInit          | 初始化一个静态内存池，设定其起始地址、总大小及每个块大小      |
+| 清除静态内存内容    | LOS\_MemboxClr           | 清零静态内存块                                            |
+| 申请一块静态内存    | LOS\_MemboxAlloc         | 申请一块静态内存块                                         |
+| 释放内存           | LOS\_MemboxFree          | 释放一个静态内存块                                         |
+| 分析静态内存池状态  | LOS\_MemboxStatisticsGet | 获取静态内存池的统计信息                                   |
+
+#### 开发流程  
+
+本节介绍使用静态内存的典型场景开发流程。  
+
+1.  规划一片内存区域作为静态内存池。    
+
+2.  调用LOS\_MemboxInit接口。    
+
+	系统内部将会初始化静态内存池。将入参指定的内存区域分割为N块（N值取决于静态内存总大小和块大小），将所有内存块挂到空闲链表，在内存起始处放置控制头。  
+
+3.  调用LOS\_MemboxAlloc接口。  
+
+	系统内部将会从空闲链表中获取第一个空闲块，并返回该块的用户空间地址。  
+
+4.  调用LOS\_MemboxFree接口。  
+
+	将该块内存加入空闲块链表。  
+
+5.  调用LOS\_MemboxClr接口。  
+
+	系统内部清零静态内存块，将入参地址对应的内存块清零。  
+
+#### 平台差异性  
+
+无。  
+
+### 注意事项  
+
+- 静态内存池区域，可以通过定义全局数组或调用动态内存分配接口方式获取。如果使用动态内存分配方式，在不需要静态内存池时，注意要释放该段内存，避免内存泄露。  
+
+### 编程实例  
+
+#### 实例描述  
+
+Huawei LiteOS运行期间，用户需要频繁的使用内存资源，而内存资源有限，必须确保将有限的内存资源分配给急需的程序，同时释放不用的内存。
+
+通过内存管理模块可以保证正确且高效的申请释放内存。  
+
+本实例执行以下步骤：  
+
+1.  初始化一个静态内存池。  
+
+2.  从静态内存池中申请一块静态内存。  
+
+3.  使用这块内存块存放一个数据。  
+
+4.  打印出存放在内存块中的数据。  
+
+5.  清除内存块中的数据。  
+
+6.  释放掉这块内存。  
+
+#### 编程实例  
+```c  
+UINT32 Example_StaticMem(VOID) 
+{
+    UINT32 *p_num = NULL;
+    UINT32 uwBlkSize = 3, uwBoxSize = 48;
+    UINT32 uwRet;
+    
+    uwRet = LOS_MemboxInit( &pBoxMem[0], uwBoxSize, uwBlkSize);
+    if(uwRet != LOS_OK)
+    {
+        dprintf("Mem box init failed\n");//内存池初始化失败！
+        return LOS_NOK;
+    }
+    else
+    {
+        dprintf("Mem box init ok!\n");//内存池初始化成功！
+    }
+    
+    /*申请内存块*/
+    p_num = (UINT32*)LOS_MemboxAlloc(pBoxMem);
+    if (NULL == p_num) 
+    {
+        dprintf("Mem box alloc failed!\n");//内存分配失败！
+        return LOS_NOK;
+    }
+    dprintf("Mem box alloc ok\n");
+    /*赋值*/
+    *p_num = 828;
+    dprintf("*p_num = %d\n", *p_num);
+     /*清除内存内容*/
+     LOS_MemboxClr(pBoxMem, p_num);
+     dprintf("clear data ok\n *p_num = %d\n", *p_num);//清除内存成功！
+    /*释放内存*/
+    uwRet = LOS_MemboxFree(pBoxMem, p_num);
+    if (LOS_OK == uwRet)
+    {
+        dprintf("Mem box free ok!\n");//内存释放成功！
+        uwRet = LOS_InspectStatusSetByID(LOS_INSPECT_SMEM,LOS_INSPECT_STU_SUCCESS);
+        if (LOS_OK != uwRet)  
+        {
+            dprintf("Set Inspect Status Err\n");
+        }
+    }
+    else
+    {
+        dprintf("Mem box free failed!\n");//内存释放失败！
+        uwRet = LOS_InspectStatusSetByID(LOS_INSPECT_SMEM,LOS_INSPECT_STU_ERROR);
+        if (LOS_OK != uwRet)  
+        {
+            dprintf("Set Inspect Status Err\n");
+        }
+    }
+    
+    return LOS_OK;
+}  
+```  
+
+#### 结果验证  
+
+结果显示   
+![](./pic/mem-static-output.png)
