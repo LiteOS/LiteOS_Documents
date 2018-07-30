@@ -8,7 +8,8 @@ module.exports = {
     "/en/": {
       lang: "en-US",
       title: "Huawei LiteOS | English Site",
-      description: "A Lightweight IoT Operating System that Makes Everything Around Us Smart"
+      description:
+        "A Lightweight IoT Operating System that Makes Everything Around Us Smart"
     }
   },
   themeConfig: {
@@ -23,112 +24,100 @@ module.exports = {
         editLinkText: "在 GitHub 上编辑此页",
         lastUpdated: "上次更新",
         algolia: {},
-        nav: [{
-            text: "学习",
-            items: [{
-              text: "快速入门",
-              link: "/quick-start/"
-            }, {
-              text: "内核手册",
-              link: "/kernel/"
-            }, {
-              text: "组件指南",
-              link: "/sdk/"
-            }, {
-              text: "系统移植",
-              link: "/porting/"
-            }]
-          },
+        nav: [
           {
-            text: "生态",
-            text: "教程",
-            items: [{
-                text: "手把手教程",
-                items: [{
-                  text: "NB-IoT@LiteOS 应用开发",
-                  link: "/step-by-step/nb-iot/"
-                },{
-                  text: "ESP8266@LiteOS 应用开发",
-                  link: "/step-by-step/esp8266/"
-                }]
+            text: "学习",
+            items: [
+              {
+                text: "快速入门",
+                link: "/quick-start/"
               },
               {
-                text: "对接第三方 IoT 平台",
-                items: [{
-                  text: "中移动 OneNet 云平台",
-                  link: "/connect-to-cloud/onenet/"
-                },{
-                  text: "阿里云 IoT 平台",
-                  link: "/connect-to-cloud/aliyun/"
-                }]
+                text: "内核手册",
+                link: "/kernel/"
               },
               {
-                text: "高级应用专题",
-                items: [{
-                  text: "NB-IoT OpenCPU 开发",
-                  link: "/opencpu/"
-                }, {
-                  text: "钛云物联 All-in-Java 开发",
-                  link: "/all-in-java/"
-                }, {
-                  text: "MapleJS 智能家开发",
-                  link: "/maplejs/"
-                }]
+                text: "组件指南",
+                link: "/sdk/"
+              },
+              {
+                text: "系统移植",
+                link: "/porting/"
               }
             ]
-              text: "内核实战",
-              link: "/tutorials/kernel/"
-            }, {
-              text: "场景例程",
-              link: "/tutorials/scene/"
-            }, {
-              text: "端到端开发",
-              link: "/step-by-step/nb-iot/"
-            }]
+          },
+          {
+            text: "教程",
+            items: [
+              {
+                text: "内核实战",
+                link: "/tutorials/kernel/"
+              },
+              {
+                text: "场景例程",
+                link: "/tutorials/scene/"
+              },
+              {
+                text: "端到端开发",
+                link: "/step-by-step/nb-iot/"
+              }
+            ]
           },
           {
             text: "生态",
-            items: [{
-              text: "对接中移动 OneNet 云平台",
-              link: "/connect-to-cloud/onenet/"
-            }, {
-              text: "钛云物联 All-in-Java 开发",
-              link: "/all-in-java/"
-            }]
+            items: [
+              {
+                text: "对接中移动 OneNet 云平台",
+                link: "/connect-to-cloud/onenet/"
+              },
+              {
+                text: "钛云物联 All-in-Java 开发",
+                link: "/all-in-java/"
+              }
+            ]
           },
           {
             text: "活动",
-            items: [{
-              text: "2018 华为开发者大赛",
-              link: "http://developer.huawei.com/ict/cn/hdc/"
-            }]
+            items: [
+              {
+                text: "2018 华为开发者大赛",
+                link: "http://developer.huawei.com/ict/cn/hdc/"
+              }
+            ]
           }
         ],
         sidebar: {
-          "/quick-start/": [{
-            title: "入门",
-            collapsable: true,
-            children: [
-              "",
-              "./terminology",
-              "./why-use-the-rtos",
-              "./why-select-huawei-liteos"
-            ]
-          }, {
-            title: "快速上手",
-            collapsable: true,
-            children: [
-              "./a-simple-blink-demo",
-              "./a-comprehensive-smoke-demo"
-            ]
-          }, {
-            title: "参与贡献",
-            collapsable: true,
-            children: [
-              "./write-standard"
-            ]
-          }],
-          "/kernel/": [{
+          "/quick-start/": [
+            {
+              title: "入门",
+              collapsable: true,
+              children: [
+                "",
+                "./terminology",
+                "./why-use-the-rtos",
+                "./why-select-huawei-liteos"
+              ]
+            },
+            {
+              title: "快速上手",
+              collapsable: true,
+              children: [
+                "./a-simple-blink-demo",
+                "./a-comprehensive-smoke-demo"
+              ]
+            },
+            {
+              title: "参与贡献",
+              collapsable: true,
+              children: [
+                "./write-standard",
+                "./code-standard",
+                "./contribute-guide"
+              ]
+            }
+          ],
+          "/kernel/": [
+            {
               title: "内核",
               collapsable: false,
               children: [""]
@@ -150,31 +139,33 @@ module.exports = {
               ]
             },
             {
-              title: '错误码参考',
+              title: "错误码参考",
               collapsable: false,
               children: [
-                './errorcode-task',
-                './errorcode-queue',
-                './errorcode-event',
-                './errorcode-mutex',
-                './errorcode-semaphore',
-                './errorcode-swtmr',
+                "./errorcode-task",
+                "./errorcode-queue",
+                "./errorcode-event",
+                "./errorcode-mutex",
+                "./errorcode-semaphore",
+                "./errorcode-swtmr"
               ]
             }
           ],
-          "/components/": [{
-            title: "组件",
-            collapsable: false,
-            children: [
-              "",
-              "./oceanconnect-agenttiny",
-              './fota',
-              './at-adaptor-framework',
-              './maplejs',
-              './sensors-framework'
-            ]
-          }],
-          "/porting/": [{
+          "/components/": [
+            {
+              title: "组件",
+              collapsable: false,
+              children: [
+                "",
+                "./oceanconnect-agenttiny",
+                "./fota",
+                "./at-adaptor-framework",
+                "./sensors-framework"
+              ]
+            }
+          ],
+          "/porting/": [
+            {
               title: "准备工作",
               collapsable: false,
               children: [
@@ -182,7 +173,7 @@ module.exports = {
                 "./evb-and-tools",
                 "./raw-project-with-stm32cube",
                 //"./raw-project-with-others",
-                "./liteos-source-code",
+                "./liteos-source-code"
               ]
             },
             {
@@ -190,27 +181,20 @@ module.exports = {
               collapsable: false,
               children: [
                 "./stm32",
-                //"./nxp", 
-                //"./gd32", 
+                //"./nxp",
+                //"./gd32",
                 "./faq"
               ]
             },
             {
               title: "移植后验证",
               collapsable: false,
-              children: [
-                "./inspect-example",
-                "./inspect-results"
-              ]
+              children: ["./inspect-example", "./inspect-results"]
             },
             {
               title: "附1：开发工具安装手册",
               collapsable: false,
-              children: [
-                "./keil",
-                "./iar",
-                "./gcc-sw4stm32"
-              ]
+              children: ["./keil", "./iar", "./gcc-sw4stm32"]
             },
             {
               title: "附2：OS_CONFIG 系统配置详解",
@@ -218,11 +202,7 @@ module.exports = {
               children: ["./os-config"]
             }
           ],
-          "/tutorials/": [{
-              title: "教程",
-              collapsable: false,
-              children: [""]
-            },
+          "/tutorials/kernel": [
             {
               title: "内核例程",
               collapsable: true,
@@ -238,20 +218,22 @@ module.exports = {
                 "./example09",
                 "./example10"
               ]
-            },
+            }
+          ],
+          "/tutorials/scene": [
             {
               title: "综合例程",
               collapsable: true,
               children: [
-                "./temp-hum",
-                "./smoke",
-                "./gps",
-                "./light",
+                "./temp-hum", 
+                "./smoke", 
+                "./gps", 
+                "./light", 
                 "./wifi"
               ]
             }
           ],
-          "/case-study/": [{
+          "/case/": [{
             title: "案例",
             collapsable: false,
             children: [
@@ -263,7 +245,8 @@ module.exports = {
               "./track"
             ]
           }],
-          "/step-by-step/nb-iot/": [{
+          "/step-by-step/nb-iot/": [
+            {
               title: "手把手教程",
               collapsable: false,
               children: [""]
@@ -341,7 +324,8 @@ module.exports = {
         label: "English",
         editLinkText: "Edit this page on GitHub",
         algolia: {},
-        nav: [{
+        nav: [
+          {
             text: "Getting Started",
             link: "/en/getting-started"
           },
@@ -351,14 +335,15 @@ module.exports = {
           }
         ],
         sidebar: {
-          "/en/kernel/": [{
+          "/en/kernel/": [
+            {
               title: "Guide",
               collapsable: false,
               children: ["./"]
             },
             {
               title: "Kernel",
-              collapsable: true,
+              collapsable: false,
               children: [
                 "./task",
                 "./memory",
