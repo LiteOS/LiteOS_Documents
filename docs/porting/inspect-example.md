@@ -4,11 +4,11 @@
 
 ## 添加 example 测试代码
 
-![](./image/raw-project-group-example.png)
+![](./pic/raw-project-group-example.png)
 
 也不要忘记头文件路径导入
 
-![](./image/raw-project-example-path.png)
+![](./pic/raw-project-example-path.png)
 
 ## 修改 main.c 文件
 

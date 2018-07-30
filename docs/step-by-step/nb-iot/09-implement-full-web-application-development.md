@@ -4,33 +4,33 @@
 
 1)	Install request module
 
-![](./image/nodejs-install-request-mod.png)
+![](./pic/nodejs-install-request-mod.png)
 
-![](./image/nodejs-package-request.png)
+![](./pic/nodejs-package-request.png)
 
 2)	Create a directory named iotplatform, and ssl subdirectory of iotplatform
 
-![](./image/nodejs-auth-ssl.png)
+![](./pic/nodejs-auth-ssl.png)
 
 3)	Unzip client.crt and client.key in the ssl directory
 
-![](./image/nodejs-client-key-files.png)
+![](./pic/nodejs-client-key-files.png)
 
 4)	Add conf.js for configuration to IoT platform
 
 There are params come from IoT Developer Portal
 
-![](./image/nodejs-code-default-conf.png)
+![](./pic/nodejs-code-default-conf.png)
 
-![](./image/oceanconnect-application-details.png)
+![](./pic/oceanconnect-application-details.png)
 
 5)	Add auth.js file, which is used to connect IoT Platform and get accessToken.
 
-![](./image/nodejs-code-auth-fetch-access-token.png)
+![](./pic/nodejs-code-auth-fetch-access-token.png)
 
 When you run “npm start”, you can get the accesToken as followed:
 
-![](./image/nodejs-auth-fetch-access-token.png)
+![](./pic/nodejs-auth-fetch-access-token.png)
 
 6)	Add dm.js file, which is used to register device.
 
@@ -42,9 +42,9 @@ http://developer.huawei.com/ict/en/doc/site-oceanconnect-northbound_api_referenc
 
 You can look through this page above and build a request message.
 
-![](./image/huawei-developer-oceanconnect-north-api-reg.png)
+![](./pic/huawei-developer-oceanconnect-north-api-reg.png)
 
-![](./image/nodejs-code-device-register.png)
+![](./pic/nodejs-code-device-register.png)
 
 2)	Access delete device and implementing unbind device function
 
@@ -52,9 +52,9 @@ http://developer.huawei.com/ict/en/doc/site-oceanconnect-northbound_api_referenc
 
 You can look through this page above and build a request message.
 
-![](./image/huawei-developer-oceanconnect-north-api-delete.png)
+![](./pic/huawei-developer-oceanconnect-north-api-delete.png)
 
-![](./image/nodejs-code-device-delete.png)
+![](./pic/nodejs-code-device-delete.png)
 
 ## 9.3	Implementing query history data of device
 
@@ -62,21 +62,21 @@ http://developer.huawei.com/ict/en/doc/site-oceanconnect-northbound_api_referenc
 
 You can look through this page above and build a request message.
 
-![](./image/huawei-developer-oceanconnect-north-api-query.png)
+![](./pic/huawei-developer-oceanconnect-north-api-query.png)
 
-![](./image/nodejs-code-device-query.png)
+![](./pic/nodejs-code-device-query.png)
 
 When we register a new device, the IoT platform don’t know which type you have. So we have to access “modifying device information” openAPI to tell the platform which type you have.
 
-![](./image/nodejs-code-define-device-info.png)
+![](./pic/nodejs-code-define-device-info.png)
 
 http://developer.huawei.com/ict/en/doc/site-oceanconnect-northbound_api_reference-en/index.html/en-us_topic_0103207033
 
 You can look through this page above and build a request message.
 
-![](./image/huawei-developer-oceanconnect-north-api-update.png)
+![](./pic/huawei-developer-oceanconnect-north-api-update.png)
 
-![](./image/nodejs-code-device-update.png)
+![](./pic/nodejs-code-device-update.png)
 
 Finally, we finish bind/unbind/query router function.
 
@@ -90,27 +90,27 @@ Finally, we finish bind/unbind/query router function.
 
 -	Bind a new device
 
-![](./image/nodejs-code-device-bind.png)
+![](./pic/nodejs-code-device-bind.png)
 
 -	Unbind a device
 
-![](./image/nodejs-code-device-unbind.png)
+![](./pic/nodejs-code-device-unbind.png)
 
 -	Get device history data
 
-![](./image/nodejs-code-device-list.png)
+![](./pic/nodejs-code-device-list.png)
 
 2)	Using Postman to verity the functions
 
-![](./image/postman-device-bind-post.png)
+![](./pic/postman-device-bind-post.png)
 
-![](./image/postman-device-bind-result.png)
+![](./pic/postman-device-bind-result.png)
 
-![](./image/postman-device-query-get.png)
+![](./pic/postman-device-query-get.png)
 
-![](./image/postman-device-query-result.png)
+![](./pic/postman-device-query-result.png)
 
 ::: warning
 If you create a new device, there is no data report of the device. So you’d better use the simulator in the developer portal. You could find it as followed:
-![](./image/postman-device-query-no-data.png)
+![](./pic/postman-device-query-no-data.png)
 :::

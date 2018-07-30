@@ -4,4 +4,4 @@
 
 为避免 OS 申请内存异常，需要编辑 `target_config.h`，将内存设置为当前芯片 SRAM 大小。
 
-![](./image/osconfig-borad-sram-size.png)
+![](./pic/osconfig-borad-sram-size.png)
