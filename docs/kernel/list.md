@@ -1,5 +1,7 @@
 # 双向链表
 
+[[toc]]  
+
 ## 概述
 
 ### 基本概念
@@ -108,10 +110,10 @@ static UINT32 DLlist_sample(VOID)
 ```
 
 编译运行得到的结果为：   
-```
+```c
 Initial head 
 Add DLlistNode01 success 
 Tail insert DLlistNode02 success 
 Head insert DLlistNode03 success 
 Delete success  
-```  
+```    

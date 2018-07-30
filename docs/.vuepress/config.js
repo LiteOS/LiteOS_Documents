@@ -40,8 +40,42 @@ module.exports = {
             }]
           },
           {
+            text: "生态",
             text: "教程",
             items: [{
+                text: "手把手教程",
+                items: [{
+                  text: "NB-IoT@LiteOS 应用开发",
+                  link: "/step-by-step/nb-iot/"
+                },{
+                  text: "ESP8266@LiteOS 应用开发",
+                  link: "/step-by-step/esp8266/"
+                }]
+              },
+              {
+                text: "对接第三方 IoT 平台",
+                items: [{
+                  text: "中移动 OneNet 云平台",
+                  link: "/connect-to-cloud/onenet/"
+                },{
+                  text: "阿里云 IoT 平台",
+                  link: "/connect-to-cloud/aliyun/"
+                }]
+              },
+              {
+                text: "高级应用专题",
+                items: [{
+                  text: "NB-IoT OpenCPU 开发",
+                  link: "/opencpu/"
+                }, {
+                  text: "钛云物联 All-in-Java 开发",
+                  link: "/all-in-java/"
+                }, {
+                  text: "MapleJS 智能家开发",
+                  link: "/maplejs/"
+                }]
+              }
+            ]
               text: "内核实战",
               link: "/tutorials/kernel/"
             }, {
@@ -100,8 +134,8 @@ module.exports = {
               children: [""]
             },
             {
-              title: "基础",
-              collapsable: true,
+              title: "基础内核功能",
+              collapsable: false,
               children: [
                 "./task",
                 "./memory",
@@ -116,14 +150,16 @@ module.exports = {
               ]
             },
             {
-              title: "扩展",
-              collapsable: true,
-              children: ["./low-power"]
-            },
-            {
-              title: "调试指南",
-              collapsable: true,
-              children: ["./faq"]
+              title: '错误码参考',
+              collapsable: false,
+              children: [
+                './errorcode-task',
+                './errorcode-queue',
+                './errorcode-event',
+                './errorcode-mutex',
+                './errorcode-semaphore',
+                './errorcode-swtmr',
+              ]
             }
           ],
           "/components/": [{
@@ -322,7 +358,7 @@ module.exports = {
             },
             {
               title: "Kernel",
-              collapsable: false,
+              collapsable: true,
               children: [
                 "./task",
                 "./memory",
