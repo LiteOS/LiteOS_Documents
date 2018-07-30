@@ -1,8 +1,8 @@
 # 程序下载与调试工具
 
-要想学好 RTOS，首先需要准备一套嵌入式开发实验平台，即开发板（也叫评估板，测试板等）。如果开发者手头上有华为官方推荐的[开发板](https://github.com/LiteOS/LiteOS_Partner_Development_Kits)，则可以直接使用移植好的编译工程。如果您手头上开发板没有对应的编译工程，则需要进行 OS 移植。
+要想学好 RTOS，首先需要准备一套嵌入式开发实验平台，即开发板（也叫评估板，测试板，学习板等等）。如果开发者手头上有华为官方推荐的[开发板](https://github.com/LiteOS/LiteOS_Partner_Development_Kits)，则可以直接使用移植好的编译工程。如果您手头上开发板没有对应的编译工程，则需要进行 OS 移植。
 
-我们这里将手把手指导开发者进行 Huawei LiteOS 移植，如果大家在移植过程中遇到任何问题都可以去 [华为开发者论坛](http://developer.huawei.com/ict/forum/forum.php?mod=forumdisplay&fid=400045) 中发帖，我们的工程师 GG 们会尽力帮助大家解决。
+我们这里将手把手指导开发者进行 Huawei LiteOS 移植，如果大家在移植过程中遇到问题可以前往 [华为开发者论坛](http://developer.huawei.com/ict/forum/forum.php?mod=forumdisplay&fid=400045) 中发帖，我们的工程师 GG 们会尽力帮助大家解决。
 
 ## 硬件准备
 
@@ -16,6 +16,8 @@ Huawei LiteOS 目前已经成功适配了数十款基于 ARM Cortex 内核的开
 
 ::: tip 提示
 此套 Huawei LiteOS 移植教程是兼容全系列 STM32 芯片的，不要求读者选择同款开发板。您只需要有一套类似开发板（内存不小于 8K，Flash 不小于 20K）都可以进行 OS 移植。
+
+选择该板的原因也是因为它并不在我们默认支持的[合作伙伴开发板列表](https://github.com/LiteOS/LiteOS_Partner_Development_Kits)中。
 :::
 
 ### 下载器/仿真器

@@ -77,7 +77,7 @@ ST 先后提供了两套固件库：**标准库** 和 **HAL 库**。STM32 芯片
 
 ![](./image/stm32cube-mcu-selector.png)
 
-2. 进入工程后打开 RCC 选项，选择 `Crystal/Ceramic Resonator`，即使用外部晶振作为 HSE 的时钟源。
+2. 进入工程后打开 RCC 选项，使能 High Speed Clock (HSE) `Crystal/Ceramic Resonator`，即使用外部晶振作为 HSE 的时钟源。
 
 ![](./image/stm32cube-pinout-rcc.png)
 
@@ -128,6 +128,12 @@ ST 先后提供了两套固件库：**标准库** 和 **HAL 库**。STM32 芯片
 为便于外设相关代码维护，建议将下面的选项勾中。
 
 ![](./image/stm32cube-settings-code-generator.png)
+
+::: danger 重要
+导出代码之前，请务必在 NVIC 配置选项中将 `Pendable request for system service` 和 `Time base: System tick timer` 默认勾选取消。
+
+![](./image/stm32cube-nvic-no-systick.png)
+:::
 
 最后选择菜单栏上 `Project` -> `Generate Code` 或点击下图齿轮按钮，STM32Cube 会自动导出裸机工程。
 

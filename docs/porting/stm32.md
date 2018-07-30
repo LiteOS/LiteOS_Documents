@@ -60,14 +60,14 @@ kernel 需要添加的文件比较多：
 
 ![](./image/raw-project-osconfig-path.png)
 
-再次编译代码，提示只剩下两个错误了。
+再次编译代码应该就没有告警和错误了。
 
 ![](./image/raw-project-error-multiply-defined.png)
 
-我们打开 `stm32f1xx_it.c` 文件，将冲突的两个函数屏蔽掉。
+如果编译后还发现上图中的两个错误，请按照下图显示进行操作。
 
-![](./image/raw-project-error-recovery.png)
+![](./image/stm32cube-nvic-no-systick.png)
 
-### 编译成功，OS 移植完成
+### 编译无误，OS 移植大功告成
 
 ![](./image/raw-project-compile-ok.png)
