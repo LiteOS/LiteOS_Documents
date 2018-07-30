@@ -8,7 +8,7 @@ Huawei LiteOS 自开源社区发布以来，围绕 NB-IoT 物联网市场从技�
 
 Huawei LiteOS 是轻量级的实时操作系统，是华为IOT OS。
 
-<img :src="$withBase('/basic-arch.png')" alt="基本框图">
+![](./pic/overview-arch.png)
 
 Huawei LiteOS 基础内核是最精简的 Huawei LiteOS 操作系统代码，包括**任务管理、内存管理、时间管理、通信机制、中断管理、队列管理、事件管理、定时器**等操作系统基础组件，可以单独运行。
 
