@@ -77,6 +77,10 @@ Huawei LiteOS系统中的时间管理主要提供以下两种功能：
 
 2.  时间统计和时间延迟：统计每秒的 Cycle 数、Tick 数和延迟后的 Tick 数。  
 
+::: tip 说明
+示例中系统时钟频率为80MHZ。  
+:::  
+
 ### 编程示例
 
 前提条件：
@@ -147,4 +151,7 @@ UINT32 Example_GetTick(VOID)
 ```
 
 ### 结果验证    
-编译运行得到的结果为：
+
+编译运行得到的结果为：  
+
+![](./pic/timemgr-output.png)  
