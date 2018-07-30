@@ -1,5 +1,7 @@
 # 事件
 
+[[toc]]
+
 ## 概述
 
 ### 基本概念
@@ -56,7 +58,9 @@ typedef struct tagEvent
 
 清除事件时，根据入参事件和待清除的事件类型，对事件对应位进行清0操作。  
 
-事件唤醒任务示意图
+事件唤醒任务示意图  
+
+![](./pic/event-wakeup.png)  
 
 ## 开发指导
 
@@ -69,12 +73,12 @@ typedef struct tagEvent
 Huawei LiteOS系统中的事件模块为用户提供下面几个接口。
 
 | 功能分类     | 接口名            | 描述                                                                     |
-|--------------|-------------------|--------------------------------------------------------------------------|
+|--------------|-------------------|-------------------------------------------------------------------------|
 | 事件初始化   | `LOS_EventInit`    | 初始化一个事件控制块                                                     |
-| 读事件       | `LOS_EventRead`    | 读取指定事件类型，超时时间为相对时间：单位为Tick                         |
-| 写事件       | `LOS_EventWrite`   | 写指定的事件类型                                                         |
+| 读事件       | `LOS_EventRead`    | 读取指定事件类型，超时时间为相对时间：单位为Tick                           |
+| 写事件       | `LOS_EventWrite`   | 写指定的事件类型                                                        |
 | 清除事件     | `LOS_EventClear`   | 清除指定的事件类型                                                       |
-| 校验事件掩码 | `LOS_EventPoll`    | 根据用户传入的事件值、事件掩码及校验模式，返回用户传入的事件是否符合预期 |
+| 校验事件掩码 | `LOS_EventPoll`    | 根据用户传入的事件值、事件掩码及校验模式，返回用户传入的事件是否符合预期      |
 | 销毁事件     | `LOS_EventDestroy` | 销毁指定的事件控制块                                                     |
 
 ### 开发流程
@@ -88,36 +92,6 @@ Huawei LiteOS系统中的事件模块为用户提供下面几个接口。
 3.  读事件 `LOS_EventRead`，可以选择读取模式。  
 
 4.  清除事件 `LOS_EventClear`，清除指定的事件类型。
-
-### Event错误码
-
-对事件存在失败的可能性操作，包括事件初始化，事件销毁，事件读写，时间清除。
-
-| 序号 | 定义                                   | 实际值     | 描述                                                     | 参考解决方案             |
-|------|----------------------------------------|------------|----------------------------------------------------------|--------------------------|
-| 1    | `LOS_ERRNO_EVENT_SETBIT_INVALID`     | 0x02001c00 | 事件ID的第25个bit不能设置为1，因为该位已经作为错误码使用 | 事件ID的第25bit置为0     |
-| 2    | `LOS_ERRNO_EVENT_READ_TIMEOUT`       | 0x02001c01 | 读超时                                                   | 增加等待时间或者重新读取 |
-| 3    | `LOS_ERRNO_EVENT_EVENTMASK_INVALID`  | 0x02001c02 | 入参的事件ID是无效的                                     | 传入有效的事件ID参数     |
-| 4    | `LOS_ERRNO_EVENT_READ_IN_INTERRUPT` | 0x02001c03 | 在中断中读取事件                                         | 启动新的任务来获取事件   |
-| 5    | `LOS_ERRNO_EVENT_FLAGS_INVALID`      | 0x02001c04 | 读取事件的mode无效                                       | 传入有效的mode参数       |
-| 6    | `LOS_ERRNO_EVENT_READ_IN_LOCK`      | 0x02001c05 | 任务锁住，不能读取事件                                   | 解锁任务，再读取事件     |
-| 7    | `LOS_ERRNO_EVENT_PTR_NULL`           | 0x02001c06 | 传入的参数为空指针                                       | 传入非空入参             |
-
-**错误码定义：** 错误码是一个32位的存储单元，31~24位表示错误等级，23~16位表示错误码标志，15~8位代表错误码所属模块，7~0位表示错误码序号，如下
-```c   
-#define LOS_ERRNO_OS_ERROR(MID, ERRNO)  
-(LOS_ERRTYPE_ERROR | LOS_ERRNO_OS_ID | ((UINT32)(MID) << 8) | (ERRNO))
-LOS_ERRTYPE_ERROR：Define critical OS errors
-LOS_ERRNO_OS_ID：OS error code flag
-MID：OS_MOUDLE_ID
-LOS_MOD_EVENT：Event module ID
-ERRNO：error ID number  
-```  
-
-例如：  
-```c 
-#define LOS_ERRNO_EVENT_READ_IN_LOCK  LOS_ERRNO_OS_ERROR(LOS_MOD_EVENT, 0x05)  
-```  
 
 ## 注意事项
 
@@ -242,3 +216,4 @@ UINT32 Example_SndRcvEvent(VOID)
 ### 结果验证
 
 编译运行得到的结果为：  
+![](./pic/event-output.png)  
