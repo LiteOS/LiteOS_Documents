@@ -172,7 +172,7 @@ module.exports = {
                 "",
                 "./evb-and-tools",
                 "./raw-project-with-stm32cube",
-                //"./raw-project-with-others",
+                "./raw-project-with-others",
                 "./liteos-source-code"
               ]
             },
@@ -181,8 +181,8 @@ module.exports = {
               collapsable: false,
               children: [
                 "./stm32",
-                //"./nxp",
-                //"./gd32",
+                "./nxp",
+                "./gd32",
                 "./faq"
               ]
             },
@@ -202,7 +202,7 @@ module.exports = {
               children: ["./os-config"]
             }
           ],
-          "/tutorials/kernel": [
+          "/tutorials/kernel/": [
             {
               title: "内核例程",
               collapsable: true,
@@ -220,7 +220,7 @@ module.exports = {
               ]
             }
           ],
-          "/tutorials/scene": [
+          "/tutorials/scene/": [
             {
               title: "综合例程",
               collapsable: true,

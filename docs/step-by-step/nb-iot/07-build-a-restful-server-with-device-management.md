@@ -4,7 +4,7 @@
 
 After we installed all helpers, we could write the code now. At first, we must understand the progress of between IoT platform and Our Web server. Look at this sequence diagram.
 
-![](./image/webapp-flowchart.png)
+![](./pic/webapp-flowchart.png)
 
 Follow the diagram, we can get design the Restful API for Front-End app
 
@@ -30,30 +30,30 @@ In order to implement the above API, we need access OpenAPIs of the Huawei IoT P
 
 1)	Install mongoose module which using visit MongoDB
 
-![](./image/nodejs-install-mongoose-mod.png)
+![](./pic/nodejs-install-mongoose-mod.png)
 
 Open package.json file, you can see mongoose has been auto-configuration.
 
-![](./image/nodejs-package-mongoose.png)
+![](./pic/nodejs-package-mongoose.png)
 
 2)	Open the project and add device.js file in the routes directory
 
-![](./image/nodejs-add-devices-route.png)
+![](./pic/nodejs-add-devices-route.png)
 
 3)	Add mongodb connect code and router code in the device.js
 
-![](./image/nodejs-edit-devices-route.png)
+![](./pic/nodejs-edit-devices-route.png)
 
 4)	Add two lines code in the app.js which response for load devices router module.
 
-![](./image/nodejs-app-insert-device-route.png)
+![](./pic/nodejs-app-insert-device-route.png)
 
 5)	Run “npm start” in server directory, if you see “MongoDB connected success”, it means the server connect MongoDB is OK.
 
-![](./image/nodejs-app-start.png)
+![](./pic/nodejs-app-start.png)
 
 6)	Open Google Chrome and browse http://localhost:3000/devices 
 
-![](./image/nodejs-app-devices-page.png)
+![](./pic/nodejs-app-devices-page.png)
 
 That it is. The web services is working.

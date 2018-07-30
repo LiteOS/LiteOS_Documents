@@ -8,13 +8,13 @@ LiteOS 开源代码路径：[https://github.com/LiteOS/LiteOS](https://github.co
 Huawei LiteOS 最新特性都存放在 develop 分支中，建议取该分支代码进行学习。
 :::
 
-![](./image/github-clone-liteos.png)
+![](./pic/github-clone-liteos.png)
 
 可以使用 [TortosieGit](https://tortoisegit.org/) 工具将代码 **克隆** 到本地
 
-![](./image/github-tortoisegit-clone.png)
+![](./pic/github-tortoisegit-clone.png)
 
-![](./image/github-tortoisegit-checkout-branch.png)
+![](./pic/github-tortoisegit-checkout-branch.png)
 
 也可以安装 [Git for Windows](https://gitforwindows.org/)，执行下面命令
 
@@ -24,7 +24,7 @@ git clone -b develop git@github.com:LiteOS/LiteOS.git
 ::: warning 警告
 如果是直接从 LiteOS 仓库 Checkout 出来的源码，是无法推送修改代码的。这时您需要维护一套自己的源代码，建议将 LiteOS 源码 Fork 到自己的本地仓库，然后进行维护。如果需要合入到 LiteOS 仓库，可以提交 Pull Request。LiteOS 仓库管理员审核后即会合入到主仓库。
 
-![](./image/github-fork-liteos.png)
+![](./pic/github-fork-liteos.png)
 :::
 
 ## 源码移植目录和文件
