@@ -1,0 +1,10 @@
+digraph G
+{
+  bgcolor="transparent";
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  Node1 [label="{LOS_HEAP_MANAGER\n|+ pstHead\l+ pstTail\l+ uwSize\l+ pNextPool\l+ stSlabCtrlHdr\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node2 -> Node1 [dir=back,color="darkorchid3",fontsize="10",style="dashed",label="pstHead\npstTail",arrowtail="open",fontname="FreeSans"];
+  Node2 [label="{LOS_HEAP_NODE\n|+ pstPrev\l+ uwSize\l+ uwUsed\l+ uwAlign\l+ ucData\l|}",height=0.2,width=0.4,color="black",URL="$a00013.html"];
+  Node2 -> Node2 [dir=back,color="darkorchid3",fontsize="10",style="dashed",label="pstPrev",arrowtail="open",fontname="FreeSans"];
+}

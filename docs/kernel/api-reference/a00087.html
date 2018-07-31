@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312" /> 
+  <title>los_memcheck.h源文件</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head>
+ <body> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top">   
+   <h1>los_memcheck.h</h1>
+   <a href="a00038.html">浏览该文件的文档。</a>
+   <div class="fragment">
+    <pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*----------------------------------------------------------------------------</span>
+<a name="l00002"></a>00002 <span class="comment"> *      Huawei - LiteOS</span>
+<a name="l00003"></a>00003 <span class="comment"> *----------------------------------------------------------------------------</span>
+<a name="l00004"></a>00004 <span class="comment"> *      Name:    LOS_MEMCHECK.H</span>
+<a name="l00005"></a>00005 <span class="comment"> *      Purpose: Memory check header file</span>
+<a name="l00006"></a>00006 <span class="comment"> *      Rev.:    V1.0.0</span>
+<a name="l00007"></a>00007 <span class="comment"> *----------------------------------------------------------------------------</span>
+<a name="l00008"></a>00008 <span class="comment"> *</span>
+<a name="l00009"></a>00009 <span class="comment"></span>
+<a name="l00010"></a>00010 <span class="comment"> * Copyright (c) 2014, Huawei Technologies Co., Ltd.</span>
+<a name="l00011"></a>00011 <span class="comment"> * All rights reserved.</span>
+<a name="l00012"></a>00012 <span class="comment"> * Permission to use, copy, modify, and distribute this software for any</span>
+<a name="l00013"></a>00013 <span class="comment"> * purpose with or without fee is hereby granted, provided that the above</span>
+<a name="l00014"></a>00014 <span class="comment"> * copyright notice and this permission notice appear in all copies.</span>
+<a name="l00015"></a>00015 <span class="comment"></span>
+<a name="l00016"></a>00016 <span class="comment"> *THE SOFTWARE IS PROVIDED &quot;AS IS&quot; AND THE AUTHOR DISCLAIMS ALL WARRANTIES</span>
+<a name="l00017"></a>00017 <span class="comment"> *WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF</span>
+<a name="l00018"></a>00018 <span class="comment"> *MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR</span>
+<a name="l00019"></a>00019 <span class="comment"> *ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES</span>
+<a name="l00020"></a>00020 <span class="comment"> *WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN</span>
+<a name="l00021"></a>00021 <span class="comment"> *ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF</span>
+<a name="l00022"></a>00022 <span class="comment"> *OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.</span>
+<a name="l00023"></a>00023 <span class="comment"> *----------------------------------------------------------------------------*/</span>
+<a name="l00024"></a>00024 <span class="preprocessor">#ifndef _LOS_MEMCHECK_H</span>
+<a name="l00025"></a>00025 <span class="preprocessor"></span><span class="preprocessor">#define _LOS_MEMCHECK_H</span>
+<a name="l00026"></a>00026 <span class="preprocessor"></span>
+<a name="l00027"></a>00027 <span class="preprocessor">#include &quot;<a class="code" href="a00027.html">los_base.h</a>&quot;</span>
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029 <span class="preprocessor">#ifdef __cplusplus</span>
+<a name="l00030"></a>00030 <span class="preprocessor"></span><span class="preprocessor">#if __cplusplus</span>
+<a name="l00031"></a>00031 <span class="preprocessor"></span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {
+<a name="l00032"></a>00032 <span class="preprocessor">#endif </span><span class="comment">/* __cpluscplus */</span>
+<a name="l00033"></a>00033 <span class="preprocessor">#endif </span><span class="comment">/* __cpluscplus */</span>
+<a name="l00034"></a>00034 
+<a name="l00035"></a><a class="code" href="a00038_3307d40b4252d143477be557b027679c.html#3307d40b4252d143477be557b027679c">00035</a> <span class="preprocessor">#define MEM_INFO_SIZE                   (sizeof(MEM_INFO) * OS_SYS_MEM_NUM + 4)</span>
+<a name="l00036"></a>00036 <span class="preprocessor"></span><span class="keyword">extern</span> <a class="code" href="a00048_b27e9918b538ce9d8ca692479b375b6a.html#b27e9918b538ce9d8ca692479b375b6a">UINT8</a> <a class="code" href="a00037_bb0fffa377f07654267940c8da966e5d.html#bb0fffa377f07654267940c8da966e5d">g_aucMemMang</a>[];
+<a name="l00037"></a>00037 
+<a name="l00038"></a><a class="code" href="a00038_44b7cf886d86d762e165b676ff5fc221.html#44b7cf886d86d762e165b676ff5fc221">00038</a> <span class="keyword">enum</span> <a class="code" href="a00038_44b7cf886d86d762e165b676ff5fc221.html#44b7cf886d86d762e165b676ff5fc221">_MEM_MANG_TYPE</a>
+<a name="l00039"></a>00039 {
+<a name="l00040"></a><a class="code" href="a00038_44b7cf886d86d762e165b676ff5fc221.html#44b7cf886d86d762e165b676ff5fc2216a05b9337c82c4470fe6908e69c694d2">00040</a>     <a class="code" href="a00038_44b7cf886d86d762e165b676ff5fc221.html#44b7cf886d86d762e165b676ff5fc2216a05b9337c82c4470fe6908e69c694d2">MEM_MANG_MEMBOX</a>,
+<a name="l00041"></a><a class="code" href="a00038_44b7cf886d86d762e165b676ff5fc221.html#44b7cf886d86d762e165b676ff5fc221ef022e85f30d29ed4624f95878b1f01e">00041</a>     <a class="code" href="a00038_44b7cf886d86d762e165b676ff5fc221.html#44b7cf886d86d762e165b676ff5fc221ef022e85f30d29ed4624f95878b1f01e">MEM_MANG_MEMORY</a>,
+<a name="l00042"></a><a class="code" href="a00038_44b7cf886d86d762e165b676ff5fc221.html#44b7cf886d86d762e165b676ff5fc221dce50a8acec903846a6784ec2f902b6f">00042</a>     <a class="code" href="a00038_44b7cf886d86d762e165b676ff5fc221.html#44b7cf886d86d762e165b676ff5fc221dce50a8acec903846a6784ec2f902b6f">MEM_MANG_EMPTY</a>,
+<a name="l00043"></a>00043 };
+<a name="l00044"></a>00044 
+<a name="l00045"></a><a class="code" href="a00038_009cf08cc393e8b8edefdfd042bd366c.html#009cf08cc393e8b8edefdfd042bd366c">00045</a> <span class="keyword">enum</span> <a class="code" href="a00038_009cf08cc393e8b8edefdfd042bd366c.html#009cf08cc393e8b8edefdfd042bd366c">_MEM_MANG_SOUCE</a>
+<a name="l00046"></a>00046 {
+<a name="l00047"></a><a class="code" href="a00038_009cf08cc393e8b8edefdfd042bd366c.html#009cf08cc393e8b8edefdfd042bd366c6221d4e35148bd3915c54522beb9cbcf">00047</a>     <a class="code" href="a00038_009cf08cc393e8b8edefdfd042bd366c.html#009cf08cc393e8b8edefdfd042bd366c6221d4e35148bd3915c54522beb9cbcf">MEM_MANG_UNUSED</a>,
+<a name="l00048"></a><a class="code" href="a00038_009cf08cc393e8b8edefdfd042bd366c.html#009cf08cc393e8b8edefdfd042bd366cd05319065798e7772c0cbe568d64b538">00048</a>     <a class="code" href="a00038_009cf08cc393e8b8edefdfd042bd366c.html#009cf08cc393e8b8edefdfd042bd366cd05319065798e7772c0cbe568d64b538">MEM_MANG_INIT</a>,
+<a name="l00049"></a><a class="code" href="a00038_009cf08cc393e8b8edefdfd042bd366c.html#009cf08cc393e8b8edefdfd042bd366cdd18b4e06561b788f8c5c89e4edc8c69">00049</a>     <a class="code" href="a00038_009cf08cc393e8b8edefdfd042bd366c.html#009cf08cc393e8b8edefdfd042bd366cdd18b4e06561b788f8c5c89e4edc8c69">MEM_MANG_INT</a>,
+<a name="l00050"></a><a class="code" href="a00038_009cf08cc393e8b8edefdfd042bd366c.html#009cf08cc393e8b8edefdfd042bd366c91706dcae6b0071ec2bbb49e925238c8">00050</a>     <a class="code" href="a00038_009cf08cc393e8b8edefdfd042bd366c.html#009cf08cc393e8b8edefdfd042bd366c91706dcae6b0071ec2bbb49e925238c8">MEM_MANG_TASK</a>,
+<a name="l00051"></a>00051 };
+<a name="l00052"></a>00052 
+<a name="l00053"></a><a class="code" href="a00003.html">00053</a> <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="a00003.html">_MEM_INFO</a>
+<a name="l00054"></a>00054 {
+<a name="l00055"></a><a class="code" href="a00003_d3bd7b24b7e84197e9c2e0b2651b9fc1.html#d3bd7b24b7e84197e9c2e0b2651b9fc1">00055</a>     <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00003_d3bd7b24b7e84197e9c2e0b2651b9fc1.html#d3bd7b24b7e84197e9c2e0b2651b9fc1">uwType</a>;
+<a name="l00056"></a><a class="code" href="a00003_5e295da36855d56ed52bd2fcda1c4382.html#5e295da36855d56ed52bd2fcda1c4382">00056</a>     <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00003_5e295da36855d56ed52bd2fcda1c4382.html#5e295da36855d56ed52bd2fcda1c4382">uwStartAddr</a>;
+<a name="l00057"></a><a class="code" href="a00003_d786d3331647755d13ecc44f7317faa6.html#d786d3331647755d13ecc44f7317faa6">00057</a>     <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00003_d786d3331647755d13ecc44f7317faa6.html#d786d3331647755d13ecc44f7317faa6">uwSize</a>;
+<a name="l00058"></a>00058 }<a class="code" href="a00003.html">MEM_INFO</a>;
+<a name="l00059"></a>00059 
+<a name="l00060"></a><a class="code" href="a00005.html">00060</a> <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="a00005.html">_SLAB_INFO</a>
+<a name="l00061"></a>00061 {
+<a name="l00062"></a><a class="code" href="a00005_f20311bf60a44638c9ad77a29ae29edd.html#f20311bf60a44638c9ad77a29ae29edd">00062</a>     <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00005_f20311bf60a44638c9ad77a29ae29edd.html#f20311bf60a44638c9ad77a29ae29edd">item_sz</a>;
+<a name="l00063"></a><a class="code" href="a00005_7c82f23603c35292b8fa24901fa8e72c.html#7c82f23603c35292b8fa24901fa8e72c">00063</a>     <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00005_7c82f23603c35292b8fa24901fa8e72c.html#7c82f23603c35292b8fa24901fa8e72c">item_cnt</a>;
+<a name="l00064"></a><a class="code" href="a00005_f44994de77b92c34936185faa98a0af0.html#f44994de77b92c34936185faa98a0af0">00064</a>     <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00005_f44994de77b92c34936185faa98a0af0.html#f44994de77b92c34936185faa98a0af0">cur_usage</a>;
+<a name="l00065"></a>00065 }<a class="code" href="a00005.html">SLAB_INFO</a>;
+<a name="l00066"></a>00066 
+<a name="l00067"></a><a class="code" href="a00038_cd17a54fce43e79d15ee7c8a4d08b190.html#cd17a54fce43e79d15ee7c8a4d08b190">00067</a> <span class="preprocessor">#define SLAB_CLASS_NUM                  (4U)</span>
+<a name="l00068"></a><a class="code" href="a00004.html">00068</a> <span class="preprocessor"></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="a00004.html">_MEM_INFO_S</a>
+<a name="l00069"></a>00069 {
+<a name="l00070"></a><a class="code" href="a00004_d3bd7b24b7e84197e9c2e0b2651b9fc1.html#d3bd7b24b7e84197e9c2e0b2651b9fc1">00070</a>     <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00004_d3bd7b24b7e84197e9c2e0b2651b9fc1.html#d3bd7b24b7e84197e9c2e0b2651b9fc1">uwType</a>;
+<a name="l00071"></a><a class="code" href="a00004_5e295da36855d56ed52bd2fcda1c4382.html#5e295da36855d56ed52bd2fcda1c4382">00071</a>     <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00004_5e295da36855d56ed52bd2fcda1c4382.html#5e295da36855d56ed52bd2fcda1c4382">uwStartAddr</a>;
+<a name="l00072"></a><a class="code" href="a00004_d786d3331647755d13ecc44f7317faa6.html#d786d3331647755d13ecc44f7317faa6">00072</a>     <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00004_d786d3331647755d13ecc44f7317faa6.html#d786d3331647755d13ecc44f7317faa6">uwSize</a>;
+<a name="l00073"></a><a class="code" href="a00004_f8193cf7f4fefccc8c28f22844a26d05.html#f8193cf7f4fefccc8c28f22844a26d05">00073</a>     <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00004_f8193cf7f4fefccc8c28f22844a26d05.html#f8193cf7f4fefccc8c28f22844a26d05">uwFree</a>;
+<a name="l00074"></a><a class="code" href="a00004_140a5db233c3960224a22d1afd58432c.html#140a5db233c3960224a22d1afd58432c">00074</a>     <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00004_140a5db233c3960224a22d1afd58432c.html#140a5db233c3960224a22d1afd58432c">uwBlockSize</a>;
+<a name="l00075"></a><a class="code" href="a00004_cac210ce8dbdf33ca16c482a14f68734.html#cac210ce8dbdf33ca16c482a14f68734">00075</a>     <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00004_cac210ce8dbdf33ca16c482a14f68734.html#cac210ce8dbdf33ca16c482a14f68734">uwErrorAddr</a>;
+<a name="l00076"></a><a class="code" href="a00004_f551ad105ebb66b1bf804b23ddd24c39.html#f551ad105ebb66b1bf804b23ddd24c39">00076</a>     <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00004_f551ad105ebb66b1bf804b23ddd24c39.html#f551ad105ebb66b1bf804b23ddd24c39">uwErrorLen</a>;
+<a name="l00077"></a><a class="code" href="a00004_345ddb7c30eaa046ef117260cc75fb61.html#345ddb7c30eaa046ef117260cc75fb61">00077</a>     <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00004_345ddb7c30eaa046ef117260cc75fb61.html#345ddb7c30eaa046ef117260cc75fb61">uwErrorOwner</a>;
+<a name="l00078"></a><a class="code" href="a00004_d5d88cac2f395231a11cc09a9a507fcf.html#d5d88cac2f395231a11cc09a9a507fcf">00078</a>     <a class="code" href="a00005.html">SLAB_INFO</a> <a class="code" href="a00004_d5d88cac2f395231a11cc09a9a507fcf.html#d5d88cac2f395231a11cc09a9a507fcf">stSlabInfo</a>[<a class="code" href="a00038_cd17a54fce43e79d15ee7c8a4d08b190.html#cd17a54fce43e79d15ee7c8a4d08b190">SLAB_CLASS_NUM</a>];
+<a name="l00079"></a>00079 }<a class="code" href="a00004.html">MEM_INFO_S</a>;
+<a name="l00080"></a>00080 <span class="comment"></span>
+<a name="l00081"></a>00081 <span class="comment">/**</span>
+<a name="l00082"></a>00082 <span class="comment"> *@ingroup los_memboxcheck</span>
+<a name="l00083"></a>00083 <span class="comment"> *@brief Get the information of the exc memory.</span>
+<a name="l00084"></a>00084 <span class="comment"> *</span>
+<a name="l00085"></a>00085 <span class="comment"> *@par Description:</span>
+<a name="l00086"></a>00086 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00087"></a>00087 <span class="comment"> *&lt;li&gt;This API is used to get the information of the exc memory.&lt;/li&gt;</span>
+<a name="l00088"></a>00088 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00089"></a>00089 <span class="comment"> *@attention</span>
+<a name="l00090"></a>00090 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00091"></a>00091 <span class="comment"> *&lt;li&gt;None.&lt;/li&gt;</span>
+<a name="l00092"></a>00092 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00093"></a>00093 <span class="comment"> *</span>
+<a name="l00094"></a>00094 <span class="comment"> *@param uwMemNum       [IN] Type #UINT32  Memory pool number.</span>
+<a name="l00095"></a>00095 <span class="comment"> *@param pstMemExcInfo   [IN/OUT] Type #MEM_INFO_S *  information of the exc memory.</span>
+<a name="l00096"></a>00096 <span class="comment"> *</span>
+<a name="l00097"></a>00097 <span class="comment"> *@retval UINT32 Get information result.</span>
+<a name="l00098"></a>00098 <span class="comment"> *@par Dependency:</span>
+<a name="l00099"></a>00099 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00100"></a>00100 <span class="comment"> *&lt;li&gt;los_memboxcheck.h: the header file that contains the API declaration.&lt;/li&gt;</span>
+<a name="l00101"></a>00101 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00102"></a>00102 <span class="comment"> *@see None.</span>
+<a name="l00103"></a>00103 <span class="comment"> *@since Huawei LiteOS V100R001C00</span>
+<a name="l00104"></a>00104 <span class="comment"> */</span>
+<a name="l00105"></a>00105 <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00038_ddf5378fb3a0de6e1bd2422a56aefaab.html#ddf5378fb3a0de6e1bd2422a56aefaab" title="Get the information of the exc memory.">LOS_MemExcInfoGet</a>(<a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwMemNum, <a class="code" href="a00004.html">MEM_INFO_S</a> *pstMemExcInfo);
+<a name="l00106"></a>00106 
+<a name="l00107"></a>00107 <span class="preprocessor">#ifdef __cplusplus</span>
+<a name="l00108"></a>00108 <span class="preprocessor"></span><span class="preprocessor">#if __cplusplus</span>
+<a name="l00109"></a>00109 <span class="preprocessor"></span>}
+<a name="l00110"></a>00110 <span class="preprocessor">#endif </span><span class="comment">/* __cpluscplus */</span>
+<a name="l00111"></a>00111 <span class="preprocessor">#endif </span><span class="comment">/* __cpluscplus */</span>
+<a name="l00112"></a>00112 
+<a name="l00113"></a>00113 <span class="preprocessor">#endif </span><span class="comment">/* _LOS_MEMCHECK_H */</span>
+</pre>
+   </div>
+  </div> 
+  <hr size="1" /> 
+ </body>
+</html>
