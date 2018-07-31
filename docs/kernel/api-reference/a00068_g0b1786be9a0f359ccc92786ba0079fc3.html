@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>  
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+<meta name="DC.Type" content="concept">
+<meta name="featurename" content="dcp">
+<title>LOS_TaskCreate</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head> 
+ <body> 
+  <div class="familylinks"> 
+   <a href="a00068_g0b1786be9a0f359ccc92786ba0079fc3.html">LOS_TaskCreate</a> 
+   <hr size="2" /> 
+  </div> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top"> 
+  </div> 
+  <div class="contents"> 
+   <div class="navpath"> 
+    <a class="el" href="a00068.html">Task</a> 
+   </div> 
+   <table cellspacing="0" cellpadding="0" border="0"> 
+    <tbody> 
+     <tr> 
+      <td valign="top"> </td> 
+      <td valign="top"> <a class="anchor" name="g0b1786be9a0f359ccc92786ba0079fc3"></a> 
+       <!-- doxytag: member="los_task.h::<a href='a00068_g0b1786be9a0f359ccc92786ba0079fc3.html'>LOS_TaskCreate</a>" ref="g0b1786be9a0f359ccc92786ba0079fc3" args="(UINT32 *puwTaskID, <a href='a00068_gf1a3ba6f38d87c7d7f92891233cab92e.html'>TSK_INIT_PARAM_S</a> *pstInitParam)" --> 
+       <div class="memitem"> 
+        <div class="memproto"> 
+         <table class="memname"> 
+          <tbody> 
+           <tr> 
+            <td class="memname"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a href="a00068_g0b1786be9a0f359ccc92786ba0079fc3.html">LOS_TaskCreate</a> </td> 
+            <td class="paramtype">(</td> 
+            <td class="paramtype"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> *&nbsp;</td> 
+            <td class="paramname"> <em>puwTaskID</em>, </td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramtype"><a class="el" href="a00022.html">TSK_INIT_PARAM_S</a> *&nbsp;</td> 
+            <td class="paramname"> <em>pstInitParam</em></td> 
+            <td class="paramkey">&nbsp;</td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey">)</td> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+        </div> 
+        <div class="memdoc"> 
+         <p> Create a task. </p> 
+         <p> </p> 
+         <dl class="user" compact=""> 
+          <dt> 
+           <b>Description:</b> 
+          </dt> 
+          <dd>
+            This API is used to create a task. If the priority of the task created after system initialized is higher than the current task and task scheduling is not locked, it is scheduled for running. If not, the created task is added to the queue of ready tasks. 
+          </dd> 
+         </dl> 
+         <dl class="attention" compact=""> 
+          <dt> 
+           <b>注意:</b> 
+          </dt> 
+          <dd> 
+           <ul> 
+            <li> During task creation, the task control block and task stack of the task that is previously automatically deleted are deallocated. </li> 
+            <li> The task name is a pointer and is not allocated memory. </li> 
+            <li> If the size of the task stack of the task to be created is 0, configure <a class="el" href="a00055_g435bc699acca4e399aaa0dcee77fc936.html#g435bc699acca4e399aaa0dcee77fc936" title="Default task stack size">LOSCFG_BASE_CORE_TSK_DEFAULT_STACK_SIZE</a> to specify the default task stack size. </li> 
+            <li> The task stack size must be aligned on the boundary of 8 bytes. The size is determined by whether it is big enough to avoid task stack overflow. </li> 
+            <li> Less parameter value indicates higher task priority. </li> 
+            <li> The task name cannot be null. </li> 
+            <li> The pointer to the task executing function cannot be null. </li> 
+            <li> The two parameters of this interface is pointer, it should be a correct value, otherwise, the system may be abnormal. </li> 
+           </ul> 
+          </dd> 
+         </dl> 
+         <dl compact=""> 
+          <dt> 
+           <b>参数:</b> 
+          </dt> 
+          <dd> 
+           <table border="0" cellspacing="0" cellpadding="0"> 
+            <tbody> 
+             <tr> 
+              <th></th> 
+              <th>参数名称</th> 
+              <th>描述</th> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">puwTaskID&nbsp;</td> 
+              <td>[OUT] Type <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> * Task ID. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">pstInitParam&nbsp;</td> 
+              <td>[IN] Type <a class="el" href="a00068_gf1a3ba6f38d87c7d7f92891233cab92e.html#gf1a3ba6f38d87c7d7f92891233cab92e" title="Define the structure of the parameters used for task creation.">TSK_INIT_PARAM_S</a> * Parameter for task creation.</td> 
+             </tr> 
+            </tbody> 
+           </table> 
+          </dd> 
+         </dl> 
+         <dl compact=""> 
+          <dt> 
+           <b>返回值:</b> 
+          </dt> 
+          <dd> 
+           <table border="0" cellspacing="0" cellpadding="0"> 
+            <tbody> 
+             <tr> 
+              <th></th> 
+              <th>返回值</th> 
+              <th>描述</th> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00068_gbfb36da25e9e2f4239c0b05635f2dfa5.html#gbfb36da25e9e2f4239c0b05635f2dfa5" title="Task error code: Invalid task ID.">LOS_ERRNO_TSK_ID_INVALID</a>&nbsp;</td> 
+              <td>Invalid Task ID, param puwTaskID is NULL. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00068_gfc97583161830cce209e780a05df85a9.html#gfc97583161830cce209e780a05df85a9" title="Task error code: Null parameter.">LOS_ERRNO_TSK_PTR_NULL</a>&nbsp;</td> 
+              <td>Param pstInitParam is NULL. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00068_g5eadb6953c36b22d8b95c6d0e9b6b2a4.html#g5eadb6953c36b22d8b95c6d0e9b6b2a4" title="Task error code: The task name is NULL.">LOS_ERRNO_TSK_NAME_EMPTY</a>&nbsp;</td> 
+              <td>The task name is NULL. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00068_gaf9d0d4e5fce2accf4feb8094c43aa86.html#gaf9d0d4e5fce2accf4feb8094c43aa86" title="Task error code: The task entrance is NULL.">LOS_ERRNO_TSK_ENTRY_NULL</a>&nbsp;</td> 
+              <td>The task entrance is NULL. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00068_g2b08fe8a7854202a01729a28559f6943.html#g2b08fe8a7854202a01729a28559f6943" title="Task error code: Incorrect task priority.">LOS_ERRNO_TSK_PRIOR_ERROR</a>&nbsp;</td> 
+              <td>Incorrect task priority. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00068_g94f9e74050a27cacc958daac2a10d664.html#g94f9e74050a27cacc958daac2a10d664" title="Task error code: The task stack size is too large.">LOS_ERRNO_TSK_STKSZ_TOO_LARGE</a>&nbsp;</td> 
+              <td>The task stack size is too large. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00068_g563b67b3435e73c2e78af4efe6e25875.html#g563b67b3435e73c2e78af4efe6e25875" title="Task error code: The task stack size is too small.">LOS_ERRNO_TSK_STKSZ_TOO_SMALL</a>&nbsp;</td> 
+              <td>The task stack size is too small. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00068_g983dcb3bb382d8269b556f661b415781.html#g983dcb3bb382d8269b556f661b415781" title="Task error code: No free task control block is available.">LOS_ERRNO_TSK_TCB_UNAVAILABLE</a>&nbsp;</td> 
+              <td>No free task control block is available. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00068_g9726451bbdbf98e00a73a1e7714d634b.html#g9726451bbdbf98e00a73a1e7714d634b" title="Task error code: Insufficient memory for task creation.">LOS_ERRNO_TSK_NO_MEMORY</a>&nbsp;</td> 
+              <td>Insufficient memory for task creation. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00048_81e00a29757b6c6f90f05ca6c1eed169.html#81e00a29757b6c6f90f05ca6c1eed169">LOS_OK</a>&nbsp;</td> 
+              <td>The task is successfully created. </td> 
+             </tr> 
+            </tbody> 
+           </table> 
+          </dd> 
+         </dl> 
+         <dl class="user" compact=""> 
+          <dt> 
+           <b>Dependency:</b> 
+          </dt> 
+          <dd> 
+           <ul> 
+            <li> <a class="el" href="a00045.html">los_task.h</a>: the header file that contains the API declaration.</li> 
+           </ul> 
+           <ul> 
+            <li> <a class="el" href="a00029.html">los_config.h</a>: the header file that contains system configuration items.</li> 
+           </ul> 
+          </dd> 
+         </dl> 
+         <dl class="see" compact=""> 
+          <dt> 
+           <b>参见:</b> 
+          </dt> 
+          <dd> 
+           <a class="el" href="a00068_g58a3ce347dd0970bfa593fb65bf514a1.html#g58a3ce347dd0970bfa593fb65bf514a1" title="Delete a task.">LOS_TaskDelete</a> 
+          </dd> 
+         </dl> 
+         <dl class="since" compact=""> 
+          <dt> 
+           <b>自从:</b> 
+          </dt> 
+          <dd>
+            Huawei LiteOS V100R001C00 
+          </dd> 
+         </dl> 
+        </div> 
+       </div><p> </p></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <hr size="1" />  
+ </body>
+</html>

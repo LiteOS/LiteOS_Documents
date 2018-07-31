@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>  
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+<meta name="DC.Type" content="concept">
+<meta name="featurename" content="dcp">
+<title>LOS_TaskResume</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head> 
+ <body> 
+  <div class="familylinks"> 
+   <a href="a00068_g73f99ca0b8aa32ac63cf05773a7102c5.html">LOS_TaskResume</a> 
+   <hr size="2" /> 
+  </div> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top"> 
+  </div> 
+  <div class="contents"> 
+   <div class="navpath"> 
+    <a class="el" href="a00068.html">Task</a> 
+   </div> 
+   <table cellspacing="0" cellpadding="0" border="0"> 
+    <tbody> 
+     <tr> 
+      <td valign="top"> </td> 
+      <td valign="top"> <a class="anchor" name="g73f99ca0b8aa32ac63cf05773a7102c5"></a> 
+       <!-- doxytag: member="los_task.h::<a href='a00068_g73f99ca0b8aa32ac63cf05773a7102c5.html'>LOS_TaskResume</a>" ref="g73f99ca0b8aa32ac63cf05773a7102c5" args="(UINT32 uwTaskID)" --> 
+       <div class="memitem"> 
+        <div class="memproto"> 
+         <table class="memname"> 
+          <tbody> 
+           <tr> 
+            <td class="memname"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a href="a00068_g73f99ca0b8aa32ac63cf05773a7102c5.html">LOS_TaskResume</a> </td> 
+            <td class="paramtype">(</td> 
+            <td class="paramtype"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+            <td class="paramname"> <em>uwTaskID</em> </td> 
+            <td class="paramkey">&nbsp;)&nbsp;</td> 
+            <td class="paramkey"></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+        </div> 
+        <div class="memdoc"> 
+         <p> Resume a task. </p> 
+         <p> </p> 
+         <dl class="user" compact=""> 
+          <dt> 
+           <b>Description:</b> 
+          </dt> 
+          <dd>
+            This API is used to resume a suspended task. 
+          </dd> 
+         </dl> 
+         <dl class="attention" compact=""> 
+          <dt> 
+           <b>注意:</b> 
+          </dt> 
+          <dd> 
+           <ul> 
+            <li> If the task is delayed or blocked, resume the task without adding it to the queue of ready tasks. </li> 
+            <li> If the priority of the task resumed after system initialized is higher than the current task and task scheduling is not locked, it is scheduled for running. </li> 
+           </ul> 
+          </dd> 
+         </dl> 
+         <dl compact=""> 
+          <dt> 
+           <b>参数:</b> 
+          </dt> 
+          <dd> 
+           <table border="0" cellspacing="0" cellpadding="0"> 
+            <tbody> 
+             <tr> 
+              <th></th> 
+              <th>参数名称</th> 
+              <th>描述</th> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">uwTaskID&nbsp;</td> 
+              <td>[IN] Type <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> Task ID. The task id value is obtained from task creation.</td> 
+             </tr> 
+            </tbody> 
+           </table> 
+          </dd> 
+         </dl> 
+         <dl compact=""> 
+          <dt> 
+           <b>返回值:</b> 
+          </dt> 
+          <dd> 
+           <table border="0" cellspacing="0" cellpadding="0"> 
+            <tbody> 
+             <tr> 
+              <th></th> 
+              <th>返回值</th> 
+              <th>描述</th> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00068_gbfb36da25e9e2f4239c0b05635f2dfa5.html#gbfb36da25e9e2f4239c0b05635f2dfa5" title="Task error code: Invalid task ID.">LOS_ERRNO_TSK_ID_INVALID</a>&nbsp;</td> 
+              <td>Invalid Task ID </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00068_g7598497dd510982fe9a990d7403be2c6.html#g7598497dd510982fe9a990d7403be2c6" title="Task error code: The task is not created.">LOS_ERRNO_TSK_NOT_CREATED</a>&nbsp;</td> 
+              <td>The task is not created. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00068_g7b83ce054261ffdbc2161f8fed1253b8.html#g7b83ce054261ffdbc2161f8fed1253b8" title="Task error code: The task is not suspended.">LOS_ERRNO_TSK_NOT_SUSPENDED</a>&nbsp;</td> 
+              <td>The task is not suspended. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00048_81e00a29757b6c6f90f05ca6c1eed169.html#81e00a29757b6c6f90f05ca6c1eed169">LOS_OK</a>&nbsp;</td> 
+              <td>The task is successfully resumed. </td> 
+             </tr> 
+            </tbody> 
+           </table> 
+          </dd> 
+         </dl> 
+         <dl class="user" compact=""> 
+          <dt> 
+           <b>Dependency:</b> 
+          </dt> 
+          <dd> 
+           <ul> 
+            <li> <a class="el" href="a00045.html">los_task.h</a>: the header file that contains the API declaration.</li> 
+           </ul> 
+          </dd> 
+         </dl> 
+         <dl class="see" compact=""> 
+          <dt> 
+           <b>参见:</b> 
+          </dt> 
+          <dd> 
+           <a class="el" href="a00068_gfb8f5fa4ad722ee4a28d9524ea186f24.html#gfb8f5fa4ad722ee4a28d9524ea186f24" title="Suspend a task.">LOS_TaskSuspend</a> 
+          </dd> 
+         </dl> 
+         <dl class="since" compact=""> 
+          <dt> 
+           <b>自从:</b> 
+          </dt> 
+          <dd>
+            Huawei LiteOS V100R001C00 
+          </dd> 
+         </dl> 
+        </div> 
+       </div><p> </p></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <hr size="1" />  
+ </body>
+</html>
