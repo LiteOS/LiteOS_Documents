@@ -13,4 +13,19 @@
 
 ## 源码解读
 
+### 修改 main.c
+
+```c
+  /* USER CODE BEGIN 2 */
+  if (LOS_OK != LOS_KernelInit())
+  {
+      return LOS_NOK;
+  }
+
+  LOS_Inspect_Entry();
+
+  LOS_Start();
+  /* USER CODE END 2 */
+```
+
 ## 功能验证

@@ -101,7 +101,7 @@ ST-Link 调试器接入到 PC 机同样需要提前安装驱动，可以访问 S
 
 MDK-ARM 来自德国的 KEIL 公司，是 RealView MDK 的简称。在全球有超过 10 万的嵌入式开发工程师使用。目前最新版本为：MDK5.25，该版本使用 uVision5 IDE 集成开发环境，是目前针对 ARM 处理器，尤其是 Cortex M 内核处理器的最佳开发工具。
 
-MDK5 安装包可以在：[http://www2.keil.com/mdk5](https://www.keil.com/demo/eval/arm.htm) 下载到。详细安装指导请参考[这里](./keil.md)。
+MDK5 安装包可以在：[http://www2.keil.com/mdk5](https://www.keil.com/demo/eval/arm.htm) 下载到。详细安装指导请参考[这里](./keil-install.md)。
 
 ![](./pic/keil.jpg)
 
@@ -109,7 +109,7 @@ MDK5 安装包可以在：[http://www2.keil.com/mdk5](https://www.keil.com/demo/
 
 IAR for ARM（IAR Embedded Workbench for ARM）是一款微处理器开发的一个集成开发环境软件，该集成开发环境中包含了 IAR 的 C/C++ 编译器、 汇编工具、链接器、库管理器、文本编辑器、工程管理器和 C-SPY 调试器，支持 ARM，AVR，MSP430 等芯片内核平台。
 
-IAR EWARM 安装包可以在：[https://www.iar.com/iar-embedded-workbench](https://www.iar.com/iar-embedded-workbench/#!?currentTab=free-trials) 下载到。详细安装指导请参考[这里](./iar.md)。
+IAR EWARM 安装包可以在：[https://www.iar.com/iar-embedded-workbench](https://www.iar.com/iar-embedded-workbench/#!?currentTab=free-trials) 下载到。详细安装指导请参考[这里](./iar-install.md)。
 
 ![](./pic/iar.jpg)
 
@@ -117,7 +117,7 @@ IAR EWARM 安装包可以在：[https://www.iar.com/iar-embedded-workbench](http
 
 SW4STM32（System Workbench for Stm32）是 ST 官方推出的开发工具，支持全系列 STM32，可以运行在 Windows，Linux 和 MacOS 多种系统上。最令人欣喜的是它还是完全免费的。
 
-SW4STM32 安装包可以在：[http://www.ac6-tools.com/downloads/SW4STM32](http://www.ac6-tools.com/downloads/SW4STM32/) 下载到。详细安装指导请参考[这里](./gcc-sw4stm32.md)。
+SW4STM32 安装包可以在：[http://www.ac6-tools.com/downloads/SW4STM32](http://www.ac6-tools.com/downloads/SW4STM32/) 下载到。详细安装指导请参考[这里](./gcc-sw4stm32-install.md)。
 
 ![](./pic/sw4stm32.png)
 

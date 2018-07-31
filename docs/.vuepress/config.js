@@ -90,17 +90,18 @@ module.exports = {
           "/quick-start/": [
             {
               title: "入门",
-              collapsable: true,
+              collapsable: false,
               children: [
                 "",
                 "./terminology",
                 "./why-use-the-rtos",
-                "./why-select-huawei-liteos"
+                "./why-select-huawei-liteos",
+                "./how-to-study-liteos"
               ]
             },
             {
               title: "快速上手",
-              collapsable: true,
+              collapsable: false,
               children: [
                 "./a-simple-blink-demo",
                 "./a-comprehensive-smoke-demo"
@@ -108,7 +109,7 @@ module.exports = {
             },
             {
               title: "参与贡献",
-              collapsable: true,
+              collapsable: false,
               children: [
                 "./write-standard",
                 "./code-standard",
@@ -151,7 +152,7 @@ module.exports = {
               ]
             }
           ],
-          "/components/": [
+          "/sdk/": [
             {
               title: "组件",
               collapsable: false,
@@ -172,7 +173,7 @@ module.exports = {
                 "",
                 "./evb-and-tools",
                 "./raw-project-with-stm32cube",
-                "./raw-project-with-others",
+                //"./raw-project-with-others",
                 "./liteos-source-code"
               ]
             },
@@ -180,9 +181,12 @@ module.exports = {
               title: "OS 移植",
               collapsable: false,
               children: [
-                "./stm32",
-                "./nxp",
-                "./gd32",
+                "./stm32-keil",
+                "./stm32-iar",
+                "./stm32-sw4stm32",
+                "./stm32-makefile",
+                //"./nxp",
+                //"./gd32",
                 "./faq"
               ]
             },
@@ -192,13 +196,13 @@ module.exports = {
               children: ["./inspect-example", "./inspect-results"]
             },
             {
-              title: "附1：开发工具安装手册",
-              collapsable: false,
-              children: ["./keil", "./iar", "./gcc-sw4stm32"]
+              title: "附录一：开发工具安装手册",
+              collapsable: true,
+              children: ["./keil-install", "./iar-install", "./gcc-sw4stm32-install"]
             },
             {
-              title: "附2：OS_CONFIG 系统配置详解",
-              collapsable: false,
+              title: "附录二：OS_CONFIG 系统配置详解",
+              collapsable: true,
               children: ["./os-config"]
             }
           ],
@@ -223,7 +227,7 @@ module.exports = {
           "/tutorials/scene/": [
             {
               title: "综合例程",
-              collapsable: true,
+              collapsable: false,
               children: [
                 "./temp-hum", 
                 "./smoke", 
