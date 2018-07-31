@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>  
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+<meta name="DC.Type" content="concept">
+<meta name="featurename" content="dcp">
+<title>los_mux.h文件参考</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head> 
+ <body> 
+  <div class="familylinks"> 
+   <a href="a00040.html">los_mux.h</a> 
+   <hr size="2" /> 
+  </div> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top"> 
+  </div> 
+  <div class="contents"> 
+   <h1>los_mux.h文件参考</h1> 
+   <p> <a href="a00089.html">浏览该文件的源代码。</a></p> 
+   <table border="0" cellpadding="0" cellspacing="0"> 
+    <tbody> 
+     <tr> 
+      <td colspan="2"><br /><h2>宏定义</h2></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00063_g8dfdddd10c9d974c7848981b96aadd60.html#g8dfdddd10c9d974c7848981b96aadd60">LOS_ERRNO_MUX_NO_MEMORY</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_MUX, 0x00)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Mutex error code: The memory request fails. <a href="a00063_g8dfdddd10c9d974c7848981b96aadd60.html#g8dfdddd10c9d974c7848981b96aadd60"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00063_g4258af0f77245ffec3750fed2d8d8f35.html#g4258af0f77245ffec3750fed2d8d8f35">LOS_ERRNO_MUX_INVALID</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_MUX, 0x01)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Mutex error code: The mutex is not usable. <a href="a00063_g4258af0f77245ffec3750fed2d8d8f35.html#g4258af0f77245ffec3750fed2d8d8f35"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00063_g93716cd2318f4dd86efc8eb69631851a.html#g93716cd2318f4dd86efc8eb69631851a">LOS_ERRNO_MUX_PTR_NULL</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_MUX, 0x02)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Mutex error code: Null pointer. <a href="a00063_g93716cd2318f4dd86efc8eb69631851a.html#g93716cd2318f4dd86efc8eb69631851a"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00063_g8a6e027b576697a42e7f3f76e19aa222.html#g8a6e027b576697a42e7f3f76e19aa222">LOS_ERRNO_MUX_ALL_BUSY</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_MUX, 0x03)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Mutex error code: No mutex is available and the mutex request fails. <a href="a00063_g8a6e027b576697a42e7f3f76e19aa222.html#g8a6e027b576697a42e7f3f76e19aa222"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00063_g3ad15ce03b59ee4bc73149cffe408979.html#g3ad15ce03b59ee4bc73149cffe408979">LOS_ERRNO_MUX_UNAVAILABLE</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_MUX, 0x04)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Mutex error code: The mutex fails to be locked in non-blocking mode because it is locked by another thread. <a href="a00063_g3ad15ce03b59ee4bc73149cffe408979.html#g3ad15ce03b59ee4bc73149cffe408979"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00063_g7f21e3fdecc2305443949e18f3b88888.html#g7f21e3fdecc2305443949e18f3b88888">LOS_ERRNO_MUX_PEND_INTERR</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_MUX, 0x05)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Mutex error code: The mutex is being locked during an interrupt. <a href="a00063_g7f21e3fdecc2305443949e18f3b88888.html#g7f21e3fdecc2305443949e18f3b88888"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00063_g718fb16d03ab49827fa209f4dec0aba3.html#g718fb16d03ab49827fa209f4dec0aba3">LOS_ERRNO_MUX_PEND_IN_LOCK</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_MUX, 0x06)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Mutex error code: A thread locks a mutex after waiting for the mutex to be unlocked by another thread when the task scheduling is disabled. <a href="a00063_g718fb16d03ab49827fa209f4dec0aba3.html#g718fb16d03ab49827fa209f4dec0aba3"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00063_g3bbeaa37881871da7282dfe429925b80.html#g3bbeaa37881871da7282dfe429925b80">LOS_ERRNO_MUX_TIMEOUT</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_MUX, 0x07)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Mutex error code: The mutex locking times out. <a href="a00063_g3bbeaa37881871da7282dfe429925b80.html#g3bbeaa37881871da7282dfe429925b80"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00063_g79cd6f7dfb42b944a02f1922bf5ef8c1.html#g79cd6f7dfb42b944a02f1922bf5ef8c1">LOS_ERRNO_MUX_OVERFLOW</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_MUX, 0x08)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Value: 0x02001d08 Not in use temporarily. <a href="a00063_g79cd6f7dfb42b944a02f1922bf5ef8c1.html#g79cd6f7dfb42b944a02f1922bf5ef8c1"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00063_g9002851da704e6c01c140c5cb1fe86ba.html#g9002851da704e6c01c140c5cb1fe86ba">LOS_ERRNO_MUX_PENDED</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_MUX, 0x09)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Mutex error code: The mutex to be deleted is being locked. <a href="a00063_g9002851da704e6c01c140c5cb1fe86ba.html#g9002851da704e6c01c140c5cb1fe86ba"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00063_g87d3fff8ff3f5c5d948bb71fbfa92d9b.html#g87d3fff8ff3f5c5d948bb71fbfa92d9b">LOS_ERRNO_MUX_GET_COUNT_ERR</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_MUX, 0x0A)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Value: 0x02001d0A Not in use temporarily. <a href="a00063_g87d3fff8ff3f5c5d948bb71fbfa92d9b.html#g87d3fff8ff3f5c5d948bb71fbfa92d9b"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00063_g9d63db83fab0e134dcc62c4b5362ee60.html#g9d63db83fab0e134dcc62c4b5362ee60">LOS_ERRNO_MUX_REG_ERROR</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_MUX, 0x0B)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Value: 0x02001d0B Not in use temporarily. <a href="a00063_g9d63db83fab0e134dcc62c4b5362ee60.html#g9d63db83fab0e134dcc62c4b5362ee60"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00063_g5ef64636a147e45faea075281fb2e63d.html#g5ef64636a147e45faea075281fb2e63d">LOS_ERRNO_MUX_MAXNUM_ZERO</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_MUX, 0x0C)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Mutex error code: <a href="a00063_g5ef64636a147e45faea075281fb2e63d.html">LOS_ERRNO_MUX_MAXNUM_ZERO</a> is zero. <a href="a00063_g5ef64636a147e45faea075281fb2e63d.html#g5ef64636a147e45faea075281fb2e63d"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td colspan="2"><br /><h2>函数</h2></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00063_gdf7566c3c90532c2b55877173e2b5a0f.html#gdf7566c3c90532c2b55877173e2b5a0f">LOS_MuxCreate</a> (<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> *puwMuxHandle)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Create a mutex. <a href="a00063_gdf7566c3c90532c2b55877173e2b5a0f.html#gdf7566c3c90532c2b55877173e2b5a0f"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00063_g55e2f4dbff2f4fc1ed0888f580b6c8f9.html#g55e2f4dbff2f4fc1ed0888f580b6c8f9">LOS_MuxDelete</a> (<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> puwMuxHandle)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Delete a mutex. <a href="a00063_g55e2f4dbff2f4fc1ed0888f580b6c8f9.html#g55e2f4dbff2f4fc1ed0888f580b6c8f9"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00063_g424d162e49eec6fcb9901ee16717b7f2.html#g424d162e49eec6fcb9901ee16717b7f2">LOS_MuxPend</a> (<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwMuxHandle, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwTimeout)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Wait to lock a mutex. <a href="a00063_g424d162e49eec6fcb9901ee16717b7f2.html#g424d162e49eec6fcb9901ee16717b7f2"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00063_g1e7a853b2b7715e404663a8a71f6f5f8.html#g1e7a853b2b7715e404663a8a71f6f5f8">LOS_MuxPost</a> (<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwMuxHandle)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Release a mutex. <a href="a00063_g1e7a853b2b7715e404663a8a71f6f5f8.html#g1e7a853b2b7715e404663a8a71f6f5f8"></a><br /></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <hr size="1" />  
+ </body>
+</html>

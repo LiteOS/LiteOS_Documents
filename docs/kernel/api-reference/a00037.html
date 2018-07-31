@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>  
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+<meta name="DC.Type" content="concept">
+<meta name="featurename" content="dcp">
+<title>los_membox.h文件参考</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head> 
+ <body> 
+  <div class="familylinks"> 
+   <a href="a00037.html">los_membox.h</a> 
+   <hr size="2" /> 
+  </div> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top"> 
+  </div> 
+  <div class="contents"> 
+   <h1>los_membox.h文件参考</h1> 
+   <p> <a href="a00086.html">浏览该文件的源代码。</a></p> 
+   <table border="0" cellpadding="0" cellspacing="0"> 
+    <tbody> 
+     <tr> 
+      <td colspan="2"><br /><h2>数据结构</h2></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">struct &nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00015.html">tagMemBoxCB</a></td> 
+     </tr> 
+     <tr> 
+      <td colspan="2"><br /><h2>宏定义</h2></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00037_db2b8d93802d055b92314f8cd0337f65.html#db2b8d93802d055b92314f8cd0337f65">BOX_ALIGN_8</a>&nbsp;&nbsp;&nbsp;0x80000000</td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00037_810aaff2773ccfb25ecb70b0b7302d08.html#810aaff2773ccfb25ecb70b0b7302d08">LOS_MEMBOX_CHECK</a></td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Define whether to check the address validity <a href="#810aaff2773ccfb25ecb70b0b7302d08"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00037_4f94db0965ee44d5ca9b7824bee8429f.html#4f94db0965ee44d5ca9b7824bee8429f">LOS_MEMBOX_MAGIC_SIZE</a>&nbsp;&nbsp;&nbsp;4</td> 
+     </tr> 
+     <tr> 
+      <td colspan="2"><br /><h2>类型定义</h2></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">typedef struct <a class="el" href="a00015.html">tagMemBoxCB</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00037_8bca5ec7087a8deac2cae699ecdff830.html#8bca5ec7087a8deac2cae699ecdff830">OS_MEMBOX_S</a></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">typedef <a class="el" href="a00015.html">OS_MEMBOX_S</a> *&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00037_34c748e662c328de7f49e3823e294c84.html#34c748e662c328de7f49e3823e294c84">OS_MEMBOX_S_P</a></td> 
+     </tr> 
+     <tr> 
+      <td colspan="2"><br /><h2>函数</h2></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00037_c2a8a2b0ebf8d6a1e9d864e9e6574bd8.html#c2a8a2b0ebf8d6a1e9d864e9e6574bd8">LOS_MemboxInit</a> (VOID *pBoxMem, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwBoxSize, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwBlkSize)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Initialize a memory pool. <a href="#c2a8a2b0ebf8d6a1e9d864e9e6574bd8"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">VOID *&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00037_422cb2955cc715b8d7542e93ecb15d56.html#422cb2955cc715b8d7542e93ecb15d56">LOS_MemboxAlloc</a> (VOID *pBoxMem)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Request a memory block. <a href="#422cb2955cc715b8d7542e93ecb15d56"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00037_b524f871044893f028fcb3ed6dcca2a5.html#b524f871044893f028fcb3ed6dcca2a5">LOS_MemboxFree</a> (VOID *pBoxMem, VOID *pBox)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Free a memory block. <a href="#b524f871044893f028fcb3ed6dcca2a5"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">VOID&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00037_80324b6def41e3cbb12d26ac93f3a8ec.html#80324b6def41e3cbb12d26ac93f3a8ec">LOS_MemboxClr</a> (VOID *pBoxMem, VOID *pBox)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Clear a memory block. <a href="#80324b6def41e3cbb12d26ac93f3a8ec"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00037_4d7ddceb37f8d93f14a3ffa6bd9cb3f0.html#4d7ddceb37f8d93f14a3ffa6bd9cb3f0">LOS_MemboxStatisticsGet</a> (VOID *pBoxMem, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> *puwMaxBlk, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> *puwBlkCnt, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> *puwBlkSize)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">calculate membox information. <a href="#4d7ddceb37f8d93f14a3ffa6bd9cb3f0"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td colspan="2"><br /><h2>变量</h2></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_b27e9918b538ce9d8ca692479b375b6a.html#b27e9918b538ce9d8ca692479b375b6a">UINT8</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00037_bb0fffa377f07654267940c8da966e5d.html#bb0fffa377f07654267940c8da966e5d">g_aucMemMang</a> []</td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <hr size="1" />  
+ </body>
+</html>

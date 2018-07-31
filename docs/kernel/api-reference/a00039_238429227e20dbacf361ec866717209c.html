@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312" /> 
+  <title>LOS_MemNodeSizeCheck</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head>
+ <body> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top">  
+  </div> 
+  <div class="contents"> 
+   <div class="navpath">
+    <a class="el" href="a00039.html">los_memory.h</a> 
+   </div> 
+   <table cellspacing="0" cellpadding="0" border="0"> 
+    <tbody>
+     <tr> 
+      <td valign="top"> </td> 
+      <td valign="top"> <a class="anchor" name="238429227e20dbacf361ec866717209c"></a>
+       <!-- doxytag: member="los_memory.h::LOS_MemNodeSizeCheck" ref="238429227e20dbacf361ec866717209c" args="(VOID *pPool, VOID *pPtr, UINT32 *puwTotalSize, UINT32 *puwAvailSize)" --> 
+       <div class="memitem"> 
+        <div class="memproto"> 
+         <table class="memname"> 
+          <tbody>
+           <tr> 
+            <td class="memname"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> LOS_MemNodeSizeCheck </td> 
+            <td class="paramtype">(</td> 
+            <td class="paramtype">VOID *&nbsp;</td> 
+            <td class="paramname"> <em>pPool</em>, </td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramtype">VOID *&nbsp;</td> 
+            <td class="paramname"> <em>pPtr</em>, </td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramtype"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> *&nbsp;</td> 
+            <td class="paramname"> <em>puwTotalSize</em>, </td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramtype"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> *&nbsp;</td> 
+            <td class="paramname"> <em>puwAvailSize</em></td>
+            <td class="paramkey">&nbsp;</td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey">)</td> 
+            <td class="paramkey"></td>
+            <td class="paramkey"></td>
+            <td class="paramkey"></td> 
+           </tr> 
+          </tbody>
+         </table> 
+        </div> 
+        <div class="memdoc"> 
+         <p> Check the size of memory node specified. </p>
+         <p> </p>
+         <dl class="user" compact="">
+          <dt>
+           <b>Description:</b>
+          </dt>
+          <dd>
+           <ul> 
+            <li> This API is used to check the size of memory node. </li> 
+           </ul> 
+          </dd>
+         </dl> 
+         <dl class="attention" compact="">
+          <dt>
+           <b>注意:</b>
+          </dt>
+          <dd>
+           <ul> 
+            <li> The input pPool parameter must be initialized via func LOS_MemInit. </li> 
+            <li> The input pPtr parameter must be allocated by LOS_MemAlloc or LOS_MemAllocAlign. </li> 
+            <li> The function will be called by function specified, such as memset or memcpy. </li> 
+            <li> The feature can be enabled when you set the macro value of LOSCFG_BASE_MEM_NODE_SIZE_CHECK as YES. </li> 
+            <li> You had better set memory check level as LOS_MEM_CHECK_LEVEL_DISABLE when copy bin file. </li> 
+           </ul> 
+          </dd>
+         </dl> 
+         <dl compact="">
+          <dt>
+           <b>参数:</b>
+          </dt>
+          <dd> 
+           <table border="0" cellspacing="0" cellpadding="0"> 
+            <tbody>
+             <tr>
+              <th></th>
+              <th>参数名称</th>
+              <th>描述</th> 
+             </tr>
+             <tr>
+              <td valign="top"></td>
+              <td valign="top" nowrap="">pPool&nbsp;</td>
+              <td>[IN] A pointer pointed to the memory pool. </td>
+             </tr> 
+             <tr>
+              <td valign="top"></td>
+              <td valign="top" nowrap="">pPtr&nbsp;</td>
+              <td>[IN] A pointer pointed to the source node. </td>
+             </tr> 
+             <tr>
+              <td valign="top"></td>
+              <td valign="top" nowrap="">puwTotalSize&nbsp;</td>
+              <td>[OUT] A pointer to save total size, must point to valid memory. </td>
+             </tr> 
+             <tr>
+              <td valign="top"></td>
+              <td valign="top" nowrap="">puwAvailSize&nbsp;</td>
+              <td>[OUT] A pointer to save available size, must point to valid memory.</td>
+             </tr> 
+            </tbody>
+           </table> 
+          </dd>
+         </dl> 
+         <dl compact="">
+          <dt>
+           <b>返回值:</b>
+          </dt>
+          <dd> 
+           <table border="0" cellspacing="0" cellpadding="0"> 
+            <tbody>
+             <tr>
+              <th></th>
+              <th>返回值</th>
+              <th>描述</th> 
+             </tr>
+             <tr>
+              <td valign="top"></td>
+              <td valign="top" nowrap="">OS_ERRNO_MEMCHECK_DISABLED&nbsp;</td>
+              <td>Memcheck function does not open. </td>
+             </tr> 
+             <tr>
+              <td valign="top"></td>
+              <td valign="top" nowrap="">OS_ERRNO_MEMCHECK_NOT_INIT&nbsp;</td>
+              <td>Memcheck function does not init. </td>
+             </tr> 
+             <tr>
+              <td valign="top"></td>
+              <td valign="top" nowrap="">OS_ERRNO_MEMCHECK_PARA_NULL&nbsp;</td>
+              <td>The pool or pPtr is NULL. </td>
+             </tr> 
+             <tr>
+              <td valign="top"></td>
+              <td valign="top" nowrap="">OS_ERRNO_MEMCHECK_OUTSIDE&nbsp;</td>
+              <td>The pPtr address is not in the reasonable range. </td>
+             </tr> 
+             <tr>
+              <td valign="top"></td>
+              <td valign="top" nowrap="">OS_ERRNO_MEMCHECK_NO_HEAD&nbsp;</td>
+              <td>Can't find the control head node from pPtr. </td>
+             </tr> 
+             <tr>
+              <td valign="top"></td>
+              <td valign="top" nowrap="">OS_ERRNO_MEMCHECK_WRONG_LEVEL&nbsp;</td>
+              <td>The memory check level is illegal. </td>
+             </tr> 
+             <tr>
+              <td valign="top"></td>
+              <td valign="top" nowrap=""><a class="el" href="a00048_81e00a29757b6c6f90f05ca6c1eed169.html#81e00a29757b6c6f90f05ca6c1eed169">LOS_OK</a>&nbsp;</td>
+              <td>Success to get total size and available size of the memory node (pPtr). </td>
+             </tr> 
+            </tbody>
+           </table> 
+          </dd>
+         </dl> 
+         <dl class="user" compact="">
+          <dt>
+           <b>Dependency:</b>
+          </dt>
+          <dd>
+           <ul> 
+            <li> <a class="el" href="a00039.html">los_memory.h</a>: the header file that contains the API declaration.</li> 
+           </ul> 
+          </dd>
+         </dl> 
+         <dl class="see" compact="">
+          <dt>
+           <b>参见:</b>
+          </dt>
+          <dd>
+           <a class="el" href="a00039_43643645f78ea9ab51a035f908ede300.html#43643645f78ea9ab51a035f908ede300" title="Set the memory check level.">LOS_MemCheckLevelSet</a> | 
+           <a class="el" href="a00039_ef6394bc2880b37e200c2768cc6e7f4d.html#ef6394bc2880b37e200c2768cc6e7f4d" title="Get the memory check level.">LOS_MemCheckLevelGet</a> 
+          </dd>
+         </dl> 
+         <dl class="since" compact="">
+          <dt>
+           <b>自从:</b>
+          </dt>
+          <dd>
+           Huawei LiteOS V100R001C00 
+          </dd>
+         </dl> 
+        </div> 
+       </div><p> </p></td> 
+     </tr> 
+    </tbody>
+   </table> 
+  </div> 
+  <hr size="1" /> 
+ </body>
+</html>
