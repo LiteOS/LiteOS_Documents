@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>  
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+<meta name="DC.Type" content="concept">
+<meta name="featurename" content="dcp">
+<title>LOS_QueueRead</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head> 
+ <body> 
+  <div class="familylinks"> 
+   <a href="a00064_g5c31525b3007eeed45965c9bbda3a830.html">LOS_QueueRead</a> 
+   <hr size="2" /> 
+  </div> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top"> 
+  </div> 
+  <div class="contents"> 
+   <div class="navpath"> 
+    <a class="el" href="a00064.html">Queue</a> 
+   </div> 
+   <table cellspacing="0" cellpadding="0" border="0"> 
+    <tbody> 
+     <tr> 
+      <td valign="top"> </td> 
+      <td valign="top"> <a class="anchor" name="g5c31525b3007eeed45965c9bbda3a830"></a> 
+       <!-- doxytag: member="los_queue.h::<a href='a00064_g5c31525b3007eeed45965c9bbda3a830.html'>LOS_QueueRead</a>" ref="g5c31525b3007eeed45965c9bbda3a830" args="(UINT32 uwQueueID, VOID *pBufferAddr, UINT32 uwBufferSize, UINT32 uwTimeOut)" --> 
+       <div class="memitem"> 
+        <div class="memproto"> 
+         <table class="memname"> 
+          <tbody> 
+           <tr> 
+            <td class="memname"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a href="a00064_g5c31525b3007eeed45965c9bbda3a830.html">LOS_QueueRead</a> </td> 
+            <td class="paramtype">(</td> 
+            <td class="paramtype"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+            <td class="paramname"> <em>uwQueueID</em>, </td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramtype">VOID *&nbsp;</td> 
+            <td class="paramname"> <em>pBufferAddr</em>, </td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramtype"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+            <td class="paramname"> <em>uwBufferSize</em>, </td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramtype"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+            <td class="paramname"> <em>uwTimeOut</em></td> 
+            <td class="paramkey">&nbsp;</td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey">)</td> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+        </div> 
+        <div class="memdoc"> 
+         <p> Read a queue. </p> 
+         <p> </p> 
+         <dl class="user" compact=""> 
+          <dt> 
+           <b>Description:</b> 
+          </dt> 
+          <dd>
+            This API is used to read the address of data in a specified queue, and store it to the address specified by pBufferAddr. 
+          </dd> 
+         </dl> 
+         <dl class="attention" compact=""> 
+          <dt> 
+           <b>注意:</b> 
+          </dt> 
+          <dd> 
+           <ul> 
+            <li> The specific queue should be created firstly. </li> 
+            <li> Queue reading adopts the fist in first out (FIFO) mode. The data that is first stored in the queue is read first. </li> 
+            <li> pBufferAddr stores the obtained data address. </li> 
+            <li> Do not read or write a queue in unblocking modes such as an interrupt. </li> 
+            <li> This API cannot be called before the Huawei LiteOS is initialized. </li> 
+            <li> The argument uwTimeOut is a relative time. </li> 
+            <li> The uwBufferSize is not really used in <a href="a00064_g5c31525b3007eeed45965c9bbda3a830.html">LOS_QueueRead</a>, because the interface is only used to obtain the address of data. </li> 
+            <li> The buffer which the pBufferAddr pointing to must be greater than or equal to 4 bytes. </li> 
+           </ul> 
+          </dd> 
+         </dl> 
+         <dl compact=""> 
+          <dt> 
+           <b>参数:</b> 
+          </dt> 
+          <dd> 
+           <table border="0" cellspacing="0" cellpadding="0"> 
+            <tbody> 
+             <tr> 
+              <th></th> 
+              <th>参数名称</th> 
+              <th>描述</th> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">uwQueueID&nbsp;</td> 
+              <td>[IN] Queue ID created by <a href="a00064_gf6f1fb9652760f1d43a76179282a3174.html">LOS_QueueCreate</a>. The value range is [1,<a href="a00055_g7a7fa126ef8c518212ef77d47914f719.html">LOSCFG_BASE_IPC_QUEUE_LIMIT</a>]. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">pBufferAddr&nbsp;</td> 
+              <td>[OUT] Starting address that stores the obtained data. The starting address must not be null. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">uwBufferSize&nbsp;</td> 
+              <td>[IN] Passed-in buffer size, which must not be 0. The value range is [1,0xffffffff]. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">uwTimeOut&nbsp;</td> 
+              <td>[IN] Expiry time. The value range is [0,<a href="a00054_gd42a85c70327d0f340e93b0f0e2f9cdd.html">LOS_WAIT_FOREVER</a>](unit: Tick).</td> 
+             </tr> 
+            </tbody> 
+           </table> 
+          </dd> 
+         </dl> 
+         <dl compact=""> 
+          <dt> 
+           <b>返回值:</b> 
+          </dt> 
+          <dd> 
+           <table border="0" cellspacing="0" cellpadding="0"> 
+            <tbody> 
+             <tr> 
+              <th></th> 
+              <th>返回值</th> 
+              <th>描述</th> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00048_81e00a29757b6c6f90f05ca6c1eed169.html#81e00a29757b6c6f90f05ca6c1eed169">LOS_OK</a>&nbsp;</td> 
+              <td>The queue is successfully read. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00064_g66f57ec7b801acf09abf81d5d0992309.html#g66f57ec7b801acf09abf81d5d0992309" title="Queue error code: The handle of the queue is invalid.">LOS_ERRNO_QUEUE_INVALID</a>&nbsp;</td> 
+              <td>The handle of the queue that is being read is invalid. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00064_gbc7a8c8793f67c7e1562c0447e523e0d.html#gbc7a8c8793f67c7e1562c0447e523e0d" title="Queue error code: The pointer passed in during queue reading is null.">LOS_ERRNO_QUEUE_READ_PTR_NULL</a>&nbsp;</td> 
+              <td>The pointer passed in during queue reading is null. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00064_g22a6b0810cede10405101788f5224aa5.html#g22a6b0810cede10405101788f5224aa5" title="Queue error code: The buffer size passed in during queue reading is 0.">LOS_ERRNO_QUEUE_READSIZE_ISZERO</a>&nbsp;</td> 
+              <td>The buffer size passed in during queue reading is 0. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00064_ge8d8d97b5c5e91b5105c76855814f53c.html#ge8d8d97b5c5e91b5105c76855814f53c" title="Queue error code: The queue cannot be read during an interrupt when the time for...">LOS_ERRNO_QUEUE_READ_IN_INTERRUPT</a>&nbsp;</td> 
+              <td>The queue cannot be read during an interrupt when the time for waiting to processing the queue expires. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00064_g06999e637407e2068a8cfedd25557aeb.html#g06999e637407e2068a8cfedd25557aeb" title="Queue error code: The queue is not created.">LOS_ERRNO_QUEUE_NOT_CREATE</a>&nbsp;</td> 
+              <td>The queue to be read is not created. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00064_gfc83fd5ed39ff0c53e37309efe2e8e74.html#gfc83fd5ed39ff0c53e37309efe2e8e74" title="Queue error code: No resource is in the queue that is being read when the time for...">LOS_ERRNO_QUEUE_ISEMPTY</a>&nbsp;</td> 
+              <td>No resource is in the queue that is being read when the time for waiting to processing the queue expires. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00064_g7db713cb533d740e2b400e073a3ebb6d.html#g7db713cb533d740e2b400e073a3ebb6d" title="Queue error code: The task is forbidden to be blocked on a queue when the task is...">LOS_ERRNO_QUEUE_PEND_IN_LOCK</a>&nbsp;</td> 
+              <td>The task is forbidden to be blocked on a queue when the task is locked. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00064_g561cceeac8b169bc04672601606dcac0.html#g561cceeac8b169bc04672601606dcac0" title="Queue error code: The time set for waiting to processing the queue expires.">LOS_ERRNO_QUEUE_TIMEOUT</a>&nbsp;</td> 
+              <td>The time set for waiting to processing the queue expires. </td> 
+             </tr> 
+            </tbody> 
+           </table> 
+          </dd> 
+         </dl> 
+         <dl class="user" compact=""> 
+          <dt> 
+           <b>Dependency:</b> 
+          </dt> 
+          <dd> 
+           <ul> 
+            <li> <a class="el" href="a00041.html">los_queue.h</a>: The header file that contains the API declaration.</li> 
+           </ul> 
+          </dd> 
+         </dl> 
+         <dl class="see" compact=""> 
+          <dt> 
+           <b>参见:</b> 
+          </dt> 
+          <dd> 
+           <a class="el" href="a00064_g7e1421aafcfae09f73e314795fe0952b.html#g7e1421aafcfae09f73e314795fe0952b" title="Write data into a queue.">LOS_QueueWrite</a> | 
+           <a class="el" href="a00064_gf6f1fb9652760f1d43a76179282a3174.html#gf6f1fb9652760f1d43a76179282a3174" title="Create a message queue.">LOS_QueueCreate</a> 
+          </dd> 
+         </dl> 
+         <dl class="since" compact=""> 
+          <dt> 
+           <b>自从:</b> 
+          </dt> 
+          <dd>
+            Huawei LiteOS V100R001C00 
+          </dd> 
+         </dl> 
+        </div> 
+       </div><p> </p></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <hr size="1" />  
+ </body>
+</html>

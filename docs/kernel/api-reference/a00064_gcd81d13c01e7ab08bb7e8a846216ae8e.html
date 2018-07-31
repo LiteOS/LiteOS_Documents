@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>  
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+<meta name="DC.Type" content="concept">
+<meta name="featurename" content="dcp">
+<title>LOS_QueueInfoGet</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head> 
+ <body> 
+  <div class="familylinks"> 
+   <a href="a00064_gcd81d13c01e7ab08bb7e8a846216ae8e.html">LOS_QueueInfoGet</a> 
+   <hr size="2" /> 
+  </div> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top"> 
+  </div> 
+  <div class="contents"> 
+   <div class="navpath"> 
+    <a class="el" href="a00064.html">Queue</a> 
+   </div> 
+   <table cellspacing="0" cellpadding="0" border="0"> 
+    <tbody> 
+     <tr> 
+      <td valign="top"> </td> 
+      <td valign="top"> <a class="anchor" name="gcd81d13c01e7ab08bb7e8a846216ae8e"></a> 
+       <!-- doxytag: member="los_queue.h::<a href='a00064_gcd81d13c01e7ab08bb7e8a846216ae8e.html'>LOS_QueueInfoGet</a>" ref="gcd81d13c01e7ab08bb7e8a846216ae8e" args="(UINT32 uwQueueID, <a href='a00064_g1e931fed98d6ea59d97f4d69326187cb.html'>QUEUE_INFO_S</a> *pstQueueInfo)" --> 
+       <div class="memitem"> 
+        <div class="memproto"> 
+         <table class="memname"> 
+          <tbody> 
+           <tr> 
+            <td class="memname"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a href="a00064_gcd81d13c01e7ab08bb7e8a846216ae8e.html">LOS_QueueInfoGet</a> </td> 
+            <td class="paramtype">(</td> 
+            <td class="paramtype"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+            <td class="paramname"> <em>uwQueueID</em>, </td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramtype"><a class="el" href="a00016.html">QUEUE_INFO_S</a> *&nbsp;</td> 
+            <td class="paramname"> <em>pstQueueInfo</em></td> 
+            <td class="paramkey">&nbsp;</td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey">)</td> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+        </div> 
+        <div class="memdoc"> 
+         <p> Obtain queue information. </p> 
+         <p> </p> 
+         <dl class="user" compact=""> 
+          <dt> 
+           <b>Description:</b> 
+          </dt> 
+          <dd>
+            This API is used to obtain queue information. 
+          </dd> 
+         </dl> 
+         <dl class="attention" compact=""> 
+          <dt> 
+           <b>注意:</b> 
+          </dt> 
+          <dd> 
+           <ul> 
+            <li> The specific queue should be created firstly. </li> 
+           </ul> 
+          </dd> 
+         </dl> 
+         <dl compact=""> 
+          <dt> 
+           <b>参数:</b> 
+          </dt> 
+          <dd> 
+           <table border="0" cellspacing="0" cellpadding="0"> 
+            <tbody> 
+             <tr> 
+              <th></th> 
+              <th>参数名称</th> 
+              <th>描述</th> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">uwQueueID&nbsp;</td> 
+              <td>[IN] Queue ID created by <a href="a00064_gf6f1fb9652760f1d43a76179282a3174.html">LOS_QueueCreate</a>. The value range is [1,<a href="a00055_g7a7fa126ef8c518212ef77d47914f719.html">LOSCFG_BASE_IPC_QUEUE_LIMIT</a>]. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">pstQueueInfo&nbsp;</td> 
+              <td>[OUT] The queue information to be read must not be null.</td> 
+             </tr> 
+            </tbody> 
+           </table> 
+          </dd> 
+         </dl> 
+         <dl compact=""> 
+          <dt> 
+           <b>返回值:</b> 
+          </dt> 
+          <dd> 
+           <table border="0" cellspacing="0" cellpadding="0"> 
+            <tbody> 
+             <tr> 
+              <th></th> 
+              <th>返回值</th> 
+              <th>描述</th> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00048_81e00a29757b6c6f90f05ca6c1eed169.html#81e00a29757b6c6f90f05ca6c1eed169">LOS_OK</a>&nbsp;</td> 
+              <td>The queue information is successfully obtained. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00064_gbd8c54bf4883629e4d9490a59cc24c49.html#gbd8c54bf4883629e4d9490a59cc24c49" title="Queue error code: The pointer passed in when the queue information is being obtained...">LOS_ERRNO_QUEUE_PTR_NULL</a>&nbsp;</td> 
+              <td>The pointer to the queue information to be obtained is null. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00064_g66f57ec7b801acf09abf81d5d0992309.html#g66f57ec7b801acf09abf81d5d0992309" title="Queue error code: The handle of the queue is invalid.">LOS_ERRNO_QUEUE_INVALID</a>&nbsp;</td> 
+              <td>The handle of the queue that is being read is invalid. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00064_g06999e637407e2068a8cfedd25557aeb.html#g06999e637407e2068a8cfedd25557aeb" title="Queue error code: The queue is not created.">LOS_ERRNO_QUEUE_NOT_CREATE</a>&nbsp;</td> 
+              <td>The queue in which the information to be obtained is stored is not created.</td> 
+             </tr> 
+            </tbody> 
+           </table> 
+          </dd> 
+         </dl> 
+         <dl class="user" compact=""> 
+          <dt> 
+           <b>Dependency:</b> 
+          </dt> 
+          <dd> 
+           <ul> 
+            <li> <a class="el" href="a00041.html">los_queue.h</a>: the header file that contains the API declaration.</li> 
+           </ul> 
+          </dd> 
+         </dl> 
+         <dl class="see" compact=""> 
+          <dt> 
+           <b>参见:</b> 
+          </dt> 
+          <dd> 
+           <a class="el" href="a00064_gf6f1fb9652760f1d43a76179282a3174.html#gf6f1fb9652760f1d43a76179282a3174" title="Create a message queue.">LOS_QueueCreate</a> 
+          </dd> 
+         </dl> 
+         <dl class="since" compact=""> 
+          <dt> 
+           <b>自从:</b> 
+          </dt> 
+          <dd>
+            Huawei LiteOS V100R001C00 
+          </dd> 
+         </dl> 
+        </div> 
+       </div><p> </p></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <hr size="1" />  
+ </body>
+</html>

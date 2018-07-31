@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>  
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+<meta name="DC.Type" content="concept">
+<meta name="featurename" content="dcp">
+<title>LOS_QueueCreate</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head> 
+ <body> 
+  <div class="familylinks"> 
+   <a href="a00064_gf6f1fb9652760f1d43a76179282a3174.html">LOS_QueueCreate</a> 
+   <hr size="2" /> 
+  </div> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top"> 
+  </div> 
+  <div class="contents"> 
+   <div class="navpath"> 
+    <a class="el" href="a00064.html">Queue</a> 
+   </div> 
+   <table cellspacing="0" cellpadding="0" border="0"> 
+    <tbody> 
+     <tr> 
+      <td valign="top"> </td> 
+      <td valign="top"> <a class="anchor" name="gf6f1fb9652760f1d43a76179282a3174"></a> 
+       <!-- doxytag: member="los_queue.h::<a href='a00064_gf6f1fb9652760f1d43a76179282a3174.html'>LOS_QueueCreate</a>" ref="gf6f1fb9652760f1d43a76179282a3174" args="(CHAR *pcQueueName, UINT16 usLen, UINT32 *puwQueueID, UINT32 uwFlags, UINT16 usMaxMsgSize)" --> 
+       <div class="memitem"> 
+        <div class="memproto"> 
+         <table class="memname"> 
+          <tbody> 
+           <tr> 
+            <td class="memname"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a href="a00064_gf6f1fb9652760f1d43a76179282a3174.html">LOS_QueueCreate</a> </td> 
+            <td class="paramtype">(</td> 
+            <td class="paramtype"><a class="el" href="a00048_ebb9e13210d88d43e32e735ada43a425.html#ebb9e13210d88d43e32e735ada43a425">CHAR</a> *&nbsp;</td> 
+            <td class="paramname"> <em>pcQueueName</em>, </td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramtype"><a class="el" href="a00048_09f1a1fb2293e33483cc8d44aefb1eb1.html#09f1a1fb2293e33483cc8d44aefb1eb1">UINT16</a>&nbsp;</td> 
+            <td class="paramname"> <em>usLen</em>, </td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramtype"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> *&nbsp;</td> 
+            <td class="paramname"> <em>puwQueueID</em>, </td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramtype"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+            <td class="paramname"> <em>uwFlags</em>, </td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramtype"><a class="el" href="a00048_09f1a1fb2293e33483cc8d44aefb1eb1.html#09f1a1fb2293e33483cc8d44aefb1eb1">UINT16</a>&nbsp;</td> 
+            <td class="paramname"> <em>usMaxMsgSize</em></td> 
+            <td class="paramkey">&nbsp;</td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey">)</td> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+        </div> 
+        <div class="memdoc"> 
+         <p> Create a message queue. </p> 
+         <p> </p> 
+         <dl class="user" compact=""> 
+          <dt> 
+           <b>Description:</b> 
+          </dt> 
+          <dd>
+            This API is used to create a message queue. 
+          </dd> 
+         </dl> 
+         <dl class="attention" compact=""> 
+          <dt> 
+           <b>注意:</b> 
+          </dt> 
+          <dd> 
+           <ul> 
+            <li> Threre are <a href="a00055_g7a7fa126ef8c518212ef77d47914f719.html">LOSCFG_BASE_IPC_QUEUE_LIMIT</a> queues available, change it's value when necessory. </li> 
+           </ul> 
+          </dd> 
+         </dl> 
+         <dl compact=""> 
+          <dt> 
+           <b>参数:</b> 
+          </dt> 
+          <dd> 
+           <table border="0" cellspacing="0" cellpadding="0"> 
+            <tbody> 
+             <tr> 
+              <th></th> 
+              <th>参数名称</th> 
+              <th>描述</th> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">pcQueueName&nbsp;</td> 
+              <td>[IN] Message queue name. Reserved parameter, not used for now. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">usLen&nbsp;</td> 
+              <td>[IN] Queue length. The value range is [1,0xffff]. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">puwQueueID&nbsp;</td> 
+              <td>[OUT] ID of the queue control structure that is successfully created. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">uwFlags&nbsp;</td> 
+              <td>[IN] Queue mode. Reserved parameter, not used for now. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">usMaxMsgSize&nbsp;</td> 
+              <td>[IN] Node size. The value range is [1,0xffff-4].</td> 
+             </tr> 
+            </tbody> 
+           </table> 
+          </dd> 
+         </dl> 
+         <dl compact=""> 
+          <dt> 
+           <b>返回值:</b> 
+          </dt> 
+          <dd> 
+           <table border="0" cellspacing="0" cellpadding="0"> 
+            <tbody> 
+             <tr> 
+              <th></th> 
+              <th>返回值</th> 
+              <th>描述</th> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00048_81e00a29757b6c6f90f05ca6c1eed169.html#81e00a29757b6c6f90f05ca6c1eed169">LOS_OK</a>&nbsp;</td> 
+              <td>The message queue is successfully created. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00064_g2590cbe58b704b4c5eb0cdf8e319028b.html#g2590cbe58b704b4c5eb0cdf8e319028b" title="Queue error code: The upper limit of the number of created queues is exceeded.">LOS_ERRNO_QUEUE_CB_UNAVAILABLE</a>&nbsp;</td> 
+              <td>The upper limit of the number of created queues is exceeded. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00064_g90adeaf47438c711aaa663d71859b13c.html#g90adeaf47438c711aaa663d71859b13c" title="Queue error code: The memory for queue creation fails to be requested.">LOS_ERRNO_QUEUE_CREATE_NO_MEMORY</a>&nbsp;</td> 
+              <td>Insufficient memory for queue creation. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00064_g817ce2430eeb1c71cdc61702d758506c.html#g817ce2430eeb1c71cdc61702d758506c" title="Queue error code: Parameters passed in during queue creation are null pointers.">LOS_ERRNO_QUEUE_CREAT_PTR_NULL</a>&nbsp;</td> 
+              <td>Null pointer, puwQueueID is NULL. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00064_gcdcc7683d68705261bdaf0390f95bc3a.html#gcdcc7683d68705261bdaf0390f95bc3a" title="Queue error code: The queue length or message node size passed in during queue creation...">LOS_ERRNO_QUEUE_PARA_ISZERO</a>&nbsp;</td> 
+              <td>The queue length or message node size passed in during queue creation is 0. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00064_gd3601d99913ce4a536717a8159d39004.html#gd3601d99913ce4a536717a8159d39004" title="Queue error code: The size of the biggest message in the created queue is too big...">LOS_ERRNO_QUEUE_SIZE_TOO_BIG</a>&nbsp;</td> 
+              <td>The parameter usMaxMsgSize is larger than 0xffff - 4. </td> 
+             </tr> 
+            </tbody> 
+           </table> 
+          </dd> 
+         </dl> 
+         <dl class="user" compact=""> 
+          <dt> 
+           <b>Dependency:</b> 
+          </dt> 
+          <dd> 
+           <ul> 
+            <li> <a class="el" href="a00041.html">los_queue.h</a>: the header file that contains the API declaration.</li> 
+           </ul> 
+          </dd> 
+         </dl> 
+         <dl class="see" compact=""> 
+          <dt> 
+           <b>参见:</b> 
+          </dt> 
+          <dd> 
+           <a class="el" href="a00064_gd779efa012c288bc90032e7ce98a57df.html#gd779efa012c288bc90032e7ce98a57df" title="Delete a queue.">LOS_QueueDelete</a> 
+          </dd> 
+         </dl> 
+         <dl class="since" compact=""> 
+          <dt> 
+           <b>自从:</b> 
+          </dt> 
+          <dd>
+            Huawei LiteOS V100R001C00 
+          </dd> 
+         </dl> 
+        </div> 
+       </div><p> </p></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <hr size="1" />  
+ </body>
+</html>
