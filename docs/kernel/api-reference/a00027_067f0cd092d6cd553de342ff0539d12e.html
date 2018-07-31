@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312" /> 
+  <title>LOS_ASSERT</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head>
+ <body> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top">  
+  </div> 
+  <div class="contents"> 
+   <div class="navpath">
+    <a class="el" href="a00027.html">los_base.h</a> 
+   </div> 
+   <table cellspacing="0" cellpadding="0" border="0"> 
+    <tbody>
+     <tr> 
+      <td valign="top"> </td> 
+      <td valign="top"> <a class="anchor" name="067f0cd092d6cd553de342ff0539d12e"></a>
+       <!-- doxytag: member="los_base.h::LOS_ASSERT" ref="067f0cd092d6cd553de342ff0539d12e" args="(judge)" --> 
+       <div class="memitem"> 
+        <div class="memproto"> 
+         <table class="memname"> 
+          <tbody>
+           <tr> 
+            <td class="memname">#define LOS_ASSERT </td> 
+            <td class="paramtype">(</td> 
+            <td class="paramtype">judge&nbsp;</td> 
+            <td class="paramname"> </td> 
+            <td class="paramkey">&nbsp;)&nbsp;</td> 
+            <td class="paramkey"></td> 
+           </tr> 
+          </tbody>
+         </table> 
+        </div> 
+        <div class="memdoc"> 
+         <p> <b>值:</b></p>
+         <div class="fragment">
+          <pre class="fragment"><span class="keywordflow">do</span> { \
+        <span class="keywordflow">if</span> ((judge) == 0) \
+        { \
+            (void)<a class="code" href="a00061_g3677b471a53291cc48e87f704626972b.html#g3677b471a53291cc48e87f704626972b" title="Disable all interrupts.">LOS_IntLock</a>(); \
+            PRINT_ERR(<span class="stringliteral">&quot;ASSERT ERROR! %s, %d, %s\n&quot;</span>, __FILE__, __LINE__, __func__); \
+            <span class="keywordflow">while</span>(1); \
+        } \
+    } <span class="keywordflow">while</span>(0)
+</pre>
+         </div> 
+         <p>在文件<a class="el" href="a00076.html">los_base.h</a>第<a class="el" href="a00076.html#l00158">158</a>行定义。</p> 
+        </div> 
+       </div><p> </p></td> 
+     </tr> 
+    </tbody>
+   </table> 
+  </div> 
+  <hr size="1" /> 
+ </body>
+</html>
