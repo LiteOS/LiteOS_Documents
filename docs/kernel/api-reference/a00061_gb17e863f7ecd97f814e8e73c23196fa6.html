@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>  
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+<meta name="DC.Type" content="concept">
+<meta name="featurename" content="dcp">
+<title>osSetVector</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head> 
+ <body> 
+  <div class="familylinks"> 
+   <a href="a00061_gb17e863f7ecd97f814e8e73c23196fa6.html">osSetVector</a> 
+   <hr size="2" /> 
+  </div> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top"> 
+  </div> 
+  <div class="contents"> 
+   <div class="navpath"> 
+    <a class="el" href="a00061.html">Hardware interrupt</a> 
+   </div> 
+   <table cellspacing="0" cellpadding="0" border="0"> 
+    <tbody> 
+     <tr> 
+      <td valign="top"> </td> 
+      <td valign="top"> <a class="anchor" name="gb17e863f7ecd97f814e8e73c23196fa6"></a> 
+       <!-- doxytag: member="los_hwi.h::<a href='a00061_gb17e863f7ecd97f814e8e73c23196fa6.html'>osSetVector</a>" ref="gb17e863f7ecd97f814e8e73c23196fa6" args="(uwNum, pfnVector, uwArg)" --> 
+       <div class="memitem"> 
+        <div class="memproto"> 
+         <table class="memname"> 
+          <tbody> 
+           <tr> 
+            <td class="memname">#define <a href="a00061_gb17e863f7ecd97f814e8e73c23196fa6.html">osSetVector</a> </td> 
+            <td class="paramtype">(</td> 
+            <td class="paramtype">uwNum, </td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramtype">pfnVector, </td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramtype">uwArg&nbsp;</td> 
+            <td class="paramname"> </td> 
+            <td class="paramkey">&nbsp;)&nbsp;</td> 
+            <td class="paramkey"></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+        </div> 
+        <div class="memdoc"> 
+         <p> <b>值:</b></p> 
+         <div class="fragment"> 
+          <pre class="fragment"><a class="code" href="a00061_g56a69a9479d1e8dc12ae1dbf2d980d3d.html#g56a69a9479d1e8dc12ae1dbf2d980d3d" title="hardware interrupt form mapping handling function array.">m_pstHwiForm</a>[uwNum + <a class="code" href="a00061_g382438d18960e009d13c74b1db451d18.html#g382438d18960e009d13c74b1db451d18" title="Count of M-Core system interrupt vector.">OS_SYS_VECTOR_CNT</a>] = (<a class="code" href="a00061_g2e3077e890e28e4487e25bb8b41e72d7.html#g2e3077e890e28e4487e25bb8b41e72d7" title="Define the type of a hardware interrupt handling function.">HWI_PROC_FUNC</a>)<a class="code" href="a00061_gd275d282760d9f56dc5c2a25df02b3b6.html#gd275d282760d9f56dc5c2a25df02b3b6" title=": Hardware interrupt entry function.">osInterrupt</a>;\
+    <a class="code" href="a00061_g6d2a9f8e486bf4e0346d8db8e5e123a7.html#g6d2a9f8e486bf4e0346d8db8e5e123a7" title="hardware interrupt Slave form mapping handling function array.">m_pstHwiSlaveForm</a>[uwNum + <a class="code" href="a00061_g382438d18960e009d13c74b1db451d18.html#g382438d18960e009d13c74b1db451d18" title="Count of M-Core system interrupt vector.">OS_SYS_VECTOR_CNT</a>].<a class="code" href="a00010_58b369b099a61d19ac4d7ca8ece12ef3.html#58b369b099a61d19ac4d7ca8ece12ef3">pfnHandler</a>= pfnVector; \
+    <a class="code" href="a00061_g6d2a9f8e486bf4e0346d8db8e5e123a7.html#g6d2a9f8e486bf4e0346d8db8e5e123a7" title="hardware interrupt Slave form mapping handling function array.">m_pstHwiSlaveForm</a>[uwNum + <a class="code" href="a00061_g382438d18960e009d13c74b1db451d18.html#g382438d18960e009d13c74b1db451d18" title="Count of M-Core system interrupt vector.">OS_SYS_VECTOR_CNT</a>].<a class="code" href="a00010_fc5328f00a5fe0c6029455be1cff564c.html#fc5328f00a5fe0c6029455be1cff564c">pParm</a> = (<a class="code" href="a00048_7f319bfc2492a2136964194204e7a8cf.html#7f319bfc2492a2136964194204e7a8cf">VOID</a>*)uwArg;
+</pre> 
+         </div>Set interrupt vector table. 
+         <p> </p> 
+         <p>在文件<a class="el" href="a00084.html">los_hwi.h</a>第<a class="el" href="a00084.html#l00398">398</a>行定义。</p> 
+        </div> 
+       </div><p> </p></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <hr size="1" />  
+ </body>
+</html>

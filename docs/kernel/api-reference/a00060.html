@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312" /> 
+  <title>hardware</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head>
+ <body> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top">  
+  </div> 
+  <div class="contents"> 
+   <h1>hardware<br /> <small> [<a class="el" href="a00053.html">Kernel</a>]</small> </h1>
+   <table border="0" cellpadding="0" cellspacing="0"> 
+    <tbody>
+     <tr>
+      <td colspan="2"><br /><h2>数据结构</h2></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">struct &nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00020.html">tagTskContext</a></td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Define the type of a task context control block. <a href="a00020.html#_details">更多...</a><br /></td>
+     </tr> 
+     <tr>
+      <td colspan="2"><br /><h2>宏定义</h2></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00060_g8bd7f816e2b1eb404e52d17af1a6236f.html#g8bd7f816e2b1eb404e52d17af1a6236f">EMPTY_STACK</a>&nbsp;&nbsp;&nbsp;0xCACA</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">The initialization value of stack space. <a href="#g8bd7f816e2b1eb404e52d17af1a6236f"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00060_g4d2146110691191febbdfef99b7b5224.html#g4d2146110691191febbdfef99b7b5224">osTaskTrap</a>()&nbsp;&nbsp;&nbsp;__asm(&quot; TRAP #31&quot;)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Trigger a task. <a href="#g4d2146110691191febbdfef99b7b5224"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00060_g07491dbad991ddb8114ba8bc51022f55.html#g07491dbad991ddb8114ba8bc51022f55">LOS_CHECK_SCHEDULE</a>&nbsp;&nbsp;&nbsp;((!g_usLosTaskLock))</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Check task schedule. <a href="#g07491dbad991ddb8114ba8bc51022f55"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00060_gd3c6cab4dc22cbedff0ed41d22bb747d.html#gd3c6cab4dc22cbedff0ed41d22bb747d">OS_SYSTICK_CURRENT_REG</a>&nbsp;&nbsp;&nbsp;0xE000E018</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">SysTick current value register. <a href="#gd3c6cab4dc22cbedff0ed41d22bb747d"></a><br /></td>
+     </tr> 
+     <tr>
+      <td colspan="2"><br /><h2>类型定义</h2></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">typedef struct <a class="el" href="a00020.html">tagTskContext</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00060_g55e73ebe131c934cca28001907a87736.html#g55e73ebe131c934cca28001907a87736">TSK_CONTEXT_S</a></td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Define the type of a task context control block. <a href="#g55e73ebe131c934cca28001907a87736"></a><br /></td>
+     </tr> 
+     <tr>
+      <td colspan="2"><br /><h2>函数</h2></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">VOID *&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00060_g6ff9f2b7ac8130a15af10c073654207d.html#g6ff9f2b7ac8130a15af10c073654207d">osTskStackInit</a> (<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwTaskID, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwStackSize, VOID *pTopStack)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">: Task stack initialization. <a href="#g6ff9f2b7ac8130a15af10c073654207d"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">VOID&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00060_g23e240cd66a0c45a3a5a4cc8cc29827e.html#g23e240cd66a0c45a3a5a4cc8cc29827e">osSchedule</a> (VOID)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">: Task scheduling Function. <a href="#g23e240cd66a0c45a3a5a4cc8cc29827e"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">VOID&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00060_g8a5db3ea9e79dea19daec718f5e32ba7.html#g8a5db3ea9e79dea19daec718f5e32ba7">LOS_Schedule</a> (VOID)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">: Function to determine whether task scheduling is required. <a href="#g8a5db3ea9e79dea19daec718f5e32ba7"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">VOID&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00060_ge9c348e946bfd365b9d751e56e991751.html#ge9c348e946bfd365b9d751e56e991751">osEnterSleep</a> (VOID)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">: The M3 wait interrupt instruction. <a href="#ge9c348e946bfd365b9d751e56e991751"></a><br /></td>
+     </tr> 
+    </tbody>
+   </table> 
+  </div> 
+  <hr size="1" /> 
+ </body>
+</html>
