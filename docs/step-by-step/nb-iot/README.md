@@ -10,7 +10,7 @@
 
 我们这个场景是模拟消防设置场景，当用户按下报警按钮，会点亮报警灯，同时将报警事件（开/关状态）通过 NB-IoT 网络上报到 IoT 平台，平台会根据订阅事件，通知消防中心。在这个场景中，我们将使用 NB-IoT 开发板模拟开发火警按钮和警报（LED），而消防中心则利用 Node.js 搭建的 Web API 网关进行模拟，具体细节我们会在教程中详细说明，下图是一键式报警场景流程图。
 
-![一键式报警场景](./image/scene.png)
+![一键式报警场景](./pic/scene.png)
 
 请大家系好安全带，我们马上就要进入 NB-IoT 的世界。
 
@@ -48,9 +48,9 @@
 
 目前我们文档已经支持以下 NB-IoT 开发板，每套开发板都各有其特点，如果读者没有配套开发板，可去某宝去搜索购入。如果您已经拥有一套开发板，可以根据开发板类型选择对应的教程。
 
-| 开发板           | 配图        | 规格  | 教程 |
-| ---------------- |:----------:| --------  | ------- |
-| Terabits NB-IoT 开发板| [pic]      | STM32 F103VCT6，配套移远，中国移动 NB-IoT 通讯扣板2块，温湿度，光感传感器若干      | [链接](./01-inspect-terabits-f103vc-board.md) |
-| YiQi NB-IoT 开发板<Badge text="荐"/>    | [pic]      | STM32 L152CB-A，板载移远 NB-IoT 模组和 ESP8266 WIFI 模组，温度，压力传感器若干           | [链接](./01-inspect-yiqi-evb01-l152cb-board.md) |
-| IoTClub NB-IoT 开发板 | [pic]      | STM32 L431, 板载移远 NB-IoT 模组，OLED显示，温湿度，WiFi，GPS传感器扩展板若干| [链接](./iotclub-nbiot-overview.md) |
-| 朱老师 NB-IoT 开发板 | [pic]      | STM32 L476, 板载移远 NB-IoT 模组，GPS，光照， OLED等传感器模块 | [链接](./nb476-nbiot-overview.md) |
+| 开发板           |  规格  | 教程 |
+| ---------------- | --------  | ------- |
+| Terabits NB-IoT 开发板| STM32 F103VCT6，配套移远，中国移动 NB-IoT 通讯扣板2块，温湿度，光感传感器若干      | [链接](./01-inspect-terabits-board.md) |
+| YiQi NB-IoT 开发板<Badge text="荐"/>    | STM32 L152CB-A，板载移远 NB-IoT 模组和 ESP8266 WIFI 模组，温度，压力传感器若干           | [链接](./01-inspect-yiqi-evb01-board.md) |
+| IoTClub NB-IoT 开发板 | STM32 L431, 板载移远 NB-IoT 模组，OLED显示，温湿度，WiFi，GPS传感器扩展板若干| [链接](./01-inspect-iotclub-m1v3-board.md) |
+| 朱老师 NB-IoT 开发板 | STM32 L476, 板载移远 NB-IoT 模组，GPS，光照， OLED等传感器模块 | [链接](./01-inspect-zhulaoshi-nb476-board.md) |
