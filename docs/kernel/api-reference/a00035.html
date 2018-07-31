@@ -1,0 +1,536 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>  
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+<meta name="DC.Type" content="concept">
+<meta name="featurename" content="dcp">
+<title>los_hwi.h文件参考</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head> 
+ <body> 
+  <div class="familylinks"> 
+   <a href="a00035.html">los_hwi.h</a> 
+   <hr size="2" /> 
+  </div> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top"> 
+  </div> 
+  <div class="contents"> 
+   <h1>los_hwi.h文件参考</h1> 
+   <p> <a href="a00084.html">浏览该文件的源代码。</a></p> 
+   <table border="0" cellpadding="0" cellspacing="0"> 
+    <tbody> 
+     <tr> 
+      <td colspan="2"><br /><h2>数据结构</h2></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">struct &nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00010.html">HWI_SLAVE_FUNC</a></td> 
+     </tr> 
+     <tr> 
+      <td colspan="2"><br /><h2>宏定义</h2></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_gc3737b053e9546d768ceaa36ca678459.html#gc3737b053e9546d768ceaa36ca678459">OS_HWI_MAX_NUM</a>&nbsp;&nbsp;&nbsp;32</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Maximum number of used hardware interrupts. <a href="a00061_gc3737b053e9546d768ceaa36ca678459.html#gc3737b053e9546d768ceaa36ca678459"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_g9231e0c3b145cc4be1c2b228a4644d2d.html#g9231e0c3b145cc4be1c2b228a4644d2d">OS_HWI_PRIO_HIGHEST</a>&nbsp;&nbsp;&nbsp;0</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Highest priority of a hardware interrupt. <a href="a00061_g9231e0c3b145cc4be1c2b228a4644d2d.html#g9231e0c3b145cc4be1c2b228a4644d2d"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_gac3fca0e1de1be295b5ae5412b98bfa8.html#gac3fca0e1de1be295b5ae5412b98bfa8">OS_HWI_PRIO_LOWEST</a>&nbsp;&nbsp;&nbsp;7</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Lowest priority of a hardware interrupt. <a href="a00061_gac3fca0e1de1be295b5ae5412b98bfa8.html#gac3fca0e1de1be295b5ae5412b98bfa8"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g9b0a14fcaecb5618201903ccb33b9bc3.html#g9b0a14fcaecb5618201903ccb33b9bc3">OS_HWI_WITH_ARG</a>&nbsp;&nbsp;&nbsp;NO</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Configuration item for interrupt with argument <a href="a00055_g9b0a14fcaecb5618201903ccb33b9bc3.html#g9b0a14fcaecb5618201903ccb33b9bc3"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_g420c041613b029c3cfab14b2ce7af509.html#g420c041613b029c3cfab14b2ce7af509">OS_INT_ACTIVE</a>&nbsp;&nbsp;&nbsp;(<a class="el" href="a00061_g566b047383941af16b21fb553a96867e.html#g566b047383941af16b21fb553a96867e">g_vuwIntCount</a> &gt; 0)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">An interrupt is active. <a href="a00061_g420c041613b029c3cfab14b2ce7af509.html#g420c041613b029c3cfab14b2ce7af509"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_g13a0060abe4090f69e614daba58e8339.html#g13a0060abe4090f69e614daba58e8339">OS_INT_INACTIVE</a>&nbsp;&nbsp;&nbsp;(!(<a href="a00061_g420c041613b029c3cfab14b2ce7af509.html">OS_INT_ACTIVE</a>))</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">An interrupt is inactive. <a href="a00061_g13a0060abe4090f69e614daba58e8339.html#g13a0060abe4090f69e614daba58e8339"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_g382438d18960e009d13c74b1db451d18.html#g382438d18960e009d13c74b1db451d18">OS_SYS_VECTOR_CNT</a>&nbsp;&nbsp;&nbsp;16</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Count of M-Core system interrupt vector. <a href="a00061_g382438d18960e009d13c74b1db451d18.html#g382438d18960e009d13c74b1db451d18"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_gf06011d04fc2a8ce0af65751a4cd70ec.html#gf06011d04fc2a8ce0af65751a4cd70ec">OS_VECTOR_CNT</a>&nbsp;&nbsp;&nbsp;(<a href="a00061_g382438d18960e009d13c74b1db451d18.html">OS_SYS_VECTOR_CNT</a> + <a href="a00061_gc3737b053e9546d768ceaa36ca678459.html">OS_HWI_MAX_NUM</a>)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Count of M-Core interrupt vector. <a href="a00061_gf06011d04fc2a8ce0af65751a4cd70ec.html#gf06011d04fc2a8ce0af65751a4cd70ec"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_g91050e0b31588f142eb034fe920adee4.html#g91050e0b31588f142eb034fe920adee4">OS_NVIC_AIRCR_PRIGROUP</a>&nbsp;&nbsp;&nbsp;7</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">AIRCR register priority group parameter . <a href="a00061_g91050e0b31588f142eb034fe920adee4.html#g91050e0b31588f142eb034fe920adee4"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_gfb399c19cc97ebd2ba47baf829e67ca4.html#gfb399c19cc97ebd2ba47baf829e67ca4">OS_ERRNO_HWI_NUM_INVALID</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_HWI, 0x00)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Hardware interrupt error code: Invalid interrupt number. <a href="a00061_gfb399c19cc97ebd2ba47baf829e67ca4.html#gfb399c19cc97ebd2ba47baf829e67ca4"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_gcdd00d9902cd593a795c5e2f1f8b3d5f.html#gcdd00d9902cd593a795c5e2f1f8b3d5f">OS_ERRNO_HWI_PROC_FUNC_NULL</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_HWI, 0x01)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Hardware interrupt error code: Null hardware interrupt handling function. <a href="a00061_gcdd00d9902cd593a795c5e2f1f8b3d5f.html#gcdd00d9902cd593a795c5e2f1f8b3d5f"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_g1391f83dc6bddb740e28a1a933d639e3.html#g1391f83dc6bddb740e28a1a933d639e3">OS_ERRNO_HWI_CB_UNAVAILABLE</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_HWI, 0x02)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Hardware interrupt error code: Insufficient interrupt resources for hardware interrupt creation. <a href="a00061_g1391f83dc6bddb740e28a1a933d639e3.html#g1391f83dc6bddb740e28a1a933d639e3"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_ga461904a121685b1ebc6541408838a76.html#ga461904a121685b1ebc6541408838a76">OS_ERRNO_HWI_NO_MEMORY</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_HWI, 0x03)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Hardware interrupt error code: Insufficient memory for hardware interrupt initialization. <a href="a00061_ga461904a121685b1ebc6541408838a76.html#ga461904a121685b1ebc6541408838a76"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_g26a55b4c4d7d4a66e779c7df3dd3d6f6.html#g26a55b4c4d7d4a66e779c7df3dd3d6f6">OS_ERRNO_HWI_ALREADY_CREATED</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_HWI, 0x04)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Hardware interrupt error code: The interrupt has already been created. <a href="a00061_g26a55b4c4d7d4a66e779c7df3dd3d6f6.html#g26a55b4c4d7d4a66e779c7df3dd3d6f6"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_g1ae8a07c4f4e4f63abdc229614557e27.html#g1ae8a07c4f4e4f63abdc229614557e27">OS_ERRNO_HWI_PRIO_INVALID</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_HWI, 0x05)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Hardware interrupt error code: Invalid interrupt priority. <a href="a00061_g1ae8a07c4f4e4f63abdc229614557e27.html#g1ae8a07c4f4e4f63abdc229614557e27"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_g736492e48df8f93462dabe4ac5fd897b.html#g736492e48df8f93462dabe4ac5fd897b">OS_ERRNO_HWI_MODE_INVALID</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_HWI, 0x06)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Hardware interrupt error code: Incorrect interrupt creation mode. <a href="a00061_g736492e48df8f93462dabe4ac5fd897b.html#g736492e48df8f93462dabe4ac5fd897b"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_gbb4e9c9875307dc222f3b25008057f2f.html#gbb4e9c9875307dc222f3b25008057f2f">OS_ERRNO_HWI_FASTMODE_ALREADY_CREATED</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_HWI, 0x07)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Hardware interrupt error code: The interrupt has already been created as a fast interrupt. <a href="a00061_gbb4e9c9875307dc222f3b25008057f2f.html#gbb4e9c9875307dc222f3b25008057f2f"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_g647bf65c0b62fcb1768b9d5307c0cc3a.html#g647bf65c0b62fcb1768b9d5307c0cc3a">OS_SYSTICK_CONTROL_REG</a>&nbsp;&nbsp;&nbsp;0xE000E010</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">SysTick control and status register. <a href="a00061_g647bf65c0b62fcb1768b9d5307c0cc3a.html#g647bf65c0b62fcb1768b9d5307c0cc3a"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00060_gd3c6cab4dc22cbedff0ed41d22bb747d.html#gd3c6cab4dc22cbedff0ed41d22bb747d">OS_SYSTICK_CURRENT_REG</a>&nbsp;&nbsp;&nbsp;0xE000E018</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">SysTick current value register. <a href="a00060_gd3c6cab4dc22cbedff0ed41d22bb747d.html#gd3c6cab4dc22cbedff0ed41d22bb747d"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_gadb6a4be6fa5f30a57fa0e3981e17f45.html#gadb6a4be6fa5f30a57fa0e3981e17f45">OS_NVIC_PRI_BASE</a>&nbsp;&nbsp;&nbsp;0xE000E400</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Interrupt Priority-Level Registers. <a href="a00061_gadb6a4be6fa5f30a57fa0e3981e17f45.html#gadb6a4be6fa5f30a57fa0e3981e17f45"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_ga908f1789fd13e82d3e5fa871f6cbaa7.html#ga908f1789fd13e82d3e5fa871f6cbaa7">OS_NVIC_SETENA_BASE</a>&nbsp;&nbsp;&nbsp;0xE000E100</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Interrupt enable register for 0-31. <a href="a00061_ga908f1789fd13e82d3e5fa871f6cbaa7.html#ga908f1789fd13e82d3e5fa871f6cbaa7"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_gae28f2b627c778cd1fa161d34c5806c0.html#gae28f2b627c778cd1fa161d34c5806c0">OS_NVIC_SETPEND_BASE</a>&nbsp;&nbsp;&nbsp;0xE000E200</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">interrupt pending register. <a href="a00061_gae28f2b627c778cd1fa161d34c5806c0.html#gae28f2b627c778cd1fa161d34c5806c0"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_g9b1a599792ea79fc146081e142317ce5.html#g9b1a599792ea79fc146081e142317ce5">OS_NVIC_INT_ACT_BASE</a>&nbsp;&nbsp;&nbsp;0xE000E300</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">?D??ACTIVE???????? <a href="a00061_g9b1a599792ea79fc146081e142317ce5.html#g9b1a599792ea79fc146081e142317ce5"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_g21144bed90b58dd9c94e400a29142c15.html#g21144bed90b58dd9c94e400a29142c15">OS_NVIC_CLRENA_BASE</a>&nbsp;&nbsp;&nbsp;0xE000E180</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Interrupt disable register for 0-31. <a href="a00061_g21144bed90b58dd9c94e400a29142c15.html#g21144bed90b58dd9c94e400a29142c15"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_g94bf6b4bdb5bb0804a048869c80f62ff.html#g94bf6b4bdb5bb0804a048869c80f62ff">OS_NVIC_INT_CTRL</a>&nbsp;&nbsp;&nbsp;0xE000ED04</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Interrupt control and status register. <a href="a00061_g94bf6b4bdb5bb0804a048869c80f62ff.html#g94bf6b4bdb5bb0804a048869c80f62ff"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_g73c17149ef24348100c96de1af6ce3e8.html#g73c17149ef24348100c96de1af6ce3e8">OS_NVIC_VTOR</a>&nbsp;&nbsp;&nbsp;0xE000ED08</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Vector table offset register. <a href="a00061_g73c17149ef24348100c96de1af6ce3e8.html#g73c17149ef24348100c96de1af6ce3e8"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_ga098e2d3cce05d7c58fcb9498ae92982.html#ga098e2d3cce05d7c58fcb9498ae92982">OS_NVIC_AIRCR</a>&nbsp;&nbsp;&nbsp;0xE000ED0C</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Application interrupt and reset control register <a href="a00061_ga098e2d3cce05d7c58fcb9498ae92982.html#ga098e2d3cce05d7c58fcb9498ae92982"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_g7619444c3c2f16b050305bc5639293ff.html#g7619444c3c2f16b050305bc5639293ff">OS_NVIC_EXCPRI_BASE</a>&nbsp;&nbsp;&nbsp;0xE000ED18</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">System exception priority register. <a href="a00061_g7619444c3c2f16b050305bc5639293ff.html#g7619444c3c2f16b050305bc5639293ff"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_g3c74d6817f6b12741eca35da27624cae.html#g3c74d6817f6b12741eca35da27624cae">OS_EXC_RESET</a>&nbsp;&nbsp;&nbsp;1</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Interrupt No. <a href="a00061_g3c74d6817f6b12741eca35da27624cae.html#g3c74d6817f6b12741eca35da27624cae"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_g6ff7358d0917a8184e57f0448ecff2c5.html#g6ff7358d0917a8184e57f0448ecff2c5">OS_EXC_NMI</a>&nbsp;&nbsp;&nbsp;2</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Interrupt No. <a href="a00061_g6ff7358d0917a8184e57f0448ecff2c5.html#g6ff7358d0917a8184e57f0448ecff2c5"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_ga3ee515171332c75522797f0a50e5f16.html#ga3ee515171332c75522797f0a50e5f16">OS_EXC_HARD_FAULT</a>&nbsp;&nbsp;&nbsp;3</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Interrupt No. <a href="a00061_ga3ee515171332c75522797f0a50e5f16.html#ga3ee515171332c75522797f0a50e5f16"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_g50cb2f531754b4fc52795b7a16d18725.html#g50cb2f531754b4fc52795b7a16d18725">OS_EXC_MPU_FAULT</a>&nbsp;&nbsp;&nbsp;4</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Interrupt No. <a href="a00061_g50cb2f531754b4fc52795b7a16d18725.html#g50cb2f531754b4fc52795b7a16d18725"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_g44cb4e42dfa92922bf8cca2084401fda.html#g44cb4e42dfa92922bf8cca2084401fda">OS_EXC_BUS_FAULT</a>&nbsp;&nbsp;&nbsp;5</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Interrupt No. <a href="a00061_g44cb4e42dfa92922bf8cca2084401fda.html#g44cb4e42dfa92922bf8cca2084401fda"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_g218b5c2d7168c249d7c18a171db48309.html#g218b5c2d7168c249d7c18a171db48309">OS_EXC_USAGE_FAULT</a>&nbsp;&nbsp;&nbsp;6</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Interrupt No. <a href="a00061_g218b5c2d7168c249d7c18a171db48309.html#g218b5c2d7168c249d7c18a171db48309"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_ga86c1d88400440840a982514ae8251a4.html#ga86c1d88400440840a982514ae8251a4">OS_EXC_SVC_CALL</a>&nbsp;&nbsp;&nbsp;11</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Interrupt No. <a href="a00061_ga86c1d88400440840a982514ae8251a4.html#ga86c1d88400440840a982514ae8251a4"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_g8543b0ddce086782d260b51af81bc327.html#g8543b0ddce086782d260b51af81bc327">OS_EXC_DBG_MONITOR</a>&nbsp;&nbsp;&nbsp;12</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Interrupt No. <a href="a00061_g8543b0ddce086782d260b51af81bc327.html#g8543b0ddce086782d260b51af81bc327"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_g589e283f8613f86849b97e3daf649080.html#g589e283f8613f86849b97e3daf649080">OS_EXC_PEND_SV</a>&nbsp;&nbsp;&nbsp;14</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Interrupt No. <a href="a00061_g589e283f8613f86849b97e3daf649080.html#g589e283f8613f86849b97e3daf649080"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_g771d6e8c5b2a4a0973fa2f829cec800f.html#g771d6e8c5b2a4a0973fa2f829cec800f">OS_EXC_SYS_TICK</a>&nbsp;&nbsp;&nbsp;15</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Interrupt No. <a href="a00061_g771d6e8c5b2a4a0973fa2f829cec800f.html#g771d6e8c5b2a4a0973fa2f829cec800f"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_gb17e863f7ecd97f814e8e73c23196fa6.html#gb17e863f7ecd97f814e8e73c23196fa6">osSetVector</a>(uwNum, pfnVector, uwArg)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Set interrupt vector table. <a href="a00061_gb17e863f7ecd97f814e8e73c23196fa6.html#gb17e863f7ecd97f814e8e73c23196fa6"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td colspan="2"><br /><h2>类型定义</h2></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">typedef <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_ga7234e6d543bd889729494b4861f17e3.html#ga7234e6d543bd889729494b4861f17e3">HWI_HANDLE_T</a></td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Define the type of a hardware interrupt number. <a href="a00061_ga7234e6d543bd889729494b4861f17e3.html#ga7234e6d543bd889729494b4861f17e3"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">typedef <a class="el" href="a00048_09f1a1fb2293e33483cc8d44aefb1eb1.html#09f1a1fb2293e33483cc8d44aefb1eb1">UINT16</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_g0c03b1b0d3b5a647171e529b4837873b.html#g0c03b1b0d3b5a647171e529b4837873b">HWI_PRIOR_T</a></td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Define the type of a hardware interrupt priority. <a href="a00061_g0c03b1b0d3b5a647171e529b4837873b.html#g0c03b1b0d3b5a647171e529b4837873b"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">typedef <a class="el" href="a00048_09f1a1fb2293e33483cc8d44aefb1eb1.html#09f1a1fb2293e33483cc8d44aefb1eb1">UINT16</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_g8c90292a4efd04db39cf8ef54d21562c.html#g8c90292a4efd04db39cf8ef54d21562c">HWI_MODE_T</a></td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Define the type of hardware interrupt mode configurations. <a href="a00061_g8c90292a4efd04db39cf8ef54d21562c.html#g8c90292a4efd04db39cf8ef54d21562c"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">typedef <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_gf938c6631a4cf856897f724d4f69351c.html#gf938c6631a4cf856897f724d4f69351c">HWI_ARG_T</a></td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Define the type of the parameter used for the hardware interrupt creation function. <a href="a00061_gf938c6631a4cf856897f724d4f69351c.html#gf938c6631a4cf856897f724d4f69351c"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">typedef VOID(*&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_g2e3077e890e28e4487e25bb8b41e72d7.html#g2e3077e890e28e4487e25bb8b41e72d7">HWI_PROC_FUNC</a> )(VOID *pParm)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Define the type of a hardware interrupt handling function. <a href="a00061_g2e3077e890e28e4487e25bb8b41e72d7.html#g2e3077e890e28e4487e25bb8b41e72d7"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">typedef VOID(**&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_g4f3046fd3b82164b7ad3d44151af4d4d.html#g4f3046fd3b82164b7ad3d44151af4d4d">HWI_VECTOR_FUNC</a> )(void)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Define the type of a hardware interrupt vector table function. <a href="a00061_g4f3046fd3b82164b7ad3d44151af4d4d.html#g4f3046fd3b82164b7ad3d44151af4d4d"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td colspan="2"><br /><h2>函数</h2></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_gb02ef9b0e79293ec6e827363aa06c3d3.html#gb02ef9b0e79293ec6e827363aa06c3d3">LOS_HwiCreate</a> (<a class="el" href="a00061_ga7234e6d543bd889729494b4861f17e3.html#ga7234e6d543bd889729494b4861f17e3">HWI_HANDLE_T</a> uwHwiNum, <a class="el" href="a00061_g0c03b1b0d3b5a647171e529b4837873b.html#g0c03b1b0d3b5a647171e529b4837873b">HWI_PRIOR_T</a> usHwiPrio, <a class="el" href="a00061_g8c90292a4efd04db39cf8ef54d21562c.html#g8c90292a4efd04db39cf8ef54d21562c">HWI_MODE_T</a> usMode, <a class="el" href="a00061_g2e3077e890e28e4487e25bb8b41e72d7.html#g2e3077e890e28e4487e25bb8b41e72d7">HWI_PROC_FUNC</a> pfnHandler, <a class="el" href="a00061_gf938c6631a4cf856897f724d4f69351c.html#gf938c6631a4cf856897f724d4f69351c">HWI_ARG_T</a> uwArg)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Create a hardware interrupt. <a href="a00061_gb02ef9b0e79293ec6e827363aa06c3d3.html#gb02ef9b0e79293ec6e827363aa06c3d3"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">VOID&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_gd275d282760d9f56dc5c2a25df02b3b6.html#gd275d282760d9f56dc5c2a25df02b3b6">osInterrupt</a> (VOID)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">: Hardware interrupt entry function. <a href="a00061_gd275d282760d9f56dc5c2a25df02b3b6.html#gd275d282760d9f56dc5c2a25df02b3b6"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_gf20097cf21ee2f00099ff71f13177f47.html#gf20097cf21ee2f00099ff71f13177f47">osIntNumGet</a> (VOID)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">: Get a interrupt number. <a href="a00061_gf20097cf21ee2f00099ff71f13177f47.html#gf20097cf21ee2f00099ff71f13177f47"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">VOID&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_gbf7e5b06879bee47bcf3dbb0c37cf43b.html#gbf7e5b06879bee47bcf3dbb0c37cf43b">osHwiDefaultHandler</a> (VOID)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">: Default vector handling function. <a href="a00061_gbf7e5b06879bee47bcf3dbb0c37cf43b.html#gbf7e5b06879bee47bcf3dbb0c37cf43b"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">VOID&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_g7d417918540ba520114bfaf94e43c982.html#g7d417918540ba520114bfaf94e43c982">Reset_Handler</a> (VOID)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">: Reset the vector table. <a href="a00061_g7d417918540ba520114bfaf94e43c982.html#g7d417918540ba520114bfaf94e43c982"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">VOID&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_g726f0a6d3d94a3757994b092c22906da.html#g726f0a6d3d94a3757994b092c22906da">osPendSV</a> (VOID)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">: Pended System Call. <a href="a00061_g726f0a6d3d94a3757994b092c22906da.html#g726f0a6d3d94a3757994b092c22906da"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_c8e6f63630e32ecea7f5aae3ae0a6714.html#c8e6f63630e32ecea7f5aae3ae0a6714">UINTPTR</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_gff8a3ebd48e5ce4ab7c1eefdfdc2e41f.html#gff8a3ebd48e5ce4ab7c1eefdfdc2e41f">LOS_IntUnLock</a> (VOID)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Enable all interrupts. <a href="a00061_gff8a3ebd48e5ce4ab7c1eefdfdc2e41f.html#gff8a3ebd48e5ce4ab7c1eefdfdc2e41f"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_c8e6f63630e32ecea7f5aae3ae0a6714.html#c8e6f63630e32ecea7f5aae3ae0a6714">UINTPTR</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_g3677b471a53291cc48e87f704626972b.html#g3677b471a53291cc48e87f704626972b">LOS_IntLock</a> (VOID)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Disable all interrupts. <a href="a00061_g3677b471a53291cc48e87f704626972b.html#g3677b471a53291cc48e87f704626972b"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">VOID&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_gca8a1f21999cde0bd5665026a0ee6356.html#gca8a1f21999cde0bd5665026a0ee6356">LOS_IntRestore</a> (<a class="el" href="a00048_c8e6f63630e32ecea7f5aae3ae0a6714.html#c8e6f63630e32ecea7f5aae3ae0a6714">UINTPTR</a> uvIntSave)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Restore interrupts. <a href="a00061_gca8a1f21999cde0bd5665026a0ee6356.html#gca8a1f21999cde0bd5665026a0ee6356"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">VOID&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_g15fac0a18fc1ebdea24ec5cefb09fff1.html#g15fac0a18fc1ebdea24ec5cefb09fff1">LOS_GetCpuCycle</a> (<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> *puwCntHi, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> *puwCntLo)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Get value from xPSR register. <a href="a00061_g15fac0a18fc1ebdea24ec5cefb09fff1.html#g15fac0a18fc1ebdea24ec5cefb09fff1"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">VOID&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00035_df89e00fd9d2176e1a34564bf3bb9d92.html#df89e00fd9d2176e1a34564bf3bb9d92">LOS_SysTickReload</a> (<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwCyclesPerTick)</td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00035_ae945353401408cc8f4d071d003bf579.html#ae945353401408cc8f4d071d003bf579">LOS_SysTickCurrCycleGet</a> (VOID)</td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_g2bde529e83e01f9fe13aab45bc30b0b4.html#g2bde529e83e01f9fe13aab45bc30b0b4">LOS_HwiDelete</a> (<a class="el" href="a00061_ga7234e6d543bd889729494b4861f17e3.html#ga7234e6d543bd889729494b4861f17e3">HWI_HANDLE_T</a> uwHwiNum)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Delete hardware interrupt. <a href="a00061_g2bde529e83e01f9fe13aab45bc30b0b4.html#g2bde529e83e01f9fe13aab45bc30b0b4"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td colspan="2"><br /><h2>变量</h2></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_g566b047383941af16b21fb553a96867e.html#g566b047383941af16b21fb553a96867e">g_vuwIntCount</a></td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Count of interrupts. <a href="a00061_g566b047383941af16b21fb553a96867e.html#g566b047383941af16b21fb553a96867e"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_g1266a6b6ea9a80f2d6df7d064457c660.html#g1266a6b6ea9a80f2d6df7d064457c660">_BootVectors</a> []</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Boot interrupt vector table. <a href="a00061_g1266a6b6ea9a80f2d6df7d064457c660.html#g1266a6b6ea9a80f2d6df7d064457c660"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00061_g2e3077e890e28e4487e25bb8b41e72d7.html#g2e3077e890e28e4487e25bb8b41e72d7">HWI_PROC_FUNC</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_g56a69a9479d1e8dc12ae1dbf2d980d3d.html#g56a69a9479d1e8dc12ae1dbf2d980d3d">m_pstHwiForm</a> [<a href="a00061_gf06011d04fc2a8ce0af65751a4cd70ec.html">OS_VECTOR_CNT</a>]</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">hardware interrupt form mapping handling function array. <a href="a00061_g56a69a9479d1e8dc12ae1dbf2d980d3d.html#g56a69a9479d1e8dc12ae1dbf2d980d3d"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00010.html">HWI_SLAVE_FUNC</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00061_g6d2a9f8e486bf4e0346d8db8e5e123a7.html#g6d2a9f8e486bf4e0346d8db8e5e123a7">m_pstHwiSlaveForm</a> [<a href="a00061_gf06011d04fc2a8ce0af65751a4cd70ec.html">OS_VECTOR_CNT</a>]</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">hardware interrupt Slave form mapping handling function array. <a href="a00061_g6d2a9f8e486bf4e0346d8db8e5e123a7.html#g6d2a9f8e486bf4e0346d8db8e5e123a7"></a><br /></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <hr size="1" />  
+ </body>
+</html>

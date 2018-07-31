@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312" /> 
+  <title>LOS_MemCheckLevelSet</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head>
+ <body> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top">  
+  </div> 
+  <div class="contents"> 
+   <div class="navpath">
+    <a class="el" href="a00039.html">los_memory.h</a> 
+   </div> 
+   <table cellspacing="0" cellpadding="0" border="0"> 
+    <tbody>
+     <tr> 
+      <td valign="top"> </td> 
+      <td valign="top"> <a class="anchor" name="43643645f78ea9ab51a035f908ede300"></a>
+       <!-- doxytag: member="los_memory.h::LOS_MemCheckLevelSet" ref="43643645f78ea9ab51a035f908ede300" args="(UINT8 ucLevel)" --> 
+       <div class="memitem"> 
+        <div class="memproto"> 
+         <table class="memname"> 
+          <tbody>
+           <tr> 
+            <td class="memname"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> LOS_MemCheckLevelSet </td> 
+            <td class="paramtype">(</td> 
+            <td class="paramtype"><a class="el" href="a00048_b27e9918b538ce9d8ca692479b375b6a.html#b27e9918b538ce9d8ca692479b375b6a">UINT8</a>&nbsp;</td> 
+            <td class="paramname"> <em>ucLevel</em> </td> 
+            <td class="paramkey">&nbsp;)&nbsp;</td> 
+            <td class="paramkey"></td> 
+           </tr> 
+          </tbody>
+         </table> 
+        </div> 
+        <div class="memdoc"> 
+         <p> Set the memory check level. </p>
+         <p> </p>
+         <dl class="user" compact="">
+          <dt>
+           <b>Description:</b>
+          </dt>
+          <dd>
+           <ul> 
+            <li> This API is used to set the memory check level. </li> 
+           </ul> 
+          </dd>
+         </dl> 
+         <dl class="attention" compact="">
+          <dt>
+           <b>注意:</b>
+          </dt>
+          <dd>
+           <ul> 
+            <li> There are three level you can set. </li> 
+            <li> The legal level are LOS_MEM_CHECK_LEVEL_LOW, LOS_MEM_CHECK_LEVEL_HIGH, LOS_MEM_CHECK_LEVEL_DISABLE. </li> 
+           </ul> 
+          </dd>
+         </dl> 
+         <dl compact="">
+          <dt>
+           <b>参数:</b>
+          </dt>
+          <dd> 
+           <table border="0" cellspacing="0" cellpadding="0"> 
+            <tbody>
+             <tr>
+              <th></th>
+              <th>参数名称</th>
+              <th>描述</th> 
+             </tr>
+             <tr>
+              <td valign="top"></td>
+              <td valign="top" nowrap="">ucLevel&nbsp;</td>
+              <td>[IN] The level what you want to set.</td>
+             </tr> 
+            </tbody>
+           </table> 
+          </dd>
+         </dl> 
+         <dl compact="">
+          <dt>
+           <b>返回值:</b>
+          </dt>
+          <dd> 
+           <table border="0" cellspacing="0" cellpadding="0"> 
+            <tbody>
+             <tr>
+              <th></th>
+              <th>返回值</th>
+              <th>描述</th> 
+             </tr>
+             <tr>
+              <td valign="top"></td>
+              <td valign="top" nowrap="">LOS_ERRNO_MEMCHECK_WRONG_LEVEL&nbsp;</td>
+              <td>The memory check level what you want to set is illegal. </td>
+             </tr> 
+             <tr>
+              <td valign="top"></td>
+              <td valign="top" nowrap=""><a class="el" href="a00048_81e00a29757b6c6f90f05ca6c1eed169.html#81e00a29757b6c6f90f05ca6c1eed169">LOS_OK</a>&nbsp;</td>
+              <td>Success to set the memory check level. </td>
+             </tr> 
+            </tbody>
+           </table> 
+          </dd>
+         </dl> 
+         <dl class="user" compact="">
+          <dt>
+           <b>Dependency:</b>
+          </dt>
+          <dd>
+           <ul> 
+            <li> <a class="el" href="a00039.html">los_memory.h</a>: the header file that contains the API declaration.</li> 
+           </ul> 
+          </dd>
+         </dl> 
+         <dl class="see" compact="">
+          <dt>
+           <b>参见:</b>
+          </dt>
+          <dd>
+           <a class="el" href="a00039_238429227e20dbacf361ec866717209c.html#238429227e20dbacf361ec866717209c" title="Check the size of memory node specified.">LOS_MemNodeSizeCheck</a> | 
+           <a class="el" href="a00039_ef6394bc2880b37e200c2768cc6e7f4d.html#ef6394bc2880b37e200c2768cc6e7f4d" title="Get the memory check level.">LOS_MemCheckLevelGet</a> 
+          </dd>
+         </dl> 
+         <dl class="since" compact="">
+          <dt>
+           <b>自从:</b>
+          </dt>
+          <dd>
+           Huawei LiteOS V100R001C00 
+          </dd>
+         </dl> 
+        </div> 
+       </div><p> </p></td> 
+     </tr> 
+    </tbody>
+   </table> 
+  </div> 
+  <hr size="1" /> 
+ </body>
+</html>

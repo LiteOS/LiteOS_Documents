@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>  
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+<meta name="DC.Type" content="concept">
+<meta name="featurename" content="dcp">
+<title>atiny_net_connect</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head> 
+ <body> 
+  <div class="familylinks"> 
+   <a href="a00052_g5439c84a42009c8f2f112d60108066b6.html">atiny_net_connect</a> 
+   <hr size="2" /> 
+  </div> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top"> 
+  </div> 
+  <div class="contents"> 
+   <div class="navpath"> 
+    <a class="el" href="a00052.html">Agenttiny Socket</a> 
+   </div> 
+   <table cellspacing="0" cellpadding="0" border="0"> 
+    <tbody> 
+     <tr> 
+      <td valign="top"> </td> 
+      <td valign="top"> <a class="anchor" name="g5439c84a42009c8f2f112d60108066b6"></a> 
+       <!-- doxytag: member="atiny_socket.h::<a href='a00052_g5439c84a42009c8f2f112d60108066b6.html'>atiny_net_connect</a>" ref="g5439c84a42009c8f2f112d60108066b6" args="(const char *host, const char *port, int proto)" --> 
+       <div class="memitem"> 
+        <div class="memproto"> 
+         <table class="memname"> 
+          <tbody> 
+           <tr> 
+            <td class="memname">void* <a href="a00052_g5439c84a42009c8f2f112d60108066b6.html">atiny_net_connect</a> </td> 
+            <td class="paramtype">(</td> 
+            <td class="paramtype">const char *&nbsp;</td> 
+            <td class="paramname"> <em>host</em>, </td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramtype">const char *&nbsp;</td> 
+            <td class="paramname"> <em>port</em>, </td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramtype">int&nbsp;</td> 
+            <td class="paramname"> <em>proto</em></td> 
+            <td class="paramkey">&nbsp;</td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey">)</td> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+        </div> 
+        <div class="memdoc"> 
+         <p> create socket and connect to the server </p> 
+         <p> </p> 
+         <dl class="user" compact=""> 
+          <dt> 
+           <b>Description:</b> 
+          </dt> 
+          <dd>
+            This API is used to create socket and connect to the server. It will do name resolution with both IPv6 and IPv4, do internal memory allocation for socket structure and release it by the 
+           <a href="a00052_g344a32a9687e72585a0a8dbd666d43df.html">atiny_net_close</a> interface. 
+          </dd> 
+         </dl> 
+         <dl class="attention" compact=""> 
+          <dt> 
+           <b>注意:</b> 
+          </dt> 
+          <dd>
+            none. 
+          </dd> 
+         </dl> 
+         <dl compact=""> 
+          <dt> 
+           <b>参数:</b> 
+          </dt> 
+          <dd> 
+           <table border="0" cellspacing="0" cellpadding="0"> 
+            <tbody> 
+             <tr> 
+              <th></th> 
+              <th>参数名称</th> 
+              <th>描述</th> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">host&nbsp;</td> 
+              <td>[IN] Host to connect to. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">port&nbsp;</td> 
+              <td>[IN] Port to connect to. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">proto&nbsp;</td> 
+              <td>[IN] Protocol: ATINY_PROTO_TCP or ATINY_PROTO_UDP.</td> 
+             </tr> 
+            </tbody> 
+           </table> 
+          </dd> 
+         </dl> 
+         <dl compact=""> 
+          <dt> 
+           <b>返回值:</b> 
+          </dt> 
+          <dd> 
+           <table border="0" cellspacing="0" cellpadding="0"> 
+            <tbody> 
+             <tr> 
+              <th></th> 
+              <th>返回值</th> 
+              <th>描述</th> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">pointer&nbsp;</td> 
+              <td>Point to the Socket you created. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">NULL&nbsp;</td> 
+              <td>Create socket or connect to server failed. </td> 
+             </tr> 
+            </tbody> 
+           </table> 
+          </dd> 
+         </dl> 
+         <dl class="user" compact=""> 
+          <dt> 
+           <b>Dependency: none.</b> 
+          </dt> 
+          <dd></dd> 
+         </dl> 
+         <dl class="see" compact=""> 
+          <dt> 
+           <b>参见:</b> 
+          </dt> 
+          <dd> 
+           <a class="el" href="a00052_g5c82eaf3bfd8506bbf74e6daf695455c.html#g5c82eaf3bfd8506bbf74e6daf695455c" title="read characters from peer.">atiny_net_recv</a> | 
+           <a class="el" href="a00052_g824ad2d16afa9b09870e85bb7f92fb48.html#g824ad2d16afa9b09870e85bb7f92fb48" title="write characters to peer.">atiny_net_send</a> | 
+           <a class="el" href="a00052_g748da1610a23b3d21d0e8f5de3bcb806.html#g748da1610a23b3d21d0e8f5de3bcb806" title="read characters from peer with timeout option.">atiny_net_recv_timeout</a> | 
+           <a class="el" href="a00052_g344a32a9687e72585a0a8dbd666d43df.html#g344a32a9687e72585a0a8dbd666d43df" title="gracefully shutdown the connection.">atiny_net_close</a> 
+          </dd> 
+         </dl> 
+        </div> 
+       </div><p> </p></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <hr size="1" />  
+ </body>
+</html>

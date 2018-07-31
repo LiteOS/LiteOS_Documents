@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>  
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+<meta name="DC.Type" content="concept">
+<meta name="featurename" content="dcp">
+<title>los_list.h文件参考</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head> 
+ <body> 
+  <div class="familylinks"> 
+   <a href="a00036.html">los_list.h</a> 
+   <hr size="2" /> 
+  </div> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top"> 
+  </div> 
+  <div class="contents"> 
+   <h1>los_list.h文件参考</h1> 
+   <p> <a href="a00085.html">浏览该文件的源代码。</a></p> 
+   <table border="0" cellpadding="0" cellspacing="0"> 
+    <tbody> 
+     <tr> 
+      <td colspan="2"><br /><h2>数据结构</h2></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">struct &nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00011.html">LOS_DL_LIST</a></td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Structure of a node in a doubly linked list. <a href="a00011.html#_details">更多...</a><br /></td> 
+     </tr> 
+     <tr> 
+      <td colspan="2"><br /><h2>宏定义</h2></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00062_gd0654904109272a0eaf6d929b63b52e1.html#gd0654904109272a0eaf6d929b63b52e1">LOS_DL_LIST_FIRST</a>(pstObject)&nbsp;&nbsp;&nbsp;((pstObject)-&gt;pstNext)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Point to the next node pointed to by the current node. <a href="a00062_gd0654904109272a0eaf6d929b63b52e1.html#gd0654904109272a0eaf6d929b63b52e1"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00062_g67730dfdf4eca40bce0796060468b582.html#g67730dfdf4eca40bce0796060468b582">OFFSET_OF_FIELD</a>(type, field)&nbsp;&nbsp;&nbsp;((<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>)&amp;(((type *)0)-&gt;field))</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Obtain the offset of a field to a structure address. <a href="a00062_g67730dfdf4eca40bce0796060468b582.html#g67730dfdf4eca40bce0796060468b582"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00062_gec762d9a7bf3f36e0734ebe7580a2802.html#gec762d9a7bf3f36e0734ebe7580a2802">LOS_OFF_SET_OF</a>(type, member)&nbsp;&nbsp;&nbsp;((long)&amp;((type *)0)-&gt;member)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Obtain the pointer to a doubly linked list in a structure. <a href="a00062_gec762d9a7bf3f36e0734ebe7580a2802.html#gec762d9a7bf3f36e0734ebe7580a2802"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00062_gd33663398faf16b150f97ae24e03511f.html#gd33663398faf16b150f97ae24e03511f">LOS_DL_LIST_ENTRY</a>(item, type, member)&nbsp;&nbsp;&nbsp;((type *)((char *)item - <a href="a00062_gec762d9a7bf3f36e0734ebe7580a2802.html">LOS_OFF_SET_OF</a>(type, member))) \</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Obtain the pointer to a structure that contains a doubly linked list. <a href="a00062_gd33663398faf16b150f97ae24e03511f.html#gd33663398faf16b150f97ae24e03511f"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00062_gf527c99723127231cb73b9833e8f6e74.html#gf527c99723127231cb73b9833e8f6e74">LOS_DL_LIST_FOR_EACH_ENTRY</a>(item, list, type, member)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Iterate over a doubly linked list of given type. <a href="a00062_gf527c99723127231cb73b9833e8f6e74.html#gf527c99723127231cb73b9833e8f6e74"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00062_g0c9070ced7b1dd0df30f27253ff4814c.html#g0c9070ced7b1dd0df30f27253ff4814c">LOS_DL_LIST_FOR_EACH_ENTRY_SAFE</a>(item, next, list, type, member)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">iterate over a doubly linked list safe against removal of list entry. <a href="a00062_g0c9070ced7b1dd0df30f27253ff4814c.html#g0c9070ced7b1dd0df30f27253ff4814c"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00062_g3f3d1da45d26594a7d9bf1c2b77b0eaa.html#g3f3d1da45d26594a7d9bf1c2b77b0eaa">LOS_DL_LIST_FOR_EACH</a>(item, list)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">iterate over a doubly linked list. <a href="a00062_g3f3d1da45d26594a7d9bf1c2b77b0eaa.html#g3f3d1da45d26594a7d9bf1c2b77b0eaa"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00062_g9112600c8840eda77a81944233470e07.html#g9112600c8840eda77a81944233470e07">LOS_DL_LIST_FOR_EACH_SAFE</a>(item, next, list)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Iterate over a doubly linked list safe against removal of list entry. <a href="a00062_g9112600c8840eda77a81944233470e07.html#g9112600c8840eda77a81944233470e07"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00062_g1a35e77d99b52cb739617aa025dfff73.html#g1a35e77d99b52cb739617aa025dfff73">LOS_DL_LIST_HEAD</a>(list)&nbsp;&nbsp;&nbsp;<a class="el" href="a00011.html">LOS_DL_LIST</a> list = { &amp;(list), &amp;(list) }</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Initialize a double linked list. <a href="a00062_g1a35e77d99b52cb739617aa025dfff73.html#g1a35e77d99b52cb739617aa025dfff73"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td colspan="2"><br /><h2>函数</h2></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">LITE_OS_SEC_ALW_INLINE <br class="typebreak" /> STATIC_INLINE VOID&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00062_g5d54893dc71dfb7e5a6d26843f50dca1.html#g5d54893dc71dfb7e5a6d26843f50dca1">LOS_ListInit</a> (<a class="el" href="a00011.html">LOS_DL_LIST</a> *pstList)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Initialize a doubly linked list. <a href="a00062_g5d54893dc71dfb7e5a6d26843f50dca1.html#g5d54893dc71dfb7e5a6d26843f50dca1"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">LITE_OS_SEC_ALW_INLINE <br class="typebreak" /> STATIC_INLINE VOID&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00062_ga53b6ead35901890695572da003a859b.html#ga53b6ead35901890695572da003a859b">LOS_ListAdd</a> (<a class="el" href="a00011.html">LOS_DL_LIST</a> *pstList, <a class="el" href="a00011.html">LOS_DL_LIST</a> *pstNode)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Insert a new node to a doubly linked list. <a href="a00062_ga53b6ead35901890695572da003a859b.html#ga53b6ead35901890695572da003a859b"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">LITE_OS_SEC_ALW_INLINE <br class="typebreak" /> STATIC_INLINE VOID&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00062_gbd2a7cc90b0b7875a457a89c2763ee94.html#gbd2a7cc90b0b7875a457a89c2763ee94">LOS_ListTailInsert</a> (<a class="el" href="a00011.html">LOS_DL_LIST</a> *pstList, <a class="el" href="a00011.html">LOS_DL_LIST</a> *pstNode)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Insert a node to the tail of a doubly linked list. <a href="a00062_gbd2a7cc90b0b7875a457a89c2763ee94.html#gbd2a7cc90b0b7875a457a89c2763ee94"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">LITE_OS_SEC_ALW_INLINE <br class="typebreak" /> STATIC_INLINE VOID&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00062_g782523e6a92be6e75c0328491154c8f0.html#g782523e6a92be6e75c0328491154c8f0">LOS_ListDelete</a> (<a class="el" href="a00011.html">LOS_DL_LIST</a> *pstNode)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Delete a specified node from a doubly linked list. <a href="a00062_g782523e6a92be6e75c0328491154c8f0.html#g782523e6a92be6e75c0328491154c8f0"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">LITE_OS_SEC_ALW_INLINE <br class="typebreak" /> STATIC_INLINE <a class="el" href="a00048_c3247c51e4e3de674affb32998e133e2.html#c3247c51e4e3de674affb32998e133e2">BOOL</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00062_g5786ffbe4ea8c172094d6aa753f0de25.html#g5786ffbe4ea8c172094d6aa753f0de25">LOS_ListEmpty</a> (<a class="el" href="a00011.html">LOS_DL_LIST</a> *pstNode)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Identify whether a specified doubly linked list is empty. <a href="a00062_g5786ffbe4ea8c172094d6aa753f0de25.html#g5786ffbe4ea8c172094d6aa753f0de25"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">LITE_OS_SEC_ALW_INLINE <br class="typebreak" /> STATIC_INLINE VOID&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00036_0e07feae87221f11044fd9fdd1561826.html#0e07feae87221f11044fd9fdd1561826">osListDel</a> (<a class="el" href="a00011.html">LOS_DL_LIST</a> *pstPrevNode, <a class="el" href="a00011.html">LOS_DL_LIST</a> *pstNextNode)</td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">LITE_OS_SEC_ALW_INLINE <br class="typebreak" /> STATIC_INLINE VOID&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00062_gaecd679476f824972085f74c3d92773c.html#gaecd679476f824972085f74c3d92773c">LOS_ListDelInit</a> (<a class="el" href="a00011.html">LOS_DL_LIST</a> *pstList)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Delete initialize a doubly linked list. <a href="a00062_gaecd679476f824972085f74c3d92773c.html#gaecd679476f824972085f74c3d92773c"></a><br /></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <hr size="1" />  
+ </body>
+</html>

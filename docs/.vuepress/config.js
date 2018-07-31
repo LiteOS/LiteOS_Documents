@@ -149,6 +149,13 @@ module.exports = {
                 "./errorcode-semaphore",
                 "./errorcode-swtmr"
               ]
+            }，
+            {
+              title: "API参考",
+              collapsable: false,
+              children: [
+                "./api-reference/index.html"
+              ]
             }
           ],
           "/components/": [

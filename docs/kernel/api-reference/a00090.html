@@ -1,0 +1,709 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312" /> 
+  <title>los_queue.h源文件</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head>
+ <body> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top">   
+   <h1>los_queue.h</h1>
+   <a href="a00041.html">浏览该文件的文档。</a>
+   <div class="fragment">
+    <pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*----------------------------------------------------------------------------</span>
+<a name="l00002"></a>00002 <span class="comment"> * Copyright (c) &lt;2013-2015&gt;, &lt;Huawei Technologies Co., Ltd&gt;</span>
+<a name="l00003"></a>00003 <span class="comment"> * All rights reserved.</span>
+<a name="l00004"></a>00004 <span class="comment"> * Redistribution and use in source and binary forms, with or without modification,</span>
+<a name="l00005"></a>00005 <span class="comment"> * are permitted provided that the following conditions are met:</span>
+<a name="l00006"></a>00006 <span class="comment"> * 1. Redistributions of source code must retain the above copyright notice, this list of</span>
+<a name="l00007"></a>00007 <span class="comment"> * conditions and the following disclaimer.</span>
+<a name="l00008"></a>00008 <span class="comment"> * 2. Redistributions in binary form must reproduce the above copyright notice, this list</span>
+<a name="l00009"></a>00009 <span class="comment"> * of conditions and the following disclaimer in the documentation and/or other materials</span>
+<a name="l00010"></a>00010 <span class="comment"> * provided with the distribution.</span>
+<a name="l00011"></a>00011 <span class="comment"> * 3. Neither the name of the copyright holder nor the names of its contributors may be used</span>
+<a name="l00012"></a>00012 <span class="comment"> * to endorse or promote products derived from this software without specific prior written</span>
+<a name="l00013"></a>00013 <span class="comment"> * permission.</span>
+<a name="l00014"></a>00014 <span class="comment"> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS</span>
+<a name="l00015"></a>00015 <span class="comment"> * &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,</span>
+<a name="l00016"></a>00016 <span class="comment"> * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR</span>
+<a name="l00017"></a>00017 <span class="comment"> * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR</span>
+<a name="l00018"></a>00018 <span class="comment"> * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,</span>
+<a name="l00019"></a>00019 <span class="comment"> * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,</span>
+<a name="l00020"></a>00020 <span class="comment"> * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;</span>
+<a name="l00021"></a>00021 <span class="comment"> * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,</span>
+<a name="l00022"></a>00022 <span class="comment"> * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR</span>
+<a name="l00023"></a>00023 <span class="comment"> * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF</span>
+<a name="l00024"></a>00024 <span class="comment"> * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</span>
+<a name="l00025"></a>00025 <span class="comment"> *---------------------------------------------------------------------------*/</span>
+<a name="l00026"></a>00026 <span class="comment">/*----------------------------------------------------------------------------</span>
+<a name="l00027"></a>00027 <span class="comment"> * Notice of Export Control Law</span>
+<a name="l00028"></a>00028 <span class="comment"> * ===============================================</span>
+<a name="l00029"></a>00029 <span class="comment"> * Huawei LiteOS may be subject to applicable export control laws and regulations, which might</span>
+<a name="l00030"></a>00030 <span class="comment"> * include those applicable to Huawei LiteOS of U.S. and the country in which you are located.</span>
+<a name="l00031"></a>00031 <span class="comment"> * Import, export and usage of Huawei LiteOS in any manner by you shall be in compliance with such</span>
+<a name="l00032"></a>00032 <span class="comment"> * applicable export control laws and regulations.</span>
+<a name="l00033"></a>00033 <span class="comment"> *---------------------------------------------------------------------------*/</span>
+<a name="l00034"></a>00034 <span class="comment"></span>
+<a name="l00035"></a>00035 <span class="comment">/**@defgroup los_queue Queue</span>
+<a name="l00036"></a>00036 <span class="comment"> * @ingroup kernel</span>
+<a name="l00037"></a>00037 <span class="comment"> */</span>
+<a name="l00038"></a>00038 
+<a name="l00039"></a>00039 <span class="preprocessor">#ifndef _LOS_QUEUE_H</span>
+<a name="l00040"></a>00040 <span class="preprocessor"></span><span class="preprocessor">#define _LOS_QUEUE_H</span>
+<a name="l00041"></a>00041 <span class="preprocessor"></span>
+<a name="l00042"></a>00042 <span class="preprocessor">#include &quot;<a class="code" href="a00027.html">los_base.h</a>&quot;</span>
+<a name="l00043"></a>00043 <span class="preprocessor">#include &quot;<a class="code" href="a00036.html">los_list.h</a>&quot;</span>
+<a name="l00044"></a>00044 
+<a name="l00045"></a>00045 <span class="preprocessor">#ifdef __cplusplus</span>
+<a name="l00046"></a>00046 <span class="preprocessor"></span><span class="preprocessor">#if __cplusplus</span>
+<a name="l00047"></a>00047 <span class="preprocessor"></span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {
+<a name="l00048"></a>00048 <span class="preprocessor">#endif </span><span class="comment">/* __cplusplus */</span>
+<a name="l00049"></a>00049 <span class="preprocessor">#endif </span><span class="comment">/* __cplusplus */</span>
+<a name="l00050"></a>00050 
+<a name="l00051"></a>00051 <span class="comment"></span>
+<a name="l00052"></a>00052 <span class="comment">/**</span>
+<a name="l00053"></a>00053 <span class="comment">  * @ingroup los_queue</span>
+<a name="l00054"></a>00054 <span class="comment">  * Queue error code: The maximum number of queue resources is configured to 0.</span>
+<a name="l00055"></a>00055 <span class="comment">  *</span>
+<a name="l00056"></a>00056 <span class="comment">  * Value: 0x02000600</span>
+<a name="l00057"></a>00057 <span class="comment">  *</span>
+<a name="l00058"></a>00058 <span class="comment">  * Solution: Configure the maximum number of queue resources to be greater than 0. If queue modules are not used, set the configuration item for the tailoring of the maximum number of queue resources to NO.</span>
+<a name="l00059"></a>00059 <span class="comment">  */</span>
+<a name="l00060"></a><a class="code" href="a00064_gc020b3e1f26dd984dba211de4e66da32.html#gc020b3e1f26dd984dba211de4e66da32">00060</a> <span class="preprocessor">#define LOS_ERRNO_QUEUE_MAXNUM_ZERO                     LOS_ERRNO_OS_ERROR(LOS_MOD_QUE, 0x00)</span>
+<a name="l00061"></a>00061 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00062"></a>00062 <span class="comment">/**</span>
+<a name="l00063"></a>00063 <span class="comment">  * @ingroup los_queue</span>
+<a name="l00064"></a>00064 <span class="comment">  * Queue error code: The queue block memory fails to be initialized.</span>
+<a name="l00065"></a>00065 <span class="comment">  *</span>
+<a name="l00066"></a>00066 <span class="comment">  * Value: 0x02000601</span>
+<a name="l00067"></a>00067 <span class="comment">  *</span>
+<a name="l00068"></a>00068 <span class="comment">  * Solution: Allocate the queue block bigger memory partition, or decrease the maximum number of queue resources.</span>
+<a name="l00069"></a>00069 <span class="comment">  */</span>
+<a name="l00070"></a><a class="code" href="a00064_gd3c4ffe95f0933dafa8e48c47eff81d4.html#gd3c4ffe95f0933dafa8e48c47eff81d4">00070</a> <span class="preprocessor">#define LOS_ERRNO_QUEUE_NO_MEMORY                       LOS_ERRNO_OS_ERROR(LOS_MOD_QUE, 0x01)</span>
+<a name="l00071"></a>00071 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00072"></a>00072 <span class="comment">/**</span>
+<a name="l00073"></a>00073 <span class="comment">  * @ingroup los_queue</span>
+<a name="l00074"></a>00074 <span class="comment">  * Queue error code: The memory for queue creation fails to be requested.</span>
+<a name="l00075"></a>00075 <span class="comment">  *</span>
+<a name="l00076"></a>00076 <span class="comment">  * Value: 0x02000602</span>
+<a name="l00077"></a>00077 <span class="comment">  *</span>
+<a name="l00078"></a>00078 <span class="comment">  * Solution: Allocate more memory for queue creation, or decrease the queue length and the number of nodes in the queue to be created.</span>
+<a name="l00079"></a>00079 <span class="comment">  */</span>
+<a name="l00080"></a><a class="code" href="a00064_g90adeaf47438c711aaa663d71859b13c.html#g90adeaf47438c711aaa663d71859b13c">00080</a> <span class="preprocessor">#define LOS_ERRNO_QUEUE_CREATE_NO_MEMORY                LOS_ERRNO_OS_ERROR(LOS_MOD_QUE, 0x02)</span>
+<a name="l00081"></a>00081 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00082"></a>00082 <span class="comment">/**</span>
+<a name="l00083"></a>00083 <span class="comment">  * @ingroup los_queue</span>
+<a name="l00084"></a>00084 <span class="comment">  * Queue error code: The size of the biggest message in the created queue is too big.</span>
+<a name="l00085"></a>00085 <span class="comment">  *</span>
+<a name="l00086"></a>00086 <span class="comment">  * Value: 0x02000603</span>
+<a name="l00087"></a>00087 <span class="comment">  *</span>
+<a name="l00088"></a>00088 <span class="comment">  * Solution: Change the size of the biggest message in the created queue.</span>
+<a name="l00089"></a>00089 <span class="comment">  */</span>
+<a name="l00090"></a><a class="code" href="a00064_gd3601d99913ce4a536717a8159d39004.html#gd3601d99913ce4a536717a8159d39004">00090</a> <span class="preprocessor">#define LOS_ERRNO_QUEUE_SIZE_TOO_BIG                    LOS_ERRNO_OS_ERROR(LOS_MOD_QUE, 0x03)</span>
+<a name="l00091"></a>00091 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00092"></a>00092 <span class="comment">/**</span>
+<a name="l00093"></a>00093 <span class="comment">  * @ingroup los_queue</span>
+<a name="l00094"></a>00094 <span class="comment">  * Queue error code: The upper limit of the number of created queues is exceeded.</span>
+<a name="l00095"></a>00095 <span class="comment">  *</span>
+<a name="l00096"></a>00096 <span class="comment">  * Value: 0x02000604</span>
+<a name="l00097"></a>00097 <span class="comment">  *</span>
+<a name="l00098"></a>00098 <span class="comment">  * Solution: Increase the configured number of resources for queues.</span>
+<a name="l00099"></a>00099 <span class="comment">  */</span>
+<a name="l00100"></a><a class="code" href="a00064_g2590cbe58b704b4c5eb0cdf8e319028b.html#g2590cbe58b704b4c5eb0cdf8e319028b">00100</a> <span class="preprocessor">#define LOS_ERRNO_QUEUE_CB_UNAVAILABLE                  LOS_ERRNO_OS_ERROR(LOS_MOD_QUE, 0x04)</span>
+<a name="l00101"></a>00101 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00102"></a>00102 <span class="comment">/**</span>
+<a name="l00103"></a>00103 <span class="comment">  * @ingroup los_queue</span>
+<a name="l00104"></a>00104 <span class="comment">  * Queue error code: Invalid queue.</span>
+<a name="l00105"></a>00105 <span class="comment">  *</span>
+<a name="l00106"></a>00106 <span class="comment">  * Value: 0x02000605</span>
+<a name="l00107"></a>00107 <span class="comment">  *</span>
+<a name="l00108"></a>00108 <span class="comment">  * Solution: Ensure that the passed-in queue ID is valid.</span>
+<a name="l00109"></a>00109 <span class="comment">  */</span>
+<a name="l00110"></a><a class="code" href="a00064_ga91ae158e9e627bb74cc3015eb7f31df.html#ga91ae158e9e627bb74cc3015eb7f31df">00110</a> <span class="preprocessor">#define LOS_ERRNO_QUEUE_NOT_FOUND                       LOS_ERRNO_OS_ERROR(LOS_MOD_QUE, 0x05)</span>
+<a name="l00111"></a>00111 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00112"></a>00112 <span class="comment">/**</span>
+<a name="l00113"></a>00113 <span class="comment">  * @ingroup los_queue</span>
+<a name="l00114"></a>00114 <span class="comment">  * Queue error code: The task is forbidden to be blocked on a queue when the task is locked.</span>
+<a name="l00115"></a>00115 <span class="comment">  *</span>
+<a name="l00116"></a>00116 <span class="comment">  * Value: 0x02000606</span>
+<a name="l00117"></a>00117 <span class="comment">  *</span>
+<a name="l00118"></a>00118 <span class="comment">  * Solution: Unlock the task before using a queue.</span>
+<a name="l00119"></a>00119 <span class="comment">  */</span>
+<a name="l00120"></a><a class="code" href="a00064_g7db713cb533d740e2b400e073a3ebb6d.html#g7db713cb533d740e2b400e073a3ebb6d">00120</a> <span class="preprocessor">#define LOS_ERRNO_QUEUE_PEND_IN_LOCK                    LOS_ERRNO_OS_ERROR(LOS_MOD_QUE, 0x06)</span>
+<a name="l00121"></a>00121 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00122"></a>00122 <span class="comment">/**</span>
+<a name="l00123"></a>00123 <span class="comment">  * @ingroup los_queue</span>
+<a name="l00124"></a>00124 <span class="comment">  * Queue error code: The time set for waiting to processing the queue expires.</span>
+<a name="l00125"></a>00125 <span class="comment">  *</span>
+<a name="l00126"></a>00126 <span class="comment">  * Value: 0x02000607</span>
+<a name="l00127"></a>00127 <span class="comment">  *</span>
+<a name="l00128"></a>00128 <span class="comment">  * Solution: Check whether the expiry time setting is appropriate.</span>
+<a name="l00129"></a>00129 <span class="comment">  */</span>
+<a name="l00130"></a><a class="code" href="a00064_g561cceeac8b169bc04672601606dcac0.html#g561cceeac8b169bc04672601606dcac0">00130</a> <span class="preprocessor">#define LOS_ERRNO_QUEUE_TIMEOUT                         LOS_ERRNO_OS_ERROR(LOS_MOD_QUE, 0x07)</span>
+<a name="l00131"></a>00131 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00132"></a>00132 <span class="comment">/**</span>
+<a name="l00133"></a>00133 <span class="comment">  * @ingroup los_queue</span>
+<a name="l00134"></a>00134 <span class="comment">  * Queue error code: The queue that blocks a task cannot be deleted.</span>
+<a name="l00135"></a>00135 <span class="comment">  *</span>
+<a name="l00136"></a>00136 <span class="comment">  * Value: 0x02000608</span>
+<a name="l00137"></a>00137 <span class="comment">  *</span>
+<a name="l00138"></a>00138 <span class="comment">  * Solution: Enable the task to obtain resources rather than be blocked on the queue.</span>
+<a name="l00139"></a>00139 <span class="comment">  */</span>
+<a name="l00140"></a><a class="code" href="a00064_ga802805c5c23f8db2e59435770e1a6fd.html#ga802805c5c23f8db2e59435770e1a6fd">00140</a> <span class="preprocessor">#define LOS_ERRNO_QUEUE_IN_TSKUSE                       LOS_ERRNO_OS_ERROR(LOS_MOD_QUE, 0x08)</span>
+<a name="l00141"></a>00141 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00142"></a>00142 <span class="comment">/**</span>
+<a name="l00143"></a>00143 <span class="comment">  * @ingroup los_queue</span>
+<a name="l00144"></a>00144 <span class="comment">  * Queue error code: The queue cannot be written during an interrupt when the time for waiting to processing the queue expires.</span>
+<a name="l00145"></a>00145 <span class="comment">  *</span>
+<a name="l00146"></a>00146 <span class="comment">  * Value: 0x02000609</span>
+<a name="l00147"></a>00147 <span class="comment">  *</span>
+<a name="l00148"></a>00148 <span class="comment">  * Solution: Set the expiry time to the never-waiting mode, or use asynchronous queues.</span>
+<a name="l00149"></a>00149 <span class="comment">  */</span>
+<a name="l00150"></a><a class="code" href="a00064_g55aa6f5e50737e508a983c9de5e33909.html#g55aa6f5e50737e508a983c9de5e33909">00150</a> <span class="preprocessor">#define LOS_ERRNO_QUEUE_WRITE_IN_INTERRUPT              LOS_ERRNO_OS_ERROR(LOS_MOD_QUE, 0x09)</span>
+<a name="l00151"></a>00151 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00152"></a>00152 <span class="comment">/**</span>
+<a name="l00153"></a>00153 <span class="comment">  * @ingroup los_queue</span>
+<a name="l00154"></a>00154 <span class="comment">  * Queue error code: The queue is not created.</span>
+<a name="l00155"></a>00155 <span class="comment">  *</span>
+<a name="l00156"></a>00156 <span class="comment">  * Value: 0x0200060a</span>
+<a name="l00157"></a>00157 <span class="comment">  *</span>
+<a name="l00158"></a>00158 <span class="comment">  * Solution: Check whether the passed-in queue handle value is valid.</span>
+<a name="l00159"></a>00159 <span class="comment">  */</span>
+<a name="l00160"></a><a class="code" href="a00064_g06999e637407e2068a8cfedd25557aeb.html#g06999e637407e2068a8cfedd25557aeb">00160</a> <span class="preprocessor">#define LOS_ERRNO_QUEUE_NOT_CREATE                      LOS_ERRNO_OS_ERROR(LOS_MOD_QUE, 0x0a)</span>
+<a name="l00161"></a>00161 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00162"></a>00162 <span class="comment">/**</span>
+<a name="l00163"></a>00163 <span class="comment">  * @ingroup los_queue</span>
+<a name="l00164"></a>00164 <span class="comment">  * Queue error code: Queue reading and writing are not synchronous.</span>
+<a name="l00165"></a>00165 <span class="comment">  *</span>
+<a name="l00166"></a>00166 <span class="comment">  * Value: 0x0200060b</span>
+<a name="l00167"></a>00167 <span class="comment">  *</span>
+<a name="l00168"></a>00168 <span class="comment">  * Solution: Synchronize queue reading with queue writing.</span>
+<a name="l00169"></a>00169 <span class="comment">  */</span>
+<a name="l00170"></a><a class="code" href="a00064_g2d28944aef5d9f7760c5d32c856c08f1.html#g2d28944aef5d9f7760c5d32c856c08f1">00170</a> <span class="preprocessor">#define LOS_ERRNO_QUEUE_IN_TSKWRITE                     LOS_ERRNO_OS_ERROR(LOS_MOD_QUE, 0x0b)</span>
+<a name="l00171"></a>00171 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00172"></a>00172 <span class="comment">/**</span>
+<a name="l00173"></a>00173 <span class="comment">  * @ingroup los_queue</span>
+<a name="l00174"></a>00174 <span class="comment">  * Queue error code: Parameters passed in during queue creation are null pointers.</span>
+<a name="l00175"></a>00175 <span class="comment">  *</span>
+<a name="l00176"></a>00176 <span class="comment">  * Value: 0x0200060c</span>
+<a name="l00177"></a>00177 <span class="comment">  *</span>
+<a name="l00178"></a>00178 <span class="comment">  * Solution: Ensure the passed-in parameters are not null pointers.</span>
+<a name="l00179"></a>00179 <span class="comment">  */</span>
+<a name="l00180"></a><a class="code" href="a00064_g817ce2430eeb1c71cdc61702d758506c.html#g817ce2430eeb1c71cdc61702d758506c">00180</a> <span class="preprocessor">#define LOS_ERRNO_QUEUE_CREAT_PTR_NULL                  LOS_ERRNO_OS_ERROR(LOS_MOD_QUE, 0x0c)</span>
+<a name="l00181"></a>00181 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00182"></a>00182 <span class="comment">/**</span>
+<a name="l00183"></a>00183 <span class="comment">  * @ingroup los_queue</span>
+<a name="l00184"></a>00184 <span class="comment">  * Queue error code: The queue length or message node size passed in during queue creation is 0.</span>
+<a name="l00185"></a>00185 <span class="comment">  *</span>
+<a name="l00186"></a>00186 <span class="comment">  * Value: 0x0200060d</span>
+<a name="l00187"></a>00187 <span class="comment">  *</span>
+<a name="l00188"></a>00188 <span class="comment">  * Solution: Pass in correct queue length and message node size.</span>
+<a name="l00189"></a>00189 <span class="comment">  */</span>
+<a name="l00190"></a><a class="code" href="a00064_gcdcc7683d68705261bdaf0390f95bc3a.html#gcdcc7683d68705261bdaf0390f95bc3a">00190</a> <span class="preprocessor">#define LOS_ERRNO_QUEUE_PARA_ISZERO                     LOS_ERRNO_OS_ERROR(LOS_MOD_QUE, 0x0d)</span>
+<a name="l00191"></a>00191 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00192"></a>00192 <span class="comment">/**</span>
+<a name="l00193"></a>00193 <span class="comment">  * @ingroup los_queue</span>
+<a name="l00194"></a>00194 <span class="comment">  * Queue error code: The handle of the queue is invalid.</span>
+<a name="l00195"></a>00195 <span class="comment">  *</span>
+<a name="l00196"></a>00196 <span class="comment">  * Value: 0x0200060e</span>
+<a name="l00197"></a>00197 <span class="comment">  *</span>
+<a name="l00198"></a>00198 <span class="comment">  * Solution: Check whether the passed-in queue handle value is valid.</span>
+<a name="l00199"></a>00199 <span class="comment">  */</span>
+<a name="l00200"></a><a class="code" href="a00064_g66f57ec7b801acf09abf81d5d0992309.html#g66f57ec7b801acf09abf81d5d0992309">00200</a> <span class="preprocessor">#define LOS_ERRNO_QUEUE_INVALID                         LOS_ERRNO_OS_ERROR(LOS_MOD_QUE, 0x0e)</span>
+<a name="l00201"></a>00201 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00202"></a>00202 <span class="comment">/**</span>
+<a name="l00203"></a>00203 <span class="comment">  * @ingroup los_queue</span>
+<a name="l00204"></a>00204 <span class="comment">  * Queue error code: The pointer passed in during queue reading is null.</span>
+<a name="l00205"></a>00205 <span class="comment">  *</span>
+<a name="l00206"></a>00206 <span class="comment">  * Value: 0x0200060f</span>
+<a name="l00207"></a>00207 <span class="comment">  *</span>
+<a name="l00208"></a>00208 <span class="comment">  * Solution: Check whether the passed-in pointer is null.</span>
+<a name="l00209"></a>00209 <span class="comment">  */</span>
+<a name="l00210"></a><a class="code" href="a00064_gbc7a8c8793f67c7e1562c0447e523e0d.html#gbc7a8c8793f67c7e1562c0447e523e0d">00210</a> <span class="preprocessor">#define LOS_ERRNO_QUEUE_READ_PTR_NULL                   LOS_ERRNO_OS_ERROR(LOS_MOD_QUE, 0x0f)</span>
+<a name="l00211"></a>00211 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00212"></a>00212 <span class="comment">/**</span>
+<a name="l00213"></a>00213 <span class="comment">  * @ingroup los_queue</span>
+<a name="l00214"></a>00214 <span class="comment">  * Queue error code: The buffer size passed in during queue reading is 0.</span>
+<a name="l00215"></a>00215 <span class="comment">  *</span>
+<a name="l00216"></a>00216 <span class="comment">  * Value: 0x02000610</span>
+<a name="l00217"></a>00217 <span class="comment">  *</span>
+<a name="l00218"></a>00218 <span class="comment">  * Solution: Pass in a correct buffer size.</span>
+<a name="l00219"></a>00219 <span class="comment">  */</span>
+<a name="l00220"></a><a class="code" href="a00064_g22a6b0810cede10405101788f5224aa5.html#g22a6b0810cede10405101788f5224aa5">00220</a> <span class="preprocessor">#define LOS_ERRNO_QUEUE_READSIZE_ISZERO                 LOS_ERRNO_OS_ERROR(LOS_MOD_QUE, 0x10)</span>
+<a name="l00221"></a>00221 <span class="preprocessor"></span>
+<a name="l00222"></a>00222 <span class="comment"></span>
+<a name="l00223"></a>00223 <span class="comment">/**</span>
+<a name="l00224"></a>00224 <span class="comment">  * @ingroup los_queue</span>
+<a name="l00225"></a>00225 <span class="comment">  * Queue error code: The pointer passed in during queue writing is null.</span>
+<a name="l00226"></a>00226 <span class="comment">  *</span>
+<a name="l00227"></a>00227 <span class="comment">  * Value: 0x02000612</span>
+<a name="l00228"></a>00228 <span class="comment">  *</span>
+<a name="l00229"></a>00229 <span class="comment">  * Solution: Check whether the passed-in pointer is null.</span>
+<a name="l00230"></a>00230 <span class="comment">  */</span>
+<a name="l00231"></a><a class="code" href="a00064_g9a12b8be1d04578d8936261e34100c79.html#g9a12b8be1d04578d8936261e34100c79">00231</a> <span class="preprocessor">#define LOS_ERRNO_QUEUE_WRITE_PTR_NULL                  LOS_ERRNO_OS_ERROR(LOS_MOD_QUE, 0x12)</span>
+<a name="l00232"></a>00232 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00233"></a>00233 <span class="comment">/**</span>
+<a name="l00234"></a>00234 <span class="comment">  * @ingroup los_queue</span>
+<a name="l00235"></a>00235 <span class="comment">  * Queue error code: The buffer size passed in during queue writing is 0.</span>
+<a name="l00236"></a>00236 <span class="comment">  *</span>
+<a name="l00237"></a>00237 <span class="comment">  * Value: 0x02000613</span>
+<a name="l00238"></a>00238 <span class="comment">  *</span>
+<a name="l00239"></a>00239 <span class="comment">  * Solution: Pass in a correct buffer size.</span>
+<a name="l00240"></a>00240 <span class="comment">  */</span>
+<a name="l00241"></a><a class="code" href="a00064_g73f28b6bbb74534331d603a6ca06f0d7.html#g73f28b6bbb74534331d603a6ca06f0d7">00241</a> <span class="preprocessor">#define LOS_ERRNO_QUEUE_WRITESIZE_ISZERO                LOS_ERRNO_OS_ERROR(LOS_MOD_QUE, 0x13)</span>
+<a name="l00242"></a>00242 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00243"></a>00243 <span class="comment">/**</span>
+<a name="l00244"></a>00244 <span class="comment">  * @ingroup los_queue</span>
+<a name="l00245"></a>00245 <span class="comment">  * Queue error code: The buffer size passed in during queue writing is bigger than the queue size.</span>
+<a name="l00246"></a>00246 <span class="comment">  *</span>
+<a name="l00247"></a>00247 <span class="comment">  * Value: 0x02000615</span>
+<a name="l00248"></a>00248 <span class="comment">  *</span>
+<a name="l00249"></a>00249 <span class="comment">  * Solution: Decrease the buffer size, or use a queue in which nodes are bigger.</span>
+<a name="l00250"></a>00250 <span class="comment">  */</span>
+<a name="l00251"></a><a class="code" href="a00064_g5b537dc433cd1828a35997af0ae35fa4.html#g5b537dc433cd1828a35997af0ae35fa4">00251</a> <span class="preprocessor">#define LOS_ERRNO_QUEUE_WRITE_SIZE_TOO_BIG              LOS_ERRNO_OS_ERROR(LOS_MOD_QUE, 0x15)</span>
+<a name="l00252"></a>00252 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00253"></a>00253 <span class="comment">/**</span>
+<a name="l00254"></a>00254 <span class="comment">  * @ingroup los_queue</span>
+<a name="l00255"></a>00255 <span class="comment">  * Queue error code: No free node is available during queue writing.</span>
+<a name="l00256"></a>00256 <span class="comment">  *</span>
+<a name="l00257"></a>00257 <span class="comment">  * Value: 0x02000616</span>
+<a name="l00258"></a>00258 <span class="comment">  *</span>
+<a name="l00259"></a>00259 <span class="comment">  * Solution: Ensure that free nodes are available before queue writing.</span>
+<a name="l00260"></a>00260 <span class="comment">  */</span>
+<a name="l00261"></a><a class="code" href="a00064_g261a4dd58e09d16e8f98496d5a5cdd19.html#g261a4dd58e09d16e8f98496d5a5cdd19">00261</a> <span class="preprocessor">#define LOS_ERRNO_QUEUE_ISFULL                          LOS_ERRNO_OS_ERROR(LOS_MOD_QUE, 0x16)</span>
+<a name="l00262"></a>00262 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00263"></a>00263 <span class="comment">/**</span>
+<a name="l00264"></a>00264 <span class="comment">  * @ingroup los_queue</span>
+<a name="l00265"></a>00265 <span class="comment">  * Queue error code: The pointer passed in when the queue information is being obtained is null.</span>
+<a name="l00266"></a>00266 <span class="comment">  *</span>
+<a name="l00267"></a>00267 <span class="comment">  * Value: 0x02000617</span>
+<a name="l00268"></a>00268 <span class="comment">  *</span>
+<a name="l00269"></a>00269 <span class="comment">  * Solution: Check whether the passed-in pointer is null.</span>
+<a name="l00270"></a>00270 <span class="comment">  */</span>
+<a name="l00271"></a><a class="code" href="a00064_gbd8c54bf4883629e4d9490a59cc24c49.html#gbd8c54bf4883629e4d9490a59cc24c49">00271</a> <span class="preprocessor">#define LOS_ERRNO_QUEUE_PTR_NULL                        LOS_ERRNO_OS_ERROR(LOS_MOD_QUE, 0x17)</span>
+<a name="l00272"></a>00272 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00273"></a>00273 <span class="comment">/**</span>
+<a name="l00274"></a>00274 <span class="comment">  * @ingroup los_queue</span>
+<a name="l00275"></a>00275 <span class="comment">  * Queue error code: The queue cannot be read during an interrupt when the time for waiting to processing the queue expires.</span>
+<a name="l00276"></a>00276 <span class="comment">  *</span>
+<a name="l00277"></a>00277 <span class="comment">  * Value: 0x02000618</span>
+<a name="l00278"></a>00278 <span class="comment">  *</span>
+<a name="l00279"></a>00279 <span class="comment">  * Solution: Set the expiry time to the never-waiting mode, or use asynchronous queues.</span>
+<a name="l00280"></a>00280 <span class="comment">  */</span>
+<a name="l00281"></a><a class="code" href="a00064_ge8d8d97b5c5e91b5105c76855814f53c.html#ge8d8d97b5c5e91b5105c76855814f53c">00281</a> <span class="preprocessor">#define LOS_ERRNO_QUEUE_READ_IN_INTERRUPT               LOS_ERRNO_OS_ERROR(LOS_MOD_QUE, 0x18)</span>
+<a name="l00282"></a>00282 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00283"></a>00283 <span class="comment">/**</span>
+<a name="l00284"></a>00284 <span class="comment">  * @ingroup los_queue</span>
+<a name="l00285"></a>00285 <span class="comment">  * Queue error code: The handle of the queue passed-in when the memory for the queue is being freed is invalid.</span>
+<a name="l00286"></a>00286 <span class="comment">  *</span>
+<a name="l00287"></a>00287 <span class="comment">  * Value: 0x02000619</span>
+<a name="l00288"></a>00288 <span class="comment">  *</span>
+<a name="l00289"></a>00289 <span class="comment">  * Solution: Check whether the passed-in queue handle value is valid.</span>
+<a name="l00290"></a>00290 <span class="comment">  */</span>
+<a name="l00291"></a><a class="code" href="a00064_g4bc61b2174a1401e855e5180a8d7e0e4.html#g4bc61b2174a1401e855e5180a8d7e0e4">00291</a> <span class="preprocessor">#define LOS_ERRNO_QUEUE_MAIL_HANDLE_INVALID             LOS_ERRNO_OS_ERROR(LOS_MOD_QUE, 0x19)</span>
+<a name="l00292"></a>00292 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00293"></a>00293 <span class="comment">/**</span>
+<a name="l00294"></a>00294 <span class="comment">  * @ingroup los_queue</span>
+<a name="l00295"></a>00295 <span class="comment">  * Queue error code: The pointer to the memory to be freed is null.</span>
+<a name="l00296"></a>00296 <span class="comment">  *</span>
+<a name="l00297"></a>00297 <span class="comment">  * Value: 0x0200061a</span>
+<a name="l00298"></a>00298 <span class="comment">  *</span>
+<a name="l00299"></a>00299 <span class="comment">  * Solution: Check whether the passed-in pointer is null.</span>
+<a name="l00300"></a>00300 <span class="comment">  */</span>
+<a name="l00301"></a><a class="code" href="a00064_g5022dc708032171d3194517aba89b868.html#g5022dc708032171d3194517aba89b868">00301</a> <span class="preprocessor">#define LOS_ERRNO_QUEUE_MAIL_PTR_INVALID                LOS_ERRNO_OS_ERROR(LOS_MOD_QUE, 0x1a)</span>
+<a name="l00302"></a>00302 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00303"></a>00303 <span class="comment">/**</span>
+<a name="l00304"></a>00304 <span class="comment">  * @ingroup los_queue</span>
+<a name="l00305"></a>00305 <span class="comment">  * Queue error code: The memory for the queue fails to be freed.</span>
+<a name="l00306"></a>00306 <span class="comment">  *</span>
+<a name="l00307"></a>00307 <span class="comment">  * Value: 0x0200061b</span>
+<a name="l00308"></a>00308 <span class="comment">  *</span>
+<a name="l00309"></a>00309 <span class="comment">  * Solution: Pass in correct input parameters.</span>
+<a name="l00310"></a>00310 <span class="comment">  */</span>
+<a name="l00311"></a><a class="code" href="a00064_ge827826c3690d6688da371901cd80cea.html#ge827826c3690d6688da371901cd80cea">00311</a> <span class="preprocessor">#define LOS_ERRNO_QUEUE_MAIL_FREE_ERROR                 LOS_ERRNO_OS_ERROR(LOS_MOD_QUE, 0x1b)</span>
+<a name="l00312"></a>00312 <span class="preprocessor"></span>
+<a name="l00313"></a>00313 <span class="comment"></span>
+<a name="l00314"></a>00314 <span class="comment">/**</span>
+<a name="l00315"></a>00315 <span class="comment">  * @ingroup los_queue</span>
+<a name="l00316"></a>00316 <span class="comment">  * Queue error code: No resource is in the queue that is being read when the time for waiting to processing the queue expires.</span>
+<a name="l00317"></a>00317 <span class="comment">  *</span>
+<a name="l00318"></a>00318 <span class="comment">  * Value: 0x0200061d</span>
+<a name="l00319"></a>00319 <span class="comment">  *</span>
+<a name="l00320"></a>00320 <span class="comment">  * Solution: Ensure that the queue contains messages when it is being read.</span>
+<a name="l00321"></a>00321 <span class="comment">  */</span>
+<a name="l00322"></a><a class="code" href="a00064_gfc83fd5ed39ff0c53e37309efe2e8e74.html#gfc83fd5ed39ff0c53e37309efe2e8e74">00322</a> <span class="preprocessor">#define LOS_ERRNO_QUEUE_ISEMPTY                         LOS_ERRNO_OS_ERROR(LOS_MOD_QUE, 0x1d)</span>
+<a name="l00323"></a>00323 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00324"></a>00324 <span class="comment">/**</span>
+<a name="l00325"></a>00325 <span class="comment">  * @ingroup los_queue</span>
+<a name="l00326"></a>00326 <span class="comment">  * Queue error code: The buffer size passed in during queue readding is smaller than the queue size.</span>
+<a name="l00327"></a>00327 <span class="comment">  *</span>
+<a name="l00328"></a>00328 <span class="comment">  * Value: 0x0200061f</span>
+<a name="l00329"></a>00329 <span class="comment">  *</span>
+<a name="l00330"></a>00330 <span class="comment">  * Solution: Increase the buffer size, or use a queue in which nodes are smaller.</span>
+<a name="l00331"></a>00331 <span class="comment">  */</span>
+<a name="l00332"></a><a class="code" href="a00064_gc910d35d5286c914679485e434e6a7ce.html#gc910d35d5286c914679485e434e6a7ce">00332</a> <span class="preprocessor">#define LOS_ERRNO_QUEUE_READ_SIZE_TOO_SMALL             LOS_ERRNO_OS_ERROR(LOS_MOD_QUE, 0x1f)</span>
+<a name="l00333"></a>00333 <span class="preprocessor"></span>
+<a name="l00334"></a>00334 <span class="comment"></span>
+<a name="l00335"></a>00335 <span class="comment">/**</span>
+<a name="l00336"></a>00336 <span class="comment">  * @ingroup los_queue</span>
+<a name="l00337"></a>00337 <span class="comment">  * Structure of the block for queue information query</span>
+<a name="l00338"></a>00338 <span class="comment">  */</span>
+<a name="l00339"></a><a class="code" href="a00016.html">00339</a> <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="a00016.html" title="Structure of the block for queue information query">tagQueueInfo</a>
+<a name="l00340"></a>00340 {
+<a name="l00341"></a><a class="code" href="a00016_61eaa2e1f278915ff3913ffa55779ade.html#61eaa2e1f278915ff3913ffa55779ade">00341</a>     <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>     <a class="code" href="a00016_61eaa2e1f278915ff3913ffa55779ade.html#61eaa2e1f278915ff3913ffa55779ade" title="Queue ID">uwQueueID</a>;                       <span class="comment">/**&lt; Queue ID                   */</span>
+<a name="l00342"></a><a class="code" href="a00016_fa783d4f776ea9b3c157d45a8074604f.html#fa783d4f776ea9b3c157d45a8074604f">00342</a>     <a class="code" href="a00048_09f1a1fb2293e33483cc8d44aefb1eb1.html#09f1a1fb2293e33483cc8d44aefb1eb1">UINT16</a>     <a class="code" href="a00016_fa783d4f776ea9b3c157d45a8074604f.html#fa783d4f776ea9b3c157d45a8074604f" title="Queue length">usQueueLen</a>;                      <span class="comment">/**&lt; Queue length               */</span>
+<a name="l00343"></a><a class="code" href="a00016_8c13770c9d9d02a1bcc122a408945a75.html#8c13770c9d9d02a1bcc122a408945a75">00343</a>     <a class="code" href="a00048_09f1a1fb2293e33483cc8d44aefb1eb1.html#09f1a1fb2293e33483cc8d44aefb1eb1">UINT16</a>     <a class="code" href="a00016_8c13770c9d9d02a1bcc122a408945a75.html#8c13770c9d9d02a1bcc122a408945a75" title="Node size">usQueueSize</a>;                     <span class="comment">/**&lt; Node size                  */</span>
+<a name="l00344"></a><a class="code" href="a00016_273f907a1f5249aecf408f826838b8af.html#273f907a1f5249aecf408f826838b8af">00344</a>     <a class="code" href="a00048_09f1a1fb2293e33483cc8d44aefb1eb1.html#09f1a1fb2293e33483cc8d44aefb1eb1">UINT16</a>     <a class="code" href="a00016_273f907a1f5249aecf408f826838b8af.html#273f907a1f5249aecf408f826838b8af" title="Node head">usQueueHead</a>;                     <span class="comment">/**&lt; Node head                  */</span>
+<a name="l00345"></a><a class="code" href="a00016_ca774612840feb882f23eef6add49544.html#ca774612840feb882f23eef6add49544">00345</a>     <a class="code" href="a00048_09f1a1fb2293e33483cc8d44aefb1eb1.html#09f1a1fb2293e33483cc8d44aefb1eb1">UINT16</a>     <a class="code" href="a00016_ca774612840feb882f23eef6add49544.html#ca774612840feb882f23eef6add49544" title="Node tail">usQueueTail</a>;                     <span class="comment">/**&lt; Node tail                  */</span>
+<a name="l00346"></a><a class="code" href="a00016_5ebd064a482398e015eca33feee0b80d.html#5ebd064a482398e015eca33feee0b80d">00346</a>     <a class="code" href="a00048_09f1a1fb2293e33483cc8d44aefb1eb1.html#09f1a1fb2293e33483cc8d44aefb1eb1">UINT16</a>     <a class="code" href="a00016_5ebd064a482398e015eca33feee0b80d.html#5ebd064a482398e015eca33feee0b80d" title="Count of writable resources">usWritableCnt</a>;                   <span class="comment">/**&lt; Count of writable resources               */</span>
+<a name="l00347"></a><a class="code" href="a00016_a81d2d14f8089a4b51dfdcf2d6039cb2.html#a81d2d14f8089a4b51dfdcf2d6039cb2">00347</a>     <a class="code" href="a00048_09f1a1fb2293e33483cc8d44aefb1eb1.html#09f1a1fb2293e33483cc8d44aefb1eb1">UINT16</a>     <a class="code" href="a00016_a81d2d14f8089a4b51dfdcf2d6039cb2.html#a81d2d14f8089a4b51dfdcf2d6039cb2" title="Count of readable resources">usReadableCnt</a>;                   <span class="comment">/**&lt; Count of readable resources               */</span>
+<a name="l00348"></a><a class="code" href="a00016_9aec4fa4d8047789191784a6370fd353.html#9aec4fa4d8047789191784a6370fd353">00348</a>     <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>     <a class="code" href="a00016_9aec4fa4d8047789191784a6370fd353.html#9aec4fa4d8047789191784a6370fd353" title="Resource reading task">uwWaitReadTask</a>;                  <span class="comment">/**&lt; Resource reading task                     */</span>
+<a name="l00349"></a><a class="code" href="a00016_1f551b1b950384809ecf6fdfd337e9f7.html#1f551b1b950384809ecf6fdfd337e9f7">00349</a>     <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>     <a class="code" href="a00016_1f551b1b950384809ecf6fdfd337e9f7.html#1f551b1b950384809ecf6fdfd337e9f7" title="Resource writing task">uwWaitWriteTask</a>;                 <span class="comment">/**&lt; Resource writing task                     */</span>
+<a name="l00350"></a><a class="code" href="a00016_150897b4846eb5edd6751e801c895598.html#150897b4846eb5edd6751e801c895598">00350</a>     <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>     <a class="code" href="a00016_150897b4846eb5edd6751e801c895598.html#150897b4846eb5edd6751e801c895598" title="Memory task">uwWaitMemTask</a>;                   <span class="comment">/**&lt; Memory task                               */</span>
+<a name="l00351"></a>00351 } <a class="code" href="a00016.html" title="Structure of the block for queue information query">QUEUE_INFO_S</a>;
+<a name="l00352"></a>00352 <span class="comment"></span>
+<a name="l00353"></a>00353 <span class="comment">/**</span>
+<a name="l00354"></a>00354 <span class="comment"> *@ingroup los_queue</span>
+<a name="l00355"></a>00355 <span class="comment"> *@brief Create a message queue.</span>
+<a name="l00356"></a>00356 <span class="comment"> *</span>
+<a name="l00357"></a>00357 <span class="comment"> *@par Description:</span>
+<a name="l00358"></a>00358 <span class="comment"> *This API is used to create a message queue.</span>
+<a name="l00359"></a>00359 <span class="comment"> *@attention</span>
+<a name="l00360"></a>00360 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00361"></a>00361 <span class="comment"> *&lt;li&gt;Threre are LOSCFG_BASE_IPC_QUEUE_LIMIT queues available, change it's value when necessory.&lt;/li&gt;</span>
+<a name="l00362"></a>00362 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00363"></a>00363 <span class="comment"> *@param pcQueueName        [IN]    Message queue name. Reserved parameter, not used for now.</span>
+<a name="l00364"></a>00364 <span class="comment"> *@param usLen              [IN]    Queue length. The value range is [1,0xffff].</span>
+<a name="l00365"></a>00365 <span class="comment"> *@param puwQueueID         [OUT]   ID of the queue control structure that is successfully created.</span>
+<a name="l00366"></a>00366 <span class="comment"> *@param uwFlags            [IN]    Queue mode. Reserved parameter, not used for now.</span>
+<a name="l00367"></a>00367 <span class="comment"> *@param usMaxMsgSize       [IN]    Node size. The value range is [1,0xffff-4].</span>
+<a name="l00368"></a>00368 <span class="comment"> *</span>
+<a name="l00369"></a>00369 <span class="comment"> *@retval   #LOS_OK                               The message queue is successfully created.</span>
+<a name="l00370"></a>00370 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_CB_UNAVAILABLE       The upper limit of the number of created queues is exceeded.</span>
+<a name="l00371"></a>00371 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_CREATE_NO_MEMORY     Insufficient memory for queue creation.</span>
+<a name="l00372"></a>00372 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_CREAT_PTR_NULL       Null pointer, puwQueueID is NULL.</span>
+<a name="l00373"></a>00373 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_PARA_ISZERO          The queue length or message node size passed in during queue creation is 0.</span>
+<a name="l00374"></a>00374 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_SIZE_TOO_BIG         The parameter usMaxMsgSize is larger than 0xffff - 4.</span>
+<a name="l00375"></a>00375 <span class="comment"> *@par Dependency:</span>
+<a name="l00376"></a>00376 <span class="comment"> *&lt;ul&gt;&lt;li&gt;los_queue.h: the header file that contains the API declaration.&lt;/li&gt;&lt;/ul&gt;</span>
+<a name="l00377"></a>00377 <span class="comment"> *@see LOS_QueueDelete</span>
+<a name="l00378"></a>00378 <span class="comment"> *@since Huawei LiteOS V100R001C00</span>
+<a name="l00379"></a>00379 <span class="comment"> */</span>
+<a name="l00380"></a>00380 <span class="keyword">extern</span> <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00064_gf6f1fb9652760f1d43a76179282a3174.html#gf6f1fb9652760f1d43a76179282a3174" title="Create a message queue.">LOS_QueueCreate</a>(<a class="code" href="a00048_ebb9e13210d88d43e32e735ada43a425.html#ebb9e13210d88d43e32e735ada43a425">CHAR</a> *pcQueueName,
+<a name="l00381"></a>00381                              <a class="code" href="a00048_09f1a1fb2293e33483cc8d44aefb1eb1.html#09f1a1fb2293e33483cc8d44aefb1eb1">UINT16</a> usLen,
+<a name="l00382"></a>00382                              <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> *puwQueueID,
+<a name="l00383"></a>00383                              <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwFlags,
+<a name="l00384"></a>00384                              <a class="code" href="a00048_09f1a1fb2293e33483cc8d44aefb1eb1.html#09f1a1fb2293e33483cc8d44aefb1eb1">UINT16</a> usMaxMsgSize);
+<a name="l00385"></a>00385 <span class="comment"></span>
+<a name="l00386"></a>00386 <span class="comment">/**</span>
+<a name="l00387"></a>00387 <span class="comment"> *@ingroup los_queue</span>
+<a name="l00388"></a>00388 <span class="comment"> *@brief Read a queue.</span>
+<a name="l00389"></a>00389 <span class="comment"> *</span>
+<a name="l00390"></a>00390 <span class="comment"> *@par Description:</span>
+<a name="l00391"></a>00391 <span class="comment"> *This API is used to read data in a specified queue, and store the obtained data to the address specified by pBufferAddr. The address and the size of the data to be read are defined by users.</span>
+<a name="l00392"></a>00392 <span class="comment"> *@attention</span>
+<a name="l00393"></a>00393 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00394"></a>00394 <span class="comment"> *&lt;li&gt;The specific queue should be created firstly.&lt;/li&gt;</span>
+<a name="l00395"></a>00395 <span class="comment"> *&lt;li&gt;Queue reading adopts the fist in first out (FIFO) mode. The data that is first stored in the queue is read first.&lt;/li&gt;</span>
+<a name="l00396"></a>00396 <span class="comment"> *&lt;li&gt;pBufferAddr stores the obtained data.&lt;/li&gt;</span>
+<a name="l00397"></a>00397 <span class="comment"> *&lt;li&gt;Do not read or write a queue in unblocking modes such as an interrupt.&lt;/li&gt;</span>
+<a name="l00398"></a>00398 <span class="comment"> *&lt;li&gt;This API cannot be called before the Huawei LiteOS is initialized.&lt;/li&gt;</span>
+<a name="l00399"></a>00399 <span class="comment"> *&lt;li&gt;The argument uwTimeOut is a relative time.&lt;/li&gt;</span>
+<a name="l00400"></a>00400 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00401"></a>00401 <span class="comment"> *</span>
+<a name="l00402"></a>00402 <span class="comment"> *@param uwQueueID        [IN]     Queue ID created by LOS_QueueCreate. The value range is [1,LOSCFG_BASE_IPC_QUEUE_LIMIT].</span>
+<a name="l00403"></a>00403 <span class="comment"> *@param pBufferAddr      [OUT]    Starting address that stores the obtained data. The starting address must not be null.</span>
+<a name="l00404"></a>00404 <span class="comment"> *@param puwBufferSize    [IN/OUT] Where to maintain the buffer wantted-size before read, and the real-size after read.</span>
+<a name="l00405"></a>00405 <span class="comment"> *@param uwTimeOut        [IN]     Expiry time. The value range is [0,LOS_WAIT_FOREVER](unit: Tick).</span>
+<a name="l00406"></a>00406 <span class="comment"> *</span>
+<a name="l00407"></a>00407 <span class="comment"> *@retval   #LOS_OK                              The queue is successfully read.</span>
+<a name="l00408"></a>00408 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_INVALID             The handle of the queue that is being read is invalid.</span>
+<a name="l00409"></a>00409 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_READ_PTR_NULL       The pointer passed in during queue reading is null.</span>
+<a name="l00410"></a>00410 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_READSIZE_ISZERO     The buffer size passed in during queue reading is 0.</span>
+<a name="l00411"></a>00411 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_READ_IN_INTERRUPT   The queue cannot be read during an interrupt when the time for waiting to processing the queue expires.</span>
+<a name="l00412"></a>00412 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_NOT_CREATE          The queue to be read is not created.</span>
+<a name="l00413"></a>00413 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_ISEMPTY             No resource is in the queue that is being read when the time for waiting to processing the queue expires.</span>
+<a name="l00414"></a>00414 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_PEND_IN_LOCK        The task is forbidden to be blocked on a queue when the task is locked.</span>
+<a name="l00415"></a>00415 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_TIMEOUT             The time set for waiting to processing the queue expires.</span>
+<a name="l00416"></a>00416 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_READ_SIZE_TOO_SMALL The buffer size passed in during queue reading is less than the queue size.</span>
+<a name="l00417"></a>00417 <span class="comment"> *@par Dependency:</span>
+<a name="l00418"></a>00418 <span class="comment"> *&lt;ul&gt;&lt;li&gt;los_queue.h: the header file that contains the API declaration.&lt;/li&gt;&lt;/ul&gt;</span>
+<a name="l00419"></a>00419 <span class="comment"> *@see LOS_QueueWriteCopy | LOS_QueueCreate</span>
+<a name="l00420"></a>00420 <span class="comment"> *@since Huawei LiteOS V100R001C00</span>
+<a name="l00421"></a>00421 <span class="comment"> */</span>
+<a name="l00422"></a>00422 <span class="keyword">extern</span> <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00064_g332824420696aae3bd46cd0541a43c7a.html#g332824420696aae3bd46cd0541a43c7a" title="Read a queue.">LOS_QueueReadCopy</a>(<a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwQueueID,
+<a name="l00423"></a>00423                                 <a class="code" href="a00048_7f319bfc2492a2136964194204e7a8cf.html#7f319bfc2492a2136964194204e7a8cf">VOID</a> *pBufferAddr,
+<a name="l00424"></a>00424                                 <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> *puwBufferSize,
+<a name="l00425"></a>00425                                 <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwTimeOut);
+<a name="l00426"></a>00426 <span class="comment"></span>
+<a name="l00427"></a>00427 <span class="comment">/**</span>
+<a name="l00428"></a>00428 <span class="comment"> *@ingroup los_queue</span>
+<a name="l00429"></a>00429 <span class="comment"> *@brief Write data into a queue.</span>
+<a name="l00430"></a>00430 <span class="comment"> *</span>
+<a name="l00431"></a>00431 <span class="comment"> *@par Description:</span>
+<a name="l00432"></a>00432 <span class="comment"> *This API is used to write the data of the size specified by uwBufferSize and stored at the address specified by pBufferAddr into a queue.</span>
+<a name="l00433"></a>00433 <span class="comment"> *@attention</span>
+<a name="l00434"></a>00434 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00435"></a>00435 <span class="comment"> *&lt;li&gt;The specific queue should be created firstly.&lt;/li&gt;</span>
+<a name="l00436"></a>00436 <span class="comment"> *&lt;li&gt;Do not read or write a queue in unblocking modes such as interrupt.&lt;/li&gt;</span>
+<a name="l00437"></a>00437 <span class="comment"> *&lt;li&gt;This API cannot be called before the Huawei LiteOS is initialized.&lt;/li&gt;</span>
+<a name="l00438"></a>00438 <span class="comment"> *&lt;li&gt;The data to be written is of the size specified by uwBufferSize and is stored at the address specified by BufferAddr.&lt;/li&gt;</span>
+<a name="l00439"></a>00439 <span class="comment"> *&lt;li&gt;The argument uwTimeOut is a relative time.&lt;/li&gt;</span>
+<a name="l00440"></a>00440 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00441"></a>00441 <span class="comment"> *</span>
+<a name="l00442"></a>00442 <span class="comment"> *@param uwQueueID        [IN]        Queue ID created by LOS_QueueCreate. The value range is [1,LOSCFG_BASE_IPC_QUEUE_LIMIT].</span>
+<a name="l00443"></a>00443 <span class="comment"> *@param pBufferAddr      [IN]        Starting address that stores the data to be written.The starting address must not be null.</span>
+<a name="l00444"></a>00444 <span class="comment"> *@param uwBufferSize     [IN]        Passed-in buffer size. The value range is [1,USHRT_MAX - sizeof(UINT32)].</span>
+<a name="l00445"></a>00445 <span class="comment"> *@param uwTimeOut        [IN]        Expiry time. The value range is [0,LOS_WAIT_FOREVER](unit: Tick).</span>
+<a name="l00446"></a>00446 <span class="comment"> *</span>
+<a name="l00447"></a>00447 <span class="comment"> *@retval   #LOS_OK                                 The data is successfully written into the queue.</span>
+<a name="l00448"></a>00448 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_INVALID                The queue handle passed in during queue writing is invalid.</span>
+<a name="l00449"></a>00449 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_WRITE_PTR_NULL         The pointer passed in during queue writing is null.</span>
+<a name="l00450"></a>00450 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_WRITESIZE_ISZERO       The buffer size passed in during queue writing is 0.</span>
+<a name="l00451"></a>00451 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_WRITE_IN_INTERRUPT     The queue cannot be written during an interrupt when the time for waiting to processing the queue expires.</span>
+<a name="l00452"></a>00452 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_NOT_CREATE             The queue into which the data is written is not created.</span>
+<a name="l00453"></a>00453 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_WRITE_SIZE_TOO_BIG     The buffer size passed in during queue writing is bigger than the queue size.</span>
+<a name="l00454"></a>00454 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_ISFULL                 No free node is available during queue writing.</span>
+<a name="l00455"></a>00455 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_PEND_IN_LOCK           The task is forbidden to be blocked on a queue when the task is locked.</span>
+<a name="l00456"></a>00456 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_TIMEOUT                The time set for waiting to processing the queue expires.</span>
+<a name="l00457"></a>00457 <span class="comment"> *@par Dependency:</span>
+<a name="l00458"></a>00458 <span class="comment"> *&lt;ul&gt;&lt;li&gt;los_queue.h: the header file that contains the API declaration.&lt;/li&gt;&lt;/ul&gt;</span>
+<a name="l00459"></a>00459 <span class="comment"> *@see LOS_QueueReadCopy | LOS_QueueCreate</span>
+<a name="l00460"></a>00460 <span class="comment"> *@since Huawei LiteOS V100R001C00</span>
+<a name="l00461"></a>00461 <span class="comment"> */</span>
+<a name="l00462"></a>00462 <span class="keyword">extern</span> <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00064_g4eba7fe0a878b3d93bae666b2b3d6aee.html#g4eba7fe0a878b3d93bae666b2b3d6aee" title="Write data into a queue.">LOS_QueueWriteCopy</a>(<a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwQueueID,
+<a name="l00463"></a>00463                             <a class="code" href="a00048_7f319bfc2492a2136964194204e7a8cf.html#7f319bfc2492a2136964194204e7a8cf">VOID</a> *pBufferAddr,
+<a name="l00464"></a>00464                             <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwBufferSize,
+<a name="l00465"></a>00465                             <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwTimeOut);
+<a name="l00466"></a>00466 <span class="comment"></span>
+<a name="l00467"></a>00467 <span class="comment">/**</span>
+<a name="l00468"></a>00468 <span class="comment"> *@ingroup los_queue</span>
+<a name="l00469"></a>00469 <span class="comment"> *@brief Read a queue.</span>
+<a name="l00470"></a>00470 <span class="comment"> *</span>
+<a name="l00471"></a>00471 <span class="comment"> *@par Description:</span>
+<a name="l00472"></a>00472 <span class="comment"> *This API is used to read the address of data in a specified queue, and store it to the address specified by pBufferAddr.</span>
+<a name="l00473"></a>00473 <span class="comment"> *@attention</span>
+<a name="l00474"></a>00474 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00475"></a>00475 <span class="comment"> *&lt;li&gt;The specific queue should be created firstly.&lt;/li&gt;</span>
+<a name="l00476"></a>00476 <span class="comment"> *&lt;li&gt;Queue reading adopts the fist in first out (FIFO) mode. The data that is first stored in the queue is read first.&lt;/li&gt;</span>
+<a name="l00477"></a>00477 <span class="comment"> *&lt;li&gt;pBufferAddr stores the obtained data address.&lt;/li&gt;</span>
+<a name="l00478"></a>00478 <span class="comment"> *&lt;li&gt;Do not read or write a queue in unblocking modes such as an interrupt.&lt;/li&gt;</span>
+<a name="l00479"></a>00479 <span class="comment"> *&lt;li&gt;This API cannot be called before the Huawei LiteOS is initialized.&lt;/li&gt;</span>
+<a name="l00480"></a>00480 <span class="comment"> *&lt;li&gt;The argument uwTimeOut is a relative time.&lt;/li&gt;</span>
+<a name="l00481"></a>00481 <span class="comment"> *&lt;li&gt;The uwBufferSize is not really used in LOS_QueueRead, because the interface is only used to obtain the address of data.&lt;/li&gt;</span>
+<a name="l00482"></a>00482 <span class="comment"> *&lt;li&gt;The buffer which the pBufferAddr pointing to must be greater than or equal to 4 bytes.&lt;/li&gt;</span>
+<a name="l00483"></a>00483 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00484"></a>00484 <span class="comment"> *</span>
+<a name="l00485"></a>00485 <span class="comment"> *@param uwQueueID        [IN]        Queue ID created by LOS_QueueCreate. The value range is [1,LOSCFG_BASE_IPC_QUEUE_LIMIT].</span>
+<a name="l00486"></a>00486 <span class="comment"> *@param pBufferAddr      [OUT]       Starting address that stores the obtained data. The starting address must not be null.</span>
+<a name="l00487"></a>00487 <span class="comment"> *@param uwBufferSize     [IN]        Passed-in buffer size, which must not be 0. The value range is [1,0xffffffff].</span>
+<a name="l00488"></a>00488 <span class="comment"> *@param uwTimeOut        [IN]        Expiry time. The value range is [0,LOS_WAIT_FOREVER](unit: Tick).</span>
+<a name="l00489"></a>00489 <span class="comment"> *</span>
+<a name="l00490"></a>00490 <span class="comment"> *@retval   #LOS_OK                               The queue is successfully read.</span>
+<a name="l00491"></a>00491 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_INVALID              The handle of the queue that is being read is invalid.</span>
+<a name="l00492"></a>00492 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_READ_PTR_NULL        The pointer passed in during queue reading is null.</span>
+<a name="l00493"></a>00493 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_READSIZE_ISZERO      The buffer size passed in during queue reading is 0.</span>
+<a name="l00494"></a>00494 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_READ_IN_INTERRUPT    The queue cannot be read during an interrupt when the time for waiting to processing the queue expires.</span>
+<a name="l00495"></a>00495 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_NOT_CREATE           The queue to be read is not created.</span>
+<a name="l00496"></a>00496 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_ISEMPTY              No resource is in the queue that is being read when the time for waiting to processing the queue expires.</span>
+<a name="l00497"></a>00497 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_PEND_IN_LOCK         The task is forbidden to be blocked on a queue when the task is locked.</span>
+<a name="l00498"></a>00498 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_TIMEOUT              The time set for waiting to processing the queue expires.</span>
+<a name="l00499"></a>00499 <span class="comment"> *@par Dependency:</span>
+<a name="l00500"></a>00500 <span class="comment"> *&lt;ul&gt;&lt;li&gt;los_queue.h: The header file that contains the API declaration.&lt;/li&gt;&lt;/ul&gt;</span>
+<a name="l00501"></a>00501 <span class="comment"> *@see LOS_QueueWrite | LOS_QueueCreate</span>
+<a name="l00502"></a>00502 <span class="comment"> *@since Huawei LiteOS V100R001C00</span>
+<a name="l00503"></a>00503 <span class="comment"> */</span>
+<a name="l00504"></a>00504 <span class="keyword">extern</span> <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00064_g5c31525b3007eeed45965c9bbda3a830.html#g5c31525b3007eeed45965c9bbda3a830" title="Read a queue.">LOS_QueueRead</a>(<a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwQueueID,
+<a name="l00505"></a>00505                                 <a class="code" href="a00048_7f319bfc2492a2136964194204e7a8cf.html#7f319bfc2492a2136964194204e7a8cf">VOID</a> *pBufferAddr,
+<a name="l00506"></a>00506                                 <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwBufferSize,
+<a name="l00507"></a>00507                                 <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwTimeOut);
+<a name="l00508"></a>00508 <span class="comment"></span>
+<a name="l00509"></a>00509 <span class="comment">/**</span>
+<a name="l00510"></a>00510 <span class="comment"> *@ingroup los_queue</span>
+<a name="l00511"></a>00511 <span class="comment"> *@brief Write data into a queue.</span>
+<a name="l00512"></a>00512 <span class="comment"> *</span>
+<a name="l00513"></a>00513 <span class="comment"> *@par Description:</span>
+<a name="l00514"></a>00514 <span class="comment"> *This API is used to write the address of data specified by pBufferAddr into a queue.</span>
+<a name="l00515"></a>00515 <span class="comment"> *@attention</span>
+<a name="l00516"></a>00516 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00517"></a>00517 <span class="comment"> *&lt;li&gt;The specific queue should be created firstly.&lt;/li&gt;</span>
+<a name="l00518"></a>00518 <span class="comment"> *&lt;li&gt;Do not read or write a queue in unblocking modes such as an interrupt.&lt;/li&gt;</span>
+<a name="l00519"></a>00519 <span class="comment"> *&lt;li&gt;This API cannot be called before the Huawei LiteOS is initialized.&lt;/li&gt;</span>
+<a name="l00520"></a>00520 <span class="comment"> *&lt;li&gt;The address of the data of the size specified by uwBufferSize and stored at the address specified by BufferAddr is to be written.&lt;/li&gt;</span>
+<a name="l00521"></a>00521 <span class="comment"> *&lt;li&gt;The argument uwTimeOut is a relative time.&lt;/li&gt;</span>
+<a name="l00522"></a>00522 <span class="comment"> *&lt;li&gt;The uwBufferSize is not really used in LOS_QueueWrite, because the interface is only used to write the address of data specified by pBufferAddr into a queue.&lt;/li&gt;</span>
+<a name="l00523"></a>00523 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00524"></a>00524 <span class="comment"> *</span>
+<a name="l00525"></a>00525 <span class="comment"> *@param uwQueueID        [IN]        Queue ID created by LOS_QueueCreate. The value range is [1,LOSCFG_BASE_IPC_QUEUE_LIMIT].</span>
+<a name="l00526"></a>00526 <span class="comment"> *@param pBufferAddr      [IN]       Starting address that stores the data to be written. The starting address must not be null.</span>
+<a name="l00527"></a>00527 <span class="comment"> *@param uwBufferSize     [IN]        Passed-in buffer size, which must not be 0. The value range is [1,0xffffffff].</span>
+<a name="l00528"></a>00528 <span class="comment"> *@param uwTimeOut        [IN]        Expiry time. The value range is [0,LOS_WAIT_FOREVER](unit: Tick).</span>
+<a name="l00529"></a>00529 <span class="comment"> *</span>
+<a name="l00530"></a>00530 <span class="comment"> *@retval   #LOS_OK                                The data is successfully written into the queue.</span>
+<a name="l00531"></a>00531 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_INVALID               The queue handle passed in during queue writing is invalid.</span>
+<a name="l00532"></a>00532 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_WRITE_PTR_NULL        The pointer passed in during queue writing is null.</span>
+<a name="l00533"></a>00533 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_WRITESIZE_ISZERO      The buffer size passed in during queue writing is 0.</span>
+<a name="l00534"></a>00534 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_WRITE_IN_INTERRUPT    The queue cannot be written during an interrupt when the time for waiting to processing the queue expires.</span>
+<a name="l00535"></a>00535 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_NOT_CREATE            The queue into which the data is written is not created.</span>
+<a name="l00536"></a>00536 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_WRITE_SIZE_TOO_BIG    The buffer size passed in during queue writing is bigger than the queue size.</span>
+<a name="l00537"></a>00537 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_ISFULL                No free node is available during queue writing.</span>
+<a name="l00538"></a>00538 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_PEND_IN_LOCK          The task is forbidden to be blocked on a queue when the task is locked.</span>
+<a name="l00539"></a>00539 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_TIMEOUT               The time set for waiting to processing the queue expires.</span>
+<a name="l00540"></a>00540 <span class="comment"> *@par Dependency:</span>
+<a name="l00541"></a>00541 <span class="comment"> *&lt;ul&gt;&lt;li&gt;los_queue.h: The header file that contains the API declaration.&lt;/li&gt;&lt;/ul&gt;</span>
+<a name="l00542"></a>00542 <span class="comment"> *@see LOS_QueueRead | LOS_QueueCreate</span>
+<a name="l00543"></a>00543 <span class="comment"> *@since Huawei LiteOS V100R001C00</span>
+<a name="l00544"></a>00544 <span class="comment"> */</span>
+<a name="l00545"></a>00545 <span class="keyword">extern</span> <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00064_g7e1421aafcfae09f73e314795fe0952b.html#g7e1421aafcfae09f73e314795fe0952b" title="Write data into a queue.">LOS_QueueWrite</a>(<a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwQueueID,
+<a name="l00546"></a>00546                             <a class="code" href="a00048_7f319bfc2492a2136964194204e7a8cf.html#7f319bfc2492a2136964194204e7a8cf">VOID</a> *pBufferAddr,
+<a name="l00547"></a>00547                             <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwBufferSize,
+<a name="l00548"></a>00548                             <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwTimeOut);
+<a name="l00549"></a>00549 <span class="comment"></span>
+<a name="l00550"></a>00550 <span class="comment">/**</span>
+<a name="l00551"></a>00551 <span class="comment"> *@ingroup los_queue</span>
+<a name="l00552"></a>00552 <span class="comment"> *@brief Write data into a queue header.</span>
+<a name="l00553"></a>00553 <span class="comment"> *</span>
+<a name="l00554"></a>00554 <span class="comment"> *@par Description:</span>
+<a name="l00555"></a>00555 <span class="comment"> *This API is used to write the data of the size specified by uwBufferSize and stored at the address specified by pBufferAddr into a queue header.</span>
+<a name="l00556"></a>00556 <span class="comment"> *@attention</span>
+<a name="l00557"></a>00557 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00558"></a>00558 <span class="comment"> *&lt;li&gt;Do not read or write a queue in unblocking modes such as an interrupt.&lt;/li&gt;</span>
+<a name="l00559"></a>00559 <span class="comment"> *&lt;li&gt;This API cannot be called before the Huawei LiteOS is initialized.&lt;/li&gt;</span>
+<a name="l00560"></a>00560 <span class="comment"> *&lt;li&gt;The address of the data of the size specified by uwBufferSize and stored at the address specified by BufferAddr is to be written.&lt;/li&gt;</span>
+<a name="l00561"></a>00561 <span class="comment"> *&lt;li&gt;The argument uwTimeOut is a relative time.&lt;/li&gt;</span>
+<a name="l00562"></a>00562 <span class="comment"> *&lt;li&gt;LOS_QueueRead and LOS_QueueWriteHead are a set of interfaces, and the two groups of interfaces need to be used.&lt;li&gt;</span>
+<a name="l00563"></a>00563 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00564"></a>00564 <span class="comment"> *</span>
+<a name="l00565"></a>00565 <span class="comment"> *@param uwQueueID        [IN]        Queue ID created by LOS_QueueCreate. The value range is [1,LOSCFG_BASE_IPC_QUEUE_LIMIT].</span>
+<a name="l00566"></a>00566 <span class="comment"> *@param pBufferAddr      [OUT]       Starting address that stores the data to be written. The starting address must not be null.</span>
+<a name="l00567"></a>00567 <span class="comment"> *@param uwBufferSize     [IN]        Passed-in buffer size, which must not be 0. The value range is [1,0xffffffff].</span>
+<a name="l00568"></a>00568 <span class="comment"> *@param uwTimeOut        [IN]        Expiry time. The value range is [0,LOS_WAIT_FOREVER](unit: Tick).</span>
+<a name="l00569"></a>00569 <span class="comment"> *</span>
+<a name="l00570"></a>00570 <span class="comment"> *@retval   #LOS_OK                                 The data is successfully written into the queue.</span>
+<a name="l00571"></a>00571 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_INVALID                The queue handle passed in during queue writing is invalid.</span>
+<a name="l00572"></a>00572 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_WRITE_PTR_NULL         The pointer passed in during queue writing is null.</span>
+<a name="l00573"></a>00573 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_WRITESIZE_ISZERO       The buffer size passed in during queue writing is 0.</span>
+<a name="l00574"></a>00574 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_WRITE_IN_INTERRUPT     The queue cannot be written during an interrupt when the time for waiting to processing the queue expires.</span>
+<a name="l00575"></a>00575 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_NOT_CREATE             The queue into which the data is written is not created.</span>
+<a name="l00576"></a>00576 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_WRITE_SIZE_TOO_BIG     The buffer size passed in during queue writing is bigger than the queue size.</span>
+<a name="l00577"></a>00577 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_ISFULL                 No free node is available during queue writing.</span>
+<a name="l00578"></a>00578 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_PEND_IN_LOCK           The task is forbidden to be blocked on a queue when the task is locked.</span>
+<a name="l00579"></a>00579 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_TIMEOUT                The time set for waiting to processing the queue expires.</span>
+<a name="l00580"></a>00580 <span class="comment"> *@par Dependency:</span>
+<a name="l00581"></a>00581 <span class="comment"> *&lt;ul&gt;&lt;li&gt;los_queue.h: The header file that contains the API declaration.&lt;/li&gt;&lt;/ul&gt;</span>
+<a name="l00582"></a>00582 <span class="comment"> *@see LOS_QueueRead | LOS_QueueCreate</span>
+<a name="l00583"></a>00583 <span class="comment"> *@since Huawei LiteOS V100R001C00</span>
+<a name="l00584"></a>00584 <span class="comment"> */</span>
+<a name="l00585"></a>00585 <span class="keyword">extern</span> <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00064_geec0efabe753fc0bcaa6981100e9d362.html#geec0efabe753fc0bcaa6981100e9d362" title="Write data into a queue header.">LOS_QueueWriteHead</a>(<a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwQueueID,
+<a name="l00586"></a>00586                             <a class="code" href="a00048_7f319bfc2492a2136964194204e7a8cf.html#7f319bfc2492a2136964194204e7a8cf">VOID</a> *pBufferAddr,
+<a name="l00587"></a>00587                             <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwBufferSize,
+<a name="l00588"></a>00588                             <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwTimeOut);
+<a name="l00589"></a>00589 <span class="comment"></span>
+<a name="l00590"></a>00590 <span class="comment">/**</span>
+<a name="l00591"></a>00591 <span class="comment"> *@ingroup los_queue</span>
+<a name="l00592"></a>00592 <span class="comment"> *@brief Write data into a queue header.</span>
+<a name="l00593"></a>00593 <span class="comment"> *</span>
+<a name="l00594"></a>00594 <span class="comment"> *@par Description:</span>
+<a name="l00595"></a>00595 <span class="comment"> *This API is used to write the data of the size specified by uwBufferSize and stored at the address specified by pBufferAddr into a queue header.</span>
+<a name="l00596"></a>00596 <span class="comment"> *@attention</span>
+<a name="l00597"></a>00597 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00598"></a>00598 <span class="comment"> *&lt;li&gt;Do not read or write a queue in unblocking modes such as an interrupt.&lt;/li&gt;</span>
+<a name="l00599"></a>00599 <span class="comment"> *&lt;li&gt;This API cannot be called before the Huawei LiteOS is initialized.&lt;/li&gt;</span>
+<a name="l00600"></a>00600 <span class="comment"> *&lt;li&gt;The address of the data of the size specified by uwBufferSize and stored at the address specified by BufferAddr is to be written.&lt;/li&gt;</span>
+<a name="l00601"></a>00601 <span class="comment"> *&lt;li&gt;The argument uwTimeOut is a relative time.&lt;/li&gt;</span>
+<a name="l00602"></a>00602 <span class="comment"> *&lt;li&gt;LOS_QueueRead and LOS_QueueWriteHead are a set of interfaces, and the two groups of interfaces need to be used.&lt;li&gt;</span>
+<a name="l00603"></a>00603 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00604"></a>00604 <span class="comment"> *</span>
+<a name="l00605"></a>00605 <span class="comment"> *@param uwQueueID        [IN]        Queue ID created by LOS_QueueCreate. The value range is [1,LOSCFG_BASE_IPC_QUEUE_LIMIT].</span>
+<a name="l00606"></a>00606 <span class="comment"> *@param pBufferAddr      [OUT]       Starting address that stores the data to be written. The starting address must not be null.</span>
+<a name="l00607"></a>00607 <span class="comment"> *@param uwBufferSize     [IN]        Passed-in buffer size, which must not be 0. The value range is [1,0xffffffff].</span>
+<a name="l00608"></a>00608 <span class="comment"> *@param uwTimeOut        [IN]        Expiry time. The value range is [0,LOS_WAIT_FOREVER](unit: Tick).</span>
+<a name="l00609"></a>00609 <span class="comment"> *</span>
+<a name="l00610"></a>00610 <span class="comment"> *@retval   #LOS_OK                                 The data is successfully written into the queue.</span>
+<a name="l00611"></a>00611 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_INVALID                The queue handle passed in during queue writing is invalid.</span>
+<a name="l00612"></a>00612 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_WRITE_PTR_NULL         The pointer passed in during queue writing is null.</span>
+<a name="l00613"></a>00613 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_WRITESIZE_ISZERO       The buffer size passed in during queue writing is 0.</span>
+<a name="l00614"></a>00614 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_WRITE_IN_INTERRUPT     The queue cannot be written during an interrupt when the time for waiting to processing the queue expires.</span>
+<a name="l00615"></a>00615 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_NOT_CREATE             The queue into which the data is written is not created.</span>
+<a name="l00616"></a>00616 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_WRITE_SIZE_TOO_BIG     The buffer size passed in during queue writing is bigger than the queue size.</span>
+<a name="l00617"></a>00617 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_ISFULL                 No free node is available during queue writing.</span>
+<a name="l00618"></a>00618 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_PEND_IN_LOCK           The task is forbidden to be blocked on a queue when the task is locked.</span>
+<a name="l00619"></a>00619 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_TIMEOUT                The time set for waiting to processing the queue expires.</span>
+<a name="l00620"></a>00620 <span class="comment"> *@par Dependency:</span>
+<a name="l00621"></a>00621 <span class="comment"> *&lt;ul&gt;&lt;li&gt;los_queue.h: The header file that contains the API declaration.&lt;/li&gt;&lt;/ul&gt;</span>
+<a name="l00622"></a>00622 <span class="comment"> *@see LOS_QueueWrite | LOS_QueueWriteHead</span>
+<a name="l00623"></a>00623 <span class="comment"> *@since Huawei LiteOS V100R001C00</span>
+<a name="l00624"></a>00624 <span class="comment"> */</span>
+<a name="l00625"></a>00625 <span class="keyword">extern</span> <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00064_g7daf97bf6701a90cfab1f67eb553f08e.html#g7daf97bf6701a90cfab1f67eb553f08e" title="Write data into a queue header.">LOS_QueueWriteHeadCopy</a>(<a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwQueueID,
+<a name="l00626"></a>00626                                      <a class="code" href="a00048_7f319bfc2492a2136964194204e7a8cf.html#7f319bfc2492a2136964194204e7a8cf">VOID</a> * pBufferAddr,
+<a name="l00627"></a>00627                                      <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwBufferSize,
+<a name="l00628"></a>00628                                      <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwTimeOut );
+<a name="l00629"></a>00629 
+<a name="l00630"></a>00630 <span class="comment"></span>
+<a name="l00631"></a>00631 <span class="comment"> /**</span>
+<a name="l00632"></a>00632 <span class="comment">  *@ingroup los_queue</span>
+<a name="l00633"></a>00633 <span class="comment">  *@brief Delete a queue.</span>
+<a name="l00634"></a>00634 <span class="comment">  *</span>
+<a name="l00635"></a>00635 <span class="comment">  *@par Description:</span>
+<a name="l00636"></a>00636 <span class="comment">  *This API is used to delete a queue.</span>
+<a name="l00637"></a>00637 <span class="comment">  *@attention</span>
+<a name="l00638"></a>00638 <span class="comment">  *&lt;ul&gt;</span>
+<a name="l00639"></a>00639 <span class="comment">  *&lt;li&gt;This API cannot be used to delete a queue that is not created.&lt;/li&gt;</span>
+<a name="l00640"></a>00640 <span class="comment">  *&lt;li&gt;A synchronous queue fails to be deleted if any tasks are blocked on it, or some queues are being read or written.&lt;/li&gt;</span>
+<a name="l00641"></a>00641 <span class="comment">  *&lt;/ul&gt;</span>
+<a name="l00642"></a>00642 <span class="comment">  *</span>
+<a name="l00643"></a>00643 <span class="comment">  *@param uwQueueID     [IN]      Queue ID created by LOS_QueueCreate. The value range is [1,LOSCFG_BASE_IPC_QUEUE_LIMIT].</span>
+<a name="l00644"></a>00644 <span class="comment">  *</span>
+<a name="l00645"></a>00645 <span class="comment">  *@retval   #LOS_OK                           The queue is successfully deleted.</span>
+<a name="l00646"></a>00646 <span class="comment">  *@retval   #LOS_ERRNO_QUEUE_NOT_FOUND        The queue cannot be found.</span>
+<a name="l00647"></a>00647 <span class="comment">  *@retval   #LOS_ERRNO_QUEUE_NOT_CREATE       The queue handle passed in when the queue is being deleted is incorrect.</span>
+<a name="l00648"></a>00648 <span class="comment">  *@retval   #LOS_ERRNO_QUEUE_IN_TSKUSE        The queue that blocks a task cannot be deleted.</span>
+<a name="l00649"></a>00649 <span class="comment">  *@retval   #LOS_ERRNO_QUEUE_IN_TSKWRITE      Queue reading and writing are not synchronous.</span>
+<a name="l00650"></a>00650 <span class="comment">  *@par Dependency:</span>
+<a name="l00651"></a>00651 <span class="comment">  *&lt;ul&gt;&lt;li&gt;los_queue.h: the header file that contains the API declaration.&lt;/li&gt;&lt;/ul&gt;</span>
+<a name="l00652"></a>00652 <span class="comment">  *@see LOS_QueueCreate | LOS_QueueCreate</span>
+<a name="l00653"></a>00653 <span class="comment">  *@since Huawei LiteOS V100R001C00</span>
+<a name="l00654"></a>00654 <span class="comment">  */</span>
+<a name="l00655"></a>00655 <span class="keyword">extern</span> <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00064_gd779efa012c288bc90032e7ce98a57df.html#gd779efa012c288bc90032e7ce98a57df" title="Delete a queue.">LOS_QueueDelete</a>(<a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwQueueID);
+<a name="l00656"></a>00656 <span class="comment"></span>
+<a name="l00657"></a>00657 <span class="comment">/**</span>
+<a name="l00658"></a>00658 <span class="comment"> *@ingroup los_queue</span>
+<a name="l00659"></a>00659 <span class="comment"> *@brief Obtain queue information.</span>
+<a name="l00660"></a>00660 <span class="comment"> *</span>
+<a name="l00661"></a>00661 <span class="comment"> *@par Description:</span>
+<a name="l00662"></a>00662 <span class="comment"> *This API is used to obtain queue information.</span>
+<a name="l00663"></a>00663 <span class="comment"> *@attention</span>
+<a name="l00664"></a>00664 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00665"></a>00665 <span class="comment"> *&lt;li&gt;The specific queue should be created firstly.&lt;/li&gt;</span>
+<a name="l00666"></a>00666 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00667"></a>00667 <span class="comment"> *@param uwQueueID       [IN]        Queue ID created by LOS_QueueCreate. The value range is [1,LOSCFG_BASE_IPC_QUEUE_LIMIT].</span>
+<a name="l00668"></a>00668 <span class="comment"> *@param pstQueueInfo    [OUT]       The queue information to be read must not be null.</span>
+<a name="l00669"></a>00669 <span class="comment"> *</span>
+<a name="l00670"></a>00670 <span class="comment"> *@retval   #LOS_OK                            The queue information is successfully obtained.</span>
+<a name="l00671"></a>00671 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_PTR_NULL          The pointer to the queue information to be obtained is null.</span>
+<a name="l00672"></a>00672 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_INVALID           The handle of the queue that is being read is invalid.</span>
+<a name="l00673"></a>00673 <span class="comment"> *@retval   #LOS_ERRNO_QUEUE_NOT_CREATE        The queue in which the information to be obtained is stored is not created.</span>
+<a name="l00674"></a>00674 <span class="comment"> *</span>
+<a name="l00675"></a>00675 <span class="comment"> *@par Dependency:</span>
+<a name="l00676"></a>00676 <span class="comment"> *&lt;ul&gt;&lt;li&gt;los_queue.h: the header file that contains the API declaration.&lt;/li&gt;&lt;/ul&gt;</span>
+<a name="l00677"></a>00677 <span class="comment"> *@see LOS_QueueCreate</span>
+<a name="l00678"></a>00678 <span class="comment"> *@since Huawei LiteOS V100R001C00</span>
+<a name="l00679"></a>00679 <span class="comment"> */</span>
+<a name="l00680"></a>00680 <span class="keyword">extern</span> <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00064_gcd81d13c01e7ab08bb7e8a846216ae8e.html#gcd81d13c01e7ab08bb7e8a846216ae8e" title="Obtain queue information.">LOS_QueueInfoGet</a>(<a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwQueueID, <a class="code" href="a00016.html" title="Structure of the block for queue information query">QUEUE_INFO_S</a> *pstQueueInfo);
+<a name="l00681"></a>00681 
+<a name="l00682"></a>00682 
+<a name="l00683"></a>00683 <span class="preprocessor">#ifdef __cplusplus</span>
+<a name="l00684"></a>00684 <span class="preprocessor"></span><span class="preprocessor">#if __cplusplus</span>
+<a name="l00685"></a>00685 <span class="preprocessor"></span>}
+<a name="l00686"></a>00686 <span class="preprocessor">#endif </span><span class="comment">/* __cplusplus */</span>
+<a name="l00687"></a>00687 <span class="preprocessor">#endif </span><span class="comment">/* __cplusplus */</span>
+<a name="l00688"></a>00688 
+<a name="l00689"></a>00689 <span class="preprocessor">#endif </span><span class="comment">/* _LOS_QUEUE_H */</span>
+</pre>
+   </div>
+  </div> 
+  <hr size="1" /> 
+ </body>
+</html>

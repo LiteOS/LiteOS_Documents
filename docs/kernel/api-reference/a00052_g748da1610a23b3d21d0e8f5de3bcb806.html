@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>  
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+<meta name="DC.Type" content="concept">
+<meta name="featurename" content="dcp">
+<title>atiny_net_recv_timeout</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head> 
+ <body> 
+  <div class="familylinks"> 
+   <a href="a00052_g748da1610a23b3d21d0e8f5de3bcb806.html">atiny_net_recv_timeout</a> 
+   <hr size="2" /> 
+  </div> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top"> 
+  </div> 
+  <div class="contents"> 
+   <div class="navpath"> 
+    <a class="el" href="a00052.html">Agenttiny Socket</a> 
+   </div> 
+   <table cellspacing="0" cellpadding="0" border="0"> 
+    <tbody> 
+     <tr> 
+      <td valign="top"> </td> 
+      <td valign="top"> <a class="anchor" name="g748da1610a23b3d21d0e8f5de3bcb806"></a> 
+       <!-- doxytag: member="atiny_socket.h::<a href='a00052_g748da1610a23b3d21d0e8f5de3bcb806.html'>atiny_net_recv_timeout</a>" ref="g748da1610a23b3d21d0e8f5de3bcb806" args="(void *ctx, unsigned char *buf, size_t len, uint32_t timeout)" --> 
+       <div class="memitem"> 
+        <div class="memproto"> 
+         <table class="memname"> 
+          <tbody> 
+           <tr> 
+            <td class="memname">int <a href="a00052_g748da1610a23b3d21d0e8f5de3bcb806.html">atiny_net_recv_timeout</a> </td> 
+            <td class="paramtype">(</td> 
+            <td class="paramtype">void *&nbsp;</td> 
+            <td class="paramname"> <em>ctx</em>, </td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramtype">unsigned char *&nbsp;</td> 
+            <td class="paramname"> <em>buf</em>, </td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramtype">size_t&nbsp;</td> 
+            <td class="paramname"> <em>len</em>, </td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramtype">uint32_t&nbsp;</td> 
+            <td class="paramname"> <em>timeout</em></td> 
+            <td class="paramkey">&nbsp;</td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey">)</td> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+        </div> 
+        <div class="memdoc"> 
+         <p> read characters from peer with timeout option. </p> 
+         <p> </p> 
+         <dl class="user" compact=""> 
+          <dt> 
+           <b>Description:</b> 
+          </dt> 
+          <dd>
+            This API is used to read at most 'len' characters, blocking for at most 'timeout' seconds. If no error occurs, the actual amount read is returned. 
+          </dd> 
+         </dl> 
+         <dl class="attention" compact=""> 
+          <dt> 
+           <b>注意:</b> 
+          </dt> 
+          <dd> 
+           <ul> 
+            <li> This function will block (until data becomes available or </li> 
+            <li> timeout is reached) even if the socket is set to </li> 
+            <li> non-blocking. Handling timeouts with non-blocking reads </li> 
+            <li> requires a different strategy. </li> 
+           </ul> 
+          </dd> 
+         </dl> 
+         <dl compact=""> 
+          <dt> 
+           <b>参数:</b> 
+          </dt> 
+          <dd> 
+           <table border="0" cellspacing="0" cellpadding="0"> 
+            <tbody> 
+             <tr> 
+              <th></th> 
+              <th>参数名称</th> 
+              <th>描述</th> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">ctx&nbsp;</td> 
+              <td>[IN] Pointer to the socket. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">buf&nbsp;</td> 
+              <td>[IN] The buffer to write to. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">len&nbsp;</td> 
+              <td>[IN] Maximum length of the buffer. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">timeout&nbsp;</td> 
+              <td>[IN] Maximum number of milliseconds to wait for data, 0 means no timeout (wait forever).</td> 
+             </tr> 
+            </tbody> 
+           </table> 
+          </dd> 
+         </dl> 
+         <dl compact=""> 
+          <dt> 
+           <b>返回值:</b> 
+          </dt> 
+          <dd> 
+           <table border="0" cellspacing="0" cellpadding="0"> 
+            <tbody> 
+             <tr> 
+              <th></th> 
+              <th>返回值</th> 
+              <th>描述</th> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">int&nbsp;</td> 
+              <td>the number of bytes sent. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">0&nbsp;</td> 
+              <td>indicates recv() would block. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">-1&nbsp;</td> 
+              <td>recv failed, you should try to connect again. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">-2&nbsp;</td> 
+              <td>this operation is timed out. </td> 
+             </tr> 
+            </tbody> 
+           </table> 
+          </dd> 
+         </dl> 
+         <dl class="user" compact=""> 
+          <dt> 
+           <b>Dependency: none.</b> 
+          </dt> 
+          <dd></dd> 
+         </dl> 
+         <dl class="see" compact=""> 
+          <dt> 
+           <b>参见:</b> 
+          </dt> 
+          <dd> 
+           <a class="el" href="a00052_g5439c84a42009c8f2f112d60108066b6.html#g5439c84a42009c8f2f112d60108066b6" title="create socket and connect to the server">atiny_net_connect</a> | 
+           <a class="el" href="a00052_g5c82eaf3bfd8506bbf74e6daf695455c.html#g5c82eaf3bfd8506bbf74e6daf695455c" title="read characters from peer.">atiny_net_recv</a> | 
+           <a class="el" href="a00052_g824ad2d16afa9b09870e85bb7f92fb48.html#g824ad2d16afa9b09870e85bb7f92fb48" title="write characters to peer.">atiny_net_send</a> | 
+           <a class="el" href="a00052_g344a32a9687e72585a0a8dbd666d43df.html#g344a32a9687e72585a0a8dbd666d43df" title="gracefully shutdown the connection.">atiny_net_close</a> 
+          </dd> 
+         </dl> 
+        </div> 
+       </div><p> </p></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <hr size="1" />  
+ </body>
+</html>

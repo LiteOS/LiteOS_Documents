@@ -1,0 +1,245 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312" /> 
+  <title>Software timer</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head>
+ <body> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top">  
+  </div> 
+  <div class="contents"> 
+   <h1>Software timer<br /> <small> [<a class="el" href="a00053.html">Kernel</a>]</small> </h1>
+   <table border="0" cellpadding="0" cellspacing="0"> 
+    <tbody>
+     <tr>
+      <td colspan="2"><br /><h2>数据结构</h2></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">struct &nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00017.html">tagSwTmrCtrl</a></td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Software timer control structure <a href="a00017.html#_details">更多...</a><br /></td>
+     </tr> 
+     <tr>
+      <td colspan="2"><br /><h2>宏定义</h2></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00066_ge44303d974dbbcef0b29b4629aca9085.html#ge44303d974dbbcef0b29b4629aca9085">LOS_ERRNO_SWTMR_PTR_NULL</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_SWTMR, 0x00)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Software timer error code: The timeout handling function is NULL. <a href="#ge44303d974dbbcef0b29b4629aca9085"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00066_g551960ecae0ca0af207e7ae4468c24e9.html#g551960ecae0ca0af207e7ae4468c24e9">LOS_ERRNO_SWTMR_INTERVAL_NOT_SUITED</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_SWTMR, 0x01)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Software timer error code: The expiration time is 0. <a href="#g551960ecae0ca0af207e7ae4468c24e9"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00066_gbe82f2a2e57bc482ba3e7545a811a233.html#gbe82f2a2e57bc482ba3e7545a811a233">LOS_ERRNO_SWTMR_MODE_INVALID</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_SWTMR, 0x02)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Software timer error code: Invalid software timer mode. <a href="#gbe82f2a2e57bc482ba3e7545a811a233"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00066_g7bb47388d53e45a8ac1e7161e06381c9.html#g7bb47388d53e45a8ac1e7161e06381c9">LOS_ERRNO_SWTMR_RET_PTR_NULL</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_SWTMR, 0x03)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Software timer error code: The passed-in software timer ID is NULL. <a href="#g7bb47388d53e45a8ac1e7161e06381c9"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00066_g9cb0f65a299075a97434567d26f22679.html#g9cb0f65a299075a97434567d26f22679">LOS_ERRNO_SWTMR_MAXSIZE</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_SWTMR, 0x04)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Software timer error code: The number of software timers exceeds the configured permitted maximum number. <a href="#g9cb0f65a299075a97434567d26f22679"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00066_g6075bb88fe523e3868f900dea8b48ef1.html#g6075bb88fe523e3868f900dea8b48ef1">LOS_ERRNO_SWTMR_ID_INVALID</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_SWTMR, 0x05)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Software timer error code: Invalid software timer ID. <a href="#g6075bb88fe523e3868f900dea8b48ef1"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00066_g37178588f7ec6fd975994fc292c07307.html#g37178588f7ec6fd975994fc292c07307">LOS_ERRNO_SWTMR_NOT_CREATED</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_SWTMR, 0x06)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Software timer error code: The software timer is not created. <a href="#g37178588f7ec6fd975994fc292c07307"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00066_gce36f7ca35c32c85e244704de1ee061f.html#gce36f7ca35c32c85e244704de1ee061f">LOS_ERRNO_SWTMR_NO_MEMORY</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_SWTMR, 0x07)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Software timer error code: Insufficient memory for software timer linked list creation. <a href="#gce36f7ca35c32c85e244704de1ee061f"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00066_gf73f0bde81c143cfdb421beb3546cfe5.html#gf73f0bde81c143cfdb421beb3546cfe5">LOS_ERRNO_SWTMR_MAXSIZE_INVALID</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_SWTMR, 0x08)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Software timer error code: Invalid configured number of software timers. <a href="#gf73f0bde81c143cfdb421beb3546cfe5"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00066_g68a8b9b8deb14f61a0307f1f3f20d624.html#g68a8b9b8deb14f61a0307f1f3f20d624">LOS_ERRNO_SWTMR_HWI_ACTIVE</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_SWTMR, 0x09)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Software timer error code: The software timer is being used during an interrupt. <a href="#g68a8b9b8deb14f61a0307f1f3f20d624"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00066_g925baea1b063be1ace8fd4d78c6c824c.html#g925baea1b063be1ace8fd4d78c6c824c">LOS_ERRNO_SWTMR_HANDLER_POOL_NO_MEM</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_SWTMR, 0x0a)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Software timer error code: Insufficient memory allocated by membox. <a href="#g925baea1b063be1ace8fd4d78c6c824c"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00066_g94e474f42c6ee1396a2450a7b81e1209.html#g94e474f42c6ee1396a2450a7b81e1209">LOS_ERRNO_SWTMR_QUEUE_CREATE_FAILED</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_SWTMR, 0x0b)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Software timer error code: The software timer queue fails to be created. <a href="#g94e474f42c6ee1396a2450a7b81e1209"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00066_g3766a42a2d4bd86d0fd9742d69f644b2.html#g3766a42a2d4bd86d0fd9742d69f644b2">LOS_ERRNO_SWTMR_TASK_CREATE_FAILED</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_SWTMR, 0x0c)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Software timer error code: The software timer task fails to be created. <a href="#g3766a42a2d4bd86d0fd9742d69f644b2"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00066_gfa13690a21376afc1079395a9ba809c9.html#gfa13690a21376afc1079395a9ba809c9">LOS_ERRNO_SWTMR_NOT_STARTED</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_SWTMR, 0x0d)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Software timer error code: The software timer is not started. <a href="#gfa13690a21376afc1079395a9ba809c9"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00066_g97e5570d124cccda32c8f18e307e722f.html#g97e5570d124cccda32c8f18e307e722f">LOS_ERRNO_SWTMR_STATUS_INVALID</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_SWTMR, 0x0e)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Software timer error code: Invalid software timer state. <a href="#g97e5570d124cccda32c8f18e307e722f"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00066_g82c56ae7621a5ec87d904d5cde988aac.html#g82c56ae7621a5ec87d904d5cde988aac">LOS_ERRNO_SWTMR_SORTLIST_NULL</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_SWTMR, 0x0f)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">This error code is not in use temporarily. <a href="#g82c56ae7621a5ec87d904d5cde988aac"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00066_gdebce1b5b4571e611a489f0b32c9688f.html#gdebce1b5b4571e611a489f0b32c9688f">LOS_ERRNO_SWTMR_TICK_PTR_NULL</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_SWTMR, 0x10)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Software timer error code: The passed-in number of remaining Ticks configured on the software timer is NULL. <a href="#gdebce1b5b4571e611a489f0b32c9688f"></a><br /></td>
+     </tr> 
+     <tr>
+      <td colspan="2"><br /><h2>类型定义</h2></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">typedef VOID(*&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00066_g967d48b78cd337282d734c05db1b4084.html#g967d48b78cd337282d734c05db1b4084">SWTMR_PROC_FUNC</a> )(<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwPar)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Define the type of a callback function that handles software timer timeout. <a href="#g967d48b78cd337282d734c05db1b4084"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">typedef struct <a class="el" href="a00017.html">tagSwTmrCtrl</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00066_ga3107348424cbd08d70b0a56168ffd6b.html#ga3107348424cbd08d70b0a56168ffd6b">SWTMR_CTRL_S</a></td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Software timer control structure <a href="#ga3107348424cbd08d70b0a56168ffd6b"></a><br /></td>
+     </tr> 
+     <tr>
+      <td colspan="2"><br /><h2>枚举</h2></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">enum &nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00066_g924987376edf9a46a74d398c9a2792c0.html#g924987376edf9a46a74d398c9a2792c0">enSwTmrType</a> { <br /> &nbsp;&nbsp;<a class="el" href="a00066_g924987376edf9a46a74d398c9a2792c0.html#gg924987376edf9a46a74d398c9a2792c0cd0f21498a3f817a40859c0c26d578af">LOS_SWTMR_MODE_ONCE</a>, <br /> &nbsp;&nbsp;<a class="el" href="a00066_g924987376edf9a46a74d398c9a2792c0.html#gg924987376edf9a46a74d398c9a2792c00c46539d62ee5548cf3ddde2dbff6b86">LOS_SWTMR_MODE_PERIOD</a>, <br /> &nbsp;&nbsp;<a class="el" href="a00066_g924987376edf9a46a74d398c9a2792c0.html#gg924987376edf9a46a74d398c9a2792c0e7fe8f9fdcbc7cecf75b47318e89a0c3">LOS_SWTMR_MODE_NO_SELFDELETE</a>, <br /> &nbsp;&nbsp;<a class="el" href="a00066_g924987376edf9a46a74d398c9a2792c0.html#gg924987376edf9a46a74d398c9a2792c0a69d16edc8547fb5cf2c08ee90148163">LOS_SWTMR_MODE_OPP</a> <br /> }</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Software timer mode <a href="a00066_g924987376edf9a46a74d398c9a2792c0.html#g924987376edf9a46a74d398c9a2792c0">更多...</a><br /></td>
+     </tr> 
+     <tr>
+      <td colspan="2"><br /><h2>函数</h2></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00066_g524111cedc5b37bb35eff64ac24748b7.html#g524111cedc5b37bb35eff64ac24748b7">LOS_SwtmrStart</a> (<a class="el" href="a00048_09f1a1fb2293e33483cc8d44aefb1eb1.html#09f1a1fb2293e33483cc8d44aefb1eb1">UINT16</a> usSwTmrID)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Start a software timer. <a href="#g524111cedc5b37bb35eff64ac24748b7"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00066_geb7344b2bd93f5065017f7a043ee761b.html#geb7344b2bd93f5065017f7a043ee761b">LOS_SwtmrStop</a> (<a class="el" href="a00048_09f1a1fb2293e33483cc8d44aefb1eb1.html#09f1a1fb2293e33483cc8d44aefb1eb1">UINT16</a> usSwTmrID)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Stop a software timer. <a href="#geb7344b2bd93f5065017f7a043ee761b"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00066_gec8c1decd78254933037b7af89b251a4.html#gec8c1decd78254933037b7af89b251a4">LOS_SwtmrTimeGet</a> (<a class="el" href="a00048_09f1a1fb2293e33483cc8d44aefb1eb1.html#09f1a1fb2293e33483cc8d44aefb1eb1">UINT16</a> usSwTmrID, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> *uwTick)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Obtain the number of remaining Ticks configured on a software timer. <a href="#gec8c1decd78254933037b7af89b251a4"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00066_g377dce05be4a586832e11248f750435c.html#g377dce05be4a586832e11248f750435c">LOS_SwtmrCreate</a> (<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwInterval, <a class="el" href="a00048_b27e9918b538ce9d8ca692479b375b6a.html#b27e9918b538ce9d8ca692479b375b6a">UINT8</a> ucMode, <a class="el" href="a00066_g967d48b78cd337282d734c05db1b4084.html#g967d48b78cd337282d734c05db1b4084">SWTMR_PROC_FUNC</a> pfnHandler, <a class="el" href="a00048_09f1a1fb2293e33483cc8d44aefb1eb1.html#09f1a1fb2293e33483cc8d44aefb1eb1">UINT16</a> *pusSwTmrID, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwArg, <a class="el" href="a00048_b27e9918b538ce9d8ca692479b375b6a.html#b27e9918b538ce9d8ca692479b375b6a">UINT8</a> ucRouses, <a class="el" href="a00048_b27e9918b538ce9d8ca692479b375b6a.html#b27e9918b538ce9d8ca692479b375b6a">UINT8</a> ucSensitive)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Create a software timer. <a href="#g377dce05be4a586832e11248f750435c"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00066_gf525b575a83f3770c71db64fcd43c037.html#gf525b575a83f3770c71db64fcd43c037">LOS_SwtmrDelete</a> (<a class="el" href="a00048_09f1a1fb2293e33483cc8d44aefb1eb1.html#09f1a1fb2293e33483cc8d44aefb1eb1">UINT16</a> usSwTmrID)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Delete a software timer. <a href="#gf525b575a83f3770c71db64fcd43c037"></a><br /></td>
+     </tr> 
+    </tbody>
+   </table> 
+  </div> 
+  <hr size="1" /> 
+ </body>
+</html>

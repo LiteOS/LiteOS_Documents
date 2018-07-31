@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>  
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+<meta name="DC.Type" content="concept">
+<meta name="featurename" content="dcp">
+<title>LOS_SemPend</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head> 
+ <body> 
+  <div class="familylinks"> 
+   <a href="a00065_g1ba06555b4d1a988286150846b6e3d5f.html">LOS_SemPend</a> 
+   <hr size="2" /> 
+  </div> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top"> 
+  </div> 
+  <div class="contents"> 
+   <div class="navpath"> 
+    <a class="el" href="a00065.html">Semaphore</a> 
+   </div> 
+   <table cellspacing="0" cellpadding="0" border="0"> 
+    <tbody> 
+     <tr> 
+      <td valign="top"> </td> 
+      <td valign="top"> <a class="anchor" name="g1ba06555b4d1a988286150846b6e3d5f"></a> 
+       <!-- doxytag: member="los_sem.h::<a href='a00065_g1ba06555b4d1a988286150846b6e3d5f.html'>LOS_SemPend</a>" ref="g1ba06555b4d1a988286150846b6e3d5f" args="(UINT32 uwSemHandle, UINT32 uwTimeout)" --> 
+       <div class="memitem"> 
+        <div class="memproto"> 
+         <table class="memname"> 
+          <tbody> 
+           <tr> 
+            <td class="memname"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a href="a00065_g1ba06555b4d1a988286150846b6e3d5f.html">LOS_SemPend</a> </td> 
+            <td class="paramtype">(</td> 
+            <td class="paramtype"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+            <td class="paramname"> <em>uwSemHandle</em>, </td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramtype"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+            <td class="paramname"> <em>uwTimeout</em></td> 
+            <td class="paramkey">&nbsp;</td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey">)</td> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+        </div> 
+        <div class="memdoc"> 
+         <p> Request a semaphore. </p> 
+         <p> </p> 
+         <dl class="user" compact=""> 
+          <dt> 
+           <b>Description:</b> 
+          </dt> 
+          <dd>
+            This API is used to request a semaphore based on the semaphore control structure ID specified by uwSemHandle and the parameter that specifies the timeout period. 
+          </dd> 
+         </dl> 
+         <dl class="attention" compact=""> 
+          <dt> 
+           <b>注意:</b> 
+          </dt> 
+          <dd> 
+           <ul> 
+            <li> The specified sem id must be created first. </li> 
+           </ul> 
+          </dd> 
+         </dl> 
+         <dl compact=""> 
+          <dt> 
+           <b>参数:</b> 
+          </dt> 
+          <dd> 
+           <table border="0" cellspacing="0" cellpadding="0"> 
+            <tbody> 
+             <tr> 
+              <th></th> 
+              <th>参数名称</th> 
+              <th>描述</th> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">uwSemHandle&nbsp;</td> 
+              <td>[IN] ID of the semaphore control structure to be requested. The ID of the semaphore control structure is obtained from semaphore creation. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">uwTimeout&nbsp;</td> 
+              <td>[IN] Timeout interval for waiting on the semaphore. The value range is [0, 0xFFFFFFFF]. If the value is set to 0, the semaphore is not waited on. If the value is set to 0xFFFFFFFF, the semaphore is waited on forever(unit: Tick).</td> 
+             </tr> 
+            </tbody> 
+           </table> 
+          </dd> 
+         </dl> 
+         <dl compact=""> 
+          <dt> 
+           <b>返回值:</b> 
+          </dt> 
+          <dd> 
+           <table border="0" cellspacing="0" cellpadding="0"> 
+            <tbody> 
+             <tr> 
+              <th></th> 
+              <th>返回值</th> 
+              <th>描述</th> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00065_g7cca25fdf6fcda55a4d31e3d3e346a06.html#g7cca25fdf6fcda55a4d31e3d3e346a06" title="Semaphore error code: Invalid parameter.">LOS_ERRNO_SEM_INVALID</a>&nbsp;</td> 
+              <td>The passed-in uwSemHandle value is invalid. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00065_g5338d10f78b825afcc75ced8c5eba48b.html#g5338d10f78b825afcc75ced8c5eba48b" title="Semaphore error code: Invalid parameter that specifies the timeout interval.">LOS_ERRNO_SEM_UNAVAILABLE</a>&nbsp;</td> 
+              <td>There is no available semaphore resource. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00065_gabb0bfd5d19cd89a585cd1eb1706595e.html#gabb0bfd5d19cd89a585cd1eb1706595e" title="Semaphore error code: The API is called during an interrupt, which is forbidden.">LOS_ERRNO_SEM_PEND_INTERR</a>&nbsp;</td> 
+              <td>The API is called during an interrupt, which is forbidden. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00065_gf0a2146c83319a2ffd2e48bd3772681a.html#gf0a2146c83319a2ffd2e48bd3772681a" title="Semaphore error code: The task is unable to request a semaphore because task scheduling...">LOS_ERRNO_SEM_PEND_IN_LOCK</a>&nbsp;</td> 
+              <td>The task is unable to request a semaphore because task scheduling is locked. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00065_g66835e81c702685a0adf820086ce92ec.html#g66835e81c702685a0adf820086ce92ec" title="Semaphore error code: The request for a semaphore times out.">LOS_ERRNO_SEM_TIMEOUT</a>&nbsp;</td> 
+              <td>The request for the semaphore times out. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00048_81e00a29757b6c6f90f05ca6c1eed169.html#81e00a29757b6c6f90f05ca6c1eed169">LOS_OK</a>&nbsp;</td> 
+              <td>The semaphore request succeeds. </td> 
+             </tr> 
+            </tbody> 
+           </table> 
+          </dd> 
+         </dl> 
+         <dl class="user" compact=""> 
+          <dt> 
+           <b>Dependency:</b> 
+          </dt> 
+          <dd> 
+           <ul> 
+            <li> <a class="el" href="a00042.html">los_sem.h</a>: the header file that contains the API declaration.</li> 
+           </ul> 
+          </dd> 
+         </dl> 
+         <dl class="see" compact=""> 
+          <dt> 
+           <b>参见:</b> 
+          </dt> 
+          <dd> 
+           <a class="el" href="a00065_g942331bdfc41aebe1b4e9962936341ea.html#g942331bdfc41aebe1b4e9962936341ea" title="Release a semaphore.">LOS_SemPost</a> | 
+           <a class="el" href="a00065_gb9ccc13d7f376d3ea3ac999f1c99c883.html#gb9ccc13d7f376d3ea3ac999f1c99c883" title="Create a Counting semaphore.">LOS_SemCreate</a> 
+          </dd> 
+         </dl> 
+         <dl class="since" compact=""> 
+          <dt> 
+           <b>自从:</b> 
+          </dt> 
+          <dd>
+            Huawei LiteOS V100R001C00 
+          </dd> 
+         </dl> 
+        </div> 
+       </div><p> </p></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <hr size="1" />  
+ </body>
+</html>

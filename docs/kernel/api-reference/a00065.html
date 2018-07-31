@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312" /> 
+  <title>Semaphore</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head>
+ <body> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top">  
+  </div> 
+  <div class="contents"> 
+   <h1>Semaphore<br /> <small> [<a class="el" href="a00053.html">Kernel</a>]</small> </h1>
+   <table border="0" cellpadding="0" cellspacing="0"> 
+    <tbody>
+     <tr>
+      <td colspan="2"><br /><h2>宏定义</h2></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00065_g7d74e0fe472c28b27f49a55263135c78.html#g7d74e0fe472c28b27f49a55263135c78">LOS_ERRNO_SEM_NO_MEMORY</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_SEM, 0x00)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Semaphore error code: The memory is insufficient. <a href="#g7d74e0fe472c28b27f49a55263135c78"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00065_g7cca25fdf6fcda55a4d31e3d3e346a06.html#g7cca25fdf6fcda55a4d31e3d3e346a06">LOS_ERRNO_SEM_INVALID</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_SEM, 0x01)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Semaphore error code: Invalid parameter. <a href="#g7cca25fdf6fcda55a4d31e3d3e346a06"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00065_ge524ffd676a970c9b5016bfed77618eb.html#ge524ffd676a970c9b5016bfed77618eb">LOS_ERRNO_SEM_PTR_NULL</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_SEM, 0x02)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Semaphore error code: Null pointer. <a href="#ge524ffd676a970c9b5016bfed77618eb"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00065_gf2abde9d46bc51812ad0640e14abadaa.html#gf2abde9d46bc51812ad0640e14abadaa">LOS_ERRNO_SEM_ALL_BUSY</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_SEM, 0x03)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Semaphore error code: No semaphore control structure is available. <a href="#gf2abde9d46bc51812ad0640e14abadaa"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00065_g5338d10f78b825afcc75ced8c5eba48b.html#g5338d10f78b825afcc75ced8c5eba48b">LOS_ERRNO_SEM_UNAVAILABLE</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_SEM, 0x04)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Semaphore error code: Invalid parameter that specifies the timeout interval. <a href="#g5338d10f78b825afcc75ced8c5eba48b"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00065_gabb0bfd5d19cd89a585cd1eb1706595e.html#gabb0bfd5d19cd89a585cd1eb1706595e">LOS_ERRNO_SEM_PEND_INTERR</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_SEM, 0x05)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Semaphore error code: The API is called during an interrupt, which is forbidden. <a href="#gabb0bfd5d19cd89a585cd1eb1706595e"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00065_gf0a2146c83319a2ffd2e48bd3772681a.html#gf0a2146c83319a2ffd2e48bd3772681a">LOS_ERRNO_SEM_PEND_IN_LOCK</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_SEM, 0x06)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Semaphore error code: The task is unable to request a semaphore because task scheduling is locked. <a href="#gf0a2146c83319a2ffd2e48bd3772681a"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00065_g66835e81c702685a0adf820086ce92ec.html#g66835e81c702685a0adf820086ce92ec">LOS_ERRNO_SEM_TIMEOUT</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_SEM, 0x07)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Semaphore error code: The request for a semaphore times out. <a href="#g66835e81c702685a0adf820086ce92ec"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00065_g1942e8b84dbc0f63d4c306da7384c02f.html#g1942e8b84dbc0f63d4c306da7384c02f">LOS_ERRNO_SEM_OVERFLOW</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_SEM, 0x08)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Semaphore error code: The times of semaphore release exceed the maximum times permitted. <a href="#g1942e8b84dbc0f63d4c306da7384c02f"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00065_g86431833e339bd87d550c9263b9c4803.html#g86431833e339bd87d550c9263b9c4803">LOS_ERRNO_SEM_PENDED</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_SEM, 0x09)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Semaphore error code: The queue of the tasks that are waiting on the semaphore control structure is not null. <a href="#g86431833e339bd87d550c9263b9c4803"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00065_gd45c9c34cc82be44cf8bf9da78739167.html#gd45c9c34cc82be44cf8bf9da78739167">LOS_ERRNO_SEM_MAXNUM_ZERO</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_SEM, 0x0A)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Semaphore error code: LOS_ERRNO_SEM_MAXNUM_ZERO is error. <a href="#gd45c9c34cc82be44cf8bf9da78739167"></a><br /></td>
+     </tr> 
+     <tr>
+      <td colspan="2"><br /><h2>函数</h2></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00065_gb9ccc13d7f376d3ea3ac999f1c99c883.html#gb9ccc13d7f376d3ea3ac999f1c99c883">LOS_SemCreate</a> (<a class="el" href="a00048_09f1a1fb2293e33483cc8d44aefb1eb1.html#09f1a1fb2293e33483cc8d44aefb1eb1">UINT16</a> usCount, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> *puwSemHandle)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Create a Counting semaphore. <a href="#gb9ccc13d7f376d3ea3ac999f1c99c883"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00065_g3e62151e31212d12b7ef00213ac5e0ff.html#g3e62151e31212d12b7ef00213ac5e0ff">LOS_BinarySemCreate</a> (<a class="el" href="a00048_09f1a1fb2293e33483cc8d44aefb1eb1.html#09f1a1fb2293e33483cc8d44aefb1eb1">UINT16</a> usCount, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> *puwSemHandle)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Create a binary semaphore. <a href="#g3e62151e31212d12b7ef00213ac5e0ff"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00065_g0a4053ee269f28dceca0596d6a5ac99a.html#g0a4053ee269f28dceca0596d6a5ac99a">LOS_SemDelete</a> (<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwSemHandle)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Delete a semaphore. <a href="#g0a4053ee269f28dceca0596d6a5ac99a"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00065_g1ba06555b4d1a988286150846b6e3d5f.html#g1ba06555b4d1a988286150846b6e3d5f">LOS_SemPend</a> (<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwSemHandle, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwTimeout)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Request a semaphore. <a href="#g1ba06555b4d1a988286150846b6e3d5f"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00065_g942331bdfc41aebe1b4e9962936341ea.html#g942331bdfc41aebe1b4e9962936341ea">LOS_SemPost</a> (<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwSemHandle)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Release a semaphore. <a href="#g942331bdfc41aebe1b4e9962936341ea"></a><br /></td>
+     </tr> 
+    </tbody>
+   </table> 
+  </div> 
+  <hr size="1" /> 
+ </body>
+</html>
