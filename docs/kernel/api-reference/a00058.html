@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312" /> 
+  <title>Event</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head>
+ <body> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top">  
+  </div> 
+  <div class="contents"> 
+   <h1>Event<br /> <small> [<a class="el" href="a00053.html">Kernel</a>]</small> </h1>
+   <table border="0" cellpadding="0" cellspacing="0"> 
+    <tbody>
+     <tr>
+      <td colspan="2"><br /><h2>数据结构</h2></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">struct &nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00014.html">tagEvent</a></td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Event control structure <a href="a00014.html#_details">更多...</a><br /></td>
+     </tr> 
+     <tr>
+      <td colspan="2"><br /><h2>宏定义</h2></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00058_g58c6d170427b4f9f6e4624458ce4ff9e.html#g58c6d170427b4f9f6e4624458ce4ff9e">LOS_WAITMODE_AND</a>&nbsp;&nbsp;&nbsp;(4)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Event reading mode: The task waits for all its expected events to occur. <a href="#g58c6d170427b4f9f6e4624458ce4ff9e"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00058_g3416630a613257590af97f1322902547.html#g3416630a613257590af97f1322902547">LOS_WAITMODE_OR</a>&nbsp;&nbsp;&nbsp;(2)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Event reading mode: The task waits for any of its expected events to occur. <a href="#g3416630a613257590af97f1322902547"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00058_g1007dc303c83d881b80e44a14091bfc2.html#g1007dc303c83d881b80e44a14091bfc2">LOS_WAITMODE_CLR</a>&nbsp;&nbsp;&nbsp;(1)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Event reading mode: The event flag is immediately cleared after the event is read. <a href="#g1007dc303c83d881b80e44a14091bfc2"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00058_g84625503ee291dde9c6c867359b2fd6a.html#g84625503ee291dde9c6c867359b2fd6a">LOS_ERRNO_EVENT_SETBIT_INVALID</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_EVENT, 0x00)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Bit 25 of the event mask cannot be set to an event because it is set to an error code. <a href="#g84625503ee291dde9c6c867359b2fd6a"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00058_g6a959bad7fda1f476004d5ed36a935db.html#g6a959bad7fda1f476004d5ed36a935db">LOS_ERRNO_EVENT_READ_TIMEOUT</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_EVENT, 0x01)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Event reading error code: Event reading times out. <a href="#g6a959bad7fda1f476004d5ed36a935db"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00058_gd3f71e943f5d1857531ac383ab3c724f.html#gd3f71e943f5d1857531ac383ab3c724f">LOS_ERRNO_EVENT_EVENTMASK_INVALID</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_EVENT, 0x02)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Event reading error code: The EVENTMASK input parameter value is valid. <a href="#gd3f71e943f5d1857531ac383ab3c724f"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00058_g33ac360c111ae7c7c686ecf3d9cf3ade.html#g33ac360c111ae7c7c686ecf3d9cf3ade">LOS_ERRNO_EVENT_READ_IN_INTERRUPT</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_EVENT, 0x03)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Event reading error code: The event is being read during an interrupt. <a href="#g33ac360c111ae7c7c686ecf3d9cf3ade"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00058_ge3021fd5742f063ac7c6125484836e66.html#ge3021fd5742f063ac7c6125484836e66">LOS_ERRNO_EVENT_FLAGS_INVALID</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_EVENT, 0x04)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Event reading error code: The uwFlags input parameter value used in the event reading API is invalid. <a href="#ge3021fd5742f063ac7c6125484836e66"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00058_g53a038633413397d6d41a66ec401b9a8.html#g53a038633413397d6d41a66ec401b9a8">LOS_ERRNO_EVENT_READ_IN_LOCK</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_EVENT, 0x05)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Event reading error code: The task is locked and is unable to read the event. <a href="#g53a038633413397d6d41a66ec401b9a8"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00058_gdea5f4b2497ef710bc09be90cd77e341.html#gdea5f4b2497ef710bc09be90cd77e341">LOS_ERRNO_EVENT_PTR_NULL</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_EVENT, 0x06)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Event reading error code: Null pointer. <a href="#gdea5f4b2497ef710bc09be90cd77e341"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00058_g062fbff4dde356f94236f18059dc844c.html#g062fbff4dde356f94236f18059dc844c">LOS_ERRNO_EVENT_NOT_INITIALIZED</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_EVENT, 0x07)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Event reading error code: no initialized. <a href="#g062fbff4dde356f94236f18059dc844c"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00058_gb82f777663898c7d03372ee0ba006ae8.html#gb82f777663898c7d03372ee0ba006ae8">LOS_ERRNO_EVENT_SHOULD_NOT_DESTORY</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_EVENT, 0x08)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Event reading error code: should not be distory. <a href="#gb82f777663898c7d03372ee0ba006ae8"></a><br /></td>
+     </tr> 
+     <tr>
+      <td colspan="2"><br /><h2>类型定义</h2></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">typedef struct <a class="el" href="a00014.html">tagEvent</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00058_g3ece142b98eefdaad9be866809f1a003.html#g3ece142b98eefdaad9be866809f1a003">EVENT_CB_S</a></td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Event control structure <a href="#g3ece142b98eefdaad9be866809f1a003"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">typedef struct <a class="el" href="a00014.html">tagEvent</a> *&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00058_g46370536db00afff84308350597dd45d.html#g46370536db00afff84308350597dd45d">PEVENT_CB_S</a></td>
+     </tr> 
+     <tr>
+      <td colspan="2"><br /><h2>函数</h2></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00058_gcb250c42463210839197908aa8d8502b.html#gcb250c42463210839197908aa8d8502b">LOS_EventInit</a> (<a class="el" href="a00014.html">PEVENT_CB_S</a> pstEventCB)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Initialize an event control block. <a href="#gcb250c42463210839197908aa8d8502b"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00058_g0c9a7f841cfb3adc09145749197cb3e2.html#g0c9a7f841cfb3adc09145749197cb3e2">LOS_EventPoll</a> (<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> *uwEventID, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwEventMask, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwMode)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Obtain an event specified by the event ID. <a href="#g0c9a7f841cfb3adc09145749197cb3e2"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00058_ge070395569a8c5894679451f20167615.html#ge070395569a8c5894679451f20167615">LOS_EventRead</a> (<a class="el" href="a00014.html">PEVENT_CB_S</a> pstEventCB, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwEventMask, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwMode, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwTimeOut)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Read an event. <a href="#ge070395569a8c5894679451f20167615"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00058_g5c6fbdb4092a660a1f18b82c05f96257.html#g5c6fbdb4092a660a1f18b82c05f96257">LOS_EventWrite</a> (<a class="el" href="a00014.html">PEVENT_CB_S</a> pstEventCB, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwEvents)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Write an event. <a href="#g5c6fbdb4092a660a1f18b82c05f96257"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00058_g09e8bd8f8d11d9bdc34dc25f55f9ea77.html#g09e8bd8f8d11d9bdc34dc25f55f9ea77">LOS_EventClear</a> (<a class="el" href="a00014.html">PEVENT_CB_S</a> pstEventCB, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwEvents)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Clear the event occurring in a specified task. <a href="#g09e8bd8f8d11d9bdc34dc25f55f9ea77"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00058_g2357540dff4678ad844e813066347eee.html#g2357540dff4678ad844e813066347eee">LOS_EventDestory</a> (<a class="el" href="a00014.html">PEVENT_CB_S</a> pstEventCB)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Destroy a event. <a href="#g2357540dff4678ad844e813066347eee"></a><br /></td>
+     </tr> 
+    </tbody>
+   </table> 
+  </div> 
+  <hr size="1" /> 
+ </body>
+</html>
