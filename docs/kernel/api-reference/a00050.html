@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312" /> 
+  <title>Agenttiny Definition</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head>
+ <body> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top">  
+  </div> 
+  <div class="contents"> 
+   <h1>Agenttiny Definition<br /> <small> [<a class="el" href="a00049.html">AgentTiny</a>]</small> </h1>
+   <table border="0" cellpadding="0" cellspacing="0"> 
+    <tbody>
+     <tr>
+      <td colspan="2"><br /><h2>函数</h2></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">int&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00050_g3e7c104de00c5be4479b7f64404606a2.html#g3e7c104de00c5be4479b7f64404606a2">atiny_cmd_ioctl</a> (<a class="el" href="a00024_d388ff6859ee9b0d09587602179bfd2f.html#d388ff6859ee9b0d09587602179bfd2f">atiny_cmd_e</a> cmd, char *arg, int len)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">issue the command. <a href="#g3e7c104de00c5be4479b7f64404606a2"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">void&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00050_g2075956d39a2c94b320d16cdbbbb828c.html#g2075956d39a2c94b320d16cdbbbb828c">atiny_event_notify</a> (<a class="el" href="a00024_e8148432be5a083da25e8b0fbfa86f81.html#e8148432be5a083da25e8b0fbfa86f81">atiny_event_e</a> event, const char *arg, int len)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">issue the command. <a href="#g2075956d39a2c94b320d16cdbbbb828c"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">int&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00050_g72b84153fdb6bddbceb18579a1d63bc9.html#g72b84153fdb6bddbceb18579a1d63bc9">atiny_init</a> (<a class="el" href="a00007.html">atiny_param_t</a> *atiny_params, void **phandle)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">initialize the lwm2m protocal. <a href="#g72b84153fdb6bddbceb18579a1d63bc9"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">int&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00050_ga721a933ca8aa60373f42f9ead67e853.html#ga721a933ca8aa60373f42f9ead67e853">atiny_bind</a> (<a class="el" href="a00006.html">atiny_device_info_t</a> *device_info, void *phandle)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">main task of the lwm2m protocal. <a href="#ga721a933ca8aa60373f42f9ead67e853"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">void&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00050_g6848174c3fc3bc5d8643b92aa04a2ba7.html#g6848174c3fc3bc5d8643b92aa04a2ba7">atiny_deinit</a> (void *phandle)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">stop the device and release resources. <a href="#g6848174c3fc3bc5d8643b92aa04a2ba7"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">int&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00050_gea81b84051c3f4b5c297b0038a61dcbb.html#gea81b84051c3f4b5c297b0038a61dcbb">atiny_data_report</a> (void *phandle, <a class="el" href="a00002.html">data_report_t</a> *report_data)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">report the data to the server. <a href="#gea81b84051c3f4b5c297b0038a61dcbb"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">void&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00050_g3f20ace8c48e21c867f7d414ab3dcb2f.html#g3f20ace8c48e21c867f7d414ab3dcb2f">atiny_set_log_level</a> (<a class="el" href="a00024_ff28962b6a9176b7ea839688aeb15993.html#ff28962b6a9176b7ea839688aeb15993">atiny_log_e</a> level)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">set log level. <a href="#g3f20ace8c48e21c867f7d414ab3dcb2f"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00024_ff28962b6a9176b7ea839688aeb15993.html#ff28962b6a9176b7ea839688aeb15993">atiny_log_e</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00050_gad5b81e3bd7125d02b7e288c44ec8d5c.html#gad5b81e3bd7125d02b7e288c44ec8d5c">atiny_get_log_level</a> (void)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">get log level. <a href="#gad5b81e3bd7125d02b7e288c44ec8d5c"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">int&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00050_g28ffa720cd8df538beb1a755cde140ec.html#g28ffa720cd8df538beb1a755cde140ec">atiny_reconnect</a> (void *phandle)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">reconnect lwm2m server. <a href="#g28ffa720cd8df538beb1a755cde140ec"></a><br /></td>
+     </tr> 
+    </tbody>
+   </table> 
+  </div> 
+  <hr size="1" /> 
+ </body>
+</html>
