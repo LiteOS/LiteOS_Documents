@@ -1,0 +1,23 @@
+# OS_CONFIG 系统配置
+
+## Task 模块配置
+
+- `#define LOSCFG_BASE_CORE_TSK_DEFAULT_PRIO 10` 默认优先级
+
+- `#define LOSCFG_BASE_CORE_TSK_LIMIT 15` 
+
+- `#define LOSCFG_BASE_CORE_TSK_IDLE_STACK_SIZE (0x500U)`
+
+- `#define LOSCFG_BASE_CORE_TSK_DEFAULT_STACK_SIZE (0x2D0U)`
+
+- `#define LOSCFG_BASE_CORE_TSK_MIN_STACK_SIZE (0x130U)`
+
+- `#define LOSCFG_BASE_CORE_TIMESLICE YES`
+
+- `#define LOSCFG_BASE_CORE_TIMESLICE_TIMEOUT 10`
+
+## 配置说明2
+
+## 配置说明3
+
+## 配置说明4

@@ -1,5 +1,7 @@
 # 互斥锁
 
+[[toc]]  
+
 ## 概述
 
 ### 基本概念
@@ -22,7 +24,9 @@ Huawei LiteOS提供的互斥锁具有如下特点：
 
 用互斥锁处理非共享资源的同步访问时，如果有任务访问该资源，则互斥锁为加锁状态。此时其他任务如果想访问这个公共资源则会被阻塞，直到互斥锁被持有该锁的任务释放后，其他任务才能重新访问该公共资源，此时互斥锁再次上锁，如此确保同一时刻只有一个任务正在访问这个公共资源，保证了公共资源操作的完整性。  
 
-互斥锁运作示意图
+互斥锁运作示意图  
+
+![](./pic/mutex-operation.png)  
 
 ## 开发指导
 
@@ -36,9 +40,9 @@ Huawei LiteOS 系统中的互斥锁模块为用户提供下面几种功能。
 
 | 功能分类           | 接口名         | 描述             |
 |--------------------|----------------|------------------|
-| 互斥锁的创建和删除 | `LOS_MuxCreate` | 创建互斥锁       |
+| 互斥锁的创建和删除   | `LOS_MuxCreate` | 创建互斥锁      |
 |                    | `LOS_MuxDelete` | 删除指定的互斥锁 |
-| 互斥锁的申请和释放 | `LOS_MuxPend`   | 申请指定的互斥锁 |
+| 互斥锁的申请和释放   | `LOS_MuxPend`   | 申请指定的互斥锁   |
 |                    | `LOS_MuxPost`   | 释放指定的互斥锁 |
 
 ### 开发流程
@@ -65,42 +69,6 @@ Huawei LiteOS 系统中的互斥锁模块为用户提供下面几种功能。
 
 4.  删除互斥锁 `LOS_MuxDelete`。
 
-### 互斥锁错误码
-
-对互斥锁存在失败的可能性操作，包括互斥锁创建，互斥锁删除，互斥锁申请，互斥锁释放。  
-
-| 序号 | 定义                             | 实际数值   | 描述                                       | 参考解决方案                         |
-|------|----------------------------------|------------|--------------------------------------------|--------------------------------------|
-| 1    | `LOS_ERRNO_MUX_NO_MEMORY`      | 0x02001d00 | 内存请求失败                               | 减少互斥锁限制数量的上限             |
-| 2    | `LOS_ERRNO_MUX_INVALID`         | 0x02001d01 | 互斥锁不可用                               | 传入有效的互斥锁的ID                 |
-| 3    | `LOS_ERRNO_MUX_PTR_NULL`       | 0x02001d02 | 入参为空                                   | 确保入参可用                         |
-| 4    | `LOS_ERRNO_MUX_ALL_BUSY`       | 0x02001d03 | 没有互斥锁可用                             | 增加互斥锁限制数量的上限             |
-| 5    | `LOS_ERRNO_MUX_UNAVAILABLE`     | 0x02001d04 | 锁失败，因为锁被其他线程使用               | 等待其他线程解锁或者设置等待时间     |
-| 6    | `LOS_ERRNO_MUX_PEND_INTERR`    | 0x02001d05 | 在中断中使用互斥锁                         | 在中断中禁止调用此接口               |
-| 7    | `LOS_ERRNO_MUX_PEND_IN_LOCK`  | 0x02001d06 | 任务调度没有使能，线程等待另一个线程释放锁 | 设置PEND为非阻塞模式或者使能任务调度 |
-| 8    | `LOS_ERRNO_MUX_TIMEOUT`         | 0x02001d07 | 互斥锁PEND超时                             | 增加等待时间或者设置一直等待模式     |
-| 9    | `LOS_ERRNO_MUX_OVERFLOW`        | 0x02001d08 | 暂未使用，待扩展                           | 无                                   |
-| 10   | `LOS_ERRNO_MUX_PENDED`          | 0x02001d09 | 删除正在使用的锁                           | 等待解锁再删除锁                     |
-| 11   | `LOS_ERRNO_MUX_GET_COUNT_ERR` | 0x02001d0a | 暂未使用，待扩展                           | 无                                   |
-| 12   | `LOS_ERRNO_MUX_REG_ERROR`      | 0x02001d0b | 暂未使用，待扩展                           | 无                                   |
-
-**错误码定义：** 错误码是一个 32 位的存储单元，31~24 位表示错误等级，23~16 位表示错误码标志，15~8 位代表错误码所属模块，7~0 位表示错误码序号，如下  
-```c
-#define LOS_ERRNO_OS_ERROR(MID, ERRNO)  \
-(LOS_ERRTYPE_ERROR | LOS_ERRNO_OS_ID | ((UINT32)(MID) << 8) | (ERRNO))
-```
-::: tip 注意
-- LOS_ERRTYPE_ERROR：Define critical OS errors
-- LOS_ERRNO_OS_ID：OS error code flag
-- LOS_MOD_MUX：Mutex module ID
-- MID：OS_MOUDLE_ID
-- ERRNO：error ID number    
-
-例如：  
-```  
-LOS_ERRNO_MUX_TIMEOUT       LOS_ERRNO_OS_ERROR(LOS_MOD_MUX, 0x07)   
-```  
-:::
 ## 注意事项
 
 - 两个任务不能对同一把互斥锁加锁。如果某任务对已被持有的互斥锁加锁，则该任务会被挂起，直到持有该锁的任务对互斥锁解锁，才能执行对这把互斥锁的加锁操作。
@@ -260,3 +228,4 @@ UINT32 Example_MutexLock(VOID)
 ### 结果验证
 
 编译运行得到的结果为：  
+![](./pic/mutex-output.png)  
