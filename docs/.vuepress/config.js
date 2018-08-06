@@ -349,25 +349,31 @@ module.exports = {
               children: ["./"]
             },
             {
-              title: "Kernel",
+              title: 'Basic Kernel',
               collapsable: false,
               children: [
-                "./task",
-                "./memory",
-                "./interrupt",
-                "./queue",
-                "./event",
-                "./mutex",
-                "./semaphore",
-                "./time-magmt",
-                "./swtmr",
-                "./list"
+                './task',
+                './memory',
+                './interrupt',
+                './queue',
+                './event',
+                './mutex',
+                './semaphore',
+                './time-magmt',
+                './swtmr',
+                './list'
               ]
             },
             {
-              title: "External",
+              title: 'ErrorCode Reference',
               collapsable: false,
-              children: ["./low-power"]
+              children: [
+                './errorcode-task',
+                './errorcode-queue',
+                './errorcode-event',
+                './errorcode-mutex',
+                './errorcode-semaphore',
+                './errorcode-swtmr'
             }
           ],
 
