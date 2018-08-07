@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>  
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+<meta name="DC.Type" content="concept">
+<meta name="featurename" content="dcp">
+<title>agenttiny.h文件参考</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head> 
+ <body> 
+  <div class="familylinks"> 
+   <a href="a00024.html">agenttiny.h</a> 
+   <hr size="2" /> 
+  </div> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top"> 
+  </div> 
+  <div class="contents"> 
+   <h1>agenttiny.h文件参考</h1> 
+   <p> <a href="a00072.html">浏览该文件的源代码。</a></p> 
+   <table border="0" cellpadding="0" cellspacing="0"> 
+    <tbody> 
+     <tr> 
+      <td colspan="2"><br /><h2>数据结构</h2></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">struct &nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00009.html">atiny_server_param_t</a></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">struct &nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00008.html">atiny_security_param_t</a></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">struct &nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00007.html">atiny_param_t</a></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">struct &nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00006.html">atiny_device_info_t</a></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">struct &nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00002.html">_data_report_t</a></td> 
+     </tr> 
+     <tr> 
+      <td colspan="2"><br /><h2>宏定义</h2></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00024_4c7f6d38dc311ef850f3cf63fda87a33.html#4c7f6d38dc311ef850f3cf63fda87a33">MAX_REPORT_DATA_LEN</a>&nbsp;&nbsp;&nbsp;1024</td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00024_a55f2af8014e5b55b6143b3f82da71e1.html#a55f2af8014e5b55b6143b3f82da71e1">MAX_BUFFER_REPORT_CNT</a>&nbsp;&nbsp;&nbsp;8</td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00024_d590e045a5c5ac0bd74487ef248fa7e0.html#d590e045a5c5ac0bd74487ef248fa7e0">MAX_SEND_ERR_NUM</a>&nbsp;&nbsp;&nbsp;10</td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00024_75b269341317c5cea0ce8d6cd690c969.html#75b269341317c5cea0ce8d6cd690c969">MAX_RECV_ERR_NUM</a>&nbsp;&nbsp;&nbsp;10</td> 
+     </tr> 
+     <tr> 
+      <td colspan="2"><br /><h2>类型定义</h2></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">typedef void(*&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00024_4c44ad4d38807e561649ebdc82f73051.html#4c44ad4d38807e561649ebdc82f73051">atiny_ack_callback</a> )(<a class="el" href="a00024_22071e2cf56399e0f5a53540b2aaaae0.html#22071e2cf56399e0f5a53540b2aaaae0">atiny_report_type_e</a> type, int cookie, <a class="el" href="a00024_7863ab7e74f845166f5ed1536cc1f9a2.html#7863ab7e74f845166f5ed1536cc1f9a2">data_send_status_e</a> status)</td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">typedef struct <a class="el" href="a00002.html">_data_report_t</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00024_204eee5f46d899d764a9ad3a7a02579b.html#204eee5f46d899d764a9ad3a7a02579b">data_report_t</a></td> 
+     </tr> 
+     <tr> 
+      <td colspan="2"><br /><h2>枚举</h2></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">enum &nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00024_d388ff6859ee9b0d09587602179bfd2f.html#d388ff6859ee9b0d09587602179bfd2f">atiny_cmd_e</a> { <br /> &nbsp;&nbsp;<a class="el" href="a00024_d388ff6859ee9b0d09587602179bfd2f.html#d388ff6859ee9b0d09587602179bfd2fc6ffc570be8e5030efefc30a939f8971">ATINY_GET_BINDING_MODES</a>, <br /> &nbsp;&nbsp;<a class="el" href="a00024_d388ff6859ee9b0d09587602179bfd2f.html#d388ff6859ee9b0d09587602179bfd2fd8aa0e6d236304c064f523d536d6f788">ATINY_GET_MODEL_NUMBER</a>, <br /> &nbsp;&nbsp;<a class="el" href="a00024_d388ff6859ee9b0d09587602179bfd2f.html#d388ff6859ee9b0d09587602179bfd2fafcb973af94b3dfa4929a97de287852d">ATINY_DO_DEV_REBOOT</a>, <br /> &nbsp;&nbsp;<a class="el" href="a00024_d388ff6859ee9b0d09587602179bfd2f.html#d388ff6859ee9b0d09587602179bfd2fd92872109fc2618e0b3e9339453530b9">ATINY_GET_MIN_VOLTAGE</a>, <br /> &nbsp;&nbsp;<a class="el" href="a00024_d388ff6859ee9b0d09587602179bfd2f.html#d388ff6859ee9b0d09587602179bfd2f690036efc50335ea8b12871d13efe866">ATINY_GET_MAX_VOLTAGE</a>, <br /> &nbsp;&nbsp;<a class="el" href="a00024_d388ff6859ee9b0d09587602179bfd2f.html#d388ff6859ee9b0d09587602179bfd2f0cc18d73f8c1332e77116d5d1fb4e38d">ATINY_GET_SERIAL_NUMBER</a>, <br /> &nbsp;&nbsp;<a class="el" href="a00024_d388ff6859ee9b0d09587602179bfd2f.html#d388ff6859ee9b0d09587602179bfd2ffdec8204f6e0dfcffbf2326efbf564f3">ATINY_GET_BATERRY_LEVEL</a>, <br /> &nbsp;&nbsp;<a class="el" href="a00024_d388ff6859ee9b0d09587602179bfd2f.html#d388ff6859ee9b0d09587602179bfd2f1d35f91b41cf252d072a91be3153ff5b">ATINY_GET_MEMORY_FREE</a>, <br /> &nbsp;&nbsp;<a class="el" href="a00024_d388ff6859ee9b0d09587602179bfd2f.html#d388ff6859ee9b0d09587602179bfd2ff54d407c5d6c0b6d2ad6a2257939a0fa">ATINY_GET_DEV_ERR</a>, <br /> &nbsp;&nbsp;<a class="el" href="a00024_d388ff6859ee9b0d09587602179bfd2f.html#d388ff6859ee9b0d09587602179bfd2fbff9e2fee5a0763c37af10faf7f9185b">ATINY_GET_POWER_CURRENT_1</a>, <br /> &nbsp;&nbsp;<a class="el" href="a00024_d388ff6859ee9b0d09587602179bfd2f.html#d388ff6859ee9b0d09587602179bfd2fc592a43a13c7c4f9ed53e3dae31604b7">ATINY_GET_POWER_CURRENT_2</a>, <br /> &nbsp;&nbsp;<a class="el" href="a00024_d388ff6859ee9b0d09587602179bfd2f.html#d388ff6859ee9b0d09587602179bfd2f97d7045e8ffc9eb4c8feb16f9bbb5f9c">ATINY_GET_POWER_SOURCE_1</a>, <br /> &nbsp;&nbsp;<a class="el" href="a00024_d388ff6859ee9b0d09587602179bfd2f.html#d388ff6859ee9b0d09587602179bfd2f67dbba7432fd37f398c497cf6f5be10f">ATINY_GET_POWER_SOURCE_2</a>, <br /> &nbsp;&nbsp;<a class="el" href="a00024_d388ff6859ee9b0d09587602179bfd2f.html#d388ff6859ee9b0d09587602179bfd2f3321ba2696542815a086774e1d712ba2">ATINY_DO_FACTORY_RESET</a>, <br /> &nbsp;&nbsp;<a class="el" href="a00024_d388ff6859ee9b0d09587602179bfd2f.html#d388ff6859ee9b0d09587602179bfd2f14f9c8b2e60a1467afe79eaa8d797e09">ATINY_GET_FIRMWARE_VER</a>, <br /> &nbsp;&nbsp;<a class="el" href="a00024_d388ff6859ee9b0d09587602179bfd2f.html#d388ff6859ee9b0d09587602179bfd2f5416945fbb99eb516121e22938efbde3">ATINY_TRIG_FIRMWARE_UPDATE</a>, <br /> &nbsp;&nbsp;<a class="el" href="a00024_d388ff6859ee9b0d09587602179bfd2f.html#d388ff6859ee9b0d09587602179bfd2fc1b6e6e2e1fbf0f9efa8de9619abcfa5">ATINY_GET_FIRMWARE_STATE</a>, <br /> &nbsp;&nbsp;<a class="el" href="a00024_d388ff6859ee9b0d09587602179bfd2f.html#d388ff6859ee9b0d09587602179bfd2f25665fa2ca20b3c8dbd15ed65fe36afe">ATINY_GET_FIRMWARE_RESULT</a>, <br /> &nbsp;&nbsp;<a class="el" href="a00024_d388ff6859ee9b0d09587602179bfd2f.html#d388ff6859ee9b0d09587602179bfd2f1904de428d5b7a5e9dff4b32f9978104">ATINY_GET_NETWORK_BEARER</a>, <br /> &nbsp;&nbsp;<a class="el" href="a00024_d388ff6859ee9b0d09587602179bfd2f.html#d388ff6859ee9b0d09587602179bfd2f9904cc9fd5334950f82f730e9863985b">ATINY_GET_SIGNAL_STRENGTH</a>, <br /> &nbsp;&nbsp;<a class="el" href="a00024_d388ff6859ee9b0d09587602179bfd2f.html#d388ff6859ee9b0d09587602179bfd2f37555a5a9a89cc4acff9be9a161978cc">ATINY_GET_CELL_ID</a>, <br /> &nbsp;&nbsp;<a class="el" href="a00024_d388ff6859ee9b0d09587602179bfd2f.html#d388ff6859ee9b0d09587602179bfd2fb6d1e36fdd121dc1e0eb63ee3b1be0b9">ATINY_GET_LINK_QUALITY</a>, <br /> &nbsp;&nbsp;<a class="el" href="a00024_d388ff6859ee9b0d09587602179bfd2f.html#d388ff6859ee9b0d09587602179bfd2fd698b4bb72a0715b6099759823e2d00f">ATINY_GET_LINK_UTILIZATION</a>, <br /> &nbsp;&nbsp;<a class="el" href="a00024_d388ff6859ee9b0d09587602179bfd2f.html#d388ff6859ee9b0d09587602179bfd2f1723a6f3e33716f8cec171f14c4c1219">ATINY_WRITE_APP_DATA</a>, <br /> &nbsp;&nbsp;<a class="el" href="a00024_d388ff6859ee9b0d09587602179bfd2f.html#d388ff6859ee9b0d09587602179bfd2f4eb32611fdd1f3606780d49607d1956c">ATINY_UPDATE_PSK</a> <br /> }</td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">enum &nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00024_e8148432be5a083da25e8b0fbfa86f81.html#e8148432be5a083da25e8b0fbfa86f81">atiny_event_e</a> { <br /> &nbsp;&nbsp;<a class="el" href="a00024_e8148432be5a083da25e8b0fbfa86f81.html#e8148432be5a083da25e8b0fbfa86f81c243b6bf0a93504697fc054a3765dacd">ATINY_REG_OK</a>, <br /> &nbsp;&nbsp;<a class="el" href="a00024_e8148432be5a083da25e8b0fbfa86f81.html#e8148432be5a083da25e8b0fbfa86f8166e831dd18504ea3ad308e07e8f31eb0">ATINY_REG_FAIL</a>, <br /> &nbsp;&nbsp;<a class="el" href="a00024_e8148432be5a083da25e8b0fbfa86f81.html#e8148432be5a083da25e8b0fbfa86f811465a1ae1ec0d207cc05c26b862a9a8e">ATINY_DATA_SUBSCRIBLE</a>, <br /> &nbsp;&nbsp;<a class="el" href="a00024_e8148432be5a083da25e8b0fbfa86f81.html#e8148432be5a083da25e8b0fbfa86f81da4e94d2610ff33cb84239bb7297b784">ATINY_DATA_UNSUBSCRIBLE</a> <br /> }</td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">enum &nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00024_22071e2cf56399e0f5a53540b2aaaae0.html#22071e2cf56399e0f5a53540b2aaaae0">atiny_report_type_e</a> { <br /> &nbsp;&nbsp;<a class="el" href="a00024_22071e2cf56399e0f5a53540b2aaaae0.html#22071e2cf56399e0f5a53540b2aaaae06d4ca25a3d420813862ff4e2e874373e">FIRMWARE_UPDATE_STATE</a> = 0, <br /> &nbsp;&nbsp;<a class="el" href="a00024_22071e2cf56399e0f5a53540b2aaaae0.html#22071e2cf56399e0f5a53540b2aaaae05d7a97ac79a5fe6a6bfd13c2d89c0071">APP_DATA</a> <br /> }</td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">enum &nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00024_7863ab7e74f845166f5ed1536cc1f9a2.html#7863ab7e74f845166f5ed1536cc1f9a2">data_send_status_e</a> { <br /> &nbsp;&nbsp;<a class="el" href="a00024_7863ab7e74f845166f5ed1536cc1f9a2.html#7863ab7e74f845166f5ed1536cc1f9a266042603f2778e8670362468d848cb1a">NOT_SENT</a> = 0, <br /> &nbsp;&nbsp;<a class="el" href="a00024_7863ab7e74f845166f5ed1536cc1f9a2.html#7863ab7e74f845166f5ed1536cc1f9a2392c2712d872d554328d8f03ddfe5380">SENT_WAIT_RESPONSE</a>, <br /> &nbsp;&nbsp;<a class="el" href="a00024_7863ab7e74f845166f5ed1536cc1f9a2.html#7863ab7e74f845166f5ed1536cc1f9a24d67497d6b5ef5fb4208e8a666490307">SENT_FAIL</a>, <br /> &nbsp;&nbsp;<a class="el" href="a00024_7863ab7e74f845166f5ed1536cc1f9a2.html#7863ab7e74f845166f5ed1536cc1f9a2e8170c384fdcc1a499f52df4863d99f0">SENT_TIME_OUT</a>, <br /> &nbsp;&nbsp;<a class="el" href="a00024_7863ab7e74f845166f5ed1536cc1f9a2.html#7863ab7e74f845166f5ed1536cc1f9a223df2e837e72f78959b8b50acbfdd566">SENT_SUCCESS</a>, <br /> &nbsp;&nbsp;<a class="el" href="a00024_7863ab7e74f845166f5ed1536cc1f9a2.html#7863ab7e74f845166f5ed1536cc1f9a2a86d5556368d3c7d90750294a5553e25">SENT_GET_RST</a>, <br /> &nbsp;&nbsp;<a class="el" href="a00024_7863ab7e74f845166f5ed1536cc1f9a2.html#7863ab7e74f845166f5ed1536cc1f9a2b1e286044ce479c471885046cb6407bf">SEND_PENDING</a> <br /> }</td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">enum &nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00024_ff28962b6a9176b7ea839688aeb15993.html#ff28962b6a9176b7ea839688aeb15993">atiny_log_e</a> { <br /> &nbsp;&nbsp;<a class="el" href="a00024_ff28962b6a9176b7ea839688aeb15993.html#ff28962b6a9176b7ea839688aeb15993b9f002c6ffbfd511da8090213227454e">LOG_DEBUG</a> = 0, <br /> &nbsp;&nbsp;<a class="el" href="a00024_ff28962b6a9176b7ea839688aeb15993.html#ff28962b6a9176b7ea839688aeb159936e98ff471e3ce6c4ef2d75c37ee51837">LOG_INFO</a>, <br /> &nbsp;&nbsp;<a class="el" href="a00024_ff28962b6a9176b7ea839688aeb15993.html#ff28962b6a9176b7ea839688aeb159938f6fe15bfe15104da6d1b360194a5400">LOG_WARNING</a>, <br /> &nbsp;&nbsp;<a class="el" href="a00024_ff28962b6a9176b7ea839688aeb15993.html#ff28962b6a9176b7ea839688aeb159930b4d9ad891dde7ae8deeb1704195858c">LOG_ERR</a>, <br /> &nbsp;&nbsp;<a class="el" href="a00024_ff28962b6a9176b7ea839688aeb15993.html#ff28962b6a9176b7ea839688aeb15993c630750884d91cb9767ef2200bbb048b">LOG_FATAL</a>, <br /> &nbsp;&nbsp;<a class="el" href="a00024_ff28962b6a9176b7ea839688aeb15993.html#ff28962b6a9176b7ea839688aeb159934d2cff97bbbd04ab091dd39f0f0ca82a">LOG_MAX</a> <br /> }</td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">enum &nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00024_edc63770de7c2fce21008267accd06eb.html#edc63770de7c2fce21008267accd06eb">atiny_error_e</a> { <br /> &nbsp;&nbsp;<a class="el" href="a00024_edc63770de7c2fce21008267accd06eb.html#edc63770de7c2fce21008267accd06eb611c748d34fd5ab47ca3c1001453e7d7">ATINY_OK</a> = 0, <br /> &nbsp;&nbsp;<a class="el" href="a00024_edc63770de7c2fce21008267accd06eb.html#edc63770de7c2fce21008267accd06eb482509933adb6a83d3aa46e0efc6db81">ATINY_ARG_INVALID</a> = -1, <br /> &nbsp;&nbsp;<a class="el" href="a00024_edc63770de7c2fce21008267accd06eb.html#edc63770de7c2fce21008267accd06ebeb2e3424f3f3db6454ceb4afe32fec28">ATINY_BUF_OVERFLOW</a> = -2, <br /> &nbsp;&nbsp;<a class="el" href="a00024_edc63770de7c2fce21008267accd06eb.html#edc63770de7c2fce21008267accd06eb35b6c646cd7182687e347367765c3b5e">ATINY_MSG_CONGEST</a> = -3, <br /> &nbsp;&nbsp;<a class="el" href="a00024_edc63770de7c2fce21008267accd06eb.html#edc63770de7c2fce21008267accd06eb54a3fabce99f8493d28e37d5c2904438">ATINY_MALLOC_FAILED</a> = -4, <br /> &nbsp;&nbsp;<a class="el" href="a00024_edc63770de7c2fce21008267accd06eb.html#edc63770de7c2fce21008267accd06eb5b9aee61674188c07ad857d809330128">ATINY_RESOURCE_NOT_FOUND</a> = -5, <br /> &nbsp;&nbsp;<a class="el" href="a00024_edc63770de7c2fce21008267accd06eb.html#edc63770de7c2fce21008267accd06ebb41d3cf8a695c3764907f451fda87ed1">ATINY_RESOURCE_NOT_ENOUGH</a> = -6, <br /> &nbsp;&nbsp;<a class="el" href="a00024_edc63770de7c2fce21008267accd06eb.html#edc63770de7c2fce21008267accd06eb01dc1db5bdd495154b3b52a0d0a97dfc">ATINY_CLIENT_UNREGISTERED</a> = -7, <br /> &nbsp;&nbsp;<a class="el" href="a00024_edc63770de7c2fce21008267accd06eb.html#edc63770de7c2fce21008267accd06eb80f0b23d51c619b24e040ce56acd85c5">ATINY_SOCKET_CREATE_FAILED</a> = -8 <br /> }</td> 
+     </tr> 
+     <tr> 
+      <td colspan="2"><br /><h2>函数</h2></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">int&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00050_g3e7c104de00c5be4479b7f64404606a2.html#g3e7c104de00c5be4479b7f64404606a2">atiny_cmd_ioctl</a> (<a class="el" href="a00024_d388ff6859ee9b0d09587602179bfd2f.html#d388ff6859ee9b0d09587602179bfd2f">atiny_cmd_e</a> cmd, char *arg, int len)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">issue the command. <a href="a00050_g3e7c104de00c5be4479b7f64404606a2.html#g3e7c104de00c5be4479b7f64404606a2"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">void&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00050_g2075956d39a2c94b320d16cdbbbb828c.html#g2075956d39a2c94b320d16cdbbbb828c">atiny_event_notify</a> (<a class="el" href="a00024_e8148432be5a083da25e8b0fbfa86f81.html#e8148432be5a083da25e8b0fbfa86f81">atiny_event_e</a> event, const char *arg, int len)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">issue the command. <a href="a00050_g2075956d39a2c94b320d16cdbbbb828c.html#g2075956d39a2c94b320d16cdbbbb828c"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">int&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00050_g72b84153fdb6bddbceb18579a1d63bc9.html#g72b84153fdb6bddbceb18579a1d63bc9">atiny_init</a> (<a class="el" href="a00007.html">atiny_param_t</a> *atiny_params, void **phandle)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">initialize the lwm2m protocal. <a href="a00050_g72b84153fdb6bddbceb18579a1d63bc9.html#g72b84153fdb6bddbceb18579a1d63bc9"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">int&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00050_ga721a933ca8aa60373f42f9ead67e853.html#ga721a933ca8aa60373f42f9ead67e853">atiny_bind</a> (<a class="el" href="a00006.html">atiny_device_info_t</a> *device_info, void *phandle)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">main task of the lwm2m protocal. <a href="a00050_ga721a933ca8aa60373f42f9ead67e853.html#ga721a933ca8aa60373f42f9ead67e853"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">void&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00050_g6848174c3fc3bc5d8643b92aa04a2ba7.html#g6848174c3fc3bc5d8643b92aa04a2ba7">atiny_deinit</a> (void *phandle)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">stop the device and release resources. <a href="a00050_g6848174c3fc3bc5d8643b92aa04a2ba7.html#g6848174c3fc3bc5d8643b92aa04a2ba7"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">int&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00050_gea81b84051c3f4b5c297b0038a61dcbb.html#gea81b84051c3f4b5c297b0038a61dcbb">atiny_data_report</a> (void *phandle, <a class="el" href="a00002.html">data_report_t</a> *report_data)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">report the data to the server. <a href="a00050_gea81b84051c3f4b5c297b0038a61dcbb.html#gea81b84051c3f4b5c297b0038a61dcbb"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">void&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00050_g3f20ace8c48e21c867f7d414ab3dcb2f.html#g3f20ace8c48e21c867f7d414ab3dcb2f">atiny_set_log_level</a> (<a class="el" href="a00024_ff28962b6a9176b7ea839688aeb15993.html#ff28962b6a9176b7ea839688aeb15993">atiny_log_e</a> level)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">set log level. <a href="a00050_g3f20ace8c48e21c867f7d414ab3dcb2f.html#g3f20ace8c48e21c867f7d414ab3dcb2f"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00024_ff28962b6a9176b7ea839688aeb15993.html#ff28962b6a9176b7ea839688aeb15993">atiny_log_e</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00050_gad5b81e3bd7125d02b7e288c44ec8d5c.html#gad5b81e3bd7125d02b7e288c44ec8d5c">atiny_get_log_level</a> (void)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">get log level. <a href="a00050_gad5b81e3bd7125d02b7e288c44ec8d5c.html#gad5b81e3bd7125d02b7e288c44ec8d5c"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">int&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00050_g28ffa720cd8df538beb1a755cde140ec.html#g28ffa720cd8df538beb1a755cde140ec">atiny_reconnect</a> (void *phandle)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">reconnect lwm2m server. <a href="a00050_g28ffa720cd8df538beb1a755cde140ec.html#g28ffa720cd8df538beb1a755cde140ec"></a><br /></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <hr size="1" />  
+ </body>
+</html>

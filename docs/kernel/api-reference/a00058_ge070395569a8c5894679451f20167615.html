@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>  
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+<meta name="DC.Type" content="concept">
+<meta name="featurename" content="dcp">
+<title>LOS_EventRead</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head> 
+ <body> 
+  <div class="familylinks"> 
+   <a href="a00058_ge070395569a8c5894679451f20167615.html">LOS_EventRead</a> 
+   <hr size="2" /> 
+  </div> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top"> 
+  </div> 
+  <div class="contents"> 
+   <div class="navpath"> 
+    <a class="el" href="a00058.html">Event</a> 
+   </div> 
+   <table cellspacing="0" cellpadding="0" border="0"> 
+    <tbody> 
+     <tr> 
+      <td valign="top"> </td> 
+      <td valign="top"> <a class="anchor" name="ge070395569a8c5894679451f20167615"></a> 
+       <!-- doxytag: member="los_event.h::<a href='a00058_ge070395569a8c5894679451f20167615.html'>LOS_EventRead</a>" ref="ge070395569a8c5894679451f20167615" args="(<a href='a00058_g46370536db00afff84308350597dd45d.html'>PEVENT_CB_S</a> pstEventCB, UINT32 uwEventMask, UINT32 uwMode, UINT32 uwTimeOut)" --> 
+       <div class="memitem"> 
+        <div class="memproto"> 
+         <table class="memname"> 
+          <tbody> 
+           <tr> 
+            <td class="memname"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a href="a00058_ge070395569a8c5894679451f20167615.html">LOS_EventRead</a> </td> 
+            <td class="paramtype">(</td> 
+            <td class="paramtype"><a class="el" href="a00014.html">PEVENT_CB_S</a>&nbsp;</td> 
+            <td class="paramname"> <em>pstEventCB</em>, </td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramtype"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+            <td class="paramname"> <em>uwEventMask</em>, </td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramtype"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+            <td class="paramname"> <em>uwMode</em>, </td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramtype"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+            <td class="paramname"> <em>uwTimeOut</em></td> 
+            <td class="paramkey">&nbsp;</td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey">)</td> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+        </div> 
+        <div class="memdoc"> 
+         <p> Read an event. </p> 
+         <p> </p> 
+         <dl class="user" compact=""> 
+          <dt> 
+           <b>Description:</b> 
+          </dt> 
+          <dd>
+            This API is used to block or schedule a task that reads an event of which the event control block, event mask, reading mode, and timeout information are specified. 
+          </dd> 
+         </dl> 
+         <dl class="attention" compact=""> 
+          <dt> 
+           <b>注意:</b> 
+          </dt> 
+          <dd> 
+           <ul> 
+            <li> An error code and an event return value can be same. To differentiate the error code and return value, bit 25 of the event mask is forbidden to be used. </li> 
+           </ul> 
+          </dd> 
+         </dl> 
+         <dl compact=""> 
+          <dt> 
+           <b>参数:</b> 
+          </dt> 
+          <dd> 
+           <table border="0" cellspacing="0" cellpadding="0"> 
+            <tbody> 
+             <tr> 
+              <th></th> 
+              <th>参数名称</th> 
+              <th>描述</th> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">pstEventCB&nbsp;</td> 
+              <td>[IN/OUT] Pointer to the event control block to be checked. This parameter must point to valid memory. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">uwEventMask&nbsp;</td> 
+              <td>[IN] Mask of the event expected to occur by the user, indicating the event obtained after it is logically processed that matches the ID pointed to by uwEventID. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">uwMode&nbsp;</td> 
+              <td>[IN] Event reading mode. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">uwTimeOut&nbsp;</td> 
+              <td>[IN] Timeout interval of event reading (unit: Tick).</td> 
+             </tr> 
+            </tbody> 
+           </table> 
+          </dd> 
+         </dl> 
+         <dl compact=""> 
+          <dt> 
+           <b>返回值:</b> 
+          </dt> 
+          <dd> 
+           <table border="0" cellspacing="0" cellpadding="0"> 
+            <tbody> 
+             <tr> 
+              <th></th> 
+              <th>返回值</th> 
+              <th>描述</th> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00058_g84625503ee291dde9c6c867359b2fd6a.html#g84625503ee291dde9c6c867359b2fd6a" title="Bit 25 of the event mask cannot be set to an event because it is set to an error...">LOS_ERRNO_EVENT_SETBIT_INVALID</a>&nbsp;</td> 
+              <td>Bit 25 of the event mask cannot be set because it is set to an error number. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00058_gd3f71e943f5d1857531ac383ab3c724f.html#gd3f71e943f5d1857531ac383ab3c724f" title="Event reading error code: The EVENTMASK input parameter value is valid.">LOS_ERRNO_EVENT_EVENTMASK_INVALID</a>&nbsp;</td> 
+              <td>The passed-in event reading mode is incorrect. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00058_g33ac360c111ae7c7c686ecf3d9cf3ade.html#g33ac360c111ae7c7c686ecf3d9cf3ade" title="Event reading error code: The event is being read during an interrupt.">LOS_ERRNO_EVENT_READ_IN_INTERRUPT</a>&nbsp;</td> 
+              <td>The event is being read during an interrupt. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00058_ge3021fd5742f063ac7c6125484836e66.html#ge3021fd5742f063ac7c6125484836e66" title="Event reading error code: The uwFlags input parameter value used in the event reading...">LOS_ERRNO_EVENT_FLAGS_INVALID</a>&nbsp;</td> 
+              <td>The event mode is invalid. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00058_g53a038633413397d6d41a66ec401b9a8.html#g53a038633413397d6d41a66ec401b9a8" title="Event reading error code: The task is locked and is unable to read the event.">LOS_ERRNO_EVENT_READ_IN_LOCK</a>&nbsp;</td> 
+              <td>The event reading task is locked. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00058_gdea5f4b2497ef710bc09be90cd77e341.html#gdea5f4b2497ef710bc09be90cd77e341" title="Event reading error code: Null pointer.">LOS_ERRNO_EVENT_PTR_NULL</a>&nbsp;</td> 
+              <td>The passed-in pointer is null. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">0&nbsp;</td> 
+              <td>The event expected by the user does not occur. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+              <td>The event expected by the user occurs. </td> 
+             </tr> 
+            </tbody> 
+           </table> 
+          </dd> 
+         </dl> 
+         <dl class="user" compact=""> 
+          <dt> 
+           <b>Dependency:</b> 
+          </dt> 
+          <dd> 
+           <ul> 
+            <li> <a class="el" href="a00032.html">los_event.h</a>: the header file that contains the API declaration.</li> 
+           </ul> 
+          </dd> 
+         </dl> 
+         <dl class="see" compact=""> 
+          <dt> 
+           <b>参见:</b> 
+          </dt> 
+          <dd> 
+           <a class="el" href="a00058_g0c9a7f841cfb3adc09145749197cb3e2.html#g0c9a7f841cfb3adc09145749197cb3e2" title="Obtain an event specified by the event ID.">LOS_EventPoll</a> | 
+           <a class="el" href="a00058_g5c6fbdb4092a660a1f18b82c05f96257.html#g5c6fbdb4092a660a1f18b82c05f96257" title="Write an event.">LOS_EventWrite</a> 
+          </dd> 
+         </dl> 
+         <dl class="since" compact=""> 
+          <dt> 
+           <b>自从:</b> 
+          </dt> 
+          <dd>
+            Huawei LiteOS V100R001C00 
+          </dd> 
+         </dl> 
+        </div> 
+       </div><p> </p></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <hr size="1" />  
+ </body>
+</html>

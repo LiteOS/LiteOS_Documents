@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>  
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+<meta name="DC.Type" content="concept">
+<meta name="featurename" content="dcp">
+<title>los_heap.h文件参考</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head> 
+ <body> 
+  <div class="familylinks"> 
+   <a href="a00033.html">los_heap.h</a> 
+   <hr size="2" /> 
+  </div> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top"> 
+  </div> 
+  <div class="contents"> 
+   <h1>los_heap.h文件参考</h1> 
+   <p> <a href="a00082.html">浏览该文件的源代码。</a></p> 
+   <table border="0" cellpadding="0" cellspacing="0"> 
+    <tbody> 
+     <tr> 
+      <td colspan="2"><br /><h2>数据结构</h2></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">struct &nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00013.html">LOS_HEAP_NODE</a></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">struct &nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00012.html">LOS_HEAP_MANAGER</a></td> 
+     </tr> 
+     <tr> 
+      <td colspan="2"><br /><h2>宏定义</h2></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00033_9193b03c34a2de8b5469285747689cae.html#9193b03c34a2de8b5469285747689cae">IS_ALIGNED</a>(value)&nbsp;&nbsp;&nbsp;(0 == (((<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>)(value)) &amp; ((<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>)(value - 1))))</td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00033_5c65acd6b746caeb10a6b17a2d69d9db.html#5c65acd6b746caeb10a6b17a2d69d9db">OS_MEM_ALIGN</a>(value, uwAlign)&nbsp;&nbsp;&nbsp;(((<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>)(value) + (<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>)(uwAlign - 1)) &amp; (~(<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>)(uwAlign - 1)))</td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00033_05d835150f242aaf2e594b647f9c66d7.html#05d835150f242aaf2e594b647f9c66d7">OS_MEM_ALIGN_FLAG</a>&nbsp;&nbsp;&nbsp;(0x80000000)</td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00033_d27210963781b1908215506473da622d.html#d27210963781b1908215506473da622d">OS_MEM_SET_ALIGN_FLAG</a>(uwAlign)&nbsp;&nbsp;&nbsp;(uwAlign = ((uwAlign) | OS_MEM_ALIGN_FLAG))</td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00033_04b1619ce784d0fc359972561552ce65.html#04b1619ce784d0fc359972561552ce65">OS_MEM_GET_ALIGN_FLAG</a>(uwAlign)&nbsp;&nbsp;&nbsp;((uwAlign) &amp; OS_MEM_ALIGN_FLAG)</td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00033_81f22268b0662c8f6e27b815ee2ef8ef.html#81f22268b0662c8f6e27b815ee2ef8ef">OS_MEM_GET_ALIGN_GAPSIZE</a>(uwAlign)&nbsp;&nbsp;&nbsp;((uwAlign) &amp; (~OS_MEM_ALIGN_FLAG))</td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00033_bf38c0285d027f7f9e0af4409112fcaf.html#bf38c0285d027f7f9e0af4409112fcaf">RAM_HEAP_SIZE</a>&nbsp;&nbsp;&nbsp;((<a href="a00055_g2a9bc76036fd20da5b0392b6a289f80f.html">OS_SYS_MEM_SIZE</a>) &amp;~ 7)</td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00033_098a668ee85d4e89230b4088633fba7d.html#098a668ee85d4e89230b4088633fba7d">RAM_HEAP_START</a>&nbsp;&nbsp;&nbsp;(<a href="a00055_gf9cec8e724e423dc30c200cf930fba37.html">OS_SYS_MEM_ADDR</a>)</td> 
+     </tr> 
+     <tr> 
+      <td colspan="2"><br /><h2>函数</h2></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_c3247c51e4e3de674affb32998e133e2.html#c3247c51e4e3de674affb32998e133e2">BOOL</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00059_g5200ca0c1f981b92d5cdfb3cd3451a98.html#g5200ca0c1f981b92d5cdfb3cd3451a98">osHeapInit</a> (VOID *pPool, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwSz)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Initialization heap memory. <a href="a00059_g5200ca0c1f981b92d5cdfb3cd3451a98.html#g5200ca0c1f981b92d5cdfb3cd3451a98"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">VOID *&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00059_gddf2ada3af8c57af0a792a46714b529c.html#gddf2ada3af8c57af0a792a46714b529c">osHeapAlloc</a> (VOID *pPool, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwSz)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Alloc memory block from heap memory. <a href="a00059_gddf2ada3af8c57af0a792a46714b529c.html#gddf2ada3af8c57af0a792a46714b529c"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">VOID *&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00059_gc07f33aca3ca7a5392d0621837dd6146.html#gc07f33aca3ca7a5392d0621837dd6146">osHeapAllocAlign</a> (VOID *pPool, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwSz, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwBoundary)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Alloc aligned memory block from heap memory. <a href="a00059_gc07f33aca3ca7a5392d0621837dd6146.html#gc07f33aca3ca7a5392d0621837dd6146"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_c3247c51e4e3de674affb32998e133e2.html#c3247c51e4e3de674affb32998e133e2">BOOL</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00059_g4ebe509b288b82c4eac1249651286c36.html#g4ebe509b288b82c4eac1249651286c36">osHeapFree</a> (VOID *pPool, VOID *pPtr)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Free memory block from heap memory. <a href="a00059_g4ebe509b288b82c4eac1249651286c36.html#g4ebe509b288b82c4eac1249651286c36"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00033_483d8cf2f07a979561a148c4b2c010ed.html#483d8cf2f07a979561a148c4b2c010ed">osHeapGetHeapMemoryPeak</a> (VOID)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Get the memory info from Heap. <a href="#483d8cf2f07a979561a148c4b2c010ed"></a><br /></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <hr size="1" />  
+ </body>
+</html>

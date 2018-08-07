@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312" /> 
+  <title>LOS_MemRealloc</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head>
+ <body> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top">  
+  </div> 
+  <div class="contents"> 
+   <div class="navpath">
+    <a class="el" href="a00039.html">los_memory.h</a> 
+   </div> 
+   <table cellspacing="0" cellpadding="0" border="0"> 
+    <tbody>
+     <tr> 
+      <td valign="top"> </td> 
+      <td valign="top"> <a class="anchor" name="37bf8c90ca16c32a883f920171337123"></a>
+       <!-- doxytag: member="los_memory.h::LOS_MemRealloc" ref="37bf8c90ca16c32a883f920171337123" args="(VOID *pPool, VOID *pPtr, UINT32 uwSize)" --> 
+       <div class="memitem"> 
+        <div class="memproto"> 
+         <table class="memname"> 
+          <tbody>
+           <tr> 
+            <td class="memname">VOID* LOS_MemRealloc </td> 
+            <td class="paramtype">(</td> 
+            <td class="paramtype">VOID *&nbsp;</td> 
+            <td class="paramname"> <em>pPool</em>, </td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramtype">VOID *&nbsp;</td> 
+            <td class="paramname"> <em>pPtr</em>, </td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramtype"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+            <td class="paramname"> <em>uwSize</em></td>
+            <td class="paramkey">&nbsp;</td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey">)</td> 
+            <td class="paramkey"></td>
+            <td class="paramkey"></td>
+            <td class="paramkey"></td> 
+           </tr> 
+          </tbody>
+         </table> 
+        </div> 
+        <div class="memdoc"> 
+         <p> Re-allocate a memory block. </p>
+         <p> </p>
+         <dl class="user" compact="">
+          <dt>
+           <b>Description:</b>
+          </dt>
+          <dd>
+           <ul> 
+            <li> This API is used to allocate a new memory block of which the size is specified by size if the original memory block size is insufficient. The new memory block will copy the data in the original memory block of which the address is specified by ptr. The size of the new memory block determines the maximum size of data to be copied. After the new memory block is created, the original one is freed. </li> 
+           </ul> 
+          </dd>
+         </dl> 
+         <dl class="attention" compact="">
+          <dt>
+           <b>注意:</b>
+          </dt>
+          <dd>
+           <ul> 
+            <li> The input pPool parameter must be initialized via func LOS_MemInit. </li> 
+            <li> The input pPtr parameter must be allocated by LOS_MemAlloc. </li> 
+            <li> The size of the input parameter uwSize can not be greater than the memory pool size that specified at the second input parameter of LOS_MemInit. </li> 
+            <li> The size of the input parameter uwSize must be aligned as follows: 1) if the pPtr is allocated by LOS_MemAlloc, it must be four byte-aligned; 2) if the pPtr is allocated by LOS_MemAllocAlign, it must be aligned with the size of the input parameter uwBoundary of LOS_MemAllocAlign. </li> 
+           </ul> 
+          </dd>
+         </dl> 
+         <dl compact="">
+          <dt>
+           <b>参数:</b>
+          </dt>
+          <dd> 
+           <table border="0" cellspacing="0" cellpadding="0"> 
+            <tbody>
+             <tr>
+              <th></th>
+              <th>参数名称</th>
+              <th>描述</th> 
+             </tr>
+             <tr>
+              <td valign="top"></td>
+              <td valign="top" nowrap="">pPool&nbsp;</td>
+              <td>[IN] Pointer to the memory pool that contains the original and new memory blocks. </td>
+             </tr> 
+             <tr>
+              <td valign="top"></td>
+              <td valign="top" nowrap="">pPtr&nbsp;</td>
+              <td>[IN] Address of the original memory block. </td>
+             </tr> 
+             <tr>
+              <td valign="top"></td>
+              <td valign="top" nowrap="">uwSize&nbsp;</td>
+              <td>[IN] Size of the new memory block.</td>
+             </tr> 
+            </tbody>
+           </table> 
+          </dd>
+         </dl> 
+         <dl compact="">
+          <dt>
+           <b>返回值:</b>
+          </dt>
+          <dd> 
+           <table border="0" cellspacing="0" cellpadding="0"> 
+            <tbody>
+             <tr>
+              <th></th>
+              <th>返回值</th>
+              <th>描述</th> 
+             </tr>
+             <tr>
+              <td valign="top"></td>
+              <td valign="top" nowrap=""><a class="el" href="a00048_070d2ce7b6bb7e5c05602aa8c308d0c4.html#070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>&nbsp;</td>
+              <td>The memory fails to be re-allocated. </td>
+             </tr> 
+             <tr>
+              <td valign="top"></td>
+              <td valign="top" nowrap="">VOID*&nbsp;</td>
+              <td>The memory is successfully re-allocated with the starting address of the new memory block returned. </td>
+             </tr> 
+            </tbody>
+           </table> 
+          </dd>
+         </dl> 
+         <dl class="user" compact="">
+          <dt>
+           <b>Dependency:</b>
+          </dt>
+          <dd>
+           <ul> 
+            <li> <a class="el" href="a00039.html">los_memory.h</a>: the header file that contains the API declaration.</li> 
+           </ul> 
+          </dd>
+         </dl> 
+         <dl class="see" compact="">
+          <dt>
+           <b>参见:</b>
+          </dt>
+          <dd>
+           <a class="el" href="a00039_a43b550f9d738265d363960acfa7872f.html#a43b550f9d738265d363960acfa7872f" title="Allocate dynamic memory.">LOS_MemAlloc</a> | 
+           <a class="el" href="a00039_53110f3909414b00d8562902d029a40d.html#53110f3909414b00d8562902d029a40d" title="Allocate aligned memory.">LOS_MemAllocAlign</a> | 
+           <a class="el" href="a00039_464ca72bccefdfc4066884e68460697f.html#464ca72bccefdfc4066884e68460697f" title="Free dynamic memory.">LOS_MemFree</a> 
+          </dd>
+         </dl> 
+         <dl class="since" compact="">
+          <dt>
+           <b>自从:</b>
+          </dt>
+          <dd>
+           Huawei LiteOS V100R001C00 
+          </dd>
+         </dl> 
+        </div> 
+       </div><p> </p></td> 
+     </tr> 
+    </tbody>
+   </table> 
+  </div> 
+  <hr size="1" /> 
+ </body>
+</html>

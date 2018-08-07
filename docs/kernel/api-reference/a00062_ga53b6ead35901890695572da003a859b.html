@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>  
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+<meta name="DC.Type" content="concept">
+<meta name="featurename" content="dcp">
+<title>LOS_ListAdd</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head> 
+ <body> 
+  <div class="familylinks"> 
+   <a href="a00062_ga53b6ead35901890695572da003a859b.html">LOS_ListAdd</a> 
+   <hr size="2" /> 
+  </div> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top"> 
+  </div> 
+  <div class="contents"> 
+   <div class="navpath"> 
+    <a class="el" href="a00062.html">Doubly linked list</a> 
+   </div> 
+   <table cellspacing="0" cellpadding="0" border="0"> 
+    <tbody> 
+     <tr> 
+      <td valign="top"> </td> 
+      <td valign="top"> <a class="anchor" name="ga53b6ead35901890695572da003a859b"></a> 
+       <!-- doxytag: member="los_list.h::<a href='a00062_ga53b6ead35901890695572da003a859b.html'>LOS_ListAdd</a>" ref="ga53b6ead35901890695572da003a859b" args="(<a href='a00011.html'>LOS_DL_LIST</a> *pstList, <a href='a00011.html'>LOS_DL_LIST</a> *pstNode)" --> 
+       <div class="memitem"> 
+        <div class="memproto"> 
+         <table class="memname"> 
+          <tbody> 
+           <tr> 
+            <td class="memname">LITE_OS_SEC_ALW_INLINE STATIC_INLINE VOID <a href="a00062_ga53b6ead35901890695572da003a859b.html">LOS_ListAdd</a> </td> 
+            <td class="paramtype">(</td> 
+            <td class="paramtype"><a class="el" href="a00011.html">LOS_DL_LIST</a> *&nbsp;</td> 
+            <td class="paramname"> <em>pstList</em>, </td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramtype"><a class="el" href="a00011.html">LOS_DL_LIST</a> *&nbsp;</td> 
+            <td class="paramname"> <em>pstNode</em></td> 
+            <td class="paramkey">&nbsp;</td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey">)</td> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+        </div> 
+        <div class="memdoc"> 
+         <p> Insert a new node to a doubly linked list. </p> 
+         <p> </p> 
+         <dl class="user" compact=""> 
+          <dt> 
+           <b>Description:</b> 
+          </dt> 
+          <dd>
+            This API is used to insert a new node to a doubly linked list. 
+          </dd> 
+         </dl> 
+         <dl class="attention" compact=""> 
+          <dt> 
+           <b>注意:</b> 
+          </dt> 
+          <dd> 
+           <ul> 
+            <li> The parameters passed in should be ensured to be legal pointers. </li> 
+           </ul> 
+          </dd> 
+         </dl> 
+         <dl compact=""> 
+          <dt> 
+           <b>参数:</b> 
+          </dt> 
+          <dd> 
+           <table border="0" cellspacing="0" cellpadding="0"> 
+            <tbody> 
+             <tr> 
+              <th></th> 
+              <th>参数名称</th> 
+              <th>描述</th> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">pstList&nbsp;</td> 
+              <td>[IN] Doubly linked list where the new node is inserted. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">pstNode&nbsp;</td> 
+              <td>[IN] New node to be inserted.</td> 
+             </tr> 
+            </tbody> 
+           </table> 
+          </dd> 
+         </dl> 
+         <dl compact=""> 
+          <dt> 
+           <b>返回值:</b> 
+          </dt> 
+          <dd> 
+           <table border="0" cellspacing="0" cellpadding="0"> 
+            <tbody> 
+             <tr> 
+              <th></th> 
+              <th>返回值</th> 
+              <th>描述</th> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">None&nbsp;</td> 
+              <td></td> 
+             </tr> 
+            </tbody> 
+           </table> 
+          </dd> 
+         </dl> 
+         <dl class="user" compact=""> 
+          <dt> 
+           <b>Dependency:</b> 
+          </dt> 
+          <dd> 
+           <ul> 
+            <li> <a class="el" href="a00036.html">los_list.h</a>: the header file that contains the API declaration.</li> 
+           </ul> 
+          </dd> 
+         </dl> 
+         <dl class="see" compact=""> 
+          <dt> 
+           <b>参见:</b> 
+          </dt> 
+          <dd> 
+           <a class="el" href="a00062_g782523e6a92be6e75c0328491154c8f0.html#g782523e6a92be6e75c0328491154c8f0" title="Delete a specified node from a doubly linked list.">LOS_ListDelete</a> 
+          </dd> 
+         </dl> 
+         <dl class="since" compact=""> 
+          <dt> 
+           <b>自从:</b> 
+          </dt> 
+          <dd>
+            Huawei LiteOS V100R001C00 
+          </dd> 
+         </dl> 
+         <p>在文件<a class="el" href="a00085.html">los_list.h</a>第<a class="el" href="a00085.html#l00129">129</a>行定义。</p> 
+         <p>参考 <a class="el" href="a00085.html#l00058">LOS_DL_LIST::pstNext</a>及<a class="el" href="a00085.html#l00057">LOS_DL_LIST::pstPrev</a>.</p> 
+         <p>参考自 <a class="el" href="a00085.html#l00157">LOS_ListTailInsert()</a>.</p> 
+         <div class="fragment"> 
+          <pre class="fragment"><a name="l00130"></a>00130 {
+<a name="l00131"></a>00131     pstNode-&gt;<a class="code" href="a00011_b613e5212dbfd1faa47cdea40cfa4050.html#b613e5212dbfd1faa47cdea40cfa4050" title="Current node&amp;#39;s pointer to the next node">pstNext</a> = pstList-&gt;<a class="code" href="a00011_b613e5212dbfd1faa47cdea40cfa4050.html#b613e5212dbfd1faa47cdea40cfa4050" title="Current node&amp;#39;s pointer to the next node">pstNext</a>;
+<a name="l00132"></a>00132     pstNode-&gt;<a class="code" href="a00011_15d797f333487819cab8e9b6bf8a3d96.html#15d797f333487819cab8e9b6bf8a3d96" title="Current node&amp;#39;s pointer to the previous node">pstPrev</a> = pstList;
+<a name="l00133"></a>00133     pstList-&gt;<a class="code" href="a00011_b613e5212dbfd1faa47cdea40cfa4050.html#b613e5212dbfd1faa47cdea40cfa4050" title="Current node&amp;#39;s pointer to the next node">pstNext</a>-&gt;<a class="code" href="a00011_15d797f333487819cab8e9b6bf8a3d96.html#15d797f333487819cab8e9b6bf8a3d96" title="Current node&amp;#39;s pointer to the previous node">pstPrev</a> = pstNode;
+<a name="l00134"></a>00134     pstList-&gt;<a class="code" href="a00011_b613e5212dbfd1faa47cdea40cfa4050.html#b613e5212dbfd1faa47cdea40cfa4050" title="Current node&amp;#39;s pointer to the next node">pstNext</a> = pstNode;
+<a name="l00135"></a>00135 }
+</pre> 
+         </div> 
+         <p> </p> 
+         <p> </p> 
+         <div class="dynheader">
+           这是这个函数的调用图。 
+         </div> 
+         <div class="dynsection"> 
+         </div> 
+        </div> 
+       </div><p> </p></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <hr size="1" />  
+ </body>
+</html>

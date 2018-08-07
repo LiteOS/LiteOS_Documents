@@ -1,0 +1,560 @@
+/********2008-08-27 统一后的CSS，待QCC优化***********/
+body {
+	width: 100%;
+	height: 100%;
+	background-color: #FFFFFF;
+}
+
+body,form,hr {
+	margin: 4px;
+	padding: 4px;
+}
+
+body,tbody,button,label,form,legend,fieldSet {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 150%;
+	color: #000000;
+	word-break: normal;
+	text-overflow: ellipsis;
+}
+
+body,p,div {
+	font: 12px Verdana, Arial, Helvetica, sans-serif;
+}
+
+
+h1,h2,h3,h4,h5,h6,label {
+	display:block;
+	font-family: verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #000000;
+	line-height: 150%;	
+}
+
+h1 {
+	font-size: 16pt;
+	margin-bottom: .5em;
+	text-align: center;
+}
+
+h2 {
+	font-size: 14pt;
+	margin-top: .5em;
+	margin-bottom: .5em;
+}
+
+h3 {
+	font-size: 16px;
+	margin-top: .5em;
+	margin-bottom: .5em
+}
+
+h4 {
+	font-size: 10.5pt;
+	margin-top: .5em;
+	margin-bottom: .5em;
+}
+
+h5 {
+	font-size: 100%;
+	font-weight: bold;
+	margin-left: .5em;
+	margin-bottom: .5em;
+}  /*5级标题用于折叠样式，字体大小同正文*/
+h6 {
+	font-size: 9pt;
+	font-weight: bold;
+	margin-top: 1em;
+}
+
+div p {
+	line-height: 150%;
+	margin-left: 0em;
+}
+
+td p {
+	line-height: 120%;
+	margin-left: 0em;
+}
+
+p{
+	font: 12px Verdana, Arial, Helvetica, sans-serif;
+	color: #000000;
+	line-height: 150%;
+	margin-left: 1em;
+	margin-top: .5em;
+	margin-bottom: .5em;
+}
+
+div {
+	display: block;
+}
+
+table {
+	font: 12px Verdana, Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	border: 1px solid #99BBE8;
+        width: 100%
+	margin-left: 0em;
+}
+
+div table {
+	margin-left: 0px;
+}
+
+th,.tableHeading {
+	height: 34px;
+	font: 14px;
+	text-align: center;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	overflow: hidden;
+	zoom: 1;
+	color: #15428b;
+	border: 1.5px solid #99BBE8;
+	line-height: 150%;
+	background: #C9E0FC;
+	/* background: transparent url(top-bottom.png) repeat-x 0 -1px;*/
+}
+
+td {
+	height: 30px;
+}
+
+th,td {
+	padding-left: 0em;
+	padding-right: 0em;
+	padding-top: 0em;
+	padding-bottom: 0em;
+	valign: middle;
+	line-height: 150%;
+	border: 1.5px solid #99BBE8;
+	word-wrap: normal;
+	word-break: normal;
+}
+
+SUP {
+	text-decoration: none;
+	font-size: smaller;
+}
+
+.tableText {
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	height: 30px;
+}
+
+.tableModule {
+	background: #F8F8F8;
+	text-align: left;
+	font-weight: bold;
+	height: 32px;
+}
+
+.tableDescription {
+	margin-center: 0cm;
+	text-align: center;
+}
+
+.plus {
+	height: 30px;
+	width: 100%;
+	background: transparent url(button.gif) repeat-x 0 0px;
+}
+
+ul,ol {
+	font: 12px Verdana, Arial, Helvetica, sans-serif;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+li {
+	font: 12px Verdana, Arial, Helvetica, sans-serif;
+	margin-top: .75em;
+	margin-bottom: .75em;
+}
+
+td ul {
+	font: 12px Verdana, Arial, Helvetica, sans-serif;
+	margin-left: 1.5em;
+}
+
+td ol {
+	font: 12px Verdana, Arial, Helvetica, sans-serif;
+	margin-left: 1.5em;
+}
+
+td li {
+	font: 12px Verdana, Arial, Helvetica, sans-serif;
+	list-style-position: inside;
+	text-indent: 1em;
+	margin-top: 0em;
+	margin-bottom: 0em;
+}
+
+.explainText {
+	font: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-style: normal;
+	margin-top: 0em;
+	margin-bottom: 0em;
+}
+
+.text {
+	font-family: Wingdings;
+	font-size: 20px;
+}
+
+hr {
+	border: 1px solid #99BBE8;
+}
+
+.NotesHeading {
+	font-size: 10pt;
+	margin-top: 1.2em;
+	margin-bottom: .5em;
+	background-color: #FFFFCC;
+	font-weight: bold;
+}
+
+.NotesText, .NoteMouseLeft {
+	margin-top: .75em;
+	margin-bottom: .75em;
+	border: 1px solid #99BBE8;
+	background-color: #F8F8F8;
+	border-left: 5px solid #99BBE8;
+}
+
+
+#NoteText {
+	margin-top: .75em;
+	margin-bottom: .75em;
+	background-color: #FFFFCC;
+}
+
+.jsNote {
+	border: 1px;
+	border-color: red;
+	background-color: #FF00FF;
+}
+
+.label {
+	font-weight: bold;
+}
+
+.tl {
+	margin-bottom: .75em;
+}
+
+.atl {
+	padding-left: 1.5em;
+	padding-bottom: .75em;
+}
+
+.cfe {
+	font-weight: bold;
+}
+
+.mini {
+	font-size: smaller;
+}
+
+.dt {
+	margin-bottom: 0.5em;
+}
+
+.indent {
+	margin-left: 2em;
+}
+
+.CodeSample {
+	padding-left: 3.0em;
+	margin-top: .5em;
+	margin-bottom: .5em;
+	font: 100% "Courier New", Courier, mono;
+	color: #333399;
+}
+
+.keywordtype {
+	color: #0000CC;
+	margin-top: 1.5em;
+	font-weight: 500
+}
+
+.fragment {
+	margin-left: 40;
+	padding-left: 0em;
+	margin-top: .5em;
+	margin-bottom: .5em;
+	font: 100% "Courier New", Courier, mono;
+	background: #E8E8E8;
+	width: 98%;
+	font-weight: 500
+}
+
+ol ul {
+	list-style: disc;
+}  /*有序列表内的无序列表用黑色圆点作为标识*/
+
+ul ul {
+	list-style: circle;
+}  /*无序列表内的无序列表用黑色圆点作为标识*/
+
+#dragHelper {
+	position: absolute; /*重要*/
+	border: 1px dashed #     F2F2F2;
+	background-color: #006699;
+	filter: alpha(opacity =   30);
+}
+
+.normal {
+	position: absolute; /*重要*/
+	width: 98%;
+	height: 2px;
+	border: 1px solid #FFFFFF;
+	background-color: #FFFFFF;
+}
+
+.over {
+	position: absolute; /*重要*/
+	width: 98%; #
+	height: 2px;
+	border: 1px solid #FFFFFF;
+	background-color: #336699;
+	filter: alpha(opacity =   50);
+}
+
+.dragArea {
+	cursor: move;
+}
+
+.noTable {
+	font: 12px Verdana, Arial, Helvetica, sans-serif;
+	width: 98%;
+	border-collapse: collapse;
+	border: 0px;
+}
+
+.noTh,.noTd {
+	padding-left: 0.5em;
+	padding-right: 0.2em;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	valign: middle;
+	line-height: 150%;
+	border: 0px solid black;
+	word-wrap: normal;
+	word-break: normal;
+}
+
+tr.c1 {
+	background-color: #E8E8E8;
+}  /* 第一行的背景色 */
+tr.c2 {
+	background-color: #F2F2F2;
+}  /* 第二行的背景色 */
+tr.c3 {
+	background: transparent url(title-bg.gif) repeat-x 0 -1px;
+}  /* 鼠标经过时的背景色 */
+
+button {
+	margin-bottom: .5em;
+	border: 1px solid #99BBE8;
+	background: transparent url(button.gif) repeat-x 0 -1px;
+}
+
+.afterCopy {
+	border: 1px dashed red;
+	border-left: 5px solid red;
+
+}
+
+.hide {
+	display: none;
+}
+
+.show {
+	color: red;
+}
+
+div p,div ol,div ul,div ul li,div ol li {
+	margin-top: 0em;
+	margin-bottom: 0em;
+	line-height: 150%;
+}
+
+/* for highlight*/
+pre {
+	margin-top: 0em;
+	margin-bottom: 0em;
+	background: #F8F8F8;
+	border: 1px solid #99BBE8;
+	margin-left: 1em;
+	border-left: 1px solid #99BBE8;
+}
+
+pre,code,pre code {
+	padding: .5em;
+	display: block;
+	font: 12px "Courier New",Courier,Fixedsys;
+}
+
+pre code[class]:after {
+	content: 'highlight:' attr(class);
+	display: block;
+	text-align: right;
+	color: #CCC;
+	font: 12px  "Courier New",Courier,Fixedsys;
+	background: white;
+	border-top: solid 1px;
+	padding-top: 0.5em;
+}
+
+pre code,.ruby .subst {
+	color: #000060;
+}
+
+.string,.function .title,.class .title,.tag .attribute .value,.css .rules .value,.preprocessor,.ruby .symbol,.built_in,.sql .aggregate,.django .template_tag,.django .variable,.smalltalk .class
+	{
+	color: #800;
+}
+
+.comment,.java .annotation,.template_comment {
+	color: #080;
+}
+
+.number,.regexp,.javascript .literal,.smalltalk .symbol,.smalltalk .char
+	{
+	color: #080;
+}
+
+.javadoc,.ruby .string,.python .decorator,.django .filter .argument,.smalltalk .localvars,.smalltalk .array,.css .attr_selector,.xml .pi
+	{
+	color: #88F;
+}
+
+.keyword,.css .id,.phpdoc,.function .title,.class .title,.vbscript .built_in,.sql .aggregate,.rsl .built_in,.smalltalk .class,.xml .tag .title
+	{
+	color:#0000F8;
+}
+
+.highlighting {
+	background: yellow;
+	font-weight: bold;
+	color: blue;
+}
+
+
+/* @group Member Descriptions */
+
+.mdescLeft, .mdescRight,
+.memItemLeft, .memItemRight,
+.memTemplItemLeft, .memTemplItemRight, .memTemplParams {
+	background-color: #FAFAFA;
+	border: 0px;
+	margin: 4px;
+	padding: 1px 0 0 8px;
+}
+
+.mdescLeft, .mdescRight {
+	padding: 0px 8px 4px 8px;
+	color: #555;
+}
+
+.memItemLeft, .memItemRight, .memTemplParams {
+	border-top: 1px solid #ccc;
+}
+
+.memTemplParams {
+	color: #606060;
+}
+
+/* @end */
+
+/* @group Member Details */
+
+/* Styles for detailed member documentation */
+
+
+.memtemplate {
+	font-size: 80%;
+	color: #606060;
+	font-weight: normal;
+	margin-left: 3px;
+}
+
+.memnav {
+	background-color: #e8eef2;
+	border: 1px solid #84b0c7;
+	text-align: center;
+	margin: 2px;
+	margin-right: 15px;
+	padding: 2px;
+}
+
+.memitem {
+	padding: 0;
+	border: 0px;
+}
+
+.memname {
+	white-space: nowrap;
+	font-weight: bold;
+	border: 0px
+}
+
+.memproto, .memdoc {
+	border:1px solid #84b0c7;	
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.memproto {
+	padding: 0;
+	background-color: #d5e1e8;
+	font-weight: bold;
+	-webkit-border-top-left-radius: 8px;
+	-webkit-border-top-right-radius: 8px;
+	-moz-border-radius-topleft: 8px;
+	-moz-border-radius-topright: 8px;
+}
+
+.memdoc {
+	padding: 2px 5px;
+	background-color: #eef3f5;
+	border-top-width: 0;
+	-webkit-border-bottom-left-radius: 8px;
+	-webkit-border-bottom-right-radius: 8px;
+	-moz-border-radius-bottomleft: 8px;
+	-moz-border-radius-bottomright: 8px;
+}
+
+.memdoc p, .memdoc dl, .memdoc ul {
+	margin: 6px 0;
+}
+
+.paramkey {
+	text-align: right;
+	border: 0px
+}
+
+.paramtype {
+	white-space: nowrap;
+	border: 0px
+}
+
+.paramname {
+	color: #602020;
+	white-space: nowrap;
+	border: 0px
+}
+.paramname em {
+	font-style: normal;
+}
+/************************************************
+                   最后修订日期: 2009-06-13
+                   样式适合范围: 平台DOPRA API资料
+*************************************************/

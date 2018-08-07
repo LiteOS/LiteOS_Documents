@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>  
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+<meta name="DC.Type" content="concept">
+<meta name="featurename" content="dcp">
+<title>los_memory.h文件参考</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head> 
+ <body> 
+  <div class="familylinks"> 
+   <a href="a00039.html">los_memory.h</a> 
+   <hr size="2" /> 
+  </div> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top"> 
+  </div> 
+  <div class="contents"> 
+   <h1>los_memory.h文件参考</h1> 
+   <p> <a href="a00088.html">浏览该文件的源代码。</a></p> 
+   <table border="0" cellpadding="0" cellspacing="0"> 
+    <tbody> 
+     <tr> 
+      <td colspan="2"><br /><h2>数据结构</h2></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">struct &nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00001.html">__s_LOS_MEM_STATUS</a></td> 
+     </tr> 
+     <tr> 
+      <td colspan="2"><br /><h2>宏定义</h2></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00039_6dde44933cfb6a48e83e9669822696e0.html#6dde44933cfb6a48e83e9669822696e0">OS_MEM_ENABLE_ALLOC_CHECK</a></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00039_06b46925d0b2091f6eadf25f0f994f0f.html#06b46925d0b2091f6eadf25f0f994f0f">OS_MEM_CHECK_DEBUG</a></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00039_64a2630f7a83e74e12348198cdb9680f.html#64a2630f7a83e74e12348198cdb9680f">LOS_MEM_CHECK_LEVEL_LOW</a>&nbsp;&nbsp;&nbsp;0</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Define a mem size check intensity <a href="#64a2630f7a83e74e12348198cdb9680f"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00039_951e92ceda8d08ac4f6738033201c7c3.html#951e92ceda8d08ac4f6738033201c7c3">LOS_MEM_CHECK_LEVEL_HIGH</a>&nbsp;&nbsp;&nbsp;1</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Define a mem size check intensity <a href="#951e92ceda8d08ac4f6738033201c7c3"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00039_42df358dc19ee117263e7fd720e58104.html#42df358dc19ee117263e7fd720e58104">LOS_MEM_CHECK_LEVEL_DISABLE</a>&nbsp;&nbsp;&nbsp;0xff</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Define a mem size check intensity <a href="#42df358dc19ee117263e7fd720e58104"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00039_6c82dd1e1ef1606decdbf58ba61892e7.html#6c82dd1e1ef1606decdbf58ba61892e7">LOS_MEM_CHECK_LEVEL_DEFAULT</a>&nbsp;&nbsp;&nbsp;LOS_MEM_CHECK_LEVEL_DISABLE</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Define a mem size check intensity <a href="#6c82dd1e1ef1606decdbf58ba61892e7"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td colspan="2"><br /><h2>类型定义</h2></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">typedef struct <a class="el" href="a00001.html">__s_LOS_MEM_STATUS</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00039_96578f43fc4e93f9508e2f62f8970602.html#96578f43fc4e93f9508e2f62f8970602">LOS_MEM_STATUS</a></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">typedef VOID(*&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00039_9d7d1b25eabf884930b77e517f583fe7.html#9d7d1b25eabf884930b77e517f583fe7">MALLOC_HOOK</a> )(VOID)</td> 
+     </tr> 
+     <tr> 
+      <td colspan="2"><br /><h2>函数</h2></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00039_05a85468fda1ed97c89737a60f188c5e.html#05a85468fda1ed97c89737a60f188c5e">LOS_MemTotalUsedGet</a> (VOID *pPool)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Get the size of memory totally used. <a href="#05a85468fda1ed97c89737a60f188c5e"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00039_abb257c8a0800bc083155eafeb08ef13.html#abb257c8a0800bc083155eafeb08ef13">LOS_MemFreeBlksGet</a> (VOID *pPool)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Get the number of free memory nodes. <a href="#abb257c8a0800bc083155eafeb08ef13"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00039_37df700907870015e8838bc9a1dafc92.html#37df700907870015e8838bc9a1dafc92">LOS_MemUsedBlksGet</a> (VOID *pPool)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Get the number of used memory nodes. <a href="#37df700907870015e8838bc9a1dafc92"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00039_56acdd2985c9b0d6029f260d18c0e26e.html#56acdd2985c9b0d6029f260d18c0e26e">LOS_MemTaskIdGet</a> (VOID *pPool)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Get the task ID of a used memory node. <a href="#56acdd2985c9b0d6029f260d18c0e26e"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00039_a2f28e3b4fa2a7772b4e0a61026ababf.html#a2f28e3b4fa2a7772b4e0a61026ababf">LOS_MemLastUsedGet</a> (VOID *pPool)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Get the address of last node. <a href="#a2f28e3b4fa2a7772b4e0a61026ababf"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00039_a2eae133b6791033d4d61642eed31ff4.html#a2eae133b6791033d4d61642eed31ff4">LOS_MemIntegrityCheck</a> (VOID *pPool)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Check the memory pool Integrity. <a href="#a2eae133b6791033d4d61642eed31ff4"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00039_238429227e20dbacf361ec866717209c.html#238429227e20dbacf361ec866717209c">LOS_MemNodeSizeCheck</a> (VOID *pPool, VOID *pPtr, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> *puwTotalSize, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> *puwAvailSize)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Check the size of memory node specified. <a href="#238429227e20dbacf361ec866717209c"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00039_43643645f78ea9ab51a035f908ede300.html#43643645f78ea9ab51a035f908ede300">LOS_MemCheckLevelSet</a> (<a class="el" href="a00048_b27e9918b538ce9d8ca692479b375b6a.html#b27e9918b538ce9d8ca692479b375b6a">UINT8</a> ucLevel)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Set the memory check level. <a href="#43643645f78ea9ab51a035f908ede300"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_b27e9918b538ce9d8ca692479b375b6a.html#b27e9918b538ce9d8ca692479b375b6a">UINT8</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00039_ef6394bc2880b37e200c2768cc6e7f4d.html#ef6394bc2880b37e200c2768cc6e7f4d">LOS_MemCheckLevelGet</a> (VOID)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Get the memory check level. <a href="#ef6394bc2880b37e200c2768cc6e7f4d"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00039_12cd07856bf3dd41d492974744f1d66d.html#12cd07856bf3dd41d492974744f1d66d">LOS_MemInit</a> (VOID *pPool, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwSize)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Initialize dynamic memory. <a href="#12cd07856bf3dd41d492974744f1d66d"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">VOID *&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00039_a43b550f9d738265d363960acfa7872f.html#a43b550f9d738265d363960acfa7872f">LOS_MemAlloc</a> (VOID *pPool, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> size)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Allocate dynamic memory. <a href="#a43b550f9d738265d363960acfa7872f"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00039_464ca72bccefdfc4066884e68460697f.html#464ca72bccefdfc4066884e68460697f">LOS_MemFree</a> (VOID *pPool, VOID *pMem)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Free dynamic memory. <a href="#464ca72bccefdfc4066884e68460697f"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">VOID *&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00039_37bf8c90ca16c32a883f920171337123.html#37bf8c90ca16c32a883f920171337123">LOS_MemRealloc</a> (VOID *pPool, VOID *pPtr, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwSize)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Re-allocate a memory block. <a href="#37bf8c90ca16c32a883f920171337123"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">VOID *&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00039_53110f3909414b00d8562902d029a40d.html#53110f3909414b00d8562902d029a40d">LOS_MemAllocAlign</a> (VOID *pPool, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwSize, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwBoundary)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Allocate aligned memory. <a href="#53110f3909414b00d8562902d029a40d"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00039_e22b941d5128d634783d213cfec51318.html#e22b941d5128d634783d213cfec51318">LOS_MemDeInit</a> (VOID *pPool)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Deinitialize dynamic memory. <a href="#e22b941d5128d634783d213cfec51318"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00039_445a593d9f9194921b29faf38cfaf534.html#445a593d9f9194921b29faf38cfaf534">LOS_MemPoolList</a> (VOID)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Print infomation about all pools. <a href="#445a593d9f9194921b29faf38cfaf534"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td colspan="2"><br /><h2>变量</h2></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00039_9d7d1b25eabf884930b77e517f583fe7.html#9d7d1b25eabf884930b77e517f583fe7">MALLOC_HOOK</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00039_d64334c7beb4100d0dbf37dfa6be3b26.html#d64334c7beb4100d0dbf37dfa6be3b26">g_MALLOC_HOOK</a></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <hr size="1" />  
+ </body>
+</html>

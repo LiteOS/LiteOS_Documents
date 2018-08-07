@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312" /> 
+  <title>osListDel</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head>
+ <body> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top">  
+  </div> 
+  <div class="contents"> 
+   <div class="navpath">
+    <a class="el" href="a00036.html">los_list.h</a> 
+   </div> 
+   <table cellspacing="0" cellpadding="0" border="0"> 
+    <tbody>
+     <tr> 
+      <td valign="top"> </td> 
+      <td valign="top"> <a class="anchor" name="0e07feae87221f11044fd9fdd1561826"></a>
+       <!-- doxytag: member="los_list.h::osListDel" ref="0e07feae87221f11044fd9fdd1561826" args="(LOS_DL_LIST *pstPrevNode, LOS_DL_LIST *pstNextNode)" --> 
+       <div class="memitem"> 
+        <div class="memproto"> 
+         <table class="memname"> 
+          <tbody>
+           <tr> 
+            <td class="memname">LITE_OS_SEC_ALW_INLINE STATIC_INLINE VOID osListDel </td> 
+            <td class="paramtype">(</td> 
+            <td class="paramtype"><a class="el" href="a00011.html">LOS_DL_LIST</a> *&nbsp;</td> 
+            <td class="paramname"> <em>pstPrevNode</em>, </td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramtype"><a class="el" href="a00011.html">LOS_DL_LIST</a> *&nbsp;</td> 
+            <td class="paramname"> <em>pstNextNode</em></td>
+            <td class="paramkey">&nbsp;</td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey">)</td> 
+            <td class="paramkey"></td>
+            <td class="paramkey"></td>
+            <td class="paramkey"></td> 
+           </tr> 
+          </tbody>
+         </table> 
+        </div> 
+        <div class="memdoc"> 
+         <p> </p>
+         <p>在文件<a class="el" href="a00085.html">los_list.h</a>第<a class="el" href="a00085.html#l00345">345</a>行定义。</p> 
+         <p>参考 <a class="el" href="a00085.html#l00058">LOS_DL_LIST::pstNext</a>及<a class="el" href="a00085.html#l00057">LOS_DL_LIST::pstPrev</a>.</p> 
+         <p>参考自 <a class="el" href="a00085.html#l00370">LOS_ListDelInit()</a>.</p> 
+         <div class="fragment">
+          <pre class="fragment"><a name="l00346"></a>00346 {
+<a name="l00347"></a>00347     pstNextNode-&gt;<a class="code" href="a00011_15d797f333487819cab8e9b6bf8a3d96.html#15d797f333487819cab8e9b6bf8a3d96" title="Current node&amp;#39;s pointer to the previous node">pstPrev</a> = pstPrevNode;
+<a name="l00348"></a>00348     pstPrevNode-&gt;<a class="code" href="a00011_b613e5212dbfd1faa47cdea40cfa4050.html#b613e5212dbfd1faa47cdea40cfa4050" title="Current node&amp;#39;s pointer to the next node">pstNext</a> = pstNextNode;
+<a name="l00349"></a>00349 }
+</pre>
+         </div> 
+         <p> </p>
+         <p> </p>
+         <div class="dynheader">
+           这是这个函数的调用图。
+         </div> 
+         <div class="dynsection"> 
+         </div> 
+        </div> 
+       </div><p> </p></td> 
+     </tr> 
+    </tbody>
+   </table> 
+  </div> 
+  <hr size="1" /> 
+ </body>
+</html>

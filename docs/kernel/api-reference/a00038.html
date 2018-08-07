@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>  
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+<meta name="DC.Type" content="concept">
+<meta name="featurename" content="dcp">
+<title>los_memcheck.h文件参考</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head> 
+ <body> 
+  <div class="familylinks"> 
+   <a href="a00038.html">los_memcheck.h</a> 
+   <hr size="2" /> 
+  </div> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top"> 
+  </div> 
+  <div class="contents"> 
+   <h1>los_memcheck.h文件参考</h1> 
+   <p> <a href="a00087.html">浏览该文件的源代码。</a></p> 
+   <table border="0" cellpadding="0" cellspacing="0"> 
+    <tbody> 
+     <tr> 
+      <td colspan="2"><br /><h2>数据结构</h2></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">struct &nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00003.html">_MEM_INFO</a></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">struct &nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00005.html">_SLAB_INFO</a></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">struct &nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00004.html">_MEM_INFO_S</a></td> 
+     </tr> 
+     <tr> 
+      <td colspan="2"><br /><h2>宏定义</h2></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00038_3307d40b4252d143477be557b027679c.html#3307d40b4252d143477be557b027679c">MEM_INFO_SIZE</a>&nbsp;&nbsp;&nbsp;(sizeof(<a class="el" href="a00003.html">MEM_INFO</a>) * <a href="a00055_g5cc68a42eabab831a4aa04dd3d1e66c0.html">OS_SYS_MEM_NUM</a> + 4)</td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00038_cd17a54fce43e79d15ee7c8a4d08b190.html#cd17a54fce43e79d15ee7c8a4d08b190">SLAB_CLASS_NUM</a>&nbsp;&nbsp;&nbsp;(4U)</td> 
+     </tr> 
+     <tr> 
+      <td colspan="2"><br /><h2>类型定义</h2></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">typedef struct <a class="el" href="a00003.html">_MEM_INFO</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00038_591e5b9cdbf09655e42b11654b8bff99.html#591e5b9cdbf09655e42b11654b8bff99">MEM_INFO</a></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">typedef struct <a class="el" href="a00005.html">_SLAB_INFO</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00038_acc0d076ba66b12bf65708563e4b6141.html#acc0d076ba66b12bf65708563e4b6141">SLAB_INFO</a></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">typedef struct <a class="el" href="a00004.html">_MEM_INFO_S</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00038_ae050c0585b868e4f2336ddc6759a481.html#ae050c0585b868e4f2336ddc6759a481">MEM_INFO_S</a></td> 
+     </tr> 
+     <tr> 
+      <td colspan="2"><br /><h2>枚举</h2></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">enum &nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00038_44b7cf886d86d762e165b676ff5fc221.html#44b7cf886d86d762e165b676ff5fc221">_MEM_MANG_TYPE</a> { <br /> &nbsp;&nbsp;<a class="el" href="a00038_44b7cf886d86d762e165b676ff5fc221.html#44b7cf886d86d762e165b676ff5fc2216a05b9337c82c4470fe6908e69c694d2">MEM_MANG_MEMBOX</a>, <br /> &nbsp;&nbsp;<a class="el" href="a00038_44b7cf886d86d762e165b676ff5fc221.html#44b7cf886d86d762e165b676ff5fc221ef022e85f30d29ed4624f95878b1f01e">MEM_MANG_MEMORY</a>, <br /> &nbsp;&nbsp;<a class="el" href="a00038_44b7cf886d86d762e165b676ff5fc221.html#44b7cf886d86d762e165b676ff5fc221dce50a8acec903846a6784ec2f902b6f">MEM_MANG_EMPTY</a> <br /> }</td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">enum &nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00038_009cf08cc393e8b8edefdfd042bd366c.html#009cf08cc393e8b8edefdfd042bd366c">_MEM_MANG_SOUCE</a> { <br /> &nbsp;&nbsp;<a class="el" href="a00038_009cf08cc393e8b8edefdfd042bd366c.html#009cf08cc393e8b8edefdfd042bd366c6221d4e35148bd3915c54522beb9cbcf">MEM_MANG_UNUSED</a>, <br /> &nbsp;&nbsp;<a class="el" href="a00038_009cf08cc393e8b8edefdfd042bd366c.html#009cf08cc393e8b8edefdfd042bd366cd05319065798e7772c0cbe568d64b538">MEM_MANG_INIT</a>, <br /> &nbsp;&nbsp;<a class="el" href="a00038_009cf08cc393e8b8edefdfd042bd366c.html#009cf08cc393e8b8edefdfd042bd366cdd18b4e06561b788f8c5c89e4edc8c69">MEM_MANG_INT</a>, <br /> &nbsp;&nbsp;<a class="el" href="a00038_009cf08cc393e8b8edefdfd042bd366c.html#009cf08cc393e8b8edefdfd042bd366c91706dcae6b0071ec2bbb49e925238c8">MEM_MANG_TASK</a> <br /> }</td> 
+     </tr> 
+     <tr> 
+      <td colspan="2"><br /><h2>函数</h2></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00038_ddf5378fb3a0de6e1bd2422a56aefaab.html#ddf5378fb3a0de6e1bd2422a56aefaab">LOS_MemExcInfoGet</a> (<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwMemNum, <a class="el" href="a00004.html">MEM_INFO_S</a> *pstMemExcInfo)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Get the information of the exc memory. <a href="#ddf5378fb3a0de6e1bd2422a56aefaab"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td colspan="2"><br /><h2>变量</h2></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_b27e9918b538ce9d8ca692479b375b6a.html#b27e9918b538ce9d8ca692479b375b6a">UINT8</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00038_bb0fffa377f07654267940c8da966e5d.html#bb0fffa377f07654267940c8da966e5d">g_aucMemMang</a> []</td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <hr size="1" />  
+ </body>
+</html>

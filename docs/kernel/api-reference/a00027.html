@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>  
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+<meta name="DC.Type" content="concept">
+<meta name="featurename" content="dcp">
+<title>los_base.h文件参考</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head> 
+ <body> 
+  <div class="familylinks"> 
+   <a href="a00027.html">los_base.h</a> 
+   <hr size="2" /> 
+  </div> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top"> 
+  </div> 
+  <div class="contents"> 
+   <h1>los_base.h文件参考</h1> 
+   <p> <a href="a00076.html">浏览该文件的源代码。</a></p> 
+   <table border="0" cellpadding="0" cellspacing="0"> 
+    <tbody> 
+     <tr> 
+      <td colspan="2"><br /><h2>宏定义</h2></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00027_47bfab874e3162a9f14f3610e407c159.html#47bfab874e3162a9f14f3610e407c159">SIZE</a>(a)&nbsp;&nbsp;&nbsp;(a)</td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00027_0b5a7f6ed24b3289157b67b130d55c01.html#0b5a7f6ed24b3289157b67b130d55c01">LOS_ASSERT_COND</a>(expression)</td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00054_g6abd4142d030bc804aa0705338301002.html#g6abd4142d030bc804aa0705338301002">LOS_NO_WAIT</a>&nbsp;&nbsp;&nbsp;0</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Define the timeout interval as <a href="a00054_g6abd4142d030bc804aa0705338301002.html">LOS_NO_WAIT</a>. <a href="a00054_g6abd4142d030bc804aa0705338301002.html#g6abd4142d030bc804aa0705338301002"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00054_gd42a85c70327d0f340e93b0f0e2f9cdd.html#gd42a85c70327d0f340e93b0f0e2f9cdd">LOS_WAIT_FOREVER</a>&nbsp;&nbsp;&nbsp;0xFFFFFFFF</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Define the timeout interval as <a href="a00054_gd42a85c70327d0f340e93b0f0e2f9cdd.html">LOS_WAIT_FOREVER</a>. <a href="a00054_gd42a85c70327d0f340e93b0f0e2f9cdd.html#gd42a85c70327d0f340e93b0f0e2f9cdd"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00054_g7f1f2958ff999bf18048f1519b391561.html#g7f1f2958ff999bf18048f1519b391561">ALIGN</a>(uwAddr, uwBoundary)&nbsp;&nbsp;&nbsp;<a href="a00054_g015fab5c9d6d55826de99897b40ae400.html">LOS_Align</a>(uwAddr, uwBoundary)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Align the beginning of the object with the base address uwAddr, with uwBoundary bytes being the smallest unit of alignment. <a href="a00054_g7f1f2958ff999bf18048f1519b391561.html#g7f1f2958ff999bf18048f1519b391561"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00054_g9a1f553117203b457b62a2328f32a9aa.html#g9a1f553117203b457b62a2328f32a9aa">TRUNCATE</a>(uwAddr, uwSize)&nbsp;&nbsp;&nbsp;((uwAddr) &amp; ~((uwSize) - 1))</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Align the tail of the object with the base address uwAddr, with uwSize bytes being the smallest unit of alignment. <a href="a00054_g9a1f553117203b457b62a2328f32a9aa.html#g9a1f553117203b457b62a2328f32a9aa"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00054_g9001f50212e4fb9f3f7c99c61dac7885.html#g9001f50212e4fb9f3f7c99c61dac7885">READ_UINT8</a>(ucValue, ucAddr)&nbsp;&nbsp;&nbsp;((ucValue) = *((volatile <a class="el" href="a00048_b27e9918b538ce9d8ca692479b375b6a.html#b27e9918b538ce9d8ca692479b375b6a">UINT8</a> *)(ucAddr)))</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Read a UINT8 value from ucAddr and stroed in ucValue. <a href="a00054_g9001f50212e4fb9f3f7c99c61dac7885.html#g9001f50212e4fb9f3f7c99c61dac7885"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00054_g8078fd36928cf5a078b13d8efa8d743a.html#g8078fd36928cf5a078b13d8efa8d743a">READ_UINT16</a>(usValue, usAddr)&nbsp;&nbsp;&nbsp;((usValue) = *((volatile <a class="el" href="a00048_09f1a1fb2293e33483cc8d44aefb1eb1.html#09f1a1fb2293e33483cc8d44aefb1eb1">UINT16</a> *)(usAddr)))</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Read a UINT16 value from usAddr and stroed in usAddr. <a href="a00054_g8078fd36928cf5a078b13d8efa8d743a.html#g8078fd36928cf5a078b13d8efa8d743a"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00054_g0efafc2c1a1312f80d17796053c33738.html#g0efafc2c1a1312f80d17796053c33738">READ_UINT32</a>(uwValue, uwAddr)&nbsp;&nbsp;&nbsp;((uwValue) = *((volatile <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> *)(uwAddr)))</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Read a UINT32 value from uwAddr and stroed in uwValue. <a href="a00054_g0efafc2c1a1312f80d17796053c33738.html#g0efafc2c1a1312f80d17796053c33738"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00054_gd8688aee13f77563cbe85ac293cf5395.html#gd8688aee13f77563cbe85ac293cf5395">READ_UINT64</a>(ullValue, ullAddr)&nbsp;&nbsp;&nbsp;((ullValue) = *((volatile <a class="el" href="a00048_57be03562867144161c1bfee95ca8f7c.html#57be03562867144161c1bfee95ca8f7c">UINT64</a> *)(ullAddr)))</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Read a UINT64 value from ullAddr and stroed in ullValue. <a href="a00054_gd8688aee13f77563cbe85ac293cf5395.html#gd8688aee13f77563cbe85ac293cf5395"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00054_gc37cabc5ebb5c96e1880e4b6f851b0dd.html#gc37cabc5ebb5c96e1880e4b6f851b0dd">GET_UINT8</a>(ucAddr)&nbsp;&nbsp;&nbsp;(*((volatile <a class="el" href="a00048_b27e9918b538ce9d8ca692479b375b6a.html#b27e9918b538ce9d8ca692479b375b6a">UINT8</a> *)(ucAddr)))</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Get a UINT8 value from ucAddr. <a href="a00054_gc37cabc5ebb5c96e1880e4b6f851b0dd.html#gc37cabc5ebb5c96e1880e4b6f851b0dd"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00054_gf664fdded6310117908546c4473496a6.html#gf664fdded6310117908546c4473496a6">GET_UINT16</a>(usAddr)&nbsp;&nbsp;&nbsp;(*((volatile <a class="el" href="a00048_09f1a1fb2293e33483cc8d44aefb1eb1.html#09f1a1fb2293e33483cc8d44aefb1eb1">UINT16</a> *)(usAddr)))</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Get a UINT16 value from usAddr. <a href="a00054_gf664fdded6310117908546c4473496a6.html#gf664fdded6310117908546c4473496a6"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00054_gbb57d2fb22828d304adfd2c3634af647.html#gbb57d2fb22828d304adfd2c3634af647">GET_UINT32</a>(uwAddr)&nbsp;&nbsp;&nbsp;(*((volatile <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> *)(uwAddr)))</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Get a UINT32 value from uwAddr. <a href="a00054_gbb57d2fb22828d304adfd2c3634af647.html#gbb57d2fb22828d304adfd2c3634af647"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00054_g50ad121bf58d03c547208fc25a1511a3.html#g50ad121bf58d03c547208fc25a1511a3">GET_UINT64</a>(ullAddr)&nbsp;&nbsp;&nbsp;(*((volatile <a class="el" href="a00048_57be03562867144161c1bfee95ca8f7c.html#57be03562867144161c1bfee95ca8f7c">UINT64</a> *)(ullAddr)))</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Get a UINT64 value from ullAddr. <a href="a00054_g50ad121bf58d03c547208fc25a1511a3.html#g50ad121bf58d03c547208fc25a1511a3"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00054_g5dec05de1125991b2369a6750cb50df4.html#g5dec05de1125991b2369a6750cb50df4">WRITE_UINT8</a>(ucValue, ucAddr)&nbsp;&nbsp;&nbsp;(*((volatile <a class="el" href="a00048_b27e9918b538ce9d8ca692479b375b6a.html#b27e9918b538ce9d8ca692479b375b6a">UINT8</a> *)(ucAddr)) = (ucValue))</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Write a UINT8 ucValue to ucAddr. <a href="a00054_g5dec05de1125991b2369a6750cb50df4.html#g5dec05de1125991b2369a6750cb50df4"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00054_gdcaaa4859f4a6a8e557971ce1d5519a2.html#gdcaaa4859f4a6a8e557971ce1d5519a2">WRITE_UINT16</a>(usValue, usAddr)&nbsp;&nbsp;&nbsp;(*((volatile <a class="el" href="a00048_09f1a1fb2293e33483cc8d44aefb1eb1.html#09f1a1fb2293e33483cc8d44aefb1eb1">UINT16</a> *)(usAddr)) = (usValue))</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Write a UINT16 usValue to usAddr. <a href="a00054_gdcaaa4859f4a6a8e557971ce1d5519a2.html#gdcaaa4859f4a6a8e557971ce1d5519a2"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00054_g4212a2423be8b95d33918fd634b78582.html#g4212a2423be8b95d33918fd634b78582">WRITE_UINT32</a>(uwValue, uwAddr)&nbsp;&nbsp;&nbsp;(*((volatile <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> *)(uwAddr)) = (uwValue))</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Write a UINT32 uwValue to uwAddr. <a href="a00054_g4212a2423be8b95d33918fd634b78582.html#g4212a2423be8b95d33918fd634b78582"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00054_gbe7cca09ee409c156fab5455898a26e7.html#gbe7cca09ee409c156fab5455898a26e7">WRITE_UINT64</a>(ullValue, ullAddr)&nbsp;&nbsp;&nbsp;(*((volatile <a class="el" href="a00048_57be03562867144161c1bfee95ca8f7c.html#57be03562867144161c1bfee95ca8f7c">UINT64</a> *)(ullAddr)) = (ullValue))</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Write a UINT64 ullAddr to ullAddr. <a href="a00054_gbe7cca09ee409c156fab5455898a26e7.html#gbe7cca09ee409c156fab5455898a26e7"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00027_067f0cd092d6cd553de342ff0539d12e.html#067f0cd092d6cd553de342ff0539d12e">LOS_ASSERT</a>(judge)</td> 
+     </tr> 
+     <tr> 
+      <td colspan="2"><br /><h2>函数</h2></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00054_g015fab5c9d6d55826de99897b40ae400.html#g015fab5c9d6d55826de99897b40ae400">LOS_Align</a> (<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwAddr, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwBoundary)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Align the value (uwAddr) by some bytes (uwBoundary) you specify. <a href="a00054_g015fab5c9d6d55826de99897b40ae400.html#g015fab5c9d6d55826de99897b40ae400"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">VOID&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00054_gba5aba3e276e1ab1accdf7c651e85ccf.html#gba5aba3e276e1ab1accdf7c651e85ccf">LOS_Msleep</a> (<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwMsecs)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Sleep the current task. <a href="a00054_gba5aba3e276e1ab1accdf7c651e85ccf.html#gba5aba3e276e1ab1accdf7c651e85ccf"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00054_gbf85a03eafc0459cb54986ae400d2eed.html#gbf85a03eafc0459cb54986ae400d2eed">LOS_Start</a> (VOID)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">System kernel initialization function. <a href="a00054_gbf85a03eafc0459cb54986ae400d2eed.html#gbf85a03eafc0459cb54986ae400d2eed"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00054_g73d2ccf056cb2a4170a4250cdd81ee97.html#g73d2ccf056cb2a4170a4250cdd81ee97">LOS_KernelInit</a> (VOID)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">System kernel initialization function. <a href="a00054_g73d2ccf056cb2a4170a4250cdd81ee97.html#g73d2ccf056cb2a4170a4250cdd81ee97"></a><br /></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <hr size="1" />  
+ </body>
+</html>

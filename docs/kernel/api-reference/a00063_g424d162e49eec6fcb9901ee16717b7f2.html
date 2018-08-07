@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>  
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+<meta name="DC.Type" content="concept">
+<meta name="featurename" content="dcp">
+<title>LOS_MuxPend</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head> 
+ <body> 
+  <div class="familylinks"> 
+   <a href="a00063_g424d162e49eec6fcb9901ee16717b7f2.html">LOS_MuxPend</a> 
+   <hr size="2" /> 
+  </div> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top"> 
+  </div> 
+  <div class="contents"> 
+   <div class="navpath"> 
+    <a class="el" href="a00063.html">Mutex</a> 
+   </div> 
+   <table cellspacing="0" cellpadding="0" border="0"> 
+    <tbody> 
+     <tr> 
+      <td valign="top"> </td> 
+      <td valign="top"> <a class="anchor" name="g424d162e49eec6fcb9901ee16717b7f2"></a> 
+       <!-- doxytag: member="los_mux.h::<a href='a00063_g424d162e49eec6fcb9901ee16717b7f2.html'>LOS_MuxPend</a>" ref="g424d162e49eec6fcb9901ee16717b7f2" args="(UINT32 uwMuxHandle, UINT32 uwTimeout)" --> 
+       <div class="memitem"> 
+        <div class="memproto"> 
+         <table class="memname"> 
+          <tbody> 
+           <tr> 
+            <td class="memname"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a href="a00063_g424d162e49eec6fcb9901ee16717b7f2.html">LOS_MuxPend</a> </td> 
+            <td class="paramtype">(</td> 
+            <td class="paramtype"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+            <td class="paramname"> <em>uwMuxHandle</em>, </td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramtype"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+            <td class="paramname"> <em>uwTimeout</em></td> 
+            <td class="paramkey">&nbsp;</td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey">)</td> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+        </div> 
+        <div class="memdoc"> 
+         <p> Wait to lock a mutex. </p> 
+         <p> </p> 
+         <dl class="user" compact=""> 
+          <dt> 
+           <b>Description:</b> 
+          </dt> 
+          <dd>
+            This API is used to wait for a specified period of time to lock a mutex. 
+          </dd> 
+         </dl> 
+         <dl class="attention" compact=""> 
+          <dt> 
+           <b>注意:</b> 
+          </dt> 
+          <dd> 
+           <ul> 
+            <li> The specific mutex should be created firstly. </li> 
+            <li> The function fails if the mutex that is waited on is already locked by another thread when the task scheduling is disabled. </li> 
+            <li> Do not wait on a mutex during an interrupt. </li> 
+            <li> The priority inheritance protocol is supported. If a higher-priority thread is waiting on a mutex, it changes the priority of the thread that owns the mutex to avoid priority inversion. </li> 
+            <li> A recursive mutex can be locked more than once by the same thread. </li> 
+           </ul> 
+          </dd> 
+         </dl> 
+         <dl compact=""> 
+          <dt> 
+           <b>参数:</b> 
+          </dt> 
+          <dd> 
+           <table border="0" cellspacing="0" cellpadding="0"> 
+            <tbody> 
+             <tr> 
+              <th></th> 
+              <th>参数名称</th> 
+              <th>描述</th> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">uwMuxHandle&nbsp;</td> 
+              <td>[IN] Handle of the mutex to be waited on. The value of handle should be in [0, <a href="a00055_ge841ac24ca5cfdca4c327fca81b08db2.html">LOSCFG_BASE_IPC_MUX_LIMIT</a> - 1]. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">uwTimeout&nbsp;</td> 
+              <td>[IN] Waiting time. The value range is [0, <a href="a00054_gd42a85c70327d0f340e93b0f0e2f9cdd.html">LOS_WAIT_FOREVER</a>](unit: Tick).</td> 
+             </tr> 
+            </tbody> 
+           </table> 
+          </dd> 
+         </dl> 
+         <dl compact=""> 
+          <dt> 
+           <b>返回值:</b> 
+          </dt> 
+          <dd> 
+           <table border="0" cellspacing="0" cellpadding="0"> 
+            <tbody> 
+             <tr> 
+              <th></th> 
+              <th>返回值</th> 
+              <th>描述</th> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00063_g4258af0f77245ffec3750fed2d8d8f35.html#g4258af0f77245ffec3750fed2d8d8f35" title="Mutex error code: The mutex is not usable.">LOS_ERRNO_MUX_INVALID</a>&nbsp;</td> 
+              <td>The mutex state (for example, the mutex does not exist or is not in use) is not applicable for the current operation. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00063_g3ad15ce03b59ee4bc73149cffe408979.html#g3ad15ce03b59ee4bc73149cffe408979" title="Mutex error code: The mutex fails to be locked in non-blocking mode because it is...">LOS_ERRNO_MUX_UNAVAILABLE</a>&nbsp;</td> 
+              <td>The mutex fails to be locked because it is locked by another thread and a period of time is not set for waiting for the mutex to become available. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00063_g7f21e3fdecc2305443949e18f3b88888.html#g7f21e3fdecc2305443949e18f3b88888" title="Mutex error code: The mutex is being locked during an interrupt.">LOS_ERRNO_MUX_PEND_INTERR</a>&nbsp;</td> 
+              <td>The mutex is being locked during an interrupt. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00063_g718fb16d03ab49827fa209f4dec0aba3.html#g718fb16d03ab49827fa209f4dec0aba3" title="Mutex error code: A thread locks a mutex after waiting for the mutex to be unlocked...">LOS_ERRNO_MUX_PEND_IN_LOCK</a>&nbsp;</td> 
+              <td>The mutex is waited on when the task scheduling is disabled. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00063_g3bbeaa37881871da7282dfe429925b80.html#g3bbeaa37881871da7282dfe429925b80" title="Mutex error code: The mutex locking times out.">LOS_ERRNO_MUX_TIMEOUT</a>&nbsp;</td> 
+              <td>The mutex waiting times out. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00048_81e00a29757b6c6f90f05ca6c1eed169.html#81e00a29757b6c6f90f05ca6c1eed169">LOS_OK</a>&nbsp;</td> 
+              <td>The mutex is successfully locked. </td> 
+             </tr> 
+            </tbody> 
+           </table> 
+          </dd> 
+         </dl> 
+         <dl class="user" compact=""> 
+          <dt> 
+           <b>Dependency:</b> 
+          </dt> 
+          <dd> 
+           <ul> 
+            <li> <a class="el" href="a00040.html">los_mux.h</a>: the header file that contains the API declaration.</li> 
+           </ul> 
+          </dd> 
+         </dl> 
+         <dl class="see" compact=""> 
+          <dt> 
+           <b>参见:</b> 
+          </dt> 
+          <dd> 
+           <a class="el" href="a00063_gdf7566c3c90532c2b55877173e2b5a0f.html#gdf7566c3c90532c2b55877173e2b5a0f" title="Create a mutex.">LOS_MuxCreate</a> | 
+           <a class="el" href="a00063_g1e7a853b2b7715e404663a8a71f6f5f8.html#g1e7a853b2b7715e404663a8a71f6f5f8" title="Release a mutex.">LOS_MuxPost</a> 
+          </dd> 
+         </dl> 
+         <dl class="since" compact=""> 
+          <dt> 
+           <b>自从:</b> 
+          </dt> 
+          <dd>
+            Huawei LiteOS V100R001C00 
+          </dd> 
+         </dl> 
+        </div> 
+       </div><p> </p></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <hr size="1" />  
+ </body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>  
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+<meta name="DC.Type" content="concept">
+<meta name="featurename" content="dcp">
+<title>LOS_TaskDelay</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head> 
+ <body> 
+  <div class="familylinks"> 
+   <a href="a00068_gc7ab8061ace7abbd5a885bc6004aaf57.html">LOS_TaskDelay</a> 
+   <hr size="2" /> 
+  </div> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top"> 
+  </div> 
+  <div class="contents"> 
+   <div class="navpath"> 
+    <a class="el" href="a00068.html">Task</a> 
+   </div> 
+   <table cellspacing="0" cellpadding="0" border="0"> 
+    <tbody> 
+     <tr> 
+      <td valign="top"> </td> 
+      <td valign="top"> <a class="anchor" name="gc7ab8061ace7abbd5a885bc6004aaf57"></a> 
+       <!-- doxytag: member="los_task.h::<a href='a00068_gc7ab8061ace7abbd5a885bc6004aaf57.html'>LOS_TaskDelay</a>" ref="gc7ab8061ace7abbd5a885bc6004aaf57" args="(UINT32 uwTick)" --> 
+       <div class="memitem"> 
+        <div class="memproto"> 
+         <table class="memname"> 
+          <tbody> 
+           <tr> 
+            <td class="memname"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a href="a00068_gc7ab8061ace7abbd5a885bc6004aaf57.html">LOS_TaskDelay</a> </td> 
+            <td class="paramtype">(</td> 
+            <td class="paramtype"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+            <td class="paramname"> <em>uwTick</em> </td> 
+            <td class="paramkey">&nbsp;)&nbsp;</td> 
+            <td class="paramkey"></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+        </div> 
+        <div class="memdoc"> 
+         <p> Delay a task. </p> 
+         <p> </p> 
+         <dl class="user" compact=""> 
+          <dt> 
+           <b>Description:</b> 
+          </dt> 
+          <dd>
+            This API is used to delay the execution of the current task. The task is able to be scheduled after it is delayed for a specified number of Ticks. 
+          </dd> 
+         </dl> 
+         <dl class="attention" compact=""> 
+          <dt> 
+           <b>注意:</b> 
+          </dt> 
+          <dd> 
+           <ul> 
+            <li> The task fails to be delayed if it is being delayed during interrupt processing or it is locked. </li> 
+            <li> If 0 is passed in and the task scheduling is not locked, execute the next task in the queue of tasks with the same priority of the current task. If no ready task with the priority of the current task is available, the task scheduling will not occur, and the current task continues to be executed. </li> 
+            <li> Using the interface before system initialized is not allowed. </li> 
+           </ul> 
+          </dd> 
+         </dl> 
+         <dl compact=""> 
+          <dt> 
+           <b>参数:</b> 
+          </dt> 
+          <dd> 
+           <table border="0" cellspacing="0" cellpadding="0"> 
+            <tbody> 
+             <tr> 
+              <th></th> 
+              <th>参数名称</th> 
+              <th>描述</th> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">uwTick&nbsp;</td> 
+              <td>[IN] Type <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> Number of Ticks for which the task is delayed.</td> 
+             </tr> 
+            </tbody> 
+           </table> 
+          </dd> 
+         </dl> 
+         <dl compact=""> 
+          <dt> 
+           <b>返回值:</b> 
+          </dt> 
+          <dd> 
+           <table border="0" cellspacing="0" cellpadding="0"> 
+            <tbody> 
+             <tr> 
+              <th></th> 
+              <th>返回值</th> 
+              <th>描述</th> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00068_g2404fccc578487dfefbc479c199ef4a2.html#g2404fccc578487dfefbc479c199ef4a2" title="Task error code: The task delay occurs during an interrupt.">LOS_ERRNO_TSK_DELAY_IN_INT</a>&nbsp;</td> 
+              <td>The task delay occurs during an interrupt. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00068_geb6ca931be94f3b62e82b766ef4b3a35.html#geb6ca931be94f3b62e82b766ef4b3a35" title="Task error code: The task delay occurs when the task is locked.">LOS_ERRNO_TSK_DELAY_IN_LOCK</a>&nbsp;</td> 
+              <td>The task delay occurs when the task scheduling is locked. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00068_gbfb36da25e9e2f4239c0b05635f2dfa5.html#gbfb36da25e9e2f4239c0b05635f2dfa5" title="Task error code: Invalid task ID.">LOS_ERRNO_TSK_ID_INVALID</a>&nbsp;</td> 
+              <td>Invalid Task ID </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00068_g67f1c23fdc3738f9efc6109b426fbf28.html#g67f1c23fdc3738f9efc6109b426fbf28" title="Task error code: Only one task or no task is available for scheduling.">LOS_ERRNO_TSK_YIELD_NOT_ENOUGH_TASK</a>&nbsp;</td> 
+              <td>No tasks with the same priority is available for scheduling. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00048_81e00a29757b6c6f90f05ca6c1eed169.html#81e00a29757b6c6f90f05ca6c1eed169">LOS_OK</a>&nbsp;</td> 
+              <td>The task is successfully delayed. </td> 
+             </tr> 
+            </tbody> 
+           </table> 
+          </dd> 
+         </dl> 
+         <dl class="user" compact=""> 
+          <dt> 
+           <b>Dependency:</b> 
+          </dt> 
+          <dd> 
+           <ul> 
+            <li> <a class="el" href="a00045.html">los_task.h</a>: the header file that contains the API declaration.</li> 
+           </ul> 
+          </dd> 
+         </dl> 
+         <dl class="see" compact=""> 
+          <dt> 
+           <b>参见:</b> 
+          </dt> 
+          <dd></dd> 
+         </dl> 
+         <dl class="since" compact=""> 
+          <dt> 
+           <b>自从:</b> 
+          </dt> 
+          <dd>
+            Huawei LiteOS V100R001C00 
+          </dd> 
+         </dl> 
+        </div> 
+       </div><p> </p></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <hr size="1" />  
+ </body>
+</html>

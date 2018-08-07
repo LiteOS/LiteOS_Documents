@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>  
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+<meta name="DC.Type" content="concept">
+<meta name="featurename" content="dcp">
+<title>LOS_QueueDelete</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head> 
+ <body> 
+  <div class="familylinks"> 
+   <a href="a00064_gd779efa012c288bc90032e7ce98a57df.html">LOS_QueueDelete</a> 
+   <hr size="2" /> 
+  </div> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top"> 
+  </div> 
+  <div class="contents"> 
+   <div class="navpath"> 
+    <a class="el" href="a00064.html">Queue</a> 
+   </div> 
+   <table cellspacing="0" cellpadding="0" border="0"> 
+    <tbody> 
+     <tr> 
+      <td valign="top"> </td> 
+      <td valign="top"> <a class="anchor" name="gd779efa012c288bc90032e7ce98a57df"></a> 
+       <!-- doxytag: member="los_queue.h::<a href='a00064_gd779efa012c288bc90032e7ce98a57df.html'>LOS_QueueDelete</a>" ref="gd779efa012c288bc90032e7ce98a57df" args="(UINT32 uwQueueID)" --> 
+       <div class="memitem"> 
+        <div class="memproto"> 
+         <table class="memname"> 
+          <tbody> 
+           <tr> 
+            <td class="memname"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a href="a00064_gd779efa012c288bc90032e7ce98a57df.html">LOS_QueueDelete</a> </td> 
+            <td class="paramtype">(</td> 
+            <td class="paramtype"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+            <td class="paramname"> <em>uwQueueID</em> </td> 
+            <td class="paramkey">&nbsp;)&nbsp;</td> 
+            <td class="paramkey"></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+        </div> 
+        <div class="memdoc"> 
+         <p> Delete a queue. </p> 
+         <p> </p> 
+         <dl class="user" compact=""> 
+          <dt> 
+           <b>Description:</b> 
+          </dt> 
+          <dd>
+            This API is used to delete a queue. 
+          </dd> 
+         </dl> 
+         <dl class="attention" compact=""> 
+          <dt> 
+           <b>注意:</b> 
+          </dt> 
+          <dd> 
+           <ul> 
+            <li> This API cannot be used to delete a queue that is not created. </li> 
+            <li> A synchronous queue fails to be deleted if any tasks are blocked on it, or some queues are being read or written. </li> 
+           </ul> 
+          </dd> 
+         </dl> 
+         <dl compact=""> 
+          <dt> 
+           <b>参数:</b> 
+          </dt> 
+          <dd> 
+           <table border="0" cellspacing="0" cellpadding="0"> 
+            <tbody> 
+             <tr> 
+              <th></th> 
+              <th>参数名称</th> 
+              <th>描述</th> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">uwQueueID&nbsp;</td> 
+              <td>[IN] Queue ID created by <a href="a00064_gf6f1fb9652760f1d43a76179282a3174.html">LOS_QueueCreate</a>. The value range is [1,<a href="a00055_g7a7fa126ef8c518212ef77d47914f719.html">LOSCFG_BASE_IPC_QUEUE_LIMIT</a>].</td> 
+             </tr> 
+            </tbody> 
+           </table> 
+          </dd> 
+         </dl> 
+         <dl compact=""> 
+          <dt> 
+           <b>返回值:</b> 
+          </dt> 
+          <dd> 
+           <table border="0" cellspacing="0" cellpadding="0"> 
+            <tbody> 
+             <tr> 
+              <th></th> 
+              <th>返回值</th> 
+              <th>描述</th> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00048_81e00a29757b6c6f90f05ca6c1eed169.html#81e00a29757b6c6f90f05ca6c1eed169">LOS_OK</a>&nbsp;</td> 
+              <td>The queue is successfully deleted. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00064_ga91ae158e9e627bb74cc3015eb7f31df.html#ga91ae158e9e627bb74cc3015eb7f31df" title="Queue error code: Invalid queue.">LOS_ERRNO_QUEUE_NOT_FOUND</a>&nbsp;</td> 
+              <td>The queue cannot be found. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00064_g06999e637407e2068a8cfedd25557aeb.html#g06999e637407e2068a8cfedd25557aeb" title="Queue error code: The queue is not created.">LOS_ERRNO_QUEUE_NOT_CREATE</a>&nbsp;</td> 
+              <td>The queue handle passed in when the queue is being deleted is incorrect. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00064_ga802805c5c23f8db2e59435770e1a6fd.html#ga802805c5c23f8db2e59435770e1a6fd" title="Queue error code: The queue that blocks a task cannot be deleted.">LOS_ERRNO_QUEUE_IN_TSKUSE</a>&nbsp;</td> 
+              <td>The queue that blocks a task cannot be deleted. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00064_g2d28944aef5d9f7760c5d32c856c08f1.html#g2d28944aef5d9f7760c5d32c856c08f1" title="Queue error code: Queue reading and writing are not synchronous.">LOS_ERRNO_QUEUE_IN_TSKWRITE</a>&nbsp;</td> 
+              <td>Queue reading and writing are not synchronous. </td> 
+             </tr> 
+            </tbody> 
+           </table> 
+          </dd> 
+         </dl> 
+         <dl class="user" compact=""> 
+          <dt> 
+           <b>Dependency:</b> 
+          </dt> 
+          <dd> 
+           <ul> 
+            <li> <a class="el" href="a00041.html">los_queue.h</a>: the header file that contains the API declaration.</li> 
+           </ul> 
+          </dd> 
+         </dl> 
+         <dl class="see" compact=""> 
+          <dt> 
+           <b>参见:</b> 
+          </dt> 
+          <dd> 
+           <a class="el" href="a00064_gf6f1fb9652760f1d43a76179282a3174.html#gf6f1fb9652760f1d43a76179282a3174" title="Create a message queue.">LOS_QueueCreate</a> | 
+           <a class="el" href="a00064_gf6f1fb9652760f1d43a76179282a3174.html#gf6f1fb9652760f1d43a76179282a3174" title="Create a message queue.">LOS_QueueCreate</a> 
+          </dd> 
+         </dl> 
+         <dl class="since" compact=""> 
+          <dt> 
+           <b>自从:</b> 
+          </dt> 
+          <dd>
+            Huawei LiteOS V100R001C00 
+          </dd> 
+         </dl> 
+        </div> 
+       </div><p> </p></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <hr size="1" />  
+ </body>
+</html>

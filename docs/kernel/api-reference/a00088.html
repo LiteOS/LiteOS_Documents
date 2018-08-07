@@ -1,0 +1,592 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312" /> 
+  <title>los_memory.h源文件</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head>
+ <body> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top">   
+   <h1>los_memory.h</h1>
+   <a href="a00039.html">浏览该文件的文档。</a>
+   <div class="fragment">
+    <pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*----------------------------------------------------------------------------</span>
+<a name="l00002"></a>00002 <span class="comment"> * Copyright (c) &lt;2013-2017&gt;, &lt;Huawei Technologies Co., Ltd&gt;</span>
+<a name="l00003"></a>00003 <span class="comment"> * All rights reserved.</span>
+<a name="l00004"></a>00004 <span class="comment"> * Redistribution and use in source and binary forms, with or without modification,</span>
+<a name="l00005"></a>00005 <span class="comment"> * are permitted provided that the following conditions are met:</span>
+<a name="l00006"></a>00006 <span class="comment"> * 1. Redistributions of source code must retain the above copyright notice, this list of</span>
+<a name="l00007"></a>00007 <span class="comment"> * conditions and the following disclaimer.</span>
+<a name="l00008"></a>00008 <span class="comment"> * 2. Redistributions in binary form must reproduce the above copyright notice, this list</span>
+<a name="l00009"></a>00009 <span class="comment"> * of conditions and the following disclaimer in the documentation and/or other materials</span>
+<a name="l00010"></a>00010 <span class="comment"> * provided with the distribution.</span>
+<a name="l00011"></a>00011 <span class="comment"> * 3. Neither the name of the copyright holder nor the names of its contributors may be used</span>
+<a name="l00012"></a>00012 <span class="comment"> * to endorse or promote products derived from this software without specific prior written</span>
+<a name="l00013"></a>00013 <span class="comment"> * permission.</span>
+<a name="l00014"></a>00014 <span class="comment"> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS</span>
+<a name="l00015"></a>00015 <span class="comment"> * &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,</span>
+<a name="l00016"></a>00016 <span class="comment"> * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR</span>
+<a name="l00017"></a>00017 <span class="comment"> * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR</span>
+<a name="l00018"></a>00018 <span class="comment"> * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,</span>
+<a name="l00019"></a>00019 <span class="comment"> * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,</span>
+<a name="l00020"></a>00020 <span class="comment"> * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;</span>
+<a name="l00021"></a>00021 <span class="comment"> * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,</span>
+<a name="l00022"></a>00022 <span class="comment"> * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR</span>
+<a name="l00023"></a>00023 <span class="comment"> * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF</span>
+<a name="l00024"></a>00024 <span class="comment"> * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</span>
+<a name="l00025"></a>00025 <span class="comment"> *---------------------------------------------------------------------------*/</span>
+<a name="l00026"></a>00026 <span class="comment">/*----------------------------------------------------------------------------</span>
+<a name="l00027"></a>00027 <span class="comment"> * Notice of Export Control Law</span>
+<a name="l00028"></a>00028 <span class="comment"> * ===============================================</span>
+<a name="l00029"></a>00029 <span class="comment"> * Huawei LiteOS may be subject to applicable export control laws and regulations, which might</span>
+<a name="l00030"></a>00030 <span class="comment"> * include those applicable to Huawei LiteOS of U.S. and the country in which you are located.</span>
+<a name="l00031"></a>00031 <span class="comment"> * Import, export and usage of Huawei LiteOS in any manner by you shall be in compliance with such</span>
+<a name="l00032"></a>00032 <span class="comment"> * applicable export control laws and regulations.</span>
+<a name="l00033"></a>00033 <span class="comment"> *---------------------------------------------------------------------------*/</span>
+<a name="l00034"></a>00034 <span class="preprocessor">#ifndef _LOS_MEMORY_H</span>
+<a name="l00035"></a>00035 <span class="preprocessor"></span><span class="preprocessor">#define _LOS_MEMORY_H</span>
+<a name="l00036"></a>00036 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="a00027.html">los_base.h</a>&quot;</span>
+<a name="l00037"></a>00037 <span class="preprocessor">#if (LOSCFG_KERNEL_MEM_SLAB == YES)</span>
+<a name="l00038"></a>00038 <span class="preprocessor"></span><span class="preprocessor">#include &lt;los_slab.ph&gt;</span>
+<a name="l00039"></a>00039 <span class="preprocessor">#endif</span>
+<a name="l00040"></a>00040 <span class="preprocessor"></span><span class="preprocessor">#include &lt;los_heap.ph&gt;</span>
+<a name="l00041"></a>00041 
+<a name="l00042"></a>00042 <span class="preprocessor">#ifdef __cplusplus</span>
+<a name="l00043"></a>00043 <span class="preprocessor"></span><span class="preprocessor">#if __cplusplus</span>
+<a name="l00044"></a>00044 <span class="preprocessor"></span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {
+<a name="l00045"></a>00045 <span class="preprocessor">#endif </span><span class="comment">/* __cplusplus */</span>
+<a name="l00046"></a>00046 <span class="preprocessor">#endif </span><span class="comment">/* __cplusplus */</span>
+<a name="l00047"></a>00047 
+<a name="l00048"></a><a class="code" href="a00001.html">00048</a> <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="a00001.html">__s_LOS_MEM_STATUS</a> {
+<a name="l00049"></a><a class="code" href="a00001_525677d0cc8dc888ce314ff840778c74.html#525677d0cc8dc888ce314ff840778c74">00049</a>     <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00001_525677d0cc8dc888ce314ff840778c74.html#525677d0cc8dc888ce314ff840778c74">totalSize</a>;
+<a name="l00050"></a><a class="code" href="a00001_f6b4e58dcfe96be3a029883adb2c0c02.html#f6b4e58dcfe96be3a029883adb2c0c02">00050</a>     <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00001_f6b4e58dcfe96be3a029883adb2c0c02.html#f6b4e58dcfe96be3a029883adb2c0c02">usedSize</a>;
+<a name="l00051"></a><a class="code" href="a00001_c7bb800854aab6a00db98c6e44f7ce4d.html#c7bb800854aab6a00db98c6e44f7ce4d">00051</a>     <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00001_c7bb800854aab6a00db98c6e44f7ce4d.html#c7bb800854aab6a00db98c6e44f7ce4d">freeSize</a>;
+<a name="l00052"></a><a class="code" href="a00001_01c266acb8cbbf570a2bf894fe4d9afc.html#01c266acb8cbbf570a2bf894fe4d9afc">00052</a>     <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00001_01c266acb8cbbf570a2bf894fe4d9afc.html#01c266acb8cbbf570a2bf894fe4d9afc">allocCount</a>;
+<a name="l00053"></a><a class="code" href="a00001_8329c0d8d51015b5745160393fcefd37.html#8329c0d8d51015b5745160393fcefd37">00053</a>     <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00001_8329c0d8d51015b5745160393fcefd37.html#8329c0d8d51015b5745160393fcefd37">freeCount</a>;
+<a name="l00054"></a>00054 }<a class="code" href="a00001.html">LOS_MEM_STATUS</a>;
+<a name="l00055"></a>00055 
+<a name="l00056"></a>00056 <span class="preprocessor">#if (LOSCFG_MEMORY_BESTFIT == YES)</span>
+<a name="l00057"></a>00057 <span class="preprocessor"></span>
+<a name="l00058"></a>00058 <span class="preprocessor">#if (LOSCFG_PLATFORM_EXC == YES)</span>
+<a name="l00059"></a><a class="code" href="a00039_6dde44933cfb6a48e83e9669822696e0.html#6dde44933cfb6a48e83e9669822696e0">00059</a> <span class="preprocessor"></span><span class="preprocessor">#define OS_MEM_ENABLE_ALLOC_CHECK</span>
+<a name="l00060"></a>00060 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00061"></a>00061 <span class="preprocessor"></span><span class="preprocessor">#if (LOSCFG_BASE_MEM_NODE_SIZE_CHECK == YES)</span>
+<a name="l00062"></a><a class="code" href="a00039_06b46925d0b2091f6eadf25f0f994f0f.html#06b46925d0b2091f6eadf25f0f994f0f">00062</a> <span class="preprocessor"></span><span class="preprocessor">#define OS_MEM_CHECK_DEBUG</span>
+<a name="l00063"></a>00063 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00064"></a>00064 <span class="preprocessor"></span>
+<a name="l00065"></a><a class="code" href="a00039_9d7d1b25eabf884930b77e517f583fe7.html#9d7d1b25eabf884930b77e517f583fe7">00065</a> <span class="keyword">typedef</span> <a class="code" href="a00048_7f319bfc2492a2136964194204e7a8cf.html#7f319bfc2492a2136964194204e7a8cf">VOID</a> (*<a class="code" href="a00039_9d7d1b25eabf884930b77e517f583fe7.html#9d7d1b25eabf884930b77e517f583fe7">MALLOC_HOOK</a>)(<a class="code" href="a00048_7f319bfc2492a2136964194204e7a8cf.html#7f319bfc2492a2136964194204e7a8cf">VOID</a>);
+<a name="l00066"></a>00066 
+<a name="l00067"></a>00067 <span class="keyword">extern</span> <a class="code" href="a00039_9d7d1b25eabf884930b77e517f583fe7.html#9d7d1b25eabf884930b77e517f583fe7">MALLOC_HOOK</a> <a class="code" href="a00039_d64334c7beb4100d0dbf37dfa6be3b26.html#d64334c7beb4100d0dbf37dfa6be3b26">g_MALLOC_HOOK</a>;
+<a name="l00068"></a>00068 <span class="comment"></span>
+<a name="l00069"></a>00069 <span class="comment">/**</span>
+<a name="l00070"></a>00070 <span class="comment"> *@ingroup los_memory</span>
+<a name="l00071"></a>00071 <span class="comment"> *@brief Get the size of memory totally used.</span>
+<a name="l00072"></a>00072 <span class="comment"> *</span>
+<a name="l00073"></a>00073 <span class="comment"> *@par Description:</span>
+<a name="l00074"></a>00074 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00075"></a>00075 <span class="comment"> *&lt;li&gt;This API is used to get the size of memory totally used in memory pool.&lt;/li&gt;</span>
+<a name="l00076"></a>00076 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00077"></a>00077 <span class="comment"> *@attention</span>
+<a name="l00078"></a>00078 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00079"></a>00079 <span class="comment"> *&lt;li&gt;The input pPool parameter must be initialized via func LOS_MemInit.&lt;/li&gt;</span>
+<a name="l00080"></a>00080 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00081"></a>00081 <span class="comment"> *</span>
+<a name="l00082"></a>00082 <span class="comment"> *@param  pPool           [IN] A pointer pointed to the memory pool.</span>
+<a name="l00083"></a>00083 <span class="comment"> *</span>
+<a name="l00084"></a>00084 <span class="comment"> *@retval #LOS_NOK        The incoming parameter pPool is NULL.</span>
+<a name="l00085"></a>00085 <span class="comment"> *@retval #UINT32         The size of the memory pool used.</span>
+<a name="l00086"></a>00086 <span class="comment"> *@par Dependency:</span>
+<a name="l00087"></a>00087 <span class="comment"> *&lt;ul&gt;&lt;li&gt;los_memory.h: the header file that contains the API declaration.&lt;/li&gt;&lt;/ul&gt;</span>
+<a name="l00088"></a>00088 <span class="comment"> *@see None.</span>
+<a name="l00089"></a>00089 <span class="comment"> *@since Huawei LiteOS V100R001C00</span>
+<a name="l00090"></a>00090 <span class="comment"> */</span>
+<a name="l00091"></a>00091 <span class="keyword">extern</span> <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00039_05a85468fda1ed97c89737a60f188c5e.html#05a85468fda1ed97c89737a60f188c5e" title="Get the size of memory totally used.">LOS_MemTotalUsedGet</a>(<a class="code" href="a00048_7f319bfc2492a2136964194204e7a8cf.html#7f319bfc2492a2136964194204e7a8cf">VOID</a> *pPool);
+<a name="l00092"></a>00092 <span class="comment"></span>
+<a name="l00093"></a>00093 <span class="comment">/**</span>
+<a name="l00094"></a>00094 <span class="comment"> *@ingroup los_memory</span>
+<a name="l00095"></a>00095 <span class="comment"> *@brief Get the number of free memory nodes.</span>
+<a name="l00096"></a>00096 <span class="comment"> *</span>
+<a name="l00097"></a>00097 <span class="comment"> *@par Description:</span>
+<a name="l00098"></a>00098 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00099"></a>00099 <span class="comment"> *&lt;li&gt;This API is used to get the number of free memory nodes in memory pool.&lt;/li&gt;</span>
+<a name="l00100"></a>00100 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00101"></a>00101 <span class="comment"> *@attention</span>
+<a name="l00102"></a>00102 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00103"></a>00103 <span class="comment"> *&lt;li&gt;The input pPool parameter must be initialized via func LOS_MemInit.&lt;/li&gt;</span>
+<a name="l00104"></a>00104 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00105"></a>00105 <span class="comment"> *</span>
+<a name="l00106"></a>00106 <span class="comment"> *@param  pPool           [IN] A pointer pointed to the memory pool.</span>
+<a name="l00107"></a>00107 <span class="comment"> *</span>
+<a name="l00108"></a>00108 <span class="comment"> *@retval #LOS_NOK        The incoming parameter pPool is NULL.</span>
+<a name="l00109"></a>00109 <span class="comment"> *@retval #UINT32         The number of free memory nodes.</span>
+<a name="l00110"></a>00110 <span class="comment"> *@par Dependency:</span>
+<a name="l00111"></a>00111 <span class="comment"> *&lt;ul&gt;&lt;li&gt;los_memory.h: the header file that contains the API declaration.&lt;/li&gt;&lt;/ul&gt;</span>
+<a name="l00112"></a>00112 <span class="comment"> *@see None.</span>
+<a name="l00113"></a>00113 <span class="comment"> *@since Huawei LiteOS V100R001C00</span>
+<a name="l00114"></a>00114 <span class="comment"> */</span>
+<a name="l00115"></a>00115 <span class="keyword">extern</span> <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00039_abb257c8a0800bc083155eafeb08ef13.html#abb257c8a0800bc083155eafeb08ef13" title="Get the number of free memory nodes.">LOS_MemFreeBlksGet</a>(<a class="code" href="a00048_7f319bfc2492a2136964194204e7a8cf.html#7f319bfc2492a2136964194204e7a8cf">VOID</a> *pPool);
+<a name="l00116"></a>00116 <span class="comment"></span>
+<a name="l00117"></a>00117 <span class="comment">/**</span>
+<a name="l00118"></a>00118 <span class="comment"> *@ingroup los_memory</span>
+<a name="l00119"></a>00119 <span class="comment"> *@brief Get the number of used memory nodes.</span>
+<a name="l00120"></a>00120 <span class="comment"> *</span>
+<a name="l00121"></a>00121 <span class="comment"> *@par Description:</span>
+<a name="l00122"></a>00122 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00123"></a>00123 <span class="comment"> *&lt;li&gt;This API is used to get the number of used memory nodes in memory pool.&lt;/li&gt;</span>
+<a name="l00124"></a>00124 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00125"></a>00125 <span class="comment"> *@attention</span>
+<a name="l00126"></a>00126 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00127"></a>00127 <span class="comment"> *&lt;li&gt;The input pPool parameter must be initialized via func LOS_MemInit.&lt;/li&gt;</span>
+<a name="l00128"></a>00128 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00129"></a>00129 <span class="comment"> *</span>
+<a name="l00130"></a>00130 <span class="comment"> *@param  pPool           [IN] A pointer pointed to the memory pool.</span>
+<a name="l00131"></a>00131 <span class="comment"> *</span>
+<a name="l00132"></a>00132 <span class="comment"> *@retval #LOS_NOK        The incoming parameter pPool is NULL.</span>
+<a name="l00133"></a>00133 <span class="comment"> *@retval #UINT32         The number of used memory nodes.</span>
+<a name="l00134"></a>00134 <span class="comment"> *@par Dependency:</span>
+<a name="l00135"></a>00135 <span class="comment"> *&lt;ul&gt;&lt;li&gt;los_memory.h: the header file that contains the API declaration.&lt;/li&gt;&lt;/ul&gt;</span>
+<a name="l00136"></a>00136 <span class="comment"> *@see None.</span>
+<a name="l00137"></a>00137 <span class="comment"> *@since Huawei LiteOS V100R001C00</span>
+<a name="l00138"></a>00138 <span class="comment"> */</span>
+<a name="l00139"></a>00139 <span class="keyword">extern</span> <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00039_37df700907870015e8838bc9a1dafc92.html#37df700907870015e8838bc9a1dafc92" title="Get the number of used memory nodes.">LOS_MemUsedBlksGet</a>(<a class="code" href="a00048_7f319bfc2492a2136964194204e7a8cf.html#7f319bfc2492a2136964194204e7a8cf">VOID</a> *pPool);
+<a name="l00140"></a>00140 <span class="comment"></span>
+<a name="l00141"></a>00141 <span class="comment">/**</span>
+<a name="l00142"></a>00142 <span class="comment"> *@ingroup los_memory</span>
+<a name="l00143"></a>00143 <span class="comment"> *@brief Get the task ID of a used memory node.</span>
+<a name="l00144"></a>00144 <span class="comment"> *</span>
+<a name="l00145"></a>00145 <span class="comment"> *@par Description:</span>
+<a name="l00146"></a>00146 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00147"></a>00147 <span class="comment"> *&lt;li&gt;This API is used to get the task ID of a used memory node.&lt;/li&gt;</span>
+<a name="l00148"></a>00148 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00149"></a>00149 <span class="comment"> *@attention</span>
+<a name="l00150"></a>00150 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00151"></a>00151 <span class="comment"> *&lt;li&gt;The input pPtr parameter must be allocated by LOS_MemAlloc or LOS_MemAllocAlign.&lt;/li&gt;</span>
+<a name="l00152"></a>00152 <span class="comment"> *&lt;li&gt;This interface only support obtain the task ID of a used memory node which is allocated from the system memory pool (OS_SYS_MEM_ADDR) at present.&lt;/li&gt;</span>
+<a name="l00153"></a>00153 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00154"></a>00154 <span class="comment"> *</span>
+<a name="l00155"></a>00155 <span class="comment"> *@param  pPtr               [IN] A used memory node.</span>
+<a name="l00156"></a>00156 <span class="comment"> *</span>
+<a name="l00157"></a>00157 <span class="comment"> *@retval #OS_INVALID        The incoming parameter pPtr is illegal.</span>
+<a name="l00158"></a>00158 <span class="comment"> *@retval #UINT32            The task ID of used memory node pPtr.</span>
+<a name="l00159"></a>00159 <span class="comment"> *@par Dependency:</span>
+<a name="l00160"></a>00160 <span class="comment"> *&lt;ul&gt;&lt;li&gt;los_memory.h: the header file that contains the API declaration.&lt;/li&gt;&lt;/ul&gt;</span>
+<a name="l00161"></a>00161 <span class="comment"> *@see None.</span>
+<a name="l00162"></a>00162 <span class="comment"> *@since Huawei LiteOS V100R001C00</span>
+<a name="l00163"></a>00163 <span class="comment"> */</span>
+<a name="l00164"></a>00164 <span class="keyword">extern</span> <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00039_56acdd2985c9b0d6029f260d18c0e26e.html#56acdd2985c9b0d6029f260d18c0e26e" title="Get the task ID of a used memory node.">LOS_MemTaskIdGet</a>(<a class="code" href="a00048_7f319bfc2492a2136964194204e7a8cf.html#7f319bfc2492a2136964194204e7a8cf">VOID</a> *pPool);
+<a name="l00165"></a>00165 <span class="comment"></span>
+<a name="l00166"></a>00166 <span class="comment">/**</span>
+<a name="l00167"></a>00167 <span class="comment"> *@ingroup los_memory</span>
+<a name="l00168"></a>00168 <span class="comment"> *@brief Get the address of last node.</span>
+<a name="l00169"></a>00169 <span class="comment"> *</span>
+<a name="l00170"></a>00170 <span class="comment"> *@par Description:</span>
+<a name="l00171"></a>00171 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00172"></a>00172 <span class="comment"> *&lt;li&gt;This API is used to get the address of last node.&lt;/li&gt;</span>
+<a name="l00173"></a>00173 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00174"></a>00174 <span class="comment"> *@attention</span>
+<a name="l00175"></a>00175 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00176"></a>00176 <span class="comment"> *&lt;li&gt;The input pPool parameter must be initialized via func LOS_MemInit.&lt;/li&gt;</span>
+<a name="l00177"></a>00177 <span class="comment"> *&lt;li&gt;The last node of memory pool is not the end node.&lt;/li&gt;</span>
+<a name="l00178"></a>00178 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00179"></a>00179 <span class="comment"> *</span>
+<a name="l00180"></a>00180 <span class="comment"> *@param  pPtr               [IN] A pointer pointed to the memory pool.</span>
+<a name="l00181"></a>00181 <span class="comment"> *</span>
+<a name="l00182"></a>00182 <span class="comment"> *@retval #LOS_NOK           The incoming parameter pPool is NULL.</span>
+<a name="l00183"></a>00183 <span class="comment"> *@retval #UINT32            The address of the last used node that casts to UINT32.</span>
+<a name="l00184"></a>00184 <span class="comment"> *@par Dependency:</span>
+<a name="l00185"></a>00185 <span class="comment"> *&lt;ul&gt;&lt;li&gt;los_memory.h: the header file that contains the API declaration.&lt;/li&gt;&lt;/ul&gt;</span>
+<a name="l00186"></a>00186 <span class="comment"> *@see None.</span>
+<a name="l00187"></a>00187 <span class="comment"> *@since Huawei LiteOS V100R001C00</span>
+<a name="l00188"></a>00188 <span class="comment"> */</span>
+<a name="l00189"></a>00189 <span class="keyword">extern</span> <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00039_a2f28e3b4fa2a7772b4e0a61026ababf.html#a2f28e3b4fa2a7772b4e0a61026ababf" title="Get the address of last node.">LOS_MemLastUsedGet</a>(<a class="code" href="a00048_7f319bfc2492a2136964194204e7a8cf.html#7f319bfc2492a2136964194204e7a8cf">VOID</a> *pPool);
+<a name="l00190"></a>00190 <span class="comment"></span>
+<a name="l00191"></a>00191 <span class="comment">/**</span>
+<a name="l00192"></a>00192 <span class="comment"> *@ingroup los_memory</span>
+<a name="l00193"></a>00193 <span class="comment"> *@brief Check the memory pool Integrity.</span>
+<a name="l00194"></a>00194 <span class="comment"> *</span>
+<a name="l00195"></a>00195 <span class="comment"> *@par Description:</span>
+<a name="l00196"></a>00196 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00197"></a>00197 <span class="comment"> *&lt;li&gt;This API is used to check the memory pool Integrity.&lt;/li&gt;</span>
+<a name="l00198"></a>00198 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00199"></a>00199 <span class="comment"> *@attention</span>
+<a name="l00200"></a>00200 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00201"></a>00201 <span class="comment"> *&lt;li&gt;The input pPool parameter must be initialized via func LOS_MemInit.&lt;/li&gt;</span>
+<a name="l00202"></a>00202 <span class="comment"> *&lt;li&gt;LOS_MemIntegrityCheck will be called by malloc function when the macro of LOSCFG_BASE_MEM_NODE_INTEGRITY_CHECK is defined in LiteOS.&lt;/li&gt;</span>
+<a name="l00203"></a>00203 <span class="comment"> *&lt;li&gt;LOS_MemIntegrityCheck function can be called by user anytime.&lt;/li&gt;</span>
+<a name="l00204"></a>00204 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00205"></a>00205 <span class="comment"> *</span>
+<a name="l00206"></a>00206 <span class="comment"> *@param  pPool              [IN] A pointer pointed to the memory pool.</span>
+<a name="l00207"></a>00207 <span class="comment"> *</span>
+<a name="l00208"></a>00208 <span class="comment"> *@retval #LOS_NOK           The memory pool (pPool) is impaired.</span>
+<a name="l00209"></a>00209 <span class="comment"> *@retval #LOS_OK            The memory pool (pPool) is integrated.</span>
+<a name="l00210"></a>00210 <span class="comment"> *@par Dependency:</span>
+<a name="l00211"></a>00211 <span class="comment"> *&lt;ul&gt;&lt;li&gt;los_memory.h: the header file that contains the API declaration.&lt;/li&gt;&lt;/ul&gt;</span>
+<a name="l00212"></a>00212 <span class="comment"> *@see None.</span>
+<a name="l00213"></a>00213 <span class="comment"> *@since Huawei LiteOS V100R001C00</span>
+<a name="l00214"></a>00214 <span class="comment"> */</span>
+<a name="l00215"></a>00215 <span class="keyword">extern</span> <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00039_a2eae133b6791033d4d61642eed31ff4.html#a2eae133b6791033d4d61642eed31ff4" title="Check the memory pool Integrity.">LOS_MemIntegrityCheck</a>(<a class="code" href="a00048_7f319bfc2492a2136964194204e7a8cf.html#7f319bfc2492a2136964194204e7a8cf">VOID</a> *pPool);
+<a name="l00216"></a>00216 <span class="comment"></span>
+<a name="l00217"></a>00217 <span class="comment">/**</span>
+<a name="l00218"></a>00218 <span class="comment"> * @ingroup los_memory</span>
+<a name="l00219"></a>00219 <span class="comment"> *  Define a mem size check intensity</span>
+<a name="l00220"></a>00220 <span class="comment"> *</span>
+<a name="l00221"></a>00221 <span class="comment"> *  Lowest mem check.</span>
+<a name="l00222"></a>00222 <span class="comment"> */</span>
+<a name="l00223"></a><a class="code" href="a00039_64a2630f7a83e74e12348198cdb9680f.html#64a2630f7a83e74e12348198cdb9680f">00223</a> <span class="preprocessor">#define LOS_MEM_CHECK_LEVEL_LOW      0</span>
+<a name="l00224"></a>00224 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00225"></a>00225 <span class="comment">/**</span>
+<a name="l00226"></a>00226 <span class="comment"> * @ingroup los_memory</span>
+<a name="l00227"></a>00227 <span class="comment"> * Define a mem size check intensity</span>
+<a name="l00228"></a>00228 <span class="comment"> *</span>
+<a name="l00229"></a>00229 <span class="comment"> * Highest mem check.</span>
+<a name="l00230"></a>00230 <span class="comment"> */</span>
+<a name="l00231"></a><a class="code" href="a00039_951e92ceda8d08ac4f6738033201c7c3.html#951e92ceda8d08ac4f6738033201c7c3">00231</a> <span class="preprocessor">#define LOS_MEM_CHECK_LEVEL_HIGH      1</span>
+<a name="l00232"></a>00232 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00233"></a>00233 <span class="comment">/**</span>
+<a name="l00234"></a>00234 <span class="comment"> * @ingroup los_memory</span>
+<a name="l00235"></a>00235 <span class="comment"> * Define a mem size check intensity</span>
+<a name="l00236"></a>00236 <span class="comment"> *</span>
+<a name="l00237"></a>00237 <span class="comment"> * disable mem check.</span>
+<a name="l00238"></a>00238 <span class="comment"> */</span>
+<a name="l00239"></a><a class="code" href="a00039_42df358dc19ee117263e7fd720e58104.html#42df358dc19ee117263e7fd720e58104">00239</a> <span class="preprocessor">#define LOS_MEM_CHECK_LEVEL_DISABLE       0xff</span>
+<a name="l00240"></a>00240 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00241"></a>00241 <span class="comment">/**</span>
+<a name="l00242"></a>00242 <span class="comment"> * @ingroup los_memory</span>
+<a name="l00243"></a>00243 <span class="comment"> * Define a mem size check intensity</span>
+<a name="l00244"></a>00244 <span class="comment"> *</span>
+<a name="l00245"></a>00245 <span class="comment"> * default intensity set mem check.</span>
+<a name="l00246"></a>00246 <span class="comment"> */</span>
+<a name="l00247"></a><a class="code" href="a00039_6c82dd1e1ef1606decdbf58ba61892e7.html#6c82dd1e1ef1606decdbf58ba61892e7">00247</a> <span class="preprocessor">#define LOS_MEM_CHECK_LEVEL_DEFAULT       LOS_MEM_CHECK_LEVEL_DISABLE</span>
+<a name="l00248"></a>00248 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00249"></a>00249 <span class="comment">/**</span>
+<a name="l00250"></a>00250 <span class="comment"> *@ingroup los_memory</span>
+<a name="l00251"></a>00251 <span class="comment"> *@brief Check the size of memory node specified.</span>
+<a name="l00252"></a>00252 <span class="comment"> *</span>
+<a name="l00253"></a>00253 <span class="comment"> *@par Description:</span>
+<a name="l00254"></a>00254 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00255"></a>00255 <span class="comment"> *&lt;li&gt;This API is used to check the size of memory node.&lt;/li&gt;</span>
+<a name="l00256"></a>00256 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00257"></a>00257 <span class="comment"> *@attention</span>
+<a name="l00258"></a>00258 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00259"></a>00259 <span class="comment"> *&lt;li&gt;The input pPool parameter must be initialized via func LOS_MemInit.&lt;/li&gt;</span>
+<a name="l00260"></a>00260 <span class="comment"> *&lt;li&gt;The input pPtr parameter must be allocated by LOS_MemAlloc or LOS_MemAllocAlign.&lt;/li&gt;</span>
+<a name="l00261"></a>00261 <span class="comment"> *&lt;li&gt;The function will be called by function specified, such as memset or memcpy.&lt;/li&gt;</span>
+<a name="l00262"></a>00262 <span class="comment"> *&lt;li&gt;The feature can be enabled when you set the macro value of LOSCFG_BASE_MEM_NODE_SIZE_CHECK as YES.&lt;/li&gt;</span>
+<a name="l00263"></a>00263 <span class="comment"> *&lt;li&gt;You had better set memory check level as LOS_MEM_CHECK_LEVEL_DISABLE when copy bin file.&lt;/li&gt;</span>
+<a name="l00264"></a>00264 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00265"></a>00265 <span class="comment"> *</span>
+<a name="l00266"></a>00266 <span class="comment"> *@param  pPool              [IN]  A pointer pointed to the memory pool.</span>
+<a name="l00267"></a>00267 <span class="comment"> *@param  pPtr               [IN]  A pointer pointed to the source node.</span>
+<a name="l00268"></a>00268 <span class="comment"> *@param  puwTotalSize       [OUT] A pointer to save total size, must point to valid memory.</span>
+<a name="l00269"></a>00269 <span class="comment"> *@param  puwAvailSize       [OUT] A pointer to save available size, must point to valid memory.</span>
+<a name="l00270"></a>00270 <span class="comment"> *</span>
+<a name="l00271"></a>00271 <span class="comment"> *@retval #OS_ERRNO_MEMCHECK_DISABLED           Memcheck function does not open.</span>
+<a name="l00272"></a>00272 <span class="comment"> *@retval #OS_ERRNO_MEMCHECK_NOT_INIT           Memcheck function does not init.</span>
+<a name="l00273"></a>00273 <span class="comment"> *@retval #OS_ERRNO_MEMCHECK_PARA_NULL          The pool or pPtr is NULL.</span>
+<a name="l00274"></a>00274 <span class="comment"> *@retval #OS_ERRNO_MEMCHECK_OUTSIDE            The pPtr address is not in the reasonable range.</span>
+<a name="l00275"></a>00275 <span class="comment"> *@retval #OS_ERRNO_MEMCHECK_NO_HEAD            Can't find the control head node from pPtr.</span>
+<a name="l00276"></a>00276 <span class="comment"> *@retval #OS_ERRNO_MEMCHECK_WRONG_LEVEL        The memory check level is illegal.</span>
+<a name="l00277"></a>00277 <span class="comment"> *@retval #LOS_OK                                 Success to get total size and available size of the memory node (pPtr).</span>
+<a name="l00278"></a>00278 <span class="comment"> *@par Dependency:</span>
+<a name="l00279"></a>00279 <span class="comment"> *&lt;ul&gt;&lt;li&gt;los_memory.h: the header file that contains the API declaration.&lt;/li&gt;&lt;/ul&gt;</span>
+<a name="l00280"></a>00280 <span class="comment"> *@see LOS_MemCheckLevelSet | LOS_MemCheckLevelGet</span>
+<a name="l00281"></a>00281 <span class="comment"> *@since Huawei LiteOS V100R001C00</span>
+<a name="l00282"></a>00282 <span class="comment"> */</span>
+<a name="l00283"></a>00283 <span class="keyword">extern</span> <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00039_238429227e20dbacf361ec866717209c.html#238429227e20dbacf361ec866717209c" title="Check the size of memory node specified.">LOS_MemNodeSizeCheck</a>(<a class="code" href="a00048_7f319bfc2492a2136964194204e7a8cf.html#7f319bfc2492a2136964194204e7a8cf">VOID</a> *pPool, <a class="code" href="a00048_7f319bfc2492a2136964194204e7a8cf.html#7f319bfc2492a2136964194204e7a8cf">VOID</a> *pPtr, <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> *puwTotalSize, <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> *puwAvailSize);
+<a name="l00284"></a>00284 <span class="comment"></span>
+<a name="l00285"></a>00285 <span class="comment">/**</span>
+<a name="l00286"></a>00286 <span class="comment"> *@ingroup los_memory</span>
+<a name="l00287"></a>00287 <span class="comment"> *@brief Set the memory check level.</span>
+<a name="l00288"></a>00288 <span class="comment"> *</span>
+<a name="l00289"></a>00289 <span class="comment"> *@par Description:</span>
+<a name="l00290"></a>00290 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00291"></a>00291 <span class="comment"> *&lt;li&gt;This API is used to set the memory check level.&lt;/li&gt;</span>
+<a name="l00292"></a>00292 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00293"></a>00293 <span class="comment"> *@attention</span>
+<a name="l00294"></a>00294 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00295"></a>00295 <span class="comment"> *&lt;li&gt;There are three level you can set.&lt;/li&gt;</span>
+<a name="l00296"></a>00296 <span class="comment"> *&lt;li&gt;The legal level are LOS_MEM_CHECK_LEVEL_LOW, LOS_MEM_CHECK_LEVEL_HIGH, LOS_MEM_CHECK_LEVEL_DISABLE.&lt;/li&gt;</span>
+<a name="l00297"></a>00297 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00298"></a>00298 <span class="comment"> *</span>
+<a name="l00299"></a>00299 <span class="comment"> *@param  ucLevel                                  [IN] The level what you want to set.</span>
+<a name="l00300"></a>00300 <span class="comment"> *</span>
+<a name="l00301"></a>00301 <span class="comment"> *@retval #LOS_ERRNO_MEMCHECK_WRONG_LEVEL           The memory check level what you want to set is illegal.</span>
+<a name="l00302"></a>00302 <span class="comment"> *@retval #LOS_OK                                  Success to set the memory check level.</span>
+<a name="l00303"></a>00303 <span class="comment"> *@par Dependency:</span>
+<a name="l00304"></a>00304 <span class="comment"> *&lt;ul&gt;&lt;li&gt;los_memory.h: the header file that contains the API declaration.&lt;/li&gt;&lt;/ul&gt;</span>
+<a name="l00305"></a>00305 <span class="comment"> *@see LOS_MemNodeSizeCheck | LOS_MemCheckLevelGet</span>
+<a name="l00306"></a>00306 <span class="comment"> *@since Huawei LiteOS V100R001C00</span>
+<a name="l00307"></a>00307 <span class="comment"> */</span>
+<a name="l00308"></a>00308 <span class="keyword">extern</span> <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00039_43643645f78ea9ab51a035f908ede300.html#43643645f78ea9ab51a035f908ede300" title="Set the memory check level.">LOS_MemCheckLevelSet</a>(<a class="code" href="a00048_b27e9918b538ce9d8ca692479b375b6a.html#b27e9918b538ce9d8ca692479b375b6a">UINT8</a> ucLevel);
+<a name="l00309"></a>00309 <span class="comment"></span>
+<a name="l00310"></a>00310 <span class="comment">/**</span>
+<a name="l00311"></a>00311 <span class="comment"> *@ingroup los_memory</span>
+<a name="l00312"></a>00312 <span class="comment"> *@brief Get the memory check level.</span>
+<a name="l00313"></a>00313 <span class="comment"> *</span>
+<a name="l00314"></a>00314 <span class="comment"> *@par Description:</span>
+<a name="l00315"></a>00315 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00316"></a>00316 <span class="comment"> *&lt;li&gt;This API is used to get the current memory check level.&lt;/li&gt;</span>
+<a name="l00317"></a>00317 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00318"></a>00318 <span class="comment"> *@attention</span>
+<a name="l00319"></a>00319 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00320"></a>00320 <span class="comment"> *&lt;li&gt;None.&lt;/li&gt;</span>
+<a name="l00321"></a>00321 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00322"></a>00322 <span class="comment"> *</span>
+<a name="l00323"></a>00323 <span class="comment"> *@param  None</span>
+<a name="l00324"></a>00324 <span class="comment"> *</span>
+<a name="l00325"></a>00325 <span class="comment"> *@retval #UINT8           The current memory check level.</span>
+<a name="l00326"></a>00326 <span class="comment"> *@par Dependency:</span>
+<a name="l00327"></a>00327 <span class="comment"> *&lt;ul&gt;&lt;li&gt;los_memory.h: the header file that contains the API declaration.&lt;/li&gt;&lt;/ul&gt;</span>
+<a name="l00328"></a>00328 <span class="comment"> *@see LOS_MemNodeSizeCheck | LOS_MemCheckLevelSet</span>
+<a name="l00329"></a>00329 <span class="comment"> *@since Huawei LiteOS V100R001C00</span>
+<a name="l00330"></a>00330 <span class="comment"> */</span>
+<a name="l00331"></a>00331 <span class="keyword">extern</span> <a class="code" href="a00048_b27e9918b538ce9d8ca692479b375b6a.html#b27e9918b538ce9d8ca692479b375b6a">UINT8</a> <a class="code" href="a00039_ef6394bc2880b37e200c2768cc6e7f4d.html#ef6394bc2880b37e200c2768cc6e7f4d" title="Get the memory check level.">LOS_MemCheckLevelGet</a>(<a class="code" href="a00048_7f319bfc2492a2136964194204e7a8cf.html#7f319bfc2492a2136964194204e7a8cf">VOID</a>);
+<a name="l00332"></a>00332 <span class="preprocessor">#else</span>
+<a name="l00333"></a>00333 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00334"></a>00334 <span class="comment">/**</span>
+<a name="l00335"></a>00335 <span class="comment"> *@ingroup los_memory</span>
+<a name="l00336"></a>00336 <span class="comment"> *@brief calculate heap information.</span>
+<a name="l00337"></a>00337 <span class="comment"> *</span>
+<a name="l00338"></a>00338 <span class="comment"> *@par Description:</span>
+<a name="l00339"></a>00339 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00340"></a>00340 <span class="comment"> *&lt;li&gt;This API is used to calculate heap information.&lt;/li&gt;</span>
+<a name="l00341"></a>00341 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00342"></a>00342 <span class="comment"> *@attention</span>
+<a name="l00343"></a>00343 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00344"></a>00344 <span class="comment"> *&lt;li&gt;One parameter of this interface is a pointer, it should be a correct value, otherwise, the system may be abnormal.&lt;/li&gt;</span>
+<a name="l00345"></a>00345 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00346"></a>00346 <span class="comment"> *</span>
+<a name="l00347"></a>00347 <span class="comment"> *@param  status        [OUT] Type  #LOS_MEM_STATUS* Pointer to the heap status structure to be obtained.</span>
+<a name="l00348"></a>00348 <span class="comment"> *@param  pPool    [IN] Pointer to the memory pool that contains the memory block to be allocated.</span>
+<a name="l00349"></a>00349 <span class="comment"> *</span>
+<a name="l00350"></a>00350 <span class="comment"> *@retval #LOS_OK        The heap status calculate success.</span>
+<a name="l00351"></a>00351 <span class="comment"> *@retval #LOS_NOK       The heap status calculate with some error.</span>
+<a name="l00352"></a>00352 <span class="comment"> *@par Dependency:</span>
+<a name="l00353"></a>00353 <span class="comment"> *&lt;ul&gt;&lt;li&gt;los_memory.h: the header file that contains the API declaration.&lt;/li&gt;&lt;/ul&gt;</span>
+<a name="l00354"></a>00354 <span class="comment"> *@see LOS_MemAlloc | LOS_MemRealloc | LOS_MemFree</span>
+<a name="l00355"></a>00355 <span class="comment"> *@since Huawei LiteOS V100R001C00</span>
+<a name="l00356"></a>00356 <span class="comment"> */</span>
+<a name="l00357"></a>00357 <span class="keyword">extern</span> <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> LOS_MemStatisticsGet(<a class="code" href="a00048_7f319bfc2492a2136964194204e7a8cf.html#7f319bfc2492a2136964194204e7a8cf">VOID</a> *pPool, <a class="code" href="a00001.html">LOS_MEM_STATUS</a> *pstStatus);
+<a name="l00358"></a>00358 
+<a name="l00359"></a>00359 <span class="comment"></span>
+<a name="l00360"></a>00360 <span class="comment">/**</span>
+<a name="l00361"></a>00361 <span class="comment"> *@ingroup los_memory</span>
+<a name="l00362"></a>00362 <span class="comment"> *@brief calculate heap max free block size.</span>
+<a name="l00363"></a>00363 <span class="comment"> *</span>
+<a name="l00364"></a>00364 <span class="comment"> *@par Description:</span>
+<a name="l00365"></a>00365 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00366"></a>00366 <span class="comment"> *&lt;li&gt;This API is used to calculate heap max free block size.&lt;/li&gt;</span>
+<a name="l00367"></a>00367 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00368"></a>00368 <span class="comment"> *@attention</span>
+<a name="l00369"></a>00369 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00370"></a>00370 <span class="comment"> *&lt;li&gt;None.&lt;/li&gt;</span>
+<a name="l00371"></a>00371 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00372"></a>00372 <span class="comment"> *</span>
+<a name="l00373"></a>00373 <span class="comment"> *@param  None.</span>
+<a name="l00374"></a>00374 <span class="comment"> *</span>
+<a name="l00375"></a>00375 <span class="comment"> *@retval #UINT32        The  max free block size.</span>
+<a name="l00376"></a>00376 <span class="comment"> *@par Dependency:</span>
+<a name="l00377"></a>00377 <span class="comment"> *&lt;ul&gt;&lt;li&gt;los_memory.h: the header file that contains the API declaration.&lt;/li&gt;&lt;/ul&gt;</span>
+<a name="l00378"></a>00378 <span class="comment"> *@see LOS_MemAlloc | LOS_MemRealloc | LOS_MemFree</span>
+<a name="l00379"></a>00379 <span class="comment"> *@since Huawei LiteOS V100R001C00</span>
+<a name="l00380"></a>00380 <span class="comment"> */</span>
+<a name="l00381"></a>00381 <span class="keyword">extern</span> <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> LOS_MemGetMaxFreeBlkSize(<a class="code" href="a00048_7f319bfc2492a2136964194204e7a8cf.html#7f319bfc2492a2136964194204e7a8cf">VOID</a> *pPool);
+<a name="l00382"></a>00382 <span class="preprocessor">#endif</span>
+<a name="l00383"></a>00383 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00384"></a>00384 <span class="comment">/**</span>
+<a name="l00385"></a>00385 <span class="comment"> *@ingroup los_memory</span>
+<a name="l00386"></a>00386 <span class="comment"> *@brief Initialize dynamic memory.</span>
+<a name="l00387"></a>00387 <span class="comment"> *</span>
+<a name="l00388"></a>00388 <span class="comment"> *@par Description:</span>
+<a name="l00389"></a>00389 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00390"></a>00390 <span class="comment"> *&lt;li&gt;This API is used to initialize the dynamic memory of a doubly linked list.&lt;/li&gt;</span>
+<a name="l00391"></a>00391 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00392"></a>00392 <span class="comment"> *@attention</span>
+<a name="l00393"></a>00393 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00394"></a>00394 <span class="comment"> *&lt;li&gt;The uwSize parameter value should match the following two conditions : 1) Be less than or equal to the Memory pool size; 2) Be greater than the size of OS_MEM_MIN_POOL_SIZE.&lt;/li&gt;</span>
+<a name="l00395"></a>00395 <span class="comment"> *&lt;li&gt;Call this API when dynamic memory needs to be initialized during the startup of Huawei LiteOS.&lt;/li&gt;</span>
+<a name="l00396"></a>00396 <span class="comment"> *&lt;li&gt;The parameter input must be four byte-aligned.&lt;/li&gt;</span>
+<a name="l00397"></a>00397 <span class="comment"> *&lt;li&gt;The init area [pPool, pPool + uwSize] should not conflict with other pools.&lt;/li&gt;</span>
+<a name="l00398"></a>00398 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00399"></a>00399 <span class="comment"> *</span>
+<a name="l00400"></a>00400 <span class="comment"> *@param pPool          [IN] Starting address of memory.</span>
+<a name="l00401"></a>00401 <span class="comment"> *@param uwSize         [IN] Memory size.</span>
+<a name="l00402"></a>00402 <span class="comment"> *</span>
+<a name="l00403"></a>00403 <span class="comment"> *@retval #LOS_NOK    The dynamic memory fails to be initialized.</span>
+<a name="l00404"></a>00404 <span class="comment"> *@retval #LOS_OK     The dynamic memory is successfully initialized.</span>
+<a name="l00405"></a>00405 <span class="comment"> *@par Dependency:</span>
+<a name="l00406"></a>00406 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00407"></a>00407 <span class="comment"> *&lt;li&gt;los_memory.h: the header file that contains the API declaration.&lt;/li&gt;</span>
+<a name="l00408"></a>00408 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00409"></a>00409 <span class="comment"> *@see None.</span>
+<a name="l00410"></a>00410 <span class="comment"> *@since Huawei LiteOS V100R001C00</span>
+<a name="l00411"></a>00411 <span class="comment"> */</span>
+<a name="l00412"></a>00412 <span class="keyword">extern</span> <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00039_12cd07856bf3dd41d492974744f1d66d.html#12cd07856bf3dd41d492974744f1d66d" title="Initialize dynamic memory.">LOS_MemInit</a>(<a class="code" href="a00048_7f319bfc2492a2136964194204e7a8cf.html#7f319bfc2492a2136964194204e7a8cf">VOID</a> *pPool, <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwSize);
+<a name="l00413"></a>00413 <span class="comment"></span>
+<a name="l00414"></a>00414 <span class="comment">/**</span>
+<a name="l00415"></a>00415 <span class="comment"> *@ingroup los_memory</span>
+<a name="l00416"></a>00416 <span class="comment"> *@brief Allocate dynamic memory.</span>
+<a name="l00417"></a>00417 <span class="comment"> *</span>
+<a name="l00418"></a>00418 <span class="comment"> *@par Description:</span>
+<a name="l00419"></a>00419 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00420"></a>00420 <span class="comment"> *&lt;li&gt;This API is used to allocate a memory block of which the size is specified.&lt;/li&gt;</span>
+<a name="l00421"></a>00421 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00422"></a>00422 <span class="comment"> *@attention</span>
+<a name="l00423"></a>00423 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00424"></a>00424 <span class="comment"> *&lt;li&gt;The input pPool parameter must be initialized via func LOS_MemInit.&lt;/li&gt;</span>
+<a name="l00425"></a>00425 <span class="comment"> *&lt;li&gt;The size of the input parameter uwSize can not be greater than the memory pool size that specified at the second input parameter of LOS_MemInit.&lt;/li&gt;</span>
+<a name="l00426"></a>00426 <span class="comment"> *&lt;li&gt;The size of the input parameter uwSize must be four byte-aligned.&lt;/li&gt;</span>
+<a name="l00427"></a>00427 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00428"></a>00428 <span class="comment"> *</span>
+<a name="l00429"></a>00429 <span class="comment"> *@param  pPool    [IN] Pointer to the memory pool that contains the memory block to be allocated.</span>
+<a name="l00430"></a>00430 <span class="comment"> *@param  uwSize   [IN] Size of the memory block to be allocated (unit: byte).</span>
+<a name="l00431"></a>00431 <span class="comment"> *</span>
+<a name="l00432"></a>00432 <span class="comment"> *@retval #NULL          The memory fails to be allocated.</span>
+<a name="l00433"></a>00433 <span class="comment"> *@retval #VOID*         The memory is successfully allocated with the starting address of the allocated memory block returned.</span>
+<a name="l00434"></a>00434 <span class="comment"> *@par Dependency:</span>
+<a name="l00435"></a>00435 <span class="comment"> *&lt;ul&gt;&lt;li&gt;los_memory.h: the header file that contains the API declaration.&lt;/li&gt;&lt;/ul&gt;</span>
+<a name="l00436"></a>00436 <span class="comment"> *@see LOS_MemRealloc | LOS_MemAllocAlign | LOS_MemFree</span>
+<a name="l00437"></a>00437 <span class="comment"> *@since Huawei LiteOS V100R001C00</span>
+<a name="l00438"></a>00438 <span class="comment"> */</span>
+<a name="l00439"></a>00439 <span class="keyword">extern</span> <a class="code" href="a00048_7f319bfc2492a2136964194204e7a8cf.html#7f319bfc2492a2136964194204e7a8cf">VOID</a> *<a class="code" href="a00039_a43b550f9d738265d363960acfa7872f.html#a43b550f9d738265d363960acfa7872f" title="Allocate dynamic memory.">LOS_MemAlloc</a> (<a class="code" href="a00048_7f319bfc2492a2136964194204e7a8cf.html#7f319bfc2492a2136964194204e7a8cf">VOID</a> *pPool, <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>  size);
+<a name="l00440"></a>00440 <span class="comment"></span>
+<a name="l00441"></a>00441 <span class="comment">/**</span>
+<a name="l00442"></a>00442 <span class="comment"> *@ingroup los_memory</span>
+<a name="l00443"></a>00443 <span class="comment"> *@brief Free dynamic memory.</span>
+<a name="l00444"></a>00444 <span class="comment"> *</span>
+<a name="l00445"></a>00445 <span class="comment"> *@par Description:</span>
+<a name="l00446"></a>00446 <span class="comment"> *&lt;li&gt;This API is used to free specified dynamic memory that has been allocated.&lt;/li&gt;</span>
+<a name="l00447"></a>00447 <span class="comment"> *@attention</span>
+<a name="l00448"></a>00448 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00449"></a>00449 <span class="comment"> *&lt;li&gt;The input pPool parameter must be initialized via func LOS_MemInit.&lt;/li&gt;</span>
+<a name="l00450"></a>00450 <span class="comment"> *&lt;li&gt;The input pMem parameter must be allocated by LOS_MemAlloc or LOS_MemAllocAlign or LOS_MemRealloc.&lt;/li&gt;</span>
+<a name="l00451"></a>00451 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00452"></a>00452 <span class="comment"> *</span>
+<a name="l00453"></a>00453 <span class="comment"> *@param  pPool  [IN] Pointer to the memory pool that contains the dynamic memory block to be freed.</span>
+<a name="l00454"></a>00454 <span class="comment"> *@param  pMem   [IN] Starting address of the memory block to be freed.</span>
+<a name="l00455"></a>00455 <span class="comment"> *</span>
+<a name="l00456"></a>00456 <span class="comment"> *@retval #LOS_NOK          The memory block fails to be freed</span>
+<a name="l00457"></a>00457 <span class="comment"> *@retval #LOS_OK           The memory block is successfully freed.</span>
+<a name="l00458"></a>00458 <span class="comment"> *@par Dependency:</span>
+<a name="l00459"></a>00459 <span class="comment"> *&lt;ul&gt;&lt;li&gt;los_memory.h: the header file that contains the API declaration.&lt;/li&gt;&lt;/ul&gt;</span>
+<a name="l00460"></a>00460 <span class="comment"> *@see LOS_MemAlloc | LOS_MemRealloc | LOS_MemAllocAlign</span>
+<a name="l00461"></a>00461 <span class="comment"> *@since Huawei LiteOS V100R001C00</span>
+<a name="l00462"></a>00462 <span class="comment"> */</span>
+<a name="l00463"></a>00463 <span class="keyword">extern</span> <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00039_464ca72bccefdfc4066884e68460697f.html#464ca72bccefdfc4066884e68460697f" title="Free dynamic memory.">LOS_MemFree</a>(<a class="code" href="a00048_7f319bfc2492a2136964194204e7a8cf.html#7f319bfc2492a2136964194204e7a8cf">VOID</a> *pPool, <a class="code" href="a00048_7f319bfc2492a2136964194204e7a8cf.html#7f319bfc2492a2136964194204e7a8cf">VOID</a> *pMem);
+<a name="l00464"></a>00464 <span class="comment"></span>
+<a name="l00465"></a>00465 <span class="comment">/**</span>
+<a name="l00466"></a>00466 <span class="comment"> *@ingroup los_memory</span>
+<a name="l00467"></a>00467 <span class="comment"> *@brief Re-allocate a memory block.</span>
+<a name="l00468"></a>00468 <span class="comment"> *</span>
+<a name="l00469"></a>00469 <span class="comment"> *@par Description:</span>
+<a name="l00470"></a>00470 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00471"></a>00471 <span class="comment"> *&lt;li&gt;This API is used to allocate a new memory block of which the size is specified by size if the original memory block size is insufficient. The new memory block will copy the data in the original memory block of which the address is specified by ptr. The size of the new memory block determines the maximum size of data to be copied. After the new memory block is created, the original one is freed.&lt;/li&gt;</span>
+<a name="l00472"></a>00472 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00473"></a>00473 <span class="comment"> *@attention</span>
+<a name="l00474"></a>00474 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00475"></a>00475 <span class="comment"> *&lt;li&gt;The input pPool parameter must be initialized via func LOS_MemInit.&lt;/li&gt;</span>
+<a name="l00476"></a>00476 <span class="comment"> *&lt;li&gt;The input pPtr parameter must be allocated by LOS_MemAlloc.&lt;/li&gt;</span>
+<a name="l00477"></a>00477 <span class="comment"> *&lt;li&gt;The size of the input parameter uwSize can not be greater than the memory pool size that specified at the second input parameter of LOS_MemInit.&lt;/li&gt;</span>
+<a name="l00478"></a>00478 <span class="comment"> *&lt;li&gt;The size of the input parameter uwSize must be aligned as follows: 1) if the pPtr is allocated by LOS_MemAlloc, it must be four byte-aligned; 2) if the pPtr is allocated by LOS_MemAllocAlign, it must be aligned with the size of the input parameter uwBoundary of LOS_MemAllocAlign.&lt;/li&gt;</span>
+<a name="l00479"></a>00479 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00480"></a>00480 <span class="comment"> *</span>
+<a name="l00481"></a>00481 <span class="comment"> *@param  pPool      [IN] Pointer to the memory pool that contains the original and new memory blocks.</span>
+<a name="l00482"></a>00482 <span class="comment"> *@param  pPtr       [IN] Address of the original memory block.</span>
+<a name="l00483"></a>00483 <span class="comment"> *@param  uwSize     [IN] Size of the new memory block.</span>
+<a name="l00484"></a>00484 <span class="comment"> *</span>
+<a name="l00485"></a>00485 <span class="comment"> *@retval #NULL          The memory fails to be re-allocated.</span>
+<a name="l00486"></a>00486 <span class="comment"> *@retval #VOID*         The memory is successfully re-allocated with the starting address of the new memory block returned.</span>
+<a name="l00487"></a>00487 <span class="comment"> *@par Dependency:</span>
+<a name="l00488"></a>00488 <span class="comment"> *&lt;ul&gt;&lt;li&gt;los_memory.h: the header file that contains the API declaration.&lt;/li&gt;&lt;/ul&gt;</span>
+<a name="l00489"></a>00489 <span class="comment"> *@see LOS_MemAlloc | LOS_MemAllocAlign | LOS_MemFree</span>
+<a name="l00490"></a>00490 <span class="comment"> *@since Huawei LiteOS V100R001C00</span>
+<a name="l00491"></a>00491 <span class="comment"> */</span>
+<a name="l00492"></a>00492 <span class="keyword">extern</span> <a class="code" href="a00048_7f319bfc2492a2136964194204e7a8cf.html#7f319bfc2492a2136964194204e7a8cf">VOID</a> *<a class="code" href="a00039_37bf8c90ca16c32a883f920171337123.html#37bf8c90ca16c32a883f920171337123" title="Re-allocate a memory block.">LOS_MemRealloc</a>(<a class="code" href="a00048_7f319bfc2492a2136964194204e7a8cf.html#7f319bfc2492a2136964194204e7a8cf">VOID</a> *pPool, <a class="code" href="a00048_7f319bfc2492a2136964194204e7a8cf.html#7f319bfc2492a2136964194204e7a8cf">VOID</a> *pPtr, <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwSize);
+<a name="l00493"></a>00493 <span class="comment"></span>
+<a name="l00494"></a>00494 <span class="comment">/**</span>
+<a name="l00495"></a>00495 <span class="comment"> *@ingroup los_memory</span>
+<a name="l00496"></a>00496 <span class="comment"> *@brief Allocate aligned memory.</span>
+<a name="l00497"></a>00497 <span class="comment"> *</span>
+<a name="l00498"></a>00498 <span class="comment"> *@par Description:</span>
+<a name="l00499"></a>00499 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00500"></a>00500 <span class="comment"> *&lt;li&gt;This API is used to allocate memory blocks of specified size and of which the starting addresses are aligned on a specified boundary.&lt;/li&gt;</span>
+<a name="l00501"></a>00501 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00502"></a>00502 <span class="comment"> *@attention</span>
+<a name="l00503"></a>00503 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00504"></a>00504 <span class="comment"> *&lt;li&gt;The input pPool parameter must be initialized via func LOS_MemInit.&lt;/li&gt;</span>
+<a name="l00505"></a>00505 <span class="comment"> *&lt;li&gt;The size of the input parameter uwSize can not be greater than the memory pool size that specified at the second input parameter of LOS_MemInit.&lt;/li&gt;</span>
+<a name="l00506"></a>00506 <span class="comment"> *&lt;li&gt;The alignment parameter value must be a power of 2 with the minimum value being 4.&lt;/li&gt;</span>
+<a name="l00507"></a>00507 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00508"></a>00508 <span class="comment"> *</span>
+<a name="l00509"></a>00509 <span class="comment"> *@param  pPool       [IN] Pointer to the memory pool that contains the memory blocks to be allocated.</span>
+<a name="l00510"></a>00510 <span class="comment"> *@param  uwSize      [IN] Size of the memory to be allocated.</span>
+<a name="l00511"></a>00511 <span class="comment"> *@param  uwBoundary  [IN] Boundary on which the memory is aligned.</span>
+<a name="l00512"></a>00512 <span class="comment"> *</span>
+<a name="l00513"></a>00513 <span class="comment"> *@retval #NULL          The memory fails to be allocated.</span>
+<a name="l00514"></a>00514 <span class="comment"> *@retval #VOID*         The memory is successfully allocated with the starting address of the allocated memory returned.</span>
+<a name="l00515"></a>00515 <span class="comment"> *@par Dependency:</span>
+<a name="l00516"></a>00516 <span class="comment"> *&lt;ul&gt;&lt;li&gt;los_memory.h: the header file that contains the API declaration.&lt;/li&gt;&lt;/ul&gt;</span>
+<a name="l00517"></a>00517 <span class="comment"> *@see LOS_MemAlloc | LOS_MemRealloc | LOS_MemFree</span>
+<a name="l00518"></a>00518 <span class="comment"> *@since Huawei LiteOS V100R001C00</span>
+<a name="l00519"></a>00519 <span class="comment"> */</span>
+<a name="l00520"></a>00520 <span class="keyword">extern</span> <a class="code" href="a00048_7f319bfc2492a2136964194204e7a8cf.html#7f319bfc2492a2136964194204e7a8cf">VOID</a> *<a class="code" href="a00039_53110f3909414b00d8562902d029a40d.html#53110f3909414b00d8562902d029a40d" title="Allocate aligned memory.">LOS_MemAllocAlign</a> (<a class="code" href="a00048_7f319bfc2492a2136964194204e7a8cf.html#7f319bfc2492a2136964194204e7a8cf">VOID</a> *pPool, <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwSize, <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwBoundary);
+<a name="l00521"></a>00521 
+<a name="l00522"></a>00522 <span class="preprocessor">#if (LOSCFG_MEM_MUL_POOL == YES)</span>
+<a name="l00523"></a>00523 <span class="preprocessor"></span><span class="comment">/**</span>
+<a name="l00524"></a>00524 <span class="comment"> *@ingroup los_memory</span>
+<a name="l00525"></a>00525 <span class="comment"> *@brief Deinitialize dynamic memory.</span>
+<a name="l00526"></a>00526 <span class="comment"> *</span>
+<a name="l00527"></a>00527 <span class="comment"> *@par Description:</span>
+<a name="l00528"></a>00528 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00529"></a>00529 <span class="comment"> *&lt;li&gt;This API is used to deinitialize the dynamic memory of a doubly linked list.&lt;/li&gt;</span>
+<a name="l00530"></a>00530 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00531"></a>00531 <span class="comment"> *</span>
+<a name="l00532"></a>00532 <span class="comment"> *@param pPool          [IN] Starting address of memory.</span>
+<a name="l00533"></a>00533 <span class="comment"> *</span>
+<a name="l00534"></a>00534 <span class="comment"> *@retval #LOS_NOK    The dynamic memory fails to be deinitialized.</span>
+<a name="l00535"></a>00535 <span class="comment"> *@retval #LOS_OK     The dynamic memory is successfully deinitialized.</span>
+<a name="l00536"></a>00536 <span class="comment"> *@par Dependency:</span>
+<a name="l00537"></a>00537 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00538"></a>00538 <span class="comment"> *&lt;li&gt;los_memory.h: the header file that contains the API declaration.&lt;/li&gt;</span>
+<a name="l00539"></a>00539 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00540"></a>00540 <span class="comment"> *@see None.</span>
+<a name="l00541"></a>00541 <span class="comment"> *@since Huawei LiteOS V100R001C00</span>
+<a name="l00542"></a>00542 <span class="comment"> */</span>
+<a name="l00543"></a>00543 <span class="keyword">extern</span> <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00039_e22b941d5128d634783d213cfec51318.html#e22b941d5128d634783d213cfec51318" title="Deinitialize dynamic memory.">LOS_MemDeInit</a>(<a class="code" href="a00048_7f319bfc2492a2136964194204e7a8cf.html#7f319bfc2492a2136964194204e7a8cf">VOID</a> *pPool);
+<a name="l00544"></a>00544 <span class="comment"></span>
+<a name="l00545"></a>00545 <span class="comment">/**</span>
+<a name="l00546"></a>00546 <span class="comment"> *@ingroup los_memory</span>
+<a name="l00547"></a>00547 <span class="comment"> *@brief Print infomation about all pools.</span>
+<a name="l00548"></a>00548 <span class="comment"> *</span>
+<a name="l00549"></a>00549 <span class="comment"> *@par Description:</span>
+<a name="l00550"></a>00550 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00551"></a>00551 <span class="comment"> *&lt;li&gt;This API is used to print infomation about all pools.&lt;/li&gt;</span>
+<a name="l00552"></a>00552 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00553"></a>00553 <span class="comment"> *</span>
+<a name="l00554"></a>00554 <span class="comment"> *@retval #UINT32   The pool number.</span>
+<a name="l00555"></a>00555 <span class="comment"> *@par Dependency:</span>
+<a name="l00556"></a>00556 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00557"></a>00557 <span class="comment"> *&lt;li&gt;los_memory.h: the header file that contains the API declaration.&lt;/li&gt;</span>
+<a name="l00558"></a>00558 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00559"></a>00559 <span class="comment"> *@see None.</span>
+<a name="l00560"></a>00560 <span class="comment"> *@since Huawei LiteOS V100R001C00</span>
+<a name="l00561"></a>00561 <span class="comment"> */</span>
+<a name="l00562"></a>00562 <span class="keyword">extern</span> <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00039_445a593d9f9194921b29faf38cfaf534.html#445a593d9f9194921b29faf38cfaf534" title="Print infomation about all pools.">LOS_MemPoolList</a>(<a class="code" href="a00048_7f319bfc2492a2136964194204e7a8cf.html#7f319bfc2492a2136964194204e7a8cf">VOID</a>);
+<a name="l00563"></a>00563 <span class="preprocessor">#endif</span>
+<a name="l00564"></a>00564 <span class="preprocessor"></span>
+<a name="l00565"></a>00565 
+<a name="l00566"></a>00566 <span class="preprocessor">#ifdef __cplusplus</span>
+<a name="l00567"></a>00567 <span class="preprocessor"></span><span class="preprocessor">#if __cplusplus</span>
+<a name="l00568"></a>00568 <span class="preprocessor"></span>}
+<a name="l00569"></a>00569 <span class="preprocessor">#endif </span><span class="comment">/* __cplusplus */</span>
+<a name="l00570"></a>00570 <span class="preprocessor">#endif </span><span class="comment">/* __cplusplus */</span>
+<a name="l00571"></a>00571 
+<a name="l00572"></a>00572 <span class="preprocessor">#endif </span><span class="comment">/* _LOS_MEMORY_H */</span>
+</pre>
+   </div>
+  </div> 
+  <hr size="1" /> 
+ </body>
+</html>
