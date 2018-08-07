@@ -110,9 +110,10 @@ module.exports = {
               title: "参与贡献",
               collapsable: true,
               children: [
-                "./write-standard",
+                "./contribute-guide",
+                "./code-info",
                 "./code-standard",
-                "./contribute-guide"
+                "./write-standard"
               ]
             }
           ],
