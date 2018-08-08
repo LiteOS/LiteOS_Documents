@@ -15,7 +15,7 @@ module.exports = {
   themeConfig: {
     repo: "LiteOS/LiteOS_Documents",
     repoLabel: "Github",
-    docsDir: "doc",
+    docsDir: "docs",
     editLinks: true,
     locales: {
       "/": {
