@@ -77,7 +77,7 @@ A static memory pool consists of a control block and several memory blocks of sa
 
 Static memory Schematic  
 
-![](./meta/DevGuide_en/pic12.jpg)
+![](./pic/mem-mech.png)  
 
 ## Dynamic Memory
 
