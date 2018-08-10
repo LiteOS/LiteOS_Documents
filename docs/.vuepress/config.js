@@ -26,22 +26,35 @@ module.exports = {
         algolia: {},
         nav: [
           {
+            text: "入门",
+            items: [
+              {
+                text: "LiteOS 介绍",
+                link: "/quick-start/intro/"
+              },
+              {
+                text: "快速上手",
+                link: "/quick-start/demo/"
+              },
+              {
+                text: "参与贡献",
+                link: "/quick-start/contribute/"
+              }
+            ]
+          },
+          {
             text: "学习",
             items: [
               {
-                text: "快速入门",
-                link: "/quick-start/"
-              },
-              {
-                text: "内核手册",
+                text: "LiteOS Kernel",
                 link: "/kernel/"
               },
               {
-                text: "组件指南",
+                text: "LiteOS SDK",
                 link: "/sdk/"
               },
               {
-                text: "系统移植",
+                text: "LiteOS 移植",
                 link: "/porting/"
               }
             ]
@@ -87,36 +100,23 @@ module.exports = {
           }
         ],
         sidebar: {
-          "/quick-start/": [
-            {
-              title: "入门",
-              collapsable: false,
-              children: [
-                "",
-                "./terminology",
-                "./why-use-the-rtos",
-                "./why-select-huawei-liteos",
-                "./how-to-study-liteos"
-              ]
-            },
-            {
-              title: "快速上手",
-              collapsable: false,
-              children: [
-                "./a-simple-blink-demo",
-                "./a-comprehensive-smoke-demo"
-              ]
-            },
-            {
-              title: "参与贡献",
-              collapsable: false,
-              children: [
-                "./contribute-guide",
-                "./code-info",
-                "./code-standard",
-                "./write-standard"
-              ]
-            }
+          "/quick-start/intro/": [
+            "",
+            "./terminology",
+            "./why-use-the-rtos",
+            "./why-select-huawei-liteos",
+            "./how-to-study-liteos"
+          ],
+          "/quick-start/demo/": [
+            "",
+            "./a-simple-blink-demo",
+            "./a-comprehensive-smoke-demo"
+          ],
+          "/quick-start/contribute/": [
+            "",
+            "./code-standard",
+            "./write-standard",
+            "./code-info"
           ],
           "/kernel/": [
             {
