@@ -1,261 +1,80 @@
-# Semaphore
+# Overview  
 
-[[toc]]  
+Huawei LiteOS is a real-time kernel–based lightweight operating system developed by Huawei for the IoT. The basic kernel of Huawei LiteOS is compatible with basic operating system components, such as task, memory, time, interrupt, queue, and event management components, communication mechanisms, and timers, to better support low power consumption scenarios. In addition, the basic kernel enables time alignment of timers using the tickless mechanism.  
 
-## Overview
+Focusing on the NB-IoT market, Huawei LiteOS has helped partners build open source IoT ecosystems in technology, ecosystem, solution, commercial use, and other aspects. Currently, Huawei LiteOS has cooperated with more than 30 MCU and solution partners to launch a series of open source development kits and industry solutions, which help customers quickly launch IoT terminals and services. Such customers are involved in multiple industries, such as meter reading, parking, street lamp, environmental protection, bicycle sharing, and logistics. Moreover, Huawei LiteOS provides developers with a one-stop software platform, lowering development requirements and improving development efficiency.  
 
-### Basic Concept
+## Highlights of Huawei LiteOS Kernel
 
-A semaphore is a mechanism used for communication within a kernel, to achieve synchronization or mutual exclusion of critical resources between tasks.  
+Huawei LiteOS is a lightweight real-time operating system.  
 
-In a multi-task system, it is necessary to synchronize one task with another or prevent tasks battling for critical resources. Semaphores are a good choice to serve that purpose.  
+![](./pic/overview-arch.png)  
 
-Typically, a numerical value of a signal is used to correspond to the number of available resources. It means mutually exclusive resources remained that could be occupied. The meaning of its value is divided into two kinds of situations:  
+Basic kernel of Huawei LiteOS is the most tidy code of operating system. It contains operating system components based task management, memory management, time management, communication mechanism, interrupt management, queue management, event management, timer, etc. It can run independently.  
 
-- 0, it means the post operation that is not accumulated, and it is possible to block tasks on this signal.
+- Highlight real-time and stable
 
-- Positive number, it means there is one or several release operations which are posted.
+- Ultra-small kernel, basic kernel size of less than 10 KB
 
-The differences to use between semaphore for the purpose of synchronization and semaphore for the purpose of mutex are:  
+- Low power consumption
 
-- If a semaphore is used as a mutex, it is created with a full internal counter. Each time a task waits on critical resources, it is assigned the semaphore and the counter value is decreased by 1. When the counter value drops to 0, subsequent tasks are blocked from getting the semaphore.
+- Capable of Static function compaction
 
-- If a semaphore is used for task synchronization, it is created with an empty counter. When task 1 attempts to get the semaphore, it is blocked because the counter has reached the maximum value. Task 1 will enter Ready or Running state after task 2 releases the semaphore, thereby achieving task synchronization.
+## Module Introduction
 
-### Operation Mechanism
+### Task
 
-**Semaphore Control Block**
+Creates, deletes, delays, suspends, and resumes tasks, and can lock or unlock [task](./task.md) scheduling. High priority tasks preempt resources from low priority ones. Tasks of the same priority share resources in a round robin setup using time slicing.  
 
-```c  
-/**
- * @ingroup los_sem
- * Semaphore control structure.
- */
-typedef struct
-{
-    UINT8           usSemStat;          /**whether to use flag bit*/
-    UINT16          uwSemCount;         /**semaphore quantity index*/
-    UINT32UINT16    usMaxSemCount;      /**Maximum number of semaphores*/
-    UINT32          usSemID;            /**semaphore count*/
-    LOS_DL_LIST     stSemList;          /**suspend the task blocked on the semaphore*/
-}SEM_CB_S;
-```  
+### Task Synchronization
 
-**Semaphore Operation Principle**
+- **Semaphore**: creates, deletes, pends on, and releases [semaphores](./semaphore.md).  
 
-During semaphore initialization, memory is allocated to N semaphores. N is configurable by users and limited by memory. All semaphores are initialized and added to the linked list of semaphores that are not in use.  
+- **Mutex**: creates, deletes, pends on, and releases [mutexes](./mutex.md).  
 
-During semaphore creation, a semaphore is obtained from the linked list of semaphores that are not in use and the initial value of the semaphore is set.  
+### Hardware Related Functions
 
-If the internal counter of a semaphore is more than 0 when the semaphore is pended, the counter value is decreased by 1 and the pending succeeds. If the counter value is 0, tasks are blocked from getting the semaphore and wait for other tasks to post the semaphore. The timeout interval of waiting on the semaphore can be configured. If a task is blocked from getting the semaphore, suspend the task to the tail of the queue of tasks waiting on the semaphore.  
+Provides the following functions:
 
-If no tasks are waiting on a semaphore, the counter value is increased by 1 and the semaphore is posted. Otherwise, wake up the first task in the queue of tasks waiting on the semaphore.  
+- **Interrupt**: Creates, deletes, enables, and disables [interrupts](./interrupt.md); clears interrupt request flags.  
 
-During semaphore deletion, the semaphore that is in use is set to be not in use and is added to the linked list of semaphores that are not in use.  
+- **Timer**: Creates, deletes, starts, and stops [timers](./swtmr.md).  
 
-A semaphore allows multiple tasks to access the same resource at the same time but sets a limit on the number of the tasks. Tasks are not allowed to access the resource if the maximum number of the tasks that can access the resource is reached and need to wait for one task to release the semaphore.  
+### Inter-Process Communication (IPC)
 
-Working principle of semaphore  
+Provides the following functions:
 
-![](./pic/semaphore-operation.png)  
+- **Event**: Reads and writes [events](./event.md).  
 
-## Development Guidelines
+- **Message queue**: Creates, deletes, reads from, and writes into message [queues](./queue.md).  
 
-### Usage Scenarios
+### Time Management
 
-Semaphores find their use in locking resources, counting resources, and maintaining synchronization between threads or between threads and interrupts.  
+- **System time**: generated when an output pulse of a timer/counter triggers an interrupt.  
 
-### Functions
+- **Tick time**: the basic time unit used in OS scheduling. The tick length is user configurable. Typically, it is determined by the system clock speed and represented in the form of ticks per second.  
 
-The semaphore module provides the following functions:  
+- **Software timer**: The timer length is measured in ticks. The Timer_Callback function (a function used to process timer expiry) is called when a soft tick interrupt is generated.  
 
-| Function Category               | API                   | Description                |
-|---------------------------------|-----------------------|----------------------------|
-| Semaphore creation and deletion | `LOS_SemCreate`       | Creates a semaphore        |
-|                                 | `LOS_BinarySemCreate` | Creates a binary semaphore |
-|                                 | `LOS_SemDelete`       | Deletes a semaphore        |
-| Semaphore pend and post         | `LOS_SemPend`         | Pends on a semaphore       |
-|                                 | `LOS_SemPost`         | Posts a semaphore          |
+### Memory Management
 
-### Development Process
+- Provide two algorithms of **dynamic memory** and **static memory**. Allocates or frees [memory](./memory.md) statically using the Membox algorithm or dynamically using the SLAB algorithm and DLINK algorithm.  
 
-Semaphore typical development process:  
+- Provides memory statistics, cross-border detection memory.  
 
-1. Call the `LOS_SemCreate` API to create a semaphore.
+## Huawei LiteOS Kernel Supported Cores
 
-2. Call the `LOS_SemPend` to pend on a semaphore.
+Cores supported by Huawei LiteOS
 
- Huawei LiteOS takes actions depending on the semaphore pend mode.
+| Core | Chip |  
+| - | :- |  
+| Cortex-A7 | STM32L053R8Tx ATSAMD21G18A ATSAMD21J18A ATSAMR21G18A EFM32HG322F64 MKL26Z128 MKW41Z512 LPC824M201JHI33 MM32L073PF nRF51822 NANO130KE3BN |  
+| Cortex-M3 | K3V3 and K3V3+STM32F103RB ATSAM4SD32C EFM32GG990F1024 GD32F103VCT6 GD32150R8 GD32F190R8 GD32F207VC MM32F103CBT6 MM32L373PS |
+| Cortex-M4 | STM32F411, STM32F412, STM32L476, STM32F429, and STM476STM32F411RE STM32F412ZG STM32F429ZI STM32F429IG STM32L476RG EFM32PG1B200F256GM48 GD32F450IK CC3220SF LPC54114j256BD64 nRF52840 nRF52832 NUC472HI8AE ATSAMG55J19 ADuCM4050LF |
+| Cortex-M7 | K3V5 and STM32F746STM32F746ZG ATSAME70Q21 |
 
- - **Non-blocking mode**: If the maximum number of tasks allowed by the semaphore is not reached, the request for the semaphore is fulfilled. Otherwise, the request for the semaphore is rejected.
+## Constraints
 
- - **Permanent blocking mode**: The requesting task waits endlessly for a semaphore and the task enters Blocked state in the meantime. If the maximum number of tasks allowed by the semaphore is not reached, the request for the semaphore is fulfilled. Otherwise, the operating system blocks the requesting task until a task releases the semaphore. It then selects the ready task with the highest priority to be executed.  
+- Both Huawei LiteOS interfaces and CMSIS interfaces are supported, but hybrid use of them may lead to unpredictable results. (For example, a CMSIS interface is used for requesting semaphores while a Huawei LiteOS interface is used for releasing semaphores.)  
 
- - **Temporary blocking mode**: the requesting task waits for a specified period of time for a semaphore and enters Blocked state in the meantime. If the maximum number of tasks allowed by the semaphore is not reached, the request for the semaphore is fulfilled. Otherwise, the operating system blocks the requesting task until a task releases the semaphore or the timeout period elapses. It then selects the ready task with the highest priority to be executed.  
-
-3. Call the `LOS_SemPost` API to post a semaphore.
-
- - If there are tasks blocked from acquiring the semaphore, the operating system wakes up the first blocked task. The woken-up task then enters Ready state and is scheduled.
-
- - If there are no tasks blocked from acquiring the semaphore, the operating system posts the semaphore.
-
-4. Call the `LOS_SemDelete` API to delete a semaphore.
-
-## Precautions
-
-- As interrupts cannot be blocked, permanent blocking and temporary blocking are not allowed for interrupts during the request for a semaphore.  
-
-## Programming Example
-
-### Example Description
-
-In the programming example, the following activities will happen:  
-
-1. The `Example_TaskEntry` task is executed to create a semaphore. Task scheduling is locked. Two tasks `Example_SemTask1` and `Example_SemTask2` are created, where `Example_SemTask2` takes a higher priority than `Example_SemTask1`. Then, task scheduling is unlocked. `Example_TaskEntry` releases the semaphore.
-
-2. `Example_SemTask2` is granted the semaphore, scheduled, and sent to sleep mode for 20 ticks. While `Example_SemTask2` is delayed, `Example_SemTask1` is woken up.
-
-3. `Example_SemTask1` pends on the semaphore and is willing to wait the semaphore for 10 ticks to become free. At the time when `Example_SemTask1` requests the semaphore, the semaphore is held by `Example_SemTask2` and consequently `Example_SemTask1` is suspended. After the 10-tick wait period elapses, the semaphore is still out of the reach of `Example_SemTask1`, and `Example_SemTask1` is woken up, attempting to wait permanently for the semaphore. The wait for semaphore switches `Example_SemTask1` to suspended state.
-
-4. After 20 ticks, `Example_SemTask2` is woken up and releases the semaphore. `Example_SemTask1` is scheduled, granted the semaphore, and finally releases it.
-
-5. 40 ticks after `Example_SemTask1` is finished, Example_TaskEntry is woken up, deletes the semaphore and then the two tasks.
-
-### Example Code
-
-Prerequisites  
-
-- The `LOSCFG_BASE_IPC_SEM` parameter in the `los_config.h` file is set to YES.
-
-- The `LOSCFG_BASE_IPC_SEM_LIMIT` parameter in the `los_config.h` file is set to the maximum number (for example, 1024) of semaphores that the operating system allows.
-
-The code is as follows:  
-
-```c
-/* task pid */
-static UINT32 g_TestTaskID01, g_TestTaskID02;
-/* sem id */
-static UINT32 g_usSemID;
-
-static VOID Example_SemTask1(VOID)
-{
-    UINT32 uwRet;
-
-    dprintf("Example_SemTask1 try get sem g_usSemID ,timeout 10 ticks.\n");
-    /* get sem, timeout is 10 ticks */
-    uwRet = LOS_SemPend(g_usSemID, 10);
-
-    /* get sem ok */
-    if (LOS_OK == uwRet)
-    {
-        LOS_SemPost(g_usSemID);
-        return;
-    }
-    /* timeout, get sem fail */
-    if (LOS_ERRNO_SEM_TIMEOUT == uwRet)
-    {
-        dprintf("Example_SemTask1 timeout and try get sem g_usSemID wait forever.\n");
-        /* get sem wait forever, LOS_SemPend return until has been get mux */
-        uwRet = LOS_SemPend(g_usSemID, LOS_WAIT_FOREVER);
-        if (LOS_OK == uwRet)
-        {
-            dprintf("Example_SemTask1 wait_forever and got sem g_usSemID success.\n");
-            LOS_SemPost(g_usSemID);
-            uwRet = LOS_InspectStatusSetByID(LOS_INSPECT_SEM, LOS_INSPECT_STU_SUCCESS);
-            if (LOS_OK != uwRet)
-            {
-                dprintf("Set Inspect Status Err\n");
-            }
-            return;
-        }
-    }
-    return;
-}
-
-static VOID Example_SemTask2(VOID)
-{
-    UINT32 uwRet;
-    dprintf("Example_SemTask2 try get sem g_usSemID wait forever.\n");
-    /* wait forever get sem */
-    uwRet = LOS_SemPend(g_usSemID, LOS_WAIT_FOREVER);
-
-    if(LOS_OK == uwRet)
-    {
-        dprintf("Example_SemTask2 get sem g_usSemID and then delay 20ticks .\n");
-    }
-
-    /* task delay 20 ticks */
-    LOS_TaskDelay(20);
-
-    dprintf("Example_SemTask2 post sem g_usSemID .\n");
-    /* release sem */
-    LOS_SemPost(g_usSemID);
-
-    return;
-}
-
-UINT32 Example_Semphore(VOID)
-{
-    UINT32 uwRet = LOS_OK;
-    TSK_INIT_PARAM_S stTask1;
-    TSK_INIT_PARAM_S stTask2;
-
-   /* create sem */
-    LOS_SemCreate(0, &g_usSemID);
-
-    /* lock task schedue */
-    LOS_TaskLock();
-
-    /* create task1 */
-    memset(&stTask1, 0, sizeof(TSK_INIT_PARAM_S));
-    stTask1.pfnTaskEntry = (TSK_ENTRY_FUNC)Example_SemTask1;
-    stTask1.pcName       = "MutexTsk1";
-    stTask1.uwStackSize  = LOSCFG_BASE_CORE_TSK_IDLE_STACK_SIZE;
-    stTask1.usTaskPrio   = TASK_PRIO_TEST;
-    uwRet = LOS_TaskCreate(&g_TestTaskID01, &stTask1);
-    if (uwRet != LOS_OK)
-    {
-        dprintf("task1 create failed .\n");
-        return LOS_NOK;
-    }
-
-    /* create task2 */
-    memset(&stTask2, 0, sizeof(TSK_INIT_PARAM_S));
-    stTask2.pfnTaskEntry = (TSK_ENTRY_FUNC)Example_SemTask2;
-    stTask2.pcName       = "MutexTsk2";
-    stTask2.uwStackSize  = LOSCFG_BASE_CORE_TSK_IDLE_STACK_SIZE;
-    stTask2.usTaskPrio   = (TASK_PRIO_TEST - 1);
-    uwRet = LOS_TaskCreate(&g_TestTaskID02, &stTask2);
-    if (uwRet != LOS_OK)
-    {
-        dprintf("task2 create failed .\n");
-
-        /* delete task 1 */
-        if (LOS_OK != LOS_TaskDelete(g_TestTaskID01))
-        {
-            dprintf("task1 delete failed .\n");
-        }
-
-        return LOS_NOK;
-    }
-
-    /* unlock task schedue */
-    LOS_TaskUnlock();
-
-    uwRet = LOS_SemPost(g_usSemID);
-
-    /* task delay 40 ticks */
-    LOS_TaskDelay(40);
-
-    /* delete sem */
-    LOS_SemDelete(g_usSemID);
-
-    return uwRet;
-}
-```
-
-### Verification
-
-The verification result is as follows:  
-
-![](./pic/semaphore-output.png)  
+- Use only Huawei LiteOS interfaces for driver development. CMSIS interfaces are recommended for app development.
