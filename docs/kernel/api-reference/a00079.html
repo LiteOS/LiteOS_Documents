@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312" /> 
+  <title>los_err.h源文件</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head>
+ <body> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top">   
+   <h1>los_err.h</h1>
+   <a href="a00030.html">浏览该文件的文档。</a>
+   <div class="fragment">
+    <pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*----------------------------------------------------------------------------</span>
+<a name="l00002"></a>00002 <span class="comment"> * Copyright (c) &lt;2013-2015&gt;, &lt;Huawei Technologies Co., Ltd&gt;</span>
+<a name="l00003"></a>00003 <span class="comment"> * All rights reserved.</span>
+<a name="l00004"></a>00004 <span class="comment"> * Redistribution and use in source and binary forms, with or without modification,</span>
+<a name="l00005"></a>00005 <span class="comment"> * are permitted provided that the following conditions are met:</span>
+<a name="l00006"></a>00006 <span class="comment"> * 1. Redistributions of source code must retain the above copyright notice, this list of</span>
+<a name="l00007"></a>00007 <span class="comment"> * conditions and the following disclaimer.</span>
+<a name="l00008"></a>00008 <span class="comment"> * 2. Redistributions in binary form must reproduce the above copyright notice, this list</span>
+<a name="l00009"></a>00009 <span class="comment"> * of conditions and the following disclaimer in the documentation and/or other materials</span>
+<a name="l00010"></a>00010 <span class="comment"> * provided with the distribution.</span>
+<a name="l00011"></a>00011 <span class="comment"> * 3. Neither the name of the copyright holder nor the names of its contributors may be used</span>
+<a name="l00012"></a>00012 <span class="comment"> * to endorse or promote products derived from this software without specific prior written</span>
+<a name="l00013"></a>00013 <span class="comment"> * permission.</span>
+<a name="l00014"></a>00014 <span class="comment"> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS</span>
+<a name="l00015"></a>00015 <span class="comment"> * &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,</span>
+<a name="l00016"></a>00016 <span class="comment"> * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR</span>
+<a name="l00017"></a>00017 <span class="comment"> * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR</span>
+<a name="l00018"></a>00018 <span class="comment"> * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,</span>
+<a name="l00019"></a>00019 <span class="comment"> * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,</span>
+<a name="l00020"></a>00020 <span class="comment"> * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;</span>
+<a name="l00021"></a>00021 <span class="comment"> * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,</span>
+<a name="l00022"></a>00022 <span class="comment"> * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR</span>
+<a name="l00023"></a>00023 <span class="comment"> * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF</span>
+<a name="l00024"></a>00024 <span class="comment"> * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</span>
+<a name="l00025"></a>00025 <span class="comment"> *---------------------------------------------------------------------------*/</span>
+<a name="l00026"></a>00026 <span class="comment">/*----------------------------------------------------------------------------</span>
+<a name="l00027"></a>00027 <span class="comment"> * Notice of Export Control Law</span>
+<a name="l00028"></a>00028 <span class="comment"> * ===============================================</span>
+<a name="l00029"></a>00029 <span class="comment"> * Huawei LiteOS may be subject to applicable export control laws and regulations, which might</span>
+<a name="l00030"></a>00030 <span class="comment"> * include those applicable to Huawei LiteOS of U.S. and the country in which you are located.</span>
+<a name="l00031"></a>00031 <span class="comment"> * Import, export and usage of Huawei LiteOS in any manner by you shall be in compliance with such</span>
+<a name="l00032"></a>00032 <span class="comment"> * applicable export control laws and regulations.</span>
+<a name="l00033"></a>00033 <span class="comment"> *---------------------------------------------------------------------------*/</span>
+<a name="l00034"></a>00034 <span class="comment"></span>
+<a name="l00035"></a>00035 <span class="comment">/**@defgroup los_err Error handling</span>
+<a name="l00036"></a>00036 <span class="comment"> * @ingroup kernel</span>
+<a name="l00037"></a>00037 <span class="comment"> */</span>
+<a name="l00038"></a>00038 
+<a name="l00039"></a>00039 <span class="preprocessor">#ifndef _LOS_ERR_H</span>
+<a name="l00040"></a>00040 <span class="preprocessor"></span><span class="preprocessor">#define _LOS_ERR_H</span>
+<a name="l00041"></a>00041 <span class="preprocessor"></span>
+<a name="l00042"></a>00042 <span class="preprocessor">#include &quot;<a class="code" href="a00027.html">los_base.h</a>&quot;</span>
+<a name="l00043"></a>00043 
+<a name="l00044"></a>00044 <span class="preprocessor">#ifdef __cplusplus</span>
+<a name="l00045"></a>00045 <span class="preprocessor"></span><span class="preprocessor">#if __cplusplus</span>
+<a name="l00046"></a>00046 <span class="preprocessor"></span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {
+<a name="l00047"></a>00047 <span class="preprocessor">#endif </span><span class="comment">/* __cplusplus */</span>
+<a name="l00048"></a>00048 <span class="preprocessor">#endif </span><span class="comment">/* __cplusplus */</span>
+<a name="l00049"></a>00049 
+<a name="l00050"></a>00050 <span class="comment"></span>
+<a name="l00051"></a>00051 <span class="comment">/**</span>
+<a name="l00052"></a>00052 <span class="comment"> *@ingroup los_err</span>
+<a name="l00053"></a>00053 <span class="comment"> *@brief Define the pointer to the error handling function.</span>
+<a name="l00054"></a>00054 <span class="comment"> *</span>
+<a name="l00055"></a>00055 <span class="comment"> *@par Description:</span>
+<a name="l00056"></a>00056 <span class="comment"> *This API is used to define the pointer to the error handling function.</span>
+<a name="l00057"></a>00057 <span class="comment"> *@attention</span>
+<a name="l00058"></a>00058 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00059"></a>00059 <span class="comment"> *&lt;li&gt;None.&lt;/li&gt;</span>
+<a name="l00060"></a>00060 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00061"></a>00061 <span class="comment"> *</span>
+<a name="l00062"></a>00062 <span class="comment"> *@param  pcFileName  [IN] Log file that stores error information.</span>
+<a name="l00063"></a>00063 <span class="comment"> *@param  uwLineNo    [IN] Line number of the erroneous line.</span>
+<a name="l00064"></a>00064 <span class="comment"> *@param  uwErrorNo   [IN] Error code.</span>
+<a name="l00065"></a>00065 <span class="comment"> *@param  uwParaLen   [IN] Length of the input parameter pPara.</span>
+<a name="l00066"></a>00066 <span class="comment"> *@param  pPara       [IN] User label of the error.</span>
+<a name="l00067"></a>00067 <span class="comment"> *</span>
+<a name="l00068"></a>00068 <span class="comment"> *@retval None.</span>
+<a name="l00069"></a>00069 <span class="comment"> *@par Dependency:</span>
+<a name="l00070"></a>00070 <span class="comment"> *&lt;ul&gt;&lt;li&gt;los_err.h: the header file that contains the API declaration.&lt;/li&gt;&lt;/ul&gt;</span>
+<a name="l00071"></a>00071 <span class="comment"> *@see None.</span>
+<a name="l00072"></a>00072 <span class="comment"> *@since Huawei LiteOS V100R001C00</span>
+<a name="l00073"></a>00073 <span class="comment"> */</span>
+<a name="l00074"></a><a class="code" href="a00056_g4c8ca44a0fda1aae335c49be4b0e3fb0.html#g4c8ca44a0fda1aae335c49be4b0e3fb0">00074</a> <span class="keyword">typedef</span> <a class="code" href="a00048_7f319bfc2492a2136964194204e7a8cf.html#7f319bfc2492a2136964194204e7a8cf">VOID</a> (*<a class="code" href="a00056_g4c8ca44a0fda1aae335c49be4b0e3fb0.html#g4c8ca44a0fda1aae335c49be4b0e3fb0" title="Define the pointer to the error handling function.">LOS_ERRORHANDLE_FUNC</a>)(<a class="code" href="a00048_ebb9e13210d88d43e32e735ada43a425.html#ebb9e13210d88d43e32e735ada43a425">CHAR</a>    *pcFileName,
+<a name="l00075"></a>00075                                         <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>   uwLineNo,      <span class="comment">/**&lt; Line number of the erroneous line.*/</span>
+<a name="l00076"></a>00076                                         <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>   uwErrorNo,     <span class="comment">/**&lt; Error code. */</span>
+<a name="l00077"></a>00077                                         <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>   uwParaLen,     <span class="comment">/**&lt; Length of the input parameter pPara.*/</span>
+<a name="l00078"></a>00078                                         <a class="code" href="a00048_7f319bfc2492a2136964194204e7a8cf.html#7f319bfc2492a2136964194204e7a8cf">VOID</a>     *pPara);
+<a name="l00079"></a>00079 <span class="comment"></span>
+<a name="l00080"></a>00080 <span class="comment">/**</span>
+<a name="l00081"></a>00081 <span class="comment"> *@ingroup los_err</span>
+<a name="l00082"></a>00082 <span class="comment"> *@brief Error handling function.</span>
+<a name="l00083"></a>00083 <span class="comment"> *</span>
+<a name="l00084"></a>00084 <span class="comment"> *@par Description:</span>
+<a name="l00085"></a>00085 <span class="comment"> *This API is used to perform different operations according to error types.</span>
+<a name="l00086"></a>00086 <span class="comment"> *@attention</span>
+<a name="l00087"></a>00087 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00088"></a>00088 <span class="comment"> *&lt;li&gt;None&lt;/li&gt;</span>
+<a name="l00089"></a>00089 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00090"></a>00090 <span class="comment"> *</span>
+<a name="l00091"></a>00091 <span class="comment"> *@param  pcFileName  [IN] Log file that stores error information.</span>
+<a name="l00092"></a>00092 <span class="comment"> *@param  uwLineNo    [IN] Line number of the erroneous line which should not be OS_ERR_MAGIC_WORD.</span>
+<a name="l00093"></a>00093 <span class="comment"> *@param  uwErrorNo   [IN] Error code.</span>
+<a name="l00094"></a>00094 <span class="comment"> *@param  uwParaLen   [IN] Length of the input parameter pPara.</span>
+<a name="l00095"></a>00095 <span class="comment"> *@param  pPara       [IN] User label of the error.</span>
+<a name="l00096"></a>00096 <span class="comment"> *</span>
+<a name="l00097"></a>00097 <span class="comment"> *@retval LOS_OK The error is successfully processed.</span>
+<a name="l00098"></a>00098 <span class="comment"> *@par Dependency:</span>
+<a name="l00099"></a>00099 <span class="comment"> *&lt;ul&gt;&lt;li&gt;los_err.h: the header file that contains the API declaration.&lt;/li&gt;&lt;/ul&gt;</span>
+<a name="l00100"></a>00100 <span class="comment"> *@see None</span>
+<a name="l00101"></a>00101 <span class="comment"> *@since Huawei LiteOS V100R001C00</span>
+<a name="l00102"></a>00102 <span class="comment"> */</span>
+<a name="l00103"></a>00103 <span class="keyword">extern</span> <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00056_ge218bbeb436d31ab8a0f84aeb7ea5e11.html#ge218bbeb436d31ab8a0f84aeb7ea5e11" title="Error handling function.">LOS_ErrHandle</a>(<a class="code" href="a00048_ebb9e13210d88d43e32e735ada43a425.html#ebb9e13210d88d43e32e735ada43a425">CHAR</a> *pcFileName, <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwLineNo,
+<a name="l00104"></a>00104                                 <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwErrorNo, <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwParaLen,
+<a name="l00105"></a>00105                                 <a class="code" href="a00048_7f319bfc2492a2136964194204e7a8cf.html#7f319bfc2492a2136964194204e7a8cf">VOID</a> *pPara);
+<a name="l00106"></a>00106 <span class="comment"></span>
+<a name="l00107"></a>00107 <span class="comment">/**</span>
+<a name="l00108"></a>00108 <span class="comment"> * @ingroup los_err</span>
+<a name="l00109"></a>00109 <span class="comment"> * Error handling function structure.</span>
+<a name="l00110"></a>00110 <span class="comment"> */</span>
+<a name="l00111"></a><a class="code" href="a00023.html">00111</a> <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="a00023.html" title="Error handling function structure.">tagUserErrFunc_S</a>
+<a name="l00112"></a>00112 {
+<a name="l00113"></a><a class="code" href="a00023_3d77fb026e77525d8e9873e832255201.html#3d77fb026e77525d8e9873e832255201">00113</a>     <a class="code" href="a00056_g4c8ca44a0fda1aae335c49be4b0e3fb0.html#g4c8ca44a0fda1aae335c49be4b0e3fb0" title="Define the pointer to the error handling function.">LOS_ERRORHANDLE_FUNC</a>  <a class="code" href="a00023_3d77fb026e77525d8e9873e832255201.html#3d77fb026e77525d8e9873e832255201" title="Hook function for error handling.">pfnHook</a>;  <span class="comment">/**&lt; Hook function for error handling.*/</span>
+<a name="l00114"></a>00114 } <a class="code" href="a00023.html" title="Error handling function structure.">USER_ERR_FUNC_S</a>;
+<a name="l00115"></a>00115 <span class="comment"></span>
+<a name="l00116"></a>00116 <span class="comment">/**</span>
+<a name="l00117"></a>00117 <span class="comment"> * @ingroup los_err</span>
+<a name="l00118"></a>00118 <span class="comment"> * Error handling function.</span>
+<a name="l00119"></a>00119 <span class="comment"> */</span>
+<a name="l00120"></a>00120 <span class="keyword">extern</span> <a class="code" href="a00023.html" title="Error handling function structure.">USER_ERR_FUNC_S</a>      <a class="code" href="a00056_g39639282136dc3f82ce4492e82726beb.html#g39639282136dc3f82ce4492e82726beb" title="Error handling function.">g_stUserErrFunc</a>;
+<a name="l00121"></a>00121 
+<a name="l00122"></a><a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78fae">00122</a> <span class="keyword">enum</span> <a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78fae">LOS_MOUDLE_ID</a>
+<a name="l00123"></a>00123 {
+<a name="l00124"></a><a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78fae4ecfc0bcdb224da8f715604c3535abda">00124</a>     <a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78fae4ecfc0bcdb224da8f715604c3535abda">LOS_MOD_SYS</a>              = 0x0,
+<a name="l00125"></a><a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78faeca7b54c11d84ad75a2b60ef3d7ae0df5">00125</a>     <a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78faeca7b54c11d84ad75a2b60ef3d7ae0df5">LOS_MOD_MEM</a>              = 0x1,
+<a name="l00126"></a><a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78fae117687f8b028c51bc3d85ef54060eb2c">00126</a>     <a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78fae117687f8b028c51bc3d85ef54060eb2c">LOS_MOD_TSK</a>              = 0x2,
+<a name="l00127"></a><a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78faea372437be9938c6459d38fbbfe5d4069">00127</a>     <a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78faea372437be9938c6459d38fbbfe5d4069">LOS_MOD_SWTMR</a>            = 0x3,
+<a name="l00128"></a><a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78fae44d4b6d4c2ab2f609c7f89c7e11ea4ca">00128</a>     <a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78fae44d4b6d4c2ab2f609c7f89c7e11ea4ca">LOS_MOD_TICK</a>             = 0x4,
+<a name="l00129"></a><a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78fae08d37d3814db7a87ce6b27dba137385a">00129</a>     <a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78fae08d37d3814db7a87ce6b27dba137385a">LOS_MOD_MSG</a>              = 0x5,
+<a name="l00130"></a><a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78fae4fc3605f5bc88cce37f56ab700e36e65">00130</a>     <a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78fae4fc3605f5bc88cce37f56ab700e36e65">LOS_MOD_QUE</a>              = 0x6,
+<a name="l00131"></a><a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78fae77795f2e05eb23169a6fcb7abc2ef6f6">00131</a>     <a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78fae77795f2e05eb23169a6fcb7abc2ef6f6">LOS_MOD_SEM</a>              = 0x7,
+<a name="l00132"></a><a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78fae969811a5fc2eac1790b9a4fe4172099f">00132</a>     <a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78fae969811a5fc2eac1790b9a4fe4172099f">LOS_MOD_MBOX</a>             = 0x8,
+<a name="l00133"></a><a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78fae35781931fe330fa62ed9ea87c9959274">00133</a>     <a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78fae35781931fe330fa62ed9ea87c9959274">LOS_MOD_HWI</a>              = 0x9,
+<a name="l00134"></a><a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78fae31350770abccc7504d91c33683541ff2">00134</a>     <a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78fae31350770abccc7504d91c33683541ff2">LOS_MOD_HWWDG</a>            = 0xa,
+<a name="l00135"></a><a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78fae6a6b63eae6bdfaad902b4c93d82aeb21">00135</a>     <a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78fae6a6b63eae6bdfaad902b4c93d82aeb21">LOS_MOD_CACHE</a>            = 0xb,
+<a name="l00136"></a><a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78faedd44a9286fd986d23484df2e996f1c7c">00136</a>     <a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78faedd44a9286fd986d23484df2e996f1c7c">LOS_MOD_HWTMR</a>            = 0xc,
+<a name="l00137"></a><a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78faecb749809d79e4367e33e57a7d85ed20d">00137</a>     <a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78faecb749809d79e4367e33e57a7d85ed20d">LOS_MOD_MMU</a>              = 0xd,
+<a name="l00138"></a>00138 
+<a name="l00139"></a><a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78faef706534e83a7c60d0441148b0d5514f6">00139</a>     <a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78faef706534e83a7c60d0441148b0d5514f6">LOS_MOD_LOG</a>              = 0xe,
+<a name="l00140"></a><a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78fae028d551d2c77dba122ae637ff4798e2b">00140</a>     <a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78fae028d551d2c77dba122ae637ff4798e2b">LOS_MOD_ERR</a>              = 0xf,
+<a name="l00141"></a>00141 
+<a name="l00142"></a><a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78fae3bea5da624a8479573ef006d455004f4">00142</a>     <a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78fae3bea5da624a8479573ef006d455004f4">LOS_MOD_EXC</a>              = 0x10,
+<a name="l00143"></a><a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78faefc3b9b0ccfdd74d74459eb39b3b6a88e">00143</a>     <a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78faefc3b9b0ccfdd74d74459eb39b3b6a88e">LOS_MOD_CSTK</a>             = 0x11,
+<a name="l00144"></a>00144 
+<a name="l00145"></a><a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78faec51f26d43e9a1c6bb8d55db5ddbc101a">00145</a>     <a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78faec51f26d43e9a1c6bb8d55db5ddbc101a">LOS_MOD_MPU</a>              = 0x12,
+<a name="l00146"></a><a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78faed5542d422a33ca98e2709c1d93aff32d">00146</a>     <a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78faed5542d422a33ca98e2709c1d93aff32d">LOS_MOD_NMHWI</a>            = 0x13,
+<a name="l00147"></a><a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78fae17a23bbd40e138c06f5203a20fbc3fdf">00147</a>     <a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78fae17a23bbd40e138c06f5203a20fbc3fdf">LOS_MOD_TRACE</a>            = 0x14,
+<a name="l00148"></a><a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78fae8a171b74e807916c5240c546438890dc">00148</a>     <a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78fae8a171b74e807916c5240c546438890dc">LOS_MOD_KNLSTAT</a>          = 0x15,
+<a name="l00149"></a><a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78fae306904ab5f0bdbd53a98f5e837af5a52">00149</a>     <a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78fae306904ab5f0bdbd53a98f5e837af5a52">LOS_MOD_EVTTIME</a>          = 0x16,
+<a name="l00150"></a><a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78fae0d42308297b2bbba225818f956d0d3f0">00150</a>     <a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78fae0d42308297b2bbba225818f956d0d3f0">LOS_MOD_THRDCPUP</a>         = 0x17,
+<a name="l00151"></a><a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78fae3ce5486327714cdd330a6ad70458460a">00151</a>     <a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78fae3ce5486327714cdd330a6ad70458460a">LOS_MOD_IPC</a>              = 0x18,
+<a name="l00152"></a><a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78fae10bfb21a64300a96cb0ee2aad8bfbcc0">00152</a>     <a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78fae10bfb21a64300a96cb0ee2aad8bfbcc0">LOS_MOD_STKMON</a>           = 0x19,
+<a name="l00153"></a><a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78faed51bbcd08d3045a89d34be49216619a1">00153</a>     <a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78faed51bbcd08d3045a89d34be49216619a1">LOS_MOD_TIMER</a>            = 0x1a,
+<a name="l00154"></a><a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78faed9efef808c0d47588928d3c7927e6aaf">00154</a>     <a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78faed9efef808c0d47588928d3c7927e6aaf">LOS_MOD_RESLEAKMON</a>       = 0x1b,
+<a name="l00155"></a><a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78faef3b36f4507aa83a9654b093b76353d07">00155</a>     <a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78faef3b36f4507aa83a9654b093b76353d07">LOS_MOD_EVENT</a>            = 0x1c,
+<a name="l00156"></a><a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78faed1dfa28e06bf355ff84e7c7fc0d8db7e">00156</a>     <a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78faed1dfa28e06bf355ff84e7c7fc0d8db7e">LOS_MOD_MUX</a>              = 0X1d,
+<a name="l00157"></a><a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78fae4426e447033e6dc9698892ce3406fd14">00157</a>     <a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78fae4426e447033e6dc9698892ce3406fd14">LOS_MOD_CPUP</a>             = 0x1e,
+<a name="l00158"></a><a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78fae9dd2e420c47381aba520d2b086d7f00b">00158</a>     <a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78fae9dd2e420c47381aba520d2b086d7f00b">LOS_MOD_SHELL</a>            = 0x31,
+<a name="l00159"></a><a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78fae5eb4fb3febf913e09e87e44964276f1f">00159</a>     <a class="code" href="a00030_c4ec1cd8159aaa3d20989013d4b78fae.html#c4ec1cd8159aaa3d20989013d4b78fae5eb4fb3febf913e09e87e44964276f1f">LOS_MOD_BUTT</a>
+<a name="l00160"></a>00160 };
+<a name="l00161"></a>00161 
+<a name="l00162"></a>00162 
+<a name="l00163"></a>00163 <span class="preprocessor">#ifdef __cplusplus</span>
+<a name="l00164"></a>00164 <span class="preprocessor"></span><span class="preprocessor">#if __cplusplus</span>
+<a name="l00165"></a>00165 <span class="preprocessor"></span>}
+<a name="l00166"></a>00166 <span class="preprocessor">#endif </span><span class="comment">/* __cplusplus */</span>
+<a name="l00167"></a>00167 <span class="preprocessor">#endif </span><span class="comment">/* __cplusplus */</span>
+<a name="l00168"></a>00168 
+<a name="l00169"></a>00169 <span class="preprocessor">#endif </span><span class="comment">/* _LOS_ERR_H */</span>
+</pre>
+   </div>
+  </div> 
+  <hr size="1" /> 
+ </body>
+</html>

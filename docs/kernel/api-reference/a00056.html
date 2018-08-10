@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312" /> 
+  <title>Error handling</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head>
+ <body> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top">  
+  </div> 
+  <div class="contents"> 
+   <h1>Error handling<br /> <small> [<a class="el" href="a00053.html">Kernel</a>]</small> </h1>
+   <table border="0" cellpadding="0" cellspacing="0"> 
+    <tbody>
+     <tr>
+      <td colspan="2"><br /><h2>数据结构</h2></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">struct &nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00023.html">tagUserErrFunc_S</a></td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Error handling function structure. <a href="a00023.html#_details">更多...</a><br /></td>
+     </tr> 
+     <tr>
+      <td colspan="2"><br /><h2>类型定义</h2></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">typedef VOID(*&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00056_g4c8ca44a0fda1aae335c49be4b0e3fb0.html#g4c8ca44a0fda1aae335c49be4b0e3fb0">LOS_ERRORHANDLE_FUNC</a> )(<a class="el" href="a00048_ebb9e13210d88d43e32e735ada43a425.html#ebb9e13210d88d43e32e735ada43a425">CHAR</a> *pcFileName, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwLineNo, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwErrorNo, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwParaLen, VOID *pPara)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Define the pointer to the error handling function. <a href="#g4c8ca44a0fda1aae335c49be4b0e3fb0"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">typedef struct <a class="el" href="a00023.html">tagUserErrFunc_S</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00056_g8bd8e121d4abffcad716344ff856b111.html#g8bd8e121d4abffcad716344ff856b111">USER_ERR_FUNC_S</a></td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Error handling function structure. <a href="#g8bd8e121d4abffcad716344ff856b111"></a><br /></td>
+     </tr> 
+     <tr>
+      <td colspan="2"><br /><h2>函数</h2></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00056_ge218bbeb436d31ab8a0f84aeb7ea5e11.html#ge218bbeb436d31ab8a0f84aeb7ea5e11">LOS_ErrHandle</a> (<a class="el" href="a00048_ebb9e13210d88d43e32e735ada43a425.html#ebb9e13210d88d43e32e735ada43a425">CHAR</a> *pcFileName, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwLineNo, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwErrorNo, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwParaLen, VOID *pPara)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Error handling function. <a href="#ge218bbeb436d31ab8a0f84aeb7ea5e11"></a><br /></td>
+     </tr> 
+     <tr>
+      <td colspan="2"><br /><h2>变量</h2></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00023.html">USER_ERR_FUNC_S</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00056_g39639282136dc3f82ce4492e82726beb.html#g39639282136dc3f82ce4492e82726beb">g_stUserErrFunc</a></td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Error handling function. <a href="#g39639282136dc3f82ce4492e82726beb"></a><br /></td>
+     </tr> 
+    </tbody>
+   </table> 
+  </div> 
+  <hr size="1" /> 
+ </body>
+</html>

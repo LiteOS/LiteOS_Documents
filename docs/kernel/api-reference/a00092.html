@@ -1,0 +1,468 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312" /> 
+  <title>los_swtmr.h源文件</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head>
+ <body> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top">   
+   <h1>los_swtmr.h</h1>
+   <a href="a00043.html">浏览该文件的文档。</a>
+   <div class="fragment">
+    <pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*----------------------------------------------------------------------------</span>
+<a name="l00002"></a>00002 <span class="comment"> * Copyright (c) &lt;2013-2015&gt;, &lt;Huawei Technologies Co., Ltd&gt;</span>
+<a name="l00003"></a>00003 <span class="comment"> * All rights reserved.</span>
+<a name="l00004"></a>00004 <span class="comment"> * Redistribution and use in source and binary forms, with or without modification,</span>
+<a name="l00005"></a>00005 <span class="comment"> * are permitted provided that the following conditions are met:</span>
+<a name="l00006"></a>00006 <span class="comment"> * 1. Redistributions of source code must retain the above copyright notice, this list of</span>
+<a name="l00007"></a>00007 <span class="comment"> * conditions and the following disclaimer.</span>
+<a name="l00008"></a>00008 <span class="comment"> * 2. Redistributions in binary form must reproduce the above copyright notice, this list</span>
+<a name="l00009"></a>00009 <span class="comment"> * of conditions and the following disclaimer in the documentation and/or other materials</span>
+<a name="l00010"></a>00010 <span class="comment"> * provided with the distribution.</span>
+<a name="l00011"></a>00011 <span class="comment"> * 3. Neither the name of the copyright holder nor the names of its contributors may be used</span>
+<a name="l00012"></a>00012 <span class="comment"> * to endorse or promote products derived from this software without specific prior written</span>
+<a name="l00013"></a>00013 <span class="comment"> * permission.</span>
+<a name="l00014"></a>00014 <span class="comment"> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS</span>
+<a name="l00015"></a>00015 <span class="comment"> * &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,</span>
+<a name="l00016"></a>00016 <span class="comment"> * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR</span>
+<a name="l00017"></a>00017 <span class="comment"> * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR</span>
+<a name="l00018"></a>00018 <span class="comment"> * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,</span>
+<a name="l00019"></a>00019 <span class="comment"> * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,</span>
+<a name="l00020"></a>00020 <span class="comment"> * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;</span>
+<a name="l00021"></a>00021 <span class="comment"> * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,</span>
+<a name="l00022"></a>00022 <span class="comment"> * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR</span>
+<a name="l00023"></a>00023 <span class="comment"> * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF</span>
+<a name="l00024"></a>00024 <span class="comment"> * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</span>
+<a name="l00025"></a>00025 <span class="comment"> *---------------------------------------------------------------------------*/</span>
+<a name="l00026"></a>00026 <span class="comment">/*----------------------------------------------------------------------------</span>
+<a name="l00027"></a>00027 <span class="comment"> * Notice of Export Control Law</span>
+<a name="l00028"></a>00028 <span class="comment"> * ===============================================</span>
+<a name="l00029"></a>00029 <span class="comment"> * Huawei LiteOS may be subject to applicable export control laws and regulations, which might</span>
+<a name="l00030"></a>00030 <span class="comment"> * include those applicable to Huawei LiteOS of U.S. and the country in which you are located.</span>
+<a name="l00031"></a>00031 <span class="comment"> * Import, export and usage of Huawei LiteOS in any manner by you shall be in compliance with such</span>
+<a name="l00032"></a>00032 <span class="comment"> * applicable export control laws and regulations.</span>
+<a name="l00033"></a>00033 <span class="comment"> *---------------------------------------------------------------------------*/</span>
+<a name="l00034"></a>00034 <span class="comment"></span>
+<a name="l00035"></a>00035 <span class="comment">/** @defgroup los_swtmr Software timer</span>
+<a name="l00036"></a>00036 <span class="comment"> * @ingroup kernel</span>
+<a name="l00037"></a>00037 <span class="comment"> */</span>
+<a name="l00038"></a>00038 
+<a name="l00039"></a>00039 <span class="preprocessor">#ifndef _LOS_SWTMR_H</span>
+<a name="l00040"></a>00040 <span class="preprocessor"></span><span class="preprocessor">#define _LOS_SWTMR_H</span>
+<a name="l00041"></a>00041 <span class="preprocessor"></span>
+<a name="l00042"></a>00042 <span class="preprocessor">#include &quot;<a class="code" href="a00027.html">los_base.h</a>&quot;</span>
+<a name="l00043"></a>00043 <span class="preprocessor">#include &quot;<a class="code" href="a00045.html">los_task.h</a>&quot;</span>
+<a name="l00044"></a>00044 
+<a name="l00045"></a>00045 <span class="preprocessor">#ifdef __cplusplus</span>
+<a name="l00046"></a>00046 <span class="preprocessor"></span><span class="preprocessor">#if __cplusplus</span>
+<a name="l00047"></a>00047 <span class="preprocessor"></span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {
+<a name="l00048"></a>00048 <span class="preprocessor">#endif </span><span class="comment">/* __cplusplus */</span>
+<a name="l00049"></a>00049 <span class="preprocessor">#endif </span><span class="comment">/* __cplusplus */</span>
+<a name="l00050"></a>00050 
+<a name="l00051"></a>00051 <span class="comment"></span>
+<a name="l00052"></a>00052 <span class="comment">/**</span>
+<a name="l00053"></a>00053 <span class="comment"> * @ingroup los_swtmr</span>
+<a name="l00054"></a>00054 <span class="comment"> * Software timer error code: The timeout handling function is NULL.</span>
+<a name="l00055"></a>00055 <span class="comment"> *</span>
+<a name="l00056"></a>00056 <span class="comment"> * Value: 0x02000300</span>
+<a name="l00057"></a>00057 <span class="comment"> *</span>
+<a name="l00058"></a>00058 <span class="comment"> * Solution: Define the timeout handling function.</span>
+<a name="l00059"></a>00059 <span class="comment"> */</span>
+<a name="l00060"></a><a class="code" href="a00066_ge44303d974dbbcef0b29b4629aca9085.html#ge44303d974dbbcef0b29b4629aca9085">00060</a> <span class="preprocessor">#define LOS_ERRNO_SWTMR_PTR_NULL                     LOS_ERRNO_OS_ERROR(LOS_MOD_SWTMR, 0x00)</span>
+<a name="l00061"></a>00061 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00062"></a>00062 <span class="comment">/**</span>
+<a name="l00063"></a>00063 <span class="comment"> * @ingroup los_swtmr</span>
+<a name="l00064"></a>00064 <span class="comment"> * Software timer error code: The expiration time is 0.</span>
+<a name="l00065"></a>00065 <span class="comment"> *</span>
+<a name="l00066"></a>00066 <span class="comment"> * Value: 0x02000301</span>
+<a name="l00067"></a>00067 <span class="comment"> *</span>
+<a name="l00068"></a>00068 <span class="comment"> * Solution: Re-define the expiration time.</span>
+<a name="l00069"></a>00069 <span class="comment"> */</span>
+<a name="l00070"></a><a class="code" href="a00066_g551960ecae0ca0af207e7ae4468c24e9.html#g551960ecae0ca0af207e7ae4468c24e9">00070</a> <span class="preprocessor">#define LOS_ERRNO_SWTMR_INTERVAL_NOT_SUITED          LOS_ERRNO_OS_ERROR(LOS_MOD_SWTMR, 0x01)</span>
+<a name="l00071"></a>00071 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00072"></a>00072 <span class="comment">/**</span>
+<a name="l00073"></a>00073 <span class="comment"> * @ingroup los_swtmr</span>
+<a name="l00074"></a>00074 <span class="comment"> * Software timer error code: Invalid software timer mode.</span>
+<a name="l00075"></a>00075 <span class="comment"> *</span>
+<a name="l00076"></a>00076 <span class="comment"> * Value: 0x02000302</span>
+<a name="l00077"></a>00077 <span class="comment"> *</span>
+<a name="l00078"></a>00078 <span class="comment"> * Solution: Check the mode value. The value range is [0,3].</span>
+<a name="l00079"></a>00079 <span class="comment"> */</span>
+<a name="l00080"></a><a class="code" href="a00066_gbe82f2a2e57bc482ba3e7545a811a233.html#gbe82f2a2e57bc482ba3e7545a811a233">00080</a> <span class="preprocessor">#define LOS_ERRNO_SWTMR_MODE_INVALID                 LOS_ERRNO_OS_ERROR(LOS_MOD_SWTMR, 0x02)</span>
+<a name="l00081"></a>00081 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00082"></a>00082 <span class="comment">/**</span>
+<a name="l00083"></a>00083 <span class="comment"> * @ingroup los_swtmr</span>
+<a name="l00084"></a>00084 <span class="comment"> * Software timer error code: The passed-in software timer ID is NULL.</span>
+<a name="l00085"></a>00085 <span class="comment"> *</span>
+<a name="l00086"></a>00086 <span class="comment"> * Value: 0x02000303</span>
+<a name="l00087"></a>00087 <span class="comment"> *</span>
+<a name="l00088"></a>00088 <span class="comment"> * Solution: Define the software timer ID before passing it in.</span>
+<a name="l00089"></a>00089 <span class="comment"> */</span>
+<a name="l00090"></a><a class="code" href="a00066_g7bb47388d53e45a8ac1e7161e06381c9.html#g7bb47388d53e45a8ac1e7161e06381c9">00090</a> <span class="preprocessor">#define LOS_ERRNO_SWTMR_RET_PTR_NULL                 LOS_ERRNO_OS_ERROR(LOS_MOD_SWTMR, 0x03)</span>
+<a name="l00091"></a>00091 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00092"></a>00092 <span class="comment">/**</span>
+<a name="l00093"></a>00093 <span class="comment"> * @ingroup los_swtmr</span>
+<a name="l00094"></a>00094 <span class="comment"> * Software timer error code: The number of software timers exceeds the configured permitted maximum number.</span>
+<a name="l00095"></a>00095 <span class="comment"> *</span>
+<a name="l00096"></a>00096 <span class="comment"> * Value: 0x02000304</span>
+<a name="l00097"></a>00097 <span class="comment"> *</span>
+<a name="l00098"></a>00098 <span class="comment"> * Solution: Re-configure the permitted maximum number of software timers, or wait for a software timer to become available.</span>
+<a name="l00099"></a>00099 <span class="comment"> */</span>
+<a name="l00100"></a><a class="code" href="a00066_g9cb0f65a299075a97434567d26f22679.html#g9cb0f65a299075a97434567d26f22679">00100</a> <span class="preprocessor">#define LOS_ERRNO_SWTMR_MAXSIZE                      LOS_ERRNO_OS_ERROR(LOS_MOD_SWTMR, 0x04)</span>
+<a name="l00101"></a>00101 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00102"></a>00102 <span class="comment">/**</span>
+<a name="l00103"></a>00103 <span class="comment"> * @ingroup los_swtmr</span>
+<a name="l00104"></a>00104 <span class="comment"> * Software timer error code: Invalid software timer ID.</span>
+<a name="l00105"></a>00105 <span class="comment"> *</span>
+<a name="l00106"></a>00106 <span class="comment"> * Value: 0x02000305</span>
+<a name="l00107"></a>00107 <span class="comment"> *</span>
+<a name="l00108"></a>00108 <span class="comment"> * Solution: Pass in a valid software timer ID.</span>
+<a name="l00109"></a>00109 <span class="comment"> */</span>
+<a name="l00110"></a><a class="code" href="a00066_g6075bb88fe523e3868f900dea8b48ef1.html#g6075bb88fe523e3868f900dea8b48ef1">00110</a> <span class="preprocessor">#define LOS_ERRNO_SWTMR_ID_INVALID                   LOS_ERRNO_OS_ERROR(LOS_MOD_SWTMR, 0x05)</span>
+<a name="l00111"></a>00111 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00112"></a>00112 <span class="comment">/**</span>
+<a name="l00113"></a>00113 <span class="comment"> * @ingroup los_swtmr</span>
+<a name="l00114"></a>00114 <span class="comment"> * Software timer error code: The software timer is not created.</span>
+<a name="l00115"></a>00115 <span class="comment"> *</span>
+<a name="l00116"></a>00116 <span class="comment"> * Value: 0x02000306</span>
+<a name="l00117"></a>00117 <span class="comment"> *</span>
+<a name="l00118"></a>00118 <span class="comment"> * Solution: Create a software timer.</span>
+<a name="l00119"></a>00119 <span class="comment"> */</span>
+<a name="l00120"></a><a class="code" href="a00066_g37178588f7ec6fd975994fc292c07307.html#g37178588f7ec6fd975994fc292c07307">00120</a> <span class="preprocessor">#define LOS_ERRNO_SWTMR_NOT_CREATED                  LOS_ERRNO_OS_ERROR(LOS_MOD_SWTMR, 0x06)</span>
+<a name="l00121"></a>00121 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00122"></a>00122 <span class="comment">/**</span>
+<a name="l00123"></a>00123 <span class="comment"> * @ingroup los_swtmr</span>
+<a name="l00124"></a>00124 <span class="comment"> * Software timer error code: Insufficient memory for software timer linked list creation.</span>
+<a name="l00125"></a>00125 <span class="comment"> *</span>
+<a name="l00126"></a>00126 <span class="comment"> * Value: 0x02000307</span>
+<a name="l00127"></a>00127 <span class="comment"> *</span>
+<a name="l00128"></a>00128 <span class="comment"> * Solution: Allocate bigger memory partition to software timer linked list creation.</span>
+<a name="l00129"></a>00129 <span class="comment"> */</span>
+<a name="l00130"></a><a class="code" href="a00066_gce36f7ca35c32c85e244704de1ee061f.html#gce36f7ca35c32c85e244704de1ee061f">00130</a> <span class="preprocessor">#define LOS_ERRNO_SWTMR_NO_MEMORY                    LOS_ERRNO_OS_ERROR(LOS_MOD_SWTMR, 0x07)</span>
+<a name="l00131"></a>00131 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00132"></a>00132 <span class="comment">/**</span>
+<a name="l00133"></a>00133 <span class="comment"> * @ingroup los_swtmr</span>
+<a name="l00134"></a>00134 <span class="comment"> * Software timer error code: Invalid configured number of software timers.</span>
+<a name="l00135"></a>00135 <span class="comment"> *</span>
+<a name="l00136"></a>00136 <span class="comment"> * Value: 0x02000308</span>
+<a name="l00137"></a>00137 <span class="comment"> *</span>
+<a name="l00138"></a>00138 <span class="comment"> * Solution: Re-configure the number of software timers.</span>
+<a name="l00139"></a>00139 <span class="comment"> */</span>
+<a name="l00140"></a><a class="code" href="a00066_gf73f0bde81c143cfdb421beb3546cfe5.html#gf73f0bde81c143cfdb421beb3546cfe5">00140</a> <span class="preprocessor">#define LOS_ERRNO_SWTMR_MAXSIZE_INVALID              LOS_ERRNO_OS_ERROR(LOS_MOD_SWTMR, 0x08)</span>
+<a name="l00141"></a>00141 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00142"></a>00142 <span class="comment">/**</span>
+<a name="l00143"></a>00143 <span class="comment"> * @ingroup los_swtmr</span>
+<a name="l00144"></a>00144 <span class="comment"> * Software timer error code: The software timer is being used during an interrupt.</span>
+<a name="l00145"></a>00145 <span class="comment"> *</span>
+<a name="l00146"></a>00146 <span class="comment"> * Value: 0x02000309</span>
+<a name="l00147"></a>00147 <span class="comment"> *</span>
+<a name="l00148"></a>00148 <span class="comment"> * Solution: Change the source code and do not use the software timer during an interrupt.</span>
+<a name="l00149"></a>00149 <span class="comment"> */</span>
+<a name="l00150"></a><a class="code" href="a00066_g68a8b9b8deb14f61a0307f1f3f20d624.html#g68a8b9b8deb14f61a0307f1f3f20d624">00150</a> <span class="preprocessor">#define LOS_ERRNO_SWTMR_HWI_ACTIVE                   LOS_ERRNO_OS_ERROR(LOS_MOD_SWTMR, 0x09)</span>
+<a name="l00151"></a>00151 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00152"></a>00152 <span class="comment">/**</span>
+<a name="l00153"></a>00153 <span class="comment"> * @ingroup los_swtmr</span>
+<a name="l00154"></a>00154 <span class="comment"> * Software timer error code: Insufficient memory allocated by membox.</span>
+<a name="l00155"></a>00155 <span class="comment"> *</span>
+<a name="l00156"></a>00156 <span class="comment"> * Value: 0x0200030a</span>
+<a name="l00157"></a>00157 <span class="comment"> *</span>
+<a name="l00158"></a>00158 <span class="comment"> * Solution: Expand the memory allocated by membox.</span>
+<a name="l00159"></a>00159 <span class="comment"> */</span>
+<a name="l00160"></a><a class="code" href="a00066_g925baea1b063be1ace8fd4d78c6c824c.html#g925baea1b063be1ace8fd4d78c6c824c">00160</a> <span class="preprocessor">#define LOS_ERRNO_SWTMR_HANDLER_POOL_NO_MEM          LOS_ERRNO_OS_ERROR(LOS_MOD_SWTMR, 0x0a)</span>
+<a name="l00161"></a>00161 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00162"></a>00162 <span class="comment">/**</span>
+<a name="l00163"></a>00163 <span class="comment"> * @ingroup los_swtmr</span>
+<a name="l00164"></a>00164 <span class="comment"> * Software timer error code: The software timer queue fails to be created.</span>
+<a name="l00165"></a>00165 <span class="comment"> *</span>
+<a name="l00166"></a>00166 <span class="comment"> * Value: 0x0200030b</span>
+<a name="l00167"></a>00167 <span class="comment"> *</span>
+<a name="l00168"></a>00168 <span class="comment"> * Solution: Check whether more memory can be allocated to the queue to be created.</span>
+<a name="l00169"></a>00169 <span class="comment"> */</span>
+<a name="l00170"></a><a class="code" href="a00066_g94e474f42c6ee1396a2450a7b81e1209.html#g94e474f42c6ee1396a2450a7b81e1209">00170</a> <span class="preprocessor">#define LOS_ERRNO_SWTMR_QUEUE_CREATE_FAILED          LOS_ERRNO_OS_ERROR(LOS_MOD_SWTMR, 0x0b)</span>
+<a name="l00171"></a>00171 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00172"></a>00172 <span class="comment">/**</span>
+<a name="l00173"></a>00173 <span class="comment"> * @ingroup los_swtmr</span>
+<a name="l00174"></a>00174 <span class="comment"> * Software timer error code: The software timer task fails to be created.</span>
+<a name="l00175"></a>00175 <span class="comment"> *</span>
+<a name="l00176"></a>00176 <span class="comment"> * Value: 0x0200030c</span>
+<a name="l00177"></a>00177 <span class="comment"> *</span>
+<a name="l00178"></a>00178 <span class="comment"> * Solution: Check whether the memory is sufficient and re-create the task.</span>
+<a name="l00179"></a>00179 <span class="comment"> */</span>
+<a name="l00180"></a><a class="code" href="a00066_g3766a42a2d4bd86d0fd9742d69f644b2.html#g3766a42a2d4bd86d0fd9742d69f644b2">00180</a> <span class="preprocessor">#define LOS_ERRNO_SWTMR_TASK_CREATE_FAILED           LOS_ERRNO_OS_ERROR(LOS_MOD_SWTMR, 0x0c)</span>
+<a name="l00181"></a>00181 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00182"></a>00182 <span class="comment">/**</span>
+<a name="l00183"></a>00183 <span class="comment"> * @ingroup los_swtmr</span>
+<a name="l00184"></a>00184 <span class="comment"> * Software timer error code: The software timer is not started.</span>
+<a name="l00185"></a>00185 <span class="comment"> *</span>
+<a name="l00186"></a>00186 <span class="comment"> * Value: 0x0200030d</span>
+<a name="l00187"></a>00187 <span class="comment"> *</span>
+<a name="l00188"></a>00188 <span class="comment"> * Solution: Start the software timer.</span>
+<a name="l00189"></a>00189 <span class="comment"> */</span>
+<a name="l00190"></a><a class="code" href="a00066_gfa13690a21376afc1079395a9ba809c9.html#gfa13690a21376afc1079395a9ba809c9">00190</a> <span class="preprocessor">#define LOS_ERRNO_SWTMR_NOT_STARTED                  LOS_ERRNO_OS_ERROR(LOS_MOD_SWTMR, 0x0d)</span>
+<a name="l00191"></a>00191 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00192"></a>00192 <span class="comment">/**</span>
+<a name="l00193"></a>00193 <span class="comment"> * @ingroup los_swtmr</span>
+<a name="l00194"></a>00194 <span class="comment"> * Software timer error code: Invalid software timer state.</span>
+<a name="l00195"></a>00195 <span class="comment"> *</span>
+<a name="l00196"></a>00196 <span class="comment"> * Value: 0x0200030e</span>
+<a name="l00197"></a>00197 <span class="comment"> *</span>
+<a name="l00198"></a>00198 <span class="comment"> * Solution: Check the software timer state.</span>
+<a name="l00199"></a>00199 <span class="comment"> */</span>
+<a name="l00200"></a><a class="code" href="a00066_g97e5570d124cccda32c8f18e307e722f.html#g97e5570d124cccda32c8f18e307e722f">00200</a> <span class="preprocessor">#define LOS_ERRNO_SWTMR_STATUS_INVALID               LOS_ERRNO_OS_ERROR(LOS_MOD_SWTMR, 0x0e)</span>
+<a name="l00201"></a>00201 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00202"></a>00202 <span class="comment">/**</span>
+<a name="l00203"></a>00203 <span class="comment"> * @ingroup los_swtmr</span>
+<a name="l00204"></a>00204 <span class="comment"> * This error code is not in use temporarily.</span>
+<a name="l00205"></a>00205 <span class="comment"> */</span>
+<a name="l00206"></a><a class="code" href="a00066_g82c56ae7621a5ec87d904d5cde988aac.html#g82c56ae7621a5ec87d904d5cde988aac">00206</a> <span class="preprocessor">#define LOS_ERRNO_SWTMR_SORTLIST_NULL                LOS_ERRNO_OS_ERROR(LOS_MOD_SWTMR, 0x0f)</span>
+<a name="l00207"></a>00207 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00208"></a>00208 <span class="comment">/**</span>
+<a name="l00209"></a>00209 <span class="comment"> * @ingroup los_swtmr</span>
+<a name="l00210"></a>00210 <span class="comment"> * Software timer error code: The passed-in number of remaining Ticks configured on the software timer is NULL.</span>
+<a name="l00211"></a>00211 <span class="comment"> *</span>
+<a name="l00212"></a>00212 <span class="comment"> * Value: 0x02000310</span>
+<a name="l00213"></a>00213 <span class="comment"> *</span>
+<a name="l00214"></a>00214 <span class="comment"> * Solution: Define a variable of the number of remaining Ticks before passing in the number of remaining Ticks.</span>
+<a name="l00215"></a>00215 <span class="comment"> */</span>
+<a name="l00216"></a><a class="code" href="a00066_gdebce1b5b4571e611a489f0b32c9688f.html#gdebce1b5b4571e611a489f0b32c9688f">00216</a> <span class="preprocessor">#define LOS_ERRNO_SWTMR_TICK_PTR_NULL                LOS_ERRNO_OS_ERROR(LOS_MOD_SWTMR, 0x10)</span>
+<a name="l00217"></a>00217 <span class="preprocessor"></span>
+<a name="l00218"></a>00218 <span class="preprocessor">#if (LOSCFG_BASE_CORE_SWTMR_ALIGN == YES)</span>
+<a name="l00219"></a><a class="code" href="a00043_4c2064648cd72bc1ff4c4cffba6a6721.html#4c2064648cd72bc1ff4c4cffba6a6721">00219</a> <span class="preprocessor"></span><span class="preprocessor">#define OS_ERRNO_SWTMR_ROUSES_INVALID               LOS_ERRNO_OS_ERROR(LOS_MOD_SWTMR, 0x11)</span>
+<a name="l00220"></a><a class="code" href="a00043_54acb1e2ce5da704e75dcf24ed310745.html#54acb1e2ce5da704e75dcf24ed310745">00220</a> <span class="preprocessor"></span><span class="preprocessor">#define OS_ERRNO_SWTMR_ALIGN_INVALID                LOS_ERRNO_OS_ERROR(LOS_MOD_SWTMR, 0x12)</span>
+<a name="l00221"></a>00221 <span class="preprocessor"></span>
+<a name="l00222"></a><a class="code" href="a00043_e646f3eed99efdbba30bea2ecd6303d9.html#e646f3eed99efdbba30bea2ecd6303d9">00222</a> <span class="preprocessor">#define OS_SWTMR_BIT_ALREADY_ALIGNED                (1 &lt;&lt; 31)</span>
+<a name="l00223"></a><a class="code" href="a00043_d6ec89b1d77c929dca36962fd8c43bd8.html#d6ec89b1d77c929dca36962fd8c43bd8">00223</a> <span class="preprocessor"></span><span class="preprocessor">#define OS_SWTMR_BIT_CAN_ALIGNED                    (1 &lt;&lt; 30)</span>
+<a name="l00224"></a><a class="code" href="a00043_d1195833124ae2cc3dd639c7a69d530d.html#d1195833124ae2cc3dd639c7a69d530d">00224</a> <span class="preprocessor"></span><span class="preprocessor">#define OS_SWTMR_BIT_MULTIPLE                       (1 &lt;&lt; 29)</span>
+<a name="l00225"></a>00225 <span class="preprocessor"></span>
+<a name="l00226"></a><a class="code" href="a00043_7b7663477a0cd148f620ec4c52e107d1.html#7b7663477a0cd148f620ec4c52e107d1">00226</a> <span class="preprocessor">#define SET_ALIGN_SWTMR_ALREADY_ALIGNED(num)                ((num) = 0x80000000 | ((num) &amp; 0x7FFFFFFF))</span>
+<a name="l00227"></a><a class="code" href="a00043_16102d97d235e3c267aa0ac4e569aa6d.html#16102d97d235e3c267aa0ac4e569aa6d">00227</a> <span class="preprocessor"></span><span class="preprocessor">#define SET_ALIGN_SWTMR_ALREADY_NOT_ALIGNED(num)            ((num) = ((num) &amp; 0x7FFFFFFF))</span>
+<a name="l00228"></a><a class="code" href="a00043_c55bae7612f144cf25352f19a6368d41.html#c55bae7612f144cf25352f19a6368d41">00228</a> <span class="preprocessor"></span><span class="preprocessor">#define SET_ALIGN_SWTMR_CAN_ALIGNED(num)                    ((num) = 0x40000000| (num &amp; 0xBFFFFFFF))</span>
+<a name="l00229"></a><a class="code" href="a00043_f22a4b4b03727f31dcb0294423202b44.html#f22a4b4b03727f31dcb0294423202b44">00229</a> <span class="preprocessor"></span><span class="preprocessor">#define SET_ALIGN_SWTMR_CAN_NOT_ALIGNED(num)                ((num) = (num &amp; 0xBFFFFFFF))</span>
+<a name="l00230"></a><a class="code" href="a00043_50fb27b7978500848a51c6e698630c1e.html#50fb27b7978500848a51c6e698630c1e">00230</a> <span class="preprocessor"></span><span class="preprocessor">#define SET_ALIGN_SWTMR_CAN_MULTIPLE(num)                   ((num)= 0x20000000|(num &amp; 0xDFFFFFFF) )</span>
+<a name="l00231"></a><a class="code" href="a00043_a4dfa9e78e97060ad112dd09cb7465ba.html#a4dfa9e78e97060ad112dd09cb7465ba">00231</a> <span class="preprocessor"></span><span class="preprocessor">#define SET_ALIGN_SWTMR_CAN_NOT_MULTIPLE(num)               ((num)= (num &amp; 0xDFFFFFFF) )</span>
+<a name="l00232"></a><a class="code" href="a00043_e3d7ca292a143b738b969d105a8f4971.html#e3d7ca292a143b738b969d105a8f4971">00232</a> <span class="preprocessor"></span><span class="preprocessor">#define SET_ALIGN_SWTMR_DIVISOR_TIMERS(num, value)          (num = (value &amp; 0x00FFFFFF) | (num &amp; 0xFF000000))//bit23:0</span>
+<a name="l00233"></a><a class="code" href="a00043_503cef1dab8e66a53c252ef48055f6f3.html#503cef1dab8e66a53c252ef48055f6f3">00233</a> <span class="preprocessor"></span><span class="preprocessor">#define GET_ALIGN_SWTMR_DIVISOR_TIMERS(num)                 (num &amp; 0x00FFFFFF)</span>
+<a name="l00234"></a>00234 <span class="preprocessor"></span>
+<a name="l00235"></a><a class="code" href="a00043_5d31f326d7e40c5222518b496dc42052.html#5d31f326d7e40c5222518b496dc42052">00235</a> <span class="preprocessor">#define CHECK_ALIGN_SWTMR_CAN_MULTI_ALIGN(num)              ((num &amp; 0xE0000000) == 0x60000000)</span>
+<a name="l00236"></a><a class="code" href="a00043_ffb43618607bff48538db4420730ff4e.html#ffb43618607bff48538db4420730ff4e">00236</a> <span class="preprocessor"></span><span class="preprocessor">#define CHECK_ALIGN_SWTMR_CAN_PERIODIC_ALIGN(num)           ((num &amp; 0xE0000000) == 0x40000000)</span>
+<a name="l00237"></a><a class="code" href="a00043_c8a56f2e16401721d0dece6f9794b140.html#c8a56f2e16401721d0dece6f9794b140">00237</a> <span class="preprocessor"></span><span class="preprocessor">#define CHECK_ALIGN_SWTMR_ALREADY_ALIGN(num)                ((num &amp; 0xC0000000) == 0xC0000000)</span>
+<a name="l00238"></a>00238 <span class="preprocessor"></span>
+<a name="l00239"></a><a class="code" href="a00043_a5f7604ea0f0e3450dbed76c4a0b992b.html#a5f7604ea0f0e3450dbed76c4a0b992b">00239</a> <span class="keyword">enum</span> <a class="code" href="a00043_a5f7604ea0f0e3450dbed76c4a0b992b.html#a5f7604ea0f0e3450dbed76c4a0b992b">enSwTmrRousesType</a>
+<a name="l00240"></a>00240 {
+<a name="l00241"></a><a class="code" href="a00043_a5f7604ea0f0e3450dbed76c4a0b992b.html#a5f7604ea0f0e3450dbed76c4a0b992b3bbb31f96e5df41f2cc364e53060de26">00241</a>     <a class="code" href="a00043_a5f7604ea0f0e3450dbed76c4a0b992b.html#a5f7604ea0f0e3450dbed76c4a0b992b3bbb31f96e5df41f2cc364e53060de26">OS_SWTMR_ROUSES_IGNORE</a>,    <span class="comment">/* timer don't need to wake up system */</span>
+<a name="l00242"></a><a class="code" href="a00043_a5f7604ea0f0e3450dbed76c4a0b992b.html#a5f7604ea0f0e3450dbed76c4a0b992beb94018edc896fb1db76962da8805428">00242</a>     <a class="code" href="a00043_a5f7604ea0f0e3450dbed76c4a0b992b.html#a5f7604ea0f0e3450dbed76c4a0b992beb94018edc896fb1db76962da8805428">OS_SWTMR_ROUSES_ALLOW</a>,     <span class="comment">/* timer can wake up system */</span>
+<a name="l00243"></a>00243 };
+<a name="l00244"></a>00244 
+<a name="l00245"></a><a class="code" href="a00043_fc0e1bc0f82a52ae8cb1ac5a3cd3538c.html#fc0e1bc0f82a52ae8cb1ac5a3cd3538c">00245</a> <span class="keyword">enum</span> <a class="code" href="a00043_fc0e1bc0f82a52ae8cb1ac5a3cd3538c.html#fc0e1bc0f82a52ae8cb1ac5a3cd3538c">enSwTmrAlignSensitive</a>
+<a name="l00246"></a>00246 {
+<a name="l00247"></a><a class="code" href="a00043_fc0e1bc0f82a52ae8cb1ac5a3cd3538c.html#fc0e1bc0f82a52ae8cb1ac5a3cd3538c290a8b0447b91f0e438adafaab6d9bdb">00247</a>     <a class="code" href="a00043_fc0e1bc0f82a52ae8cb1ac5a3cd3538c.html#fc0e1bc0f82a52ae8cb1ac5a3cd3538c290a8b0447b91f0e438adafaab6d9bdb">OS_SWTMR_ALIGN_SENSITIVE</a>,         <span class="comment">/* timer don't need to align  */</span>
+<a name="l00248"></a><a class="code" href="a00043_fc0e1bc0f82a52ae8cb1ac5a3cd3538c.html#fc0e1bc0f82a52ae8cb1ac5a3cd3538ce2b91714a60450bd014f83b19e7022dd">00248</a>     <a class="code" href="a00043_fc0e1bc0f82a52ae8cb1ac5a3cd3538c.html#fc0e1bc0f82a52ae8cb1ac5a3cd3538ce2b91714a60450bd014f83b19e7022dd">OS_SWTMR_ALIGN_INSENSITIVE</a>,     <span class="comment">/* timer need to align */</span>
+<a name="l00249"></a>00249 };
+<a name="l00250"></a>00250 <span class="preprocessor">#endif</span>
+<a name="l00251"></a>00251 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00252"></a>00252 <span class="comment">/**</span>
+<a name="l00253"></a>00253 <span class="comment"> * @ingroup los_swtmr</span>
+<a name="l00254"></a>00254 <span class="comment"> * Software timer mode</span>
+<a name="l00255"></a>00255 <span class="comment"> */</span>
+<a name="l00256"></a><a class="code" href="a00066_g924987376edf9a46a74d398c9a2792c0.html#g924987376edf9a46a74d398c9a2792c0">00256</a> <span class="keyword">enum</span> <a class="code" href="a00066_g924987376edf9a46a74d398c9a2792c0.html#g924987376edf9a46a74d398c9a2792c0" title="Software timer mode">enSwTmrType</a>
+<a name="l00257"></a>00257 {
+<a name="l00258"></a><a class="code" href="a00066_g924987376edf9a46a74d398c9a2792c0.html#gg924987376edf9a46a74d398c9a2792c0cd0f21498a3f817a40859c0c26d578af">00258</a>     <a class="code" href="a00066_g924987376edf9a46a74d398c9a2792c0.html#gg924987376edf9a46a74d398c9a2792c0cd0f21498a3f817a40859c0c26d578af" title="One-off software timer">LOS_SWTMR_MODE_ONCE</a>,                 <span class="comment">/**&lt; One-off software timer */</span>
+<a name="l00259"></a><a class="code" href="a00066_g924987376edf9a46a74d398c9a2792c0.html#gg924987376edf9a46a74d398c9a2792c00c46539d62ee5548cf3ddde2dbff6b86">00259</a>     <a class="code" href="a00066_g924987376edf9a46a74d398c9a2792c0.html#gg924987376edf9a46a74d398c9a2792c00c46539d62ee5548cf3ddde2dbff6b86" title="Periodic software timer">LOS_SWTMR_MODE_PERIOD</a>,               <span class="comment">/**&lt; Periodic software timer */</span>
+<a name="l00260"></a><a class="code" href="a00066_g924987376edf9a46a74d398c9a2792c0.html#gg924987376edf9a46a74d398c9a2792c0e7fe8f9fdcbc7cecf75b47318e89a0c3">00260</a>     <a class="code" href="a00066_g924987376edf9a46a74d398c9a2792c0.html#gg924987376edf9a46a74d398c9a2792c0e7fe8f9fdcbc7cecf75b47318e89a0c3" title="One-off software timer, but not self-delete">LOS_SWTMR_MODE_NO_SELFDELETE</a>,        <span class="comment">/**&lt; One-off software timer, but not self-delete */</span>
+<a name="l00261"></a><a class="code" href="a00066_g924987376edf9a46a74d398c9a2792c0.html#gg924987376edf9a46a74d398c9a2792c0a69d16edc8547fb5cf2c08ee90148163">00261</a>     <a class="code" href="a00066_g924987376edf9a46a74d398c9a2792c0.html#gg924987376edf9a46a74d398c9a2792c0a69d16edc8547fb5cf2c08ee90148163" title="After the one-off timer finishes timing, the periodic software timer is enabled.">LOS_SWTMR_MODE_OPP</a>,                  <span class="comment">/**&lt; After the one-off timer finishes timing, the periodic software timer is enabled. This mode is not supported temporarily.*/</span>
+<a name="l00262"></a>00262 };
+<a name="l00263"></a>00263 <span class="comment"></span>
+<a name="l00264"></a>00264 <span class="comment">/**</span>
+<a name="l00265"></a>00265 <span class="comment">* @ingroup  los_swtmr</span>
+<a name="l00266"></a>00266 <span class="comment">* @brief Define the type of a callback function that handles software timer timeout.</span>
+<a name="l00267"></a>00267 <span class="comment">*</span>
+<a name="l00268"></a>00268 <span class="comment">* @par Description:</span>
+<a name="l00269"></a>00269 <span class="comment">* This API is used to define the type of a callback function that handles software timer timeout, so that it can be called when software timer timeout.</span>
+<a name="l00270"></a>00270 <span class="comment">*</span>
+<a name="l00271"></a>00271 <span class="comment">* @attention</span>
+<a name="l00272"></a>00272 <span class="comment">* &lt;ul&gt;</span>
+<a name="l00273"></a>00273 <span class="comment">* &lt;li&gt;None.&lt;/li&gt;</span>
+<a name="l00274"></a>00274 <span class="comment">* &lt;/ul&gt;</span>
+<a name="l00275"></a>00275 <span class="comment">*</span>
+<a name="l00276"></a>00276 <span class="comment">* @param  uwPar     [IN] the parameter of the callback function that handles software timer timeout.</span>
+<a name="l00277"></a>00277 <span class="comment">*</span>
+<a name="l00278"></a>00278 <span class="comment">* @retval None.</span>
+<a name="l00279"></a>00279 <span class="comment">* @par Dependency:</span>
+<a name="l00280"></a>00280 <span class="comment">* &lt;ul&gt;&lt;li&gt;los_swtmr.h: the header file that contains the API declaration.&lt;/li&gt;&lt;/ul&gt;</span>
+<a name="l00281"></a>00281 <span class="comment">* @see None.</span>
+<a name="l00282"></a>00282 <span class="comment">* @since Huawei LiteOS V100R001C00</span>
+<a name="l00283"></a>00283 <span class="comment">*/</span>
+<a name="l00284"></a><a class="code" href="a00066_g967d48b78cd337282d734c05db1b4084.html#g967d48b78cd337282d734c05db1b4084">00284</a> <span class="keyword">typedef</span> <a class="code" href="a00048_7f319bfc2492a2136964194204e7a8cf.html#7f319bfc2492a2136964194204e7a8cf">VOID</a> (*<a class="code" href="a00066_g967d48b78cd337282d734c05db1b4084.html#g967d48b78cd337282d734c05db1b4084" title="Define the type of a callback function that handles software timer timeout.">SWTMR_PROC_FUNC</a>)(<a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwPar);
+<a name="l00285"></a>00285 <span class="comment"></span>
+<a name="l00286"></a>00286 <span class="comment">/**</span>
+<a name="l00287"></a>00287 <span class="comment"> * @ingroup los_swtmr</span>
+<a name="l00288"></a>00288 <span class="comment"> * Software timer control structure</span>
+<a name="l00289"></a>00289 <span class="comment"> */</span>
+<a name="l00290"></a><a class="code" href="a00017.html">00290</a> <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="a00017.html" title="Software timer control structure">tagSwTmrCtrl</a>
+<a name="l00291"></a>00291 {
+<a name="l00292"></a><a class="code" href="a00017_9eb94985b5b25fd5fdd93ee27fe491a7.html#9eb94985b5b25fd5fdd93ee27fe491a7">00292</a>     <span class="keyword">struct </span><a class="code" href="a00017.html" title="Software timer control structure">tagSwTmrCtrl</a> *<a class="code" href="a00017_9eb94985b5b25fd5fdd93ee27fe491a7.html#9eb94985b5b25fd5fdd93ee27fe491a7" title="Pointer to the next software timer">pstNext</a>;       <span class="comment">/**&lt; Pointer to the next software timer                      */</span>
+<a name="l00293"></a><a class="code" href="a00017_76ee3cc614588590e8216010d06f048f.html#76ee3cc614588590e8216010d06f048f">00293</a>     <a class="code" href="a00048_b27e9918b538ce9d8ca692479b375b6a.html#b27e9918b538ce9d8ca692479b375b6a">UINT8</a>               <a class="code" href="a00017_76ee3cc614588590e8216010d06f048f.html#76ee3cc614588590e8216010d06f048f" title="Software timer state">ucState</a>;        <span class="comment">/**&lt; Software timer state                                    */</span>
+<a name="l00294"></a><a class="code" href="a00017_ae8a39d2f4b969d2c360affa441ac04b.html#ae8a39d2f4b969d2c360affa441ac04b">00294</a>     <a class="code" href="a00048_b27e9918b538ce9d8ca692479b375b6a.html#b27e9918b538ce9d8ca692479b375b6a">UINT8</a>               <a class="code" href="a00017_ae8a39d2f4b969d2c360affa441ac04b.html#ae8a39d2f4b969d2c360affa441ac04b" title="Software timer mode">ucMode</a>;         <span class="comment">/**&lt; Software timer mode                                     */</span>
+<a name="l00295"></a>00295 <span class="preprocessor">#if (LOSCFG_BASE_CORE_SWTMR_ALIGN == YES)</span>
+<a name="l00296"></a><a class="code" href="a00017_2ed2ea27e14b34bd63af036111c4d10a.html#2ed2ea27e14b34bd63af036111c4d10a">00296</a> <span class="preprocessor"></span>    <a class="code" href="a00048_b27e9918b538ce9d8ca692479b375b6a.html#b27e9918b538ce9d8ca692479b375b6a">UINT8</a>               <a class="code" href="a00017_2ed2ea27e14b34bd63af036111c4d10a.html#2ed2ea27e14b34bd63af036111c4d10a">ucRouses</a>;       <span class="comment">/*wake up enable                                             */</span>
+<a name="l00297"></a><a class="code" href="a00017_44fa28065a5e26a278ecb47a71649b56.html#44fa28065a5e26a278ecb47a71649b56">00297</a>     <a class="code" href="a00048_b27e9918b538ce9d8ca692479b375b6a.html#b27e9918b538ce9d8ca692479b375b6a">UINT8</a>               <a class="code" href="a00017_44fa28065a5e26a278ecb47a71649b56.html#44fa28065a5e26a278ecb47a71649b56">ucSensitive</a>;    <span class="comment">/*align enable                                               */</span>
+<a name="l00298"></a>00298 <span class="preprocessor">#endif</span>
+<a name="l00299"></a><a class="code" href="a00017_f07a24b5cd69d4dc5c42004f29d0d65e.html#f07a24b5cd69d4dc5c42004f29d0d65e">00299</a> <span class="preprocessor"></span>    <a class="code" href="a00048_09f1a1fb2293e33483cc8d44aefb1eb1.html#09f1a1fb2293e33483cc8d44aefb1eb1">UINT16</a>              <a class="code" href="a00017_f07a24b5cd69d4dc5c42004f29d0d65e.html#f07a24b5cd69d4dc5c42004f29d0d65e" title="Software timer ID">usTimerID</a>;      <span class="comment">/**&lt; Software timer ID                                       */</span>
+<a name="l00300"></a><a class="code" href="a00017_59eb6479699053747e601231e7a047d7.html#59eb6479699053747e601231e7a047d7">00300</a>     <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>              <a class="code" href="a00017_59eb6479699053747e601231e7a047d7.html#59eb6479699053747e601231e7a047d7" title="Times that a software timer works">uwCount</a>;        <span class="comment">/**&lt; Times that a software timer works                       */</span>
+<a name="l00301"></a><a class="code" href="a00017_c7ed48d3724b60120c5af05c717c2d51.html#c7ed48d3724b60120c5af05c717c2d51">00301</a>     <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>              <a class="code" href="a00017_c7ed48d3724b60120c5af05c717c2d51.html#c7ed48d3724b60120c5af05c717c2d51" title="Timeout interval of a periodic software timer">uwInterval</a>;     <span class="comment">/**&lt; Timeout interval of a periodic software timer           */</span>
+<a name="l00302"></a><a class="code" href="a00017_1869daad04163b1e33f27fe245e90e20.html#1869daad04163b1e33f27fe245e90e20">00302</a>     <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>              <a class="code" href="a00017_1869daad04163b1e33f27fe245e90e20.html#1869daad04163b1e33f27fe245e90e20" title="Parameter passed in when the callback function that handles software timer timeout...">uwArg</a>;          <span class="comment">/**&lt; Parameter passed in when the callback function that handles software timer timeout is called */</span>
+<a name="l00303"></a><a class="code" href="a00017_5255d4471db5c956d640e019117f2b24.html#5255d4471db5c956d640e019117f2b24">00303</a>     <a class="code" href="a00066_g967d48b78cd337282d734c05db1b4084.html#g967d48b78cd337282d734c05db1b4084" title="Define the type of a callback function that handles software timer timeout.">SWTMR_PROC_FUNC</a>     <a class="code" href="a00017_5255d4471db5c956d640e019117f2b24.html#5255d4471db5c956d640e019117f2b24" title="Callback function that handles software timer timeout">pfnHandler</a>;     <span class="comment">/**&lt; Callback function that handles software timer timeout   */</span>
+<a name="l00304"></a>00304 } <a class="code" href="a00017.html" title="Software timer control structure">SWTMR_CTRL_S</a>;
+<a name="l00305"></a>00305 
+<a name="l00306"></a>00306 <span class="comment"></span>
+<a name="l00307"></a>00307 <span class="comment">/**</span>
+<a name="l00308"></a>00308 <span class="comment"> *@ingroup los_swtmr</span>
+<a name="l00309"></a>00309 <span class="comment"> *@brief Start a software timer.</span>
+<a name="l00310"></a>00310 <span class="comment"> *</span>
+<a name="l00311"></a>00311 <span class="comment"> *@par Description:</span>
+<a name="l00312"></a>00312 <span class="comment"> *This API is used to start a software timer that has a specified ID.</span>
+<a name="l00313"></a>00313 <span class="comment"> *@attention</span>
+<a name="l00314"></a>00314 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00315"></a>00315 <span class="comment"> *&lt;li&gt;The specific timer must be created first&lt;/li&gt;</span>
+<a name="l00316"></a>00316 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00317"></a>00317 <span class="comment"> *</span>
+<a name="l00318"></a>00318 <span class="comment"> *@param  usSwTmrID  [IN] Software timer ID created by LOS_SwtmrCreate. The value of ID should be in [0, LOSCFG_BASE_CORE_SWTMR_LIMIT - 1].</span>
+<a name="l00319"></a>00319 <span class="comment"> *</span>
+<a name="l00320"></a>00320 <span class="comment"> *@retval #LOS_ERRNO_SWTMR_ID_INVALID       Invalid software timer ID.</span>
+<a name="l00321"></a>00321 <span class="comment"> *@retval #LOS_ERRNO_SWTMR_NOT_CREATED      The software timer is not created.</span>
+<a name="l00322"></a>00322 <span class="comment"> *@retval #LOS_ERRNO_SWTMR_STATUS_INVALID   Invalid software timer state.</span>
+<a name="l00323"></a>00323 <span class="comment"> *@retval #LOS_OK                           The software timer is successfully started.</span>
+<a name="l00324"></a>00324 <span class="comment"> *@par Dependency:</span>
+<a name="l00325"></a>00325 <span class="comment"> *&lt;ul&gt;&lt;li&gt;los_swtmr.h: the header file that contains the API declaration.&lt;/li&gt;&lt;/ul&gt;</span>
+<a name="l00326"></a>00326 <span class="comment"> *@see LOS_SwtmrStop | LOS_SwtmrCreate</span>
+<a name="l00327"></a>00327 <span class="comment"> *@since Huawei LiteOS V100R001C00</span>
+<a name="l00328"></a>00328 <span class="comment"> */</span>
+<a name="l00329"></a>00329 <span class="keyword">extern</span> <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00066_g524111cedc5b37bb35eff64ac24748b7.html#g524111cedc5b37bb35eff64ac24748b7" title="Start a software timer.">LOS_SwtmrStart</a>(<a class="code" href="a00048_09f1a1fb2293e33483cc8d44aefb1eb1.html#09f1a1fb2293e33483cc8d44aefb1eb1">UINT16</a> usSwTmrID);
+<a name="l00330"></a>00330 <span class="comment"></span>
+<a name="l00331"></a>00331 <span class="comment">/**</span>
+<a name="l00332"></a>00332 <span class="comment"> *@ingroup los_swtmr</span>
+<a name="l00333"></a>00333 <span class="comment"> *@brief Stop a software timer.</span>
+<a name="l00334"></a>00334 <span class="comment"> *</span>
+<a name="l00335"></a>00335 <span class="comment"> *@par Description:</span>
+<a name="l00336"></a>00336 <span class="comment"> *This API is used to stop a software timer that has a specified ID.</span>
+<a name="l00337"></a>00337 <span class="comment"> *@attention</span>
+<a name="l00338"></a>00338 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00339"></a>00339 <span class="comment"> *&lt;li&gt;The specific timer should be created and started firstly.&lt;/li&gt;</span>
+<a name="l00340"></a>00340 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00341"></a>00341 <span class="comment"> *</span>
+<a name="l00342"></a>00342 <span class="comment"> *@param  usSwTmrID  [IN] Software timer ID created by LOS_SwtmrCreate. The value of ID should be in [0, LOSCFG_BASE_CORE_SWTMR_LIMIT - 1].</span>
+<a name="l00343"></a>00343 <span class="comment"> *</span>
+<a name="l00344"></a>00344 <span class="comment"> *@retval #LOS_ERRNO_SWTMR_ID_INVALID       Invalid software timer ID.</span>
+<a name="l00345"></a>00345 <span class="comment"> *@retval #LOS_ERRNO_SWTMR_NOT_CREATED      The software timer is not created.</span>
+<a name="l00346"></a>00346 <span class="comment"> *@retval #LOS_ERRNO_SWTMR_NOT_STARTED      The software timer is not started.</span>
+<a name="l00347"></a>00347 <span class="comment"> *@retval #LOS_ERRNO_SWTMR_STATUS_INVALID   Invalid software timer state.</span>
+<a name="l00348"></a>00348 <span class="comment"> *@retval #LOS_OK                           The software timer is successfully stopped.</span>
+<a name="l00349"></a>00349 <span class="comment"> *@par Dependency:</span>
+<a name="l00350"></a>00350 <span class="comment"> *&lt;ul&gt;&lt;li&gt;los_swtmr.h: the header file that contains the API declaration.&lt;/li&gt;&lt;/ul&gt;</span>
+<a name="l00351"></a>00351 <span class="comment"> *@see LOS_SwtmrStart | LOS_SwtmrCreate</span>
+<a name="l00352"></a>00352 <span class="comment"> *@since Huawei LiteOS V100R001C00</span>
+<a name="l00353"></a>00353 <span class="comment"> */</span>
+<a name="l00354"></a>00354 <span class="keyword">extern</span> <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00066_geb7344b2bd93f5065017f7a043ee761b.html#geb7344b2bd93f5065017f7a043ee761b" title="Stop a software timer.">LOS_SwtmrStop</a>(<a class="code" href="a00048_09f1a1fb2293e33483cc8d44aefb1eb1.html#09f1a1fb2293e33483cc8d44aefb1eb1">UINT16</a> usSwTmrID);
+<a name="l00355"></a>00355 <span class="comment"></span>
+<a name="l00356"></a>00356 <span class="comment">/**</span>
+<a name="l00357"></a>00357 <span class="comment"> *@ingroup los_swtmr</span>
+<a name="l00358"></a>00358 <span class="comment"> *@brief Obtain the number of remaining Ticks configured on a software timer.</span>
+<a name="l00359"></a>00359 <span class="comment"> *</span>
+<a name="l00360"></a>00360 <span class="comment"> *@par Description:</span>
+<a name="l00361"></a>00361 <span class="comment"> *This API is used to obtain the number of remaining Ticks configured on the software timer of which the ID is specified by usSwTmrID.</span>
+<a name="l00362"></a>00362 <span class="comment"> *@attention</span>
+<a name="l00363"></a>00363 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00364"></a>00364 <span class="comment"> *&lt;li&gt;The specific timer should be created and started successfully, error happends otherwise.&lt;/li&gt;</span>
+<a name="l00365"></a>00365 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00366"></a>00366 <span class="comment"> *</span>
+<a name="l00367"></a>00367 <span class="comment"> *@param  usSwTmrID  [IN]  Software timer ID created by LOS_SwtmrCreate. The value of ID should be in [0, LOSCFG_BASE_CORE_SWTMR_LIMIT - 1].</span>
+<a name="l00368"></a>00368 <span class="comment"> *@param  uwTick     [OUT] Number of remaining Ticks configured on the software timer.</span>
+<a name="l00369"></a>00369 <span class="comment"> *</span>
+<a name="l00370"></a>00370 <span class="comment"> *@retval #LOS_ERRNO_SWTMR_ID_INVALID      Invalid software timer ID.</span>
+<a name="l00371"></a>00371 <span class="comment"> *@retval #LOS_ERRNO_SWTMR_NOT_CREATED     The software timer is not created.</span>
+<a name="l00372"></a>00372 <span class="comment"> *@retval #LOS_ERRNO_SWTMR_NOT_STARTED     The software timer is not started.</span>
+<a name="l00373"></a>00373 <span class="comment"> *@retval #LOS_ERRNO_SWTMR_STATUS_INVALID  Invalid software timer state.</span>
+<a name="l00374"></a>00374 <span class="comment"> *@retval #LOS_OK                          The number of remaining Ticks is successfully obtained.</span>
+<a name="l00375"></a>00375 <span class="comment"> *@par Dependency:</span>
+<a name="l00376"></a>00376 <span class="comment"> *&lt;ul&gt;&lt;li&gt;los_swtmr.h: the header file that contains the API declaration.&lt;/li&gt;&lt;/ul&gt;</span>
+<a name="l00377"></a>00377 <span class="comment"> *@see LOS_SwtmrCreate</span>
+<a name="l00378"></a>00378 <span class="comment"> *@since Huawei LiteOS V100R001C00</span>
+<a name="l00379"></a>00379 <span class="comment"> */</span>
+<a name="l00380"></a>00380 <span class="keyword">extern</span> <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00066_gec8c1decd78254933037b7af89b251a4.html#gec8c1decd78254933037b7af89b251a4" title="Obtain the number of remaining Ticks configured on a software timer.">LOS_SwtmrTimeGet</a>(<a class="code" href="a00048_09f1a1fb2293e33483cc8d44aefb1eb1.html#09f1a1fb2293e33483cc8d44aefb1eb1">UINT16</a> usSwTmrID, <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> *uwTick);
+<a name="l00381"></a>00381 <span class="comment"></span>
+<a name="l00382"></a>00382 <span class="comment">/**</span>
+<a name="l00383"></a>00383 <span class="comment"> *@ingroup los_swtmr</span>
+<a name="l00384"></a>00384 <span class="comment"> *@brief Create a software timer.</span>
+<a name="l00385"></a>00385 <span class="comment"> *</span>
+<a name="l00386"></a>00386 <span class="comment"> *@par Description:</span>
+<a name="l00387"></a>00387 <span class="comment"> *This API is used to create a software timer that has specified timing duration, timeout handling function, and trigger mode, and to return a handle by which the software timer can be referenced.</span>
+<a name="l00388"></a>00388 <span class="comment"> *@attention</span>
+<a name="l00389"></a>00389 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00390"></a>00390 <span class="comment"> *&lt;li&gt;Do not use the delay interface in the callback function that handles software timer timeout.&lt;/li&gt;</span>
+<a name="l00391"></a>00391 <span class="comment"> *&lt;li&gt;Threre are LOSCFG_BASE_CORE_SWTMR_LIMIT timers available, change it's value when necessory.&lt;/li&gt;</span>
+<a name="l00392"></a>00392 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00393"></a>00393 <span class="comment"> *</span>
+<a name="l00394"></a>00394 <span class="comment"> *@param  uwInterval     [IN] Timing duration of the software timer to be created (unit: ms).</span>
+<a name="l00395"></a>00395 <span class="comment"> *@param  ucMode         [IN] Software timer mode. Pass in one of the modes specified by enSwTmrType. There are three types of modes, one-off, periodic, and continuously periodic after one-off, of which the third mode is not supported temporarily.</span>
+<a name="l00396"></a>00396 <span class="comment"> *@param  pfnHandler     [IN] Callback function that handles software timer timeout.</span>
+<a name="l00397"></a>00397 <span class="comment"> *@param  pusSwTmrID     [OUT] Software timer ID created by LOS_SwtmrCreate.</span>
+<a name="l00398"></a>00398 <span class="comment"> *@param  uwArg          [IN] Parameter passed in when the callback function that handles software timer timeout is called.</span>
+<a name="l00399"></a>00399 <span class="comment"> *</span>
+<a name="l00400"></a>00400 <span class="comment"> *@retval #LOS_ERRNO_SWTMR_INTERVAL_NOT_SUITED   The software timer timeout interval is 0.</span>
+<a name="l00401"></a>00401 <span class="comment"> *@retval #LOS_ERRNO_SWTMR_MODE_INVALID          Invalid software timer mode.</span>
+<a name="l00402"></a>00402 <span class="comment"> *@retval #LOS_ERRNO_SWTMR_PTR_NULL              The callback function that handles software timer timeout is NULL.</span>
+<a name="l00403"></a>00403 <span class="comment"> *@retval #LOS_ERRNO_SWTMR_RET_PTR_NULL          The passed-in software timer ID is NULL.</span>
+<a name="l00404"></a>00404 <span class="comment"> *@retval #LOS_ERRNO_SWTMR_MAXSIZE               The number of software timers exceeds the configured permitted maximum number.</span>
+<a name="l00405"></a>00405 <span class="comment"> *@retval #LOS_OK                                The software timer is successfully created.</span>
+<a name="l00406"></a>00406 <span class="comment"> *@par Dependency:</span>
+<a name="l00407"></a>00407 <span class="comment"> *&lt;ul&gt;&lt;li&gt;los_swtmr.h: the header file that contains the API declaration.&lt;/li&gt;&lt;/ul&gt;</span>
+<a name="l00408"></a>00408 <span class="comment"> *@see LOS_SwtmrDelete</span>
+<a name="l00409"></a>00409 <span class="comment"> *@since Huawei LiteOS V100R001C00</span>
+<a name="l00410"></a>00410 <span class="comment"> */</span>
+<a name="l00411"></a>00411  <span class="keyword">extern</span> <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00066_g377dce05be4a586832e11248f750435c.html#g377dce05be4a586832e11248f750435c" title="Create a software timer.">LOS_SwtmrCreate</a>(<a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00017_c7ed48d3724b60120c5af05c717c2d51.html#c7ed48d3724b60120c5af05c717c2d51" title="Timeout interval of a periodic software timer">uwInterval</a>, <a class="code" href="a00048_b27e9918b538ce9d8ca692479b375b6a.html#b27e9918b538ce9d8ca692479b375b6a">UINT8</a> <a class="code" href="a00017_ae8a39d2f4b969d2c360affa441ac04b.html#ae8a39d2f4b969d2c360affa441ac04b" title="Software timer mode">ucMode</a>, <a class="code" href="a00066_g967d48b78cd337282d734c05db1b4084.html#g967d48b78cd337282d734c05db1b4084" title="Define the type of a callback function that handles software timer timeout.">SWTMR_PROC_FUNC</a> <a class="code" href="a00017_5255d4471db5c956d640e019117f2b24.html#5255d4471db5c956d640e019117f2b24" title="Callback function that handles software timer timeout">pfnHandler</a>, <a class="code" href="a00048_09f1a1fb2293e33483cc8d44aefb1eb1.html#09f1a1fb2293e33483cc8d44aefb1eb1">UINT16</a> *pusSwTmrID, <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00017_1869daad04163b1e33f27fe245e90e20.html#1869daad04163b1e33f27fe245e90e20" title="Parameter passed in when the callback function that handles software timer timeout...">uwArg</a>
+<a name="l00412"></a>00412                                           #<span class="keywordflow">if</span> (<a class="code" href="a00055_g4bc9ddba864c0ff6656ec1a8b02543dd.html#g4bc9ddba864c0ff6656ec1a8b02543dd" title="Configurate item for software timer align tailoring">LOSCFG_BASE_CORE_SWTMR_ALIGN</a> == <a class="code" href="a00048_7ebc9a785e5ab85457c98595aac81589.html#7ebc9a785e5ab85457c98595aac81589">YES</a>)
+<a name="l00413"></a>00413                                           , <a class="code" href="a00048_b27e9918b538ce9d8ca692479b375b6a.html#b27e9918b538ce9d8ca692479b375b6a">UINT8</a> <a class="code" href="a00017_2ed2ea27e14b34bd63af036111c4d10a.html#2ed2ea27e14b34bd63af036111c4d10a">ucRouses</a>, <a class="code" href="a00048_b27e9918b538ce9d8ca692479b375b6a.html#b27e9918b538ce9d8ca692479b375b6a">UINT8</a> <a class="code" href="a00017_44fa28065a5e26a278ecb47a71649b56.html#44fa28065a5e26a278ecb47a71649b56">ucSensitive</a>
+<a name="l00414"></a>00414                                           #endif
+<a name="l00415"></a>00415                                           );
+<a name="l00416"></a>00416 <span class="comment"></span>
+<a name="l00417"></a>00417 <span class="comment">/**</span>
+<a name="l00418"></a>00418 <span class="comment"> *@ingroup los_swtmr</span>
+<a name="l00419"></a>00419 <span class="comment"> *@brief Delete a software timer.</span>
+<a name="l00420"></a>00420 <span class="comment"> *</span>
+<a name="l00421"></a>00421 <span class="comment"> *@par Description:</span>
+<a name="l00422"></a>00422 <span class="comment"> *This API is used to delete a software timer.</span>
+<a name="l00423"></a>00423 <span class="comment"> *@attention</span>
+<a name="l00424"></a>00424 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00425"></a>00425 <span class="comment"> *&lt;li&gt;The specific timer should be created and then stopped firstly.&lt;/li&gt;</span>
+<a name="l00426"></a>00426 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00427"></a>00427 <span class="comment"> *</span>
+<a name="l00428"></a>00428 <span class="comment"> *@param  usSwTmrID     [IN] Software timer ID created by LOS_SwtmrCreate. The value of ID should be in [0, LOSCFG_BASE_CORE_SWTMR_LIMIT - 1].</span>
+<a name="l00429"></a>00429 <span class="comment"> *</span>
+<a name="l00430"></a>00430 <span class="comment"> *@retval #LOS_ERRNO_SWTMR_ID_INVALID        Invalid software timer ID.</span>
+<a name="l00431"></a>00431 <span class="comment"> *@retval #LOS_ERRNO_SWTMR_NOT_CREATED       The software timer is not created.</span>
+<a name="l00432"></a>00432 <span class="comment"> *@retval #LOS_ERRNO_SWTMR_STATUS_INVALID    Invalid software timer state.</span>
+<a name="l00433"></a>00433 <span class="comment"> *@retval #LOS_OK                            The software timer is successfully deleted.</span>
+<a name="l00434"></a>00434 <span class="comment"> *@par Dependency:</span>
+<a name="l00435"></a>00435 <span class="comment"> *&lt;ul&gt;&lt;li&gt;los_swtmr.h: the header file that contains the API declaration.&lt;/li&gt;&lt;/ul&gt;</span>
+<a name="l00436"></a>00436 <span class="comment"> *@see LOS_SwtmrCreate</span>
+<a name="l00437"></a>00437 <span class="comment"> *@since Huawei LiteOS V100R001C00</span>
+<a name="l00438"></a>00438 <span class="comment"> */</span>
+<a name="l00439"></a>00439 <span class="keyword">extern</span> <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00066_gf525b575a83f3770c71db64fcd43c037.html#gf525b575a83f3770c71db64fcd43c037" title="Delete a software timer.">LOS_SwtmrDelete</a>(<a class="code" href="a00048_09f1a1fb2293e33483cc8d44aefb1eb1.html#09f1a1fb2293e33483cc8d44aefb1eb1">UINT16</a> usSwTmrID);
+<a name="l00440"></a>00440 
+<a name="l00441"></a>00441 
+<a name="l00442"></a>00442 <span class="preprocessor">#ifdef __cplusplus</span>
+<a name="l00443"></a>00443 <span class="preprocessor"></span><span class="preprocessor">#if __cplusplus</span>
+<a name="l00444"></a>00444 <span class="preprocessor"></span>}
+<a name="l00445"></a>00445 <span class="preprocessor">#endif </span><span class="comment">/* __cplusplus */</span>
+<a name="l00446"></a>00446 <span class="preprocessor">#endif </span><span class="comment">/* __cplusplus */</span>
+<a name="l00447"></a>00447 
+<a name="l00448"></a>00448 <span class="preprocessor">#endif </span><span class="comment">/* _LOS_SWTMR_H */</span>
+</pre>
+   </div>
+  </div> 
+  <hr size="1" /> 
+ </body>
+</html>

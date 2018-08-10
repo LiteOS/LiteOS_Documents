@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>  
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+<meta name="DC.Type" content="concept">
+<meta name="featurename" content="dcp">
+<title>LOS_SwtmrCreate</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head> 
+ <body> 
+  <div class="familylinks"> 
+   <a href="a00066_g377dce05be4a586832e11248f750435c.html">LOS_SwtmrCreate</a> 
+   <hr size="2" /> 
+  </div> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top"> 
+  </div> 
+  <div class="contents"> 
+   <div class="navpath"> 
+    <a class="el" href="a00066.html">Software timer</a> 
+   </div> 
+   <table cellspacing="0" cellpadding="0" border="0"> 
+    <tbody> 
+     <tr> 
+      <td valign="top"> </td> 
+      <td valign="top"> <a class="anchor" name="g377dce05be4a586832e11248f750435c"></a> 
+       <!-- doxytag: member="los_swtmr.h::<a href='a00066_g377dce05be4a586832e11248f750435c.html'>LOS_SwtmrCreate</a>" ref="g377dce05be4a586832e11248f750435c" args="(UINT32 uwInterval, UINT8 ucMode, <a href='a00066_g967d48b78cd337282d734c05db1b4084.html'>SWTMR_PROC_FUNC</a> pfnHandler, UINT16 *pusSwTmrID, UINT32 uwArg, UINT8 ucRouses, UINT8 ucSensitive)" --> 
+       <div class="memitem"> 
+        <div class="memproto"> 
+         <table class="memname"> 
+          <tbody> 
+           <tr> 
+            <td class="memname"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a href="a00066_g377dce05be4a586832e11248f750435c.html">LOS_SwtmrCreate</a> </td> 
+            <td class="paramtype">(</td> 
+            <td class="paramtype"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+            <td class="paramname"> <em>uwInterval</em>, </td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramtype"><a class="el" href="a00048_b27e9918b538ce9d8ca692479b375b6a.html#b27e9918b538ce9d8ca692479b375b6a">UINT8</a>&nbsp;</td> 
+            <td class="paramname"> <em>ucMode</em>, </td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramtype"><a class="el" href="a00066_g967d48b78cd337282d734c05db1b4084.html#g967d48b78cd337282d734c05db1b4084">SWTMR_PROC_FUNC</a>&nbsp;</td> 
+            <td class="paramname"> <em>pfnHandler</em>, </td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramtype"><a class="el" href="a00048_09f1a1fb2293e33483cc8d44aefb1eb1.html#09f1a1fb2293e33483cc8d44aefb1eb1">UINT16</a> *&nbsp;</td> 
+            <td class="paramname"> <em>pusSwTmrID</em>, </td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramtype"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+            <td class="paramname"> <em>uwArg</em>, </td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramtype"><a class="el" href="a00048_b27e9918b538ce9d8ca692479b375b6a.html#b27e9918b538ce9d8ca692479b375b6a">UINT8</a>&nbsp;</td> 
+            <td class="paramname"> <em>ucRouses</em>, </td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramtype"><a class="el" href="a00048_b27e9918b538ce9d8ca692479b375b6a.html#b27e9918b538ce9d8ca692479b375b6a">UINT8</a>&nbsp;</td> 
+            <td class="paramname"> <em>ucSensitive</em></td> 
+            <td class="paramkey">&nbsp;</td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey">)</td> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+        </div> 
+        <div class="memdoc"> 
+         <p> Create a software timer. </p> 
+         <p> </p> 
+         <dl class="user" compact=""> 
+          <dt> 
+           <b>Description:</b> 
+          </dt> 
+          <dd>
+            This API is used to create a software timer that has specified timing duration, timeout handling function, and trigger mode, and to return a handle by which the software timer can be referenced. 
+          </dd> 
+         </dl> 
+         <dl class="attention" compact=""> 
+          <dt> 
+           <b>注意:</b> 
+          </dt> 
+          <dd> 
+           <ul> 
+            <li> Do not use the delay interface in the callback function that handles software timer timeout. </li> 
+            <li> Threre are <a href="a00055_g555ab361a54dedb3d964c5ae9ed9e3b7.html">LOSCFG_BASE_CORE_SWTMR_LIMIT</a> timers available, change it's value when necessory. </li> 
+           </ul> 
+          </dd> 
+         </dl> 
+         <dl compact=""> 
+          <dt> 
+           <b>参数:</b> 
+          </dt> 
+          <dd> 
+           <table border="0" cellspacing="0" cellpadding="0"> 
+            <tbody> 
+             <tr> 
+              <th></th> 
+              <th>参数名称</th> 
+              <th>描述</th> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">uwInterval&nbsp;</td> 
+              <td>[IN] Timing duration of the software timer to be created (unit: ms). </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">ucMode&nbsp;</td> 
+              <td>[IN] Software timer mode. Pass in one of the modes specified by <a href="a00066_g924987376edf9a46a74d398c9a2792c0.html">enSwTmrType</a>. There are three types of modes, one-off, periodic, and continuously periodic after one-off, of which the third mode is not supported temporarily. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">pfnHandler&nbsp;</td> 
+              <td>[IN] Callback function that handles software timer timeout. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">pusSwTmrID&nbsp;</td> 
+              <td>[OUT] Software timer ID created by <a href="a00066_g377dce05be4a586832e11248f750435c.html">LOS_SwtmrCreate</a>. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">uwArg&nbsp;</td> 
+              <td>[IN] Parameter passed in when the callback function that handles software timer timeout is called.</td> 
+             </tr> 
+            </tbody> 
+           </table> 
+          </dd> 
+         </dl> 
+         <dl compact=""> 
+          <dt> 
+           <b>返回值:</b> 
+          </dt> 
+          <dd> 
+           <table border="0" cellspacing="0" cellpadding="0"> 
+            <tbody> 
+             <tr> 
+              <th></th> 
+              <th>返回值</th> 
+              <th>描述</th> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00066_g551960ecae0ca0af207e7ae4468c24e9.html#g551960ecae0ca0af207e7ae4468c24e9" title="Software timer error code: The expiration time is 0.">LOS_ERRNO_SWTMR_INTERVAL_NOT_SUITED</a>&nbsp;</td> 
+              <td>The software timer timeout interval is 0. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00066_gbe82f2a2e57bc482ba3e7545a811a233.html#gbe82f2a2e57bc482ba3e7545a811a233" title="Software timer error code: Invalid software timer mode.">LOS_ERRNO_SWTMR_MODE_INVALID</a>&nbsp;</td> 
+              <td>Invalid software timer mode. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00066_ge44303d974dbbcef0b29b4629aca9085.html#ge44303d974dbbcef0b29b4629aca9085" title="Software timer error code: The timeout handling function is NULL.">LOS_ERRNO_SWTMR_PTR_NULL</a>&nbsp;</td> 
+              <td>The callback function that handles software timer timeout is NULL. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00066_g7bb47388d53e45a8ac1e7161e06381c9.html#g7bb47388d53e45a8ac1e7161e06381c9" title="Software timer error code: The passed-in software timer ID is NULL.">LOS_ERRNO_SWTMR_RET_PTR_NULL</a>&nbsp;</td> 
+              <td>The passed-in software timer ID is NULL. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00066_g9cb0f65a299075a97434567d26f22679.html#g9cb0f65a299075a97434567d26f22679" title="Software timer error code: The number of software timers exceeds the configured permitted...">LOS_ERRNO_SWTMR_MAXSIZE</a>&nbsp;</td> 
+              <td>The number of software timers exceeds the configured permitted maximum number. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00048_81e00a29757b6c6f90f05ca6c1eed169.html#81e00a29757b6c6f90f05ca6c1eed169">LOS_OK</a>&nbsp;</td> 
+              <td>The software timer is successfully created. </td> 
+             </tr> 
+            </tbody> 
+           </table> 
+          </dd> 
+         </dl> 
+         <dl class="user" compact=""> 
+          <dt> 
+           <b>Dependency:</b> 
+          </dt> 
+          <dd> 
+           <ul> 
+            <li> <a class="el" href="a00043.html">los_swtmr.h</a>: the header file that contains the API declaration.</li> 
+           </ul> 
+          </dd> 
+         </dl> 
+         <dl class="see" compact=""> 
+          <dt> 
+           <b>参见:</b> 
+          </dt> 
+          <dd> 
+           <a class="el" href="a00066_gf525b575a83f3770c71db64fcd43c037.html#gf525b575a83f3770c71db64fcd43c037" title="Delete a software timer.">LOS_SwtmrDelete</a> 
+          </dd> 
+         </dl> 
+         <dl class="since" compact=""> 
+          <dt> 
+           <b>自从:</b> 
+          </dt> 
+          <dd>
+            Huawei LiteOS V100R001C00 
+          </dd> 
+         </dl> 
+        </div> 
+       </div><p> </p></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <hr size="1" />  
+ </body>
+</html>

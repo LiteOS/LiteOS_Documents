@@ -1,0 +1,647 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312" /> 
+  <title>System configuration items</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head>
+ <body> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top">  
+  </div> 
+  <div class="contents"> 
+   <h1>System configuration items<br /> <small> [<a class="el" href="a00053.html">Kernel</a>]</small> </h1>
+   <table border="0" cellpadding="0" cellspacing="0"> 
+    <tbody>
+     <tr>
+      <td colspan="2"><br /><h2>宏定义</h2></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g2968a19b456bbad5fa222cdb129ae7f7.html#g2968a19b456bbad5fa222cdb129ae7f7">OS_SYS_CLOCK</a>&nbsp;&nbsp;&nbsp;(100000000UL)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">System clock (unit: HZ) <a href="#g2968a19b456bbad5fa222cdb129ae7f7"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_gbbfdcf7c5ca30153c3776fe6abacf6fa.html#gbbfdcf7c5ca30153c3776fe6abacf6fa">OS_TIME_TIMER_CLOCK</a>&nbsp;&nbsp;&nbsp;OS_SYS_CLOCK</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">timer1 clock (unit: HZ) <a href="#gbbfdcf7c5ca30153c3776fe6abacf6fa"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_ga0dd6a5d817e652b14abce2d6ca0d0f4.html#ga0dd6a5d817e652b14abce2d6ca0d0f4">LOSCFG_BASE_CORE_TICK_PER_SECOND</a>&nbsp;&nbsp;&nbsp;(1000UL)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Number of Ticks in one second <a href="#ga0dd6a5d817e652b14abce2d6ca0d0f4"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_gaca4bc162e5857227de3b77d76c933a0.html#gaca4bc162e5857227de3b77d76c933a0">LOSCFG_BASE_CORE_TICK_PERIOD_MS</a>&nbsp;&nbsp;&nbsp;(1000UL / LOSCFG_BASE_CORE_TICK_PER_SECOND)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">How much time one tick spent (unit:ms) <a href="#gaca4bc162e5857227de3b77d76c933a0"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_ge510137948924c2028db1e0b269af356.html#ge510137948924c2028db1e0b269af356">LOSCFG_BASE_CORE_TICK_HW_TIME1</a>&nbsp;&nbsp;&nbsp;YES</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">External configuration item for timer tailoring <a href="#ge510137948924c2028db1e0b269af356"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g1e30bab5a5e4bfa064db33aec6070826.html#g1e30bab5a5e4bfa064db33aec6070826">LOSCFG_KERNEL_TICKLESS</a>&nbsp;&nbsp;&nbsp;NO</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Configuration liteos kernel tickless <a href="#g1e30bab5a5e4bfa064db33aec6070826"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g4a33b51ff9fcfc53b2189a228fa56c63.html#g4a33b51ff9fcfc53b2189a228fa56c63">LOSCFG_BASE_TIMER_INT_NUM</a>&nbsp;&nbsp;&nbsp;(15)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">External configuration item for timer interrupt number <a href="#g4a33b51ff9fcfc53b2189a228fa56c63"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g1d45f372fe7abc22eeb33845e585059d.html#g1d45f372fe7abc22eeb33845e585059d">LOSCFG_PLATFORM_HWI</a>&nbsp;&nbsp;&nbsp;YES</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Configuration item for hardware interrupt tailoring <a href="#g1d45f372fe7abc22eeb33845e585059d"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g9416ca54addc31625d338673ed62960d.html#g9416ca54addc31625d338673ed62960d">LOSCFG_PLATFORM_HWI_LIMIT</a>&nbsp;&nbsp;&nbsp;32</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Maximum number of used hardware interrupts, including Tick timer interrupts. <a href="#g9416ca54addc31625d338673ed62960d"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_gee990766bced8db7ecba56c251066fc5.html#gee990766bced8db7ecba56c251066fc5">LOSCFG_BASE_CORE_TSK_MIN_STACK_SIZE</a>&nbsp;&nbsp;&nbsp;(ALIGN(0x80, 4))</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Minimum stack size. <a href="#gee990766bced8db7ecba56c251066fc5"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_gbd7b13ac1ebe40844ec96beea9901557.html#gbd7b13ac1ebe40844ec96beea9901557">LOSCFG_BASE_CORE_TSK_DEFAULT_PRIO</a>&nbsp;&nbsp;&nbsp;10</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Default task priority <a href="#gbd7b13ac1ebe40844ec96beea9901557"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_gfed654945a0717bff23aa8757170e9cf.html#gfed654945a0717bff23aa8757170e9cf">LOSCFG_BASE_CORE_TSK_LIMIT</a>&nbsp;&nbsp;&nbsp;5</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Maximum supported number of tasks except the idle task rather than the number of usable tasks <a href="#gfed654945a0717bff23aa8757170e9cf"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g08de79b72e452922b84dcf681e3d9470.html#g08de79b72e452922b84dcf681e3d9470">LOSCFG_BASE_CORE_TSK_IDLE_STACK_SIZE</a>&nbsp;&nbsp;&nbsp;(0x180UL)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Size of the idle task stack <a href="#g08de79b72e452922b84dcf681e3d9470"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g435bc699acca4e399aaa0dcee77fc936.html#g435bc699acca4e399aaa0dcee77fc936">LOSCFG_BASE_CORE_TSK_DEFAULT_STACK_SIZE</a>&nbsp;&nbsp;&nbsp;(0x400UL)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Default task stack size <a href="#g435bc699acca4e399aaa0dcee77fc936"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g99103c7a970b171763cb7711e31f56e7.html#g99103c7a970b171763cb7711e31f56e7">LOSCFG_BASE_CORE_TIMESLICE</a>&nbsp;&nbsp;&nbsp;YES</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Configuration item for task Robin tailoring <a href="#g99103c7a970b171763cb7711e31f56e7"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g2dfe8660ffdd0d33c4262946e74d4ff3.html#g2dfe8660ffdd0d33c4262946e74d4ff3">LOSCFG_BASE_CORE_TIMESLICE_TIMEOUT</a>&nbsp;&nbsp;&nbsp;10</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Longest execution time of tasks with the same priorities <a href="#g2dfe8660ffdd0d33c4262946e74d4ff3"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g63f162db6f89587b56949ad39a40ed6c.html#g63f162db6f89587b56949ad39a40ed6c">LOSCFG_BASE_CORE_TSK_MONITOR</a>&nbsp;&nbsp;&nbsp;NO</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Configuration item for task (stack) monitoring module tailoring <a href="#g63f162db6f89587b56949ad39a40ed6c"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g08d6994362aa96f70278143b7b43d526.html#g08d6994362aa96f70278143b7b43d526">LOSCFG_BASE_CORE_EXC_TSK_SWITCH</a>&nbsp;&nbsp;&nbsp;NO</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Configuration item for task perf task filter hook <a href="#g08d6994362aa96f70278143b7b43d526"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_gf43aa71d2075ca57dce2cdec8cf98787.html#gf43aa71d2075ca57dce2cdec8cf98787">LOS_TASK_PRIORITY_HIGHEST</a>&nbsp;&nbsp;&nbsp;0</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Define a usable task priority.Highest task priority. <a href="#gf43aa71d2075ca57dce2cdec8cf98787"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_ga76db8349425b823c7a3a28ddb5beda9.html#ga76db8349425b823c7a3a28ddb5beda9">LOS_TASK_PRIORITY_LOWEST</a>&nbsp;&nbsp;&nbsp;31</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Define a usable task priority.Lowest task priority. <a href="#ga76db8349425b823c7a3a28ddb5beda9"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g64ff734b1d0948a7aede91e29ab0d944.html#g64ff734b1d0948a7aede91e29ab0d944">LOSCFG_BASE_CORE_TASKSTACK_INDEPENDENT</a>&nbsp;&nbsp;&nbsp;NO</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Configuration item for task stack independent <a href="#g64ff734b1d0948a7aede91e29ab0d944"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g81b80b1a341af847153d9af6ef008953.html#g81b80b1a341af847153d9af6ef008953">LOSCFG_STACK_POINT_ALIGN_SIZE</a>&nbsp;&nbsp;&nbsp;8</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">SP align size <a href="#g81b80b1a341af847153d9af6ef008953"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g16eb33bf41dfa45e1f91d0f43e92137a.html#g16eb33bf41dfa45e1f91d0f43e92137a">LOSCFG_BASE_IPC_SEM</a>&nbsp;&nbsp;&nbsp;YES</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Configuration item for semaphore module tailoring <a href="#g16eb33bf41dfa45e1f91d0f43e92137a"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g1a543e94b487cf7fd5da0030291cc799.html#g1a543e94b487cf7fd5da0030291cc799">LOSCFG_BASE_IPC_SEM_LIMIT</a>&nbsp;&nbsp;&nbsp;6</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Maximum supported number of semaphores <a href="#g1a543e94b487cf7fd5da0030291cc799"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g7cd38a927ac5b460462f4dd494975618.html#g7cd38a927ac5b460462f4dd494975618">LOSCFG_BASE_IPC_MUX</a>&nbsp;&nbsp;&nbsp;YES</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Configuration item for mutex module tailoring <a href="#g7cd38a927ac5b460462f4dd494975618"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_ge841ac24ca5cfdca4c327fca81b08db2.html#ge841ac24ca5cfdca4c327fca81b08db2">LOSCFG_BASE_IPC_MUX_LIMIT</a>&nbsp;&nbsp;&nbsp;6</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Maximum supported number of mutexes <a href="#ge841ac24ca5cfdca4c327fca81b08db2"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g7b37951ed39461b71bb49b95fdfeb462.html#g7b37951ed39461b71bb49b95fdfeb462">LOSCFG_BASE_IPC_QUEUE</a>&nbsp;&nbsp;&nbsp;YES</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Configuration item for queue module tailoring <a href="#g7b37951ed39461b71bb49b95fdfeb462"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g7a7fa126ef8c518212ef77d47914f719.html#g7a7fa126ef8c518212ef77d47914f719">LOSCFG_BASE_IPC_QUEUE_LIMIT</a>&nbsp;&nbsp;&nbsp;6</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Maximum supported number of queues rather than the number of usable queues <a href="#g7a7fa126ef8c518212ef77d47914f719"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g9d800d0ad0d96020007880185b44787e.html#g9d800d0ad0d96020007880185b44787e">LOSCFG_BASE_CORE_SWTMR</a>&nbsp;&nbsp;&nbsp;YES</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Configuration item for software timer module tailoring <a href="#g9d800d0ad0d96020007880185b44787e"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g555ab361a54dedb3d964c5ae9ed9e3b7.html#g555ab361a54dedb3d964c5ae9ed9e3b7">LOSCFG_BASE_CORE_SWTMR_LIMIT</a>&nbsp;&nbsp;&nbsp;5</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Maximum supported number of software timers rather than the number of usable software timers <a href="#g555ab361a54dedb3d964c5ae9ed9e3b7"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_gb0b91dd8eaf2ce6dc0cad8d9fd95ae27.html#gb0b91dd8eaf2ce6dc0cad8d9fd95ae27">LOSCFG_BASE_CORE_TSK_SWTMR_STACK_SIZE</a>&nbsp;&nbsp;&nbsp;LOSCFG_BASE_CORE_TSK_DEFAULT_STACK_SIZE</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Software timer task stack size <a href="#gb0b91dd8eaf2ce6dc0cad8d9fd95ae27"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g60f64776fffeedbd72821a48ca3bcdd0.html#g60f64776fffeedbd72821a48ca3bcdd0">LOSCFG_BASE_CORE_SWTMR_TASK</a>&nbsp;&nbsp;&nbsp;YES</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Configurate item for handling software timer interrupt in task tailoring <a href="#g60f64776fffeedbd72821a48ca3bcdd0"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g4bc9ddba864c0ff6656ec1a8b02543dd.html#g4bc9ddba864c0ff6656ec1a8b02543dd">LOSCFG_BASE_CORE_SWTMR_ALIGN</a>&nbsp;&nbsp;&nbsp;NO</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Configurate item for software timer align tailoring <a href="#g4bc9ddba864c0ff6656ec1a8b02543dd"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g535648cb901582f19698ea4430de4c6f.html#g535648cb901582f19698ea4430de4c6f">OS_SWTMR_MAX_TIMERID</a>&nbsp;&nbsp;&nbsp;((65535 / LOSCFG_BASE_CORE_SWTMR_LIMIT) * LOSCFG_BASE_CORE_SWTMR_LIMIT)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Max number of software timers ID <a href="#g535648cb901582f19698ea4430de4c6f"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_ge92a7d8898e9d9c68384b1894f54335f.html#ge92a7d8898e9d9c68384b1894f54335f">OS_SWTMR_HANDLE_QUEUE_SIZE</a>&nbsp;&nbsp;&nbsp;(LOSCFG_BASE_CORE_SWTMR_LIMIT + 0)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Maximum size of a software timer queue <a href="#ge92a7d8898e9d9c68384b1894f54335f"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_gfeee9c0dd57d68db59d51f1cc23abf86.html#gfeee9c0dd57d68db59d51f1cc23abf86">LOS_COMMON_DIVISOR</a>&nbsp;&nbsp;&nbsp;10</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Minimum divisor of software timer multiple alignment <a href="#gfeee9c0dd57d68db59d51f1cc23abf86"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_gf9cec8e724e423dc30c200cf930fba37.html#gf9cec8e724e423dc30c200cf930fba37">OS_SYS_MEM_ADDR</a>&nbsp;&nbsp;&nbsp;(&amp;<a class="el" href="a00029_d2c793b93a89f4ba1777d281ac825f8c.html#d2c793b93a89f4ba1777d281ac825f8c">m_aucSysMem0</a>[0])</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Starting address of the memory <a href="#gf9cec8e724e423dc30c200cf930fba37"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_ga849dea07d8e46038ef7aa809fd5455d.html#ga849dea07d8e46038ef7aa809fd5455d">OS_TASK_STACK_ADDR</a>&nbsp;&nbsp;&nbsp;OS_SYS_MEM_ADDR</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Starting address of the task stack <a href="#ga849dea07d8e46038ef7aa809fd5455d"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g2a9bc76036fd20da5b0392b6a289f80f.html#g2a9bc76036fd20da5b0392b6a289f80f">OS_SYS_MEM_SIZE</a>&nbsp;&nbsp;&nbsp;(0x10000UL)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Memory size <a href="#g2a9bc76036fd20da5b0392b6a289f80f"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g8d371005b6d34df42944fd4a44249206.html#g8d371005b6d34df42944fd4a44249206">LOSCFG_MEM_MUL_POOL</a>&nbsp;&nbsp;&nbsp;NO</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Configuration module tailoring of more mempry pool checking <a href="#g8d371005b6d34df42944fd4a44249206"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g439a6f76d3f75fc35c6869fa00dc65c8.html#g439a6f76d3f75fc35c6869fa00dc65c8">LOSCFG_KERNEL_MEM_SLAB</a>&nbsp;&nbsp;&nbsp;YES</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Configuration module tailoring of slab memory <a href="#g439a6f76d3f75fc35c6869fa00dc65c8"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g2a2699931c4c40b532ddc31684ff3932.html#g2a2699931c4c40b532ddc31684ff3932">LOSCFG_BASE_MEM_NODE_INTEGRITY_CHECK</a>&nbsp;&nbsp;&nbsp;NO</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Configuration module tailoring of mem node integrity checking <a href="#g2a2699931c4c40b532ddc31684ff3932"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g575f16678fc7a6d2bb61f9901ed2a7d8.html#g575f16678fc7a6d2bb61f9901ed2a7d8">LOSCFG_BASE_MEM_NODE_SIZE_CHECK</a>&nbsp;&nbsp;&nbsp;YES</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Configuration module tailoring of mem node size checking <a href="#g575f16678fc7a6d2bb61f9901ed2a7d8"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g5cc68a42eabab831a4aa04dd3d1e66c0.html#g5cc68a42eabab831a4aa04dd3d1e66c0">OS_SYS_MEM_NUM</a>&nbsp;&nbsp;&nbsp;20</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Number of memory checking blocks <a href="#g5cc68a42eabab831a4aa04dd3d1e66c0"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g9bffe4a5cb8f2deebd07959212c38766.html#g9bffe4a5cb8f2deebd07959212c38766">LOSCFG_HEAP_MEMORY_PEAK_STATISTICS</a>&nbsp;&nbsp;&nbsp;YES</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Configuration heap memory peak statistics <a href="#g9bffe4a5cb8f2deebd07959212c38766"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g4be7665b59d946f924ebabe374ccdb3d.html#g4be7665b59d946f924ebabe374ccdb3d">OS_SYS_NOCACHEMEM_SIZE</a>&nbsp;&nbsp;&nbsp;0x0UL</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Size of unaligned memory <a href="#g4be7665b59d946f924ebabe374ccdb3d"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_gdf8f76bb47f657eb7f53bcbd85324161.html#gdf8f76bb47f657eb7f53bcbd85324161">LOSCFG_PLATFORM_EXC</a>&nbsp;&nbsp;&nbsp;NO</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Starting address of the unaligned memory <a href="#gdf8f76bb47f657eb7f53bcbd85324161"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_ga515349444f11c8989105da51796da2d.html#ga515349444f11c8989105da51796da2d">LOSCFG_EXC_HRADWARE_STACK_PROTECTION</a>&nbsp;&nbsp;&nbsp;NO</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Configuration of hardware stack protection <a href="#ga515349444f11c8989105da51796da2d"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_ge49a475ac98ee19626a2fe386651cf2d.html#ge49a475ac98ee19626a2fe386651cf2d">LOSCFG_BASE_CORE_MPU</a>&nbsp;&nbsp;&nbsp;NO</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Configuration item for MPU <a href="#ge49a475ac98ee19626a2fe386651cf2d"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g2dee120af8a0035efa536d00f15c8b79.html#g2dee120af8a0035efa536d00f15c8b79">LOSCFG_MPU_MAX_SUPPORT</a>&nbsp;&nbsp;&nbsp;8</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">MPU support number : MPU maximum number of region support(According to the cotex-m4 authority Guide) <a href="#g2dee120af8a0035efa536d00f15c8b79"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g127063e857fd416f1ad5b1e8e7292398.html#g127063e857fd416f1ad5b1e8e7292398">LOSCFG_MPU_MIN_ADDRESS</a>&nbsp;&nbsp;&nbsp;0x0UL</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">MPU support address range : from LOSCFG_MPU_MIN_ADDRESS to LOSCFG_MPU_MAX_ADDRESS <a href="#g127063e857fd416f1ad5b1e8e7292398"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_gad23c9bfc3dc300ff41a8544c23dae79.html#gad23c9bfc3dc300ff41a8544c23dae79">LOSCFG_KERNEL_RUNSTOP</a>&nbsp;&nbsp;&nbsp;NO</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Configuration item for runstop module tailoring <a href="#gad23c9bfc3dc300ff41a8544c23dae79"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g7a12244f746892c6990dc81fc2c6bf8e.html#g7a12244f746892c6990dc81fc2c6bf8e">OS_INCLUDE_PERF</a>&nbsp;&nbsp;&nbsp;NO</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Configuration item for performance moniter unit <a href="#g7a12244f746892c6990dc81fc2c6bf8e"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g10468e888cefe47fc3d6e6aa733d8745.html#g10468e888cefe47fc3d6e6aa733d8745">LOSCFG_BASE_CORE_CPUP</a>&nbsp;&nbsp;&nbsp;NO</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Configuration item for CPU usage tailoring <a href="#g10468e888cefe47fc3d6e6aa733d8745"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g22cf294a123a7d8e10d16e8e6166aef3.html#g22cf294a123a7d8e10d16e8e6166aef3">LOSCFG_COMPAT_CMSIS_FW</a>&nbsp;&nbsp;&nbsp;NO</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Configuration item for the monitoring of task communication <a href="#g22cf294a123a7d8e10d16e8e6166aef3"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_gae8d085d3b66a59aad4049d0afe52882.html#gae8d085d3b66a59aad4049d0afe52882">OS_INCLUDE_SHELL</a>&nbsp;&nbsp;&nbsp;NO</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Configuration item for shell module tailoring <a href="#gae8d085d3b66a59aad4049d0afe52882"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g8ff228f3f55521aca4bdf22c83c6566e.html#g8ff228f3f55521aca4bdf22c83c6566e">LOSCFG_TEST</a>&nbsp;&nbsp;&nbsp;NO</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Configuration test case to open <a href="#g8ff228f3f55521aca4bdf22c83c6566e"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g484a05c9ba64ac79308f39745ae9daae.html#g484a05c9ba64ac79308f39745ae9daae">LITEOS_VER</a>&nbsp;&nbsp;&nbsp;&quot;Huawei LiteOS Kernel V100R001c00B021&quot;</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Version number <a href="#g484a05c9ba64ac79308f39745ae9daae"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g63fc940bb6b9adb8549a7066cdd788e5.html#g63fc940bb6b9adb8549a7066cdd788e5">CMSIS_OS_VER</a>&nbsp;&nbsp;&nbsp;1</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Configuration CMSIS_OS_VER <a href="#g63fc940bb6b9adb8549a7066cdd788e5"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g43fd65a992e31d0d63aafde818f95843.html#g43fd65a992e31d0d63aafde818f95843">LOSCFG_KERNEL_TRACE</a>&nbsp;&nbsp;&nbsp;NO</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Configuration liteos trace <a href="#g43fd65a992e31d0d63aafde818f95843"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g9b0a14fcaecb5618201903ccb33b9bc3.html#g9b0a14fcaecb5618201903ccb33b9bc3">OS_HWI_WITH_ARG</a>&nbsp;&nbsp;&nbsp;NO</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Configuration item for interrupt with argument <a href="#g9b0a14fcaecb5618201903ccb33b9bc3"></a><br /></td>
+     </tr> 
+     <tr>
+      <td colspan="2"><br /><h2>函数</h2></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g68b48420664628228e5c42abbc472e94.html#g68b48420664628228e5c42abbc472e94">osTaskInit</a> (VOID)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">: Task init function. <a href="#g68b48420664628228e5c42abbc472e94"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">VOID&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_gef31e4ccecedc9ba2d58b4445929ea03.html#gef31e4ccecedc9ba2d58b4445929ea03">osHwiInit</a> (void)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">: hardware interrupt init function. <a href="#gef31e4ccecedc9ba2d58b4445929ea03"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g962d201e43992760f0902194606d57c3.html#g962d201e43992760f0902194606d57c3">osSemInit</a> (void)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">: Semaphore init function. <a href="#g962d201e43992760f0902194606d57c3"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_gf4a203dd682e40a0328abb7a6f1fe898.html#gf4a203dd682e40a0328abb7a6f1fe898">osMuxInit</a> (void)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">: Mutex init function. <a href="#gf4a203dd682e40a0328abb7a6f1fe898"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_gd89b6fa30b59c2bf515dda9ef12dea2c.html#gd89b6fa30b59c2bf515dda9ef12dea2c">osQueueInit</a> (void)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">: Queue init function. <a href="#gd89b6fa30b59c2bf515dda9ef12dea2c"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g3702638e75536a6c1fb3fcd8cabd4331.html#g3702638e75536a6c1fb3fcd8cabd4331">osSwTmrInit</a> (void)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">: Software Timers init function. <a href="#g3702638e75536a6c1fb3fcd8cabd4331"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">VOID&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_gacac7b88bc754b9c930fcd71d0f84d9f.html#gacac7b88bc754b9c930fcd71d0f84d9f">LOS_StartToRun</a> (VOID)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">: Task start running function. <a href="#gacac7b88bc754b9c930fcd71d0f84d9f"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_gb01f67597967e276aabac6105e0b1d3e.html#gb01f67597967e276aabac6105e0b1d3e">los_TestInit</a> (VOID)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">: Test Task init function. <a href="#gb01f67597967e276aabac6105e0b1d3e"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">VOID&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g177820a12abc1d2beda7042aaef9bbc6.html#g177820a12abc1d2beda7042aaef9bbc6">osStart</a> (void)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">: User application Task init function. <a href="#g177820a12abc1d2beda7042aaef9bbc6"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">VOID&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g3437bfef6b94565fc50b2913ff3464b5.html#g3437bfef6b94565fc50b2913ff3464b5">osHwInit</a> (VOID)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">: Hardware init function. <a href="#g3437bfef6b94565fc50b2913ff3464b5"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g178fa3bccaa4b213dba16ada09d0667e.html#g178fa3bccaa4b213dba16ada09d0667e">osTickStart</a> (VOID)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Configure Tick Interrupt Start. <a href="#g178fa3bccaa4b213dba16ada09d0667e"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">VOID&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g24bd948154a16895d7bb5abb00f85ac7.html#g24bd948154a16895d7bb5abb00f85ac7">osTimesliceInit</a> (VOID)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Scheduling initialization. <a href="#g24bd948154a16895d7bb5abb00f85ac7"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">LITE_OS_SEC_TEXT_INIT <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g53fc4189fa1f94b1f9378574cc6a6489.html#g53fc4189fa1f94b1f9378574cc6a6489">osMemSystemInit</a> (VOID)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">: System memory init function. <a href="#g53fc4189fa1f94b1f9378574cc6a6489"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">VOID&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_gc4b09d5880a5c8ce0cc3ca995ca89ce1.html#gc4b09d5880a5c8ce0cc3ca995ca89ce1">osTaskMonInit</a> (VOID)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">: Task Monitor init function. <a href="#gc4b09d5880a5c8ce0cc3ca995ca89ce1"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g61924c3deb7e450620dcb41a4ff648a5.html#g61924c3deb7e450620dcb41a4ff648a5">osCpupInit</a> (VOID)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">: CPUP init function. <a href="#g61924c3deb7e450620dcb41a4ff648a5"></a><br /></td>
+     </tr> 
+     <tr>
+      <td colspan="2"><br /><h2>变量</h2></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00055_g1ffd8c6d02a009548bf8ace0a75f9f5d.html#g1ffd8c6d02a009548bf8ace0a75f9f5d">g_sys_mem_addr_end</a></td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Ending address of the memory <a href="#g1ffd8c6d02a009548bf8ace0a75f9f5d"></a><br /></td>
+     </tr> 
+    </tbody>
+   </table> 
+  </div> 
+  <hr size="1" /> 
+ </body>
+</html>

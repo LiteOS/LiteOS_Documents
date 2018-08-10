@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>  
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+<meta name="DC.Type" content="concept">
+<meta name="featurename" content="dcp">
+<title>enSwTmrType</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head> 
+ <body> 
+  <div class="familylinks"> 
+   <a href="a00066_g924987376edf9a46a74d398c9a2792c0.html">enSwTmrType</a> 
+   <hr size="2" /> 
+  </div> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top"> 
+  </div> 
+  <div class="contents"> 
+   <div class="navpath"> 
+    <a class="el" href="a00066.html">Software timer</a> 
+   </div> 
+   <table cellspacing="0" cellpadding="0" border="0"> 
+    <tbody> 
+     <tr> 
+      <td valign="top"> </td> 
+      <td valign="top"> <a class="anchor" name="g924987376edf9a46a74d398c9a2792c0"></a> 
+       <!-- doxytag: member="los_swtmr.h::<a href='a00066_g924987376edf9a46a74d398c9a2792c0.html'>enSwTmrType</a>" ref="g924987376edf9a46a74d398c9a2792c0" args="" --> 
+       <div class="memitem"> 
+        <div class="memproto"> 
+         <table class="memname"> 
+          <tbody> 
+           <tr> 
+            <td class="memname">enum <a class="el" href="a00066_g924987376edf9a46a74d398c9a2792c0.html#g924987376edf9a46a74d398c9a2792c0">enSwTmrType</a> </td> 
+           </tr> 
+          </tbody> 
+         </table> 
+        </div> 
+        <div class="memdoc"> 
+         <p> Software timer mode </p> 
+         <p> </p> 
+         <dl compact=""> 
+          <dt> 
+           <b>枚举值: </b> 
+          </dt> 
+          <dd> 
+           <table border="0" cellspacing="0" cellpadding="0"> 
+            <tbody> 
+             <tr> 
+              <td valign="top"><em><a class="anchor" name="gg924987376edf9a46a74d398c9a2792c0cd0f21498a3f817a40859c0c26d578af"></a> 
+                <!-- doxytag: member="LOS_SWTMR_MODE_ONCE" ref="gg924987376edf9a46a74d398c9a2792c0cd0f21498a3f817a40859c0c26d578af" args="" -->LOS_SWTMR_MODE_ONCE</em>&nbsp;</td> 
+              <td> One-off software timer </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"><em><a class="anchor" name="gg924987376edf9a46a74d398c9a2792c00c46539d62ee5548cf3ddde2dbff6b86"></a> 
+                <!-- doxytag: member="LOS_SWTMR_MODE_PERIOD" ref="gg924987376edf9a46a74d398c9a2792c00c46539d62ee5548cf3ddde2dbff6b86" args="" -->LOS_SWTMR_MODE_PERIOD</em>&nbsp;</td> 
+              <td> Periodic software timer </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"><em><a class="anchor" name="gg924987376edf9a46a74d398c9a2792c0e7fe8f9fdcbc7cecf75b47318e89a0c3"></a> 
+                <!-- doxytag: member="LOS_SWTMR_MODE_NO_SELFDELETE" ref="gg924987376edf9a46a74d398c9a2792c0e7fe8f9fdcbc7cecf75b47318e89a0c3" args="" -->LOS_SWTMR_MODE_NO_SELFDELETE</em>&nbsp;</td> 
+              <td> One-off software timer, but not self-delete </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"><em><a class="anchor" name="gg924987376edf9a46a74d398c9a2792c0a69d16edc8547fb5cf2c08ee90148163"></a> 
+                <!-- doxytag: member="LOS_SWTMR_MODE_OPP" ref="gg924987376edf9a46a74d398c9a2792c0a69d16edc8547fb5cf2c08ee90148163" args="" -->LOS_SWTMR_MODE_OPP</em>&nbsp;</td> 
+              <td> After the one-off timer finishes timing, the periodic software timer is enabled. <p> This mode is not supported temporarily. </p></td> 
+             </tr> 
+            </tbody> 
+           </table> 
+          </dd> 
+         </dl> 
+         <p>在文件<a class="el" href="a00092.html">los_swtmr.h</a>第<a class="el" href="a00092.html#l00256">256</a>行定义。</p> 
+         <div class="fragment"> 
+          <pre class="fragment"><a name="l00257"></a>00257 {
+<a name="l00258"></a>00258     <a class="code" href="a00066_g924987376edf9a46a74d398c9a2792c0.html#gg924987376edf9a46a74d398c9a2792c0cd0f21498a3f817a40859c0c26d578af" title="One-off software timer">LOS_SWTMR_MODE_ONCE</a>,                 <span class="comment">/**&lt; One-off software timer */</span>
+<a name="l00259"></a>00259     <a class="code" href="a00066_g924987376edf9a46a74d398c9a2792c0.html#gg924987376edf9a46a74d398c9a2792c00c46539d62ee5548cf3ddde2dbff6b86" title="Periodic software timer">LOS_SWTMR_MODE_PERIOD</a>,               <span class="comment">/**&lt; Periodic software timer */</span>
+<a name="l00260"></a>00260     <a class="code" href="a00066_g924987376edf9a46a74d398c9a2792c0.html#gg924987376edf9a46a74d398c9a2792c0e7fe8f9fdcbc7cecf75b47318e89a0c3" title="One-off software timer, but not self-delete">LOS_SWTMR_MODE_NO_SELFDELETE</a>,        <span class="comment">/**&lt; One-off software timer, but not self-delete */</span>
+<a name="l00261"></a>00261     <a class="code" href="a00066_g924987376edf9a46a74d398c9a2792c0.html#gg924987376edf9a46a74d398c9a2792c0a69d16edc8547fb5cf2c08ee90148163" title="After the one-off timer finishes timing, the periodic software timer is enabled.">LOS_SWTMR_MODE_OPP</a>,                  <span class="comment">/**&lt; After the one-off timer finishes timing, the periodic software timer is enabled. This mode is not supported temporarily.*/</span>
+<a name="l00262"></a>00262 };
+</pre> 
+         </div> 
+         <p> </p> 
+        </div> 
+       </div><p> </p></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <hr size="1" />  
+ </body>
+</html>

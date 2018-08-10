@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312" /> 
+  <title>LOS_MemboxInit</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head>
+ <body> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top">  
+  </div> 
+  <div class="contents"> 
+   <div class="navpath">
+    <a class="el" href="a00037.html">los_membox.h</a> 
+   </div> 
+   <table cellspacing="0" cellpadding="0" border="0"> 
+    <tbody>
+     <tr> 
+      <td valign="top"> </td> 
+      <td valign="top"> <a class="anchor" name="c2a8a2b0ebf8d6a1e9d864e9e6574bd8"></a>
+       <!-- doxytag: member="los_membox.h::LOS_MemboxInit" ref="c2a8a2b0ebf8d6a1e9d864e9e6574bd8" args="(VOID *pBoxMem, UINT32 uwBoxSize, UINT32 uwBlkSize)" --> 
+       <div class="memitem"> 
+        <div class="memproto"> 
+         <table class="memname"> 
+          <tbody>
+           <tr> 
+            <td class="memname"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> LOS_MemboxInit </td> 
+            <td class="paramtype">(</td> 
+            <td class="paramtype">VOID *&nbsp;</td> 
+            <td class="paramname"> <em>pBoxMem</em>, </td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramtype"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+            <td class="paramname"> <em>uwBoxSize</em>, </td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramtype"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+            <td class="paramname"> <em>uwBlkSize</em></td>
+            <td class="paramkey">&nbsp;</td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey">)</td> 
+            <td class="paramkey"></td>
+            <td class="paramkey"></td>
+            <td class="paramkey"></td> 
+           </tr> 
+          </tbody>
+         </table> 
+        </div> 
+        <div class="memdoc"> 
+         <p> Initialize a memory pool. </p>
+         <p> </p>
+         <dl class="user" compact="">
+          <dt>
+           <b>Description:</b>
+          </dt>
+          <dd>
+           <ul> 
+            <li> This API is used to initialize a memory pool. </li> 
+           </ul> 
+          </dd>
+         </dl> 
+         <dl class="attention" compact="">
+          <dt>
+           <b>注意:</b>
+          </dt>
+          <dd>
+           <ul> 
+            <li> The uwBoxSize parameter value should match the following two conditions : 1) Be less than or equal to the Memory pool size; 2) Be greater than the size of LOS_MEMBOX_INFO. </li> 
+           </ul> 
+          </dd>
+         </dl> 
+         <dl compact="">
+          <dt>
+           <b>参数:</b>
+          </dt>
+          <dd> 
+           <table border="0" cellspacing="0" cellpadding="0"> 
+            <tbody>
+             <tr>
+              <th></th>
+              <th>参数名称</th>
+              <th>描述</th> 
+             </tr>
+             <tr>
+              <td valign="top"></td>
+              <td valign="top" nowrap="">pBoxMem&nbsp;</td>
+              <td>[IN] Memory pool address. </td>
+             </tr> 
+             <tr>
+              <td valign="top"></td>
+              <td valign="top" nowrap="">uwBoxSize&nbsp;</td>
+              <td>[IN] Memory pool size. </td>
+             </tr> 
+             <tr>
+              <td valign="top"></td>
+              <td valign="top" nowrap="">uwBlkSize&nbsp;</td>
+              <td>[IN] Memory block size.</td>
+             </tr> 
+            </tbody>
+           </table> 
+          </dd>
+         </dl> 
+         <dl compact="">
+          <dt>
+           <b>返回值:</b>
+          </dt>
+          <dd> 
+           <table border="0" cellspacing="0" cellpadding="0"> 
+            <tbody>
+             <tr>
+              <th></th>
+              <th>返回值</th>
+              <th>描述</th> 
+             </tr>
+             <tr>
+              <td valign="top"></td>
+              <td valign="top" nowrap=""><a class="el" href="a00048_17faf4404ee8d59298b9f0ecfece2164.html#17faf4404ee8d59298b9f0ecfece2164">LOS_NOK</a>&nbsp;</td>
+              <td>The memory pool fails to be initialized. </td>
+             </tr> 
+             <tr>
+              <td valign="top"></td>
+              <td valign="top" nowrap=""><a class="el" href="a00048_81e00a29757b6c6f90f05ca6c1eed169.html#81e00a29757b6c6f90f05ca6c1eed169">LOS_OK</a>&nbsp;</td>
+              <td>The memory pool is successfully initialized. </td>
+             </tr> 
+            </tbody>
+           </table> 
+          </dd>
+         </dl> 
+         <dl class="user" compact="">
+          <dt>
+           <b>Dependency:</b>
+          </dt>
+          <dd>
+           <ul> 
+            <li> <a class="el" href="a00037.html">los_membox.h</a>: the header file that contains the API declaration. </li> 
+           </ul> 
+          </dd>
+         </dl> 
+         <dl class="see" compact="">
+          <dt>
+           <b>参见:</b>
+          </dt>
+          <dd>
+           None. 
+          </dd>
+         </dl> 
+         <dl class="since" compact="">
+          <dt>
+           <b>自从:</b>
+          </dt>
+          <dd>
+           Huawei LiteOS V100R001C00 
+          </dd>
+         </dl> 
+        </div> 
+       </div><p> </p></td> 
+     </tr> 
+    </tbody>
+   </table> 
+  </div> 
+  <hr size="1" /> 
+ </body>
+</html>

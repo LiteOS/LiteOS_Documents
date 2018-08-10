@@ -1,0 +1,348 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312" /> 
+  <title>los_event.h源文件</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head>
+ <body> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top">   
+   <h1>los_event.h</h1>
+   <a href="a00032.html">浏览该文件的文档。</a>
+   <div class="fragment">
+    <pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*----------------------------------------------------------------------------</span>
+<a name="l00002"></a>00002 <span class="comment"> * Copyright (c) &lt;2013-2015&gt;, &lt;Huawei Technologies Co., Ltd&gt;</span>
+<a name="l00003"></a>00003 <span class="comment"> * All rights reserved.</span>
+<a name="l00004"></a>00004 <span class="comment"> * Redistribution and use in source and binary forms, with or without modification,</span>
+<a name="l00005"></a>00005 <span class="comment"> * are permitted provided that the following conditions are met:</span>
+<a name="l00006"></a>00006 <span class="comment"> * 1. Redistributions of source code must retain the above copyright notice, this list of</span>
+<a name="l00007"></a>00007 <span class="comment"> * conditions and the following disclaimer.</span>
+<a name="l00008"></a>00008 <span class="comment"> * 2. Redistributions in binary form must reproduce the above copyright notice, this list</span>
+<a name="l00009"></a>00009 <span class="comment"> * of conditions and the following disclaimer in the documentation and/or other materials</span>
+<a name="l00010"></a>00010 <span class="comment"> * provided with the distribution.</span>
+<a name="l00011"></a>00011 <span class="comment"> * 3. Neither the name of the copyright holder nor the names of its contributors may be used</span>
+<a name="l00012"></a>00012 <span class="comment"> * to endorse or promote products derived from this software without specific prior written</span>
+<a name="l00013"></a>00013 <span class="comment"> * permission.</span>
+<a name="l00014"></a>00014 <span class="comment"> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS</span>
+<a name="l00015"></a>00015 <span class="comment"> * &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,</span>
+<a name="l00016"></a>00016 <span class="comment"> * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR</span>
+<a name="l00017"></a>00017 <span class="comment"> * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR</span>
+<a name="l00018"></a>00018 <span class="comment"> * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,</span>
+<a name="l00019"></a>00019 <span class="comment"> * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,</span>
+<a name="l00020"></a>00020 <span class="comment"> * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;</span>
+<a name="l00021"></a>00021 <span class="comment"> * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,</span>
+<a name="l00022"></a>00022 <span class="comment"> * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR</span>
+<a name="l00023"></a>00023 <span class="comment"> * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF</span>
+<a name="l00024"></a>00024 <span class="comment"> * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</span>
+<a name="l00025"></a>00025 <span class="comment"> *---------------------------------------------------------------------------*/</span>
+<a name="l00026"></a>00026 <span class="comment">/*----------------------------------------------------------------------------</span>
+<a name="l00027"></a>00027 <span class="comment"> * Notice of Export Control Law</span>
+<a name="l00028"></a>00028 <span class="comment"> * ===============================================</span>
+<a name="l00029"></a>00029 <span class="comment"> * Huawei LiteOS may be subject to applicable export control laws and regulations, which might</span>
+<a name="l00030"></a>00030 <span class="comment"> * include those applicable to Huawei LiteOS of U.S. and the country in which you are located.</span>
+<a name="l00031"></a>00031 <span class="comment"> * Import, export and usage of Huawei LiteOS in any manner by you shall be in compliance with such</span>
+<a name="l00032"></a>00032 <span class="comment"> * applicable export control laws and regulations.</span>
+<a name="l00033"></a>00033 <span class="comment"> *---------------------------------------------------------------------------*/</span>
+<a name="l00034"></a>00034 <span class="comment"></span>
+<a name="l00035"></a>00035 <span class="comment">/**@defgroup los_event Event</span>
+<a name="l00036"></a>00036 <span class="comment"> * @ingroup kernel</span>
+<a name="l00037"></a>00037 <span class="comment"> */</span>
+<a name="l00038"></a>00038 
+<a name="l00039"></a>00039 <span class="preprocessor">#ifndef _LOS_EVENT_H</span>
+<a name="l00040"></a>00040 <span class="preprocessor"></span><span class="preprocessor">#define _LOS_EVENT_H</span>
+<a name="l00041"></a>00041 <span class="preprocessor"></span>
+<a name="l00042"></a>00042 <span class="preprocessor">#include &quot;<a class="code" href="a00027.html">los_base.h</a>&quot;</span>
+<a name="l00043"></a>00043 <span class="preprocessor">#include &quot;<a class="code" href="a00036.html">los_list.h</a>&quot;</span>
+<a name="l00044"></a>00044 
+<a name="l00045"></a>00045 <span class="preprocessor">#ifdef __cplusplus</span>
+<a name="l00046"></a>00046 <span class="preprocessor"></span><span class="preprocessor">#if __cplusplus</span>
+<a name="l00047"></a>00047 <span class="preprocessor"></span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {
+<a name="l00048"></a>00048 <span class="preprocessor">#endif </span><span class="comment">/* __cplusplus */</span>
+<a name="l00049"></a>00049 <span class="preprocessor">#endif </span><span class="comment">/* __cplusplus */</span>
+<a name="l00050"></a>00050 
+<a name="l00051"></a>00051 <span class="comment"></span>
+<a name="l00052"></a>00052 <span class="comment">/**</span>
+<a name="l00053"></a>00053 <span class="comment"> * @ingroup los_event</span>
+<a name="l00054"></a>00054 <span class="comment"> * Event reading mode: The task waits for all its expected events to occur.</span>
+<a name="l00055"></a>00055 <span class="comment"> */</span>
+<a name="l00056"></a><a class="code" href="a00058_g58c6d170427b4f9f6e4624458ce4ff9e.html#g58c6d170427b4f9f6e4624458ce4ff9e">00056</a> <span class="preprocessor">#define LOS_WAITMODE_AND         (4) </span><span class="comment">/* all bits must be set */</span>
+<a name="l00057"></a>00057 <span class="comment"></span>
+<a name="l00058"></a>00058 <span class="comment">/**</span>
+<a name="l00059"></a>00059 <span class="comment"> * @ingroup los_event</span>
+<a name="l00060"></a>00060 <span class="comment"> * Event reading mode: The task waits for any of its expected events to occur.</span>
+<a name="l00061"></a>00061 <span class="comment"> */</span>
+<a name="l00062"></a><a class="code" href="a00058_g3416630a613257590af97f1322902547.html#g3416630a613257590af97f1322902547">00062</a> <span class="preprocessor">#define LOS_WAITMODE_OR          (2) </span><span class="comment">/* any bit must be set  */</span>
+<a name="l00063"></a>00063 <span class="comment"></span>
+<a name="l00064"></a>00064 <span class="comment">/**</span>
+<a name="l00065"></a>00065 <span class="comment"> * @ingroup los_event</span>
+<a name="l00066"></a>00066 <span class="comment"> * Event reading mode: The event flag is immediately cleared after the event is read.</span>
+<a name="l00067"></a>00067 <span class="comment"> */</span>
+<a name="l00068"></a><a class="code" href="a00058_g1007dc303c83d881b80e44a14091bfc2.html#g1007dc303c83d881b80e44a14091bfc2">00068</a> <span class="preprocessor">#define LOS_WAITMODE_CLR         (1) </span><span class="comment">/* clear when satisfied */</span>
+<a name="l00069"></a>00069 <span class="comment"></span>
+<a name="l00070"></a>00070 <span class="comment">/**</span>
+<a name="l00071"></a>00071 <span class="comment"> * @ingroup los_event</span>
+<a name="l00072"></a>00072 <span class="comment"> * Bit 25 of the event mask cannot be set to an event because it is set to an error code.</span>
+<a name="l00073"></a>00073 <span class="comment"> *</span>
+<a name="l00074"></a>00074 <span class="comment"> * Value: 0x02001c00</span>
+<a name="l00075"></a>00075 <span class="comment"> *</span>
+<a name="l00076"></a>00076 <span class="comment"> * Solution: Set bits excluding bit 25 of the event mask to events.</span>
+<a name="l00077"></a>00077 <span class="comment"> */</span>
+<a name="l00078"></a><a class="code" href="a00058_g84625503ee291dde9c6c867359b2fd6a.html#g84625503ee291dde9c6c867359b2fd6a">00078</a> <span class="preprocessor">#define LOS_ERRNO_EVENT_SETBIT_INVALID                      LOS_ERRNO_OS_ERROR(LOS_MOD_EVENT, 0x00)</span>
+<a name="l00079"></a>00079 <span class="preprocessor"></span><span class="comment">/**</span>
+<a name="l00080"></a>00080 <span class="comment"> * @ingroup los_event</span>
+<a name="l00081"></a>00081 <span class="comment"> * Event reading error code: Event reading times out.</span>
+<a name="l00082"></a>00082 <span class="comment"> *</span>
+<a name="l00083"></a>00083 <span class="comment"> * Value: 0x02001c01</span>
+<a name="l00084"></a>00084 <span class="comment"> *</span>
+<a name="l00085"></a>00085 <span class="comment"> * Solution: Increase the waiting time for event reading, or make another task write a mask for the event.</span>
+<a name="l00086"></a>00086 <span class="comment"> */</span>
+<a name="l00087"></a><a class="code" href="a00058_g6a959bad7fda1f476004d5ed36a935db.html#g6a959bad7fda1f476004d5ed36a935db">00087</a> <span class="preprocessor">#define LOS_ERRNO_EVENT_READ_TIMEOUT                        LOS_ERRNO_OS_ERROR(LOS_MOD_EVENT, 0x01)</span>
+<a name="l00088"></a>00088 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00089"></a>00089 <span class="comment">/**</span>
+<a name="l00090"></a>00090 <span class="comment"> * @ingroup los_event</span>
+<a name="l00091"></a>00091 <span class="comment"> * Event reading error code: The EVENTMASK input parameter value is valid. The input parameter value must not be 0.</span>
+<a name="l00092"></a>00092 <span class="comment"> *</span>
+<a name="l00093"></a>00093 <span class="comment"> * Value: 0x02001c02</span>
+<a name="l00094"></a>00094 <span class="comment"> *</span>
+<a name="l00095"></a>00095 <span class="comment"> * Solution: Pass in a valid EVENTMASK value.</span>
+<a name="l00096"></a>00096 <span class="comment"> */</span>
+<a name="l00097"></a><a class="code" href="a00058_gd3f71e943f5d1857531ac383ab3c724f.html#gd3f71e943f5d1857531ac383ab3c724f">00097</a> <span class="preprocessor">#define LOS_ERRNO_EVENT_EVENTMASK_INVALID                   LOS_ERRNO_OS_ERROR(LOS_MOD_EVENT, 0x02)</span>
+<a name="l00098"></a>00098 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00099"></a>00099 <span class="comment">/**</span>
+<a name="l00100"></a>00100 <span class="comment"> * @ingroup los_event</span>
+<a name="l00101"></a>00101 <span class="comment"> * Event reading error code: The event is being read during an interrupt.</span>
+<a name="l00102"></a>00102 <span class="comment"> *</span>
+<a name="l00103"></a>00103 <span class="comment"> * Value: 0x02001c03</span>
+<a name="l00104"></a>00104 <span class="comment"> *</span>
+<a name="l00105"></a>00105 <span class="comment"> * Solution: Read the event in a task.</span>
+<a name="l00106"></a>00106 <span class="comment"> */</span>
+<a name="l00107"></a><a class="code" href="a00058_g33ac360c111ae7c7c686ecf3d9cf3ade.html#g33ac360c111ae7c7c686ecf3d9cf3ade">00107</a> <span class="preprocessor">#define LOS_ERRNO_EVENT_READ_IN_INTERRUPT                   LOS_ERRNO_OS_ERROR(LOS_MOD_EVENT, 0x03)</span>
+<a name="l00108"></a>00108 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00109"></a>00109 <span class="comment">/**</span>
+<a name="l00110"></a>00110 <span class="comment"> * @ingroup los_event</span>
+<a name="l00111"></a>00111 <span class="comment"> * Event reading error code: The uwFlags input parameter value used in the event reading API is invalid. This input parameter value is obtained by performing an OR operation on corresponding bits of either OS_EVENT_ANY or OS_EVENT_ANY and corresponding bits of either OS_EVENT_WAIT or OS_EVENT_NOWAIT. The waiting time must be set to a nonzero value when an event is read in the mode of OS_EVENT_WAIT.</span>
+<a name="l00112"></a>00112 <span class="comment"> *</span>
+<a name="l00113"></a>00113 <span class="comment"> * Value: 0x02001c04</span>
+<a name="l00114"></a>00114 <span class="comment"> *</span>
+<a name="l00115"></a>00115 <span class="comment"> * Solution: Pass in a valid uwFlags value.</span>
+<a name="l00116"></a>00116 <span class="comment"> */</span>
+<a name="l00117"></a><a class="code" href="a00058_ge3021fd5742f063ac7c6125484836e66.html#ge3021fd5742f063ac7c6125484836e66">00117</a> <span class="preprocessor">#define LOS_ERRNO_EVENT_FLAGS_INVALID                       LOS_ERRNO_OS_ERROR(LOS_MOD_EVENT, 0x04)</span>
+<a name="l00118"></a>00118 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00119"></a>00119 <span class="comment">/**</span>
+<a name="l00120"></a>00120 <span class="comment"> * @ingroup los_event</span>
+<a name="l00121"></a>00121 <span class="comment"> * Event reading error code: The task is locked and is unable to read the event.</span>
+<a name="l00122"></a>00122 <span class="comment"> *</span>
+<a name="l00123"></a>00123 <span class="comment"> * Value: 0x02001c05</span>
+<a name="l00124"></a>00124 <span class="comment"> *</span>
+<a name="l00125"></a>00125 <span class="comment"> * Solution: Unlock the task and read the event.</span>
+<a name="l00126"></a>00126 <span class="comment"> */</span>
+<a name="l00127"></a><a class="code" href="a00058_g53a038633413397d6d41a66ec401b9a8.html#g53a038633413397d6d41a66ec401b9a8">00127</a> <span class="preprocessor">#define LOS_ERRNO_EVENT_READ_IN_LOCK                        LOS_ERRNO_OS_ERROR(LOS_MOD_EVENT, 0x05)</span>
+<a name="l00128"></a>00128 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00129"></a>00129 <span class="comment">/**</span>
+<a name="l00130"></a>00130 <span class="comment"> * @ingroup los_event</span>
+<a name="l00131"></a>00131 <span class="comment"> * Event reading error code: Null pointer.</span>
+<a name="l00132"></a>00132 <span class="comment"> *</span>
+<a name="l00133"></a>00133 <span class="comment"> * Value: 0x02001c06</span>
+<a name="l00134"></a>00134 <span class="comment"> *</span>
+<a name="l00135"></a>00135 <span class="comment"> * Solution: Check whether the input parameter is null.</span>
+<a name="l00136"></a>00136 <span class="comment"> */</span>
+<a name="l00137"></a><a class="code" href="a00058_gdea5f4b2497ef710bc09be90cd77e341.html#gdea5f4b2497ef710bc09be90cd77e341">00137</a> <span class="preprocessor">#define LOS_ERRNO_EVENT_PTR_NULL                            LOS_ERRNO_OS_ERROR(LOS_MOD_EVENT, 0x06)</span>
+<a name="l00138"></a>00138 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00139"></a>00139 <span class="comment">/**</span>
+<a name="l00140"></a>00140 <span class="comment"> * @ingroup los_event</span>
+<a name="l00141"></a>00141 <span class="comment"> * Event reading error code: no initialized.</span>
+<a name="l00142"></a>00142 <span class="comment"> *</span>
+<a name="l00143"></a>00143 <span class="comment"> * Value: 0x02001c07</span>
+<a name="l00144"></a>00144 <span class="comment"> *</span>
+<a name="l00145"></a>00145 <span class="comment"> * Solution: Check whether the event is initialized.</span>
+<a name="l00146"></a>00146 <span class="comment"> */</span>
+<a name="l00147"></a><a class="code" href="a00058_g062fbff4dde356f94236f18059dc844c.html#g062fbff4dde356f94236f18059dc844c">00147</a> <span class="preprocessor">#define LOS_ERRNO_EVENT_NOT_INITIALIZED                            LOS_ERRNO_OS_ERROR(LOS_MOD_EVENT, 0x07)</span>
+<a name="l00148"></a>00148 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00149"></a>00149 <span class="comment">/**</span>
+<a name="l00150"></a>00150 <span class="comment"> * @ingroup los_event</span>
+<a name="l00151"></a>00151 <span class="comment"> * Event reading error code: should not be distory.</span>
+<a name="l00152"></a>00152 <span class="comment"> *</span>
+<a name="l00153"></a>00153 <span class="comment"> * Value: 0x02001c08</span>
+<a name="l00154"></a>00154 <span class="comment"> *</span>
+<a name="l00155"></a>00155 <span class="comment"> * Solution: Check whether the event list is not empty.</span>
+<a name="l00156"></a>00156 <span class="comment"> */</span>
+<a name="l00157"></a><a class="code" href="a00058_gb82f777663898c7d03372ee0ba006ae8.html#gb82f777663898c7d03372ee0ba006ae8">00157</a> <span class="preprocessor">#define LOS_ERRNO_EVENT_SHOULD_NOT_DESTORY                            LOS_ERRNO_OS_ERROR(LOS_MOD_EVENT, 0x08)</span>
+<a name="l00158"></a>00158 <span class="preprocessor"></span><span class="comment"></span>
+<a name="l00159"></a>00159 <span class="comment">/**</span>
+<a name="l00160"></a>00160 <span class="comment"> * @ingroup los_event</span>
+<a name="l00161"></a>00161 <span class="comment"> * Event control structure</span>
+<a name="l00162"></a>00162 <span class="comment"> */</span>
+<a name="l00163"></a><a class="code" href="a00014.html">00163</a> <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="a00014.html" title="Event control structure">tagEvent</a>
+<a name="l00164"></a>00164 {
+<a name="l00165"></a><a class="code" href="a00014_2d79b72e9c117f02c8dcddc1c15c7309.html#2d79b72e9c117f02c8dcddc1c15c7309">00165</a>     <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>      <a class="code" href="a00014_2d79b72e9c117f02c8dcddc1c15c7309.html#2d79b72e9c117f02c8dcddc1c15c7309" title="Event mask in the event control block, indicating the event that has been logically...">uwEventID</a>;      <span class="comment">/**&lt; Event mask in the event control block, indicating the event that has been logically processed.*/</span>
+<a name="l00166"></a><a class="code" href="a00014_e3ef327d3b4f4c602fe7f55df5541390.html#e3ef327d3b4f4c602fe7f55df5541390">00166</a>     <a class="code" href="a00011.html" title="Structure of a node in a doubly linked list.">LOS_DL_LIST</a> <a class="code" href="a00014_e3ef327d3b4f4c602fe7f55df5541390.html#e3ef327d3b4f4c602fe7f55df5541390" title="Event control block linked list">stEventList</a>;    <span class="comment">/**&lt; Event control block linked list*/</span>
+<a name="l00167"></a>00167 } <a class="code" href="a00014.html" title="Event control structure">EVENT_CB_S</a>, *<a class="code" href="a00014.html" title="Event control structure">PEVENT_CB_S</a>;
+<a name="l00168"></a>00168 <span class="comment"></span>
+<a name="l00169"></a>00169 <span class="comment">/**</span>
+<a name="l00170"></a>00170 <span class="comment"> *@ingroup los_event</span>
+<a name="l00171"></a>00171 <span class="comment"> *@brief Initialize an event control block.</span>
+<a name="l00172"></a>00172 <span class="comment"> *</span>
+<a name="l00173"></a>00173 <span class="comment"> *@par Description:</span>
+<a name="l00174"></a>00174 <span class="comment"> *This API is used to initialize the event control block pointed to by pstEventCB.</span>
+<a name="l00175"></a>00175 <span class="comment"> *@attention</span>
+<a name="l00176"></a>00176 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00177"></a>00177 <span class="comment"> *&lt;li&gt;None.&lt;/li&gt;</span>
+<a name="l00178"></a>00178 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00179"></a>00179 <span class="comment"> *</span>
+<a name="l00180"></a>00180 <span class="comment"> *@param pstEventCB [IN/OUT] Pointer to the event control block to be initialized.</span>
+<a name="l00181"></a>00181 <span class="comment"> *</span>
+<a name="l00182"></a>00182 <span class="comment"> *@retval #LOS_ERRNO_EVENT_PTR_NULL  Null pointer.</span>
+<a name="l00183"></a>00183 <span class="comment"> *@retval #LOS_OK                    The event control block is successfully initialized.</span>
+<a name="l00184"></a>00184 <span class="comment"> *@par Dependency:</span>
+<a name="l00185"></a>00185 <span class="comment"> *&lt;ul&gt;&lt;li&gt;los_event.h: the header file that contains the API declaration.&lt;/li&gt;&lt;/ul&gt;</span>
+<a name="l00186"></a>00186 <span class="comment"> *@see LOS_EventClear</span>
+<a name="l00187"></a>00187 <span class="comment"> *@since Huawei LiteOS V100R001C00</span>
+<a name="l00188"></a>00188 <span class="comment"> */</span>
+<a name="l00189"></a>00189 <span class="keyword">extern</span> <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00058_gcb250c42463210839197908aa8d8502b.html#gcb250c42463210839197908aa8d8502b" title="Initialize an event control block.">LOS_EventInit</a>(PEVENT_CB_S pstEventCB);
+<a name="l00190"></a>00190 <span class="comment"></span>
+<a name="l00191"></a>00191 <span class="comment">/**</span>
+<a name="l00192"></a>00192 <span class="comment"> *@ingroup los_event</span>
+<a name="l00193"></a>00193 <span class="comment"> *@brief Obtain an event specified by the event ID.</span>
+<a name="l00194"></a>00194 <span class="comment"> *</span>
+<a name="l00195"></a>00195 <span class="comment"> *@par Description:</span>
+<a name="l00196"></a>00196 <span class="comment"> *This API is used to check whether an event expected by the user occurs according to the event ID, event mask, and event reading mode, and process the event based on the event reading mode. The event ID must point to valid memory.</span>
+<a name="l00197"></a>00197 <span class="comment"> *@attention</span>
+<a name="l00198"></a>00198 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00199"></a>00199 <span class="comment"> *&lt;li&gt;When the uwMode is LOS_WAITMODE_CLR, the puwEventID is passed-out.&lt;/li&gt;</span>
+<a name="l00200"></a>00200 <span class="comment"> *&lt;li&gt;Otherwise the puwEventID is passed-in.&lt;/li&gt;</span>
+<a name="l00201"></a>00201 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00202"></a>00202 <span class="comment"> *</span>
+<a name="l00203"></a>00203 <span class="comment"> *@param uwEventID      [IN/OUT] Pointer to the ID of the event to be checked.</span>
+<a name="l00204"></a>00204 <span class="comment"> *@param uwEventMask    [IN] Mask of the event expected to occur by the user, indicating the event obtained after it is logically processed that matches the ID pointed to by uwEventID.</span>
+<a name="l00205"></a>00205 <span class="comment"> *@param uwMode         [IN] Event reading mode. The modes include LOS_WAITMODE_AND, LOS_WAITMODE_OR, LOS_WAITMODE_CLR.</span>
+<a name="l00206"></a>00206 <span class="comment"> *</span>
+<a name="l00207"></a>00207 <span class="comment"> *@retval 0             The event expected by the user does not occur.</span>
+<a name="l00208"></a>00208 <span class="comment"> *@retval #UINT32       The event expected by the user occurs.</span>
+<a name="l00209"></a>00209 <span class="comment"> *@par Dependency:</span>
+<a name="l00210"></a>00210 <span class="comment"> *&lt;ul&gt;&lt;li&gt;los_event.h: the header file that contains the API declaration.&lt;/li&gt;&lt;/ul&gt;</span>
+<a name="l00211"></a>00211 <span class="comment"> *@see LOS_EventRead | LOS_EventWrite</span>
+<a name="l00212"></a>00212 <span class="comment"> *@since Huawei LiteOS V100R001C00</span>
+<a name="l00213"></a>00213 <span class="comment"> */</span>
+<a name="l00214"></a>00214 <span class="keyword">extern</span> <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00058_g0c9a7f841cfb3adc09145749197cb3e2.html#g0c9a7f841cfb3adc09145749197cb3e2" title="Obtain an event specified by the event ID.">LOS_EventPoll</a>(<a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> *uwEventID, <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwEventMask, <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwMode);
+<a name="l00215"></a>00215 <span class="comment"></span>
+<a name="l00216"></a>00216 <span class="comment">/**</span>
+<a name="l00217"></a>00217 <span class="comment"> *@ingroup los_event</span>
+<a name="l00218"></a>00218 <span class="comment"> *@brief Read an event.</span>
+<a name="l00219"></a>00219 <span class="comment"> *</span>
+<a name="l00220"></a>00220 <span class="comment"> *@par Description:</span>
+<a name="l00221"></a>00221 <span class="comment"> *This API is used to block or schedule a task that reads an event of which the event control block, event mask, reading mode, and timeout information are specified.</span>
+<a name="l00222"></a>00222 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00223"></a>00223 <span class="comment"> *@attention</span>
+<a name="l00224"></a>00224 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00225"></a>00225 <span class="comment"> *&lt;li&gt;An error code and an event return value can be same. To differentiate the error code and return value, bit 25 of the event mask is forbidden to be used.&lt;/li&gt;</span>
+<a name="l00226"></a>00226 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00227"></a>00227 <span class="comment"> *</span>
+<a name="l00228"></a>00228 <span class="comment"> *@param pstEventCB     [IN/OUT] Pointer to the event control block to be checked. This parameter must point to valid memory.</span>
+<a name="l00229"></a>00229 <span class="comment"> *@param uwEventMask    [IN] Mask of the event expected to occur by the user, indicating the event obtained after it is logically processed that matches the ID pointed to by uwEventID.</span>
+<a name="l00230"></a>00230 <span class="comment"> *@param uwMode         [IN] Event reading mode.</span>
+<a name="l00231"></a>00231 <span class="comment"> *@param uwTimeOut      [IN] Timeout interval of event reading (unit: Tick).</span>
+<a name="l00232"></a>00232 <span class="comment"> *</span>
+<a name="l00233"></a>00233 <span class="comment"> *@retval #LOS_ERRNO_EVENT_SETBIT_INVALID     Bit 25 of the event mask cannot be set because it is set to an error number.</span>
+<a name="l00234"></a>00234 <span class="comment"> *@retval #LOS_ERRNO_EVENT_EVENTMASK_INVALID  The passed-in event reading mode is incorrect.</span>
+<a name="l00235"></a>00235 <span class="comment"> *@retval #LOS_ERRNO_EVENT_READ_IN_INTERRUPT  The event is being read during an interrupt.</span>
+<a name="l00236"></a>00236 <span class="comment"> *@retval #LOS_ERRNO_EVENT_FLAGS_INVALID      The event mode is invalid.</span>
+<a name="l00237"></a>00237 <span class="comment"> *@retval #LOS_ERRNO_EVENT_READ_IN_LOCK       The event reading task is locked.</span>
+<a name="l00238"></a>00238 <span class="comment"> *@retval #LOS_ERRNO_EVENT_PTR_NULL           The passed-in pointer is null.</span>
+<a name="l00239"></a>00239 <span class="comment"> *@retval 0                                   The event expected by the user does not occur.</span>
+<a name="l00240"></a>00240 <span class="comment"> *@retval #UINT32                             The event expected by the user occurs.</span>
+<a name="l00241"></a>00241 <span class="comment"> *@par Dependency:</span>
+<a name="l00242"></a>00242 <span class="comment"> *&lt;ul&gt;&lt;li&gt;los_event.h: the header file that contains the API declaration.&lt;/li&gt;&lt;/ul&gt;</span>
+<a name="l00243"></a>00243 <span class="comment"> *@see LOS_EventPoll | LOS_EventWrite</span>
+<a name="l00244"></a>00244 <span class="comment"> *@since Huawei LiteOS V100R001C00</span>
+<a name="l00245"></a>00245 <span class="comment"> */</span>
+<a name="l00246"></a>00246 <span class="keyword">extern</span> <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00058_ge070395569a8c5894679451f20167615.html#ge070395569a8c5894679451f20167615" title="Read an event.">LOS_EventRead</a>(PEVENT_CB_S pstEventCB, <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwEventMask, <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwMode, <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwTimeOut);
+<a name="l00247"></a>00247 <span class="comment"></span>
+<a name="l00248"></a>00248 <span class="comment">/**</span>
+<a name="l00249"></a>00249 <span class="comment"> *@ingroup los_event</span>
+<a name="l00250"></a>00250 <span class="comment"> *@brief Write an event.</span>
+<a name="l00251"></a>00251 <span class="comment"> *</span>
+<a name="l00252"></a>00252 <span class="comment"> *@par Description:</span>
+<a name="l00253"></a>00253 <span class="comment"> *This API is used to write an event specified by the passed-in event mask into an event control block pointed to by pstEventCB.</span>
+<a name="l00254"></a>00254 <span class="comment"> *@attention</span>
+<a name="l00255"></a>00255 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00256"></a>00256 <span class="comment"> *&lt;li&gt;To determine whether the LOS_EventRead API returns an event or an error code, bit 25 of the event mask is forbidden to be used.&lt;/li&gt;</span>
+<a name="l00257"></a>00257 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00258"></a>00258 <span class="comment"> *</span>
+<a name="l00259"></a>00259 <span class="comment"> *@param pstEventCB [IN/OUT] Pointer to the event control block into which an event is to be written. This parameter must point to valid memory.</span>
+<a name="l00260"></a>00260 <span class="comment"> *@param uwEvents   [IN] Event mask to be written.</span>
+<a name="l00261"></a>00261 <span class="comment"> *</span>
+<a name="l00262"></a>00262 <span class="comment"> *@retval #LOS_ERRNO_EVENT_SETBIT_INVALID  Bit 25 of the event mask cannot be set to an event because it is set to an error code.</span>
+<a name="l00263"></a>00263 <span class="comment"> *@retval #LOS_ERRNO_EVENT_PTR_NULL        Null pointer.</span>
+<a name="l00264"></a>00264 <span class="comment"> *@retval #LOS_OK                          The event is successfully written.</span>
+<a name="l00265"></a>00265 <span class="comment"> *@par Dependency:</span>
+<a name="l00266"></a>00266 <span class="comment"> *&lt;ul&gt;&lt;li&gt;los_event.h: the header file that contains the API declaration.&lt;/li&gt;&lt;/ul&gt;</span>
+<a name="l00267"></a>00267 <span class="comment"> *@see LOS_EventPoll | LOS_EventRead</span>
+<a name="l00268"></a>00268 <span class="comment"> *@since Huawei LiteOS V100R001C00</span>
+<a name="l00269"></a>00269 <span class="comment"> */</span>
+<a name="l00270"></a>00270 <span class="keyword">extern</span> <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00058_g5c6fbdb4092a660a1f18b82c05f96257.html#g5c6fbdb4092a660a1f18b82c05f96257" title="Write an event.">LOS_EventWrite</a>(PEVENT_CB_S pstEventCB, <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwEvents);
+<a name="l00271"></a>00271 <span class="comment"></span>
+<a name="l00272"></a>00272 <span class="comment">/**</span>
+<a name="l00273"></a>00273 <span class="comment"> *@ingroup los_event</span>
+<a name="l00274"></a>00274 <span class="comment"> *@brief Clear the event occurring in a specified task.</span>
+<a name="l00275"></a>00275 <span class="comment"> *</span>
+<a name="l00276"></a>00276 <span class="comment"> *@par Description:</span>
+<a name="l00277"></a>00277 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00278"></a>00278 <span class="comment"> *&lt;li&gt;This API is used to set the ID of an event that has a specified mask and of which the information is stored in an event control block pointed to by pstEventCB to 0. pstEventCB must point to valid memory.&lt;/li&gt;</span>
+<a name="l00279"></a>00279 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00280"></a>00280 <span class="comment"> *@attention</span>
+<a name="l00281"></a>00281 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00282"></a>00282 <span class="comment"> *&lt;li&gt;The value of uwEvents needs to be reversed when it is passed-in.&lt;/li&gt;</span>
+<a name="l00283"></a>00283 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00284"></a>00284 <span class="comment"> *</span>
+<a name="l00285"></a>00285 <span class="comment"> *@param pstEventCB     [IN/OUT] Pointer to the event control block to be cleared.</span>
+<a name="l00286"></a>00286 <span class="comment"> *@param uwEvents       [IN] Mask of the event to be cleared.</span>
+<a name="l00287"></a>00287 <span class="comment"> *</span>
+<a name="l00288"></a>00288 <span class="comment"> *@retval #LOS_ERRNO_EVENT_PTR_NULL  Null pointer.</span>
+<a name="l00289"></a>00289 <span class="comment"> *@retval #LOS_OK                    The event is successfully cleared.</span>
+<a name="l00290"></a>00290 <span class="comment"> *@par Dependency:</span>
+<a name="l00291"></a>00291 <span class="comment"> *&lt;ul&gt;&lt;li&gt;los_event.h: the header file that contains the API declaration.&lt;/li&gt;&lt;/ul&gt;</span>
+<a name="l00292"></a>00292 <span class="comment"> *@see LOS_EventPoll | LOS_EventRead | LOS_EventWrite</span>
+<a name="l00293"></a>00293 <span class="comment"> *@since Huawei LiteOS V100R001C00</span>
+<a name="l00294"></a>00294 <span class="comment"> */</span>
+<a name="l00295"></a>00295 <span class="keyword">extern</span> <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00058_g09e8bd8f8d11d9bdc34dc25f55f9ea77.html#g09e8bd8f8d11d9bdc34dc25f55f9ea77" title="Clear the event occurring in a specified task.">LOS_EventClear</a>(PEVENT_CB_S pstEventCB, <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwEvents);
+<a name="l00296"></a>00296 <span class="comment"></span>
+<a name="l00297"></a>00297 <span class="comment">/**</span>
+<a name="l00298"></a>00298 <span class="comment"> *@ingroup los_event</span>
+<a name="l00299"></a>00299 <span class="comment"> *@brief Destroy a event.</span>
+<a name="l00300"></a>00300 <span class="comment"> *</span>
+<a name="l00301"></a>00301 <span class="comment"> *@par Description:</span>
+<a name="l00302"></a>00302 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00303"></a>00303 <span class="comment"> *&lt;li&gt;This API is used to Destroy a event.&lt;/li&gt;</span>
+<a name="l00304"></a>00304 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00305"></a>00305 <span class="comment"> *@attention</span>
+<a name="l00306"></a>00306 <span class="comment"> *&lt;ul&gt;</span>
+<a name="l00307"></a>00307 <span class="comment"> *&lt;li&gt;The specific event should be a valid one.&lt;/li&gt;</span>
+<a name="l00308"></a>00308 <span class="comment"> *&lt;/ul&gt;</span>
+<a name="l00309"></a>00309 <span class="comment"> *</span>
+<a name="l00310"></a>00310 <span class="comment"> *@param pstEventCB     [IN/OUT] Pointer to the event control block to be Destroyed.</span>
+<a name="l00311"></a>00311 <span class="comment"> *</span>
+<a name="l00312"></a>00312 <span class="comment"> *@retval #LOS_ERRNO_EVENT_PTR_NULL Null pointer.</span>
+<a name="l00313"></a>00313 <span class="comment"> *@retval #LOS_OK                   The event is successfully cleared.</span>
+<a name="l00314"></a>00314 <span class="comment"> *@par Dependency:</span>
+<a name="l00315"></a>00315 <span class="comment"> *&lt;ul&gt;&lt;li&gt;los_event.h: the header file that contains the API declaration.&lt;/li&gt;&lt;/ul&gt;</span>
+<a name="l00316"></a>00316 <span class="comment"> *@see LOS_EventPoll | LOS_EventRead | LOS_EventWrite</span>
+<a name="l00317"></a>00317 <span class="comment"> *@since Huawei LiteOS V100R001C00</span>
+<a name="l00318"></a>00318 <span class="comment"> */</span>
+<a name="l00319"></a>00319 <span class="keyword">extern</span> <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a class="code" href="a00058_g2357540dff4678ad844e813066347eee.html#g2357540dff4678ad844e813066347eee" title="Destroy a event.">LOS_EventDestory</a>(PEVENT_CB_S pstEventCB);
+<a name="l00320"></a>00320 
+<a name="l00321"></a>00321 
+<a name="l00322"></a>00322 <span class="preprocessor">#ifdef __cplusplus</span>
+<a name="l00323"></a>00323 <span class="preprocessor"></span><span class="preprocessor">#if __cplusplus</span>
+<a name="l00324"></a>00324 <span class="preprocessor"></span>}
+<a name="l00325"></a>00325 <span class="preprocessor">#endif </span><span class="comment">/* __cplusplus */</span>
+<a name="l00326"></a>00326 <span class="preprocessor">#endif </span><span class="comment">/* __cplusplus */</span>
+<a name="l00327"></a>00327 
+<a name="l00328"></a>00328 <span class="preprocessor">#endif </span><span class="comment">/* _LOS_EVENT_H */</span>
+</pre>
+   </div>
+  </div> 
+  <hr size="1" /> 
+ </body>
+</html>

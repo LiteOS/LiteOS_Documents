@@ -1,0 +1,533 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312" /> 
+  <title>Task</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head>
+ <body> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top">  
+  </div> 
+  <div class="contents"> 
+   <h1>Task<br /> <small> [<a class="el" href="a00053.html">Kernel</a>]</small> </h1>
+   <table border="0" cellpadding="0" cellspacing="0"> 
+    <tbody>
+     <tr>
+      <td colspan="2"><br /><h2>数据结构</h2></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">struct &nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00022.html">tagTskInitParam</a></td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Define the structure of the parameters used for task creation. <a href="a00022.html#_details">更多...</a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">struct &nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00021.html">tagTskInfo</a></td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Task information structure. <a href="a00021.html#_details">更多...</a><br /></td>
+     </tr> 
+     <tr>
+      <td colspan="2"><br /><h2>宏定义</h2></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_g9726451bbdbf98e00a73a1e7714d634b.html#g9726451bbdbf98e00a73a1e7714d634b">LOS_ERRNO_TSK_NO_MEMORY</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_FATAL(LOS_MOD_TSK, 0x00)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Task error code: Insufficient memory for task creation. <a href="#g9726451bbdbf98e00a73a1e7714d634b"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_gfc97583161830cce209e780a05df85a9.html#gfc97583161830cce209e780a05df85a9">LOS_ERRNO_TSK_PTR_NULL</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_TSK, 0x01)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Task error code: Null parameter. <a href="#gfc97583161830cce209e780a05df85a9"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_gc8c6b820556808abe390108c169239c4.html#gc8c6b820556808abe390108c169239c4">LOS_ERRNO_TSK_STKSZ_NOT_ALIGN</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_TSK, 0x02)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Task error code: The task stack is not aligned. <a href="#gc8c6b820556808abe390108c169239c4"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_g2b08fe8a7854202a01729a28559f6943.html#g2b08fe8a7854202a01729a28559f6943">LOS_ERRNO_TSK_PRIOR_ERROR</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_TSK, 0x03)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Task error code: Incorrect task priority. <a href="#g2b08fe8a7854202a01729a28559f6943"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_gaf9d0d4e5fce2accf4feb8094c43aa86.html#gaf9d0d4e5fce2accf4feb8094c43aa86">LOS_ERRNO_TSK_ENTRY_NULL</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_TSK, 0x04)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Task error code: The task entrance is NULL. <a href="#gaf9d0d4e5fce2accf4feb8094c43aa86"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_g5eadb6953c36b22d8b95c6d0e9b6b2a4.html#g5eadb6953c36b22d8b95c6d0e9b6b2a4">LOS_ERRNO_TSK_NAME_EMPTY</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_TSK, 0x05)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Task error code: The task name is NULL. <a href="#g5eadb6953c36b22d8b95c6d0e9b6b2a4"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_g563b67b3435e73c2e78af4efe6e25875.html#g563b67b3435e73c2e78af4efe6e25875">LOS_ERRNO_TSK_STKSZ_TOO_SMALL</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_TSK, 0x06)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Task error code: The task stack size is too small. <a href="#g563b67b3435e73c2e78af4efe6e25875"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_gbfb36da25e9e2f4239c0b05635f2dfa5.html#gbfb36da25e9e2f4239c0b05635f2dfa5">LOS_ERRNO_TSK_ID_INVALID</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_TSK, 0x07)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Task error code: Invalid task ID. <a href="#gbfb36da25e9e2f4239c0b05635f2dfa5"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_ga778ca7f930b5616c5ee01983b65e35c.html#ga778ca7f930b5616c5ee01983b65e35c">LOS_ERRNO_TSK_ALREADY_SUSPENDED</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_TSK, 0x08)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Task error code: The task is already suspended. <a href="#ga778ca7f930b5616c5ee01983b65e35c"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_g7b83ce054261ffdbc2161f8fed1253b8.html#g7b83ce054261ffdbc2161f8fed1253b8">LOS_ERRNO_TSK_NOT_SUSPENDED</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_TSK, 0x09)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Task error code: The task is not suspended. <a href="#g7b83ce054261ffdbc2161f8fed1253b8"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_g7598497dd510982fe9a990d7403be2c6.html#g7598497dd510982fe9a990d7403be2c6">LOS_ERRNO_TSK_NOT_CREATED</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_TSK, 0x0a)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Task error code: The task is not created. <a href="#g7598497dd510982fe9a990d7403be2c6"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_g4df6c05c3b1876bbefd6cb397717ec04.html#g4df6c05c3b1876bbefd6cb397717ec04">LOS_ERRNO_TSK_MSG_NONZERO</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_TSK, 0x0c)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Task error code: The task message is nonzero. <a href="#g4df6c05c3b1876bbefd6cb397717ec04"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_g2404fccc578487dfefbc479c199ef4a2.html#g2404fccc578487dfefbc479c199ef4a2">LOS_ERRNO_TSK_DELAY_IN_INT</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_FATAL(LOS_MOD_TSK, 0x0d)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Task error code: The task delay occurs during an interrupt. <a href="#g2404fccc578487dfefbc479c199ef4a2"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_geb6ca931be94f3b62e82b766ef4b3a35.html#geb6ca931be94f3b62e82b766ef4b3a35">LOS_ERRNO_TSK_DELAY_IN_LOCK</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_TSK, 0x0e)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Task error code: The task delay occurs when the task is locked. <a href="#geb6ca931be94f3b62e82b766ef4b3a35"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_g3100542cd31e81b2d13b15085293fd8c.html#g3100542cd31e81b2d13b15085293fd8c">LOS_ERRNO_TSK_YIELD_INVALID_TASK</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_TSK, 0x0f)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Task error code: The task that is being scheduled is invalid. <a href="#g3100542cd31e81b2d13b15085293fd8c"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_g67f1c23fdc3738f9efc6109b426fbf28.html#g67f1c23fdc3738f9efc6109b426fbf28">LOS_ERRNO_TSK_YIELD_NOT_ENOUGH_TASK</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_TSK, 0x10)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Task error code: Only one task or no task is available for scheduling. <a href="#g67f1c23fdc3738f9efc6109b426fbf28"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_g983dcb3bb382d8269b556f661b415781.html#g983dcb3bb382d8269b556f661b415781">LOS_ERRNO_TSK_TCB_UNAVAILABLE</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_TSK, 0x11)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Task error code: No free task control block is available. <a href="#g983dcb3bb382d8269b556f661b415781"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_g7eaa17152844fd49297fd92f680af962.html#g7eaa17152844fd49297fd92f680af962">LOS_ERRNO_TSK_HOOK_NOT_MATCH</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_TSK, 0x12)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Task error code: The task hook function is not matchable. <a href="#g7eaa17152844fd49297fd92f680af962"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_g654b5cf16d3c373729042fc65a4316c5.html#g654b5cf16d3c373729042fc65a4316c5">LOS_ERRNO_TSK_HOOK_IS_FULL</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_TSK, 0x13)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Task error code: The number of task hook functions exceeds the permitted upper limit. <a href="#g654b5cf16d3c373729042fc65a4316c5"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_g85c7d4f2eff272e2c1ea74ac6ea58d1c.html#g85c7d4f2eff272e2c1ea74ac6ea58d1c">LOS_ERRNO_TSK_OPERATE_IDLE</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_TSK, 0x14)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Task error code: The operation is performed on the idle task. <a href="#g85c7d4f2eff272e2c1ea74ac6ea58d1c"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_g036076e20b5a6ffd93130c9e909447bb.html#g036076e20b5a6ffd93130c9e909447bb">LOS_ERRNO_TSK_SUSPEND_LOCKED</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_FATAL(LOS_MOD_TSK, 0x15)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Task error code: The task that is being suspended is locked. <a href="#g036076e20b5a6ffd93130c9e909447bb"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_g28aff0f9c56a8547aeb538606f4b2c84.html#g28aff0f9c56a8547aeb538606f4b2c84">LOS_ERRNO_TSK_FREE_STACK_FAILED</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_TSK, 0x17)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Task error code: The task stack fails to be freed. <a href="#g28aff0f9c56a8547aeb538606f4b2c84"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_gdbeb09bdd07eec3b3c6ce224e281edfe.html#gdbeb09bdd07eec3b3c6ce224e281edfe">LOS_ERRNO_TSK_STKAREA_TOO_SMALL</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_TSK, 0x18)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Task error code: The task stack area is too small. <a href="#gdbeb09bdd07eec3b3c6ce224e281edfe"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_g89575a62a89b9f46fbe823494591a438.html#g89575a62a89b9f46fbe823494591a438">LOS_ERRNO_TSK_ACTIVE_FAILED</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_FATAL(LOS_MOD_TSK, 0x19)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Task error code: The task fails to be activated. <a href="#g89575a62a89b9f46fbe823494591a438"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_g5a630fbd545d2cabed9dee973de9ecae.html#g5a630fbd545d2cabed9dee973de9ecae">LOS_ERRNO_TSK_CONFIG_TOO_MANY</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_TSK, 0x1a)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Task error code: Too many task configuration items. <a href="#g5a630fbd545d2cabed9dee973de9ecae"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_ge7c8d0cbf4bcf39f78353f5519c079c1.html#ge7c8d0cbf4bcf39f78353f5519c079c1">LOS_ERRNO_TSK_CP_SAVE_AREA_NOT_ALIGN</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_TSK, 0x1b)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Task error code: <a href="#ge7c8d0cbf4bcf39f78353f5519c079c1"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_g7d80d293255e9f4b1147d9ebe7c5e89d.html#g7d80d293255e9f4b1147d9ebe7c5e89d">LOS_ERRNO_TSK_MSG_Q_TOO_MANY</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_TSK, 0x1d)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Task error code: <a href="#g7d80d293255e9f4b1147d9ebe7c5e89d"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_g19f4a9e709e7f685c17a4e731dc48bb7.html#g19f4a9e709e7f685c17a4e731dc48bb7">LOS_ERRNO_TSK_CP_SAVE_AREA_NULL</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_TSK, 0x1e)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Task error code: <a href="#g19f4a9e709e7f685c17a4e731dc48bb7"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_g7c4c1ff0563c12a32dad7f740d4047d3.html#g7c4c1ff0563c12a32dad7f740d4047d3">LOS_ERRNO_TSK_SELF_DELETE_ERR</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_TSK, 0x1f)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Task error code: <a href="#g7c4c1ff0563c12a32dad7f740d4047d3"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_g94f9e74050a27cacc958daac2a10d664.html#g94f9e74050a27cacc958daac2a10d664">LOS_ERRNO_TSK_STKSZ_TOO_LARGE</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_TSK, 0x20)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Task error code: The task stack size is too large. <a href="#g94f9e74050a27cacc958daac2a10d664"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_gd1ba5272dc40bd55bc4c20881e94095a.html#gd1ba5272dc40bd55bc4c20881e94095a">LOS_ERRNO_TSK_SUSPEND_SWTMR_NOT_ALLOWED</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_TSK, 0x21)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Task error code: Suspending software timer task is not allowed. <a href="#gd1ba5272dc40bd55bc4c20881e94095a"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_g246fec64e8a3beac19e20d4b06933443.html#g246fec64e8a3beac19e20d4b06933443">LOS_ERRNO_TSK_OPERATE_SWTMR</a>&nbsp;&nbsp;&nbsp;LOS_ERRNO_OS_ERROR(LOS_MOD_TSK, 0x22)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Task error code: The operation is performed on the software timer task. <a href="#g246fec64e8a3beac19e20d4b06933443"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_gff673879970b26e76602189f46ac0ca5.html#gff673879970b26e76602189f46ac0ca5">LOS_TASK_NAMELEN</a>&nbsp;&nbsp;&nbsp;32</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Task name length <a href="#gff673879970b26e76602189f46ac0ca5"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_gffa5009aa69c465413427b20a9785270.html#gffa5009aa69c465413427b20a9785270">OS_TASK_SWITCH_INFO_COUNT</a>&nbsp;&nbsp;&nbsp;(0xA)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Task switch information structure. <a href="#gffa5009aa69c465413427b20a9785270"></a><br /></td>
+     </tr> 
+     <tr>
+      <td colspan="2"><br /><h2>类型定义</h2></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">typedef VOID(*&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_g33bad6830c9024c68ee2fc5f269ae622.html#g33bad6830c9024c68ee2fc5f269ae622">TSKSWITCHHOOK</a> )(VOID)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Define the type of the task switching hook function. <a href="#g33bad6830c9024c68ee2fc5f269ae622"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">typedef VOID *(*&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_g6e2f08a3aee1eb1e36a920d40f2d9d90.html#g6e2f08a3aee1eb1e36a920d40f2d9d90">TSK_ENTRY_FUNC</a> )(<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwArg)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Define the type of a task entrance function. <a href="#g6e2f08a3aee1eb1e36a920d40f2d9d90"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">typedef struct <a class="el" href="a00022.html">tagTskInitParam</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_gf1a3ba6f38d87c7d7f92891233cab92e.html#gf1a3ba6f38d87c7d7f92891233cab92e">TSK_INIT_PARAM_S</a></td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Define the structure of the parameters used for task creation. <a href="#gf1a3ba6f38d87c7d7f92891233cab92e"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">typedef struct <a class="el" href="a00021.html">tagTskInfo</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_g6e25e3776000bde2fe8af9090fe3ae6c.html#g6e25e3776000bde2fe8af9090fe3ae6c">TSK_INFO_S</a></td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Task information structure. <a href="#g6e25e3776000bde2fe8af9090fe3ae6c"></a><br /></td>
+     </tr> 
+     <tr>
+      <td colspan="2"><br /><h2>函数</h2></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_g958924786a4abc641d176274d0078af6.html#g958924786a4abc641d176274d0078af6">LOS_TaskCreateOnly</a> (<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> *puwTaskID, <a class="el" href="a00022.html">TSK_INIT_PARAM_S</a> *pstInitParam)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Create a task and suspend. <a href="#g958924786a4abc641d176274d0078af6"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_g0b1786be9a0f359ccc92786ba0079fc3.html#g0b1786be9a0f359ccc92786ba0079fc3">LOS_TaskCreate</a> (<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> *puwTaskID, <a class="el" href="a00022.html">TSK_INIT_PARAM_S</a> *pstInitParam)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Create a task. <a href="#g0b1786be9a0f359ccc92786ba0079fc3"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_g73f99ca0b8aa32ac63cf05773a7102c5.html#g73f99ca0b8aa32ac63cf05773a7102c5">LOS_TaskResume</a> (<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwTaskID)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Resume a task. <a href="#g73f99ca0b8aa32ac63cf05773a7102c5"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_gfb8f5fa4ad722ee4a28d9524ea186f24.html#gfb8f5fa4ad722ee4a28d9524ea186f24">LOS_TaskSuspend</a> (<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwTaskID)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Suspend a task. <a href="#gfb8f5fa4ad722ee4a28d9524ea186f24"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_g58a3ce347dd0970bfa593fb65bf514a1.html#g58a3ce347dd0970bfa593fb65bf514a1">LOS_TaskDelete</a> (<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwTaskID)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Delete a task. <a href="#g58a3ce347dd0970bfa593fb65bf514a1"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_gc7ab8061ace7abbd5a885bc6004aaf57.html#gc7ab8061ace7abbd5a885bc6004aaf57">LOS_TaskDelay</a> (<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwTick)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Delay a task. <a href="#gc7ab8061ace7abbd5a885bc6004aaf57"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">VOID&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_g65c12c28e7ceb37cb53824f3e4985b16.html#g65c12c28e7ceb37cb53824f3e4985b16">LOS_TaskLock</a> (VOID)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Lock the task scheduling. <a href="#g65c12c28e7ceb37cb53824f3e4985b16"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top">VOID&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_g08e74c0c532cf16afa2319ca239fe47c.html#g08e74c0c532cf16afa2319ca239fe47c">LOS_TaskUnlock</a> (VOID)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Unlock the task scheduling. <a href="#g08e74c0c532cf16afa2319ca239fe47c"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_g83548a8e3d0ca4f60c9f049609577bb0.html#g83548a8e3d0ca4f60c9f049609577bb0">LOS_TaskPriSet</a> (<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwTaskID, <a class="el" href="a00048_09f1a1fb2293e33483cc8d44aefb1eb1.html#09f1a1fb2293e33483cc8d44aefb1eb1">UINT16</a> usTaskPrio)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Set a task priority. <a href="#g83548a8e3d0ca4f60c9f049609577bb0"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_g50e311aecd38e2c1730545a294761e4b.html#g50e311aecd38e2c1730545a294761e4b">LOS_CurTaskPriSet</a> (<a class="el" href="a00048_09f1a1fb2293e33483cc8d44aefb1eb1.html#09f1a1fb2293e33483cc8d44aefb1eb1">UINT16</a> usTaskPrio)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Set the priority of the current running task to a specified priority. <a href="#g50e311aecd38e2c1730545a294761e4b"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_g3c3e27723d63594869a33cbbb82621ef.html#g3c3e27723d63594869a33cbbb82621ef">LOS_TaskYield</a> (VOID)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Change the scheduling sequence of tasks with the same priority. <a href="#g3c3e27723d63594869a33cbbb82621ef"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_09f1a1fb2293e33483cc8d44aefb1eb1.html#09f1a1fb2293e33483cc8d44aefb1eb1">UINT16</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_g997a9cc3fd645151beb1fb2c7583b508.html#g997a9cc3fd645151beb1fb2c7583b508">LOS_TaskPriGet</a> (<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwTaskID)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Obtain a task priority. <a href="#g997a9cc3fd645151beb1fb2c7583b508"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_g1b02ceea9cb46d76fb19c4080cdbcc88.html#g1b02ceea9cb46d76fb19c4080cdbcc88">LOS_CurTaskIDGet</a> (VOID)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Obtain current running task ID. <a href="#g1b02ceea9cb46d76fb19c4080cdbcc88"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_gd9f0bbee31fa5b82a39085c003a792dc.html#gd9f0bbee31fa5b82a39085c003a792dc">LOS_NextTaskIDGet</a> (VOID)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Obtain next running task ID. <a href="#gd9f0bbee31fa5b82a39085c003a792dc"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_ebb9e13210d88d43e32e735ada43a425.html#ebb9e13210d88d43e32e735ada43a425">CHAR</a> *&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_gba7fdf48ea4dad4eaf569946679d3a34.html#gba7fdf48ea4dad4eaf569946679d3a34">LOS_CurTaskNameGet</a> (VOID)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Obtain next running task ID. <a href="#gba7fdf48ea4dad4eaf569946679d3a34"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_g6be7192cfe3327484172e54b9ddf6e92.html#g6be7192cfe3327484172e54b9ddf6e92">LOS_TaskInfoGet</a> (<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwTaskID, <a class="el" href="a00021.html">TSK_INFO_S</a> *pstTaskInfo)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Obtain a task information structure. <a href="#g6be7192cfe3327484172e54b9ddf6e92"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_g474c84b3fd125ee2072949016cfd0357.html#g474c84b3fd125ee2072949016cfd0357">LOS_TaskStatusGet</a> (<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwTaskID, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> *puwTaskStatus)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Obtain the task status. <a href="#g474c84b3fd125ee2072949016cfd0357"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_gf0e6f960f3f74005305c0345ddbe33e1.html#gf0e6f960f3f74005305c0345ddbe33e1">LOS_TaskSwitchInfoGet</a> (<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwIdx, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> *pTaskSwitchInfo)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Obtain tasks switch info. <a href="#gf0e6f960f3f74005305c0345ddbe33e1"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_c3247c51e4e3de674affb32998e133e2.html#c3247c51e4e3de674affb32998e133e2">BOOL</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_ge7fa18dcafc7af5bc5059cc3f31b87bf.html#ge7fa18dcafc7af5bc5059cc3f31b87bf">LOS_TaskIsRunning</a> (VOID)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Obtain tasks schduling info. <a href="#ge7fa18dcafc7af5bc5059cc3f31b87bf"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_g25b0eaeb9fea7d2230402f78a0b85356.html#g25b0eaeb9fea7d2230402f78a0b85356">LOS_NewTaskIDGet</a> (VOID)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Obtain current new task ID. <a href="#g25b0eaeb9fea7d2230402f78a0b85356"></a><br /></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_ebb9e13210d88d43e32e735ada43a425.html#ebb9e13210d88d43e32e735ada43a425">CHAR</a> *&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_g9ef4e97e1e41327705b6816a9946ea05.html#g9ef4e97e1e41327705b6816a9946ea05">LOS_TaskNameGet</a> (<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwTaskID)</td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">Obtain current new task name. <a href="#g9ef4e97e1e41327705b6816a9946ea05"></a><br /></td>
+     </tr> 
+     <tr>
+      <td colspan="2"><br /><h2>变量</h2></td>
+     </tr> 
+     <tr>
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00068_g33bad6830c9024c68ee2fc5f269ae622.html#g33bad6830c9024c68ee2fc5f269ae622">TSKSWITCHHOOK</a>&nbsp;</td>
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00068_ge3772aa74377a7a97e03f78560afe475.html#ge3772aa74377a7a97e03f78560afe475">g_pfnUsrTskSwitchHook</a></td>
+     </tr> 
+     <tr>
+      <td class="mdescLeft">&nbsp;</td>
+      <td class="mdescRight">User task switching hook function. <a href="#ge3772aa74377a7a97e03f78560afe475"></a><br /></td>
+     </tr> 
+    </tbody>
+   </table> 
+  </div> 
+  <hr size="1" /> 
+ </body>
+</html>

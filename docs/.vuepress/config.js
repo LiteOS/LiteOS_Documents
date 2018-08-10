@@ -111,9 +111,10 @@ module.exports = {
               title: "参与贡献",
               collapsable: false,
               children: [
-                "./write-standard",
+                "./contribute-guide",
+                "./code-info",
                 "./code-standard",
-                "./contribute-guide"
+                "./write-standard"
               ]
             }
           ],
@@ -149,6 +150,13 @@ module.exports = {
                 "./errorcode-mutex",
                 "./errorcode-semaphore",
                 "./errorcode-swtmr"
+              ]
+            },
+            {
+              title: "API参考",
+              collapsable: false,
+              children: [
+                "./api-reference/index.html"
               ]
             }
           ],
@@ -346,28 +354,34 @@ module.exports = {
               children: ["./"]
             },
             {
-              title: "Kernel",
+              title: 'Basic Kernel',
               collapsable: false,
               children: [
-                "./task",
-                "./memory",
-                "./interrupt",
-                "./queue",
-                "./event",
-                "./mutex",
-                "./semaphore",
-                "./time-magmt",
-                "./swtmr",
-                "./list"
+                './task',
+                './memory',
+                './interrupt',
+                './queue',
+                './event',
+                './mutex',
+                './semaphore',
+                './time-magmt',
+                './swtmr',
+                './list'
               ]
             },
             {
-              title: "External",
+              title: 'ErrorCode Reference',
               collapsable: false,
-              children: ["./low-power"]
+              children: [
+                './errorcode-task',
+                './errorcode-queue',
+                './errorcode-event',
+                './errorcode-mutex',
+                './errorcode-semaphore',
+                './errorcode-swtmr'
+              ]
             }
           ],
-
           "/": [""]
         }
       }

@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>  
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+<meta name="DC.Type" content="concept">
+<meta name="featurename" content="dcp">
+<title>LOS_HwiCreate</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head> 
+ <body> 
+  <div class="familylinks"> 
+   <a href="a00061_gb02ef9b0e79293ec6e827363aa06c3d3.html">LOS_HwiCreate</a> 
+   <hr size="2" /> 
+  </div> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top"> 
+  </div> 
+  <div class="contents"> 
+   <div class="navpath"> 
+    <a class="el" href="a00061.html">Hardware interrupt</a> 
+   </div> 
+   <table cellspacing="0" cellpadding="0" border="0"> 
+    <tbody> 
+     <tr> 
+      <td valign="top"> </td> 
+      <td valign="top"> <a class="anchor" name="gb02ef9b0e79293ec6e827363aa06c3d3"></a> 
+       <!-- doxytag: member="los_hwi.h::<a href='a00061_gb02ef9b0e79293ec6e827363aa06c3d3.html'>LOS_HwiCreate</a>" ref="gb02ef9b0e79293ec6e827363aa06c3d3" args="(<a href='a00061_ga7234e6d543bd889729494b4861f17e3.html'>HWI_HANDLE_T</a> uwHwiNum, <a href='a00061_g0c03b1b0d3b5a647171e529b4837873b.html'>HWI_PRIOR_T</a> usHwiPrio, <a href='a00061_g8c90292a4efd04db39cf8ef54d21562c.html'>HWI_MODE_T</a> usMode, <a href='a00061_g2e3077e890e28e4487e25bb8b41e72d7.html'>HWI_PROC_FUNC</a> pfnHandler, <a href='a00061_gf938c6631a4cf856897f724d4f69351c.html'>HWI_ARG_T</a> uwArg)" --> 
+       <div class="memitem"> 
+        <div class="memproto"> 
+         <table class="memname"> 
+          <tbody> 
+           <tr> 
+            <td class="memname"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a href="a00061_gb02ef9b0e79293ec6e827363aa06c3d3.html">LOS_HwiCreate</a> </td> 
+            <td class="paramtype">(</td> 
+            <td class="paramtype"><a class="el" href="a00061_ga7234e6d543bd889729494b4861f17e3.html#ga7234e6d543bd889729494b4861f17e3">HWI_HANDLE_T</a>&nbsp;</td> 
+            <td class="paramname"> <em>uwHwiNum</em>, </td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramtype"><a class="el" href="a00061_g0c03b1b0d3b5a647171e529b4837873b.html#g0c03b1b0d3b5a647171e529b4837873b">HWI_PRIOR_T</a>&nbsp;</td> 
+            <td class="paramname"> <em>usHwiPrio</em>, </td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramtype"><a class="el" href="a00061_g8c90292a4efd04db39cf8ef54d21562c.html#g8c90292a4efd04db39cf8ef54d21562c">HWI_MODE_T</a>&nbsp;</td> 
+            <td class="paramname"> <em>usMode</em>, </td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramtype"><a class="el" href="a00061_g2e3077e890e28e4487e25bb8b41e72d7.html#g2e3077e890e28e4487e25bb8b41e72d7">HWI_PROC_FUNC</a>&nbsp;</td> 
+            <td class="paramname"> <em>pfnHandler</em>, </td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramtype"><a class="el" href="a00061_gf938c6631a4cf856897f724d4f69351c.html#gf938c6631a4cf856897f724d4f69351c">HWI_ARG_T</a>&nbsp;</td> 
+            <td class="paramname"> <em>uwArg</em></td> 
+            <td class="paramkey">&nbsp;</td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey">)</td> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+        </div> 
+        <div class="memdoc"> 
+         <p> Create a hardware interrupt. </p> 
+         <p> </p> 
+         <dl class="user" compact=""> 
+          <dt> 
+           <b>Description:</b> 
+          </dt> 
+          <dd>
+            This API is used to configure a hardware interrupt and register a hardware interrupt handling function. 
+          </dd> 
+         </dl> 
+         <dl class="attention" compact=""> 
+          <dt> 
+           <b>注意:</b> 
+          </dt> 
+          <dd> 
+           <ul> 
+            <li> The hardware interrupt module is usable only when the configuration item for hardware interrupt tailoring is enabled. </li> 
+            <li> Hardware interrupt number value range: [OS_USER_HWI_MIN,OS_USER_HWI_MAX]. The value range applicable for a Cortex-A7 platform is [32,95]. </li> 
+            <li> <a href="a00061_gc3737b053e9546d768ceaa36ca678459.html">OS_HWI_MAX_NUM</a> specifies the maximum number of interrupts that can be created. </li> 
+            <li> Before executing an interrupt on a platform, refer to the chip manual of the platform. </li> 
+           </ul> 
+          </dd> 
+         </dl> 
+         <dl compact=""> 
+          <dt> 
+           <b>参数:</b> 
+          </dt> 
+          <dd> 
+           <table border="0" cellspacing="0" cellpadding="0"> 
+            <tbody> 
+             <tr> 
+              <th></th> 
+              <th>参数名称</th> 
+              <th>描述</th> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">uwHwiNum&nbsp;</td> 
+              <td>[IN] <a class="el" href="a00061_ga7234e6d543bd889729494b4861f17e3.html#ga7234e6d543bd889729494b4861f17e3" title="Define the type of a hardware interrupt number.">Type::HWI_HANDLE_T</a>: hardware interrupt number. The value range applicable for a Cortex-A7 platform is [32,95]. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">usHwiPrio&nbsp;</td> 
+              <td>[IN] <a class="el" href="a00061_g0c03b1b0d3b5a647171e529b4837873b.html#g0c03b1b0d3b5a647171e529b4837873b" title="Define the type of a hardware interrupt priority.">Type::HWI_PRIOR_T</a>: hardware interrupt priority. Ignore this parameter temporarily. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">usMode&nbsp;</td> 
+              <td>[IN] <a class="el" href="a00061_g8c90292a4efd04db39cf8ef54d21562c.html#g8c90292a4efd04db39cf8ef54d21562c" title="Define the type of hardware interrupt mode configurations.">Type::HWI_MODE_T</a>: hardware interrupt mode. Ignore this parameter temporarily. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">pfnHandler&nbsp;</td> 
+              <td>[IN] <a class="el" href="a00061_g2e3077e890e28e4487e25bb8b41e72d7.html#g2e3077e890e28e4487e25bb8b41e72d7" title="Define the type of a hardware interrupt handling function.">Type::HWI_PROC_FUNC</a>: interrupt handler used when a hardware interrupt is triggered. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">uwArg&nbsp;</td> 
+              <td>[IN] <a class="el" href="a00061_gf938c6631a4cf856897f724d4f69351c.html#gf938c6631a4cf856897f724d4f69351c" title="Define the type of the parameter used for the hardware interrupt creation function...">Type::HWI_ARG_T</a>: input parameter of the interrupt handler used when a hardware interrupt is triggered.</td> 
+             </tr> 
+            </tbody> 
+           </table> 
+          </dd> 
+         </dl> 
+         <dl compact=""> 
+          <dt> 
+           <b>返回值:</b> 
+          </dt> 
+          <dd> 
+           <table border="0" cellspacing="0" cellpadding="0"> 
+            <tbody> 
+             <tr> 
+              <th></th> 
+              <th>返回值</th> 
+              <th>描述</th> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00061_gcdd00d9902cd593a795c5e2f1f8b3d5f.html#gcdd00d9902cd593a795c5e2f1f8b3d5f" title="Hardware interrupt error code: Null hardware interrupt handling function.">OS_ERRNO_HWI_PROC_FUNC_NULL</a>&nbsp;</td> 
+              <td>0x02000901: Null hardware interrupt handling function. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00061_gfb399c19cc97ebd2ba47baf829e67ca4.html#gfb399c19cc97ebd2ba47baf829e67ca4" title="Hardware interrupt error code: Invalid interrupt number.">OS_ERRNO_HWI_NUM_INVALID</a>&nbsp;</td> 
+              <td>0x02000900: Invalid interrupt number. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00061_ga461904a121685b1ebc6541408838a76.html#ga461904a121685b1ebc6541408838a76" title="Hardware interrupt error code: Insufficient memory for hardware interrupt initialization...">OS_ERRNO_HWI_NO_MEMORY</a>&nbsp;</td> 
+              <td>0x02000903: Insufficient memory for hardware interrupt creation. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00061_g26a55b4c4d7d4a66e779c7df3dd3d6f6.html#g26a55b4c4d7d4a66e779c7df3dd3d6f6" title="Hardware interrupt error code: The interrupt has already been created.">OS_ERRNO_HWI_ALREADY_CREATED</a>&nbsp;</td> 
+              <td>0x02000904: The interrupt handler being created has already been created. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00048_81e00a29757b6c6f90f05ca6c1eed169.html#81e00a29757b6c6f90f05ca6c1eed169">LOS_OK</a>&nbsp;</td> 
+              <td>0, : The interrupt is successfully created. </td> 
+             </tr> 
+            </tbody> 
+           </table> 
+          </dd> 
+         </dl> 
+         <dl class="user" compact=""> 
+          <dt> 
+           <b>Dependency:</b> 
+          </dt> 
+          <dd> 
+           <ul> 
+            <li> <a class="el" href="a00035.html">los_hwi.h</a>: the header file that contains the API declaration.</li> 
+           </ul> 
+          </dd> 
+         </dl> 
+         <dl class="see" compact=""> 
+          <dt> 
+           <b>参见:</b> 
+          </dt> 
+          <dd>
+            None. 
+          </dd> 
+         </dl> 
+         <dl class="since" compact=""> 
+          <dt> 
+           <b>自从:</b> 
+          </dt> 
+          <dd>
+            Huawei LiteOS V100R001C00 
+          </dd> 
+         </dl> 
+        </div> 
+       </div><p> </p></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <hr size="1" />  
+ </body>
+</html>

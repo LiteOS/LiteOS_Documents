@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>  
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+<meta name="DC.Type" content="concept">
+<meta name="featurename" content="dcp">
+<title>atiny_data_report</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head> 
+ <body> 
+  <div class="familylinks"> 
+   <a href="a00050_gea81b84051c3f4b5c297b0038a61dcbb.html">atiny_data_report</a> 
+   <hr size="2" /> 
+  </div> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top"> 
+  </div> 
+  <div class="contents"> 
+   <div class="navpath"> 
+    <a class="el" href="a00050.html">Agenttiny Definition</a> 
+   </div> 
+   <table cellspacing="0" cellpadding="0" border="0"> 
+    <tbody> 
+     <tr> 
+      <td valign="top"> </td> 
+      <td valign="top"> <a class="anchor" name="gea81b84051c3f4b5c297b0038a61dcbb"></a> 
+       <!-- doxytag: member="agenttiny.h::<a href='a00050_gea81b84051c3f4b5c297b0038a61dcbb.html'>atiny_data_report</a>" ref="gea81b84051c3f4b5c297b0038a61dcbb" args="(void *phandle, data_report_t *report_data)" --> 
+       <div class="memitem"> 
+        <div class="memproto"> 
+         <table class="memname"> 
+          <tbody> 
+           <tr> 
+            <td class="memname">int <a href="a00050_gea81b84051c3f4b5c297b0038a61dcbb.html">atiny_data_report</a> </td> 
+            <td class="paramtype">(</td> 
+            <td class="paramtype">void *&nbsp;</td> 
+            <td class="paramname"> <em>phandle</em>, </td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramtype"><a class="el" href="a00002.html">data_report_t</a> *&nbsp;</td> 
+            <td class="paramname"> <em>report_data</em></td> 
+            <td class="paramkey">&nbsp;</td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey">)</td> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+        </div> 
+        <div class="memdoc"> 
+         <p> report the data to the server. </p> 
+         <p> </p> 
+         <dl class="user" compact=""> 
+          <dt> 
+           <b>Description:</b> 
+          </dt> 
+          <dd>
+            This API is used to report the data to the server. 
+          </dd> 
+         </dl> 
+         <dl class="attention" compact=""> 
+          <dt> 
+           <b>注意:</b> 
+          </dt> 
+          <dd>
+            none. 
+          </dd> 
+         </dl> 
+         <dl compact=""> 
+          <dt> 
+           <b>参数:</b> 
+          </dt> 
+          <dd> 
+           <table border="0" cellspacing="0" cellpadding="0"> 
+            <tbody> 
+             <tr> 
+              <th></th> 
+              <th>参数名称</th> 
+              <th>描述</th> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">phandle&nbsp;</td> 
+              <td>[IN] The handle of the agent_tiny. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">report_data&nbsp;</td> 
+              <td>[IN] Data to be reported.</td> 
+             </tr> 
+            </tbody> 
+           </table> 
+          </dd> 
+         </dl> 
+         <dl compact=""> 
+          <dt> 
+           <b>返回值:</b> 
+          </dt> 
+          <dd> 
+           <table border="0" cellspacing="0" cellpadding="0"> 
+            <tbody> 
+             <tr> 
+              <th></th> 
+              <th>返回值</th> 
+              <th>描述</th> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00024_edc63770de7c2fce21008267accd06eb.html#edc63770de7c2fce21008267accd06eb611c748d34fd5ab47ca3c1001453e7d7">ATINY_OK</a>&nbsp;</td> 
+              <td>Report succeed. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00024_edc63770de7c2fce21008267accd06eb.html#edc63770de7c2fce21008267accd06eb35b6c646cd7182687e347367765c3b5e">ATINY_MSG_CONGEST</a>&nbsp;</td> 
+              <td>The lwm2m protocal stack is congested. It is occured when the number of report messages are greater than storing_cnt in <a class="el" href="a00009.html">atiny_server_param_t</a>. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00024_edc63770de7c2fce21008267accd06eb.html#edc63770de7c2fce21008267accd06ebeb2e3424f3f3db6454ceb4afe32fec28">ATINY_BUF_OVERFLOW</a>&nbsp;</td> 
+              <td>The length of the buffer in report_data is exceeded MAX_REPORT_DATA_LEN. </td> 
+             </tr> 
+            </tbody> 
+           </table> 
+          </dd> 
+         </dl> 
+         <dl class="user" compact=""> 
+          <dt> 
+           <b>Dependency: none.</b> 
+          </dt> 
+          <dd></dd> 
+         </dl> 
+         <dl class="see" compact=""> 
+          <dt> 
+           <b>参见:</b> 
+          </dt> 
+          <dd>
+            none. 
+          </dd> 
+         </dl> 
+        </div> 
+       </div><p> </p></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <hr size="1" />  
+ </body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312" /> 
+  <title>los_typedef.h源文件</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head>
+ <body> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top">   
+   <h1>los_typedef.h</h1>
+   <a href="a00048.html">浏览该文件的文档。</a>
+   <div class="fragment">
+    <pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*----------------------------------------------------------------------------</span>
+<a name="l00002"></a>00002 <span class="comment"> * Copyright (c) &lt;2013-2015&gt;, &lt;Huawei Technologies Co., Ltd&gt;</span>
+<a name="l00003"></a>00003 <span class="comment"> * All rights reserved.</span>
+<a name="l00004"></a>00004 <span class="comment"> * Redistribution and use in source and binary forms, with or without modification,</span>
+<a name="l00005"></a>00005 <span class="comment"> * are permitted provided that the following conditions are met:</span>
+<a name="l00006"></a>00006 <span class="comment"> * 1. Redistributions of source code must retain the above copyright notice, this list of</span>
+<a name="l00007"></a>00007 <span class="comment"> * conditions and the following disclaimer.</span>
+<a name="l00008"></a>00008 <span class="comment"> * 2. Redistributions in binary form must reproduce the above copyright notice, this list</span>
+<a name="l00009"></a>00009 <span class="comment"> * of conditions and the following disclaimer in the documentation and/or other materials</span>
+<a name="l00010"></a>00010 <span class="comment"> * provided with the distribution.</span>
+<a name="l00011"></a>00011 <span class="comment"> * 3. Neither the name of the copyright holder nor the names of its contributors may be used</span>
+<a name="l00012"></a>00012 <span class="comment"> * to endorse or promote products derived from this software without specific prior written</span>
+<a name="l00013"></a>00013 <span class="comment"> * permission.</span>
+<a name="l00014"></a>00014 <span class="comment"> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS</span>
+<a name="l00015"></a>00015 <span class="comment"> * &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,</span>
+<a name="l00016"></a>00016 <span class="comment"> * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR</span>
+<a name="l00017"></a>00017 <span class="comment"> * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR</span>
+<a name="l00018"></a>00018 <span class="comment"> * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,</span>
+<a name="l00019"></a>00019 <span class="comment"> * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,</span>
+<a name="l00020"></a>00020 <span class="comment"> * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;</span>
+<a name="l00021"></a>00021 <span class="comment"> * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,</span>
+<a name="l00022"></a>00022 <span class="comment"> * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR</span>
+<a name="l00023"></a>00023 <span class="comment"> * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF</span>
+<a name="l00024"></a>00024 <span class="comment"> * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</span>
+<a name="l00025"></a>00025 <span class="comment"> *---------------------------------------------------------------------------*/</span>
+<a name="l00026"></a>00026 <span class="comment">/*----------------------------------------------------------------------------</span>
+<a name="l00027"></a>00027 <span class="comment"> * Notice of Export Control Law</span>
+<a name="l00028"></a>00028 <span class="comment"> * ===============================================</span>
+<a name="l00029"></a>00029 <span class="comment"> * Huawei LiteOS may be subject to applicable export control laws and regulations, which might</span>
+<a name="l00030"></a>00030 <span class="comment"> * include those applicable to Huawei LiteOS of U.S. and the country in which you are located.</span>
+<a name="l00031"></a>00031 <span class="comment"> * Import, export and usage of Huawei LiteOS in any manner by you shall be in compliance with such</span>
+<a name="l00032"></a>00032 <span class="comment"> * applicable export control laws and regulations.</span>
+<a name="l00033"></a>00033 <span class="comment"> *---------------------------------------------------------------------------*/</span>
+<a name="l00034"></a>00034 <span class="comment"></span>
+<a name="l00035"></a>00035 <span class="comment">/**@defgroup los_typedef Type define</span>
+<a name="l00036"></a>00036 <span class="comment"> * @ingroup kernel</span>
+<a name="l00037"></a>00037 <span class="comment">*/</span>
+<a name="l00038"></a>00038 
+<a name="l00039"></a>00039 <span class="preprocessor">#ifndef _LOS_TYPEDEF_H</span>
+<a name="l00040"></a>00040 <span class="preprocessor"></span><span class="preprocessor">#define _LOS_TYPEDEF_H</span>
+<a name="l00041"></a>00041 <span class="preprocessor"></span>
+<a name="l00042"></a>00042 <span class="preprocessor">#include &quot;los_builddef.h&quot;</span>
+<a name="l00043"></a>00043 
+<a name="l00044"></a>00044 <span class="preprocessor">#ifdef __cplusplus</span>
+<a name="l00045"></a>00045 <span class="preprocessor"></span><span class="preprocessor">#if __cplusplus</span>
+<a name="l00046"></a>00046 <span class="preprocessor"></span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {
+<a name="l00047"></a>00047 <span class="preprocessor">#endif </span><span class="comment">/* __cplusplus */</span>
+<a name="l00048"></a>00048 <span class="preprocessor">#endif </span><span class="comment">/* __cplusplus */</span>
+<a name="l00049"></a>00049 
+<a name="l00050"></a>00050 <span class="preprocessor">#ifndef LOS_TYPE_DEF</span>
+<a name="l00051"></a>00051 <span class="preprocessor"></span><span class="preprocessor">#define LOS_TYPE_DEF</span>
+<a name="l00052"></a>00052 <span class="preprocessor"></span>
+<a name="l00053"></a>00053 <span class="comment">/* type definitions */</span>
+<a name="l00054"></a><a class="code" href="a00048_b27e9918b538ce9d8ca692479b375b6a.html#b27e9918b538ce9d8ca692479b375b6a">00054</a> <span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>                                       <a class="code" href="a00048_b27e9918b538ce9d8ca692479b375b6a.html#b27e9918b538ce9d8ca692479b375b6a">UINT8</a>;
+<a name="l00055"></a><a class="code" href="a00048_09f1a1fb2293e33483cc8d44aefb1eb1.html#09f1a1fb2293e33483cc8d44aefb1eb1">00055</a> <span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span>                                      <a class="code" href="a00048_09f1a1fb2293e33483cc8d44aefb1eb1.html#09f1a1fb2293e33483cc8d44aefb1eb1">UINT16</a>;
+<a name="l00056"></a><a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">00056</a> <span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>                                        <a class="code" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>;
+<a name="l00057"></a><a class="code" href="a00048_7ebe70ceca856797319175e30bcf003d.html#7ebe70ceca856797319175e30bcf003d">00057</a> <span class="keyword">typedef</span> <span class="keywordtype">signed</span> <span class="keywordtype">char</span>                                         <a class="code" href="a00048_7ebe70ceca856797319175e30bcf003d.html#7ebe70ceca856797319175e30bcf003d">INT8</a>;
+<a name="l00058"></a><a class="code" href="a00048_30f500129d8c688af07726d5d34ce52d.html#30f500129d8c688af07726d5d34ce52d">00058</a> <span class="keyword">typedef</span> <span class="keywordtype">signed</span> <span class="keywordtype">short</span>                                        <a class="code" href="a00048_30f500129d8c688af07726d5d34ce52d.html#30f500129d8c688af07726d5d34ce52d">INT16</a>;
+<a name="l00059"></a><a class="code" href="a00048_1137216524060afd426c34677fed058b.html#1137216524060afd426c34677fed058b">00059</a> <span class="keyword">typedef</span> <span class="keywordtype">signed</span> <span class="keywordtype">int</span>                                          <a class="code" href="a00048_1137216524060afd426c34677fed058b.html#1137216524060afd426c34677fed058b">INT32</a>;
+<a name="l00060"></a><a class="code" href="a00048_8d06b04c04132c6f7c0fcb08c6167455.html#8d06b04c04132c6f7c0fcb08c6167455">00060</a> <span class="keyword">typedef</span> <span class="keywordtype">float</span>                                               <a class="code" href="a00048_8d06b04c04132c6f7c0fcb08c6167455.html#8d06b04c04132c6f7c0fcb08c6167455">FLOAT</a>;
+<a name="l00061"></a><a class="code" href="a00048_eb90fd78c942591ef3a935cf98baf4f8.html#eb90fd78c942591ef3a935cf98baf4f8">00061</a> <span class="keyword">typedef</span> <span class="keywordtype">double</span>                                              <a class="code" href="a00048_eb90fd78c942591ef3a935cf98baf4f8.html#eb90fd78c942591ef3a935cf98baf4f8">DOUBLE</a>;
+<a name="l00062"></a><a class="code" href="a00048_ebb9e13210d88d43e32e735ada43a425.html#ebb9e13210d88d43e32e735ada43a425">00062</a> <span class="keyword">typedef</span> <span class="keywordtype">char</span>                                                <a class="code" href="a00048_ebb9e13210d88d43e32e735ada43a425.html#ebb9e13210d88d43e32e735ada43a425">CHAR</a>;
+<a name="l00063"></a>00063 
+<a name="l00064"></a><a class="code" href="a00048_c3247c51e4e3de674affb32998e133e2.html#c3247c51e4e3de674affb32998e133e2">00064</a> <span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>                                        <a class="code" href="a00048_c3247c51e4e3de674affb32998e133e2.html#c3247c51e4e3de674affb32998e133e2">BOOL</a>;
+<a name="l00065"></a><a class="code" href="a00048_57be03562867144161c1bfee95ca8f7c.html#57be03562867144161c1bfee95ca8f7c">00065</a> <span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span>                                  <a class="code" href="a00048_57be03562867144161c1bfee95ca8f7c.html#57be03562867144161c1bfee95ca8f7c">UINT64</a>;
+<a name="l00066"></a><a class="code" href="a00048_f16992cf571ce4103a92355761cc471e.html#f16992cf571ce4103a92355761cc471e">00066</a> <span class="keyword">typedef</span> <span class="keywordtype">signed</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span>                                    <a class="code" href="a00048_f16992cf571ce4103a92355761cc471e.html#f16992cf571ce4103a92355761cc471e">INT64</a>;
+<a name="l00067"></a><a class="code" href="a00048_c8e6f63630e32ecea7f5aae3ae0a6714.html#c8e6f63630e32ecea7f5aae3ae0a6714">00067</a> <span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>                                        <a class="code" href="a00048_c8e6f63630e32ecea7f5aae3ae0a6714.html#c8e6f63630e32ecea7f5aae3ae0a6714">UINTPTR</a>;
+<a name="l00068"></a><a class="code" href="a00048_fac450b37c61b30af99faadee86e84f1.html#fac450b37c61b30af99faadee86e84f1">00068</a> <span class="keyword">typedef</span> <span class="keywordtype">signed</span> <span class="keywordtype">int</span>                                          <a class="code" href="a00048_fac450b37c61b30af99faadee86e84f1.html#fac450b37c61b30af99faadee86e84f1">INTPTR</a>;
+<a name="l00069"></a>00069 
+<a name="l00070"></a><a class="code" href="a00048_7f319bfc2492a2136964194204e7a8cf.html#7f319bfc2492a2136964194204e7a8cf">00070</a> <span class="preprocessor">#define VOID                                                void</span>
+<a name="l00071"></a>00071 <span class="preprocessor"></span><span class="preprocessor">#endif  </span><span class="comment">/*end of #ifndef LOS_TYPE_DEF*/</span>
+<a name="l00072"></a>00072 
+<a name="l00073"></a>00073 <span class="preprocessor">#ifndef FALSE</span>
+<a name="l00074"></a><a class="code" href="a00048_a93f0eb578d23995850d61f7d61c55c1.html#a93f0eb578d23995850d61f7d61c55c1">00074</a> <span class="preprocessor"></span><span class="preprocessor">#define FALSE                                               ((BOOL)0)</span>
+<a name="l00075"></a>00075 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00076"></a>00076 <span class="preprocessor"></span>
+<a name="l00077"></a>00077 <span class="preprocessor">#ifndef TRUE</span>
+<a name="l00078"></a><a class="code" href="a00048_a8cecfc5c5c054d2875c03e77b7be15d.html#a8cecfc5c5c054d2875c03e77b7be15d">00078</a> <span class="preprocessor"></span><span class="preprocessor">#define TRUE                                                ((BOOL)1)</span>
+<a name="l00079"></a>00079 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00080"></a>00080 <span class="preprocessor"></span>
+<a name="l00081"></a>00081 <span class="preprocessor">#ifndef NULL</span>
+<a name="l00082"></a><a class="code" href="a00048_070d2ce7b6bb7e5c05602aa8c308d0c4.html#070d2ce7b6bb7e5c05602aa8c308d0c4">00082</a> <span class="preprocessor"></span><span class="preprocessor">#define NULL                                                ((VOID *)0)</span>
+<a name="l00083"></a>00083 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00084"></a>00084 <span class="preprocessor"></span>
+<a name="l00085"></a>00085 <span class="preprocessor">#ifdef YES</span>
+<a name="l00086"></a>00086 <span class="preprocessor"></span><span class="preprocessor">#undef YES</span>
+<a name="l00087"></a>00087 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00088"></a><a class="code" href="a00048_7ebc9a785e5ab85457c98595aac81589.html#7ebc9a785e5ab85457c98595aac81589">00088</a> <span class="preprocessor"></span><span class="preprocessor">#define YES                                                 (1)</span>
+<a name="l00089"></a>00089 <span class="preprocessor"></span>
+<a name="l00090"></a>00090 <span class="preprocessor">#ifdef  NO</span>
+<a name="l00091"></a>00091 <span class="preprocessor"></span><span class="preprocessor">#undef  NO</span>
+<a name="l00092"></a>00092 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00093"></a><a class="code" href="a00048_996bde01ecac342918f0a2c4e7ce7bd5.html#996bde01ecac342918f0a2c4e7ce7bd5">00093</a> <span class="preprocessor"></span><span class="preprocessor">#define NO                                                  (0)</span>
+<a name="l00094"></a>00094 <span class="preprocessor"></span>
+<a name="l00095"></a><a class="code" href="a00048_43b7cabfb9330e7ada623ff3d0818a96.html#43b7cabfb9330e7ada623ff3d0818a96">00095</a> <span class="preprocessor">#define OS_NULL_BYTE                                        ((UINT8)0xFF)</span>
+<a name="l00096"></a><a class="code" href="a00048_67eafae5d0fb6d47d64a5506d808dfd4.html#67eafae5d0fb6d47d64a5506d808dfd4">00096</a> <span class="preprocessor"></span><span class="preprocessor">#define OS_NULL_SHORT                                       ((UINT16)0xFFFF)</span>
+<a name="l00097"></a><a class="code" href="a00048_f0ca498be14a3f05f17d6329b2b7ca9f.html#f0ca498be14a3f05f17d6329b2b7ca9f">00097</a> <span class="preprocessor"></span><span class="preprocessor">#define OS_NULL_INT                                         ((UINT32)0xFFFFFFFF)</span>
+<a name="l00098"></a>00098 <span class="preprocessor"></span>
+<a name="l00099"></a>00099 <span class="preprocessor">#ifndef LOS_OK</span>
+<a name="l00100"></a><a class="code" href="a00048_81e00a29757b6c6f90f05ca6c1eed169.html#81e00a29757b6c6f90f05ca6c1eed169">00100</a> <span class="preprocessor"></span><span class="preprocessor">#define LOS_OK                                              (0U)</span>
+<a name="l00101"></a>00101 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00102"></a>00102 <span class="preprocessor"></span>
+<a name="l00103"></a>00103 <span class="preprocessor">#ifndef LOS_NOK</span>
+<a name="l00104"></a><a class="code" href="a00048_17faf4404ee8d59298b9f0ecfece2164.html#17faf4404ee8d59298b9f0ecfece2164">00104</a> <span class="preprocessor"></span><span class="preprocessor">#define LOS_NOK                                             (1U)</span>
+<a name="l00105"></a>00105 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00106"></a>00106 <span class="preprocessor"></span>
+<a name="l00107"></a><a class="code" href="a00048_6b2ebb447006820a2fc68e5b300d5f1a.html#6b2ebb447006820a2fc68e5b300d5f1a">00107</a> <span class="preprocessor">#define OS_FAIL                                             (1)</span>
+<a name="l00108"></a><a class="code" href="a00048_f41e7a381cb414280c4d7f64be56228e.html#f41e7a381cb414280c4d7f64be56228e">00108</a> <span class="preprocessor"></span><span class="preprocessor">#define OS_ERROR                                            (UINT32)(-1)</span>
+<a name="l00109"></a><a class="code" href="a00048_d6fd4fde7f20bdf8ee7871ea56801737.html#d6fd4fde7f20bdf8ee7871ea56801737">00109</a> <span class="preprocessor"></span><span class="preprocessor">#define OS_INVALID                                          (UINT32)(-1)</span>
+<a name="l00110"></a>00110 <span class="preprocessor"></span>
+<a name="l00111"></a><a class="code" href="a00048_71921cebf4610b0dbb2b7a0daaf3fedf.html#71921cebf4610b0dbb2b7a0daaf3fedf">00111</a> <span class="preprocessor">#define asm                                                 __asm</span>
+<a name="l00112"></a>00112 <span class="preprocessor"></span><span class="preprocessor">#ifdef typeof</span>
+<a name="l00113"></a>00113 <span class="preprocessor"></span><span class="preprocessor">#undef typeof</span>
+<a name="l00114"></a>00114 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00115"></a><a class="code" href="a00048_1119e6ec77bb1767207342f9748fd6cf.html#1119e6ec77bb1767207342f9748fd6cf">00115</a> <span class="preprocessor"></span><span class="preprocessor">#define typeof                                              __typeof__</span>
+<a name="l00116"></a>00116 <span class="preprocessor"></span>
+<a name="l00117"></a>00117 
+<a name="l00118"></a>00118 <span class="preprocessor">#ifdef __cplusplus</span>
+<a name="l00119"></a>00119 <span class="preprocessor"></span><span class="preprocessor">#if __cplusplus</span>
+<a name="l00120"></a>00120 <span class="preprocessor"></span>}
+<a name="l00121"></a>00121 <span class="preprocessor">#endif </span><span class="comment">/* __cplusplus */</span>
+<a name="l00122"></a>00122 <span class="preprocessor">#endif </span><span class="comment">/* __cplusplus */</span>
+<a name="l00123"></a>00123 
+<a name="l00124"></a>00124 <span class="preprocessor">#endif </span><span class="comment">/* _LOS_TYPEDEF_H */</span>
+</pre>
+   </div>
+  </div> 
+  <hr size="1" /> 
+ </body>
+</html>

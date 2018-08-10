@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312" /> 
+  <title>LOS_MemboxStatisticsGet</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head>
+ <body> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top">  
+  </div> 
+  <div class="contents"> 
+   <div class="navpath">
+    <a class="el" href="a00037.html">los_membox.h</a> 
+   </div> 
+   <table cellspacing="0" cellpadding="0" border="0"> 
+    <tbody>
+     <tr> 
+      <td valign="top"> </td> 
+      <td valign="top"> <a class="anchor" name="4d7ddceb37f8d93f14a3ffa6bd9cb3f0"></a>
+       <!-- doxytag: member="los_membox.h::LOS_MemboxStatisticsGet" ref="4d7ddceb37f8d93f14a3ffa6bd9cb3f0" args="(VOID *pBoxMem, UINT32 *puwMaxBlk, UINT32 *puwBlkCnt, UINT32 *puwBlkSize)" --> 
+       <div class="memitem"> 
+        <div class="memproto"> 
+         <table class="memname"> 
+          <tbody>
+           <tr> 
+            <td class="memname"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> LOS_MemboxStatisticsGet </td> 
+            <td class="paramtype">(</td> 
+            <td class="paramtype">VOID *&nbsp;</td> 
+            <td class="paramname"> <em>pBoxMem</em>, </td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramtype"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> *&nbsp;</td> 
+            <td class="paramname"> <em>puwMaxBlk</em>, </td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramtype"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> *&nbsp;</td> 
+            <td class="paramname"> <em>puwBlkCnt</em>, </td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey"></td> 
+            <td class="paramtype"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> *&nbsp;</td> 
+            <td class="paramname"> <em>puwBlkSize</em></td>
+            <td class="paramkey">&nbsp;</td> 
+           </tr> 
+           <tr> 
+            <td class="paramkey"></td> 
+            <td class="paramkey">)</td> 
+            <td class="paramkey"></td>
+            <td class="paramkey"></td>
+            <td class="paramkey"></td> 
+           </tr> 
+          </tbody>
+         </table> 
+        </div> 
+        <div class="memdoc"> 
+         <p> calculate membox information. </p>
+         <p> </p>
+         <dl class="user" compact="">
+          <dt>
+           <b>Description:</b>
+          </dt>
+          <dd>
+           <ul> 
+            <li> This API is used to calculate membox information. </li> 
+           </ul> 
+          </dd>
+         </dl> 
+         <dl class="attention" compact="">
+          <dt>
+           <b>注意:</b>
+          </dt>
+          <dd>
+           <ul> 
+            <li> One parameter of this interface is a pointer, it should be a correct value, otherwise, the system may be abnormal. </li> 
+           </ul> 
+          </dd>
+         </dl> 
+         <dl compact="">
+          <dt>
+           <b>参数:</b>
+          </dt>
+          <dd> 
+           <table border="0" cellspacing="0" cellpadding="0"> 
+            <tbody>
+             <tr>
+              <th></th>
+              <th>参数名称</th>
+              <th>描述</th> 
+             </tr>
+             <tr>
+              <td valign="top"></td>
+              <td valign="top" nowrap="">pBoxMem&nbsp;</td>
+              <td>[IN] Type <a class="el" href="a00048_7f319bfc2492a2136964194204e7a8cf.html#7f319bfc2492a2136964194204e7a8cf">VOID</a>* Pointer to the calculate membox. </td>
+             </tr> 
+             <tr>
+              <td valign="top"></td>
+              <td valign="top" nowrap="">uwMaxBlk&nbsp;</td>
+              <td>[OUT] Type <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>* Record membox max block. </td>
+             </tr> 
+             <tr>
+              <td valign="top"></td>
+              <td valign="top" nowrap="">uwBlkCnt&nbsp;</td>
+              <td>[OUT] Type <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>* Record membox block count alreay allocated. </td>
+             </tr> 
+             <tr>
+              <td valign="top"></td>
+              <td valign="top" nowrap="">uwBlkSize&nbsp;</td>
+              <td>[OUT] Type <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>* Record membox block size.</td>
+             </tr> 
+            </tbody>
+           </table> 
+          </dd>
+         </dl> 
+         <dl compact="">
+          <dt>
+           <b>返回值:</b>
+          </dt>
+          <dd> 
+           <table border="0" cellspacing="0" cellpadding="0"> 
+            <tbody>
+             <tr>
+              <th></th>
+              <th>返回值</th>
+              <th>描述</th> 
+             </tr>
+             <tr>
+              <td valign="top"></td>
+              <td valign="top" nowrap=""><a class="el" href="a00048_81e00a29757b6c6f90f05ca6c1eed169.html#81e00a29757b6c6f90f05ca6c1eed169">LOS_OK</a>&nbsp;</td>
+              <td>The heap status calculate success. </td>
+             </tr> 
+             <tr>
+              <td valign="top"></td>
+              <td valign="top" nowrap=""><a class="el" href="a00048_17faf4404ee8d59298b9f0ecfece2164.html#17faf4404ee8d59298b9f0ecfece2164">LOS_NOK</a>&nbsp;</td>
+              <td>The membox status calculate with some error. </td>
+             </tr> 
+            </tbody>
+           </table> 
+          </dd>
+         </dl> 
+         <dl class="user" compact="">
+          <dt>
+           <b>Dependency:</b>
+          </dt>
+          <dd>
+           <ul> 
+            <li> <a class="el" href="a00039.html">los_memory.h</a>: the header file that contains the API declaration.</li> 
+           </ul> 
+          </dd>
+         </dl> 
+         <dl class="see" compact="">
+          <dt>
+           <b>参见:</b>
+          </dt>
+          <dd>
+           <a class="el" href="a00039_a43b550f9d738265d363960acfa7872f.html#a43b550f9d738265d363960acfa7872f" title="Allocate dynamic memory.">LOS_MemAlloc</a> | 
+           <a class="el" href="a00039_37bf8c90ca16c32a883f920171337123.html#37bf8c90ca16c32a883f920171337123" title="Re-allocate a memory block.">LOS_MemRealloc</a> | 
+           <a class="el" href="a00039_464ca72bccefdfc4066884e68460697f.html#464ca72bccefdfc4066884e68460697f" title="Free dynamic memory.">LOS_MemFree</a> 
+          </dd>
+         </dl> 
+         <dl class="since" compact="">
+          <dt>
+           <b>自从:</b>
+          </dt>
+          <dd>
+           Huawei LiteOS V100R001C00 
+          </dd>
+         </dl> 
+        </div> 
+       </div><p> </p></td> 
+     </tr> 
+    </tbody>
+   </table> 
+  </div> 
+  <hr size="1" /> 
+ </body>
+</html>

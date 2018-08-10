@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>  
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+<meta name="DC.Type" content="concept">
+<meta name="featurename" content="dcp">
+<title>LOS_HwiDelete</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head> 
+ <body> 
+  <div class="familylinks"> 
+   <a href="a00061_g2bde529e83e01f9fe13aab45bc30b0b4.html">LOS_HwiDelete</a> 
+   <hr size="2" /> 
+  </div> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top"> 
+  </div> 
+  <div class="contents"> 
+   <div class="navpath"> 
+    <a class="el" href="a00061.html">Hardware interrupt</a> 
+   </div> 
+   <table cellspacing="0" cellpadding="0" border="0"> 
+    <tbody> 
+     <tr> 
+      <td valign="top"> </td> 
+      <td valign="top"> <a class="anchor" name="g2bde529e83e01f9fe13aab45bc30b0b4"></a> 
+       <!-- doxytag: member="los_hwi.h::<a href='a00061_g2bde529e83e01f9fe13aab45bc30b0b4.html'>LOS_HwiDelete</a>" ref="g2bde529e83e01f9fe13aab45bc30b0b4" args="(<a href='a00061_ga7234e6d543bd889729494b4861f17e3.html'>HWI_HANDLE_T</a> uwHwiNum)" --> 
+       <div class="memitem"> 
+        <div class="memproto"> 
+         <table class="memname"> 
+          <tbody> 
+           <tr> 
+            <td class="memname"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> <a href="a00061_g2bde529e83e01f9fe13aab45bc30b0b4.html">LOS_HwiDelete</a> </td> 
+            <td class="paramtype">(</td> 
+            <td class="paramtype"><a class="el" href="a00061_ga7234e6d543bd889729494b4861f17e3.html#ga7234e6d543bd889729494b4861f17e3">HWI_HANDLE_T</a>&nbsp;</td> 
+            <td class="paramname"> <em>uwHwiNum</em> </td> 
+            <td class="paramkey">&nbsp;)&nbsp;</td> 
+            <td class="paramkey"></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+        </div> 
+        <div class="memdoc"> 
+         <p> Delete hardware interrupt. </p> 
+         <p> </p> 
+         <dl class="user" compact=""> 
+          <dt> 
+           <b>Description:</b> 
+          </dt> 
+          <dd>
+            This API is used to delete hardware interrupt. 
+          </dd> 
+         </dl> 
+         <dl class="attention" compact=""> 
+          <dt> 
+           <b>注意:</b> 
+          </dt> 
+          <dd> 
+           <ul> 
+            <li> The hardware interrupt module is usable only when the configuration item for hardware interrupt tailoring is enabled. </li> 
+            <li> Hardware interrupt number value range: [OS_USER_HWI_MIN,OS_USER_HWI_MAX]. The value range applicable for a Cortex-A7 platform is [32,95]. </li> 
+            <li> <a href="a00061_gc3737b053e9546d768ceaa36ca678459.html">OS_HWI_MAX_NUM</a> specifies the maximum number of interrupts that can be created. </li> 
+            <li> Before executing an interrupt on a platform, refer to the chip manual of the platform. </li> 
+           </ul> 
+          </dd> 
+         </dl> 
+         <dl compact=""> 
+          <dt> 
+           <b>参数:</b> 
+          </dt> 
+          <dd> 
+           <table border="0" cellspacing="0" cellpadding="0"> 
+            <tbody> 
+             <tr> 
+              <th></th> 
+              <th>参数名称</th> 
+              <th>描述</th> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap="">uwHwiNum&nbsp;</td> 
+              <td>[IN] <a class="el" href="a00061_ga7234e6d543bd889729494b4861f17e3.html#ga7234e6d543bd889729494b4861f17e3" title="Define the type of a hardware interrupt number.">Type::HWI_HANDLE_T</a>: hardware interrupt number. The value range applicable for a Cortex-A7 platform is [32,95].</td> 
+             </tr> 
+            </tbody> 
+           </table> 
+          </dd> 
+         </dl> 
+         <dl compact=""> 
+          <dt> 
+           <b>返回值:</b> 
+          </dt> 
+          <dd> 
+           <table border="0" cellspacing="0" cellpadding="0"> 
+            <tbody> 
+             <tr> 
+              <th></th> 
+              <th>返回值</th> 
+              <th>描述</th> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00061_gfb399c19cc97ebd2ba47baf829e67ca4.html#gfb399c19cc97ebd2ba47baf829e67ca4" title="Hardware interrupt error code: Invalid interrupt number.">OS_ERRNO_HWI_NUM_INVALID</a>&nbsp;</td> 
+              <td>0x02000900: Invalid interrupt number. </td> 
+             </tr> 
+             <tr> 
+              <td valign="top"></td> 
+              <td valign="top" nowrap=""><a class="el" href="a00048_81e00a29757b6c6f90f05ca6c1eed169.html#81e00a29757b6c6f90f05ca6c1eed169">LOS_OK</a>&nbsp;</td> 
+              <td>0: The interrupt is successfully delete. </td> 
+             </tr> 
+            </tbody> 
+           </table> 
+          </dd> 
+         </dl> 
+         <dl class="user" compact=""> 
+          <dt> 
+           <b>Dependency:</b> 
+          </dt> 
+          <dd> 
+           <ul> 
+            <li> <a class="el" href="a00035.html">los_hwi.h</a>: the header file that contains the API declaration.</li> 
+           </ul> 
+          </dd> 
+         </dl> 
+         <dl class="see" compact=""> 
+          <dt> 
+           <b>参见:</b> 
+          </dt> 
+          <dd>
+            None. 
+          </dd> 
+         </dl> 
+         <dl class="since" compact=""> 
+          <dt> 
+           <b>自从:</b> 
+          </dt> 
+          <dd>
+            Huawei LiteOS V100R001C00 
+          </dd> 
+         </dl> 
+        </div> 
+       </div><p> </p></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <hr size="1" />  
+ </body>
+</html>

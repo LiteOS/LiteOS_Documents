@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>  
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+<meta name="DC.Type" content="concept">
+<meta name="featurename" content="dcp">
+<title>los_errno.h文件参考</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head> 
+ <body> 
+  <div class="familylinks"> 
+   <a href="a00031.html">los_errno.h</a> 
+   <hr size="2" /> 
+  </div> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top"> 
+  </div> 
+  <div class="contents"> 
+   <h1>los_errno.h文件参考</h1> 
+   <p> <a href="a00080.html">浏览该文件的源代码。</a></p> 
+   <table border="0" cellpadding="0" cellspacing="0"> 
+    <tbody> 
+     <tr> 
+      <td colspan="2"><br /><h2>宏定义</h2></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00057_g5843662fa9ad7be77de81575a149222d.html#g5843662fa9ad7be77de81575a149222d">LOS_ERRNO_OS_ID</a>&nbsp;&nbsp;&nbsp;((<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>)0x00 &lt;&lt; 16)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">OS error code flag. <a href="a00057_g5843662fa9ad7be77de81575a149222d.html#g5843662fa9ad7be77de81575a149222d"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00057_gc06815500e8fc48c603131c0568999ae.html#gc06815500e8fc48c603131c0568999ae">LOS_ERRTYPE_NORMAL</a>&nbsp;&nbsp;&nbsp;((<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>)0x00 &lt;&lt; 24)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Define the error level as informative. <a href="a00057_gc06815500e8fc48c603131c0568999ae.html#gc06815500e8fc48c603131c0568999ae"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00057_g59fe2f38ec1e795b8ca0f203ae821713.html#g59fe2f38ec1e795b8ca0f203ae821713">LOS_ERRTYPE_WARN</a>&nbsp;&nbsp;&nbsp;((<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>)0x01 &lt;&lt; 24)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Define the error level as warning. <a href="a00057_g59fe2f38ec1e795b8ca0f203ae821713.html#g59fe2f38ec1e795b8ca0f203ae821713"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00057_gbd4ddaf086aa72daa391045e8ad6b774.html#gbd4ddaf086aa72daa391045e8ad6b774">LOS_ERRTYPE_ERROR</a>&nbsp;&nbsp;&nbsp;((<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>)0x02 &lt;&lt; 24)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Define the error level as critical. <a href="a00057_gbd4ddaf086aa72daa391045e8ad6b774.html#gbd4ddaf086aa72daa391045e8ad6b774"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00057_ga483b565f46fbc309eb53e03c56d49df.html#ga483b565f46fbc309eb53e03c56d49df">LOS_ERRTYPE_FATAL</a>&nbsp;&nbsp;&nbsp;((<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>)0x03 &lt;&lt; 24)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Define the error level as fatal. <a href="a00057_ga483b565f46fbc309eb53e03c56d49df.html#ga483b565f46fbc309eb53e03c56d49df"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00057_g93da4d58ca614bcbfa9911b8677d56fe.html#g93da4d58ca614bcbfa9911b8677d56fe">LOS_ERRNO_OS_FATAL</a>(MID, ERRNO)&nbsp;&nbsp;&nbsp;(<a href="a00057_ga483b565f46fbc309eb53e03c56d49df.html">LOS_ERRTYPE_FATAL</a> | <a href="a00057_g5843662fa9ad7be77de81575a149222d.html">LOS_ERRNO_OS_ID</a> | ((<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>)(MID) &lt;&lt; 8) | (ERRNO))</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Define fatal OS errors. <a href="a00057_g93da4d58ca614bcbfa9911b8677d56fe.html#g93da4d58ca614bcbfa9911b8677d56fe"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html#g6a8b3dcf15bf8261e12085f7b7fd35d7">LOS_ERRNO_OS_ERROR</a>(MID, ERRNO)&nbsp;&nbsp;&nbsp;(<a href="a00057_gbd4ddaf086aa72daa391045e8ad6b774.html">LOS_ERRTYPE_ERROR</a> | <a href="a00057_g5843662fa9ad7be77de81575a149222d.html">LOS_ERRNO_OS_ID</a> | ((<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>)(MID) &lt;&lt; 8) | (ERRNO))</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Define critical OS errors. <a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html#g6a8b3dcf15bf8261e12085f7b7fd35d7"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00057_g2d77d81928e853a9d734e264e3512a6e.html#g2d77d81928e853a9d734e264e3512a6e">LOS_ERRNO_OS_WARN</a>(MID, ERRNO)&nbsp;&nbsp;&nbsp;(<a href="a00057_g59fe2f38ec1e795b8ca0f203ae821713.html">LOS_ERRTYPE_WARN</a> | <a href="a00057_g5843662fa9ad7be77de81575a149222d.html">LOS_ERRNO_OS_ID</a> | ((<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>)(MID) &lt;&lt; 8) | (ERRNO))</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Define warning OS errors. <a href="a00057_g2d77d81928e853a9d734e264e3512a6e.html#g2d77d81928e853a9d734e264e3512a6e"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00057_g4b95c6511f9f572fe5dca981a5d6f399.html#g4b95c6511f9f572fe5dca981a5d6f399">LOS_ERRNO_OS_NORMAL</a>(MID, ERRNO)&nbsp;&nbsp;&nbsp;(<a href="a00057_gc06815500e8fc48c603131c0568999ae.html">LOS_ERRTYPE_NORMAL</a> | <a href="a00057_g5843662fa9ad7be77de81575a149222d.html">LOS_ERRNO_OS_ID</a> | ((<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>)(MID) &lt;&lt; 8) | (ERRNO))</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Define informative OS errors. <a href="a00057_g4b95c6511f9f572fe5dca981a5d6f399.html#g4b95c6511f9f572fe5dca981a5d6f399"></a><br /></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <hr size="1" />  
+ </body>
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+ <head>  
+  <meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+<meta name="DC.Type" content="concept">
+<meta name="featurename" content="dcp">
+<title>los_queue.h文件参考</title> 
+  <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
+  <link href="tabs.css" rel="stylesheet" type="text/css" /> 
+ </head> 
+ <body> 
+  <div class="familylinks"> 
+   <a href="a00041.html">los_queue.h</a> 
+   <hr size="2" /> 
+  </div> 
+  <!-- 制作者 Doxygen 1.5.7.1 --> 
+  <div class="navigation" id="top"> 
+  </div> 
+  <div class="contents"> 
+   <h1>los_queue.h文件参考</h1> 
+   <p> <a href="a00090.html">浏览该文件的源代码。</a></p> 
+   <table border="0" cellpadding="0" cellspacing="0"> 
+    <tbody> 
+     <tr> 
+      <td colspan="2"><br /><h2>数据结构</h2></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">struct &nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00016.html">tagQueueInfo</a></td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Structure of the block for queue information query <a href="a00016.html#_details">更多...</a><br /></td> 
+     </tr> 
+     <tr> 
+      <td colspan="2"><br /><h2>宏定义</h2></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00064_gc020b3e1f26dd984dba211de4e66da32.html#gc020b3e1f26dd984dba211de4e66da32">LOS_ERRNO_QUEUE_MAXNUM_ZERO</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_QUE, 0x00)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Queue error code: The maximum number of queue resources is configured to 0. <a href="a00064_gc020b3e1f26dd984dba211de4e66da32.html#gc020b3e1f26dd984dba211de4e66da32"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00064_gd3c4ffe95f0933dafa8e48c47eff81d4.html#gd3c4ffe95f0933dafa8e48c47eff81d4">LOS_ERRNO_QUEUE_NO_MEMORY</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_QUE, 0x01)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Queue error code: The queue block memory fails to be initialized. <a href="a00064_gd3c4ffe95f0933dafa8e48c47eff81d4.html#gd3c4ffe95f0933dafa8e48c47eff81d4"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00064_g90adeaf47438c711aaa663d71859b13c.html#g90adeaf47438c711aaa663d71859b13c">LOS_ERRNO_QUEUE_CREATE_NO_MEMORY</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_QUE, 0x02)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Queue error code: The memory for queue creation fails to be requested. <a href="a00064_g90adeaf47438c711aaa663d71859b13c.html#g90adeaf47438c711aaa663d71859b13c"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00064_gd3601d99913ce4a536717a8159d39004.html#gd3601d99913ce4a536717a8159d39004">LOS_ERRNO_QUEUE_SIZE_TOO_BIG</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_QUE, 0x03)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Queue error code: The size of the biggest message in the created queue is too big. <a href="a00064_gd3601d99913ce4a536717a8159d39004.html#gd3601d99913ce4a536717a8159d39004"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00064_g2590cbe58b704b4c5eb0cdf8e319028b.html#g2590cbe58b704b4c5eb0cdf8e319028b">LOS_ERRNO_QUEUE_CB_UNAVAILABLE</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_QUE, 0x04)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Queue error code: The upper limit of the number of created queues is exceeded. <a href="a00064_g2590cbe58b704b4c5eb0cdf8e319028b.html#g2590cbe58b704b4c5eb0cdf8e319028b"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00064_ga91ae158e9e627bb74cc3015eb7f31df.html#ga91ae158e9e627bb74cc3015eb7f31df">LOS_ERRNO_QUEUE_NOT_FOUND</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_QUE, 0x05)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Queue error code: Invalid queue. <a href="a00064_ga91ae158e9e627bb74cc3015eb7f31df.html#ga91ae158e9e627bb74cc3015eb7f31df"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00064_g7db713cb533d740e2b400e073a3ebb6d.html#g7db713cb533d740e2b400e073a3ebb6d">LOS_ERRNO_QUEUE_PEND_IN_LOCK</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_QUE, 0x06)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Queue error code: The task is forbidden to be blocked on a queue when the task is locked. <a href="a00064_g7db713cb533d740e2b400e073a3ebb6d.html#g7db713cb533d740e2b400e073a3ebb6d"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00064_g561cceeac8b169bc04672601606dcac0.html#g561cceeac8b169bc04672601606dcac0">LOS_ERRNO_QUEUE_TIMEOUT</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_QUE, 0x07)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Queue error code: The time set for waiting to processing the queue expires. <a href="a00064_g561cceeac8b169bc04672601606dcac0.html#g561cceeac8b169bc04672601606dcac0"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00064_ga802805c5c23f8db2e59435770e1a6fd.html#ga802805c5c23f8db2e59435770e1a6fd">LOS_ERRNO_QUEUE_IN_TSKUSE</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_QUE, 0x08)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Queue error code: The queue that blocks a task cannot be deleted. <a href="a00064_ga802805c5c23f8db2e59435770e1a6fd.html#ga802805c5c23f8db2e59435770e1a6fd"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00064_g55aa6f5e50737e508a983c9de5e33909.html#g55aa6f5e50737e508a983c9de5e33909">LOS_ERRNO_QUEUE_WRITE_IN_INTERRUPT</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_QUE, 0x09)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Queue error code: The queue cannot be written during an interrupt when the time for waiting to processing the queue expires. <a href="a00064_g55aa6f5e50737e508a983c9de5e33909.html#g55aa6f5e50737e508a983c9de5e33909"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00064_g06999e637407e2068a8cfedd25557aeb.html#g06999e637407e2068a8cfedd25557aeb">LOS_ERRNO_QUEUE_NOT_CREATE</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_QUE, 0x0a)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Queue error code: The queue is not created. <a href="a00064_g06999e637407e2068a8cfedd25557aeb.html#g06999e637407e2068a8cfedd25557aeb"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00064_g2d28944aef5d9f7760c5d32c856c08f1.html#g2d28944aef5d9f7760c5d32c856c08f1">LOS_ERRNO_QUEUE_IN_TSKWRITE</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_QUE, 0x0b)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Queue error code: Queue reading and writing are not synchronous. <a href="a00064_g2d28944aef5d9f7760c5d32c856c08f1.html#g2d28944aef5d9f7760c5d32c856c08f1"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00064_g817ce2430eeb1c71cdc61702d758506c.html#g817ce2430eeb1c71cdc61702d758506c">LOS_ERRNO_QUEUE_CREAT_PTR_NULL</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_QUE, 0x0c)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Queue error code: Parameters passed in during queue creation are null pointers. <a href="a00064_g817ce2430eeb1c71cdc61702d758506c.html#g817ce2430eeb1c71cdc61702d758506c"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00064_gcdcc7683d68705261bdaf0390f95bc3a.html#gcdcc7683d68705261bdaf0390f95bc3a">LOS_ERRNO_QUEUE_PARA_ISZERO</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_QUE, 0x0d)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Queue error code: The queue length or message node size passed in during queue creation is 0. <a href="a00064_gcdcc7683d68705261bdaf0390f95bc3a.html#gcdcc7683d68705261bdaf0390f95bc3a"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00064_g66f57ec7b801acf09abf81d5d0992309.html#g66f57ec7b801acf09abf81d5d0992309">LOS_ERRNO_QUEUE_INVALID</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_QUE, 0x0e)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Queue error code: The handle of the queue is invalid. <a href="a00064_g66f57ec7b801acf09abf81d5d0992309.html#g66f57ec7b801acf09abf81d5d0992309"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00064_gbc7a8c8793f67c7e1562c0447e523e0d.html#gbc7a8c8793f67c7e1562c0447e523e0d">LOS_ERRNO_QUEUE_READ_PTR_NULL</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_QUE, 0x0f)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Queue error code: The pointer passed in during queue reading is null. <a href="a00064_gbc7a8c8793f67c7e1562c0447e523e0d.html#gbc7a8c8793f67c7e1562c0447e523e0d"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00064_g22a6b0810cede10405101788f5224aa5.html#g22a6b0810cede10405101788f5224aa5">LOS_ERRNO_QUEUE_READSIZE_ISZERO</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_QUE, 0x10)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Queue error code: The buffer size passed in during queue reading is 0. <a href="a00064_g22a6b0810cede10405101788f5224aa5.html#g22a6b0810cede10405101788f5224aa5"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00064_g9a12b8be1d04578d8936261e34100c79.html#g9a12b8be1d04578d8936261e34100c79">LOS_ERRNO_QUEUE_WRITE_PTR_NULL</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_QUE, 0x12)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Queue error code: The pointer passed in during queue writing is null. <a href="a00064_g9a12b8be1d04578d8936261e34100c79.html#g9a12b8be1d04578d8936261e34100c79"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00064_g73f28b6bbb74534331d603a6ca06f0d7.html#g73f28b6bbb74534331d603a6ca06f0d7">LOS_ERRNO_QUEUE_WRITESIZE_ISZERO</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_QUE, 0x13)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Queue error code: The buffer size passed in during queue writing is 0. <a href="a00064_g73f28b6bbb74534331d603a6ca06f0d7.html#g73f28b6bbb74534331d603a6ca06f0d7"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00064_g5b537dc433cd1828a35997af0ae35fa4.html#g5b537dc433cd1828a35997af0ae35fa4">LOS_ERRNO_QUEUE_WRITE_SIZE_TOO_BIG</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_QUE, 0x15)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Queue error code: The buffer size passed in during queue writing is bigger than the queue size. <a href="a00064_g5b537dc433cd1828a35997af0ae35fa4.html#g5b537dc433cd1828a35997af0ae35fa4"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00064_g261a4dd58e09d16e8f98496d5a5cdd19.html#g261a4dd58e09d16e8f98496d5a5cdd19">LOS_ERRNO_QUEUE_ISFULL</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_QUE, 0x16)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Queue error code: No free node is available during queue writing. <a href="a00064_g261a4dd58e09d16e8f98496d5a5cdd19.html#g261a4dd58e09d16e8f98496d5a5cdd19"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00064_gbd8c54bf4883629e4d9490a59cc24c49.html#gbd8c54bf4883629e4d9490a59cc24c49">LOS_ERRNO_QUEUE_PTR_NULL</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_QUE, 0x17)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Queue error code: The pointer passed in when the queue information is being obtained is null. <a href="a00064_gbd8c54bf4883629e4d9490a59cc24c49.html#gbd8c54bf4883629e4d9490a59cc24c49"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00064_ge8d8d97b5c5e91b5105c76855814f53c.html#ge8d8d97b5c5e91b5105c76855814f53c">LOS_ERRNO_QUEUE_READ_IN_INTERRUPT</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_QUE, 0x18)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Queue error code: The queue cannot be read during an interrupt when the time for waiting to processing the queue expires. <a href="a00064_ge8d8d97b5c5e91b5105c76855814f53c.html#ge8d8d97b5c5e91b5105c76855814f53c"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00064_g4bc61b2174a1401e855e5180a8d7e0e4.html#g4bc61b2174a1401e855e5180a8d7e0e4">LOS_ERRNO_QUEUE_MAIL_HANDLE_INVALID</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_QUE, 0x19)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Queue error code: The handle of the queue passed-in when the memory for the queue is being freed is invalid. <a href="a00064_g4bc61b2174a1401e855e5180a8d7e0e4.html#g4bc61b2174a1401e855e5180a8d7e0e4"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00064_g5022dc708032171d3194517aba89b868.html#g5022dc708032171d3194517aba89b868">LOS_ERRNO_QUEUE_MAIL_PTR_INVALID</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_QUE, 0x1a)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Queue error code: The pointer to the memory to be freed is null. <a href="a00064_g5022dc708032171d3194517aba89b868.html#g5022dc708032171d3194517aba89b868"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00064_ge827826c3690d6688da371901cd80cea.html#ge827826c3690d6688da371901cd80cea">LOS_ERRNO_QUEUE_MAIL_FREE_ERROR</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_QUE, 0x1b)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Queue error code: The memory for the queue fails to be freed. <a href="a00064_ge827826c3690d6688da371901cd80cea.html#ge827826c3690d6688da371901cd80cea"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00064_gfc83fd5ed39ff0c53e37309efe2e8e74.html#gfc83fd5ed39ff0c53e37309efe2e8e74">LOS_ERRNO_QUEUE_ISEMPTY</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_QUE, 0x1d)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Queue error code: No resource is in the queue that is being read when the time for waiting to processing the queue expires. <a href="a00064_gfc83fd5ed39ff0c53e37309efe2e8e74.html#gfc83fd5ed39ff0c53e37309efe2e8e74"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">#define&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00064_gc910d35d5286c914679485e434e6a7ce.html#gc910d35d5286c914679485e434e6a7ce">LOS_ERRNO_QUEUE_READ_SIZE_TOO_SMALL</a>&nbsp;&nbsp;&nbsp;<a href="a00057_g6a8b3dcf15bf8261e12085f7b7fd35d7.html">LOS_ERRNO_OS_ERROR</a>(LOS_MOD_QUE, 0x1f)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Queue error code: The buffer size passed in during queue readding is smaller than the queue size. <a href="a00064_gc910d35d5286c914679485e434e6a7ce.html#gc910d35d5286c914679485e434e6a7ce"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td colspan="2"><br /><h2>类型定义</h2></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top">typedef struct <a class="el" href="a00016.html">tagQueueInfo</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00064_g1e931fed98d6ea59d97f4d69326187cb.html#g1e931fed98d6ea59d97f4d69326187cb">QUEUE_INFO_S</a></td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Structure of the block for queue information query <a href="a00064_g1e931fed98d6ea59d97f4d69326187cb.html#g1e931fed98d6ea59d97f4d69326187cb"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td colspan="2"><br /><h2>函数</h2></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00064_gf6f1fb9652760f1d43a76179282a3174.html#gf6f1fb9652760f1d43a76179282a3174">LOS_QueueCreate</a> (<a class="el" href="a00048_ebb9e13210d88d43e32e735ada43a425.html#ebb9e13210d88d43e32e735ada43a425">CHAR</a> *pcQueueName, <a class="el" href="a00048_09f1a1fb2293e33483cc8d44aefb1eb1.html#09f1a1fb2293e33483cc8d44aefb1eb1">UINT16</a> usLen, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> *puwQueueID, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwFlags, <a class="el" href="a00048_09f1a1fb2293e33483cc8d44aefb1eb1.html#09f1a1fb2293e33483cc8d44aefb1eb1">UINT16</a> usMaxMsgSize)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Create a message queue. <a href="a00064_gf6f1fb9652760f1d43a76179282a3174.html#gf6f1fb9652760f1d43a76179282a3174"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00064_g332824420696aae3bd46cd0541a43c7a.html#g332824420696aae3bd46cd0541a43c7a">LOS_QueueReadCopy</a> (<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwQueueID, VOID *pBufferAddr, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> *puwBufferSize, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwTimeOut)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Read a queue. <a href="a00064_g332824420696aae3bd46cd0541a43c7a.html#g332824420696aae3bd46cd0541a43c7a"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00064_g4eba7fe0a878b3d93bae666b2b3d6aee.html#g4eba7fe0a878b3d93bae666b2b3d6aee">LOS_QueueWriteCopy</a> (<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwQueueID, VOID *pBufferAddr, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwBufferSize, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwTimeOut)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Write data into a queue. <a href="a00064_g4eba7fe0a878b3d93bae666b2b3d6aee.html#g4eba7fe0a878b3d93bae666b2b3d6aee"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00064_g5c31525b3007eeed45965c9bbda3a830.html#g5c31525b3007eeed45965c9bbda3a830">LOS_QueueRead</a> (<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwQueueID, VOID *pBufferAddr, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwBufferSize, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwTimeOut)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Read a queue. <a href="a00064_g5c31525b3007eeed45965c9bbda3a830.html#g5c31525b3007eeed45965c9bbda3a830"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00064_g7e1421aafcfae09f73e314795fe0952b.html#g7e1421aafcfae09f73e314795fe0952b">LOS_QueueWrite</a> (<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwQueueID, VOID *pBufferAddr, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwBufferSize, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwTimeOut)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Write data into a queue. <a href="a00064_g7e1421aafcfae09f73e314795fe0952b.html#g7e1421aafcfae09f73e314795fe0952b"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00064_geec0efabe753fc0bcaa6981100e9d362.html#geec0efabe753fc0bcaa6981100e9d362">LOS_QueueWriteHead</a> (<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwQueueID, VOID *pBufferAddr, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwBufferSize, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwTimeOut)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Write data into a queue header. <a href="a00064_geec0efabe753fc0bcaa6981100e9d362.html#geec0efabe753fc0bcaa6981100e9d362"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00064_g7daf97bf6701a90cfab1f67eb553f08e.html#g7daf97bf6701a90cfab1f67eb553f08e">LOS_QueueWriteHeadCopy</a> (<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwQueueID, VOID *pBufferAddr, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwBufferSize, <a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwTimeOut)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Write data into a queue header. <a href="a00064_g7daf97bf6701a90cfab1f67eb553f08e.html#g7daf97bf6701a90cfab1f67eb553f08e"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00064_gd779efa012c288bc90032e7ce98a57df.html#gd779efa012c288bc90032e7ce98a57df">LOS_QueueDelete</a> (<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwQueueID)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Delete a queue. <a href="a00064_gd779efa012c288bc90032e7ce98a57df.html#gd779efa012c288bc90032e7ce98a57df"></a><br /></td> 
+     </tr> 
+     <tr> 
+      <td class="memItemLeft" nowrap="" align="right" valign="top"><a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a>&nbsp;</td> 
+      <td class="memItemRight" valign="bottom"><a class="el" href="a00064_gcd81d13c01e7ab08bb7e8a846216ae8e.html#gcd81d13c01e7ab08bb7e8a846216ae8e">LOS_QueueInfoGet</a> (<a class="el" href="a00048_e1e6edbbc26d6fbc71a90190d0266018.html#e1e6edbbc26d6fbc71a90190d0266018">UINT32</a> uwQueueID, <a class="el" href="a00016.html">QUEUE_INFO_S</a> *pstQueueInfo)</td> 
+     </tr> 
+     <tr> 
+      <td class="mdescLeft">&nbsp;</td> 
+      <td class="mdescRight">Obtain queue information. <a href="a00064_gcd81d13c01e7ab08bb7e8a846216ae8e.html#gcd81d13c01e7ab08bb7e8a846216ae8e"></a><br /></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <hr size="1" />  
+ </body>
+</html>
