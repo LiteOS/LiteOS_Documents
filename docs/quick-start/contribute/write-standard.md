@@ -41,11 +41,11 @@ Huawei LiteOS（以下简称LiteOS）欢迎开发者参与到开源社区的贡�
 图片统一存放到文档同级目录下的pic文件夹中（英文文档对应pic-en），如`LITEOS_DOCUMENTS/docs/quick-start/write-standard.md`中使用的图片，统一放置到`LITEOS_DOCUMENTS/docs/quick-start/pic`目录下，文档中使用相对路径引用图片。图片建议根据内容命名，只用数字序列不利于后续图片的继承。
 :::tip 说明
 引用方式：  
-`![](./pic/pic-standard.png)`  
+`![](../pic/pic-standard.png)`  
 :::
 如果是自制图片，配色请参考如下，格式不限png/jpg/gif...均可，如果是截图或者其他地方引用图片，风格不做限制。
 
-![](./pic/pic-standard.png)
+![](../pic/pic-standard.png)
 
 
 ### 表格

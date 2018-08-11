@@ -1,4 +1,4 @@
-# 如何学习并使用 Huawei LiteOS 到你的产品中
+# 如何学习并使用 Huawei LiteOS 到你的产品中？
 
 ## 提前了解
 - Huawei LiteOS目前已经支持ARM Cortex-M0、M3、M4、M7；Cortex-A7、A17、A53，ARM 9、11，X86，DSP，RISC-V等多个芯片架构，请根据需要选择合适的芯片架构；

@@ -29,11 +29,11 @@ module.exports = {
             text: "入门",
             items: [
               {
-                text: "LiteOS 介绍",
+                text: "LiteOS 必知必会",
                 link: "/quick-start/intro/"
               },
               {
-                text: "快速上手",
+                text: "Demo 快速上手",
                 link: "/quick-start/demo/"
               },
               {
@@ -46,7 +46,7 @@ module.exports = {
             text: "学习",
             items: [
               {
-                text: "LiteOS Kernel",
+                text: "LiteOS 内核",
                 link: "/kernel/"
               },
               {
@@ -63,15 +63,15 @@ module.exports = {
             text: "教程",
             items: [
               {
-                text: "内核实战",
+                text: "LiteOS 内核实战",
                 link: "/tutorials/kernel/"
               },
               {
-                text: "场景例程",
+                text: "场景化例程",
                 link: "/tutorials/scene/"
               },
               {
-                text: "端到端开发",
+                text: "NB-IoT 端到端开发",
                 link: "/step-by-step/nb-iot/"
               }
             ]
@@ -80,13 +80,42 @@ module.exports = {
             text: "生态",
             items: [
               {
-                text: "对接中移动 OneNet 云平台",
-                link: "/connect-to-cloud/onenet/"
+                text: "OneNet 平台",
+                link: "/ecosystem/connect-to-cloud/onenet/"
               },
               {
-                text: "钛云物联 All-in-Java 开发",
-                link: "/all-in-java/"
+                text: "All-in-Java",
+                link: "/ecosystem/all-in-java/"
+              },
+              {
+                text: "JS 引擎",
+                link: "/ecosystem/maplejs/"
+              },
+              {
+                text: "OpenCPU",
+                link: "/ecosystem/opencpu/"
               }
+            ]
+          },
+          {
+            text: "伙伴",
+            items: [
+              {
+                text: "行业",
+                link: "/partners/industry/"
+              },
+              {
+                text: "平台",
+                link: "/partners/platform/"
+              },
+              {
+                text: "芯片/模组",
+                link: "/partners/module/"
+              },
+              {
+                text: "教学",
+                link: "/partners/teaching/"
+              },
             ]
           },
           {
@@ -102,10 +131,11 @@ module.exports = {
         sidebar: {
           "/quick-start/intro/": [
             "",
-            "./terminology",
             "./why-use-the-rtos",
             "./why-select-huawei-liteos",
-            "./how-to-study-liteos"
+            "./how-to-study-liteos",
+            "./mar-usage-guide-for-partner",
+            "./terminology"
           ],
           "/quick-start/demo/": [
             "",

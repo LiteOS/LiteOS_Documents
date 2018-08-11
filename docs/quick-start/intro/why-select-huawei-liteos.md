@@ -1,4 +1,4 @@
-# 如何选择适合的 RTOS，为什么选择 Huawei LiteOS？
+# 如何选择适合的 RTOS ？为什么选择 Huawei LiteOS ？
 
 ### 商业
 

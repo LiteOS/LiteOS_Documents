@@ -1,12 +1,11 @@
-# LiteOS代码结构导读
+# 代码结构导读
 
-## LiteOS代码入口
+## 代码入口
 
-LiteOS入口在工程对应的main.c中，基本流程如下：
+LiteOS 入口在工程对应的 `main.c` 中，基本流程如下：
 
 ```c  
 int main(void)
-
 {
 
     UINT32 uwRet = LOS_OK;
@@ -26,7 +25,7 @@ int main(void)
 }  
 ```  
 
-## LiteOS的代码目录结构说明  
+## 代码目录结构说明  
 
 关于代码树中各个目录存放的源代码的相关内容简介如下：  
 
