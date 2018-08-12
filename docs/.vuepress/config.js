@@ -29,11 +29,11 @@ module.exports = {
             text: "入门",
             items: [
               {
-                text: "LiteOS 必知必会",
+                text: "必知必会",
                 link: "/quick-start/intro/"
               },
               {
-                text: "Demo 快速上手",
+                text: "快速上手",
                 link: "/quick-start/demo/"
               },
               {
@@ -56,7 +56,11 @@ module.exports = {
               {
                 text: "LiteOS 移植",
                 link: "/porting/"
-              }
+              },
+              {
+                text: "API 参考",
+                link: "http://localhost:8080/api-reference/"
+              },
             ]
           },
           {
@@ -67,7 +71,7 @@ module.exports = {
                 link: "/tutorials/kernel/"
               },
               {
-                text: "场景化例程",
+                text: "IoT 场景化例程",
                 link: "/tutorials/scene/"
               },
               {
@@ -80,19 +84,19 @@ module.exports = {
             text: "生态",
             items: [
               {
-                text: "OneNet 平台",
-                link: "/ecosystem/connect-to-cloud/onenet/"
+                text: "OneNet 平台对接",
+                link: "/connect-to-cloud/onenet/"
               },
               {
-                text: "All-in-Java",
+                text: "钛云物联 All-in-Java",
                 link: "/ecosystem/all-in-java/"
               },
               {
-                text: "JS 引擎",
+                text: "MapleJS 引擎",
                 link: "/ecosystem/maplejs/"
               },
               {
-                text: "OpenCPU",
+                text: "OpenCPU 深入浅出",
                 link: "/ecosystem/opencpu/"
               }
             ]
@@ -101,19 +105,19 @@ module.exports = {
             text: "伙伴",
             items: [
               {
-                text: "行业",
+                text: "行业伙伴",
                 link: "/partners/industry/"
               },
               {
-                text: "平台",
+                text: "平台伙伴",
                 link: "/partners/platform/"
               },
               {
-                text: "芯片/模组",
+                text: "芯片/模组伙伴",
                 link: "/partners/module/"
               },
               {
-                text: "教学",
+                text: "教学伙伴",
                 link: "/partners/teaching/"
               },
             ]
@@ -134,7 +138,7 @@ module.exports = {
             "./why-use-the-rtos",
             "./why-select-huawei-liteos",
             "./how-to-study-liteos",
-            "./mar-usage-guide-for-partner",
+            "./usage-guide-for-partner",
             "./terminology"
           ],
           "/quick-start/demo/": [
@@ -181,13 +185,6 @@ module.exports = {
                 "./errorcode-semaphore",
                 "./errorcode-swtmr"
               ]
-            },
-            {
-              title: "API参考",
-              collapsable: false,
-              children: [
-                "./api-reference/index.html"
-              ]
             }
           ],
           "/sdk/": [
@@ -198,8 +195,7 @@ module.exports = {
                 "",
                 "./oceanconnect-agenttiny",
                 "./fota",
-                "./at-adaptor-framework",
-                "./sensors-framework"
+                "./at-adaptor-framework"
               ]
             }
           ],
@@ -246,7 +242,7 @@ module.exports = {
           ],
           "/tutorials/kernel/": [
             {
-              title: "内核例程",
+              title: "内核实战",
               collapsable: true,
               children: [
                 "./example01",
@@ -264,7 +260,7 @@ module.exports = {
           ],
           "/tutorials/scene/": [
             {
-              title: "综合例程",
+              title: "场景化例程",
               collapsable: false,
               children: [
                 "./temp-hum", 
