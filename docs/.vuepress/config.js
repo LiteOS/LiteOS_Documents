@@ -46,20 +46,20 @@ module.exports = {
             text: "学习",
             items: [
               {
-                text: "LiteOS 内核",
+                text: "LiteOS 内核详解",
                 link: "/kernel/"
               },
               {
-                text: "LiteOS SDK",
+                text: "LiteOS SDK详解",
                 link: "/sdk/"
               },
               {
-                text: "LiteOS 移植",
+                text: "LiteOS 移植手册",
                 link: "/porting/"
               },
               {
-                text: "API 参考",
-                link: "http://localhost:8080/api-reference/"
+                text: "LiteOS API 参考",
+                link: "http://liteos.github.io/api-reference/"
               },
             ]
           },
@@ -67,16 +67,20 @@ module.exports = {
             text: "教程",
             items: [
               {
-                text: "LiteOS 内核实战",
+                text: "LiteOS 内核实战训练",
                 link: "/tutorials/kernel/"
               },
               {
-                text: "IoT 场景化例程",
+                text: "NB-IoT 开发板场景化实操",
                 link: "/tutorials/scene/"
               },
               {
-                text: "NB-IoT 端到端开发",
+                text: "NB-IoT OneButton 端到端开发",
                 link: "/step-by-step/nb-iot/"
+              },
+              {
+                text: "朱老师 NB-IoT 视频课程",
+                link: "https://ke.qq.com/course/320960"
               }
             ]
           },
