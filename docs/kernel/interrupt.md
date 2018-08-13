@@ -34,7 +34,7 @@ Huawei LiteOS 开源版本对应的中断机制暂不支持中断共享。
 
 设备：发起中断的源，当设备需要请求CPU时，产生一个中断信号，该信号连接至中断控制器。  
 
-中断控制器：中断控制器是CPU众多外设中的一个，它一方面接收其它外设中断引脚的输入，另一方面，它会发出中断信号给CPU。可以通过对中断控制器编程实现对中断源的优先级、触发方式、打开和关闭源等设置操作。常用的中断控制器有VIC（Vector Interrupt Controller）和GIC（General Interrupt Controller），在ARM Cortex-M系列中使用的中断控制器是NVIC（Nested Vector Interrupt Controller）。  
+中断控制器：中断控制器是 CPU 众多外设中的一个，它一方面接收其它外设中断引脚的输入，另一方面，它会发出中断信号给CPU。可以通过对中断控制器编程实现对中断源的优先级、触发方式、打开和关闭源等设置操作。常用的中断控制器有VIC（Vector Interrupt Controller）和GIC（General Interrupt Controller），在 ARM Cortex-M 系列中使用的中断控制器是NVIC（Nested Vector Interrupt Controller）。  
 
 CPU：CPU会响应中断源的请求，中断当前正在执行的任务，转而执行中断处理程序。  
 
