@@ -1,11 +1,11 @@
 
-# LiteOS SDK端云互通组件API
+# LiteOS SDK 端云互通组件 API
 
 ## 数据结构
 
 #### 平台下发命令枚举类型
 
-```
+```c
 typedef enum  
 {  
     ATINY_GET_MANUFACTURER,                 /*获取厂商名字*/ 
@@ -36,7 +36,7 @@ typedef enum
 
 该枚举类型用于LiteOS SDK端云互通组件把自身状态通知用户  
 
-```
+```c
 typedef enum  
 {  
     ATINY_REG_OK,              /*设备注册成功*/ 
@@ -48,7 +48,7 @@ typedef enum
 
 #### LwM2M协议参数结构体
 
-```
+```c
 typedef struct  
 {  
     int   life_time;             /*LwM2M协议生命周期，默认50000,*/  
@@ -58,7 +58,7 @@ typedef struct
 
 #### 安全及服务器参数结构体
 
-```
+```c
 typedef struct  
 {  
     bool  is_bootstrap;      /*是否bootstrap服务器*/ 
@@ -75,7 +75,7 @@ typedef struct
 
 用户上报数据的数据类型，用户根据自身应用扩展
   
-```
+```c
 typedef enum  
 {  
     BATERRY_LEVEL，  /*电池电量*/ 
@@ -86,7 +86,7 @@ typedef enum
 
 #### 服务器参数结构体
 
-```
+```c
 typedef struct  
 {  
     atiny_server_param_t   server_params;  
@@ -96,7 +96,7 @@ typedef struct
 
 #### 终端设备参数结构体
 
-```
+```c
 typedef struct  
 {  
     char* endpoint_name;  /*北向申请产生的epname，每个设备对应唯一一个epname*/ 
@@ -106,7 +106,7 @@ typedef struct
 
 以下枚举值，表述了用户上报的数据，最终的反馈类型，比如数据发送成功，数据发送但未得到确认，具体定义如下：  
 
-```
+```c
 typedef enum  
 {  
     NOT_SENT = 0,        /*待上报的数据未发送*/ 

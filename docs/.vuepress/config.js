@@ -193,13 +193,25 @@ module.exports = {
           ],
           "/sdk/": [
             {
-              title: "组件",
+              title: "端云互通",
               collapsable: false,
               children: [
                 "",
-                "./oceanconnect-agenttiny",
-                "./fota",
-                "./at-adaptor-framework"
+                "./sdk-overview",
+                "./sdk-apis",
+                "./sdk-oceanconnect",
+                "./sdk-lwm2m"
+              ]
+            },
+            {
+              title: "LWPA 增强",
+              collapsable: false,
+              children: [
+                "./device-pnp",
+                "./dtls-plus",
+                "./fault-diagnosis",
+                "./dispersed-reporting",
+                "./difference-upgrade"
               ]
             }
           ],
@@ -239,7 +251,7 @@ module.exports = {
               children: ["./keil-install", "./iar-install", "./gcc-sw4stm32-install"]
             },
             {
-              title: "附录二：OS_CONFIG 系统配置详解",
+              title: "附录二：OS_CONFIG 配置详解",
               collapsable: true,
               children: ["./os-config"]
             }
@@ -275,7 +287,7 @@ module.exports = {
               ]
             }
           ],
-          "/case/": [{
+          "/partners/industry/": [{
             title: "案例",
             collapsable: false,
             children: [
