@@ -1,6 +1,6 @@
-# 意法半导体 STM32 系列
+# STM32 系列（MDK-ARM V5）
 
-## 打开 STM32Cube 生成的裸机工程
+## 编译 STM32Cube 生成的裸机工程
 
 默认的裸机工程如下图所示，会按照代码功能组织好。我们可以执行编译检查工程是否 OK。
 
@@ -8,7 +8,7 @@
 
 ![](./pic/raw-project-first-compile.png)
 
-## 创建 Middleware/LiteOS 分组，并添加 .c 源文件
+## 创建 LiteOS 分组并添加 .c 源文件
 
 如下图增加 LiteOS 源代码：
 
@@ -40,13 +40,13 @@ kernel 需要添加的文件比较多：
 需要注意的是，LiteOS 提供了 3 套动态内存分配算法，位于 `LiteOS\kernel\base\mem` 目录下，分别是 `bestfit`、`bestfit_little`、`tlsf` 这三套动态内存算法只需要添加其中一套就行了，对于资源有限的芯片，建议选择 `bestfit_little`，上面的示例也是添加了这一套动态分配算法；另外 `LiteOS\kernel\base\mem\membox` 目录下是 LiteOS 提供的静态内存算法，与动态内存算法不冲突，需要添加；`LiteOS\kernel\base\mem\common` 目录的内容需要全部添加
 :::
 
-## 配置 C/C++ 源码头文件路径
+## 配置 C/C++ 源码 .h 头文件路径
 
 ![](./pic/raw-project-options-include.png)
 
 ![](./pic/raw-project-include-path.png)
 
-## 编译代码，处理编译错误
+## 编译代码，处理移植过程中编译错误
 
 编译会发现如下错误，提示缺少 `los_builddef.h` 文件，这个文件没有包含在源码中，需要从其他示例工程中过来。
 

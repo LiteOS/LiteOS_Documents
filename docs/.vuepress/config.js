@@ -15,7 +15,7 @@ module.exports = {
   themeConfig: {
     repo: "LiteOS/LiteOS_Documents",
     repoLabel: "Github",
-    docsDir: "doc",
+    docsDir: "docs",
     editLinks: true,
     locales: {
       "/": {
@@ -26,40 +26,61 @@ module.exports = {
         algolia: {},
         nav: [
           {
+            text: "入门",
+            items: [
+              {
+                text: "必知必会",
+                link: "/quick-start/intro/"
+              },
+              {
+                text: "快速上手",
+                link: "/quick-start/demo/"
+              },
+              {
+                text: "参与贡献",
+                link: "/quick-start/contribute/"
+              }
+            ]
+          },
+          {
             text: "学习",
             items: [
               {
-                text: "快速入门",
-                link: "/quick-start/"
-              },
-              {
-                text: "内核手册",
+                text: "LiteOS 内核详解",
                 link: "/kernel/"
               },
               {
-                text: "组件指南",
+                text: "LiteOS SDK详解",
                 link: "/sdk/"
               },
               {
-                text: "系统移植",
+                text: "LiteOS 移植手册",
                 link: "/porting/"
-              }
+              },
+              {
+                text: "LiteOS API 参考",
+                link: "http://liteos.github.io/api-reference/"
+              },
             ]
           },
           {
             text: "教程",
             items: [
               {
-                text: "内核实战",
+                text: "LiteOS 内核实战训练",
                 link: "/tutorials/kernel/"
               },
               {
-                text: "场景例程",
+                text: "NB-IoT 开发板场景化实操",
                 link: "/tutorials/scene/"
               },
               {
-                text: "端到端开发",
+                text: "NB-IoT OneButton 端到端开发",
                 link: "/step-by-step/nb-iot/"
+              },
+              {
+                text: "朱老师 NB-IoT 视频课程",
+                link: "https://ke.qq.com/course/320960"
               }
             ]
           },
@@ -67,13 +88,42 @@ module.exports = {
             text: "生态",
             items: [
               {
-                text: "对接中移动 OneNet 云平台",
+                text: "OneNet 平台对接",
                 link: "/connect-to-cloud/onenet/"
               },
               {
-                text: "钛云物联 All-in-Java 开发",
-                link: "/all-in-java/"
+                text: "钛云物联 All-in-Java",
+                link: "/ecosystem/all-in-java/"
+              },
+              {
+                text: "MapleJS 引擎",
+                link: "/ecosystem/maplejs/"
+              },
+              {
+                text: "OpenCPU 深入浅出",
+                link: "/ecosystem/opencpu/"
               }
+            ]
+          },
+          {
+            text: "伙伴",
+            items: [
+              {
+                text: "行业伙伴",
+                link: "/partners/industry/"
+              },
+              {
+                text: "平台伙伴",
+                link: "/partners/platform/"
+              },
+              {
+                text: "芯片/模组伙伴",
+                link: "/partners/module/"
+              },
+              {
+                text: "教学伙伴",
+                link: "/partners/teaching/"
+              },
             ]
           },
           {
@@ -87,35 +137,24 @@ module.exports = {
           }
         ],
         sidebar: {
-          "/quick-start/": [
-            {
-              title: "入门",
-              collapsable: true,
-              children: [
-                "",
-                "./terminology",
-                "./why-use-the-rtos",
-                "./why-select-huawei-liteos"
-              ]
-            },
-            {
-              title: "快速上手",
-              collapsable: true,
-              children: [
-                "./a-simple-blink-demo",
-                "./a-comprehensive-smoke-demo"
-              ]
-            },
-            {
-              title: "参与贡献",
-              collapsable: true,
-              children: [
-                "./contribute-guide",
-                "./code-info",
-                "./code-standard",
-                "./write-standard"
-              ]
-            }
+          "/quick-start/intro/": [
+            "",
+            "./why-use-the-rtos",
+            "./why-select-huawei-liteos",
+            "./how-to-study-liteos",
+            "./usage-guide-for-partner",
+            "./terminology"
+          ],
+          "/quick-start/demo/": [
+            "",
+            "./a-simple-blink-demo",
+            "./a-comprehensive-smoke-demo"
+          ],
+          "/quick-start/contribute/": [
+            "",
+            "./code-standard",
+            "./write-standard",
+            "./code-info"
           ],
           "/kernel/": [
             {
@@ -150,25 +189,29 @@ module.exports = {
                 "./errorcode-semaphore",
                 "./errorcode-swtmr"
               ]
-            }，
-            {
-              title: "API参考",
-              collapsable: false,
-              children: [
-                "./api-reference/index.html"
-              ]
             }
           ],
-          "/components/": [
+          "/sdk/": [
             {
-              title: "组件",
+              title: "端云互通",
               collapsable: false,
               children: [
                 "",
-                "./oceanconnect-agenttiny",
-                "./fota",
-                "./at-adaptor-framework",
-                "./sensors-framework"
+                "./sdk-overview",
+                "./sdk-apis",
+                "./sdk-oceanconnect",
+                "./sdk-lwm2m"
+              ]
+            },
+            {
+              title: "LWPA 增强",
+              collapsable: false,
+              children: [
+                "./device-pnp",
+                "./dtls-plus",
+                "./fault-diagnosis",
+                "./dispersed-reporting",
+                "./difference-upgrade"
               ]
             }
           ],
@@ -180,7 +223,7 @@ module.exports = {
                 "",
                 "./evb-and-tools",
                 "./raw-project-with-stm32cube",
-                "./raw-project-with-others",
+                //"./raw-project-with-others",
                 "./liteos-source-code"
               ]
             },
@@ -188,9 +231,12 @@ module.exports = {
               title: "OS 移植",
               collapsable: false,
               children: [
-                "./stm32",
-                "./nxp",
-                "./gd32",
+                "./stm32-keil",
+                "./stm32-iar",
+                "./stm32-sw4stm32",
+                "./stm32-makefile",
+                //"./nxp",
+                //"./gd32",
                 "./faq"
               ]
             },
@@ -200,19 +246,19 @@ module.exports = {
               children: ["./inspect-example", "./inspect-results"]
             },
             {
-              title: "附1：开发工具安装手册",
-              collapsable: false,
-              children: ["./keil", "./iar", "./gcc-sw4stm32"]
+              title: "附录一：开发工具安装手册",
+              collapsable: true,
+              children: ["./keil-install", "./iar-install", "./gcc-sw4stm32-install"]
             },
             {
-              title: "附2：OS_CONFIG 系统配置详解",
-              collapsable: false,
+              title: "附录二：OS_CONFIG 配置详解",
+              collapsable: true,
               children: ["./os-config"]
             }
           ],
           "/tutorials/kernel/": [
             {
-              title: "内核例程",
+              title: "内核实战",
               collapsable: true,
               children: [
                 "./example01",
@@ -230,8 +276,8 @@ module.exports = {
           ],
           "/tutorials/scene/": [
             {
-              title: "综合例程",
-              collapsable: true,
+              title: "场景化例程",
+              collapsable: false,
               children: [
                 "./temp-hum", 
                 "./smoke", 
@@ -241,7 +287,7 @@ module.exports = {
               ]
             }
           ],
-          "/case/": [{
+          "/partners/industry/": [{
             title: "案例",
             collapsable: false,
             children: [
@@ -375,9 +421,9 @@ module.exports = {
                 './errorcode-mutex',
                 './errorcode-semaphore',
                 './errorcode-swtmr'
+              ]
             }
           ],
-
           "/": [""]
         }
       }

@@ -80,8 +80,11 @@ Step by step run these AT commands in the table, you can look around <Quectel_BC
 
 | AT Commands |	Result | Description |
 | ----------- | ------ | ----------- |
-| AT+CGSN=1   | +CGSN:863703030633395 | Request Product Serial Number Check this number matching your IMEI on your NB-IoT |
-| AT+NBAND? | +NBAND:5 | Get Supported Bands Check the NB-IoT bands matching your SIM cards
+| AT+CGSN=1   | `+CGSN:863703030633395` | Request Product Serial Number Check this number matching your IMEI on your NB-IoT |
+| AT+NBAND? | `+NBAND:5` | Get Supported Bands Check the NB-IoT bands matching your SIM cards
  |
 | AT+CSQ | `+CSQ:16,99` | Get Signal Strength IndicatorIf there is no problem above inspecting, you could check the Singal Strength, the first number is not 99, it means OK.|
-| AT+CGPADDR | +CGPADDR:0,10.42.206.127 | Show PDP Addresses If there is IP address return, it means the NB-IoT connectivity is good.|
+| AT+CGPADDR | `+CGPADDR:0,10.42.206.127` | Show PDP Addresses If there is IP address return, it means the NB-IoT connectivity is good.|
+
+## 课后思考
+
