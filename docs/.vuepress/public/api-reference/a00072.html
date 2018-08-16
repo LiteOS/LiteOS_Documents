@@ -2,15 +2,15 @@
 <html>
  <head>
   <meta http-equiv="Content-Type" content="text/html;charset=gb2312" /> 
-  <title>agenttiny.hÔ´ÎÄ¼ş</title> 
+  <title>agenttiny.hæºæ–‡ä»¶</title> 
   <link href="doxygen.css" rel="stylesheet" type="text/css" /> 
   <link href="tabs.css" rel="stylesheet" type="text/css" /> 
  </head>
  <body> 
-  <!-- ÖÆ×÷Õß Doxygen 1.5.7.1 --> 
+  <!-- åˆ¶ä½œè€… Doxygen 1.5.7.1 --> 
   <div class="navigation" id="top">   
    <h1>agenttiny.h</h1>
-   <a href="a00024.html">ä¯ÀÀ¸ÃÎÄ¼şµÄÎÄµµ¡£</a>
+   <a href="a00024.html">æµè§ˆè¯¥æ–‡ä»¶çš„æ–‡æ¡£ã€‚</a>
    <div class="fragment">
     <pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*----------------------------------------------------------------------------</span>
 <a name="l00002"></a>00002 <span class="comment"> * Copyright (c) &lt;2018&gt;, &lt;Huawei Technologies Co., Ltd&gt;</span>
@@ -145,9 +145,9 @@
 <a name="l00131"></a>00131 
 <a name="l00132"></a><a class="code" href="a00009.html">00132</a> <span class="keyword">typedef</span> <span class="keyword">struct</span>
 <a name="l00133"></a>00133 {
-<a name="l00134"></a><a class="code" href="a00009_12580e85e4419700acda12dc996f029f.html#12580e85e4419700acda12dc996f029f">00134</a>     <span class="keywordtype">char</span>* binding;               <span class="comment">/*Ä¿Ç°Ö§³ÖU»òÕßUQ*/</span>
-<a name="l00135"></a><a class="code" href="a00009_6bed3cf04692ce9f91168d5ffef5dd36.html#6bed3cf04692ce9f91168d5ffef5dd36">00135</a>     <span class="keywordtype">int</span>   life_time;             <span class="comment">/*±ØÑ¡£¬Ä¬ÈÏ50000,Èç¹ı¶Ì£¬ÔòÆµ·±·¢ËÍupdate±¨ÎÄ£¬Èç¹ı³¤£¬ÔÚÏß×´Ì¬¸üĞÂÊ±¼ä³¤*/</span>
-<a name="l00136"></a><a class="code" href="a00009_847a0a9ddbd9276669d96a4d7edab4f1.html#847a0a9ddbd9276669d96a4d7edab4f1">00136</a>     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>  storing_cnt;   <span class="comment">/*storingÎªtrueÊ±£¬lwm2m»º´æÇø×Ü×Ö½Ú¸öÊı*/</span>
+<a name="l00134"></a><a class="code" href="a00009_12580e85e4419700acda12dc996f029f.html#12580e85e4419700acda12dc996f029f">00134</a>     <span class="keywordtype">char</span>* binding;               <span class="comment">/*ç›®å‰æ”¯æŒUæˆ–è€…UQ*/</span>
+<a name="l00135"></a><a class="code" href="a00009_6bed3cf04692ce9f91168d5ffef5dd36.html#6bed3cf04692ce9f91168d5ffef5dd36">00135</a>     <span class="keywordtype">int</span>   life_time;             <span class="comment">/*å¿…é€‰ï¼Œé»˜è®¤50000,å¦‚è¿‡çŸ­ï¼Œåˆ™é¢‘ç¹å‘é€updateæŠ¥æ–‡ï¼Œå¦‚è¿‡é•¿ï¼Œåœ¨çº¿çŠ¶æ€æ›´æ–°æ—¶é—´é•¿*/</span>
+<a name="l00136"></a><a class="code" href="a00009_847a0a9ddbd9276669d96a4d7edab4f1.html#847a0a9ddbd9276669d96a4d7edab4f1">00136</a>     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>  storing_cnt;   <span class="comment">/*storingä¸ºtrueæ—¶ï¼Œlwm2mç¼“å­˜åŒºæ€»å­—èŠ‚ä¸ªæ•°*/</span>
 <a name="l00137"></a>00137 } <a class="code" href="a00009.html">atiny_server_param_t</a>;
 <a name="l00138"></a>00138 
 <a name="l00139"></a><a class="code" href="a00008.html">00139</a> <span class="keyword">typedef</span> <span class="keyword">struct</span>
@@ -249,11 +249,11 @@
 <a name="l00235"></a>00235 
 <a name="l00236"></a><a class="code" href="a00002.html">00236</a> <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="a00002.html">_data_report_t</a>
 <a name="l00237"></a>00237 {
-<a name="l00238"></a><a class="code" href="a00002_4506d780fc62063bb8d9992aab981079.html#4506d780fc62063bb8d9992aab981079">00238</a>     <a class="code" href="a00024_22071e2cf56399e0f5a53540b2aaaae0.html#22071e2cf56399e0f5a53540b2aaaae0">atiny_report_type_e</a> type;     <span class="comment">/*Êı¾İÉÏ±¨ÀàĞÍ*/</span>
-<a name="l00239"></a><a class="code" href="a00002_e5461b4b1f4fe57880da0c0d4447d53e.html#e5461b4b1f4fe57880da0c0d4447d53e">00239</a>     <span class="keywordtype">int</span> cookie;                   <span class="comment">/*Êı¾İcookie,ÓÃÒÔÔÚack»Øµ÷ÖĞ£¬Çø·Ö²»Í¬µÄÊı¾İ*/</span>
-<a name="l00240"></a><a class="code" href="a00002_fed088663f8704004425cdae2120b9b3.html#fed088663f8704004425cdae2120b9b3">00240</a>     <span class="keywordtype">int</span> <a class="code" href="a00002_fed088663f8704004425cdae2120b9b3.html#fed088663f8704004425cdae2120b9b3">len</a>;                      <span class="comment">/*Êı¾İ³¤¶È£¬²»Ó¦´óÓÚMAX_REPORT_DATA_LEN*/</span>
-<a name="l00241"></a><a class="code" href="a00002_2c5f4ef732286b78e31ec8d1cb238215.html#2c5f4ef732286b78e31ec8d1cb238215">00241</a>     uint8_t* <a class="code" href="a00002_2c5f4ef732286b78e31ec8d1cb238215.html#2c5f4ef732286b78e31ec8d1cb238215">buf</a>;                 <span class="comment">/*Êı¾İ»º³åÇøÊ×µØÖ·*/</span>
-<a name="l00242"></a><a class="code" href="a00002_9ea2944ec393fde5cab695da85b2ac06.html#9ea2944ec393fde5cab695da85b2ac06">00242</a>     <a class="code" href="a00024_4c44ad4d38807e561649ebdc82f73051.html#4c44ad4d38807e561649ebdc82f73051">atiny_ack_callback</a> <a class="code" href="a00002_9ea2944ec393fde5cab695da85b2ac06.html#9ea2944ec393fde5cab695da85b2ac06">callback</a>;  <span class="comment">/*ack»Øµ÷*/</span>
+<a name="l00238"></a><a class="code" href="a00002_4506d780fc62063bb8d9992aab981079.html#4506d780fc62063bb8d9992aab981079">00238</a>     <a class="code" href="a00024_22071e2cf56399e0f5a53540b2aaaae0.html#22071e2cf56399e0f5a53540b2aaaae0">atiny_report_type_e</a> type;     <span class="comment">/*æ•°æ®ä¸ŠæŠ¥ç±»å‹*/</span>
+<a name="l00239"></a><a class="code" href="a00002_e5461b4b1f4fe57880da0c0d4447d53e.html#e5461b4b1f4fe57880da0c0d4447d53e">00239</a>     <span class="keywordtype">int</span> cookie;                   <span class="comment">/*æ•°æ®cookie,ç”¨ä»¥åœ¨ackå›è°ƒä¸­ï¼ŒåŒºåˆ†ä¸åŒçš„æ•°æ®*/</span>
+<a name="l00240"></a><a class="code" href="a00002_fed088663f8704004425cdae2120b9b3.html#fed088663f8704004425cdae2120b9b3">00240</a>     <span class="keywordtype">int</span> <a class="code" href="a00002_fed088663f8704004425cdae2120b9b3.html#fed088663f8704004425cdae2120b9b3">len</a>;                      <span class="comment">/*æ•°æ®é•¿åº¦ï¼Œä¸åº”å¤§äºMAX_REPORT_DATA_LEN*/</span>
+<a name="l00241"></a><a class="code" href="a00002_2c5f4ef732286b78e31ec8d1cb238215.html#2c5f4ef732286b78e31ec8d1cb238215">00241</a>     uint8_t* <a class="code" href="a00002_2c5f4ef732286b78e31ec8d1cb238215.html#2c5f4ef732286b78e31ec8d1cb238215">buf</a>;                 <span class="comment">/*æ•°æ®ç¼“å†²åŒºé¦–åœ°å€*/</span>
+<a name="l00242"></a><a class="code" href="a00002_9ea2944ec393fde5cab695da85b2ac06.html#9ea2944ec393fde5cab695da85b2ac06">00242</a>     <a class="code" href="a00024_4c44ad4d38807e561649ebdc82f73051.html#4c44ad4d38807e561649ebdc82f73051">atiny_ack_callback</a> <a class="code" href="a00002_9ea2944ec393fde5cab695da85b2ac06.html#9ea2944ec393fde5cab695da85b2ac06">callback</a>;  <span class="comment">/*ackå›è°ƒ*/</span>
 <a name="l00243"></a>00243 } <a class="code" href="a00002.html">data_report_t</a>;
 <a name="l00244"></a>00244 <span class="comment"></span>
 <a name="l00245"></a>00245 <span class="comment">/**</span>
