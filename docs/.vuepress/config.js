@@ -33,7 +33,7 @@ module.exports = {
                 link: "/quick-start/intro/"
               },
               {
-                text: "快速上手",
+                text: "轻松上手",
                 link: "/quick-start/demo/"
               },
               {
@@ -67,7 +67,7 @@ module.exports = {
             text: "教程",
             items: [
               {
-                text: "LiteOS 内核实战训练",
+                text: "LiteOS 内核使用指南",
                 link: "/tutorials/kernel/"
               },
               {
@@ -80,52 +80,52 @@ module.exports = {
               },
               {
                 text: "朱老师 NB-IoT 视频课程",
-                link: "https://ke.qq.com/course/320960"
+                link: "https://developer.huawei.com/ict/cn/edu-online"
               }
             ]
           },
-          {
-            text: "生态",
-            items: [
-              {
-                text: "OneNet 平台对接",
-                link: "/connect-to-cloud/onenet/"
-              },
-              {
-                text: "钛云物联 All-in-Java",
-                link: "/ecosystem/all-in-java/"
-              },
-              {
-                text: "MapleJS 引擎",
-                link: "/ecosystem/maplejs/"
-              },
-              {
-                text: "OpenCPU 深入浅出",
-                link: "/ecosystem/opencpu/"
-              }
-            ]
-          },
-          {
-            text: "伙伴",
-            items: [
-              {
-                text: "行业伙伴",
-                link: "/partners/industry/"
-              },
-              {
-                text: "平台伙伴",
-                link: "/partners/platform/"
-              },
-              {
-                text: "芯片/模组伙伴",
-                link: "/partners/module/"
-              },
-              {
-                text: "教学伙伴",
-                link: "/partners/teaching/"
-              },
-            ]
-          },
+          // {
+          //   text: "生态",
+          //   items: [
+          //     {
+          //       text: "OneNet 平台对接",
+          //       link: "/connect-to-cloud/onenet/"
+          //     },
+          //     {
+          //       text: "钛云物联 All-in-Java",
+          //       link: "/ecosystem/all-in-java/"
+          //     },
+          //     {
+          //       text: "MapleJS 引擎",
+          //       link: "/ecosystem/maplejs/"
+          //     },
+          //     {
+          //       text: "OpenCPU 深入浅出",
+          //       link: "/ecosystem/opencpu/"
+          //     }
+          //   ]
+          // },
+          // {
+          //   text: "伙伴",
+          //   items: [
+          //     {
+          //       text: "行业伙伴",
+          //       link: "/partners/industry/"
+          //     },
+          //     {
+          //       text: "平台伙伴",
+          //       link: "/partners/platform/"
+          //     },
+          //     {
+          //       text: "芯片/模组伙伴",
+          //       link: "/partners/module/"
+          //     },
+          //     {
+          //       text: "教学伙伴",
+          //       link: "/partners/teaching/"
+          //     },
+          //   ]
+          // },
           {
             text: "活动",
             items: [
@@ -147,8 +147,8 @@ module.exports = {
           ],
           "/quick-start/demo/": [
             "",
-            "./a-simple-blink-demo",
-            "./a-comprehensive-smoke-demo"
+            "./a-simple-blinky-demo",
+            "./a-comprehensive-smoky-demo"
           ],
           "/quick-start/contribute/": [
             "",
@@ -258,8 +258,8 @@ module.exports = {
           ],
           "/tutorials/kernel/": [
             {
-              title: "内核实战",
-              collapsable: true,
+              title: "LiteOS 内核使用指南",
+              collapsable: false,
               children: [
                 "./example01",
                 "./example02",
