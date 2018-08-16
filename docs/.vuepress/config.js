@@ -33,7 +33,7 @@ module.exports = {
                 link: "/quick-start/intro/"
               },
               {
-                text: "快速上手",
+                text: "轻松上手",
                 link: "/quick-start/demo/"
               },
               {
@@ -67,7 +67,7 @@ module.exports = {
             text: "教程",
             items: [
               {
-                text: "LiteOS 内核实战训练",
+                text: "LiteOS 内核使用指南",
                 link: "/tutorials/kernel/"
               },
               {
@@ -95,10 +95,10 @@ module.exports = {
                 text: "钛云物联 All-in-Java",
                 link: "/ecosystem/all-in-java/"
               },
-              {
-                text: "MapleJS 引擎",
-                link: "/ecosystem/maplejs/"
-              },
+              // {
+              //   text: "MapleJS 引擎",
+              //   link: "/ecosystem/maplejs/"
+              // },
               {
                 text: "OpenCPU 深入浅出",
                 link: "/ecosystem/opencpu/"
@@ -147,8 +147,8 @@ module.exports = {
           ],
           "/quick-start/demo/": [
             "",
-            "./a-simple-blink-demo",
-            "./a-comprehensive-smoke-demo"
+            "./a-simple-blinky-demo",
+            "./a-comprehensive-smoky-demo"
           ],
           "/quick-start/contribute/": [
             "",
@@ -258,8 +258,8 @@ module.exports = {
           ],
           "/tutorials/kernel/": [
             {
-              title: "内核实战",
-              collapsable: true,
+              title: "LiteOS 内核使用指南",
+              collapsable: false,
               children: [
                 "./example01",
                 "./example02",
