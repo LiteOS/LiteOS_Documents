@@ -33,7 +33,7 @@ module.exports = {
                 link: "/quick-start/intro/"
               },
               {
-                text: "轻松上手",
+                text: "快速上手",
                 link: "/quick-start/demo/"
               },
               {
@@ -46,11 +46,11 @@ module.exports = {
             text: "学习",
             items: [
               {
-                text: "LiteOS 内核详解",
+                text: "LiteOS 内核指南",
                 link: "/kernel/"
               },
               {
-                text: "LiteOS SDK详解",
+                text: "LiteOS SDK 指南",
                 link: "/sdk/"
               },
               {
@@ -67,44 +67,44 @@ module.exports = {
             text: "教程",
             items: [
               {
-                text: "LiteOS 内核使用指南",
+                text: "LiteOS 内核实战指南",
                 link: "/tutorials/kernel/"
               },
               {
-                text: "NB-IoT 开发板场景化实操",
+                text: "开发板场景化案例实战",
                 link: "/tutorials/scene/"
               },
               {
-                text: "NB-IoT OneButton 端到端开发",
+                text: "NB-IoT 手把手教程（含北向应用）",
                 link: "/step-by-step/nb-iot/"
               },
               {
-                text: "朱老师 NB-IoT 视频课程",
+                text: "朱老师物联网大讲堂 NB476 视频",
                 link: "https://developer.huawei.com/ict/cn/edu-online"
               }
             ]
           },
-          // {
-          //   text: "生态",
-          //   items: [
-          //     {
-          //       text: "OneNet 平台对接",
-          //       link: "/connect-to-cloud/onenet/"
-          //     },
-          //     {
-          //       text: "钛云物联 All-in-Java",
-          //       link: "/ecosystem/all-in-java/"
-          //     },
-          //     {
-          //       text: "MapleJS 引擎",
-          //       link: "/ecosystem/maplejs/"
-          //     },
-          //     {
-          //       text: "OpenCPU 深入浅出",
-          //       link: "/ecosystem/opencpu/"
-          //     }
-          //   ]
-          // },
+          {
+            text: "生态",
+            items: [
+              {
+                text: "中移动 OneNet 平台对接",
+                link: "/connect-to-cloud/onenet/"
+              },
+              // {
+              //   text: "钛云物联 All-in-Java",
+              //   link: "/ecosystem/all-in-java/"
+              // },
+              // {
+              //   text: "MapleJS 引擎",
+              //   link: "/ecosystem/maplejs/"
+              // },
+              {
+                text: "OpenCPU 二次开发指导",
+                link: "/ecosystem/opencpu/"
+              }
+            ]
+          },
           // {
           //   text: "伙伴",
           //   items: [
@@ -126,23 +126,22 @@ module.exports = {
           //     },
           //   ]
           // },
+          // {
+          //   text: "华为开发者大赛",
+          //   link: "http://developer.huawei.com/ict/cn/hdc/"
+          // },
           {
-            text: "活动",
-            items: [
-              {
-                text: "2018 华为开发者大赛",
-                link: "http://developer.huawei.com/ict/cn/hdc/"
-              }
-            ]
+            text: "论坛",
+            link: "https://developer.huawei.com/ict/forum/forum.php?mod=forumdisplay&fid=400045"
           }
         ],
         sidebar: {
           "/quick-start/intro/": [
             "",
             "./why-use-the-rtos",
-            "./why-select-huawei-liteos",
-            "./how-to-study-liteos",
-            "./usage-guide-for-partner",
+            "./why-select-liteos",
+            "./how-to-study",
+            //"./usage-guide-for-partner",
             "./terminology"
           ],
           "/quick-start/demo/": [
@@ -270,7 +269,17 @@ module.exports = {
                 "./example07",
                 "./example08",
                 "./example09",
-                "./example10"
+                "./example10",
+                "./example11",
+                "./example12",
+                "./example13",
+                "./example14",
+                "./example15",
+                "./example16",
+                "./example17",
+                "./example18",
+                "./example19",
+                "./example20"
               ]
             }
           ],
@@ -279,10 +288,10 @@ module.exports = {
               title: "场景化例程",
               collapsable: false,
               children: [
+                "./light",
                 "./temp-hum", 
                 "./smoke", 
                 "./gps", 
-                "./light", 
                 "./wifi"
               ]
             }

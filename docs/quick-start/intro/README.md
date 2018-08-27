@@ -1,6 +1,6 @@
 # 入门
 
-## 介绍
+## 产品介绍
 
 ![](../pic/liteos-overview.png)
 
@@ -26,7 +26,7 @@ Huawei LiteOS 联合业界主流MCU厂家，通过开发者活动，目前已经
 
 如果您发现文档有错误、遗漏，或者描述不够准备，您可以通过点击页面尾部 “在 GitHub 上编辑此页”，对相关内容进行编辑，感谢您的参与和贡献
 
-## LiteOS Kernel
+## LiteOS 内核
 
 LiteOS Kernel是Huawei LiteOS 操作系统基础内核，包括**任务管理、内存管理、时间管理、通信机制、中断管理、队列管理、事件管理、定时器**等操作系统基础组件，可以单独运行。
 
@@ -47,6 +47,6 @@ LiteOS SDK 是 Huawei LiteOS 软件开发工具包（Software Development Kit）
 ![](../pic/sdk-overview.png)
 
 
-### 加入我们
+## 加入我们
 
 如您有合作意向，希望加入 Huawei LiteOS 生态合作伙伴，请发邮件至 [liteos@huawei.com](mailto:liteos@huawei.com)，或访问[LiteOS官网](http://www.huawei.com/liteos)，进一步了解详细信息
