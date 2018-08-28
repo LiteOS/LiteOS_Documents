@@ -56,6 +56,19 @@ static VOID * Example_Task1(UINT32 uwArg) {
         }
     }
 }
+
+static VOID * Example_Task2(UINT32 uwArg) {
+    const CHAR *pcTaskName = "Task 2 is running\r\n";
+    UINT32 i;
+    for (;;) {
+        puts(pcTaskName);
+        for (i = 0; i < TASK_LOOP_COUNT; i++) {
+            // 占用CPU耗时运行
+        }
+    }
+}
 ```
 
 ## 效果演示
+
+![](./pic/result01.png)

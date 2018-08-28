@@ -218,13 +218,13 @@ module.exports = {
               ]
             },
             {
-              title: "LWPA 增强",
+              title: "LPWA 增强",
               collapsable: false,
               children: [
                 "./device-pnp",
                 "./dtls-plus",
-                "./fault-diagnosis",
-                "./dispersed-reporting",
+                //"./fault-diagnosis",
+                //"./dispersed-reporting",
                 "./difference-upgrade"
               ]
             }
@@ -289,11 +289,11 @@ module.exports = {
                 "./example13",
                 "./example14",
                 "./example15",
-                "./example16",
-                "./example17",
-                "./example18",
-                "./example19",
-                "./example20"
+                // "./example16",
+                // "./example17",
+                // "./example18",
+                // "./example19",
+                // "./example20"
               ]
             }
           ],
