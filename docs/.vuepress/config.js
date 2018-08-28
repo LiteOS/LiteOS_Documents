@@ -234,10 +234,9 @@ module.exports = {
               title: "准备工作",
               collapsable: false,
               children: [
-                "",
                 "./evb-and-tools",
                 "./raw-project-with-stm32cube",
-                //"./raw-project-with-others",
+                "./raw-project-with-others",
                 "./liteos-source-code"
               ]
             },
@@ -260,12 +259,12 @@ module.exports = {
               children: ["./inspect-example", "./inspect-results"]
             },
             {
-              title: "附录一：IDE 工具安装指南",
+              title: "附1：IDE 工具安装指南",
               collapsable: true,
               children: ["./keil-install", "./iar-install", "./gcc-sw4stm32-install"]
             },
             {
-              title: "附录二：OS_CONFIG 配置详解",
+              title: "附2：OS_CONFIG 详解",
               collapsable: true,
               children: ["./os-config"]
             }
@@ -301,13 +300,13 @@ module.exports = {
           "/tutorials/scene/": [
             {
               title: "场景化例程",
-              collapsable: false,
+              collapsable: true,
               children: [
                 "./light",
                 "./temp-hum", 
-                "./smoke", 
-                "./gps", 
-                "./wifi"
+                //"./smoke", 
+                //"./gps", 
+                //"./wifi"
               ]
             }
           ],
@@ -324,6 +323,7 @@ module.exports = {
             ]
           }],
           "/step-by-step/nb-iot/": [
+            "",
             {
               title: "钛比 NB-IoT 开发板",
               collapsable: true,

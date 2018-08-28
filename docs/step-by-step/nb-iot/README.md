@@ -1,6 +1,3 @@
----
-sidebar: auto
----
 # NB-IoT 手把手教程（含北向应用）<Badge text="beta" type="warn"/>
 
 ## 概述
