@@ -29,16 +29,12 @@ module.exports = {
             text: "入门",
             items: [
               {
-                text: "必知必会",
+                text: "快速上手",
                 link: "/quick-start/intro/"
               },
               {
-                text: "快速上手",
-                link: "/quick-start/demo/"
-              },
-              {
                 text: "参与贡献",
-                link: "/quick-start/contribute/"
+                link: "/quick-start/contrb/"
               }
             ]
           },
@@ -137,19 +133,38 @@ module.exports = {
         ],
         sidebar: {
           "/quick-start/intro/": [
-            "",
-            "./why-use-the-rtos",
-            "./why-select-liteos",
-            "./how-to-study",
-            //"./usage-guide-for-partner",
-            "./terminology"
+            {
+              title: "入门",
+              collapsable: false,
+              children: [""]
+            },
+            {
+              title: "思考",
+              collapsable: false,
+              children: [
+                "./why-use-the-rtos",
+                "./why-select-liteos",
+                "./how-to-study-liteos"
+              ]
+            },
+            {
+              title: "演示",
+              collapsable: false,
+              children: [
+                "./a-simple-blinky-demo",
+                "./a-comprehensive-smoky-demo"
+              ]
+            },
+            {
+              title: "扩展",
+              collapsable: false,
+              children: [
+                //"./usage-guide-for-partner",
+                "./terminology"
+              ]
+            }
           ],
-          "/quick-start/demo/": [
-            "",
-            "./a-simple-blinky-demo",
-            "./a-comprehensive-smoky-demo"
-          ],
-          "/quick-start/contribute/": [
+          "/quick-start/contrb/": [
             "",
             "./code-standard",
             "./write-standard",
@@ -162,7 +177,7 @@ module.exports = {
               children: [""]
             },
             {
-              title: "基础内核功能",
+              title: "基础功能",
               collapsable: false,
               children: [
                 "./task",
@@ -245,7 +260,7 @@ module.exports = {
               children: ["./inspect-example", "./inspect-results"]
             },
             {
-              title: "附录一：开发工具安装手册",
+              title: "附录一：IDE 工具安装指南",
               collapsable: true,
               children: ["./keil-install", "./iar-install", "./gcc-sw4stm32-install"]
             },
@@ -309,11 +324,6 @@ module.exports = {
             ]
           }],
           "/step-by-step/nb-iot/": [
-            {
-              title: "手把手教程",
-              collapsable: false,
-              children: [""]
-            },
             {
               title: "钛比 NB-IoT 开发板",
               collapsable: true,

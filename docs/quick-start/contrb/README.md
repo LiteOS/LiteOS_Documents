@@ -28,7 +28,7 @@
     
     将 `.pub` 文件中的内容复制出来，粘贴到自己的github账户设置中，即完成配置，对应位置如下：  
 
-    ![](../pic/contribute-sshkey.png)  
+    ![](./pic/contribute-sshkey.png)  
 
 3. 检验是否配置成功  
 
@@ -61,7 +61,7 @@
 
 2. 本地新建目录，进入 `git bash` 界面  
 
-    ![](../pic/contribute-bash.png)  
+    ![](./pic/contribute-bash.png)  
 
 3. 下载代码  
 
@@ -127,7 +127,7 @@
 
     想要commit的修改，删掉所在行最前方的 **`#`** 即可，参考如下  
 
-    ![](../pic/contribute-commit.png)  
+    ![](./pic/contribute-commit.png)  
 
 4. 上传修改到自己的远程仓库  
 
@@ -139,6 +139,6 @@
 
 通过上述步骤，修改已经提交到自己的仓库中，当前只需要将这些修改merge到主仓库上便完成了本次代码的提交，也就是提一个 `Pull Request` ， 将自己仓库develop分支修改的内容，同步到LiteOS主仓库，提交页面也可以再次确认修改差异。  
 
-![](../pic/contribute-merge.png)  
+![](./pic/contribute-merge.png)  
 
 现在就静候LiteOS主仓库管理员review代码吧，验证ok就会将修改合入，恭喜你成为Contributor，感谢你为开源社区做出的贡献！  

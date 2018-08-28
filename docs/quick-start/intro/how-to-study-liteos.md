@@ -14,10 +14,10 @@
 
 > 对嵌入式应用开发一无所知，零基础的开发者
 
-可以先体验[快速上手（简单）](/quick-start/demo/a-simple-blinky-demo.md)，然后依次完成[LiteOS 内核详解]()，[LiteOS SDK详解]()和[LiteOS 移植手册]()的学习，最后选择适合自己的[教程]()进阶。
+可以先体验[快速上手（简单）](a-simple-blinky-demo.md)，然后依次完成[LiteOS 内核详解](/kernel/)，[LiteOS SDK详解](/sdk/)和[LiteOS 移植手册](/porting/)的学习，最后选择适合自己的教程进阶。
 
 ### 面向嵌入式开发专家
 
 > 已经掌握一种或多种 RTOS，具备独立开发能力
 
-由于您已经熟悉 RTOS，可以花几分钟先了解[快速上手（复杂）]()，然后直接到[LiteOS 内核实战]()掌握 LiteOS 内核关键知识，然后通过学习[开发板场景化案例实战]()掌握 LiteOS SDK 使用。
+由于您已经熟悉 RTOS，可以花几分钟先了解[快速上手（复杂）](a-comprehensive-smoky-demo.md)，然后直接到[LiteOS 内核实战](/tutorials/kernel/)掌握 LiteOS 内核关键知识，然后通过学习[开发板场景化案例实战](/tutorials/scene/)掌握 LiteOS SDK 使用。
