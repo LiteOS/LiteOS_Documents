@@ -1,6 +1,6 @@
-# Huawei LiteOS 源码下载
+# GitHub 源码下载
 
-## 获取 develop 分支源码
+## 获取 LiteOS develop 分支源码
 
 LiteOS 开源代码路径：[https://github.com/LiteOS/LiteOS](https://github.com/LiteOS/LiteOS)，复制 git 地址。
 

@@ -1,4 +1,4 @@
-# “NB-IoT 一键式报警”端到端开发指导 <Badge text="beta" type="warn"/>
+# NB-IoT 手把手教程（含北向应用）<Badge text="beta" type="warn"/>
 
 ## 概述
 
@@ -51,6 +51,6 @@
 | 开发板           |  规格  | 教程 |
 | ---------------- | --------  | ------- |
 | Terabits NB-IoT 开发板| STM32 F103VCT6，配套移远，中国移动 NB-IoT 通讯扣板2块，温湿度，光感传感器若干      | [链接](./01-inspect-terabits-board.md) |
-| YiQi NB-IoT 开发板<Badge text="荐"/>    | STM32 L152CB-A，板载移远 NB-IoT 模组和 ESP8266 WIFI 模组，温度，压力传感器若干           | [链接](./01-inspect-yiqi-evb01-board.md) |
+| YiQi NB-IoT 开发板 | STM32 L152CB-A，板载移远 NB-IoT 模组和 ESP8266 WIFI 模组，温度，压力传感器若干           | [链接](./01-inspect-yiqi-evb01-board.md) |
 | IoTClub NB-IoT 开发板 | STM32 L431, 板载移远 NB-IoT 模组，OLED显示，温湿度，WiFi，GPS传感器扩展板若干| [链接](./01-inspect-iotclub-m1v3-board.md) |
 | 朱老师 NB-IoT 开发板 | STM32 L476, 板载移远 NB-IoT 模组，GPS，光照， OLED等传感器模块 | [链接](./01-inspect-zhulaoshi-nb476-board.md) |
