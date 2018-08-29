@@ -2,11 +2,29 @@
 
 [[toc]]  
 
-## 下载Git工具  
+## 方法一：在线修改
+
+在线修改适用于**修改量较少**的情况，方便快捷，点击页面最下方 **“在GitHub上编辑此页”** 按钮，跳转到对应的GitHub工程。  
+
+![](./pic/contribute-editonline.png)  
+
+若您还没有 fork `LiteOS/LiteOS_Documents` 工程，则会先跳转到如下页面，点击 “fork” 即可进入编辑页面（前提默认您已有GitHub账户，若没有请先提前注册）。  
+
+![](./pic/contribute-forkonline.png)  
+
+编辑修改后，点击页面下方 **“Propose file change”** 即提交修改到 LiteOS 工程，静候工作人员审核即可。  
+
+![](./pic/contribute-proposeonline.png)  
+
+## 方法二：本地提交  
+
+本地提交适用于**修改量较大**的情况，即先下载到本地，完成多个文件修改后统一提交。
+
+### 下载Git工具  
 
 请至 [git官网](https://git-scm.com/download) 下载   
 
-## 配置SSH Key  
+### 配置SSH Key  
 
 1. 先查看本地是否有公钥
 
@@ -38,7 +56,7 @@
     $ ssh -T git@github.com
     ```
  
-## 配置本地Git账户信息  
+### 配置本地Git账户信息  
 
  账户信息即用户名和邮箱，注意此处邮箱指的是注册GitHub账户所使用的邮箱，配置以后，后续每次Git提交都会使用该信息：  
 
@@ -53,7 +71,7 @@
  $ git config --list
  ```  
 
-## 下载代码到本地
+### 下载代码到本地
 
 1. fork主仓库代码到自己工程下  
     
@@ -81,7 +99,7 @@
     git checkout develop
     ```  
 
-## 设置远程仓库地址
+### 设置远程仓库地址
 
 1. 设置LiteOS主仓库地址  
 
@@ -99,7 +117,7 @@
     git remote add upstream https://github.com/"your-branch"/LiteOS_Documents.git  //your-branch为自己的工程名
     ```  
 
-## 提交本地修改到自己仓库  
+### 提交本地修改到自己仓库  
 
 介绍如何将本地修改提交到到自己fork的远程仓库。
 
@@ -135,7 +153,7 @@
     git push origin develop:develop  
     ```  
 
-## 提交修改到主仓库  
+### 提交修改到主仓库  
 
 通过上述步骤，修改已经提交到自己的仓库中，当前只需要将这些修改merge到主仓库上便完成了本次代码的提交，也就是提一个 `Pull Request` ， 将自己仓库develop分支修改的内容，同步到LiteOS主仓库，提交页面也可以再次确认修改差异。  
 
