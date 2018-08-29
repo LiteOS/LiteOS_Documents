@@ -288,12 +288,7 @@ module.exports = {
                 "./example12",
                 "./example13",
                 "./example14",
-                "./example15",
-                // "./example16",
-                // "./example17",
-                // "./example18",
-                // "./example19",
-                // "./example20"
+                "./example15"
               ]
             }
           ],
