@@ -28,5 +28,8 @@
   "devDependencies": {
     "http-server": "^0.11.1",
     "vuepress": "^0.14.1"
+  },
+  "dependencies": {
+    "npm": "^6.4.0"
   }
 }
