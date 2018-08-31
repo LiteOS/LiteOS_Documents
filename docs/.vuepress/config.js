@@ -114,7 +114,7 @@ module.exports = {
                     link: "/connect-to-cloud/ctyun/"
                   },
                   {
-                    text: "中移动 OneNet",
+                    text: "中移动 OneNet 平台",
                     link: "/connect-to-cloud/onenet/"
                   }
                 ]
