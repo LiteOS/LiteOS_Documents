@@ -1,4 +1,6 @@
 module.exports = {
+
+  ga: "UA-124955660-1",
   locales: {
     "/": {
       lang: "zh-CN",
@@ -389,6 +391,13 @@ module.exports = {
               ]
             }
           ],
+          "/connect-to-cloud/onenet/": [{
+            title: "OneNET 平台对接",
+            collapsable: true,
+            children: [
+              "./china-mobile-onenet"
+            ]
+          }],
           "/": [""]
         }
       },
