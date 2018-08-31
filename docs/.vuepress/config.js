@@ -1,5 +1,7 @@
 module.exports = {
-
+  head: [
+    ['link', { rel: 'icon', href: '/favicon.ico' }]
+  ],
   ga: "UA-124955660-1",
   locales: {
     "/": {
@@ -65,20 +67,39 @@ module.exports = {
             text: "教程",
             items: [
               {
-                text: "LiteOS 内核实战指南",
-                link: "/tutorials/kernel/"
+                text: "实战指南",
+                items: [
+                  {
+                    text: "LiteOS 内核实验",
+                    link: "/tutorials/kernel/"
+                  },
+                  {
+                    text: "开发板场景化案例",
+                    link: "/tutorials/scene/"
+                  }
+                ]
               },
               {
-                text: "开发板场景化案例实战",
-                link: "/tutorials/scene/"
+                text: "端到端教程（含北向应用）",
+                items: [
+                  {
+                    text: "NB-IoT",
+                    link: "/step-by-step/nb-iot/"
+                  },
+                  {
+                    text: "WiFi",
+                    link: "/step-by-step/esp8266/"
+                  }
+                ]
               },
               {
-                text: "NB-IoT 手把手教程（含北向应用）",
-                link: "/step-by-step/nb-iot/"
-              },
-              {
-                text: "朱老师物联网大讲堂 NB476 视频",
-                link: "https://developer.huawei.com/ict/cn/edu-online"
+                text: "精品课程",
+                items: [
+                  {
+                    text: "朱老师物联网大讲堂",
+                    link: "https://developer.huawei.com/ict/cn/edu-online"
+                  }
+                ]
               }
             ]
           },
@@ -86,9 +107,31 @@ module.exports = {
             text: "生态",
             items: [
               {
-                text: "中移动 OneNet 平台对接",
-                link: "/connect-to-cloud/onenet/"
+                text: "云平台对接",
+                items: [
+                  {
+                    text: "中国电信天翼云平台",
+                    link: "/connect-to-cloud/ctyun/"
+                  },
+                  {
+                    text: "中移动 OneNet 平台",
+                    link: "/connect-to-cloud/onenet/"
+                  }
+                ]
               },
+              {
+                text: "OpenCPU",
+                items: [
+                  {
+                    text: "Huawei LPWA RDK",
+                    link: "/ecosystem/opencpu/"
+                  },
+                  {
+                    text: "HiSilion SDK",
+                    link: "/ecosystem/opencpu/"
+                  }
+                ]
+              }
               // {
               //   text: "钛云物联 All-in-Java",
               //   link: "/ecosystem/all-in-java/"
@@ -97,10 +140,6 @@ module.exports = {
               //   text: "MapleJS 引擎",
               //   link: "/ecosystem/maplejs/"
               // },
-              {
-                text: "OpenCPU 二次开发指导",
-                link: "/ecosystem/opencpu/"
-              }
             ]
           },
           // {
@@ -123,10 +162,6 @@ module.exports = {
           //       link: "/partners/teaching/"
           //     },
           //   ]
-          // },
-          // {
-          //   text: "华为开发者大赛",
-          //   link: "http://developer.huawei.com/ict/cn/hdc/"
           // },
           {
             text: "论坛",
@@ -220,13 +255,13 @@ module.exports = {
               ]
             },
             {
-              title: "LWPA 增强",
+              title: "LPWA 增强",
               collapsable: false,
               children: [
                 "./device-pnp",
                 "./dtls-plus",
-                "./fault-diagnosis",
-                "./dispersed-reporting",
+                //"./fault-diagnosis",
+                //"./dispersed-reporting",
                 "./difference-upgrade"
               ]
             }
@@ -290,12 +325,7 @@ module.exports = {
                 "./example12",
                 "./example13",
                 "./example14",
-                "./example15",
-                "./example16",
-                "./example17",
-                "./example18",
-                "./example19",
-                "./example20"
+                "./example15"
               ]
             }
           ],
