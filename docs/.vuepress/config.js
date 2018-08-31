@@ -29,16 +29,12 @@ module.exports = {
             text: "入门",
             items: [
               {
-                text: "必知必会",
+                text: "快速上手",
                 link: "/quick-start/intro/"
               },
               {
-                text: "轻松上手",
-                link: "/quick-start/demo/"
-              },
-              {
                 text: "参与贡献",
-                link: "/quick-start/contribute/"
+                link: "/quick-start/contrb/"
               }
             ]
           },
@@ -46,11 +42,11 @@ module.exports = {
             text: "学习",
             items: [
               {
-                text: "LiteOS 内核详解",
+                text: "LiteOS 内核指南",
                 link: "/kernel/"
               },
               {
-                text: "LiteOS SDK详解",
+                text: "LiteOS SDK 指南",
                 link: "/sdk/"
               },
               {
@@ -67,44 +63,44 @@ module.exports = {
             text: "教程",
             items: [
               {
-                text: "LiteOS 内核使用指南",
+                text: "LiteOS 内核实战指南",
                 link: "/tutorials/kernel/"
               },
               {
-                text: "NB-IoT 开发板场景化实操",
+                text: "开发板场景化案例实战",
                 link: "/tutorials/scene/"
               },
               {
-                text: "NB-IoT OneButton 端到端开发",
+                text: "NB-IoT 手把手教程（含北向应用）",
                 link: "/step-by-step/nb-iot/"
               },
               {
-                text: "朱老师 NB-IoT 视频课程",
+                text: "朱老师物联网大讲堂 NB476 视频",
                 link: "https://developer.huawei.com/ict/cn/edu-online"
               }
             ]
           },
-          // {
-          //   text: "生态",
-          //   items: [
-          //     {
-          //       text: "OneNet 平台对接",
-          //       link: "/connect-to-cloud/onenet/"
-          //     },
-          //     {
-          //       text: "钛云物联 All-in-Java",
-          //       link: "/ecosystem/all-in-java/"
-          //     },
-          //     {
-          //       text: "MapleJS 引擎",
-          //       link: "/ecosystem/maplejs/"
-          //     },
-          //     {
-          //       text: "OpenCPU 深入浅出",
-          //       link: "/ecosystem/opencpu/"
-          //     }
-          //   ]
-          // },
+          {
+            text: "生态",
+            items: [
+              {
+                text: "中移动 OneNet 平台对接",
+                link: "/connect-to-cloud/onenet/"
+              },
+              // {
+              //   text: "钛云物联 All-in-Java",
+              //   link: "/ecosystem/all-in-java/"
+              // },
+              // {
+              //   text: "MapleJS 引擎",
+              //   link: "/ecosystem/maplejs/"
+              // },
+              {
+                text: "OpenCPU 二次开发指导",
+                link: "/ecosystem/opencpu/"
+              }
+            ]
+          },
           // {
           //   text: "伙伴",
           //   items: [
@@ -126,31 +122,49 @@ module.exports = {
           //     },
           //   ]
           // },
+          // {
+          //   text: "华为开发者大赛",
+          //   link: "http://developer.huawei.com/ict/cn/hdc/"
+          // },
           {
-            text: "活动",
-            items: [
-              {
-                text: "2018 华为开发者大赛",
-                link: "http://developer.huawei.com/ict/cn/hdc/"
-              }
-            ]
+            text: "论坛",
+            link: "https://developer.huawei.com/ict/forum/forum.php?mod=forumdisplay&fid=400045"
           }
         ],
         sidebar: {
           "/quick-start/intro/": [
-            "",
-            "./why-use-the-rtos",
-            "./why-select-huawei-liteos",
-            "./how-to-study-liteos",
-            "./usage-guide-for-partner",
-            "./terminology"
+            {
+              title: "入门",
+              collapsable: false,
+              children: [""]
+            },
+            {
+              title: "思考",
+              collapsable: false,
+              children: [
+                "./why-use-the-rtos",
+                "./why-select-liteos",
+                "./how-to-study-liteos"
+              ]
+            },
+            {
+              title: "演示",
+              collapsable: false,
+              children: [
+                "./a-simple-blinky-demo",
+                "./a-comprehensive-smoky-demo"
+              ]
+            },
+            {
+              title: "扩展",
+              collapsable: false,
+              children: [
+                //"./usage-guide-for-partner",
+                "./terminology"
+              ]
+            }
           ],
-          "/quick-start/demo/": [
-            "",
-            "./a-simple-blinky-demo",
-            "./a-comprehensive-smoky-demo"
-          ],
-          "/quick-start/contribute/": [
+          "/quick-start/contrb/": [
             "",
             "./code-standard",
             "./write-standard",
@@ -163,7 +177,7 @@ module.exports = {
               children: [""]
             },
             {
-              title: "基础内核功能",
+              title: "基础功能",
               collapsable: false,
               children: [
                 "./task",
@@ -220,10 +234,9 @@ module.exports = {
               title: "准备工作",
               collapsable: false,
               children: [
-                "",
                 "./evb-and-tools",
                 "./raw-project-with-stm32cube",
-                //"./raw-project-with-others",
+                "./raw-project-with-others",
                 "./liteos-source-code"
               ]
             },
@@ -246,12 +259,12 @@ module.exports = {
               children: ["./inspect-example", "./inspect-results"]
             },
             {
-              title: "附录一：开发工具安装手册",
+              title: "附1：IDE 工具安装指南",
               collapsable: true,
               children: ["./keil-install", "./iar-install", "./gcc-sw4stm32-install"]
             },
             {
-              title: "附录二：OS_CONFIG 配置详解",
+              title: "附2：OS_CONFIG 详解",
               collapsable: true,
               children: ["./os-config"]
             }
@@ -270,20 +283,30 @@ module.exports = {
                 "./example07",
                 "./example08",
                 "./example09",
-                "./example10"
+                "./example10",
+                "./example11",
+                "./example12",
+                "./example13",
+                "./example14",
+                "./example15",
+                "./example16",
+                "./example17",
+                "./example18",
+                "./example19",
+                "./example20"
               ]
             }
           ],
           "/tutorials/scene/": [
             {
               title: "场景化例程",
-              collapsable: false,
+              collapsable: true,
               children: [
+                "./light",
                 "./temp-hum", 
-                "./smoke", 
-                "./gps", 
-                "./light", 
-                "./wifi"
+                //"./smoke", 
+                //"./gps", 
+                //"./wifi"
               ]
             }
           ],
@@ -300,11 +323,7 @@ module.exports = {
             ]
           }],
           "/step-by-step/nb-iot/": [
-            {
-              title: "手把手教程",
-              collapsable: false,
-              children: [""]
-            },
+            "",
             {
               title: "钛比 NB-IoT 开发板",
               collapsable: true,
