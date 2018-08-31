@@ -2,6 +2,7 @@ module.exports = {
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }]
   ],
+  ga: "UA-124955660-1",
   locales: {
     "/": {
       lang: "zh-CN",
@@ -87,8 +88,17 @@ module.exports = {
             text: "生态",
             items: [
               {
-                text: "中移动 OneNet 平台对接",
-                link: "/connect-to-cloud/onenet/"
+                text: "IoT 云平台对接",
+                items: [
+                  {
+                    text: "天翼云 OceanConnect 云平台",
+                    link: "/connect-to-cloud/onenet/"
+                  },
+                  {
+                    text: "中移动 OneNet 云平台",
+                    link: "/connect-to-cloud/onenet/"
+                  }
+                ]
               },
               // {
               //   text: "钛云物联 All-in-Java",
@@ -387,6 +397,13 @@ module.exports = {
               ]
             }
           ],
+          "/connect-to-cloud/onenet/": [{
+            title: "OneNET 平台对接",
+            collapsable: true,
+            children: [
+              "./china-mobile-onenet"
+            ]
+          }],
           "/": [""]
         }
       },
