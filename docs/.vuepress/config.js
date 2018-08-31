@@ -67,20 +67,39 @@ module.exports = {
             text: "教程",
             items: [
               {
-                text: "LiteOS 内核实战指南",
-                link: "/tutorials/kernel/"
+                text: "实战指南",
+                items: [
+                  {
+                    text: "LiteOS 内核实验",
+                    link: "/tutorials/kernel/"
+                  },
+                  {
+                    text: "开发板场景化案例",
+                    link: "/tutorials/scene/"
+                  }
+                ]
               },
               {
-                text: "开发板场景化案例实战",
-                link: "/tutorials/scene/"
+                text: "端到端教程（含北向应用）",
+                items: [
+                  {
+                    text: "NB-IoT",
+                    link: "/step-by-step/nb-iot/"
+                  },
+                  {
+                    text: "WiFi",
+                    link: "/step-by-step/esp8266/"
+                  }
+                ]
               },
               {
-                text: "NB-IoT 手把手教程（含北向应用）",
-                link: "/step-by-step/nb-iot/"
-              },
-              {
-                text: "朱老师物联网大讲堂 NB476 视频",
-                link: "https://developer.huawei.com/ict/cn/edu-online"
+                text: "精品课程",
+                items: [
+                  {
+                    text: "朱老师物联网大讲堂",
+                    link: "https://developer.huawei.com/ict/cn/edu-online"
+                  }
+                ]
               }
             ]
           },
@@ -88,18 +107,31 @@ module.exports = {
             text: "生态",
             items: [
               {
-                text: "IoT 云平台对接",
+                text: "云平台对接",
                 items: [
                   {
-                    text: "天翼云 OceanConnect 云平台",
-                    link: "/connect-to-cloud/onenet/"
+                    text: "中国电信天翼云平台",
+                    link: "/connect-to-cloud/ctyun/"
                   },
                   {
-                    text: "中移动 OneNet 云平台",
+                    text: "中移动 OneNet",
                     link: "/connect-to-cloud/onenet/"
                   }
                 ]
               },
+              {
+                text: "OpenCPU",
+                items: [
+                  {
+                    text: "Huawei LPWA RDK",
+                    link: "/ecosystem/opencpu/"
+                  },
+                  {
+                    text: "HiSilion SDK",
+                    link: "/ecosystem/opencpu/"
+                  }
+                ]
+              }
               // {
               //   text: "钛云物联 All-in-Java",
               //   link: "/ecosystem/all-in-java/"
@@ -108,10 +140,6 @@ module.exports = {
               //   text: "MapleJS 引擎",
               //   link: "/ecosystem/maplejs/"
               // },
-              {
-                text: "OpenCPU 二次开发指导",
-                link: "/ecosystem/opencpu/"
-              }
             ]
           },
           // {
@@ -134,10 +162,6 @@ module.exports = {
           //       link: "/partners/teaching/"
           //     },
           //   ]
-          // },
-          // {
-          //   text: "华为开发者大赛",
-          //   link: "http://developer.huawei.com/ict/cn/hdc/"
           // },
           {
             text: "论坛",
