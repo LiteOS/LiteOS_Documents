@@ -42,7 +42,7 @@ LiteOS Kernel是Huawei LiteOS 操作系统基础内核，包括**任务管理、
 
 ## LiteOS SDK
 
-LiteOS SDK 是 Huawei LiteOS 软件开发工具包（Software Development Kit），包括端云互通组件，FOTA，JS引擎、传感器框架等内容。
+LiteOS SDK 是 Huawei LiteOS 软件开发工具包（Software Development Kit），包括端云互通组件，FOTA，JS引擎、传感器框架等内容。  
 
 ![](./pic/sdk-overview.png)
 
