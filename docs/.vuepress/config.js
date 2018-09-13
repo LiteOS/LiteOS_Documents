@@ -39,6 +39,10 @@ module.exports = {
               {
                 text: "参与贡献",
                 link: "/quick-start/contrb/"
+              },
+              {
+                text: "版本记录",
+                link: "/quick-start/changelog"
               }
             ]
           },
@@ -80,24 +84,28 @@ module.exports = {
                 ]
               },
               {
-                text: "端到端教程（含北向应用）",
+                text: "手把手教程（含北向应用）",
                 items: [
                   {
-                    text: "NB-IoT",
+                    text: "NB-IoT 端到端开发（Quectel BC95/BC35)",
                     link: "/step-by-step/nb-iot/"
                   },
                   {
-                    text: "WiFi",
+                    text: "WiFi 端到端开发（ESP8266)",
                     link: "/step-by-step/esp8266/"
                   }
                 ]
               },
               {
-                text: "精品课程",
+                text: "精品在线课程",
                 items: [
                   {
-                    text: "朱老师物联网大讲堂",
-                    link: "https://developer.huawei.com/ict/cn/edu-online"
+                    text: "朱老师物联网大讲堂 NB-IoT 系列课程",
+                    link: "https://developer.huawei.com/ict/cn/edu-online/site-iot-nb-01"
+                  },
+                  {
+                    text: "物联网俱乐部 NB-IoT 系列课程",
+                    link: "https://developer.huawei.com/ict/cn/edu-online/site-iot-nb-002"
                   }
                 ]
               }
@@ -110,11 +118,11 @@ module.exports = {
                 text: "云平台对接",
                 items: [
                   {
-                    text: "中国电信天翼云平台",
+                    text: "中国电信 IoT 平台",
                     link: "/connect-to-cloud/ctyun/"
                   },
                   {
-                    text: "中移动 OneNet 平台",
+                    text: "中国移动 OneNET 平台",
                     link: "/connect-to-cloud/onenet/"
                   }
                 ]
