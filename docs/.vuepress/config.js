@@ -23,81 +23,87 @@ module.exports = {
     editLinks: true,
     locales: {
       "/": {
-        selectText: "语言",
+        selectText: "切换语言",
         label: "简体中文",
         editLinkText: "在 GitHub 上编辑此页",
         lastUpdated: "上次更新",
         algolia: {},
         nav: [
           {
-            text: "入门",
-            items: [
-              {
-                text: "快速上手",
-                link: "/quick-start/intro/"
-              },
-              {
-                text: "参与贡献",
-                link: "/quick-start/contrb/"
-              },
-              {
-                text: "版本记录",
-                link: "/quick-start/changelog"
-              }
-            ]
-          },
-          {
             text: "学习",
             items: [
               {
-                text: "LiteOS 内核指南",
-                link: "/kernel/"
+                text: "入门",
+                items: [
+                  {
+                    text: "快速上手",
+                    link: "/quick-start/intro/"
+                  },
+                  {
+                    text: "参与贡献",
+                    link: "/quick-start/contrb/"
+                  }
+                ]
               },
               {
-                text: "LiteOS SDK 指南",
-                link: "/sdk/"
+                text: "进阶",
+                items: [
+                  {
+                    text: "LiteOS 内核指南",
+                    link: "/kernel/"
+                  },
+                  {
+                    text: "LiteOS SDK 指南",
+                    link: "/sdk/"
+                  },
+                ]
               },
               {
-                text: "LiteOS 移植手册",
-                link: "/porting/"
-              },
-              {
-                text: "LiteOS API 参考",
-                link: "http://liteos.github.io/api-reference/"
-              },
+                text: "高级",
+                items: [
+                  {
+                    text: "LiteOS 移植手册",
+                    link: "/porting/"
+                  },
+                  {
+                    text: "LiteOS API 参考",
+                    link: "http://liteos.github.io/api-reference/"
+                  },
+                ]
+              }, 
             ]
           },
           {
-            text: "教程",
+            text: "实战",
             items: [
               {
-                text: "实战指南",
+                text: "LiteOS 学习实验室",
                 items: [
                   {
-                    text: "LiteOS 内核实验",
+                    text: "玩转 LiteOS 内核教程",
                     link: "/tutorials/kernel/"
                   },
                   {
-                    text: "开发板场景化案例",
+                    text: "NB 开发板场景化案例集",
                     link: "/tutorials/scene/"
                   }
                 ]
               },
               {
-                text: "手把手教程（含北向应用）",
+                text: "零基础端到端开发",
                 items: [
                   {
-                    text: "NB-IoT 端到端开发（Quectel BC95/BC35)",
+                    text: "NB-IoT 手把手教程（Quectel BC95)",
                     link: "/step-by-step/nb-iot/"
                   },
                   {
-                    text: "WiFi 端到端开发（ESP8266)",
+                    text: "WiFi 手把手教程（ESP8266)",
                     link: "/step-by-step/esp8266/"
                   }
                 ]
               },
               {
-                text: "精品在线课程",
+                text: "精品在线系列课程",
                 items: [
                   {
                     text: "朱老师物联网大讲堂 NB-IoT 系列课程",
@@ -118,7 +124,11 @@ module.exports = {
                 text: "云平台对接",
                 items: [
                   {
-                    text: "中国电信 IoT 平台",
+                    text: "华为公有云 IoT 平台",
+                    link: "/connect-to-cloud/huaweicloud/"
+                  },
+                  {
+                    text: "中国电信 天翼云 平台",
                     link: "/connect-to-cloud/ctyun/"
                   },
                   {
@@ -131,23 +141,28 @@ module.exports = {
                 text: "OpenCPU",
                 items: [
                   {
-                    text: "Huawei LPWA RDK",
-                    link: "/ecosystem/opencpu/"
+                    text: "LiteOS OpenCPU（公版）",
+                    link: "/opencpu/public"
                   },
                   {
-                    text: "HiSilion SDK",
-                    link: "/ecosystem/opencpu/"
+                    text: "Quectel BC35 OpenCPU",
+                    link: "/opencpu/quectel"
                   }
                 ]
+              },
+              {
+                text: "其他编程语言",
+                items: [
+                {
+                  text: "MapleJS 引擎（JavaScript）",
+                  link: "/3rd-prog-lang/maplejs"
+                },
+                {
+                  text: "钛云物联 All-in-Java",
+                  link: "/3rd-prog-lang/tiyun-java"
+                },
+                ]
               }
-              // {
-              //   text: "钛云物联 All-in-Java",
-              //   link: "/ecosystem/all-in-java/"
-              // },
-              // {
-              //   text: "MapleJS 引擎",
-              //   link: "/ecosystem/maplejs/"
-              // },
             ]
           },
           // {
@@ -174,6 +189,10 @@ module.exports = {
           {
             text: "论坛",
             link: "https://developer.huawei.com/ict/forum/forum.php?mod=forumdisplay&fid=400045"
+          },
+          {
+            text: "修订记录",
+            link: "/changelog"
           }
         ],
         sidebar: {
