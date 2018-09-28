@@ -1,6 +1,9 @@
 module.exports = {
   head: [
-    ['link', { rel: 'icon', href: '/favicon.ico' }]
+    ['link', {
+      rel: 'icon',
+      href: '/favicon.ico'
+    }]
   ],
   ga: "UA-124955660-1",
   locales: {
@@ -12,8 +15,7 @@ module.exports = {
     "/en/": {
       lang: "en-US",
       title: "Huawei LiteOS | English Site",
-      description:
-        "A Lightweight IoT Operating System that Makes Everything Around Us Smart"
+      description: "A Lightweight IoT Operating System that Makes Everything Around Us Smart"
     }
   },
   themeConfig: {
@@ -28,14 +30,11 @@ module.exports = {
         editLinkText: "在 GitHub 上编辑此页",
         lastUpdated: "上次更新",
         algolia: {},
-        nav: [
-          {
+        nav: [{
             text: "学习",
-            items: [
-              {
+            items: [{
                 text: "入门",
-                items: [
-                  {
+                items: [{
                     text: "快速上手",
                     link: "/quick-start/intro/"
                   },
@@ -47,65 +46,59 @@ module.exports = {
               },
               {
                 text: "进阶",
-                items: [
-                  {
-                    text: "LiteOS 内核指南",
+                items: [{
+                    text: "内核指南",
                     link: "/kernel/"
                   },
                   {
-                    text: "LiteOS SDK 指南",
+                    text: "SDK 指南",
                     link: "/sdk/"
                   },
                 ]
               },
               {
                 text: "高级",
-                items: [
-                  {
-                    text: "LiteOS 移植手册",
+                items: [{
+                    text: "移植手册",
                     link: "/porting/"
                   },
                   {
-                    text: "LiteOS API 参考",
+                    text: "API 参考",
                     link: "http://liteos.github.io/api-reference/"
                   },
                 ]
-              }, 
+              },
             ]
           },
           {
             text: "实战",
-            items: [
-              {
-                text: "LiteOS 学习实验室",
-                items: [
-                  {
+            items: [{
+                text: "LiteOS 动手实验室",
+                items: [{
                     text: "玩转 LiteOS 内核教程",
                     link: "/tutorials/kernel/"
                   },
                   {
-                    text: "NB 开发板场景化案例集",
+                    text: "LiteOS@NB-IoT 场景化样例集",
                     link: "/tutorials/scene/"
                   }
                 ]
               },
               {
                 text: "零基础端到端开发",
-                items: [
-                  {
-                    text: "NB-IoT 手把手教程（Quectel BC95)",
+                items: [{
+                    text: "NB-IoT 手把手教程（移远 BC95/BC35)",
                     link: "/step-by-step/nb-iot/"
                   },
                   {
-                    text: "WiFi 手把手教程（ESP8266)",
+                    text: "WiFi 手把手教程（安信可 ESP8266)",
                     link: "/step-by-step/esp8266/"
                   }
                 ]
               },
               {
-                text: "精品在线系列课程",
-                items: [
-                  {
+                text: "在线精品课程",
+                items: [{
                     text: "朱老师物联网大讲堂 NB-IoT 系列课程",
                     link: "https://developer.huawei.com/ict/cn/edu-online/site-iot-nb-01"
                   },
@@ -119,16 +112,14 @@ module.exports = {
           },
           {
             text: "生态",
-            items: [
-              {
-                text: "云平台对接",
-                items: [
-                  {
+            items: [{
+                text: "对接云平台",
+                items: [{
                     text: "华为公有云 IoT 平台",
                     link: "/connect-to-cloud/huaweicloud/"
                   },
                   {
-                    text: "中国电信 天翼云 平台",
+                    text: "中国电信天翼云平台",
                     link: "/connect-to-cloud/ctyun/"
                   },
                   {
@@ -139,30 +130,53 @@ module.exports = {
               },
               {
                 text: "OpenCPU",
-                items: [
-                  {
-                    text: "LiteOS OpenCPU（公版）",
+                items: [{
+                    text: "LiteOS Boudica150 OpenCPU（公版）",
                     link: "/opencpu/public"
                   },
                   {
-                    text: "Quectel BC35 OpenCPU",
+                    text: "Quectel BC35/28 OpenCPU",
                     link: "/opencpu/quectel"
                   }
                 ]
               },
               {
                 text: "其他编程语言",
-                items: [
-                {
-                  text: "MapleJS 引擎（JavaScript）",
-                  link: "/3rd-prog-lang/maplejs"
-                },
-                {
-                  text: "钛云物联 All-in-Java",
-                  link: "/3rd-prog-lang/tiyun-java"
-                },
+                items: [{
+                    text: "MapleJS 引擎（JavaScript）",
+                    link: "/3rd-lang/maplejs"
+                  },
+                  {
+                    text: "钛云物联 All-in-Java",
+                    link: "/3rd-lang/tiyun-java"
+                  },
                 ]
               }
+            ]
+          },
+          {
+            text: "活动",
+            items: [{
+                text: "HUAWEI CONNECT 2018",
+                items: [{
+                    text: "产品展示",
+                    link: "/hc2018/products/"
+                  },
+                  {
+                    text: "动手体验",
+                    link: "/hc2018/experience/"
+                  }
+                ]
+              },
+              // {
+              //   text: "华为IoT开发者大赛",
+              //   items: [
+              //     {
+              //       text: "32 强作品展示",
+              //       link: "http://poster.issmart.com.cn/web/fontend/h5/other/2018927vote"
+              //     }
+              //   ]
+              // }
             ]
           },
           // {
@@ -196,8 +210,7 @@ module.exports = {
           }
         ],
         sidebar: {
-          "/quick-start/intro/": [
-            {
+          "/quick-start/intro/": [{
               title: "入门",
               collapsable: false,
               children: [""]
@@ -234,8 +247,7 @@ module.exports = {
             "./write-standard",
             "./code-info"
           ],
-          "/kernel/": [
-            {
+          "/kernel/": [{
               title: "内核",
               collapsable: false,
               children: [""]
@@ -269,8 +281,7 @@ module.exports = {
               ]
             }
           ],
-          "/sdk/": [
-            {
+          "/sdk/": [{
               title: "端云互通",
               collapsable: false,
               children: [
@@ -293,8 +304,7 @@ module.exports = {
               ]
             }
           ],
-          "/porting/": [
-            {
+          "/porting/": [{
               title: "准备工作",
               collapsable: false,
               children: [
@@ -333,42 +343,38 @@ module.exports = {
               children: ["./os-config"]
             }
           ],
-          "/tutorials/kernel/": [
-            {
-              title: "LiteOS 内核使用指南",
-              collapsable: false,
-              children: [
-                "./example01",
-                "./example02",
-                "./example03",
-                "./example04",
-                "./example05",
-                "./example06",
-                "./example07",
-                "./example08",
-                "./example09",
-                "./example10",
-                "./example11",
-                "./example12",
-                "./example13",
-                "./example14",
-                "./example15"
-              ]
-            }
-          ],
-          "/tutorials/scene/": [
-            {
-              title: "场景化例程",
-              collapsable: true,
-              children: [
-                "./light",
-                "./temp-hum", 
-                //"./smoke", 
-                //"./gps", 
-                //"./wifi"
-              ]
-            }
-          ],
+          "/tutorials/kernel/": [{
+            title: "LiteOS 内核使用指南",
+            collapsable: false,
+            children: [
+              "./example01",
+              "./example02",
+              "./example03",
+              "./example04",
+              "./example05",
+              "./example06",
+              "./example07",
+              "./example08",
+              "./example09",
+              "./example10",
+              "./example11",
+              "./example12",
+              "./example13",
+              "./example14",
+              "./example15"
+            ]
+          }],
+          "/tutorials/scene/": [{
+            title: "场景化例程",
+            collapsable: true,
+            children: [
+              "./light",
+              "./temp-hum",
+              //"./smoke", 
+              //"./gps", 
+              //"./wifi"
+            ]
+          }],
           "/partners/industry/": [{
             title: "案例",
             collapsable: false,
@@ -455,6 +461,15 @@ module.exports = {
               "./china-mobile-onenet"
             ]
           }],
+          "/hc2018/experience/": [{
+            title: "动手体验区",
+            collapsable: false,
+            children: [
+              "",
+              "./liteos-studio",
+              "./opencpu-maplejs"
+            ]
+          }],
           "/": [""]
         }
       },
@@ -463,8 +478,7 @@ module.exports = {
         label: "English",
         editLinkText: "Edit this page on GitHub",
         algolia: {},
-        nav: [
-          {
+        nav: [{
             text: "Getting Started",
             link: "/en/getting-started"
           },
@@ -474,8 +488,7 @@ module.exports = {
           }
         ],
         sidebar: {
-          "/en/kernel/": [
-            {
+          "/en/kernel/": [{
               title: "Guide",
               collapsable: false,
               children: ["./"]

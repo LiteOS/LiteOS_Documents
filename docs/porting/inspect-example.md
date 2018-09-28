@@ -29,6 +29,12 @@ LOS_Start();
 /* USER CODE END 2 */
 ```
 
+## 添加日志输出宏定义
+
+`LOS_KERNEL_DEBUG_OUT`
+
+![](./pic/raw-project-example-macro.png)
+
 ::: danger 危险
 请务按照上面示例的方式添加测试代码。因为只有在 USER CODE 注释包裹内添加，下一次再使用 STM32Cube 导出的代码才不会被覆盖。
 :::

@@ -1,8 +1,8 @@
-# 程序下载与调试工具
+# 开发板与相关工具准备
 
-要想学好 RTOS，首先需要准备一套嵌入式开发实验平台，即开发板（也叫评估板，测试板，学习板等等）。如果开发者手头上有华为官方推荐的[开发板](https://github.com/LiteOS/LiteOS_Partner_Development_Kits)，则可以直接使用移植好的编译工程。如果您手头上开发板没有对应的编译工程，则需要进行 OS 移植。
+要想学好 RTOS，首先需要准备一套嵌入式开发实验平台，即开发板（也有称为评估板，测试板，学习板等等）。如果开发者手头上有华为官方推荐的[开发板](https://github.com/LiteOS/LiteOS_Partner_Development_Kits)，则可以直接使用移植好的编译工程。如果您手头上开发板没有对应的编译工程，则需要进行 OS 移植。
 
-我们这里将手把手指导开发者进行 Huawei LiteOS 移植，如果大家在移植过程中遇到问题可以前往 [华为开发者论坛](http://developer.huawei.com/ict/forum/forum.php?mod=forumdisplay&fid=400045) 中发帖，我们的工程师 GG 们会尽力帮助大家解决。
+我们这里将手把手指导开发者进行 Huawei LiteOS 移植，可以移步到 [常见问题](faq.md)看看能不能解决。如果大家在移植过程中遇到问题可以前往 [华为开发者论坛](http://developer.huawei.com/ict/forum/forum.php?mod=forumdisplay&fid=400045) 中发帖，我们的工程师 GG 们会尽力帮助大家解决。
 
 ## 硬件准备
 
@@ -15,9 +15,9 @@ Huawei LiteOS 目前已经成功适配了数十款基于 ARM Cortex 内核的开
 ![](./pic/atk-warship-stm32f103ze.png)
 
 ::: tip 提示
-此套 Huawei LiteOS 移植教程是兼容全系列 STM32 芯片的，不要求读者选择同款开发板。您只需要有一套类似开发板（内存不小于 8K，Flash 不小于 20K）都可以进行 OS 移植。
+此套 Huawei LiteOS 移植教程是兼容全系列 STM32 芯片的，不要求读者选择同款开发板。您只需要有一套类似开发板（**内存不小于 8K，Flash 不小于 20K**）都可以进行 OS 移植。
 
-选择该板的原因也是因为它并不在我们默认支持的[合作伙伴开发板列表](https://github.com/LiteOS/LiteOS_Partner_Development_Kits)中。
+** 选择该板的原因是因为它并不在我们默认支持的[合作伙伴开发板列表](https://github.com/LiteOS/LiteOS_Partner_Development_Kits)中。
 :::
 
 ### 下载器/仿真器
@@ -93,6 +93,12 @@ ST-Link 调试器接入到 PC 机同样需要提前安装驱动，可以访问 S
 
 由于我们当前还没有准备好配套的编译工程，这里就不再继续讲解了。等我们完成系统移植后，再继续演示如何使用 ST-Link 下载和调试程序。
 
+除了 ST-Link 之外，早年间也有很多开发者使用 J-Link 调试器，其也支持 JTAG/SWD 下载。
+
+![](./pic/jlink.jpg)
+
+驱动地址 [https://www.segger.com/downloads/jlink/JLink_Windows.exe](https://www.segger.com/downloads/jlink/JLink_Windows.exe)
+
 ## 软件准备
 
 ### STM32 交叉编译工具介绍
@@ -113,7 +119,7 @@ IAR EWARM 安装包可以在：[https://www.iar.com/iar-embedded-workbench](http
 
 ![](./pic/iar.jpg)
 
-**3. GCC (SW4STM32)**
+**3. GCC (Makefile 或 SW4STM32)**
 
 SW4STM32（System Workbench for Stm32）是 ST 官方推出的开发工具，支持全系列 STM32，可以运行在 Windows，Linux 和 MacOS 多种系统上。最令人欣喜的是它还是完全免费的。
 
