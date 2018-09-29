@@ -121,19 +121,13 @@ ST 先后提供了两套固件库：**标准库** 和 **HAL 库**。STM32 芯片
 
 ### 配置工程属性，生成代码
 
-我们这里选取 **MDK-ARM V5** 作为开发环境，配置好工程名和代码导出路径。
+我们已经支持 [MDK-ARM](stm32-keil.md)，[IAR EWARM](stm32-iar.md)，[SW4STM32](stm32-sw4stm32.md) 和 [Makefile/GCC](stm32-makefile.md) 四种工具链/IDE 作为 LiteOS 开发环境，如下图所示选出您熟悉的工具链，配置好工程名和代码导出路径即可。
 
-![](./pic/stm32cube-settings-toolchain-mdk.png)
+![](./pic/stm32cube-output-toolchains.png)
 
 为便于外设相关代码维护，建议将下面的选项勾中。
 
 ![](./pic/stm32cube-settings-code-generator.png)
-
-::: danger 重要
-导出代码之前，请务必在 NVIC 配置选项中将 `Pendable request for system service` 和 `Time base: System tick timer` 默认勾选取消。
-
-![](./pic/stm32cube-nvic-no-systick.png)
-:::
 
 最后选择菜单栏上 `Project` -> `Generate Code` 或点击下图齿轮按钮，STM32Cube 会自动导出裸机工程。
 
@@ -141,10 +135,12 @@ ST 先后提供了两套固件库：**标准库** 和 **HAL 库**。STM32 芯片
 
 ![](./pic/stm32cube-generate-open-project.png)
 
-::: tip 提示
-为了让导出的裸机工程适配 LiteOS 目录树结构，建议将其放置在 `\LiteOS\target` 目录中。
+为了让导出的裸机工程适配 LiteOS 目录树结构，可直接将工程放置在 `\LiteOS\target` 目录中。
 
 ![](./pic/raw-project-output-directory.png)
-:::
+
+考虑到绝大多数情况，初学者希望能 **从零开始** 构建 LiteOS 编译工程，也可以按照下图所示将工程导出到独立目录。（后面的具体移植步骤我们都会基于从零开始在独立目录下完成 LiteOS 移植）
+
+![](./pic/raw-project-output2-directory.png)
 
 至此，裸机工程就成功创建了。

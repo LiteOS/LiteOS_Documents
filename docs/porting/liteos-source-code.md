@@ -1,6 +1,6 @@
 # GitHub 源码下载
 
-## 获取 LiteOS develop 分支源码
+## 获取 LiteOS 源码
 
 LiteOS 开源代码路径：[https://github.com/LiteOS/LiteOS](https://github.com/LiteOS/LiteOS)，复制 git 地址。
 
@@ -29,14 +29,16 @@ git clone -b develop git@github.com:LiteOS/LiteOS.git
 
 ## 源码移植目录和文件
 
-我们这里只展现当前基于正点原子的战舰V3对应的目录
+我们这里只展现当前基于正点原子的 **战舰V3** 对应的目录树
 
 ```
 ├─ arch                /* 与 cpu 相关 */
 │  └─ arm
 │     ├─ arm-m         /* M 核中断、调度、Tick 相关代码。 */
 │     │  ├─ cortex-m3
-│     │  │  └─ keil    /* LiteOS 提供的 CMSIS OS 接口实现 */
+│     │  │  ├─ gcc
+│     │  │  ├─ iar
+│     │  │  └─ keil
 │     │  ├─ include
 │     │  └─ src
 │     └─ common        /* ARM 核共用的的 CMSIS 接口 */

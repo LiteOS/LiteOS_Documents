@@ -27,7 +27,7 @@
   "homepage": "https://github.com/softbaddog/LiteOS_Documents#readme",
   "devDependencies": {
     "http-server": "^0.11.1",
-    "vuepress": "^0.14.1"
+    "vuepress": "^0.14.4"
   },
   "dependencies": {
     "npm": "^6.4.0"
