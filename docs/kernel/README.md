@@ -6,7 +6,7 @@ Huawei LiteOS 自开源社区发布以来，围绕 NB-IoT 物联网市场从技�
 
 ## 技术优势
 
-Huawei LiteOS 是轻量级的实时操作系统，是华为IOT OS。
+Huawei LiteOS 是轻量级的实时操作系统，是华为IoT OS。
 
 ![](./pic/overview-arch.png)
 
