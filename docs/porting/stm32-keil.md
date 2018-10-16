@@ -63,7 +63,7 @@ kernel 需要添加的文件比较多：
 
 ## 编译代码并处理移植中的编译错误
 
-编译会发现如下错误，提示缺少 `los_builddef.h` 文件，这个文件没有包含在源码中，需要从其他示例工程中过来。
+编译会发现如下错误，提示缺少 `los_builddef.h` 文件，这个文件没有包含在源码中，需要从其他示例工程中COPY过来。
 
 ![](./pic/raw-project-compile-error-keil.png)
 
