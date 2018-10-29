@@ -84,18 +84,18 @@ module.exports = {
                   }
                 ]
               },
-              {
-                text: "零基础端到端开发",
-                items: [{
-                    text: "NB-IoT 手把手教程（移远 BC95/BC35)",
-                    link: "/step-by-step/nb-iot/"
-                  },
-                  {
-                    text: "WiFi 手把手教程（安信可 ESP8266)",
-                    link: "/step-by-step/esp8266/"
-                  }
-                ]
-              },
+              //{
+              //  text: "零基础端到端开发",
+              //  items: [{
+              //      text: "NB-IoT 手把手教程（移远 BC95/BC35)",
+              //      link: "/step-by-step/nb-iot/"
+              //    },
+              //    {
+              //      text: "WiFi 手把手教程（乐鑫 ESP8266)",
+              //      link: "/step-by-step/esp8266/"
+              //    }
+              //  ]
+              //},
               {
                 text: "在线精品课程",
                 items: [{
@@ -110,64 +110,69 @@ module.exports = {
               }
             ]
           },
-          {
-            text: "生态",
-            items: [{
-                text: "对接云平台",
-                items: [{
-                    text: "华为公有云 IoT 平台",
-                    link: "/connect-to-cloud/huaweicloud/"
-                  },
-                  {
-                    text: "中国电信天翼云平台",
-                    link: "/connect-to-cloud/ctyun/"
-                  },
-                  {
-                    text: "中国移动 OneNET 平台",
-                    link: "/connect-to-cloud/onenet/"
-                  }
-                ]
-              },
-              {
-                text: "OpenCPU",
-                items: [{
-                    text: "LiteOS Boudica150 OpenCPU（公版）",
-                    link: "/opencpu/public"
-                  },
-                  {
-                    text: "Quectel BC35/28 OpenCPU",
-                    link: "/opencpu/quectel"
-                  }
-                ]
-              },
-              {
-                text: "其他编程语言",
-                items: [{
-                    text: "MapleJS 引擎（JavaScript）",
-                    link: "/3rd-lang/maplejs"
-                  },
-                  {
-                    text: "钛云物联 All-in-Java",
-                    link: "/3rd-lang/tiyun-java"
-                  },
-                ]
-              }
-            ]
-          },
-          {
-            text: "活动",
-            items: [{
-                text: "HUAWEI CONNECT 2018",
-                items: [{
-                    text: "产品展示",
-                    link: "/hc2018/products/"
-                  },
-                  {
-                    text: "动手体验",
-                    link: "/hc2018/experience/"
-                  }
-                ]
-              },
+          //{
+          //  text: "生态",
+          //  items: [{
+          //      text: "对接云平台",
+          //      items: [{
+          //          text: "华为公有云 IoT 平台",
+          //          link: "/connect-to-cloud/huaweicloud/"
+          //        },
+          //        {
+          //         text: "中国电信天翼云平台",
+          //          link: "/connect-to-cloud/ctyun/"
+          //        },
+          //        {
+          //          text: "中国移动 OneNET 平台",
+          //          link: "/connect-to-cloud/onenet/"
+          //        }
+          //      ]
+          //    },
+          //    {
+          //      text: "OpenCPU",
+          //      items: [{
+          //          text: "LiteOS Boudica150 OpenCPU（公版）",
+          //          link: "/opencpu/public"
+          //        },
+          //        {
+          //          text: "Quectel BC35/28 OpenCPU",
+          //          link: "/opencpu/quectel"
+          //        }
+          //      ]
+          //    },
+          //    {
+          //      text: "其他编程语言",
+          //      items: [{
+          //          text: "MapleJS 引擎（JavaScript）",
+          //          link: "/3rd-lang/maplejs/maplejs"
+          //        },
+          //        {
+          //          text: "钛云物联 All-in-Java",
+          //          link: "/3rd-lang/tiyun-java"
+          //        },
+          //      ]
+          //    }
+          //  ]
+          //},
+          //{
+            //text: "活动",
+            //items: [{
+              //  text: "HUAWEI CONNECT 2018",
+            //    items: [{
+            //      text: "开发者活动",
+            //      link: "/workshop/"
+            //    }
+              //]
+              //  items: [{
+              //      text: "产品展示",
+              //      link: "/hc2018/products/"
+              //    },
+              //    {
+              //      text: "动手体验",
+              //      link: "/hc2018/experience/"
+              //    }
+          //      ]
+          //    },
               // {
               //   text: "华为IoT开发者大赛",
               //   items: [
@@ -177,8 +182,8 @@ module.exports = {
               //     }
               //   ]
               // }
-            ]
-          },
+          //  ]
+          //},
           // {
           //   text: "伙伴",
           //   items: [
@@ -454,6 +459,16 @@ module.exports = {
               ]
             }
           ],
+          "/step-by-step/ESP8266/": [
+            ""
+          ],
+          "/3rd-lang/maplejs/": [{
+            title: "maplejs",
+            collapsable: true,
+            children: [
+              "./maplejs"
+            ]
+          }],
           "/connect-to-cloud/onenet/": [{
             title: "OneNET 平台对接",
             collapsable: true,
