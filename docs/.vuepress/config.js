@@ -84,6 +84,14 @@ module.exports = {
                   }
                 ]
               },
+              {
+                text: "LiteOS 实战训练营材料",
+                items: [{
+                    text: "OpenCPU方案介绍及实战演示",
+                    link: "/workshop/hangzhou/"
+                  }
+                ]
+              },
               //{
               //  text: "零基础端到端开发",
               //  items: [{
@@ -378,6 +386,13 @@ module.exports = {
               //"./smoke", 
               //"./gps", 
               //"./wifi"
+            ]
+          }],
+          "/workshop/hangzhou/": [{
+            title: "Workshop-杭州站",
+            collapsable: true,
+            children: [
+              "./openCPU_setup"
             ]
           }],
           "/partners/industry/": [{
