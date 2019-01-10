@@ -87,7 +87,7 @@ module.exports = {
               {
                 text: "LiteOS 实战训练营材料",
                 items: [{
-                    text: "OpenCPU方案介绍及实战演示",
+                    text: "Workshop-杭州站",
                     link: "/workshop/hangzhou/"
                   }
                 ]
@@ -392,7 +392,13 @@ module.exports = {
             title: "Workshop-杭州站",
             collapsable: true,
             children: [
-              "./openCPU_setup"
+              "./profile_online",
+              "./codec_plugin_online",
+              "./nbdevice_simulation",
+              "./connect_nb_oc",
+              "./onelight_demo",
+              "./openCPU_setup",
+              "./onelight_demo_openCPU"
             ]
           }],
           "/partners/industry/": [{
