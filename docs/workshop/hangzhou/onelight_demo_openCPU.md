@@ -1,15 +1,16 @@
-# 在openCPU开发板上运行LiteOS onelight demo
+# 运行LiteOS OneLight Demo（基于OpenCPU开发板）
 
 [[toc]]
 
 
 ## 获取源代码
 
-	链接：https://pan.baidu.com/s/1qdbxR2MlUxfDI01bX4q27g
-	密码：dbfe
-	::: warning 注意
-    运行前需要安装运行环境，详见openCPU开发环境安装指导。  
-    :::  
+链接：[下载源码包](https://pan.baidu.com/s/1qdbxR2MlUxfDI01bX4q27g)  
+密码：dbfe    
+
+::: warning 注意
+运行前需要安装运行环境，详见openCPU开发环境安装指导。  
+:::  
 
 ## 开发板硬件连接
 
