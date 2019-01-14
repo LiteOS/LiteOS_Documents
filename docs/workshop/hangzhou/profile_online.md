@@ -1,11 +1,11 @@
-# 制作profile
+# 制作Profile
 
 [[toc]]
 
 
 ## 登陆OceanConnect平台
 
-	浏览器：chrome 【推荐】
+浏览器：chrome （推荐）  
 
 
 ![](./pic/profile_online1.png)
@@ -33,7 +33,7 @@
 ![](./pic/profile_online7.png)
 
 - 系统弹出设置产品信息界面，填写各项参数后，点击“创建”。
-- 设备型号、厂商ID、厂商名称，可以自行定义，但请保证唯一性。可以参赛序号为后缀，例如：HuaweiOneLight***。
+- 设备型号、厂商ID、厂商名称，可以自行定义，但请保证唯一性。可以参赛序号为后缀，例如：HuaweiOneLightxxx（xxx为数字序号）。
 - 厂商ID由系统自动填充，无需手动填写。
 
 ![](./pic/profile_online8.png)

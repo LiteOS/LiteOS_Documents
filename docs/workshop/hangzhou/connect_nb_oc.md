@@ -66,7 +66,10 @@ AT指令详细内容，请参阅NB模块用户手册。
 
 ![1](./pic/connect_nboc6.png)
 
-- 登陆网盘，下载串口调试软件 Serial debugging assistant 。链接：https://pan.baidu.com/s/1qdbxR2MlUxfDI01bX4q27g     密码：dbfe
+- 登陆网盘，下载串口调试软件 Serial debugging assistant 。  
+
+链接：[下载 Serial debugging assistant](https://pan.baidu.com/s/1qdbxR2MlUxfDI01bX4q27g)  
+密码：dbfe  
 
 ![1](./pic/connect_nboc7.png)
 
@@ -281,8 +284,9 @@ OK
 ### NB-IoT与OceanConnect云平台联合调试
 
 #### 命令23 发：AT+NMGS=5,2020333435  
-::: tip 说明
-上报数据：345。  
+
+::: tip 说明  
+上报数据：345。    
 :::  
 
 - 此时可以在OceanConnect平台，查看真实NB设备，已经上线ONLINE。点击设备，进去查看历史数据。

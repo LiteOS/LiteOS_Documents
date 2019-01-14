@@ -1,15 +1,16 @@
-# 运行LiteOS onelight demo
+# 运行LiteOS OneLight Demo
 
 [[toc]]
 
 
 ## 获取源代码
 
-	链接：https://pan.baidu.com/s/1qdbxR2MlUxfDI01bX4q27g
-	密码：dbfe
-	::: warning 注意
-    下载源代码后，需安装MDK523，安装STLINK驱动，安装CH340驱动等。  
-    :::  
+链接：[下载源码包](https://pan.baidu.com/s/1qdbxR2MlUxfDI01bX4q27g)  
+密码：dbfe  
+
+::: warning 注意  
+下载源代码后，需安装MDK523，安装STLINK驱动，安装CH340驱动等。    
+:::  
 
 ## Huawei LiteOS目录介绍
 
@@ -86,7 +87,7 @@
 
 ## 打开MDK523项目
 
-- 进入targets\STM32L431CBxx_EVB_L1_Light\MDK-ARM，打开STM32L431CBxx.uvprojx
+- 进入 `targets\STM32L431CBxx_EVB_L1_Light\MDK-ARM`，打开 `STM32L431CBxx.uvprojx`  
 
 ![](./pic/onelight_demo2.png)
 
@@ -98,7 +99,7 @@
 
 ![](./pic/onelight_demo4.png)
 
-- 【注意】下面的工程设置参数。
+- 【注意】请参照下面的工程设置参数。
 
 ![](./pic/onelight_demo5.png)
 
@@ -126,9 +127,9 @@
 
 ![](./pic/onelight_demo15.png)
 
-::: warning 注意
+::: warning 注意  
 此时串口调试助手，已经开始打印输出的LOG信息。串口波特率要选择115200，因为串口日志是通过USART1来打印的，而程序中将USART1的波特率设为了115200。对应的数据可以在OC平台上查看。  
-:::  
+:::   
 
 ![](./pic/onelight_demo16.png)
 
