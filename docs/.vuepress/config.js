@@ -84,6 +84,14 @@ module.exports = {
                   }
                 ]
               },
+              {
+                text: "LiteOS 实战训练营材料",
+                items: [{
+                    text: "Workshop-杭州站",
+                    link: "/workshop/hangzhou/"
+                  }
+                ]
+              },
               //{
               //  text: "零基础端到端开发",
               //  items: [{
@@ -378,6 +386,19 @@ module.exports = {
               //"./smoke", 
               //"./gps", 
               //"./wifi"
+            ]
+          }],
+          "/workshop/hangzhou/": [{
+            title: "Workshop-杭州站",
+            collapsable: true,
+            children: [
+              "./profile_online",
+              "./codec_plugin_online",
+              "./nbdevice_simulation",
+              "./connect_nb_oc",
+              "./onelight_demo",
+              "./openCPU_setup",
+              "./onelight_demo_openCPU"
             ]
           }],
           "/partners/industry/": [{
