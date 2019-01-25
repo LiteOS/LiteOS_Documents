@@ -5,10 +5,11 @@
 2019年1月11日在杭州举办的Workshop，将有现场手把手教学体验OpenCPU方案的机会，欢迎大家来现场交流！ 
 
 操作步骤如下：  
-1. [制作Profile](./profile_online.md) 
-2. [制作编解码插件](./codec_plugin_online.md)  
-3. [在线模拟NB-IoT设备](./nbdevice_simulation.md)  
-4. [使用NB-IoT对接OceanConnect平台](./connect_nb_oc.md)  
-5. [运行LiteOS OneLight Demo](./onelight_demo.md)  
-6. [搭建OpenCPU开发环境](./openCPU_setup.md)  
-7. [运行LiteOS OneLight Demo（基于OpenCPU开发板）](./onelight_demo_openCPU.md)  
+1. [获取华为云账号](./huaweicloud_account.md)
+2. [制作Profile](./profile_online.md) 
+3. [制作编解码插件](./codec_plugin_online.md)  
+4. [在线模拟NB-IoT设备](./nbdevice_simulation.md)  
+5. [使用NB-IoT对接OceanConnect平台](./connect_nb_oc.md)  
+6. [运行LiteOS OneLight Demo](./onelight_demo.md)  
+7. [搭建OpenCPU开发环境](./openCPU_setup.md)  
+8. [运行LiteOS OneLight Demo（基于OpenCPU开发板）](./onelight_demo_openCPU.md)  
