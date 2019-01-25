@@ -294,15 +294,33 @@ module.exports = {
               ]
             }
           ],
-          "/sdk/": [{
+          "/sdk/": [
+          
+          {
+            title: "LiteOS SDK介绍",
+            collapsable: false,
+            children: [
+              "",
+              //"./sdk-overview",
+              //"./sdk-apis",
+              //"./sdk-oceanconnect",
+              //"./sdk-lwm2m",
+              "./sdk-terminology"
+            ]
+          },
+            {
               title: "端云互通",
               collapsable: false,
               children: [
-                "",
-                "./sdk-overview",
-                "./sdk-apis",
-                "./sdk-oceanconnect",
-                "./sdk-lwm2m"
+                //"",
+                //"./sdk-overview",
+                //"./sdk-apis",
+                //"./sdk-oceanconnect",
+                //"./sdk-lwm2m",
+                //"./sdk-terminology",
+                "./sdk-coap-lwm2m",
+                "./sdk-mqtt"
+
               ]
             },
             {
@@ -392,6 +410,7 @@ module.exports = {
             title: "Workshop-杭州站",
             collapsable: true,
             children: [
+              "./huaweicloud_account",
               "./profile_online",
               "./codec_plugin_online",
               "./nbdevice_simulation",
@@ -515,12 +534,17 @@ module.exports = {
         editLinkText: "Edit this page on GitHub",
         algolia: {},
         nav: [{
-            text: "Getting Started",
-            link: "/en/getting-started"
+            text: "Kernel Develop Guide",
+            link: "/en/kernel/"
           },
           {
-            text: "Develop Guide",
-            link: "/en/kernel/"
+            text: "SDK Develop Guide",
+            items: [{
+              text: "SDK Develop Guide",
+              link: "/en/sdk/"
+            },
+
+          ]
           }
         ],
         sidebar: {
@@ -556,9 +580,31 @@ module.exports = {
                 './errorcode-semaphore',
                 './errorcode-swtmr'
               ]
-            }
+            },
           ],
+
+          "/en/sdk/": [
+            {
+              title: 'LiteOS SDK',
+              collapsable: false,
+              children: [
+                './device-cloud-interconnect'
+                ]
+              },
+          {
+            title: 'NB-IoT connect to OceanConnect',
+            collapsable: false,
+            children: [
+              './nbiot-connect2oc'
+              ]
+            },
+          ],
+
+
           "/": [""]
+
+
+
         }
       }
     }

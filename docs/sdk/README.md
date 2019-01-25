@@ -8,4 +8,4 @@ LiteOS SDK是Huawei LiteOS软件开发工具包（Software Development Kit），
 
 **Huawei LiteOS架构图**
 
-![](./pic/sdk/8.png)
+![](./figures/liteos-architecture.png)
